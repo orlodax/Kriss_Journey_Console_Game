@@ -1,7 +1,5 @@
 ﻿using ConsoleGame.Classes;
 using System;
-using System.Linq;
-using System.Reflection;
 
 namespace ConsoleGame
 {
@@ -11,24 +9,13 @@ namespace ConsoleGame
 
         public Menu()
         {
-            Navigator = new Navigator();
+            TextResource.Init();
 
-            Type[] typelist = GetTypesInNamespace(Assembly.GetExecutingAssembly(), "ConsoleGame.Nodes.N01");
-            var a = typelist;
-            for (int i = 0; i < typelist.Length; i++)
-            {
-                Console.WriteLine(typelist[i].Name);
-            }
+            Navigator = new Navigator();
 
             ShowMenu();
         }
-        private Type[] GetTypesInNamespace(Assembly assembly, string nameSpace)
-        {
-            return
-              assembly.GetTypes()
-                      .Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal))
-                      .ToArray();
-        }
+
         void ShowMenu()
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -67,7 +54,8 @@ namespace ConsoleGame
             //Input.WriteOnBottomLine();
         }
 
-        
+
+
 
     }
 }

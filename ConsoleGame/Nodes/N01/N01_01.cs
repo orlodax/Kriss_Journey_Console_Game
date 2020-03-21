@@ -9,7 +9,10 @@ namespace ConsoleGame.Nodes.N01
     {
         public N01_01()
         {
-            ID = "01_01";
+            Console.ReadLine();
+            FetchText(this);
+            TextFlow();
+            SelectNextNode("N01_02");
         }
     }
 }

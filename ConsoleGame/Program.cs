@@ -7,12 +7,32 @@ namespace ConsoleGame
         static void Main(string[] args)
         {
             Console.Title = "KRISS' JOURNEY";
-            Menu MainMenu = new Menu();
-
+            _ = new Menu();
             Console.ReadLine();
         }
 
         //MONNEZZE
+
+
+        //lista classi
+
+        //private Type[] GetTypesInNamespace(Assembly assembly, string nameSpace)
+        //{
+        //    return
+        //      assembly.GetTypes()
+        //              .Where(t => String.Equals(t.Namespace, nameSpace, StringComparison.Ordinal))
+        //              .ToArray();
+        //}
+
+        //Type[] typelist = GetTypesInNamespace(Assembly.GetExecutingAssembly(), "ConsoleGame.Nodes.N01");
+        //var a = typelist;
+        //    for (int i = 0; i<typelist.Length; i++)
+        //    {
+        //        Console.WriteLine(typelist[i].Name);
+        //    }
+
+
+
         //private static void ReadKeys()
         //{
         //    ConsoleKeyInfo key = new ConsoleKeyInfo();

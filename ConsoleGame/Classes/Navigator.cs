@@ -6,12 +6,19 @@ namespace ConsoleGame.Classes
     public class Navigator
     {
         public ChapterBase LastChapter { get; set; }
+        
 
         public Navigator()
         {
             LoadProgress();
         }
 
+        public void LoadChapter(int number)
+        {
+            ChapsFactory.CreateChapter(number);
+        }
+
+        #region Progress
         void LoadProgress()
         {
             var filePath = Path.Combine(AppContext.BaseDirectory, "appSettings.json");
@@ -23,12 +30,6 @@ namespace ConsoleGame.Classes
             else
                 LastChapter = new ChapterBase() { Number = 0, IsComplete = false };
         }
-
-        public void LoadChapter(int number)
-        {
-            ChapsFactory.CreateChapter(number);
-        }
-
         public void SaveProgress(int chapterNo)
         {
             var filePath = Path.Combine(AppContext.BaseDirectory, "appSettings.json");
@@ -39,5 +40,6 @@ namespace ConsoleGame.Classes
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(LastChapter, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePath, output);
         }
+        #endregion
     }
 }

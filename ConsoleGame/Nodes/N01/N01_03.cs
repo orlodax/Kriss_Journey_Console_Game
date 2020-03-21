@@ -9,8 +9,6 @@ namespace ConsoleGame.Nodes.N01
     {
         public N01_03()
         {
-            ID = "01_03";
-            Parents.Add("01_01");
         }
     }
 }

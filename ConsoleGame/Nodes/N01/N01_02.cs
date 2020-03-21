@@ -1,4 +1,5 @@
 ﻿using ConsoleGame.Classes;
+using System.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,8 +10,9 @@ namespace ConsoleGame.Nodes.N01
     {
         public N01_02()
         {
-            ID = "01_02";
-            Parents.Add("01_01");
+            //Text = TextResource.texts;
+            //NodeBase a = Texts.texts.Find(t => t.id == this.ToString() );
+            //Text = a.text;
         }
     }
 }
