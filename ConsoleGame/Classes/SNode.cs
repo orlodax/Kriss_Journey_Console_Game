@@ -67,19 +67,18 @@ namespace ConsoleGame.Classes
 
         public SNode()
         {
-            //Console.Clear();
-            //TextFlow();
-            //PrepareForInput();
+            Console.Clear();
         }
 
-        internal string FetchText(SNode node)
+        internal void FetchText(SNode node)
         {
             string[] typeWords = (node.ToString()).Split(".");
             string className = typeWords[typeWords.Length - 1];
             NodeBase nb = TextResource.DB.texts.Find(n => n.id == className);
-            return Text = nb.text;
+            Text = nb.text;
+            TextFlow();
         }
-        void PrepareForInput() 
+        internal void PrepareForInput() 
         {
             ConsoleKeyInfo keyinfo;
 

@@ -9,10 +9,9 @@ namespace ConsoleGame.Nodes.N01
     {
         public N01_01()
         {
-            Console.ReadLine();
             FetchText(this);
-            TextFlow();
-            SelectNextNode("N01_02");
+            PrepareForInput();
+            // SelectNextNode("N01_02");
         }
     }
 }
