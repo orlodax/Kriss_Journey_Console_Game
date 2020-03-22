@@ -6,7 +6,6 @@ namespace ConsoleGame.Classes
     public class Navigator
     {
         public ChapterBase LastChapter { get; set; }
-        
 
         public Navigator()
         {

@@ -41,6 +41,8 @@ namespace ConsoleGame
             }
             else
             {
+                Console.WriteLine("This game features autosave. You just won't know when.");
+                Console.WriteLine();
                 Console.WriteLine("Your journey is yet to be started.");
                 Console.WriteLine("Press any key.");
                 Console.ReadLine();

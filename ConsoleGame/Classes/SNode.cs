@@ -18,6 +18,7 @@ namespace ConsoleGame.Classes
 
         internal string ID { get; set; }
         internal string Text { get; set; } = string.Empty;
+        internal List<Child> Children {get;set;}
         #endregion
 
         #region TextFlow
@@ -73,22 +74,10 @@ namespace ConsoleGame.Classes
             Console.Clear();
             ID = nb.id;
             Text = nb.text;
-        }
+            Children = nb.children;
 
-        public void PlayNode()
-        { 
-        
+            TextFlow();
         }
-        //NOOOOO
-        //internal void FetchText(SNode node)
-        //{
-        //    string[] typeWords = (node.ToString()).Split(".");
-        //    string className = typeWords[typeWords.Length - 1];
-        //    NodeBase nb = TextResource.DB.nodes.Find(n => n.id == className);
-        //    Text = nb.text;
-        //    TextFlow();
-        //}
-        
         #endregion
     }
 }

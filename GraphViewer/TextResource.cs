@@ -26,10 +26,9 @@ namespace ConsoleGame.Classes
             }
         }
     }
-
     public class NodeContainer
     {
-        public List<List<NodeBase>> chapters { get; set; }
+        public List<NodeBase> nodes { get; set; }
     }
     public class NodeBase
     {
