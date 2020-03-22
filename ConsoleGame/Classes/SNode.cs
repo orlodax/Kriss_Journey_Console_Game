@@ -11,11 +11,14 @@ namespace ConsoleGame.Classes
     /// </summary>
     public class SNode
     {
+        #region Properties
         //still don't know about this
         //internal List<string> Parents { get; set; } = new List<string>();
         // internal List<SNode> Children { get; set; } = new List<SNode>();
 
+        internal string ID { get; set; }
         internal string Text { get; set; } = string.Empty;
+        #endregion
 
         #region TextFlow
         /// <summary>
@@ -48,7 +51,7 @@ namespace ConsoleGame.Classes
 
         #region NextNodes
         /// <summary>
-        /// Uses the nodeID provided from parent node to instantiate the matching node with that class name
+        /// NOPE
         /// </summary>
         /// <param name="nodeID"></param>
         /// <returns></returns>
@@ -65,44 +68,27 @@ namespace ConsoleGame.Classes
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
 
-        public SNode()
+        public SNode(NodeBase nb)
         {
             Console.Clear();
-        }
-
-        internal void FetchText(SNode node)
-        {
-            string[] typeWords = (node.ToString()).Split(".");
-            string className = typeWords[typeWords.Length - 1];
-            NodeBase nb = TextResource.DB.texts.Find(n => n.id == className);
+            ID = nb.id;
             Text = nb.text;
-            TextFlow();
         }
-        internal void PrepareForInput() 
-        {
-            ConsoleKeyInfo keyinfo;
 
-            ///go to bottom line
-            Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
-            Console.CursorLeft = Console.WindowLeft + Console.WindowWidth - 1;
-
-            Console.Write(" \\> ");
-            keyinfo = Console.ReadKey();
-
-            if (keyinfo.Key.Equals(ConsoleKey.Tab))
-            {
-                Console.CursorLeft -= 5;
-                Console.CursorTop -= 1;
-                Console.WriteLine("Possible actions here: ");
-
-                foreach (Enums.Actions action in (Enums.Actions[])Enum.GetValues(typeof(Enums.Actions)))
-                    Console.Write(action + " ");
-
-                Console.CursorTop += 1;
-                Console.CursorLeft = 0;
-                Console.WriteLine(" \\> you pressed tab for help. noob.");
-            }
+        public void PlayNode()
+        { 
+        
         }
+        //NOOOOO
+        //internal void FetchText(SNode node)
+        //{
+        //    string[] typeWords = (node.ToString()).Split(".");
+        //    string className = typeWords[typeWords.Length - 1];
+        //    NodeBase nb = TextResource.DB.nodes.Find(n => n.id == className);
+        //    Text = nb.text;
+        //    TextFlow();
+        //}
+        
         #endregion
     }
 }

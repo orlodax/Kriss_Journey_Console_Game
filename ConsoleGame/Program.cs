@@ -8,7 +8,7 @@ namespace ConsoleGame
         {
             Console.Title = "KRISS' JOURNEY";
             _ = new Menu();
-            Console.ReadLine();
+          //  Console.ReadLine();
         }
 
         //MONNEZZE

@@ -6,6 +6,13 @@ namespace ConsoleGame
 {
     public class Enums
     {
+        public enum NodeTypes
+        { 
+            Story,
+            Action,
+            Choice,
+            Direction
+        }
         public enum Actions
         { 
             Look,

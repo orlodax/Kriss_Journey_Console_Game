@@ -15,7 +15,7 @@ namespace ConsoleGame.Classes
 
         public void LoadChapter(int number)
         {
-            ChapsFactory.CreateChapter(number);
+            NodeFactory.CreateChapter(number);
         }
 
         #region Progress

@@ -20,17 +20,26 @@ namespace ConsoleGame.Classes
                 {
                     string json = File.ReadAllText(filePath);
                     DB = Newtonsoft.Json.JsonConvert.DeserializeObject<NodeContainer>(json);
+
+                    IsReady = true;
                 }
             }
+        }
+
+        public static T PopulateNode<T>(NodeBase nb)
+        {
+           // T Node = new
+           return default(T);
         }
     }
     public class NodeContainer
     {
-        public List<NodeBase> texts { get; set; }
+        public List<NodeBase> nodes { get; set; }
     }
     public class NodeBase
     {
         public string id { get; set; }
+        public string type { get; set; }
         public string text { get; set; }
     }   
 }

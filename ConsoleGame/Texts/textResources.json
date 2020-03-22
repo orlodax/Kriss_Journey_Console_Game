@@ -1,12 +1,14 @@
 ﻿{
-  "texts": [
+  "nodes": [
     {
-      "id": "N01_01",
-      "text": "blablalbaasgfdsfgasdfgasdrfgijas;ofdghsaiufg\nhasilofdugasloidfughsoaliudgfaisdugfasidfgusapidufgasdfsadfasdofhasiodufhgsaiudhfsdfiausgdifugsaidufgaisudf"
+      "id": "01_01",
+      "type":  "Story",
+      "text": "This is the text of the first node \n this is a node of type story, which just tells you something"
     },
     {
-      "id": "N01_02",
-      "text":  "you choose this"
+      "id": "01_02",
+      "type": "Story",
+      "text": "you choose this"
     }
   ]
 }

@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleGame.Nodes.N01
+namespace ConsoleGame.Nodes
 {
-    public class N01_03 : SNode
+    public class NDirection : SNode
     {
-        public N01_03()
+        public NDirection(NodeBase nb) : base(nb)
         {
+            
         }
     }
 }
