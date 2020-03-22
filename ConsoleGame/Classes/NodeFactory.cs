@@ -36,6 +36,8 @@ namespace ConsoleGame.Classes
                     return CurrentNode = new NDirection(nb);
                 case "Action":
                     return CurrentNode = new NAction(nb);
+                default:
+                    break;
             }
 
             return null;

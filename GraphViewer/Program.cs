@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Msagl.Drawing;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace GraphViewer
 
             NodeContainer DB = null;
 
-            var filePath = Path.Combine(AppContext.BaseDirectory, "textResources.json");
+            var filePath = Path.Combine(AppContext.BaseDirectory, "textResourcesG.json");
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
@@ -55,8 +56,12 @@ namespace GraphViewer
                 if (children != null)
                     for (int j = 0; j < children.Count; j++)
                         graph.AddEdge(nodes[i].id, children[j].id);
-               
+
+                //var n = graph.FindNode(nodes[i].id);
+                //n.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
             }
+
+            
 
             ////create the graph content 
             //graph.AddEdge("A", "B");

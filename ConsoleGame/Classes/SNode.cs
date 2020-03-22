@@ -26,14 +26,22 @@ namespace ConsoleGame.Classes
         /// Mimics the flow of text of old console games. 
         /// </summary>
 
-        internal int FlowDelay { get; set; } = 10; // fine-tunes the speed of TextFlow
+        internal int flowDelay { get; set; } = 0; // 15; // fine-tunes the speed of TextFlow
+        internal int paragraphBreak { get; set; } = 0; // 800; // fine-tunes the pause between blocks
 
         internal void TextFlow()
         {
             foreach (char c in Text)
             {
-                Console.Write(c);
-                Thread.Sleep(FlowDelay);
+                if (!c.ToString().Equals("#"))
+                {
+                    Console.Write(c);
+                    Thread.Sleep(flowDelay);
+                }
+                else
+                {
+                    Thread.Sleep(paragraphBreak);
+                }
             }
         }
         /// <summary>
@@ -45,7 +53,7 @@ namespace ConsoleGame.Classes
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(FlowDelay);
+                Thread.Sleep(flowDelay);
             }
         }
         #endregion

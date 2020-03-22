@@ -5,13 +5,11 @@ namespace ConsoleGame
 {
     public class Menu
     {
-        Navigator Navigator;
-
         public Menu()
         {
             TextResource.Init();
-
-            Navigator = new Navigator();
+           
+            Navigator.LoadProgress();
 
             ShowMenu();
         }
@@ -33,7 +31,7 @@ namespace ConsoleGame
 
             if (Navigator.LastChapter.IsComplete && Navigator.LastChapter.Number > 0)
             {
-                Console.WriteLine("You completed chapter no. " + Navigator.LastChapter.Number.ToString());
+                Console.WriteLine("So far, you completed chapter no. " + Navigator.LastChapter.Number.ToString());
                 Console.WriteLine("Press any key to start the next one.");
                 Console.ReadLine();
 
@@ -41,9 +39,11 @@ namespace ConsoleGame
             }
             else
             {
+                Console.WriteLine("Welcome traveler.");
+                Console.WriteLine("Your journey is yet to be started.");
+                Console.WriteLine();
                 Console.WriteLine("This game features autosave. You just won't know when.");
                 Console.WriteLine();
-                Console.WriteLine("Your journey is yet to be started.");
                 Console.WriteLine("Press any key.");
                 Console.ReadLine();
 

@@ -3,33 +3,29 @@ using System.IO;
 
 namespace ConsoleGame.Classes
 {
-    public class Navigator
+    public static class Navigator
     {
-        public ChapterBase LastChapter { get; set; }
+        public static ChapterBase LastChapter { get; private set; } = new ChapterBase();
 
-        public Navigator()
-        {
-            LoadProgress();
-        }
-
-        public void LoadChapter(int number)
+        public static void LoadChapter(int number)
         {
             NodeFactory.CreateChapter(number);
         }
 
         #region Progress
-        void LoadProgress()
+        public static void LoadProgress()
         {
             var filePath = Path.Combine(AppContext.BaseDirectory, "appSettings.json");
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
                 LastChapter = Newtonsoft.Json.JsonConvert.DeserializeObject<ChapterBase>(json);
+                var a = LastChapter;
             }
             else
                 LastChapter = new ChapterBase() { Number = 0, IsComplete = false };
         }
-        public void SaveProgress(int chapterNo)
+        public static void SaveProgress(int chapterNo)
         {
             var filePath = Path.Combine(AppContext.BaseDirectory, "appSettings.json");
             
