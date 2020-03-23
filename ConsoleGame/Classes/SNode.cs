@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Threading;
 
 namespace ConsoleGame.Classes
@@ -12,13 +10,28 @@ namespace ConsoleGame.Classes
     public class SNode
     {
         #region Properties
-        //still don't know about this
-        //internal List<string> Parents { get; set; } = new List<string>();
-        // internal List<SNode> Children { get; set; } = new List<SNode>();
-
         internal string ID { get; set; }
         internal string Text { get; set; } = string.Empty;
         internal List<Child> Children {get;set;}
+        internal List<Choice> Choices { get; set; }
+        #endregion
+
+        #region CTOR
+        /// <summary>
+        /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
+        /// This root node loads text resources for everybody
+        public SNode(NodeBase nb)
+        {
+            Console.Clear();
+            ID = nb.id;
+            Text = nb.text;
+            Children = nb.children;
+            Choices = nb.choices;
+
+            //TextFlow(true);
+            //in debug turn off the effect:
+            TextFlow(false);
+        }
         #endregion
 
         #region TextFlow
@@ -26,24 +39,69 @@ namespace ConsoleGame.Classes
         /// Mimics the flow of text of old console games. 
         /// </summary>
 
-        internal int flowDelay { get; set; } = 0; // 15; // fine-tunes the speed of TextFlow
-        internal int paragraphBreak { get; set; } = 0; // 800; // fine-tunes the pause between blocks
+        internal int flowDelay { get; set; } = 15; // fine-tunes the speed of TextFlow
+        internal int paragraphBreak { get; set; } = 800; // fine-tunes the pause between blocks
 
-        internal void TextFlow()
+        internal void TextFlow(bool isFlowing)
         {
+            if (!isFlowing)
+            {
+                flowDelay = 0;
+                paragraphBreak = 0;
+            }
+            char prevChar = new Char();
+
             foreach (char c in Text)
             {
-                if (!c.ToString().Equals("#"))
-                {
-                    Console.Write(c);
-                    Thread.Sleep(flowDelay);
-                }
+                if (prevChar.ToString().Equals("$"))
+                    switch (c.ToString())
+                    {
+                        case "R":
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            break;
+                        case "G":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case "B":
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case "C":
+                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            break;
+                        case "M":
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            break;
+                        case "Y":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            break;
+                        case "K":
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            break;
+                        case "W":
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+                        case "S":
+                            Console.BackgroundColor = ConsoleColor.White;
+                            break;
+                        default:
+                            break;
+                    }
                 else
                 {
-                    Thread.Sleep(paragraphBreak);
+                    if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
+                    {
+                        Console.Write(c);
+                        Thread.Sleep(flowDelay);
+                    }
+                    else
+                    {
+                        Thread.Sleep(paragraphBreak);
+                    }
                 }
+                prevChar = c;
             }
         }
+
         /// <summary>
         /// Overload of the above, it displays custom text, not just the Text property in the SNode instance
         /// </summary>
@@ -55,36 +113,6 @@ namespace ConsoleGame.Classes
                 Console.Write(c);
                 Thread.Sleep(flowDelay);
             }
-        }
-        #endregion
-
-        #region NextNodes
-        /// <summary>
-        /// NOPE
-        /// </summary>
-        /// <param name="nodeID"></param>
-        /// <returns></returns>
-        internal SNode SelectNextNode(string nodeID) 
-        {
-            Type type = Type.GetType($"ConsoleGame.Nodes.N01.{nodeID}");
-            
-            return (SNode)Activator.CreateInstance(type);
-        }
-        #endregion
-
-        #region CTOR
-        /// <summary>
-        /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
-        /// This root node loads text resources for everybody
-
-        public SNode(NodeBase nb)
-        {
-            Console.Clear();
-            ID = nb.id;
-            Text = nb.text;
-            Children = nb.children;
-
-            TextFlow();
         }
         #endregion
     }

@@ -37,11 +37,16 @@ namespace ConsoleGame.Classes
         public string type { get; set; }
         public string text { get; set; }
         public List<Child> children { get; set; }
+        public List<Choice> choices { get; set; }
     }
 
     public class Child
     {
         public string id { get; set; }
+    }
+    public class Choice
+    {
+        public string desc { get; set; }
     }
 
 }

@@ -6,6 +6,7 @@
       {
         "id": "0_01",
         "type": "Story",
+        "recap": "start of chapter one",
         "text": "-------------------------------\n|          CHAPTER 1          |\n-------------------------------\n\n\n###You are walking home after a long day.\n#There's no doubt, this hasn't been a nice day.\n#You missed every possible bus and/or train.\n#And it started raining,# too. #Of course, you do not have an umbrella with you.\n\n#Looking up at the sky, it looks like all the clouds in the world just decided to gather right above your head,#\nswallowing all of light and propagating dark vibes to the atmosphere and to the ground.",
         "children": [
           { "id": "0_02" }
@@ -13,18 +14,54 @@
       },
       {
         "id": "0_02",
-        "type": "Story",
-        "text": "Lightning",
+        "type": "Choice",
+        "recap": "rain intensify",
+        "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n##You shudder, stunned with its power.\n\n##After few breathless seconds, #you breathe again \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules.\n\n##You realise you have to move fast if you don't want to end up way more soaked than you already are.\n\n\n\n(Select with arrow keys and press enter).\n\n",
+        "choices": [
+          { "desc": "You start running. Let's minimise the water intake." },
+          { "desc": "The water does not bother you that much. You are already soaked. So why rush?" }
+        ],
         "children": [
-          { "id": "0_03" }
+          { "id": "0_03" },
+          { "id": "0_04" }
         ]
       },
       {
         "id": "0_03",
         "type": "Story",
+        "text": "You choose 1",
+        "children": [
+          { "id": "0_05" }
+        ]
+      },
+      {
+        "id": "0_04",
+        "type": "Story",
+        "text": "You choose 2",
+        "children": [
+          { "id": "0_05" }
+        ]
+      },
+      {
+        "id": "0_05",
+        "type": "Choice",
+        "recap": "follow the figure or not",
+        "text":  "Follow or not?",
+        "choices": [
+          { "desc": "You start running. Let's minimise the water intake." },
+          { "desc": "The water does not bother you that much. You are already soaked. So why rush?" }
+        ],
+        "children": [
+          { "id": "0_06" }
+        ]
+      },
+      {
+        "id": "0_06",
+        "type": "Story",
+        "recap": "Chris gets hit by the lightning. End of chapter one",
         "text": "The Lightning",
         "children": [
-          { "id": "0_03" }
+          { "id": "1_01" }
         ]
       }
     ],

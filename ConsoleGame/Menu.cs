@@ -49,15 +49,6 @@ namespace ConsoleGame
 
                 Navigator.LoadChapter(1);
             }
-
-            //Console.Clear();
-            //Console.ResetColor();
-
-            //Input.WriteOnBottomLine();
         }
-
-
-
-
     }
 }
