@@ -67,7 +67,7 @@
         "id": "0_07",
         "type": "Story",
         "recap": "at the tree",
-        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it again!\n#\n$GChris!$C\n#\nThis time is for sure, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
+        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n#\n$GChris!$C\n#\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
         "children": [
           { "id": "1_01" }
         ]
