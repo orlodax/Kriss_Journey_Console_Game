@@ -48,6 +48,8 @@ namespace ConsoleGame
                 Console.ReadLine();
 
                 Navigator.LoadChapter(1);
+                //debug: start from
+                //NodeFactory.CreateNode("0_08");
             }
         }
     }

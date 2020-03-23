@@ -29,37 +29,54 @@
       {
         "id": "0_03",
         "type": "Story",
-        "text": "You choose 1",
+        "recap": "running home",
+        "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght.\n#You run even faster, trying to ignore the suffocating feeling of the water splashing down your face.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#You feel your heart bouncing in your chest and hear your now accelerated breathing.\n#\nYou are almost home, when you hear it.\n#\n$G...$C\n###\nWas it real? \n##For a split second you thought someone called on your name. It must have been all that noise...\n#\n#$G..ris..$C\n###\nIt was clearer this time!\n\n\n",
         "children": [
           { "id": "0_05" }
         ]
       },
       {
         "id": "0_04",
-        "type": "Story",
-        "text": "You choose 2",
+        "type": "Choice",
+        "recap": "walking home",
+        "text": "Resigned to your fate, you try to keep your head down,\ntrying to avoid being temporarily blinded by the water in your eyes.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#\nYou also try to avoid the huge pools of water that are now forming on the road,\npraying that no vehicle will rush over them splattering you with some nice mud.\n#\nYou reach the bottom of the little hill that is in front of your house.\n#You raise your eyes, and right when you are about to turn towards your gate, you see something.\n#\nOn the top of the hill, there is something...# someone...# you can't say for sure.\n##\n\n",
+        "choices": [
+          { "desc": "You think you saw it wrong. Why waste time climbing the hill with this weather?" },
+          { "desc": "You decide to go and check. Someone could need help." }
+        ],
         "children": [
-          { "id": "0_05" }
+          { "id": "0_08" },
+          { "id": "0_07" }
         ]
       },
       {
         "id": "0_05",
         "type": "Choice",
-        "recap": "follow the figure or not",
-        "text":  "Follow or not?",
+        "recap": "who whispered",
+        "text": "You turn around, looking for the source of the voice.\n#\nIt's hard to see something in the midst of this unexpected thunderstorm.\n#You squint your eyes, fighting against the trickles of water that run into your eyes\n#\nAfter few seconds, you think you're seeing something.# On the top of the hill in front of your house.\n#It looks like there is something... #someone...# there.\n##But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.##\n\n\n",
         "choices": [
-          { "desc": "You start running. Let's minimise the water intake." },
-          { "desc": "The water does not bother you that much. You are already soaked. So why rush?" }
+          { "desc": "You hate to stay more time under the rain... but... you never know?" },
+          { "desc": "You must have misheard. And if something's there, it's none of your business." }
         ],
         "children": [
-          { "id": "0_06" }
+          { "id": "0_07" },
+          { "id": "0_08" }
         ]
       },
       {
-        "id": "0_06",
+        "id": "0_07",
         "type": "Story",
-        "recap": "Chris gets hit by the lightning. End of chapter one",
-        "text": "The Lightning",
+        "recap": "at the tree",
+        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it again!\n#\n$GChris!$C\n#\nThis time is for sure, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
+        "children": [
+          { "id": "1_01" }
+        ]
+      },
+      {
+        "id": "0_08",
+        "type": "Story",
+        "recap": "by the gate",
+        "text": "You are about to enter past your gate, to the comfort of your home at last, when you hear it!\n#\n$GChris!$C\n#\nIt feels like the wind is calling your name to the rain...\n#It feels like the sound comes from behind your shoulders, but at the same time from afar.\n\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The blinding light...\n###The deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.",
         "children": [
           { "id": "1_01" }
         ]
@@ -69,8 +86,8 @@
     //chapter 2
     [
       {
-        "id": "1_07",
-        "type": "Action",
+        "id": "1_01",
+        "type": "Story",
         "text": "you choose this"
       },
       {

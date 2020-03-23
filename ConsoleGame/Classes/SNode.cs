@@ -28,9 +28,9 @@ namespace ConsoleGame.Classes
             Children = nb.children;
             Choices = nb.choices;
 
-            //TextFlow(true);
+            TextFlow(true);
             //in debug turn off the effect:
-            TextFlow(false);
+            //TextFlow(false);
         }
         #endregion
 
@@ -111,7 +111,7 @@ namespace ConsoleGame.Classes
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(flowDelay);
+                //Thread.Sleep(flowDelay);
             }
         }
         #endregion
