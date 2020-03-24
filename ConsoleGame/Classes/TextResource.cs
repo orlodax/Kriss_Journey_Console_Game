@@ -15,7 +15,7 @@ namespace ConsoleGame.Classes
         {
             if (!IsReady)
             {
-                var filePath = Path.Combine(AppContext.BaseDirectory, "Texts\\textResources.json");
+                var filePath = Path.Combine(AppContext.BaseDirectory, "textResources.json");
                 if (File.Exists(filePath))
                 {
                     string json = File.ReadAllText(filePath);

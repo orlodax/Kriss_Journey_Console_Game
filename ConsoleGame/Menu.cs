@@ -16,6 +16,8 @@ namespace ConsoleGame
 
         void ShowMenu()
         {
+            Console.Clear();
+
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("         />_________________________________");
