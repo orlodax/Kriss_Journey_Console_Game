@@ -35,8 +35,11 @@ namespace ConsoleGame
             Ask,
             Open,
             Close,
-            Break
-
+            Break,
+            Laugh,
+            Cry,
+            Shout,
+            Sing,
         }
     }
 }

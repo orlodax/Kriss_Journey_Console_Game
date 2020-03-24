@@ -17,7 +17,7 @@ namespace ConsoleGame.Nodes
             ConsoleKeyInfo key;
             do
             {
-                for (int i = 0; i <= Choices.Count - 1; i++)
+                for (int i = 0; i < Choices.Count; i++)
                 {
                     if (i == selectedRow)
                     {
@@ -34,7 +34,9 @@ namespace ConsoleGame.Nodes
                     Console.CursorLeft = Console.WindowLeft;
                 }
 
-                key = Console.ReadKey();
+                while (Console.KeyAvailable)
+                    Console.ReadKey(true);
+                key = Console.ReadKey(true);
 
                 if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
                     selectedRow--;

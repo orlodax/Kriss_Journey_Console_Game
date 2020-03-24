@@ -1,5 +1,6 @@
 ﻿using ConsoleGame.Classes;
 using System;
+using System.IO;
 
 namespace ConsoleGame
 {
@@ -9,8 +10,6 @@ namespace ConsoleGame
         {
             TextResource.Init();
            
-            Navigator.LoadProgress();
-
             ShowMenu();
         }
 
@@ -31,13 +30,13 @@ namespace ConsoleGame
             Console.WriteLine();
             Console.WriteLine();
 
-            if (Navigator.LastChapter.IsComplete && Navigator.LastChapter.Number > 0)
+            if (TextResource.DB.lastchapter.iscomplete && TextResource.DB.lastchapter.number > 0)
             {
-                Console.WriteLine("So far, you completed chapter no. " + Navigator.LastChapter.Number.ToString());
+                Console.WriteLine("So far, you completed chapter no. " + TextResource.DB.lastchapter.number.ToString());
                 Console.WriteLine("Press any key to start the next one.");
                 Console.ReadLine();
 
-                Navigator.LoadChapter(Navigator.LastChapter.Number + 1); 
+                NodeFactory.CreateChapter(TextResource.DB.lastchapter.number + 1); 
             }
             else
             {
@@ -47,11 +46,11 @@ namespace ConsoleGame
                 Console.WriteLine("This game features autosave. You just won't know when.");
                 Console.WriteLine();
                 Console.WriteLine("Press any key.");
-                Console.ReadLine();
+                Console.ReadKey(true);
 
-                Navigator.LoadChapter(1);
+                //NodeFactory.CreateChapter(1);
                 //debug: start from
-                //NodeFactory.CreateNode("0_08");
+                NodeFactory.CreateNode("1_02");
             }
         }
     }

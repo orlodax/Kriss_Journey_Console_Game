@@ -14,6 +14,8 @@ namespace ConsoleGame.Classes
         internal string Text { get; set; } = string.Empty;
         internal List<Child> Children {get;set;}
         internal List<Choice> Choices { get; set; }
+        internal List<Action> Actions { get; set; }
+        internal List<Object> Objects { get; set; }
         #endregion
 
         #region CTOR
@@ -27,10 +29,12 @@ namespace ConsoleGame.Classes
             Text = nb.text;
             Children = nb.children;
             Choices = nb.choices;
-
-            TextFlow(true);
+            Actions = nb.actions;
+            Objects = nb.objects;
+            
+            //TextFlow(true);
             //in debug turn off the effect:
-            //TextFlow(false);
+            TextFlow(false);
         }
         #endregion
 
@@ -57,22 +61,25 @@ namespace ConsoleGame.Classes
                     switch (c.ToString())
                     {
                         case "R":
-                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.ForegroundColor = ConsoleColor.Red; //Corolla
                             break;
                         case "G":
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.Green; 
                             break;
                         case "B":
-                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.ForegroundColor = ConsoleColor.Blue; //Theo
                             break;
                         case "C":
-                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator
+                            break;
+                        case "c":
+                            Console.ForegroundColor = ConsoleColor.Cyan; //yourself
                             break;
                         case "M":
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             break;
                         case "Y":
-                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.ForegroundColor = ConsoleColor.Yellow; //Smiurl
                             break;
                         case "K":
                             Console.ForegroundColor = ConsoleColor.Black;
@@ -82,6 +89,9 @@ namespace ConsoleGame.Classes
                             break;
                         case "S":
                             Console.BackgroundColor = ConsoleColor.White;
+                            break;
+                        case "D":
+                            Console.ForegroundColor = ConsoleColor.DarkGray; //menus, help
                             break;
                         default:
                             break;

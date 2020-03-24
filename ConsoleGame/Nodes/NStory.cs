@@ -14,7 +14,12 @@ namespace ConsoleGame.Nodes
             Console.CursorLeft = Console.WindowLeft;
 
             Console.Write("Press a key to continue...");
-            Console.ReadKey();
+            
+            while (Console.KeyAvailable) 
+                Console.ReadKey(true);
+
+            Console.ReadKey(true);
+            
             NodeFactory.CreateNode(this.Children[0].id);
         }
     }

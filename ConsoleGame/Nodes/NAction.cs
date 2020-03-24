@@ -7,34 +7,81 @@ namespace ConsoleGame.Nodes
 {
     public class NAction : SNode
     {
+        Responder Responder;
         public NAction(NodeBase nb) : base(nb)
         {
-            PrepareForAction();
+            Responder = new Responder(this);
+            PrepareForAction(true);
         }
-        void PrepareForAction()
+        void PrepareForAction(bool isFirst)
         {
-            ConsoleKeyInfo keyinfo;
-
-            ///go to bottom line
+            ///go to bottom line and prepare prompt
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
             Console.CursorLeft = Console.WindowLeft + Console.WindowWidth - 1;
 
-            Console.Write(" \\> ");
-            keyinfo = Console.ReadKey();
-
-            if (keyinfo.Key.Equals(ConsoleKey.Tab))
+            Console.ForegroundColor = ConsoleColor.Gray;
+            if (!isFirst)
             {
-                Console.CursorLeft -= 5;
                 Console.CursorTop -= 1;
-                Console.WriteLine("Possible actions here: ");
-
-                foreach (Enums.Actions action in (Enums.Actions[])Enum.GetValues(typeof(Enums.Actions)))
-                    Console.Write(action + " ");
-
-                Console.CursorTop += 1;
-                Console.CursorLeft = 0;
-                Console.WriteLine(" \\> ");
+                Console.WriteLine(" You can't or won't do that. Try again.");
             }
+            Console.Write(" \\> ");
+
+            List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
+            ConsoleKeyInfo key;
+
+            do {
+                key = Console.ReadKey();
+                if (key.Key.Equals(ConsoleKey.Tab)) //if player presses tabs looking for help
+                {
+                    Console.CursorLeft -= 5;
+                    Console.CursorTop -= 3;
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.WriteLine("Possible actions here: ");
+
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    foreach (var action in Actions)
+                        Console.Write(action.verb + " ");
+
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.CursorTop += 1;
+                    Console.CursorLeft = 0;
+                    Console.WriteLine("\\> you pressed tab for help. noob.");
+                    Console.CursorLeft = Console.WindowLeft + 3;
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+                else
+                    if (!key.Key.Equals(ConsoleKey.Enter))  //normal keys are registered
+                        keysPressed.Add(key);
+
+            } while (key.Key != ConsoleKey.Enter);
+
+            //reconstruct
+            string typed = string.Empty;
+
+            for (int i = 0; i < keysPressed.Count; i++)
+                typed += keysPressed[i].KeyChar.ToString();
+
+            //try action
+            Tuple<int, int> ids = Responder.TryAction(typed);
+                
+            int actId = ids.Item1;
+            int objId = ids.Item2;
+
+            // for when I'll have multiple combinations
+            //if (actId > -1 && objId > -1)
+
+            int childId = Math.Max(actId, objId);
+
+            if (childId < 0)
+            {
+                //reload and retry
+                Console.Clear();
+                TextFlow(false);
+                PrepareForAction(false);
+            }
+            else
+                NodeFactory.CreateNode(Children[childId].id);
         }
     }
 }

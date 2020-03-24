@@ -1,6 +1,10 @@
 ﻿{
+  "lastchapter": {
+    "number": "0",
+    "iscomplete": "false"
+  },
   "chapters": [
-    
+
     //chapter 1
     [
       {
@@ -82,18 +86,119 @@
         ]
       }
     ],
-    
+
     //chapter 2
     [
       {
         "id": "1_01",
         "type": "Story",
-        "text": "you choose this"
+        "recap": "awoke",
+        "text": "-------------------------------\n|          CHAPTER 2          |\n-------------------------------\n\n\n$G\"You are alive...\"$C##\n\nWhose is that voice?# Your own?# Have you actually heard it?#\n\nYou slowly open your eyes, as thoughts resume their flow in your mind, trying to re-establish contact with reality.\n#\nIt takes several second to clear up your sight. You feel quite wrecked.\n#Just breathing deeply is a pain. You painfully, slowly sit up, and look around.\n#\nYou don't recognise what you see. You try hard to remember, and it finally gets back to you.\nHow can you still be alive after being hit by...# the lightning?\n#By the way,# you are still soaked to the bone.\n",
+        "children": [
+          { "id": "1_02" }
+        ]
+      },
+      {
+        "id": "1_02",
+        "type": "Action",
+        "recap": "look around",
+        "text": "$c\"Maybe I am dead,# afer all.\"$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
+        "actions": [
+          { "verb": "look" },
+          { "verb": "walk" },
+          { "verb": "go" },
+          { "verb": "run" },
+          { "verb": "laugh" },
+          { "verb": "cry" },
+          { "verb": "shout" }
+        ],
+        "children": [
+          { "id": "1_03" },
+          { "id": "1_04" },
+          { "id": "1_04" },
+          { "id": "1_05" },
+          { "id": "1_06" },
+          { "id": "1_07" },
+          { "id": "1_08" }
+        ]
+      },
+      {
+        "id": "1_03",
+        "type": "Story",
+        "recap": "actionresult",
+        "text": "you look",
+        "children": [
+          { "id": "1_09" }
+        ]
+      },
+      {
+        "id": "1_04",
+        "type": "Story",
+        "recap": "actionresult",
+        "text": "you walk/go to the village",
+        "children": [
+          { "id": "1_04" }
+        ]
+      },
+      {
+        "id": "1_05",
+        "type": "Story",
+        "recap": "actionresult",
+        "text": "you run to the village",
+        "children": [
+          { "id": "1_05" }
+        ]
+      },
+      {
+        "id": "1_06",
+        "type": "Story",
+        "recap": "actionresult",
+        "text": "you laugh",
+        "children": [
+          { "id": "1_09" }
+        ]
+      },
+      {
+        "id": "1_07",
+        "type": "Story",
+        "recap": "actionresult",
+        "text": "you cry",
+        "children": [
+          { "id": "1_09" }
+        ]
       },
       {
         "id": "1_08",
+        "type": "Story",
+        "recap": "actionresult",
+        "text": "you shout",
+        "children": [
+          { "id": "1_09" }
+        ]
+      },
+      {
+        "id": "1_09",
         "type": "Action",
-        "text": "you choose this"
+        "recap": "still there",
+        "text": "write the text",
+        "actions": [
+          { "verb": "look" },
+          { "verb": "walk" },
+          { "verb": "go" },
+          { "verb": "run" },
+          { "verb": "laugh" },
+          { "verb": "cry" },
+          { "verb": "shout" }
+        ],
+        "children": [
+          { "id": "1_03" },
+          { "id": "1_04" },
+          { "id": "1_04" },
+          { "id": "1_05" },
+          { "id": "1_06" },
+          { "id": "1_07" },
+          { "id": "1_08" }
+        ]
       }
     ]
 
