@@ -30,9 +30,17 @@ namespace ConsoleGame
             Console.WriteLine();
             Console.WriteLine();
 
+
+            //debug: start from
+            NodeFactory.CreateNode("1_11");
+            //debug
+
+
             if (TextResource.DB.lastchapter.iscomplete && TextResource.DB.lastchapter.number > 0)
             {
+                Console.WriteLine("Welcome back, traveler.");
                 Console.WriteLine("So far, you completed chapter no. " + TextResource.DB.lastchapter.number.ToString());
+                Console.WriteLine();
                 Console.WriteLine("Press any key to start the next one.");
                 Console.ReadLine();
 
@@ -48,9 +56,7 @@ namespace ConsoleGame
                 Console.WriteLine("Press any key.");
                 Console.ReadKey(true);
 
-                //NodeFactory.CreateChapter(1);
-                //debug: start from
-                NodeFactory.CreateNode("1_02");
+                NodeFactory.CreateChapter(1);
             }
         }
     }

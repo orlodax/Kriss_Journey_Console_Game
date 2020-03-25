@@ -16,25 +16,39 @@ namespace ConsoleGame.Classes
         internal List<Choice> Choices { get; set; }
         internal List<Action> Actions { get; set; }
         internal List<Object> Objects { get; set; }
+
+        NodeBase node;
         #endregion
 
-        #region CTOR
+        #region CTOR & "Destructor"
         /// <summary>
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
         public SNode(NodeBase nb)
         {
             Console.Clear();
-            ID = nb.id;
-            Text = nb.text;
-            Children = nb.children;
-            Choices = nb.choices;
-            Actions = nb.actions;
-            Objects = nb.objects;
+            node = nb;
+
+            ID = node.id;
+            Text = node.text;
+            Children = node.children;
+            Choices = node.choices;
+            Actions = node.actions;
+            Objects = node.objects;
             
-            //TextFlow(true);
+            if (!node.isvisited)     //disable flow effect if you are returning to the same node (see void Destructor)
+                TextFlow(true);
+            else
+                TextFlow(false);
             //in debug turn off the effect:
-            TextFlow(false);
+            //TextFlow(false);
+        }
+        internal void Destructor()  //this to be called on exit from node to mark it as not new
+        {
+            string[] number = node.id.Split("_");
+            var updatingNode = TextResource.DB.chapters[Convert.ToInt32(number[0])].Find(n => n.id == node.id);
+            updatingNode.isvisited = true;
+            TextResource.SaveProgress(0);
         }
         #endregion
 
@@ -43,11 +57,12 @@ namespace ConsoleGame.Classes
         /// Mimics the flow of text of old console games. 
         /// </summary>
 
-        internal int flowDelay { get; set; } = 15; // fine-tunes the speed of TextFlow
-        internal int paragraphBreak { get; set; } = 800; // fine-tunes the pause between blocks
+        internal int flowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
+        internal int paragraphBreak { get; set; } = 1000; // fine-tunes the pause between blocks
 
         internal void TextFlow(bool isFlowing)
         {
+            Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
             if (!isFlowing)
             {
                 flowDelay = 0;

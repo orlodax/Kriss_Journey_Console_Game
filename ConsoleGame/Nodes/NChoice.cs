@@ -48,6 +48,7 @@ namespace ConsoleGame.Nodes
 
             } while (key.Key != ConsoleKey.Enter);
 
+            Destructor();
             return Children.Count > 1 ? selectedRow : 0;
         }
     }

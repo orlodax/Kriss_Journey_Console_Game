@@ -19,7 +19,8 @@ namespace ConsoleGame.Nodes
                 Console.ReadKey(true);
 
             Console.ReadKey(true);
-            
+
+            Destructor();
             NodeFactory.CreateNode(this.Children[0].id);
         }
     }

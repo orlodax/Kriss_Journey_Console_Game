@@ -29,9 +29,11 @@ namespace ConsoleGame.Classes
         {
             var filePath = Path.Combine(AppContext.BaseDirectory, "textResources.json");
 
-            DB.lastchapter.number = chapterNo;
-            DB.lastchapter.iscomplete = true;
-
+            if (chapterNo > 0)
+            {
+                DB.lastchapter.number = chapterNo;
+                DB.lastchapter.iscomplete = true;
+            }
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(DB, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePath, output);
         }
@@ -56,6 +58,7 @@ namespace ConsoleGame.Classes
         public List<Choice> choices { get; set; }
         public List<Action> actions { get; set; } = new List<Action>();
         public List<Object> objects { get; set; } = new List<Object>();
+        public bool isvisited { get; set; }
     }
 
     public class Child

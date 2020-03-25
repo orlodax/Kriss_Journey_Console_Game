@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <Content Include="textResources.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

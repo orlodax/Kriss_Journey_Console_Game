@@ -44,9 +44,17 @@ namespace ConsoleGame.Nodes
                         Console.Write(action.verb + " ");
 
                     Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.CursorTop += 1;
+                    Console.CursorTop += 2;
                     Console.CursorLeft = 0;
-                    Console.WriteLine("\\> you pressed tab for help. noob.");
+
+                    if (ID == "1_02") //first action node. this if clause is to mock player just the first time they use help
+                    {
+                        Console.WriteLine("\\> you pressed tab for help. noob.");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.Write("\\>");
+                        Console.CursorLeft += 3;
+                    }
+
                     Console.CursorLeft = Console.WindowLeft + 3;
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }
@@ -81,7 +89,10 @@ namespace ConsoleGame.Nodes
                 PrepareForAction(false);
             }
             else
+            {
+                Destructor();
                 NodeFactory.CreateNode(Children[childId].id);
+            }
         }
     }
 }

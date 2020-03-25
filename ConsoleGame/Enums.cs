@@ -40,6 +40,17 @@ namespace ConsoleGame
             Cry,
             Shout,
             Sing,
+            Sniff,
+            Smell,
+            Taste,
+            Touch,
+            Listen,
+            Scream,
+            Hide,
+            Enter,
+            Exit,
+            Climb,
+            Descend
         }
     }
 }
