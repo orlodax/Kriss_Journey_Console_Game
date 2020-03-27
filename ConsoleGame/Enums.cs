@@ -50,7 +50,10 @@ namespace ConsoleGame
             Enter,
             Exit,
             Climb,
-            Descend
+            Descend,
+            Wear,
+            Remove,
+            
         }
     }
 }

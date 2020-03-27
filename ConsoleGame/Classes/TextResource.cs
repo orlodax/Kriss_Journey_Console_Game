@@ -8,9 +8,7 @@ namespace ConsoleGame.Classes
     public static class TextResource
     {
         public static bool IsReady { get; private set; }
-
         public static NodeContainer DB { get; set; }
-
         public static void Init()
         {
             if (!IsReady)
@@ -38,29 +36,33 @@ namespace ConsoleGame.Classes
             File.WriteAllText(filePath, output);
         }
     }
-
     public class NodeContainer
     {
-        public ChapterBase lastchapter { get; private set; } = new ChapterBase();
-        public List<List<NodeBase>> chapters { get; set; }
+        public ChapterBase lastchapter { get; private set; } = new ChapterBase(); //for saving progress
+        public List<List<NodeBase>> chapters { get; set; } //all of the nodes grouped by chapter
+        public List<Item> inventory { get; set; } 
     }
     public class ChapterBase
     {
         public int number { get; set; } = 0;
-        public bool iscomplete { get; set; } = false;
+        public bool iscomplete { get; set; }
+    }
+    public class Item
+    {
+        public string name { get; set; }
+        public bool had { get; set; }
     }
     public class NodeBase
     {
-        public string id { get; set; }
-        public string type { get; set; }
-        public string text { get; set; }
-        public List<Child> children { get; set; }
-        public List<Choice> choices { get; set; }
-        public List<Action> actions { get; set; } = new List<Action>();
-        public List<Object> objects { get; set; } = new List<Object>();
+        public string id { get; set; } //unique id primary key
+        public string type { get; set; } //story, choice, action...
+        public string text { get; set; } //text to be flown
+        public List<Child> children { get; set; } //next possible nodes
+        public List<Choice> choices { get; set; } //list of possible choices
+        public List<Action> actions { get; set; } = new List<Action>(); //list of possible actions
+
         public bool isvisited { get; set; }
     }
-
     public class Child
     {
         public string id { get; set; }
@@ -69,12 +71,10 @@ namespace ConsoleGame.Classes
     {
         public string desc { get; set; }
     }
-    public class Action
-    { 
-        public string verb { get; set; }
-    }
     public class Object
     {
-        public string obj { get; set; }
+        public string obj { get; set; } //object of the action
+        public string answer { get; set; } //answer for incomplete player requests 
+        public string childid { get; set; } //key for matching next node
     }
 }

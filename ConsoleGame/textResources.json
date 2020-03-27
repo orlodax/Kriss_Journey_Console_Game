@@ -3,6 +3,15 @@
     "number": "0",
     "iscomplete": "false"
   },
+  "inventory": [
+    {
+      "name": "clothes",
+      "had": "false"
+    },
+    { "name": "sword",
+      "had":  "false"
+    }
+  ],
   "chapters": [
 
     //chapter 1
@@ -10,7 +19,7 @@
       {
         "id": "0_01",
         "type": "Story",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "start of chapter one",
         "text": "-------------------------------\n|          CHAPTER 1          |\n-------------------------------\n\n\n###You are walking home after a long day.\n#There's no doubt, this hasn't been a nice day.\n#You missed every possible bus and/or train.\n#And it started raining,# too. #Of course, you do not have an umbrella with you.\n\n#Looking up at the sky, it looks like all the clouds in the world just decided to gather right above your head,#\nswallowing all of light and propagating dark vibes to the atmosphere and to the ground.",
         "children": [
@@ -20,7 +29,7 @@
       {
         "id": "0_02",
         "type": "Choice",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "rain intensify",
         "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n##You shudder, stunned with its power.\n\n##After few breathless seconds, #you breathe again \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules.\n\n##You realise you have to move fast if you don't want to end up way more soaked than you already are.\n\n\n\n(Select with arrow keys and press enter).\n\n",
         "choices": [
@@ -35,7 +44,7 @@
       {
         "id": "0_03",
         "type": "Story",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "running home",
         "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght.\n#You run even faster, trying to ignore the suffocating feeling of the water splashing down your face.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#You feel your heart bouncing in your chest and hear your now accelerated breathing.\n#\nYou are almost home, when you hear it.\n#\n$G...$C\n###\nWas it real? \n##For a split second you thought someone called on your name. It must have been all that noise...\n#\n#$G..ris..$C\n###\nIt was clearer this time!\n\n\n",
         "children": [
@@ -45,7 +54,7 @@
       {
         "id": "0_04",
         "type": "Choice",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "walking home",
         "text": "Resigned to your fate, you try to keep your head down,\ntrying to avoid being temporarily blinded by the water in your eyes.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#\nYou also try to avoid the huge pools of water that are now forming on the road,\npraying that no vehicle will rush over them splattering you with some nice mud.\n#\nYou reach the bottom of the little hill that is in front of your house.\n#You raise your eyes, and right when you are about to turn towards your gate, you see something.\n#\nOn the top of the hill, there is something...# someone...# you can't say for sure.\n##\n\n",
         "choices": [
@@ -60,7 +69,7 @@
       {
         "id": "0_05",
         "type": "Choice",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "who whispered",
         "text": "You turn around, looking for the source of the voice.\n#\nIt's hard to see something in the midst of this unexpected thunderstorm.\n#You squint your eyes, fighting against the trickles of water that run into your eyes\n#\nAfter few seconds, you think you're seeing something.# On the top of the hill in front of your house.\n#It looks like there is something... #someone...# there.\n##But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.##\n\n\n",
         "choices": [
@@ -75,7 +84,7 @@
       {
         "id": "0_07",
         "type": "Story",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "at the tree",
         "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n#\n$GChris!$C\n#\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
         "children": [
@@ -85,7 +94,7 @@
       {
         "id": "0_08",
         "type": "Story",
-        "isvisited":  "false",
+        "isvisited": "false",
         "recap": "by the gate",
         "text": "You are about to enter past your gate, to the comfort of your home at last, when you hear it!\n#\n$GChris!$C\n#\nIt feels like the wind is calling your name to the rain...\n#It feels like the sound comes from behind your shoulders, but at the same time from afar.\n\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The blinding light...\n###The deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.",
         "children": [
@@ -113,24 +122,38 @@
         "recap": "look around",
         "text": "$c\"Maybe I am dead,# afer all.\"$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
         "actions": [
-          { "verb": "look" },
-          { "verb": "walk" },
-          { "verb": "go" },
-          { "verb": "run" },
-          { "verb": "laugh" },
-          { "verb": "cry" },
-          { "verb": "shout" },
-          { "verb": "scream" }
-        ],
-        "children": [
-          { "id": "1_03" },
-          { "id": "1_04" },
-          { "id": "1_04" },
-          { "id": "1_05" },
-          { "id": "1_06" },
-          { "id": "1_07" },
-          { "id": "1_08" },
-          { "id": "1_08" }
+          {
+            "verb": "look",
+            "childid": "1_03"
+          },
+          {
+            "verb": "walk",
+            "childid": "1_04"
+          },
+          {
+            "verb": "go",
+            "childid": "1_04"
+          },
+          {
+            "verb": "run",
+            "childid": "1_05"
+          },
+          {
+            "verb": "laugh",
+            "childid": "1_06"
+          },
+          {
+            "verb": "cry",
+            "childid": "1_07"
+          },
+          {
+            "verb": "shout",
+            "childid": "1_08"
+          },
+          {
+            "verb": "scream",
+            "childid": "1_08"
+          }
         ]
       },
       {
@@ -148,7 +171,7 @@
         "type": "Story",
         "isvisited": "false",
         "recap": "go or walk",
-        "text": "You find your way downhill, following the earth path.\n\nAs you descend, the path gets narrower, meandering between an increasing number of trees.\n#\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars.\n\nAs darkness takes hold, ominous reddish glares paint the corners of the scene.\n#You understand it's the light coming from the fires. You are getting closer.\n#\nThe trees thin out and you can see the village entry a little further in front of you.",
+        "text": "You find your way downhill, following the earth path.\n\nAs you descend, the path gets narrower, meandering between an increasing number of trees.\n#\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars.\n\nAs darkness takes hold, $rominous reddish glares$C paint the corners of the scene.\n#You understand it's the light coming from the fires. You are getting closer.\n#\nThe trees thin out and you can see the village entry a little further in front of you.",
         "children": [
           { "id": "1_10" }
         ]
@@ -158,7 +181,7 @@
         "type": "Story",
         "isvisited": "false",
         "recap": "run",
-        "text": "You won't waste time. You rush downhill flying over the earth road.\n\nAs you descend, the path gets narrower, meandering between an increasing number of trees.\n#\nThis does not slow you down, nor the fact that running through the vegetation leaves\nmany marks on your skin, especially your arms and face.# You don't even realise it at the moment.\n\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars.\n\nAs darkness takes hold, ominous reddish glares paint the corners of the scene.\n#You understand it's the light coming from the fires. You are getting closer.\n#\nThe trees thin out and you can see the village entry a little further in front of you.",
+        "text": "You won't waste time. You rush downhill flying over the earth road.\n\nAs you descend, the path gets narrower, meandering between an increasing number of trees.\n#\nThis does not slow you down, nor the fact that running through the vegetation leaves\nmany marks on your skin, especially your arms and face.# You don't even realise it at the moment.\n\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars.\n\nAs darkness takes hold, $rominous reddish glares$C paint the corners of the scene.\n#You understand it's the light coming from the fires. You are getting closer.\n#\nThe trees thin out and you can see the village entry a little further in front of you.",
         "children": [
           { "id": "1_10" }
         ]
@@ -200,24 +223,38 @@
         "recap": "still there",
         "text": "You stand on this hill, like the one that is in front of your house.\n#But the similarities end there. There are no places like this around your place,\nmaybe not even in your whole nation.\n#\nYou are still wondering what happened and how did you end up here.\nYou try to keep calm, thinking about what to do next.\n",
         "actions": [
-          { "verb": "look" },
-          { "verb": "walk" },
-          { "verb": "go" },
-          { "verb": "run" },
-          { "verb": "laugh" },
-          { "verb": "cry" },
-          { "verb": "shout" },
-          { "verb": "scream" }
-        ],
-        "children": [
-          { "id": "1_03" },
-          { "id": "1_04" },
-          { "id": "1_04" },
-          { "id": "1_05" },
-          { "id": "1_06" },
-          { "id": "1_07" },
-          { "id": "1_08" },
-          { "id": "1_08" }
+          {
+            "verb": "look",
+            "childid": "1_03"
+          },
+          {
+            "verb": "walk",
+            "childid": "1_04"
+          },
+          {
+            "verb": "go",
+            "childid": "1_04"
+          },
+          {
+            "verb": "run",
+            "childid": "1_05"
+          },
+          {
+            "verb": "laugh",
+            "childid": "1_06"
+          },
+          {
+            "verb": "cry",
+            "childid": "1_07"
+          },
+          {
+            "verb": "shout",
+            "childid": "1_08"
+          },
+          {
+            "verb": "scream",
+            "childid": "1_08"
+          }
         ]
       },
       {
@@ -225,19 +262,77 @@
         "type": "Story",
         "isvisited": "false",
         "recap": "raidedvillage",
-        "text": "A small town lies in front of you.\n#Or, to better say, what is left of it.\n#\nThere is one main earth road that divides two main groups of houses, and little else.\nMany buildings are in flames or already burnt to the ground.\nFew others are seemingly intact.\n#\nThere are no vehicles.\n#No living soul is to be found around.\n#\n\nYou keep on walking, and after few seconds you spot the first one.\n##\nA man.# Lying on his back, eyes wide open, staring into nothingness.\n#An arrow stuck deep in his chest.# Clearly dead.# Few flies buzzing around his mouth already.\n##\nYou retch.",
+        "text": "A small town lies in front of you.\n#Or, to better say, what is left of it.\n#\nThere is one main earth road that divides two main groups of houses, and little else.\nMany buildings are in flames or already burnt to the ground.\nFew others are seemingly intact.\n#\nThere are no vehicles.\n#No living soul is to be found around.\n#\n\nYou keep on walking, and after few seconds you spot the first one.\n##\n$WA man.$C# Lying on his back, eyes wide open, staring into nothingness.\n#An arrow stuck deep in his chest.# $WClearly dead.$C# Few flies buzzing around his mouth already.\n##\nYou retch.",
         "children": [
           { "id": "1_11" }
         ]
       },
       {
         "id": "1_11",
-        "type": "Action",
+        "type": "Choice",
         "isvisited": "false",
         "recap": "findshelter",
-        "text": "$c\"Where the heck am I...?# What is going on?# What am I supposed to do?\"$C you ask yourself when you feel better.\n#\nYou keep on walking and realise the road is scattered with corpses.# Some kind of battle must have taken place...\n#\nYou keep on walking, slowly, appalled.# You lose track of time, while your mind tries to grasp the reality.\n#You cannot find an explanation to anything you are experiencing.\n\n\n##After a while, you find yourself leaning on an entry, empty doorframe of a house, which was somehow spared by the fire.\n#\nYou shake up, shuddering. This reminds you that you should find some kind of shelter for the night,\n#get dry,# and possibly not burnt.\n",
+        "text": "$c\"Where the heck am I...?# What is going on?# What am I supposed to do?\"$C you ask yourself when you feel better.\n#\nYou keep on walking and realise the road is scattered with corpses.# Some kind of battle must have taken place...\n#\nYou keep on walking, slowly, appalled.# You lose track of time, while your mind tries to grasp the reality.\n#You cannot find an explanation to any of the things you are experiencing.\n\n\n##After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire.\n#\nYou shake up, shuddering. This reminds you that you should find some kind of shelter for the night,\n#get dry,# and possibly not burnt.\n\n\n\n",
+        "choices": [
+          { "desc": "You had enough for today. Nothing you may find inside the house could be worse than what is outside." },
+          { "desc": "You just can't walk through that door, into the darkness..." }
+        ],
         "children": [
-          { "id": "1_11" }
+          { "id": "1_12" },
+          { "id": "1_13" }
+        ]
+      },
+      {
+        "id": "1_12",
+        "type": "Action",
+        "isvisited": "false",
+        "recap": "enter house",
+        "text": "Overcoming fear with need, you enter the silent,# dark,# house.# You don't expect to find anybody in there.\n#It's a very humble abode, earthen floor, small windows, few ornaments.\n#\nA fireplace signals the kitchen. A table, some chairs.# You suddenly realise how hungry you are.\n#The only other room is the bedroom, a simple bed, a closet.\n#All furniture pieces are made of the same wood.\n#It doesn't look like there is running water anywhere. You can't even find a toilet.\n#\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]$C",
+        "actions": [
+          {
+            "verb": "look",
+            "objects": [
+              {
+                "obj": "around",
+                "childid": "1_12"
+              }
+            ]
+          },
+          { "verb": "search" },
+          { "verb": "go" },
+          { "verb": "take" },
+          {
+            "verb": "sleep",
+            "childid": "1_14",
+            "condition": {
+              "item": "clothes",
+              "value": "true",
+              "refusal": "Insert your message here."
+            },
+            "objects": [
+              {
+                "obj": "bed",
+                "childid": "1_13"
+              }
+            ]
+          },
+          { "verb": "remove" },
+          { "verb": "wear" },
+          {
+            "verb": "rest",
+            "childid": "1_14"
+          },
+          { "verb": "drink" }
+        ]
+      },
+      {
+        "id": "1_13",
+        "type": "Story",
+        "isvisited": "false",
+        "recap": "still walking",
+        "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration.\n#\nThe fires are almost out. Hostile embers spy on you from the corner of your eye.\n#Not a sound, you feel and hear your own blood pumping in your veins.\n##\nYou reach what looks like the center of that lost little town.\n#There is a stone landmark in the middle of the square.\nYou feel a rush of gratitude when you discover it's a fountain.\n#\nYou drink in a hurry, only now realising how thirsty you were.\n#The water has a funny taste, but you are too overwhelmed to notice or care.\n#You collapse on the ground, the most possible distant from any building,# fire,# or corpse.",
+        "children": [
+          { "id": "1_13" }
         ]
       }
     ]

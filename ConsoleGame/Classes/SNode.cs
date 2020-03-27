@@ -15,7 +15,6 @@ namespace ConsoleGame.Classes
         internal List<Child> Children {get;set;}
         internal List<Choice> Choices { get; set; }
         internal List<Action> Actions { get; set; }
-        internal List<Object> Objects { get; set; }
 
         NodeBase node;
         #endregion
@@ -34,7 +33,6 @@ namespace ConsoleGame.Classes
             Children = node.children;
             Choices = node.choices;
             Actions = node.actions;
-            Objects = node.objects;
             
             if (!node.isvisited)     //disable flow effect if you are returning to the same node (see void Destructor)
                 TextFlow(true);
@@ -78,6 +76,9 @@ namespace ConsoleGame.Classes
                         case "R":
                             Console.ForegroundColor = ConsoleColor.Red; //Corolla
                             break;
+                        case "r":
+                            Console.ForegroundColor = ConsoleColor.DarkRed; 
+                            break;
                         case "G":
                             Console.ForegroundColor = ConsoleColor.Green; 
                             break;
@@ -108,6 +109,9 @@ namespace ConsoleGame.Classes
                         case "D":
                             Console.ForegroundColor = ConsoleColor.DarkGray; //menus, help
                             break;
+                        case "d":
+                            Console.ForegroundColor = ConsoleColor.Gray; //menus, help
+                            break;
                         default:
                             break;
                     }
@@ -118,7 +122,7 @@ namespace ConsoleGame.Classes
                         Console.Write(c);
                         Thread.Sleep(flowDelay);
                     }
-                    else
+                    else if (c.ToString().Equals("#"))
                     {
                         Thread.Sleep(paragraphBreak);
                     }

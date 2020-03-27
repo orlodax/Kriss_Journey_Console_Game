@@ -7,10 +7,8 @@ namespace ConsoleGame.Nodes
 {
     public class NAction : SNode
     {
-        Responder Responder;
         public NAction(NodeBase nb) : base(nb)
         {
-            Responder = new Responder(this);
             PrepareForAction(true);
         }
         void PrepareForAction(bool isFirst)
@@ -30,7 +28,8 @@ namespace ConsoleGame.Nodes
             List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
             ConsoleKeyInfo key;
 
-            do {
+            do
+            {
                 key = Console.ReadKey();
                 if (key.Key.Equals(ConsoleKey.Tab)) //if player presses tabs looking for help
                 {
@@ -58,41 +57,98 @@ namespace ConsoleGame.Nodes
                     Console.CursorLeft = Console.WindowLeft + 3;
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }
+                else if (key.Key.Equals(ConsoleKey.Backspace))  //to erase
+                {
+                    if (keysPressed.Count > 0)
+                    {
+                        keysPressed.RemoveAt(keysPressed.Count - 1);
+                        Console.Write(" ");
+                        Console.SetCursorPosition(Console.CursorLeft -= 1, Console.CursorTop);
+                    }
+                }
                 else
                     if (!key.Key.Equals(ConsoleKey.Enter))  //normal keys are registered
                         keysPressed.Add(key);
 
-            } while (key.Key != ConsoleKey.Enter);
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    //reconstruct
+                    string typed = string.Empty;
 
-            //reconstruct
-            string typed = string.Empty;
+                    for (int i = 0; i < keysPressed.Count; i++)
+                        typed += keysPressed[i].KeyChar.ToString().ToLower();
 
-            for (int i = 0; i < keysPressed.Count; i++)
-                typed += keysPressed[i].KeyChar.ToString();
+                    string id = TryAction(typed);
 
-            //try action
-            Tuple<int, int> ids = Responder.TryAction(typed);
-                
-            int actId = ids.Item1;
-            int objId = ids.Item2;
+                    if (String.IsNullOrWhiteSpace(id))
+                    {
+                        Console.Clear();
+                        TextFlow(false);
+                        PrepareForAction(false);
+                    }
+                    else
+                    {
+                        Destructor();
+                        NodeFactory.CreateNode(id);
+                    }
+                }
 
-            // for when I'll have multiple combinations
-            //if (actId > -1 && objId > -1)
+            } while (true);
+        }
+        public string TryAction(string typed)
+        {
+            char[] delimiterChars = { ' ', ',', '.', ':', '\t', '!', '\r' };
 
-            int childId = Math.Max(actId, objId);
+            string[] words = typed.Split(delimiterChars);
 
-            if (childId < 0)
+            Classes.Action act = null;
+
+            foreach (string word in words)
+                act = Actions.Find(a => a.verb == word) ?? act;    //is there a matching action available?
+
+            if (act != null)
             {
-                //reload and retry
-                Console.Clear();
-                TextFlow(false);
-                PrepareForAction(false);
+                if (act.objects.Count > 0)
+                {
+                    for (int i = 0; i < act.objects.Count; i++) //this is not O^2. only iterates over <10 x <10 items 
+                        foreach (string word in words)   //is there a matching object available? just hand me the first you find please
+                        { 
+                            if (word == act.objects[i].obj)
+                            {
+                                if (!act.Evaluate())
+                                {
+                                    //Console.CursorLeft -= 5;
+                                    Console.CursorTop -= 3;
+
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.WriteLine(act.condition.refusal);
+                                    Console.WriteLine("Press any key.");
+
+                                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                                    Console.CursorTop += 2;
+                                    Console.CursorLeft = 0;
+
+                                    Console.CursorLeft = Console.WindowLeft + 3;
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+
+                                    //TODO
+                                    //e non lo so 
+                                    Console.Clear();
+                                    TextFlow(false);
+                                    PrepareForAction(false);
+
+                                    return act.objects[i].childid;
+                                }
+                            }
+                           
+                        }
+                    return act.defaultanswer;
+                }
+                else
+                    return act.childid; //if the action has no objects, return its own (and only) childid
             }
             else
-            {
-                Destructor();
-                NodeFactory.CreateNode(Children[childId].id);
-            }
+                return string.Empty;
         }
     }
 }
