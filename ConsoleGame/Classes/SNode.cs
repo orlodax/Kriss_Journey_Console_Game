@@ -12,14 +12,14 @@ namespace ConsoleGame.Classes
         #region Properties
         internal string ID { get; set; }
         internal string Text { get; set; } = string.Empty;
-        internal List<Child> Children {get;set;}
+        internal string ChildId { get; set; }
         internal List<Choice> Choices { get; set; }
         internal List<Action> Actions { get; set; }
 
-        NodeBase node;
+        readonly NodeBase node;
         #endregion
 
-        #region CTOR & "Destructor"
+        #region CTOR & "SaveStatusOnExit"
         /// <summary>
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
@@ -28,24 +28,24 @@ namespace ConsoleGame.Classes
             Console.Clear();
             node = nb;
 
-            ID = node.id;
-            Text = node.text;
-            Children = node.children;
-            Choices = node.choices;
-            Actions = node.actions;
-            
-            if (!node.isvisited)     //disable flow effect if you are returning to the same node (see void Destructor)
-                TextFlow(true);
-            else
-                TextFlow(false);
+            ID = node.Id;
+            Text = node.Text;
+            ChildId = node.ChildId;
+            Choices = node.Choices;
+            Actions = node.Actions;
+
+            //if (!node.IsVisited)     //disable flow effect if you are returning to the same node (see void SaveStatusOnExit)
+            //    TextFlow(true);
+            //else
+            //    TextFlow(false);
             //in debug turn off the effect:
-            //TextFlow(false);
+            TextFlow(false);
         }
-        internal void Destructor()  //this to be called on exit from node to mark it as not new
+        internal void SaveStatusOnExit()  //this to be called on exit from node to mark it as not new
         {
-            string[] number = node.id.Split("_");
-            var updatingNode = TextResource.DB.chapters[Convert.ToInt32(number[0])].Find(n => n.id == node.id);
-            updatingNode.isvisited = true;
+            string[] number = node.Id.Split("_");
+            var updatingNode = TextResource.DB.Chapters[Convert.ToInt32(number[0])].Find(n => n.Id == node.Id);
+            updatingNode.IsVisited = true;
             TextResource.SaveProgress(0);
         }
         #endregion
@@ -55,16 +55,19 @@ namespace ConsoleGame.Classes
         /// Mimics the flow of text of old console games. 
         /// </summary>
 
-        internal int flowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
-        internal int paragraphBreak { get; set; } = 1000; // fine-tunes the pause between blocks
+        internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
+        internal int ParagraphBreak { get; set; } = 1000; // fine-tunes the pause between blocks
 
         internal void TextFlow(bool isFlowing)
         {
+            int flow = FlowDelay;
+            int paragraph = ParagraphBreak;
+
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
             if (!isFlowing)
             {
-                flowDelay = 0;
-                paragraphBreak = 0;
+                flow = 0;
+                paragraph = 0;
             }
             char prevChar = new Char();
 
@@ -120,11 +123,11 @@ namespace ConsoleGame.Classes
                     if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
                     {
                         Console.Write(c);
-                        Thread.Sleep(flowDelay);
+                        Thread.Sleep(flow);
                     }
                     else if (c.ToString().Equals("#"))
                     {
-                        Thread.Sleep(paragraphBreak);
+                        Thread.Sleep(paragraph);
                     }
                 }
                 prevChar = c;
@@ -140,7 +143,7 @@ namespace ConsoleGame.Classes
             foreach (char c in text)
             {
                 Console.Write(c);
-                //Thread.Sleep(flowDelay);
+                Thread.Sleep(FlowDelay);
             }
         }
         #endregion

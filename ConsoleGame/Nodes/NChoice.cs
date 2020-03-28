@@ -10,7 +10,7 @@ namespace ConsoleGame.Nodes
         int selectedRow = 0;
         public NChoice(NodeBase nb) : base(nb)
         {
-            NodeFactory.CreateNode(Children[WaitForChoice()].id);
+            NodeFactory.CreateNode(Choices[WaitForChoice()].ChildId);
         }
         int WaitForChoice()
         {
@@ -25,8 +25,7 @@ namespace ConsoleGame.Nodes
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     Console.Write("\t");
-                    Console.Write((i + 1) + ". ");
-                    TextFlow(Choices[i].desc);
+                    Console.Write((i + 1) + ". " + Choices[i].Desc);
 
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -48,8 +47,8 @@ namespace ConsoleGame.Nodes
 
             } while (key.Key != ConsoleKey.Enter);
 
-            Destructor();
-            return Children.Count > 1 ? selectedRow : 0;
+            SaveStatusOnExit();
+            return selectedRow;
         }
     }
 }

@@ -6,66 +6,78 @@ namespace ConsoleGame.Classes
 {
     public class Action
     {
-        private string _verb;
-
-        public string verb { get => _verb; set { _verb = value; SetAnswer(); } } //verb of the action
-        public string childid { get; set; } //key for matching next node
-        public string defaultanswer { get; set; } //answer for incomplete player requests 
-        public List<Object> objects { get; set; } = new List<Object>(); //objects for the verbs
-        public Condition condition { get; set; }
-        void SetAnswer()
+        public string Verb { get; set; } //verb of the action
+        public string ChildId { get; set; } //key for matching next node
+        public string DefaultAnswer { get; set; } //answer for incomplete player requests 
+        public List<Object> Objects { get; set; } = new List<Object>(); //objects for the verbs
+        public Condition Condition { get; set; } //condition for the viability of the action. normally an item
+        public Effect Effect { get; set; } //consequence from the base action
+        public string GetAnswer()           // to get response message when action requires an object and player does not provide any valid
         {
-            if (verb != null && string.IsNullOrWhiteSpace(verb))
-                switch (verb)
+            if (Verb != null && !string.IsNullOrWhiteSpace(Verb))
+                switch (Verb)
                 {
                     case "look":
-                        defaultanswer = "What shoud I look at? Where?";
-                        break;
+                        return "What shoud I look at? Where?";
                     case "take":
-                        defaultanswer = "What shoud I take?";
-                        break;
+                        return "What shoud I take?";
                     case "go":
-                        defaultanswer = "Where should I go?";
-                        break;
+                        return "Where should I go?";
                     case "search":
-                        defaultanswer = "Where should I search? For what?";
-                        break;
+                        return "Where should I search? For what?";
                     case "remove":
-                        defaultanswer = "What will I remove? from where?";
-                        break;
+                        return "What will I remove? from where?";
                     case "wear":
-                        defaultanswer = "What could I wear?";
-                        break;
+                        return "What could I wear?";
                     case "rest":
-                        defaultanswer = "Where could I lay down?";
-                        break;
+                        return "Where could I lay down?";
                     case "drink":
-                        defaultanswer = "What will I drink?";
-                        break;
+                        return "What will I drink?";
                     case "eat":
-                        defaultanswer = "What will I eat?";
-                        break;
+                        return "What will I eat?";
+                    case "sleep":
+                        return "Where can I sleep?";
                 }
+            return "Sorry can't do that.";
         }
-        public class Condition
-        {
-            public string item { get; set; }
-            public bool value { get; set; }
-            public string refusal { get; set; }
-        }
+       
 
-        public Action()
+        public bool Evaluate()                      // check according to the condition
         {
-        
-        }
-
-        public bool Evaluate()
-        {
-            var storedItem = TextResource.DB.inventory.Find(i => i.name == condition.item);
-            if (storedItem.had & condition.value)
-                return true;
-            else
+            if (Condition != null)
+            {
+                var storedItem = TextResource.DB.Inventory.Find(i => i.Name == Condition.Item);
+                if (storedItem != null)
+                {
+                    if (storedItem.Had & Condition.Value)
+                        return true;
+                }
                 return false;
+            }
+            return true;
         }
+        public void StoreItem(Effect effect)       // consequent modify of inventory
+        {
+            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
+            TextResource.DB.Inventory.Add(itemToStore);
+        }
+    }
+    public class Object
+    {
+        public string Obj { get; set; } //object of the action
+        public string Answer { get; set; } //answer for incomplete player requests 
+        public string ChildId { get; set; } //key for matching next node
+        public Effect Effect { get; set; } //consequence from the object
+    }
+    public class Condition                      //condition for the viability of the action. normally an item
+    {
+        public string Item { get; set; }        // name of the resource
+        public bool Value { get; set; }         // value of the resource
+        public string Refusal { get; set; }     // message for condition not met
+    }
+    public class Effect                         // now it affect player. normally inventory
+    {
+        public string Item { get; set; }        // name of the resource 
+        public bool Value { get; set; }         // value of the resource
     }
 }

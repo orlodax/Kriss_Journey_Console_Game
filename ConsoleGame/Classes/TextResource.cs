@@ -29,8 +29,8 @@ namespace ConsoleGame.Classes
 
             if (chapterNo > 0)
             {
-                DB.lastchapter.number = chapterNo;
-                DB.lastchapter.iscomplete = true;
+                DB.Lastchapter.Number = chapterNo;
+                DB.Lastchapter.IsComplete = true;
             }
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(DB, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePath, output);
@@ -38,43 +38,38 @@ namespace ConsoleGame.Classes
     }
     public class NodeContainer
     {
-        public ChapterBase lastchapter { get; private set; } = new ChapterBase(); //for saving progress
-        public List<List<NodeBase>> chapters { get; set; } //all of the nodes grouped by chapter
-        public List<Item> inventory { get; set; } 
+        public ChapterBase Lastchapter { get; private set; } = new ChapterBase(); //for saving progress
+        public List<List<NodeBase>> Chapters { get; set; } //all of the nodes grouped by chapter
+        public List<Item> Inventory { get; set; } 
     }
     public class ChapterBase
     {
-        public int number { get; set; } = 0;
-        public bool iscomplete { get; set; }
+        public int Number { get; set; } = 0;
+        public bool IsComplete { get; set; }
     }
     public class Item
     {
-        public string name { get; set; }
-        public bool had { get; set; }
+        public string Name { get; set; }
+        public bool Had { get; set; }
     }
     public class NodeBase
     {
-        public string id { get; set; } //unique id primary key
-        public string type { get; set; } //story, choice, action...
-        public string text { get; set; } //text to be flown
-        public List<Child> children { get; set; } //next possible nodes
-        public List<Choice> choices { get; set; } //list of possible choices
-        public List<Action> actions { get; set; } = new List<Action>(); //list of possible actions
+        public string Id { get; set; } //unique id primary key
+        public string Type { get; set; } //story, choice, action...
+        public string Text { get; set; } //text to be flown
+        public string ChildId { get; set; } // possible id (if single-next)
+        public List<Choice> Choices { get; set; } //list of possible choices
+        public List<Action> Actions { get; set; } = new List<Action>(); //list of possible actions
 
-        public bool isvisited { get; set; }
+        public bool IsVisited { get; set; }
     }
     public class Child
     {
-        public string id { get; set; }
+        public string Id { get; set; }
     }
     public class Choice
     {
-        public string desc { get; set; }
-    }
-    public class Object
-    {
-        public string obj { get; set; } //object of the action
-        public string answer { get; set; } //answer for incomplete player requests 
-        public string childid { get; set; } //key for matching next node
+        public string Desc { get; set; }
+        public string ChildId { get; set; }
     }
 }

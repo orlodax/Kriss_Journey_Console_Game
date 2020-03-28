@@ -36,15 +36,15 @@ namespace ConsoleGame
             //debug
 
 
-            if (TextResource.DB.lastchapter.iscomplete && TextResource.DB.lastchapter.number > 0)
+            if (TextResource.DB.Lastchapter.IsComplete && TextResource.DB.Lastchapter.Number > 0)
             {
                 Console.WriteLine("Welcome back, traveler.");
-                Console.WriteLine("So far, you completed chapter no. " + TextResource.DB.lastchapter.number.ToString());
+                Console.WriteLine("So far, you completed chapter no. " + (TextResource.DB.Lastchapter.Number + 1));
                 Console.WriteLine();
                 Console.WriteLine("Press any key to start the next one.");
-                Console.ReadLine();
+                Console.ReadKey(true);
 
-                NodeFactory.CreateChapter(TextResource.DB.lastchapter.number + 1); 
+                NodeFactory.CreateChapter(TextResource.DB.Lastchapter.Number + 1); 
             }
             else
             {
