@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ConsoleGame.Classes
 {
@@ -46,7 +44,7 @@ namespace ConsoleGame.Classes
         {
             if (Condition != null)
             {
-                var storedItem = TextResource.DB.Inventory.Find(i => i.Name == Condition.Item);
+                var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == Condition.Item);
                 if (storedItem != null)
                 {
                     if (storedItem.Had & Condition.Value)
@@ -59,7 +57,7 @@ namespace ConsoleGame.Classes
         public void StoreItem(Effect effect)       // consequent modify of inventory
         {
             var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
-            TextResource.DB.Inventory.Add(itemToStore);
+            DataLayer.DB.Inventory.Add(itemToStore);
         }
     }
     public class Object

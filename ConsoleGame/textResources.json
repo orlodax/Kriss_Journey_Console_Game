@@ -4,13 +4,7 @@
     "iscomplete": false
   },
   "inventory": [
-    {
-      "name": "clothes",
-      "had": false
-    },
-    { "name": "sword",
-      "had":  false
-    }
+
   ],
   "chapters": [
 
@@ -274,17 +268,13 @@
         "recap": "enter house",
         "text": "Overcoming fear with need, you enter the silent,# dark,# house.# You don't expect to find anybody in there.\n#It's a very humble abode, earthen floor, small windows, few ornaments.\n#\nA fireplace signals the kitchen. A table, some chairs.# You suddenly realise how hungry you are.\n#The only other room is the bedroom, a simple bed, a closet.\n#All furniture pieces are made of the same wood.\n#It doesn't look like there is running water anywhere. You can't even find a toilet.\n#\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]$C",
         "actions": [
-          {                  //this is a test
-            "verb": "go",
-            "childid":  "1_13"
-          },
           {
             "verb": "search",
             "objects": [
               {
                 "obj": "food",
                 "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
-                "objEffect": {
+                "effect": {
                   "item": "food",
                   "value": true
                 }
@@ -292,22 +282,27 @@
               {
                 "obj": "water",
                 "answer": "There is covered jug full of water on the kitchen counter.",
-                "objEffect": {
+                "effect": {
                   "item": "water",
                   "value": true
                 }
               },
               {
-                "obj": "clothes"
+                "obj": "clothes",
+                "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
+                "effect": {
+                  "item": "clothes",
+                  "value": true
+                }
               },
               {
-                "obj": "money"
+                "obj": "money",
+                "answer": "You can't find anything valuable."
               }
             ]
           },
           {
             "verb": "sleep",
-            "childid": "1_14",
             "condition": {
               "item": "clothes",
               "value": true,
@@ -316,17 +311,80 @@
             "objects": [
               {
                 "obj": "bed",
-                "childid": "1_13"
+                "childid": "1_14"
               }
             ]
           },
-          { "verb": "remove" },
-          { "verb": "wear" },
+          {
+            "verb": "remove",
+            "objects": [
+              {
+                "obj": "clothes",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              }
+            ],
+            "condition": {
+              "item": "clothes",
+              "value": true,
+              "refusal": "I need to find something to wear first."
+            }
+          },
+          {
+            "verb": "wear",
+            "objects": [
+              {
+                "obj": "clothes",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              }
+            ],
+            "condition": {
+              "item": "clothes",
+              "value": true,
+              "refusal": "I need to find something to wear."
+            }
+          },
           {
             "verb": "rest",
-            "childid": "1_14"
+            "condition": {
+              "item": "clothes",
+              "value": true,
+              "refusal": "I don't want to lay down with these dirty clothes on."
+            },
+            "objects": [
+              {
+                "obj": "bed",
+                "childid": "1_14"
+              }
+            ]
           },
-          { "verb": "drink" }
+          {
+            "verb": "drink",
+            "condition": {
+              "item": "water",
+              "value": true,
+              "refusal": "I need to find some water."
+            },
+            "objects": [
+              {
+                "obj": "water",
+                "answer": "You avidly drink the water, not caring about its taste."
+              }
+            ]
+          },
+          {
+            "verb": "eat",
+            "condition": {
+              "item": "food",
+              "value": true,
+              "refusal": "I need to find something to eat."
+            },
+            "objects": [
+              {
+                "obj": "food",
+                "answer": "You devour what you have found."
+              }
+            ]
+          }
         ]
       },
       {
@@ -334,8 +392,84 @@
         "type": "Story",
         "isvisited": false,
         "recap": "still walking",
-        "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration.\n#\nThe fires are almost out. Hostile embers spy on you from the corner of your eye.\n#Not a sound, you feel and hear your own blood pumping in your veins.\n##\nYou reach what looks like the center of that lost little town.\n#There is a stone landmark in the middle of the square.\nYou feel a rush of gratitude when you discover it's a fountain.\n#\nYou drink in a hurry, only now realising how thirsty you were.\n#The water has a funny taste, but you are too overwhelmed to notice or care.\n#You collapse on the ground, the most possible distant from any building,# fire,# or corpse.",
-        "childid": "1_13" 
+        "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration.\n#\nThe fires are almost out. Hostile embers spy on you from the corner of your eye.\n#Not a sound, you feel and hear your own blood pumping in your veins.\n##\nYou reach what looks like the center of that lost little town.\n#There is a stone landmark in the middle of the square.\nYou feel a rush of gratitude when you discover it's a fountain.\n#\nYou drink in a hurry, only now realising how thirsty you were.\n#The water has a funny taste, but you are too overwhelmed to notice orterra calpestata care.\n#You collapse on the ground, the most possible distant from any building,# fire,# or corpse.",
+        "childid": "1_15"
+      },
+      {
+        "id": "1_14",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "awake(house)",
+        "text": "...##\n\n$G<<Wake up...>>$c##\n\n\"Who's calling...?\"$C you mutter sitting up on the bed, fighting to regain full consciousness.\n#You open your eyes, and you become freshly aware of the current situtation.\n#It feel like a boulder has been thrown down on you,# again.\n#\nYou don't know how long you've been asleep.# The sun must be high up already,\njudging from the light that filters through the thick, dirty window.\n#\nYou don't want to spend another minute in there, so you decide to hit the road>\n#\nOnce outside, you hesitate just a moment, spectating the wasted scenario.\n#Many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away.\n#\nIt looks like the fires are completely extinguished now.\nThe acrid smell of smoke is still all around you.\n#You need to move. You start walking away, in the same direction as yesterday.",
+        "childid": "1_16"
+      },
+      {
+        "id": "1_15",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "awake(outside)",
+        "text": "...##\n\n$G<<Wake up...>>$c##\n\n\"Who's calling...?\"$C you mutter, fighting to regain full consciousness.\n#You open your eyes, and you become freshly aware of the current situtation.\n#It feel like a boulder has been thrown down on you,# again.\n#\nYou don't know how long you've been asleep.# The sun is already high.\n#You slowly get back on your feet, aching after a night spent in an uncomfortable position.\nYou just hope you didn't get a cold or something worse having slept with your wet clothes out in the open.\n#Luckily, wherever you are, the season is warm.\n##\n$c<<Wherever I am...>>$C You shake your head and start moving.\n#You just resolutely decided you can't remain there for not even just a second.\nThere are many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away.\n#\nIt looks like the fires are completely extinguished now.\nThe acrid smell of smoke is still all around you.\n#You quickly walk away, in the same direction as yesterday.",
+        "childid": "1_16"
+      },
+      {
+        "id": "1_16",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "exit village",
+        "text": "You are just leaving the last houses of the village behind,\nwhen you notice something further away.#\n\nWhen you are close enough, you see they are freshly dug graves.# A dozen, maybe.\n#\nAll there's to see are just piles of earth. No tombstones. Only now nameless corpses.#\n\nYou look around, thinking about the fact that someone $Whad$C to be there to bury the bodies.\nObviously, they could not have dug those holes up and then taken turns in burying each other...$\n\nYou laugh at this thought.\n#But then a shiver runs down your spine, wondering if that was what had actually happened.\n\nYou manage to get yourself distracted by studying the ground.\nIt looks trodden and loose, as if there was a quite big number of people not so long ago.\nThere are two distinctive, neat marks. They look like...\nThey look like the mark two wheels of a chariot would leave behind..!#\n\nYou follow them with your eyes, disappearing in the distance in front of you,\nin an open, semi-desertic landscape.\n\nYou don't know where else to go, so you start following the trail.\nLuckily, even a child could do that.",
+        "childid": "1_17"
+      },
+      {
+        "id": "1_17",
+        "type": "Choice",
+        "isvisited": false,
+        "recap": "reach camp",
+        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster##.\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhytm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# They are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.\n\n\n",
+        "choices": [
+          {
+            "desc": "It's too dangerous, you don't want to end up in one of those cages.",
+            "childid": "1_18"
+          },
+          {
+            "desc": "You can't just leave them to their fate. You must help them.",
+            "childid": "1_19"
+          }
+        ]
+      },
+      {
+        "id": "1_18",
+        "type": "Dialogue",
+        "isvisited": false,
+        "recap": "exit village",
+        "text": ".",
+        "dialogues": [
+          {
+            "actor": "Corolla",
+            "lineid": "0",
+            "line": "I wouldn't do it, if I were you.",
+            //possible childid, normally useless
+            "replies": [
+              {
+                "line": "blalbv",
+                //"childid": "something"
+                "nextline": "1"
+              },
+              {
+                "line": "blalbv",
+                //"childid": "something"
+                "nextline": "2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1_19",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "exit village",
+        "text": ".",
+        "childid": "1_19"
       }
     ]
 

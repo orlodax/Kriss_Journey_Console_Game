@@ -10,19 +10,19 @@ namespace ConsoleGame.Classes
         {
             string id = (number-1).ToString() + "_01";
 
-            NodeBase nb = TextResource.DB.Chapters[0].Find(n => n.Id == id);
+            NodeBase nb = DataLayer.DB.Chapters[0].Find(n => n.Id == id);
             return CurrentNode = new NStory(nb);
         }
 
         public static SNode CreateNode(string id)
         {
             var chapIndex = Convert.ToInt32(id[0].ToString());
-            NodeBase nb = TextResource.DB.Chapters[chapIndex].Find(n => n.Id == id);
+            NodeBase nb = DataLayer.DB.Chapters[chapIndex].Find(n => n.Id == id);
 
             //if first node of chapter, save progress
             string[] numbers = id.Split("_");
             if (Convert.ToInt32(numbers[1]) == 1)
-                TextResource.SaveProgress(Convert.ToInt32(numbers[0])); //chapter index 0 based
+                DataLayer.SaveProgress(Convert.ToInt32(numbers[0])); //chapter index 0 based
 
             switch (nb.Type)
             {
@@ -30,8 +30,8 @@ namespace ConsoleGame.Classes
                     return CurrentNode = new NStory(nb);
                 case "Choice":
                     return CurrentNode = new NChoice(nb);
-                case "Direction":
-                    return CurrentNode = new NDirection(nb);
+                case "Dialogue":
+                    return CurrentNode = new NDialogue(nb);
                 case "Action":
                     return CurrentNode = new NAction(nb);
                 default:

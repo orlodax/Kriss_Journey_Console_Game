@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Configurations>Debug;Release;L</Configurations>
     <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>sword.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

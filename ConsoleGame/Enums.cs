@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleGame
+﻿namespace ConsoleGame
 {
     public static class Enums
     {
-        public enum NodeTypes
-        { 
-            Story,
-            Action,
-            Choice,
-            Direction
-        }
         public enum Actions
         { 
             Look,

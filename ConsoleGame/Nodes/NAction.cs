@@ -1,7 +1,6 @@
 ﻿using ConsoleGame.Classes;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleGame.Nodes
 {
@@ -101,56 +100,50 @@ namespace ConsoleGame.Nodes
 
             string[] words = typed.Split(delimiterChars);
 
-            foreach (string word in words)                          //is there one word matching one action?
+            foreach (string word in words)                                  //is there one word matching one action?
                 act = Actions.Find(a => a.Verb == word) ?? act;
 
-            if (act != null)                    //if there's an action available...
+            if (act != null)                                                //if there's an action available...
             {
-                if (act.Objects.Count == 0)     //...and is objectless...
+                if (act.Objects.Count == 0)                                 //...and is objectless...
                 {
-                    if(act.Effect != null)             //in case the action has an Effect (inventory)
+                    if(act.Effect != null)                                  //in case the action has an Effect (inventory)
                         act.StoreItem(act.Effect);
 
-                    SaveStatusOnExit();         //...just do it
+                    SaveStatusOnExit();                                     //...just do it
                     NodeFactory.CreateNode(act.ChildId);
                 }
                 else
-                {                               //...otherwise, examine Objects 
-                    for (int i = 0; i < act.Objects.Count; i++)     //this is not O^2. only iterates over <10 x <10 items 
+                {                                                           //...otherwise, examine Objects 
+                    for (int i = 0; i < act.Objects.Count; i++)             //this is not O^2. only iterates over <10 x <10 items 
                     {
-                        foreach (string word in words)              //is there a matching object available? just hand me the first you find please
+                        foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                         {
-                            if (word == act.Objects[i].Obj)         //the action is right, and there is a acceptable object specified
+                            if (word == act.Objects[i].Obj)                 //the action is right, and there is a acceptable object specified
                             {
-                                if (!act.Evaluate())                //if for some reason Kriss can't do it, say it...
-                                {
+                                if (!act.Evaluate())                        //if for some reason Kriss can't do it, say it...
                                     CustomRefusal(act.Condition.Refusal);
-                                }
-                                else                                //...otherwise, do it
+                               
+                                else                                        //...otherwise, do it
                                 {
-                                    if (act.Objects[i].ChildId != null)      //if the action does not lead to another node
-                                    {
-                                        if (act.Objects[i].Effect != null)             //in case the action has an Effect (inventory)
-                                            act.StoreItem(act.Objects[i].Effect);
+                                    if (act.Objects[i].Effect != null)      //in case the obj has an Effect (inventory)
+                                        act.StoreItem(act.Objects[i].Effect);
 
+                                    if (act.Objects[i].ChildId != null)     //if the action leads to another node
+                                    {
                                         SaveStatusOnExit();
                                         NodeFactory.CreateNode(act.Objects[i].ChildId);
                                     }
-                                    else
-                                    {
-                                        if (act.Objects[i].Effect != null)   //in case the obj has an Effect (inventory)
-                                            act.StoreItem(act.Objects[i].Effect);
-
+                                    else                                    //if the action causes only an effect
                                         DisplaySuccess(act.Objects[i]);
-                                    }
                                 }
                             }
                         }
                     }
-                    CustomRefusal(act.GetAnswer());          //the action is right, but no required object is specified
+                    CustomRefusal(act.GetAnswer());                         //the action is right, but no required object is specified
                 }
             }
-            else                                //if there's no action available, redraw node and display standard refuse
+            else                                                            //if there's no action available, redraw node and display standard refuse
             {
                 Console.Clear();
                 TextFlow(false);
@@ -165,8 +158,8 @@ namespace ConsoleGame.Nodes
             Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            TextFlow("<<" + refusal + ">>");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            TextFlow(true, "<<" + refusal + ">>");
             Console.WriteLine();
             Console.WriteLine();
 
@@ -181,7 +174,7 @@ namespace ConsoleGame.Nodes
             Console.CursorLeft = Console.WindowLeft;
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            TextFlow(obj.Answer);
+            TextFlow(true, obj.Answer);
             Console.WriteLine();
             Console.WriteLine();
 

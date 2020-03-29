@@ -1,6 +1,5 @@
 ﻿using ConsoleGame.Classes;
 using System;
-using System.IO;
 
 namespace ConsoleGame
 {
@@ -8,7 +7,7 @@ namespace ConsoleGame
     {
         public Menu()
         {
-            TextResource.Init();
+            DataLayer.Init();
            
             ShowMenu();
         }
@@ -32,19 +31,19 @@ namespace ConsoleGame
 
 
             //debug: start from
-            NodeFactory.CreateNode("1_12");
+            NodeFactory.CreateNode("1_17");
             //debug
 
 
-            if (TextResource.DB.Lastchapter.IsComplete && TextResource.DB.Lastchapter.Number > 0)
+            if (DataLayer.DB.Lastchapter.IsComplete && DataLayer.DB.Lastchapter.Number > 0)
             {
                 Console.WriteLine("Welcome back, traveler.");
-                Console.WriteLine("So far, you completed chapter no. " + (TextResource.DB.Lastchapter.Number + 1));
+                Console.WriteLine("So far, you completed chapter no. " + (DataLayer.DB.Lastchapter.Number + 1));
                 Console.WriteLine();
                 Console.WriteLine("Press any key to start the next one.");
                 Console.ReadKey(true);
 
-                NodeFactory.CreateChapter(TextResource.DB.Lastchapter.Number + 1); 
+                NodeFactory.CreateChapter(DataLayer.DB.Lastchapter.Number + 1); 
             }
             else
             {

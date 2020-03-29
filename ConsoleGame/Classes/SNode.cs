@@ -15,6 +15,7 @@ namespace ConsoleGame.Classes
         internal string ChildId { get; set; }
         internal List<Choice> Choices { get; set; }
         internal List<Action> Actions { get; set; }
+        internal List<Dialogue> Dialogues { get; set; }
 
         readonly NodeBase node;
         #endregion
@@ -33,20 +34,21 @@ namespace ConsoleGame.Classes
             ChildId = node.ChildId;
             Choices = node.Choices;
             Actions = node.Actions;
+            Dialogues = node.Dialogues;
 
-            //if (!node.IsVisited)     //disable flow effect if you are returning to the same node (see void SaveStatusOnExit)
-            //    TextFlow(true);
-            //else
-            //    TextFlow(false);
+            if (!node.IsVisited)     //disable flow effect if you are returning to the same node (see void SaveStatusOnExit)
+                TextFlow(true);
+            else
+                TextFlow(false);
             //in debug turn off the effect:
-            TextFlow(false);
+            //TextFlow(false);
         }
         internal void SaveStatusOnExit()  //this to be called on exit from node to mark it as not new
         {
             string[] number = node.Id.Split("_");
-            var updatingNode = TextResource.DB.Chapters[Convert.ToInt32(number[0])].Find(n => n.Id == node.Id);
+            var updatingNode = DataLayer.DB.Chapters[Convert.ToInt32(number[0])].Find(n => n.Id == node.Id);
             updatingNode.IsVisited = true;
-            TextResource.SaveProgress(0);
+            DataLayer.SaveProgress(0);
         }
         #endregion
 
@@ -58,8 +60,11 @@ namespace ConsoleGame.Classes
         internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
         internal int ParagraphBreak { get; set; } = 1000; // fine-tunes the pause between blocks
 
-        internal void TextFlow(bool isFlowing)
+        internal void TextFlow(bool isFlowing, string text = "default")
         {
+            if (text == "default")
+                text = Text;
+
             int flow = FlowDelay;
             int paragraph = ParagraphBreak;
 
@@ -71,7 +76,7 @@ namespace ConsoleGame.Classes
             }
             char prevChar = new Char();
 
-            foreach (char c in Text)
+            foreach (char c in text)
             {
                 if (prevChar.ToString().Equals("$"))
                     switch (c.ToString())
@@ -131,19 +136,6 @@ namespace ConsoleGame.Classes
                     }
                 }
                 prevChar = c;
-            }
-        }
-
-        /// <summary>
-        /// Overload of the above, it displays custom text, not just the Text property in the SNode instance
-        /// </summary>
-        /// <param name="text"> guess what. the text to print</param>
-        internal void TextFlow(string text)
-        {
-            foreach (char c in text)
-            {
-                Console.Write(c);
-                Thread.Sleep(FlowDelay);
             }
         }
         #endregion
