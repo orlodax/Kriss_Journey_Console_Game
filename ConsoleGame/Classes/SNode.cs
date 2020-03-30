@@ -1,4 +1,5 @@
-﻿using ConsoleGame.Nodes;
+﻿using ConsoleGame.Models;
+using ConsoleGame.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -15,7 +16,7 @@ namespace ConsoleGame.Classes
         internal string Text { get; set; } = string.Empty;
         internal string ChildId { get; set; }
         internal List<Choice> Choices { get; set; }
-        internal List<Action> Actions { get; set; }
+        internal List<Models.Action> Actions { get; set; }
         internal List<Dialogue> Dialogues { get; set; }
 
         readonly NodeBase node;
@@ -66,79 +67,82 @@ namespace ConsoleGame.Classes
             if (text == "default")
                 text = Text;
 
-            int flow = FlowDelay;
-            int paragraph = ParagraphBreak;
-
-            if (this is NStory)
-                Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
-            
-            if (!isFlowing)
+            if (text != null)
             {
-                flow = 0;
-                paragraph = 0;
-            }
-            char prevChar = new Char();
+                int flow = FlowDelay;
+                int paragraph = ParagraphBreak;
 
-            foreach (char c in text)
-            {
-                if (prevChar.ToString().Equals("$"))
-                    switch (c.ToString())
-                    {
-                        case "R":
-                            Console.ForegroundColor = ConsoleColor.Red; //Corolla
-                            break;
-                        case "r":
-                            Console.ForegroundColor = ConsoleColor.DarkRed; 
-                            break;
-                        case "G":
-                            Console.ForegroundColor = ConsoleColor.Green; 
-                            break;
-                        case "B":
-                            Console.ForegroundColor = ConsoleColor.Blue; //Theo
-                            break;
-                        case "C":
-                            Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator
-                            break;
-                        case "c":
-                            Console.ForegroundColor = ConsoleColor.Cyan; //yourself
-                            break;
-                        case "M":
-                            Console.ForegroundColor = ConsoleColor.Magenta;
-                            break;
-                        case "Y":
-                            Console.ForegroundColor = ConsoleColor.Yellow; //Smiurl
-                            break;
-                        case "K":
-                            Console.ForegroundColor = ConsoleColor.Black;
-                            break;
-                        case "W":
-                            Console.ForegroundColor = ConsoleColor.White;
-                            break;
-                        case "S":
-                            Console.BackgroundColor = ConsoleColor.White;
-                            break;
-                        case "D":
-                            Console.ForegroundColor = ConsoleColor.DarkGray; //menus, help
-                            break;
-                        case "d":
-                            Console.ForegroundColor = ConsoleColor.Gray; //menus, help
-                            break;
-                        default:
-                            break;
-                    }
-                else
+                if (this is NStory)
+                    Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
+
+                if (!isFlowing)
                 {
-                    if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
-                    {
-                        Console.Write(c);
-                        Thread.Sleep(flow);
-                    }
-                    else if (c.ToString().Equals("#"))
-                    {
-                        Thread.Sleep(paragraph);
-                    }
+                    flow = 0;
+                    paragraph = 0;
                 }
-                prevChar = c;
+                char prevChar = new Char();
+
+                foreach (char c in text)
+                {
+                    if (prevChar.ToString().Equals("$"))
+                        switch (c.ToString())
+                        {
+                            case "R":
+                                Console.ForegroundColor = ConsoleColor.Red; //Corolla
+                                break;
+                            case "r":
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                break;
+                            case "G":
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                break;
+                            case "B":
+                                Console.ForegroundColor = ConsoleColor.Blue; //Theo
+                                break;
+                            case "C":
+                                Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator
+                                break;
+                            case "c":
+                                Console.ForegroundColor = ConsoleColor.Cyan; //yourself
+                                break;
+                            case "M":
+                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                break;
+                            case "Y":
+                                Console.ForegroundColor = ConsoleColor.Yellow; //Smiurl
+                                break;
+                            case "K":
+                                Console.ForegroundColor = ConsoleColor.Black;
+                                break;
+                            case "W":
+                                Console.ForegroundColor = ConsoleColor.White;
+                                break;
+                            case "S":
+                                Console.BackgroundColor = ConsoleColor.White;
+                                break;
+                            case "D":
+                                Console.ForegroundColor = ConsoleColor.DarkGray; //menus, help
+                                break;
+                            case "d":
+                                Console.ForegroundColor = ConsoleColor.Gray; //menus, help
+                                break;
+                            default:
+                                break;
+                        }
+                    else
+                    {
+                        if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
+                        {
+                            Console.Write(c);
+                            Thread.Sleep(flow);
+                        }
+                        else if (c.ToString().Equals("#"))
+                        {
+                            Thread.Sleep(paragraph);
+                        }
+                    }
+                    prevChar = c;
+                }
             }
         }
         #endregion

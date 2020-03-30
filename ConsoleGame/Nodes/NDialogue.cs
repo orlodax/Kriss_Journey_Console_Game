@@ -1,4 +1,5 @@
 ﻿using ConsoleGame.Classes;
+using ConsoleGame.Models;
 using System;
 using System.Threading;
 
@@ -116,6 +117,16 @@ namespace ConsoleGame.Nodes
                 if (Dialogues[lineId].PreComment != null)
                 {
                     TextFlow(isLineFlowing, Dialogues[lineId].PreComment);
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+                if (Dialogues[lineId].Line != null)
+                {
+                    TextFlow(isLineFlowing, Dialogues[lineId].Line);
+                }
+                if (Dialogues[lineId].Comment != null)
+                {
+                    TextFlow(isLineFlowing, Dialogues[lineId].Comment);
                     Console.WriteLine();
                     Console.WriteLine();
                 }

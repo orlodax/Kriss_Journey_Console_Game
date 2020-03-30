@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleGame.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -62,45 +63,5 @@ namespace ConsoleGame.Classes
         public string Name { get; set; }
         public bool Had { get; set; }
     }
-    public class NodeBase
-    {
-        public string Id { get; set; } //unique id primary key
-        public string Type { get; set; } //story, choice, action...
-        public string Text { get; set; } //text to be flown
-        public string ChildId { get; set; } //possible id (if single-next)
-        public List<Choice> Choices { get; set; } //list of possible choices
-        public List<Action> Actions { get; set; } = new List<Action>(); //list of possible actions
-        public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
-
-        public bool IsVisited { get; set; }
-    }
-    public class Child
-    {
-        public string Id { get; set; }
-    }
-    public class Choice
-    {
-        public string Desc { get; set; }
-        public string ChildId { get; set; }
-    }
-    public class Dialogue
-    { 
-        public string Actor { get; set; }
-        public int LineId { get; set; }
-        public bool IsExchange { get; set; }
-        public string PreComment { get; set; }
-        public string Comment { get; set; }
-        public string ChildId { get; set; }
-        public string Line { get; set; }
-        public List<Reply> Replies { get; set; }
-    }
-    public class Reply
-    { 
-        public string Actor { get; set; }
-        public string Line { get; set; }
-        public string Comment { get; set; }
-        public string ChildId { get; set; }
-        public int NextLine { get; set; }
-    }
-
+    
 }

@@ -440,7 +440,7 @@
         "id": "1_18",
         "type": "Dialogue",
         "isvisited": false,
-        "recap": "exit village",
+        "recap": "meet corolla",
         "text": "",
         "dialogues": [
           {
@@ -473,7 +473,8 @@
             "replies": [
               {
                 "actor": "Jeorghe",
-                "line": "What the heck is going on here?!"
+                "line": "What the heck is going on here?!",
+                "comment":  "A huge man appears. His malevolent scowl directed at her as at you."
               },
               {
                 "actor": "Corolla",
@@ -491,7 +492,7 @@
               },
               {
                 "actor": "Jeorghe",
-                "line": "Who this filth is??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
+                "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
                 "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who does not want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
                 "childid": "1_19"
               }
@@ -501,11 +502,111 @@
       },
       {
         "id": "1_19",
-        "type": "Action",
+        "type": "Choice",
         "isvisited": false,
-        "recap": "jumping dialogue",
-        "text": "text",
-        "childid": "1_19"
+        "recap": "jeorghe attack",
+        "text": "Jeorghe, a mass of muscles, rises his improvised weapon and lunges for you.#\n\nIn emergency mode, your brain instantly tells you that you need to act quickly.#\nAdrenaline starts pumping through your every vein.#\n\nWhere to go, in the middle of a desert?\n\n\n",
+        "choices": [
+          {
+            "desc": "There's no way you can beat him. Run for your life...!",
+            "childid": "1_20"
+          },
+          {
+            "desc": "Fight that thug! Who does he think he is?",
+            "childid": "1_21"
+          }
+        ]
+      },
+      {
+        "id": "1_20",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "jeorghe attack",
+        "text": "Panicking, you dart away, looking for any kind of cover.#\nThe brute chases you, smashing everything he ecounters on his path and/or swings.\nYou slide under the carriages,# then run between the nearest tents...##\n\nIt's all useless. He is always one step behind you.#\nFor one split second you get distracted by the noises he makes, and you turn your head a little to watch him.#\nIt soon proves to be a mistake.##\n\nLooking over your shoulder like that, you cannot see another man suddenly appearing in front of you.#\nHe doesn't even try to stop you.# He just stands there with arms crossed letting you stumble and fall to his feet,\nlike a prey trapped for its hunter.##\nYou realise you are surrounded.# There's no way out.#\n\nDuring a few instants, you can observe every detail of his face.#\n\nHis devious grin, anticipating with perverse joy what he's about to do.#\nHis stench, engulfing you as he rushes towards you.#\nTime seems to dilate allowing you to count every hateful, alcoholic capillary of his evil eyes.##\n\nYou raise your arm, as it could protect you from what it's surely going to happen.##\n\n\n",
+          "childid": "1_22"
+      },
+      {
+        "id": "1_21",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "game over",
+        "text": "You raise your fists ready to engage your aggressor.#\n\nDuring a few instants, you can observe every detail of his face.#\n\nHis devious grin, anticipating with perverse joy what he's about to do.#\nHis stench, engulfing you as he rushes towards you.#\nTime seems to dilate allowing you to count every hateful, alcoholic capillary of his evil eyes.##\n\n\nThen, it's all over in an instant.#\nYou don't even have the time to think about the absurdity of the very thought of challenging such a brute.#\nThe strike, so strong, you don't even feel it.##\n\n\n$dYou should have run.##\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+        "childid": "1_01"
+      },
+      {
+        "id": "1_22",
+        "type": "Dialogue",
+        "isvisited": false,
+        "recap": "smiurl rescues",
+        "dialogues": [
+          {
+            "actor": "Corolla",
+            "isexchange": true,
+            "lineid": 0,
+            "precomment": "Suddenly, a hissing sound wounds the air!#\nA flying string appears out of nothing, winding tightly around Jeorghe's chest,#\nwith stones at its ends which hit him hard when they terminate their spiraling rotation.#\n\nLosing balance, the man falls down on one knee, and lets go of the log.#\n\nThen some kind of $Yshriek$C is heard, and something you can't identify hits the man again, knocking him down,\nletting him growling and wriggling furiously.",
+            "line": "Make way, you morons...",
+            "comment": "you hear the girl from before say as she approached,\nbreaking into the circle of spectators that has formed.#\n\nThen, everybody backs off, as someone new is arriving.#\nYou can't see who it is at first, you can only hear an odd jingling sound getting nearer.#\nThen he steps into the circle.#\nYou immediately recognise the Chief:\nproud posture, well-kept hair and beard, intelligent, disdainful expression, at times malign, at times ironic.#\nHe's tall, more slender than all the other men around.#\nHe wears several jewelry around his neck,#\nand he carries a $cbig sword$C in its sheath and a chain (the source of the jingling) both hanging from his belt.#\n\nHe stops a few steps from you, his hands on his hips, observing the scene with curiosity.",
+            "replies": [
+              {
+                "actor": "Chief",
+                "line": "What have you guys been up to? Look at you poor little Jeorghe...!#\nI think I need to choose better guards for myself!",
+                "comment": "he mocks his man, kicking him a little to tease him. Jeorghe grunts with unspeakeable wrath:"
+              },
+              {
+                "actor": "Jeorghe",
+                "line": "Release me! Now!!",
+                "comment": "The Chief nods at his men,\n#and Jeorghe gets untied and escorted, not withouth any difficulties, somewhere else. "
+              },
+              {
+                "actor": "Chief",
+                "line": "Who are you? And, please, stand up now...",
+                "comment": "he asks now, gesturing carelessly, and turning abruptly towards you."
+              },
+              {
+                "actor": "Kriss",
+                "line": "My name is Chris...",
+                "comment": "you answer, after hesitating for just an instant."
+              },
+              {
+                "actor": "Chief",
+                "line": "How come you happen to be here?",
+                "comment": "you answer, after hesitating for just an instant."
+              }
+            ]
+            //},
+            //{
+            //  "actor": "Chief",
+            //  "isexchange": true,
+            //  "lineid": 1,
+            //  "replies": [
+            //    {
+            //      "actor": "Chief",
+            //      "line": "What have you guys been up to? Look at you poor little Jeorghe...!#\nI think I need to choose better guards for myself!",
+            //      "comment": "he mocks his man, kicking him a little to tease him. Jeorghe grunts with unspeakeable wrath:"
+            //    },
+            //    {
+            //      "actor": "Jeorghe",
+            //      "line": "Release me! Now!!",
+            //      "comment": "The Chief nods at his men,\n#and Jeorghe gets untied and escorted, not withouth any difficulties, somewhere else. "
+            //    },
+            //    {
+            //      "actor": "Chief",
+            //      "line": "Who are you? And, please, stand up now...",
+            //      "comment": "he asks now, gesturing carelessly, and turning abruptly towards you."
+            //    },
+            //    {
+            //      "actor": "Kriss",
+            //      "line": "My name is Chris...",
+            //      "comment": "you answer, after hesitating for just an instant."
+            //    },
+            //    {
+            //      "actor": "Chief",
+            //      "line": "How come you happen to be here?",
+            //      "comment": "you answer, after hesitating for just an instant."
+            //    }
+            //  ]
+          }
+        ]
       }
     ]
 

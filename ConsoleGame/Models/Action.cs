@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ConsoleGame.Classes;
+using System.Collections.Generic;
 
-namespace ConsoleGame.Classes
+namespace ConsoleGame.Models
 {
     public class Action
     {

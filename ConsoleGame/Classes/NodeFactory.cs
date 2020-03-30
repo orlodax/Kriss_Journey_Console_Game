@@ -1,4 +1,5 @@
-﻿using ConsoleGame.Nodes;
+﻿using ConsoleGame.Models;
+using ConsoleGame.Nodes;
 using System;
 
 namespace ConsoleGame.Classes

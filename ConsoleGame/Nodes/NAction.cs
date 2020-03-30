@@ -1,4 +1,5 @@
 ﻿using ConsoleGame.Classes;
+using ConsoleGame.Models;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +7,7 @@ namespace ConsoleGame.Nodes
 {
     public class NAction : SNode
     {
-        Classes.Action act = null;
+        Models.Action act = null;
 
         public NAction(NodeBase nb) : base(nb)
         {
@@ -165,7 +166,7 @@ namespace ConsoleGame.Nodes
 
             PrepareForAction(true); //display prompt without standard refuse
         }
-        void DisplaySuccess(Classes.Object obj) 
+        void DisplaySuccess(Models.Object obj) 
         {
             Console.Clear();                  //redraw node 
             TextFlow(false);
