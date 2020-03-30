@@ -9,7 +9,7 @@ namespace ConsoleGame.Classes
         public static bool IsReady { get; private set; }
         public static Database DB { get; set; }
 
-        public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; }
+        public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
         public static void Init()
         {
             if (!IsReady)
@@ -87,13 +87,18 @@ namespace ConsoleGame.Classes
     { 
         public string Actor { get; set; }
         public int LineId { get; set; }
+        public bool IsExchange { get; set; }
+        public string PreComment { get; set; }
+        public string Comment { get; set; }
         public string ChildId { get; set; }
         public string Line { get; set; }
         public List<Reply> Replies { get; set; }
     }
     public class Reply
     { 
+        public string Actor { get; set; }
         public string Line { get; set; }
+        public string Comment { get; set; }
         public string ChildId { get; set; }
         public int NextLine { get; set; }
     }

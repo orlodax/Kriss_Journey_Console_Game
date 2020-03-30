@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleGame.Nodes;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -68,7 +69,9 @@ namespace ConsoleGame.Classes
             int flow = FlowDelay;
             int paragraph = ParagraphBreak;
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
+            if (this is NStory)
+                Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
+            
             if (!isFlowing)
             {
                 flow = 0;

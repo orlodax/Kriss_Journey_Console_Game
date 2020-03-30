@@ -31,7 +31,7 @@ namespace ConsoleGame
 
 
             //debug: start from
-            NodeFactory.CreateNode("1_17");
+            NodeFactory.CreateNode("1_18");
             //debug
 
 

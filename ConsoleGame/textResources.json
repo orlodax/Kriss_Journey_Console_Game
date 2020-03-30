@@ -424,7 +424,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "reach camp",
-        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster##.\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhytm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# They are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.\n\n\n",
+        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster##.\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhytm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# Women,# children.#\nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.\n\n\n",
         "choices": [
           {
             "desc": "It's too dangerous, you don't want to end up in one of those cages.",
@@ -441,23 +441,59 @@
         "type": "Dialogue",
         "isvisited": false,
         "recap": "exit village",
-        "text": ".",
+        "text": "",
         "dialogues": [
           {
             "actor": "Corolla",
-            "lineid": "0",
+            "lineid": 0,
             "line": "I wouldn't do it, if I were you.",
-            //possible childid, normally useless
+            "comment": "A voice behind you.# You freeze.#\nAfter few paralyzing istants, you slowly turn around, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently,\nhead tilted on one side, leaning on one of the carriages.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her left hip protruding outwards,#\nsince she's leaning whit her right elbow on one of the wheels.#\n\nInteresting posture, self confident... with such a delicious narrow waist..."
+          },
+          {
+            "actor": "Corolla",
+            "lineid": 1,
+            "line": "You know? The Chief could express severe disagreement... and heaven knows what he would do to you!\nNot to mention what Jeorghe would do to you too...#",
+            "comment": "With this words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognize her accent.",
             "replies": [
               {
-                "line": "blalbv",
-                //"childid": "something"
-                "nextline": "1"
+                "line": "Wai... Wait a second! You won't tell him right? I, erm...!",
+                "nextline": 2
               },
               {
-                "line": "blalbv",
-                //"childid": "something"
-                "nextline": "2"
+                "line": "Rrright! Hey I was just looking... Wait, have we met before?",
+                "nextline": 2
+              }
+            ]
+          },
+          {
+            "actor": "Jeorghe",
+            "isexchange": true,
+            "lineid": 2,
+            "precomment": "$CThe girl is about to answer, when a third rough, hoarse voice steps in.#\n\n",
+            "replies": [
+              {
+                "actor": "Jeorghe",
+                "line": "What the heck is going on here?!"
+              },
+              {
+                "actor": "Corolla",
+                "line": "Jeorghe, you're always so dear...",
+                "comment": "she answers back with sarcasm."
+              },
+              {
+                "actor": "Jeorghe",
+                "line": "You ugly b...!!"
+              },
+              {
+                "actor": "Corolla",
+                "line": "Ha! Watch your tongue...# or you may lose it!",
+                "comment": "she interrupts him drawing a sharp knife from her belt in an instant.#\nStill, she is pointing it at his crotch, not at his tongue.#\n\nJeorghe growls, very openly suggesting he would try to kill her if he could.#\n\nThen his attention goes back to you."
+              },
+              {
+                "actor": "Jeorghe",
+                "line": "Who this filth is??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
+                "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who does not want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+                "childid": "1_19"
               }
             ]
           }
@@ -465,10 +501,10 @@
       },
       {
         "id": "1_19",
-        "type": "Story",
+        "type": "Action",
         "isvisited": false,
-        "recap": "exit village",
-        "text": ".",
+        "recap": "jumping dialogue",
+        "text": "text",
         "childid": "1_19"
       }
     ]
