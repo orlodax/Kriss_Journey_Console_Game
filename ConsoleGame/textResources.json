@@ -24,7 +24,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "rain intensify",
-        "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n##You shudder, stunned with its power.\n\n##After few breathless seconds, #you breathe again \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules.\n\n##You realise you have to move fast if you don't want to end up way more soaked than you already are.\n\n\n\n(Select with arrow keys and press enter).\n\n",
+        "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n##You shudder, stunned with its power.\n\n##After few breathless seconds, #you breathe again \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules.\n\n##You realise you have to move fast if you don't want to end up way more soaked than you already are.\n\n\n\n$D[Select with arrow keys and press enter]$C.\n\n",
         "choices": [
           {
             "desc": "You start running. Let's minimise the water intake.",
@@ -41,7 +41,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "running home",
-        "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght.\n#You run even faster, trying to ignore the suffocating feeling of the water splashing down your face.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#You feel your heart bouncing in your chest and hear your now accelerated breathing.\n#\nYou are almost home, when you hear it.\n#\n$G...$C\n###\nWas it real? \n##For a split second you thought someone called on your name. It must have been all that noise...\n#\n#$G..ris..$C\n###\nIt was clearer this time!\n\n\n",
+        "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght.\n#You run even faster, trying to ignore the suffocating feeling of the water splashing down your face.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#You feel your heart bouncing in your chest and hear your now accelerated breathing.\n#\nYou are almost home, when you hear it.\n#\n$G<<...>>$C\n###\nWas it real? \n##For a split second you thought someone called on your name. It must have been all that noise...\n#\n#$G<<..ris..>>$C\n###\nIt was clearer this time!\n\n\n",
         "childid": "0_05"
       },
       {
@@ -66,7 +66,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "who whispered",
-        "text": "You turn around, looking for the source of the voice.\n#\nIt's hard to see something in the midst of this unexpected thunderstorm.\n#You squint your eyes, fighting against the trickles of water that run into your eyes\n#\nAfter few seconds, you think you're seeing something.# On the top of the hill in front of your house.\n#It looks like there is something... #someone...# there.\n##But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.##\n\n\n",
+        "text": "You turn around, looking for the source of the voice.\n#\nIt's hard to see something in the midst of this unexpected thunderstorm.\n#You squint your eyes, fighting against the trickles of water that run into them.\n#\nAfter few seconds, you think you're seeing something.# On the top of the hill in front of your house.\n#It looks like there is something... #someone...# there.\n##But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.##\n\n\n",
         "choices": [
           {
             "desc": "You hate to stay more time under the rain... but... you never know?",
@@ -83,7 +83,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "at the tree",
-        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n#\n$GChris!$C\n#\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
+        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n#\n$G<<Chris!>>$C\n#\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
         "childid": "1_01"
       },
       {
@@ -91,7 +91,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "by the gate",
-        "text": "You are about to enter past your gate, to the comfort of your home at last, when you hear it!\n#\n$GChris!$C\n#\nIt feels like the wind is calling your name to the rain...\n#It feels like the sound comes from behind your shoulders, but at the same time from afar.\n\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The blinding light...\n###The deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.",
+        "text": "You are about to enter past your gate, to the comfort of your home at last, when you hear it!\n#\n$G<<Chris!>>$C\n#\nIt feels like the wind is calling your name to the rain...\n#It feels like the sound comes from behind your shoulders, but at the same time from afar.\n\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The blinding light...\n###The deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.",
         "childid": "1_01"
       }
     ],
@@ -111,7 +111,7 @@
         "type": "Action",
         "isvisited": false,
         "recap": "look around",
-        "text": "$c<<Maybe I am dead,# afer all.>>$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
+        "text": "$c\"Maybe I am dead,# afer all.\"$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
         "actions": [
           {
             "verb": "look",
@@ -400,7 +400,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "awake(house)",
-        "text": "...##\n\n$G<<Wake up...>>$c##\n\n\"Who's calling...?\"$C you mutter sitting up on the bed, fighting to regain full consciousness.\n#You open your eyes, and you become freshly aware of the current situtation.\n#It feel like a boulder has been thrown down on you,# again.\n#\nYou don't know how long you've been asleep.# The sun must be high up already,\njudging from the light that filters through the thick, dirty window.\n#\nYou don't want to spend another minute in there, so you decide to hit the road>\n#\nOnce outside, you hesitate just a moment, spectating the wasted scenario.\n#Many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away.\n#\nIt looks like the fires are completely extinguished now.\nThe acrid smell of smoke is still all around you.\n#You need to move. You start walking away, in the same direction as yesterday.",
+        "text": "...##\n\n$G<<Wake up...>>$c##\n\n\"Who's calling...?\"$C you mutter sitting up on the bed, fighting to regain full consciousness.\n#You open your eyes, and you become freshly aware of the current situtation.\n#It feel like a boulder has been thrown down on you,# again.\n#\nYou don't know how long you've been asleep.# The sun must be high up already,\njudging from the light that filters through the thick, dirty window.\n#\nYou don't want to spend another minute in there, so you decide to hit the road.\n#\nOnce outside, you hesitate just a moment, spectating the wasted scenario.\n#Many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away.\n#\nIt looks like the fires are completely extinguished now.\nThe acrid smell of smoke is still all around you.\n#You need to move. You start walking away, in the same direction as yesterday.",
         "childid": "1_16"
       },
       {
@@ -424,15 +424,87 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "reach camp",
-        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster##.\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhytm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# Women,# children.#\nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.\n\n\n",
+        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster.##\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhythm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# Women,# children.#\nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.\n\n\n",
         "choices": [
           {
-            "desc": "It's too dangerous, you don't want to end up in one of those cages.",
-            "childid": "1_18"
+            "desc": "You feel you must do something... But it's too dangerous, you don't want to end up in one of those cages.",
+            "childid": "1_29"
           },
           {
-            "desc": "You can't just leave them to their fate. You must help them.",
-            "childid": "1_19"
+            "desc": "You know it's a foolish idea, but you can't just leave them to their fate. You must help them.",
+            "childid": "1_18"
+          }
+        ]
+      },
+      {
+        "id": "1_29",
+        "type": "Story",
+        "isvisited": false,
+        "recap": "exit village",
+        "text": "You sneak around, looking for anything you could use in order to survive another day, possibly more.#\nYou need to find supplies, and you want to understand who these people are exactly.#\nYou need to remain undetected.#\n\nLuckily, it looks like there are no guards around. Everybody must be celebrating... # the...# victory?##\nThinking about this, disgust and rage fill you again.#\nYou take a deep breath to calm down.#\n\nYou proceed on resuming your exploration\nwhen the entry of a tent right in front of you shakes as someone is getting out.#",
+        "childid": "1_30"
+      },
+      {
+        "id": "1_30",
+        "type": "Dialogue",
+        "isvisited": false,
+        "recap": "meet corolla",
+        "text": "",
+        "dialogues": [
+          {
+            "actor": "Corolla",
+            "lineid": 0,
+            "line": "And who would you be...?",
+            "comment": "You freeze.#\nAfter few paralyzing istants, you manage to close your mouth, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently, head tilted on one side.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her hips.#\n\nInteresting posture, self confident... with such a delicious narrow waist...##"
+          },
+          {
+            "actor": "Corolla",
+            "lineid": 1,
+            "line": "Hey I asked you a question!",
+            "comment": "#With thess words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+            "replies": [
+              {
+                "line": "Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...",
+                "nextline": 2
+              },
+              {
+                "line": "Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...",
+                "nextline": 2
+              }
+            ]
+          },
+          {
+            "actor": "Jeorghe",
+            "isexchange": true,
+            "lineid": 2,
+            "precomment": "$CThe girl is about to answer, when a third rough, hoarse voice steps in.#\n\n",
+            "replies": [
+              {
+                "actor": "Jeorghe",
+                "line": "What the heck is going on here?!",
+                "comment": "A huge man appears. His malevolent scowl directed at her as at you."
+              },
+              {
+                "actor": "Corolla",
+                "line": "Jeorghe, you're always so dear...",
+                "comment": "she answers back with sarcasm."
+              },
+              {
+                "actor": "Jeorghe",
+                "line": "You ugly b...!!"
+              },
+              {
+                "actor": "Corolla",
+                "line": "Ha! Watch your tongue...# or you may lose it!",
+                "comment": "she interrupts him drawing a sharp knife from her belt in an instant.#\nStill, she is pointing it at his crotch, not at his tongue.#\n\nJeorghe growls, very openly suggesting he would try to kill her if he could.#\n\nThen his attention goes back to you."
+              },
+              {
+                "actor": "Jeorghe",
+                "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
+                "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+                "childid": "1_19"
+              }
+            ]
           }
         ]
       },
@@ -447,13 +519,13 @@
             "actor": "Corolla",
             "lineid": 0,
             "line": "I wouldn't do it, if I were you.",
-            "comment": "A voice behind you.# You freeze.#\nAfter few paralyzing istants, you slowly turn around, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently,\nhead tilted on one side, leaning on one of the carriages.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her left hip protruding outwards,#\nsince she's leaning with her right elbow on one of the wheels.#\n\nInteresting posture, self confident... with such a delicious narrow waist..."
+            "comment": "A voice behind you.# You freeze.#\nAfter few paralyzing istants, you slowly turn around, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently,\nhead tilted on one side, leaning on one of the carriages.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her left hip protruding outwards,#\nsince she's leaning with her right elbow on one of the wheels.#\n\nInteresting posture, self confident... with such a delicious narrow waist...##"
           },
           {
             "actor": "Corolla",
             "lineid": 1,
             "line": "You know? The Chief could express severe disagreement... and heaven knows what he would do to you!\nNot to mention what Jeorghe would do to you too...#",
-            "comment": "With this words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+            "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
             "replies": [
               {
                 "line": "Wai... Wait a second! You won't tell him right? I, erm...!",
@@ -493,7 +565,7 @@
               {
                 "actor": "Jeorghe",
                 "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
-                "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who does not want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+                "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
                 "childid": "1_19"
               }
             ]
@@ -655,8 +727,8 @@
               },
               {
                 "actor": "Kriss",
-                "line": "$CYou yourself are surprised.# After a while, not having other choices, you say:#\n\n$c\"I'm in for it!$C",
-                "comment": "#\n\nThe Chief smiles, then turns away quickly and while walking away adds:"
+                "line": "$C\bYou yourself are surprised.# After a while, not having other choices, you say:#\n\n$c\"I'm in for it!",
+                "comment": "$C#\n\nThe Chief smiles, then turns away quickly and while walking away adds:"
               },
               {
                 "actor": "Chief",

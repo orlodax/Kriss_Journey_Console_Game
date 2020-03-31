@@ -11,6 +11,8 @@ namespace ConsoleGame.Classes
         public static Database DB { get; set; }
 
         public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
+        public static List<string> Titles { get; private set; } = new List<string>();
+
         public static void Init()
         {
             if (!IsReady)
@@ -32,6 +34,10 @@ namespace ConsoleGame.Classes
                 ActorsColors.Add("Theo", ConsoleColor.Blue);
                 ActorsColors.Add("Jeorghe", ConsoleColor.DarkMagenta);
                 ActorsColors.Add("Chief", ConsoleColor.Magenta);
+                //chapters titles
+                Titles.Add("1. THE JOURNEY STARTS");
+                Titles.Add("2. THE HORDE");
+                Titles.Add("3. SOME FRIENDS");
             }
         }
         public static void SaveProgress(int chapterNo)

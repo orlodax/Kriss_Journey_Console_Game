@@ -38,12 +38,10 @@ namespace ConsoleGame.Classes
             Actions = node.Actions;
             Dialogues = node.Dialogues;
 
-            if (!node.IsVisited)     //disable flow effect if you are returning to the same node (see void SaveStatusOnExit)
+            if (!node.IsVisited)     
                 TextFlow(true);
             else
                 TextFlow(false);
-            //in debug turn off the effect:
-            //TextFlow(false);
         }
         internal void SaveStatusOnExit()  //this to be called on exit from node to mark it as not new
         {
@@ -64,6 +62,10 @@ namespace ConsoleGame.Classes
 
         internal void TextFlow(bool isFlowing, string text = "default")
         {
+            //debug disable effect
+            //isFlowing = false;
+            //debug
+
             if (text == "default")
                 text = Text;
 

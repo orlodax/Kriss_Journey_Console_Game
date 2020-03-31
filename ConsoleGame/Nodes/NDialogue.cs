@@ -72,7 +72,10 @@ namespace ConsoleGame.Nodes
                 } while (key.Key != ConsoleKey.Enter);
 
                 if (Dialogues[lineId].Replies[selectedRow].ChildId != null)                 //on selecion, either 
+                {
+                    Console.ReadKey(true);
                     NodeFactory.CreateNode(Dialogues[lineId].Replies[selectedRow].ChildId); //navigate to node specified in selected reply
+                }
                 else
                     DisplayLines(Dialogues[lineId].Replies[selectedRow].NextLine);          //step to the next line
             }
