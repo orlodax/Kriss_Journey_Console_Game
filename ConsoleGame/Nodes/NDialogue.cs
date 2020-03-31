@@ -83,12 +83,12 @@ namespace ConsoleGame.Nodes
             Console.Clear();
             TextFlow(false);
 
-            if (!Dialogues[lineId].IsExchange)      //standard dialogue with possible player answers or not
+            if (!Dialogues[lineId].IsExchange)                                                  //standard dialogue with possible player answers or not
             {
-                Console.ForegroundColor = DataLayer.ActorsColors[Dialogues[lineId].Actor];
+                Console.ForegroundColor = DataLayer.ActorsColors[Dialogues[lineId].Actor];      //display line in its color
                 TextFlow(isLineFlowing, "\"" + Dialogues[lineId].Line + "\"");
 
-                if (Dialogues[lineId].Comment != null)
+                if (Dialogues[lineId].Comment != null)                                          //then the comment
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -96,7 +96,7 @@ namespace ConsoleGame.Nodes
                     TextFlow(isLineFlowing, Dialogues[lineId].Comment);
                 }
 
-                if (Dialogues[lineId].Replies == null)
+                if (Dialogues[lineId].Replies == null)                                          //if it ends without replies, wait for player key pressed
                 {
                     Console.WriteLine();
                     Console.WriteLine();
@@ -111,33 +111,32 @@ namespace ConsoleGame.Nodes
                     Console.WriteLine();
                 }
             }
-            else                                    //no answers, it's a sequence between NPCs (IsExchange)
+            else                                                                                //no possible answers, it's a sequence between NPCs (IsExchange)
             {
-                //start with the optional precomment
-                if (Dialogues[lineId].PreComment != null)
+                if (Dialogues[lineId].PreComment != null)                                       //start with the optional precomment
                 {
                     TextFlow(isLineFlowing, Dialogues[lineId].PreComment);
                     Console.WriteLine();
                     Console.WriteLine();
                 }
-                if (Dialogues[lineId].Line != null)
+                if (Dialogues[lineId].Line != null)                                             //then the line
                 {
-                    TextFlow(isLineFlowing, Dialogues[lineId].Line);
+                    Console.ForegroundColor = DataLayer.ActorsColors[Dialogues[lineId].Actor];
+                    TextFlow(isLineFlowing, "\"" + Dialogues[lineId].Line + "\"");
                 }
-                if (Dialogues[lineId].Comment != null)
+                if (Dialogues[lineId].Comment != null)                                          //then the comment
                 {
                     TextFlow(isLineFlowing, Dialogues[lineId].Comment);
                     Console.WriteLine();
                     Console.WriteLine();
                 }
 
-                bool everyOther = false;
+                bool everyOther = false;                                                        //to change screen every 2 exchanges
 
-                //iterate the exchange
-                foreach (var reply in Dialogues[lineId].Replies)
+                foreach (var reply in Dialogues[lineId].Replies)                                //iterate the exchange
                 {
-                    Console.ForegroundColor = DataLayer.ActorsColors[reply.Actor];
-                    TextFlow(isLineFlowing, reply.Line);
+                    Console.ForegroundColor = DataLayer.ActorsColors[reply.Actor];              //again, line, comment
+                    TextFlow(isLineFlowing, "\"" + reply.Line + "\"");
 
                     if (reply.Comment != null)
                     {
@@ -148,7 +147,7 @@ namespace ConsoleGame.Nodes
                     Console.WriteLine();
                     Console.WriteLine();
 
-                    if (everyOther)
+                    if (everyOther || reply.ChildId != null)                                    //pause the flow it the screen must change 
                     {
                         Console.WriteLine();
                         Console.WriteLine();
