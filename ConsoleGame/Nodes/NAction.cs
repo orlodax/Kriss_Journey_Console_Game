@@ -87,8 +87,6 @@ namespace ConsoleGame.Nodes
                 Console.Write("\b");
                 Console.Write(" ");
                 Console.Write("\b");
-                // for (int i = 0; i < keysPressed.Count; i++)
-                //     Console.Write(keysPressed[i].KeyChar.ToString());
             }
         }
         void EnterPressed(List<ConsoleKeyInfo> keysPressed)

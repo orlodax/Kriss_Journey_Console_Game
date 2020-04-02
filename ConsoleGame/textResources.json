@@ -701,12 +701,12 @@
           {
             "precomment": "You yourself are surprised.# After a while, not having other choices, you say:",
             "actor": "Kriss",
-            "line": "I'm in for it!"
+            "line": "I'm in for it!##"
           },
           {
             "actor": "Chief",
             "precomment": "The Chief smiles, then turns away quickly and while walking away adds:",
-            "line": "Corolla: find a place for...\"$C he hesitates, as if your name sounds strange to him $M\"...Kriss.\"#\n\"In the end, two hands may steal more than a mouth can eat...#",
+            "line": "Corolla: find a place for...\"$C he hesitates, as if your name sounds strange to him $M\"...Kriss.\"##\n\"In the end, two hands may steal more than a mouth can eat...#",
             "comment": "and he disappears, snickering.#\n\nShe takes you by the arm and leads you away,# under the hateful gazes of the others.",
             "childid": "1_28"
           }
