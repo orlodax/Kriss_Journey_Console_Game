@@ -8,7 +8,6 @@
   ],
   "chapters": [
 
-    //chapter 1
     [
       {
         "id": "0_01",
@@ -96,7 +95,6 @@
       }
     ],
 
-    //chapter 2
     [
       {
         "id": "1_01",
@@ -451,36 +449,31 @@
         "recap": "meet corolla",
         "text": "",
         "dialogues": [
-          {
-            "actor": "Corolla",
-            "lineid": 0,
-            "line": "And who would you be...?",
-            "comment": "You freeze.#\nAfter few paralyzing istants, you manage to close your mouth, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently, head tilted on one side.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her hips.#\n\nInteresting posture, self confident... with such a delicious narrow waist...##"
-          },
-          {
-            "actor": "Corolla",
-            "lineid": 1,
-            "line": "Hey I asked you a question!",
-            "comment": "#With thess words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
-            "replies": [
               {
-                "line": "Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...",
-                "nextline": 2
+                "actor": "Corolla",
+                "line": "And who would you be...?",
+                "comment": "You freeze.#\nAfter few paralyzing istants, you manage to close your mouth, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently, head tilted on one side.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her hips.#\n\nInteresting posture, self confident... with such a delicious narrow waist...#",
+                "isbreakneeded": true
               },
               {
-                "line": "Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...",
-                "nextline": 2
-              }
-            ]
-          },
-          {
-            "actor": "Jeorghe",
-            "isexchange": true,
-            "lineid": 2,
-            "precomment": "$CThe girl is about to answer, when a third rough, hoarse voice steps in.#\n\n",
-            "replies": [
+                "actor": "Corolla",
+                "line": "Hey I asked you a question!",
+                "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+                "replies": [
+                  {
+                    "line": "Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...",
+                    "nextline": "JeorgheStepsIn"
+                  },
+                  {
+                    "line": "Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...",
+                    "nextline": "JeorgheStepsIn"
+                  }
+                ]
+              },
               {
+                "linename": "JeorgheStepsIn",
                 "actor": "Jeorghe",
+                "precomment": "The girl is about to answer, when a third rough, hoarse voice steps in.",
                 "line": "What the heck is going on here?!",
                 "comment": "A huge man appears. His malevolent scowl directed at her as at you."
               },
@@ -501,12 +494,10 @@
               {
                 "actor": "Jeorghe",
                 "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
-                "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+                "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
                 "childid": "1_19"
               }
             ]
-          }
-        ]
       },
       {
         "id": "1_18",
@@ -517,58 +508,50 @@
         "dialogues": [
           {
             "actor": "Corolla",
-            "lineid": 0,
             "line": "I wouldn't do it, if I were you.",
             "comment": "A voice behind you.# You freeze.#\nAfter few paralyzing istants, you slowly turn around, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently,\nhead tilted on one side, leaning on one of the carriages.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her left hip protruding outwards,#\nsince she's leaning with her right elbow on one of the wheels.#\n\nInteresting posture, self confident... with such a delicious narrow waist...##"
           },
           {
             "actor": "Corolla",
-            "lineid": 1,
             "line": "You know? The Chief could express severe disagreement... and heaven knows what he would do to you!\nNot to mention what Jeorghe would do to you too...#",
             "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
             "replies": [
               {
                 "line": "Wai... Wait a second! You won't tell him right? I, erm...!",
-                "nextline": 2
+                "nextline": "JeorgheStepsIn"
               },
               {
                 "line": "Rrright! Hey I was just looking... Wait, have we met before?",
-                "nextline": 2
+                "nextline": "JeorgheStepsIn"
               }
             ]
           },
           {
+            "linename": "JeorgheStepsIn",
             "actor": "Jeorghe",
-            "isexchange": true,
-            "lineid": 2,
-            "precomment": "$CThe girl is about to answer, when a third rough, hoarse voice steps in.#\n\n",
-            "replies": [
-              {
-                "actor": "Jeorghe",
-                "line": "What the heck is going on here?!",
-                "comment": "A huge man appears. His malevolent scowl directed at her as at you."
-              },
-              {
-                "actor": "Corolla",
-                "line": "Jeorghe, you're always so dear...",
-                "comment": "she answers back with sarcasm."
-              },
-              {
-                "actor": "Jeorghe",
-                "line": "You ugly b...!!"
-              },
-              {
-                "actor": "Corolla",
-                "line": "Ha! Watch your tongue...# or you may lose it!",
-                "comment": "she interrupts him drawing a sharp knife from her belt in an instant.#\nStill, she is pointing it at his crotch, not at his tongue.#\n\nJeorghe growls, very openly suggesting he would try to kill her if he could.#\n\nThen his attention goes back to you."
-              },
-              {
-                "actor": "Jeorghe",
-                "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
-                "comment": "\n\nHe starts laughing wildly, sounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
-                "childid": "1_19"
-              }
-            ]
+            "precomment": "The girl is about to answer, when a third rough, hoarse voice steps in.",
+            "line": "What the heck is going on here?!",
+            "comment": "A huge man appears. His malevolent scowl directed at her as at you."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Jeorghe, you're always so dear...",
+            "comment": "she answers back with sarcasm."
+          },
+          {
+            "actor": "Jeorghe",
+            "line": "You ugly b...!!"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Ha! Watch your tongue...# or you may lose it!",
+            "comment": "she interrupts him drawing a sharp knife from her belt in an instant.#\nStill, she is pointing it at his crotch, not at his tongue.#\n\nJeorghe growls, very openly suggesting he would try to kill her if he could.#\n\nThen his attention goes back to you."
+          },
+          {
+            "actor": "Jeorghe",
+            "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
+            "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+            "childid": "1_19"
           }
         ]
       },
@@ -612,17 +595,11 @@
         "recap": "smiurl rescues",
         "dialogues": [
           {
-            "isexchange": true,
-            "lineid": 0,
             "precomment": "Suddenly, a hissing sound wounds the air!#\nA flying string appears out of nothing, winding tightly around Jeorghe's chest,#\nwith stones at its ends which hit him hard when they terminate their spiraling rotation.#\n\nLosing balance, the man falls down on one knee, and lets go of the log.#\n\nThen some kind of $Yshriek$C is heard, and something you can't identify hits the man again, knocking him down,\nleaving him growling and wriggling furiously on the ground.##",
-            "replies": [
-              {
-                "actor": "Corolla",
-                "line": "Make way, you morons...",
-                "comment": "you hear the girl from before say as she approached,\nbreaking into the circle of spectators that has formed.#\n\nThen, everybody backs off, as someone new is arriving.#\nYou can't see who it is at first, you can only hear an odd jingling sound getting nearer.#",
-                "childid": "1_23"
-              }
-            ]
+            "actor": "Corolla",
+            "line": "Make way, you morons...",
+            "comment": "you hear the girl from before say as she approached,\nbreaking into the circle of spectators that has formed.#\n\nThen, everybody backs off, as someone new is arriving.#\nYou can't see who it is at first, you can only hear an odd jingling sound getting nearer.#",
+            "childid": "1_23"
           }
         ]
       },
@@ -633,32 +610,27 @@
         "recap": "chief dialogue",
         "dialogues": [
           {
-            "isexchange": true,
-            "lineid": 0,
             "precomment": "$CThen,# he steps into the circle.#\n\nYou immediately recognise the Chief:#\nproud posture,# well-kept hair and beard,# intelligent, disdainful expression,# at times malign,# at times ironic.#\nHe's tall, more slender than all the other men around.#\n\nHe wears several jewelry around his neck,#\nand he carries a $cbig sword$C in its sheath and a chain (the source of the jingling) both hanging from his belt.#\n\nHe stops a few steps from you, his hands on his hips, observing the scene with curiosity.#",
-            "replies": [
-              {
-                "actor": "Chief",
-                "line": "What have you guys been up to? Look at you poor little Jeorghe...!#\nI think I need to choose better guards for myself!",
-                "comment": "he mocks his man, kicking him a little to tease him.#\n\nJeorghe grunts with unspeakeable wrath:"
-              },
-              {
-                "actor": "Jeorghe",
-                "line": "Release me! Now!!",
-                "comment": "#\n\nThe Chief nods at his men,\n#and Jeorghe gets untied and escorted, not withouth any difficulties, somewhere else. "
-              },
-              {
-                "actor": "Chief",
-                "line": "Who are you? And, please, stand up now...",
-                "comment": "he asks now, gesturing carelessly, and turning abruptly towards you."
-              },
-              {
-                "actor": "Kriss",
-                "line": "My name is Chris...",
-                "comment": "you answer, after hesitating, just for a moment.",
-                "childid": "1_24"
-              }
-            ]
+            "actor": "Chief",
+            "line": "What have you guys been up to? Look at you poor little Jeorghe...!#\nI think I need to choose better guards for myself!",
+            "comment": "he mocks his man, kicking him a little to tease him."
+          },
+          {
+            "precomment": "Jeorghe grunts with unspeakeable wrath:",
+            "actor": "Jeorghe",
+            "line": "Release me! Now!!"
+          },
+          {
+            "precomment": "The Chief nods at his men,\n#and Jeorghe gets untied and escorted, not withouth any difficulties, somewhere else.",
+            "actor": "Chief",
+            "line": "Who are you? And, please, stand up now...",
+            "comment": "he asks now, gesturing carelessly, and turning abruptly towards you."
+          },
+          {
+            "actor": "Kriss",
+            "line": "My name is Chris...",
+            "comment": "you answer, after hesitating, just for a moment.",
+            "childid": "1_24"
           }
         ]
       },
@@ -702,41 +674,41 @@
         "recap": "Kriss gets his name",
         "dialogues": [
           {
-            "isexchange": true,
-            "lineid": 0,
-            "replies": [
-              {
-                "actor": "Chief",
-                "line": "Enough!\" $CThunders the Chief. Immediately silence falls.#\n$M\"You have to agree with me, that's not a great story...\" $CHe adds giggling.#\n$M\"Who do you think might ever believe it?",
-                "comment": "He draws close to you, examining you head to toes.#\nThen he goes back to staring you in the eyes."
-              },
-              {
-                "actor": "Chief",
-                "line": "You are no spy. You wouldn't have been so dumb and make all this noise.",
-                "comment": "He concludes carelessly.# \nHe looks aside, thoughtful, right hand on his chin, left hand on his right elbow."
-              },
-              {
-                "actor": "Chief",
-                "line": "Mmmm... anyway... listen: I am in a good mood today.",
-                "comment": "He snaps his fingers, and draws his face close to yours."
-              },
-              {
-                "actor": "Chief",
-                "line": "Here is my proposal: join us!",
-                "comment": "Immediately a choir of protesting sounds arises.#\nMost of the men were hoping to spectate an execution.#\nShe remains stoic."
-              },
-              {
-                "actor": "Kriss",
-                "line": "$C\bYou yourself are surprised.# After a while, not having other choices, you say:#\n\n$c\"I'm in for it!",
-                "comment": "$C#\n\nThe Chief smiles, then turns away quickly and while walking away adds:"
-              },
-              {
-                "actor": "Chief",
-                "line": "Corolla: find a place for...\"$C he hesitates, as if your name sounds strange to him $M\"...Kriss.\"#\n\"In the end, two hands may steal more than a mouth can eat...#",
-                "comment": "and he disappears, snickering.#\n\nShe takes you by the arm and leads you away, under the hateful gazes of the others.",
-                "childid": "1_28"
-              }
-            ]
+            "actor": "Chief",
+            "line": "Enough!",
+            "comment": "Thunders the Chief. Immediately silence falls."
+          },
+          {
+            "actor": "Chief",
+            "line": "You have to agree with me, that's not a great story...\" $CHe adds giggling. #\n$M\"Who do you think might ever believe it?",
+            "comment": "He draws close to you, examining you head to toes.#\nThen he goes back to staring you in the eyes."
+          },
+          {
+            "actor": "Chief",
+            "line": "You are no spy. You wouldn't have been so dumb and make all this noise.",
+            "comment": "He concludes carelessly.#\nHe looks aside, thoughtful, right hand on his chin, left hand on his right elbow."
+          },
+          {
+            "actor": "Chief",
+            "line": "Mmmm... anyway... listen: I am in a good mood today.",
+            "comment": "He snaps his fingers, and draws his face close to yours."
+          },
+          {
+            "actor": "Chief",
+            "line": "Here is my proposal: join us!",
+            "comment": "Immediately a choir of protesting sounds arises.#\nMost of the men were hoping to enjoy an execution.#\nShe remains stoic."
+          },
+          {
+            "precomment": "You yourself are surprised.# After a while, not having other choices, you say:",
+            "actor": "Kriss",
+            "line": "I'm in for it!"
+          },
+          {
+            "actor": "Chief",
+            "precomment": "The Chief smiles, then turns away quickly and while walking away adds:",
+            "line": "Corolla: find a place for...\"$C he hesitates, as if your name sounds strange to him $M\"...Kriss.\"#\n\"In the end, two hands may steal more than a mouth can eat...#",
+            "comment": "and he disappears, snickering.#\n\nShe takes you by the arm and leads you away,# under the hateful gazes of the others.",
+            "childid": "1_28"
           }
         ]
       },
@@ -749,6 +721,5 @@
       }
     ]
 
-    //end of chapters
   ]
 }

@@ -9,37 +9,63 @@ namespace ConsoleGame.Nodes
     {
         public NDialogue(NodeBase nb) : base(nb)
         {
-            DisplayLines();
+            RecursiveDialogues();
         }
 
-        void DisplayLines(int lineId = 0) 
+        ConsoleKeyInfo key;
+        int selectedRow = 0;
+
+        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)       //lineid iterates over elements of dialogues[] 
         {
-            //redraw node
-            Refresh(lineId);
+            TextFlow(false);
 
-            //if the dialogue is "fake" = just a line with a new node id, enter here and navigate to the new node
-            if (Dialogues[lineId].ChildId != null)
+            var currentLine = Dialogues[lineId];                                //cureent object selected in the iteration
+
+        #region Drawing base element of the Dialog object (speech part)
+
+            if(currentLine.PreComment != null)
             {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+
+                TextFlow(isLineFlowing, currentLine.PreComment);
+                if (isLineFlowing)
+                    Thread.Sleep(ParagraphBreak);
+
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine("Press any key...");
-                Console.ReadKey(true);
-                NodeFactory.CreateNode(Dialogues[lineId].ChildId);
+            }
+            if(currentLine.Line != null)
+            {
+                Console.ForegroundColor = DataLayer.ActorsColors[currentLine.Actor]; 
+
+                TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ");
+            }
+            if(currentLine.Comment != null)      
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+
+                TextFlow(isLineFlowing, currentLine.Comment);
+                if (isLineFlowing)
+                    Thread.Sleep(ParagraphBreak);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            
+            if (currentLine.IsBreakNeeded)
+            {
+                HoldScreen();
+                Console.Clear();
+            }
+        #endregion
+
+            if (currentLine.ChildId != null)                                        //if it encounters a link, jump to the node
+            {      
+                HoldScreen();
+                NodeFactory.CreateNode(currentLine.ChildId);
             }
 
-            //if the current dialogue does not have possible replies in it, and it's not the last of the sequence, step to the next
-            if (Dialogues[lineId].Replies == null)
+            if (currentLine.Replies != null && currentLine.Replies.Count > 0)       //if there are replies inside, display choice
             {
-                if (Dialogues.Count > lineId + 1)
-                    DisplayLines(lineId + 1);
-            }
-            else
-            {
-                ConsoleKeyInfo key;
-                int selectedRow = 0;
-
                 do
                 {
                     for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)       //draw the replies, select them
@@ -63,111 +89,48 @@ namespace ConsoleGame.Nodes
                     key = Console.ReadKey(true);
 
                     if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
+                    {
                         selectedRow--;
+                        Console.Clear();
+                        RecursiveDialogues(lineId, false);                                //redraw the node to allow the selection effect
+                    }
                     if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
+                    {
                         selectedRow++;
-
-                    Refresh(lineId, false);                                         //redraw the node to allow the selection effect
+                        Console.Clear();
+                        RecursiveDialogues(lineId, false);                                //redraw the node to allow the selection effect
+                    }
 
                 } while (key.Key != ConsoleKey.Enter);
 
-                if (Dialogues[lineId].Replies[selectedRow].ChildId != null)                 //on selecion, either 
+                Console.Clear();
+
+                if (currentLine.Replies[selectedRow].ChildId != null)                 //on selecion, either 
                 {
                     Console.ReadKey(true);
-                    NodeFactory.CreateNode(Dialogues[lineId].Replies[selectedRow].ChildId); //navigate to node specified in selected reply
+                    NodeFactory.CreateNode(currentLine.Replies[selectedRow].ChildId); //navigate to node specified in selected reply
                 }
                 else
-                    DisplayLines(Dialogues[lineId].Replies[selectedRow].NextLine);          //step to the next line
+                {
+                    var nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine);
+                    RecursiveDialogues(nextLineId);                                   //step to the next line
+                }
+            }
+            else
+            {
+                if (Dialogues.Count > lineId + 1)                       
+                    RecursiveDialogues(lineId + 1);  
             }
         }
 
-        void Refresh(int lineId, bool isLineFlowing = true)
+        void HoldScreen()
         {
-            Console.Clear();
-            TextFlow(false);
-
-            if (!Dialogues[lineId].IsExchange)                                                  //standard dialogue with possible player answers or not
-            {
-                Console.ForegroundColor = DataLayer.ActorsColors[Dialogues[lineId].Actor];      //display line in its color
-                TextFlow(isLineFlowing, "\"" + Dialogues[lineId].Line + "\"");
-
-                if (Dialogues[lineId].Comment != null)                                          //then the comment
-                {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.ForegroundColor = DataLayer.ActorsColors["Narrator"];
-                    TextFlow(isLineFlowing, Dialogues[lineId].Comment);
-                }
-
-                if (Dialogues[lineId].Replies == null)                                          //if it ends without replies, wait for player key pressed
-                {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("Press any key...");
-                    Console.ReadKey(true);
-                }
-                else
-                {
-                    Console.WriteLine();
-                    Console.WriteLine();
-                }
-            }
-            else                                                                                //no possible answers, it's a sequence between NPCs (IsExchange)
-            {
-                if (Dialogues[lineId].PreComment != null)                                       //start with the optional precomment
-                {
-                    TextFlow(isLineFlowing, Dialogues[lineId].PreComment);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                }
-                if (Dialogues[lineId].Line != null)                                             //then the line
-                {
-                    Console.ForegroundColor = DataLayer.ActorsColors[Dialogues[lineId].Actor];
-                    TextFlow(isLineFlowing, "\"" + Dialogues[lineId].Line + "\"");
-                }
-                if (Dialogues[lineId].Comment != null)                                          //then the comment
-                {
-                    TextFlow(isLineFlowing, Dialogues[lineId].Comment);
-                    Console.WriteLine();
-                    Console.WriteLine();
-                }
-
-                bool everyOther = false;                                                        //to change screen every 2 exchanges
-
-                foreach (var reply in Dialogues[lineId].Replies)                                //iterate the exchange
-                {
-                    Console.ForegroundColor = DataLayer.ActorsColors[reply.Actor];              //again, line, comment
-                    TextFlow(isLineFlowing, "\"" + reply.Line + "\"");
-
-                    if (reply.Comment != null)
-                    {
-                        Console.ForegroundColor = DataLayer.ActorsColors["Narrator"];
-                        TextFlow(isLineFlowing, " " + reply.Comment);
-                    }
-                    Thread.Sleep(ParagraphBreak);
-                    Console.WriteLine();
-                    Console.WriteLine();
-
-                    if (everyOther || reply.ChildId != null)                                    //pause the flow it the screen must change 
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.DarkGray;
-                        Console.WriteLine("Press any key...");
-                        Console.ReadKey(true);
-
-                        Console.Clear();
-                    }
-
-                    if (reply.ChildId != null)
-                        NodeFactory.CreateNode(reply.ChildId);
-
-                    everyOther = !everyOther;
-                }
-            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("Press any key...");
+            Console.ReadKey(true);
         }
     }
 }

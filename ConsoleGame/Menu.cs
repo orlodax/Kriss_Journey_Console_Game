@@ -41,7 +41,7 @@ namespace ConsoleGame
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine();
             //debug: start from
-            //NodeFactory.CreateNode("1_17");
+            //NodeFactory.CreateNode("1_30");
             //debug
 
 

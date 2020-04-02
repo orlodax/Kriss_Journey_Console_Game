@@ -84,8 +84,11 @@ namespace ConsoleGame.Nodes
             if (keysPressed.Count > 0)
             {
                 keysPressed.RemoveAt(keysPressed.Count - 1);
+                Console.Write("\b");
                 Console.Write(" ");
-                Console.SetCursorPosition(Console.CursorLeft -= 1, Console.CursorTop);
+                Console.Write("\b");
+                // for (int i = 0; i < keysPressed.Count; i++)
+                //     Console.Write(keysPressed[i].KeyChar.ToString());
             }
         }
         void EnterPressed(List<ConsoleKeyInfo> keysPressed)
@@ -147,6 +150,7 @@ namespace ConsoleGame.Nodes
             else                                                            //if there's no action available, redraw node and display standard refuse
             {
                 Console.Clear();
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 TextFlow(false);
                 PrepareForAction(false);
             }
