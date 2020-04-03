@@ -19,6 +19,13 @@ namespace ConsoleGame.Classes
         {
             if (id != null)
             {
+                //testing purposes
+                if (id == "test")
+                    return CurrentNode = new NStory(DataLayer.DB.Chapters[0].Find(n => n.Id == "test"));
+
+                //-----------------
+
+
                 var chapIndex = Convert.ToInt32(id[0].ToString());
                 NodeBase nb = DataLayer.DB.Chapters[chapIndex].Find(n => n.Id == id);
 

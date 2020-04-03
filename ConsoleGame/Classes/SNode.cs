@@ -143,6 +143,14 @@ namespace ConsoleGame.Classes
                             Thread.Sleep(paragraph);
                         }
                     }
+                    //if (prevChar.ToString().Equals("@"))
+                    //{
+                    //    Random rnd = new Random();
+                    //    Random rnd2 = new Random();
+                    //    for (int i = 0; i < 10000; i++)
+                    //        Console.Beep(rnd2.Next(500, 2000), rnd.Next(50, 500));
+                    //} 
+                        
                     prevChar = c;
                 }
             }

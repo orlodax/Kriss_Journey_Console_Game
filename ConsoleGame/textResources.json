@@ -10,13 +10,19 @@
 
     [
       {
+        "id": "test",
+        "type": "story",
+        "text": "play a @sound",
+        "childid": "test"
+      },
+      {
         "id": "0_01",
         "type": "Story",
         "isvisited": false,
         "recap": "start of chapter one",
         "text": "-------------------------------\n|          CHAPTER 1          |\n-------------------------------\n\n\n###You are walking home after a long day.\n#There's no doubt, this hasn't been a nice day.\n#You missed every possible bus and/or train.\n#And it started raining,# too. #Of course, you do not have an umbrella with you.\n\n#Looking up at the sky, it looks like all the clouds in the world just decided to gather right above your head,#\nswallowing all of light and propagating dark vibes to the atmosphere and to the ground.",
         "childid": "0_02"
-        
+
       },
       {
         "id": "0_02",
@@ -701,11 +707,11 @@
           {
             "precomment": "You yourself are surprised.# After a while, not having other choices, you say:",
             "actor": "Kriss",
-            "line": "I'm in for it!##"
+            "line": "I'm in for it!"
           },
           {
             "actor": "Chief",
-            "precomment": "The Chief smiles, then turns away quickly and while walking away adds:",
+            "precomment": "##The Chief smiles, then turns away quickly and while walking away adds:",
             "line": "Corolla: find a place for...\"$C he hesitates, as if your name sounds strange to him $M\"...Kriss.\"##\n\"In the end, two hands may steal more than a mouth can eat...#",
             "comment": "and he disappears, snickering.#\n\nShe takes you by the arm and leads you away,# under the hateful gazes of the others.",
             "childid": "1_28"
@@ -717,9 +723,9 @@
         "type": "Story",
         "isvisited": false,
         "recap": "end of chap2",
+        "childid": "1_28",
         "text": "$D------- END OF CHAPTER 2 -------"
       }
     ]
-
   ]
 }
