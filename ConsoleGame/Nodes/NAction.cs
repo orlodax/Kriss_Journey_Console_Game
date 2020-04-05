@@ -117,7 +117,10 @@ namespace ConsoleGame.Nodes
                         CustomRefusal(act.Condition.Refusal);
                     else
                     {
-                        if(act.Effect != null)                              //in case the action has an Effect (inventory)
+                        if (act.Answer != null)
+                            DisplaySuccess(act.Answer);
+
+                        if (act.Effect != null)                             //in case the action has an Effect (inventory)
                             act.StoreItem(act.Effect);
 
                         SaveStatusOnExit();                                 //...just do it
@@ -132,28 +135,28 @@ namespace ConsoleGame.Nodes
 
                         foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                         {
-                            if (word == o.Obj)                         //the action is right, and there is a acceptable object specified
+                            if (word == o.Obj)                              //the action is right, and there is a acceptable object specified
                             {
-                                if (!act.EvaluateCombination(o))       //if for some reason Kriss can't do it, say it...
+                                if (!act.EvaluateCombination(o))            //if for some reason Kriss can't do it, say it...
                                     CustomRefusal(o.Condition.Refusal);
                                     
                                 else                                        //...otherwise, do it
                                 {
-                                    if (o.Effect != null)              //in case the obj has an Effect (inventory)
+                                    if (o.Effect != null)                   //in case the obj has an Effect (inventory)
                                         act.StoreItem(o.Effect);
 
-                                    if (o.ChildId != null)             //if the action leads to another node
+                                    if (o.ChildId != null)                  //if the action leads to another node
                                     {
                                         SaveStatusOnExit();
                                         NodeFactory.CreateNode(o.ChildId);
                                     }
                                     else                                    //if the action causes only an effect
-                                        DisplaySuccess(o);
+                                        DisplaySuccess(o.Answer);
                                 }
                             }
                         }
                     }
-                    CustomRefusal(act.GetAnswer());                         //the action is right, but no required object is specified
+                    CustomRefusal(act.GetOpinion());                         //the action is right, but no required object is specified
                 }
             }
             else                                                            //if there's no action available, redraw node and display standard refuse
@@ -169,22 +172,28 @@ namespace ConsoleGame.Nodes
             Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             TextFlow(true, "<<" + refusal + ">>");
             Console.WriteLine();
             Console.WriteLine();
 
             PrepareForAction(true); //display prompt without standard refuse
         }
-        void DisplaySuccess(Models.Object obj) 
+        void DisplaySuccess(string answer) 
         {
             RedrawNode();
 
-            Console.CursorTop = Console.WindowHeight - 4;
+            //measure the lenght and the newlines in the answer to determine how up to go to start writing
+            var newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;
+            var rows = answer.Length / Console.WindowWidth;
+
+            var offset = Math.Min(Console.WindowHeight - (rows + newLines), Console.WindowHeight - 5);
+
+            Console.CursorTop = offset;
             Console.CursorLeft = Console.WindowLeft;
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            TextFlow(true, obj.Answer);
+            TextFlow(true, answer);
             Console.WriteLine();
             Console.WriteLine();
 

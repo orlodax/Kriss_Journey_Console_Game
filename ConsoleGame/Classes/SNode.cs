@@ -65,7 +65,7 @@ namespace ConsoleGame.Classes
         internal void TextFlow(bool isFlowing, string text = "default")
         {
             //debug disable effect
-            isFlowing = false;
+            //isFlowing = false;
             //debug
 
             if (text == "default")

@@ -730,12 +730,12 @@
             {
               "actor": "Corolla",
               "precomment": "You walk with Corolla, quick-paced, going somewhere only she knows.#\nYou see her picking up the bolas that hit Jeorghe, hanging them to her hip...# so it was her saving you!#\nSomething else attracts your attention though, a movement, in the darkness.#\nUnintetionally, you wince. She notices that and says:",
-              "line": "Don't worry. That is Smiurl...#"
+              "line": "Don't worry. That is Smiurl..."
             },
             {
               "actor": "Kriss",
               "line": "Smiurl...?",
-              "comment": "You don't understand what she's talking about.\nIn the meantime, you 'unintentionally' draw closer to her."
+              "comment": "You don't understand what she's talking about.#\nIn the meantime, you unintentionally draw closer to her."
             },
             {
               "actor": "Corolla",
@@ -745,7 +745,7 @@
               "precomment": "You remember you glimpsed something.# You just weren't thinking that it could be someone.",
               "actor": "Corolla",
               "line": "Smiurl, don't you think it's time to introduce yourself?",
-              "comment": "She says after she stopped walking, apparently talking to the shadows." 
+              "comment": "She says after she stopped walking,\napparently talking to the shadows." 
             },
             {
               "actor": "Smiurl",
@@ -755,33 +755,32 @@
             {
               "actor": "Smiurl",
               "line": "Well, I guess I have to...",
-              "comment": "He then adds.#\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height.#\nHe has a shy look in his eyes.",
+              "comment": "He then adds.#\n\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height.#\nHe has a shy look in his eyes.",
               "isbreakneeded": true
             },
             {
               "actor": "Smiurl",
               "precomment": "He stretches up his little wrinkly hand to you and says:",
               "line": "Hello Kriss, I am Smiurl.",
-              "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf.#\nHe has huge ears, pierced with a plethora of earrings, which jingle faintly when he jolts his head.#\nThe nose is also quite big, compared to the rest of the face.# He's wearing a shirt and a pair of short discolored leather trousers.#\nIt seems he always have a lost-puppy-like expression...#"
+              "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf.#\nHe has huge ears, pierced with a plethora of earrings, which jingle faintly when he jolts his head.#\nThe nose is also quite big, compared to the rest of the face.#\nHe's wearing a shirt and a pair of short discolored leather trousers.#\nHis face looks like it's made to constantly display a lost-puppy-like expression...#"
             },
             {
-              "precomment": "Somehow Corolla must know what you are thinking.",
+              "precomment": "Somehow Corolla must know what you are thinking.#",
               "actor":"Corolla",
               "line": "Don't let him deceive you... Smiurl is a true valiant when you need him.",
-              "comment": "Hearing that compliment, the little guy lits up everywhere.##\n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C#\nHe actually starts emanating a vague, multicoloured luminescence."
+              "comment": "Hearing that compliment,#\nthe little guy lits up everywhere.##\n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C##\nHe actually starts emanating a vague, multicoloured luminescence.#"
             },
             {
               "actor": "Kriss",
               "line": "Whoa!",
-              "comment": " you exclaim, not believing your eyes."
+              "comment": "You exclaim, not believing your eyes."
             },
             {
               "actor": "Corolla",
               "line": "Easy, he's innocuous!",
-              "comment": "She laughs heartily."
+              "comment": "She laughs heartily.# Her laughter rises up, clear and silvery."
             },
             {
-              "precomment": "Her laughter rises up, clear and silvery.",
               "actor": "Corolla",
               "line": "Smiurl is a mutant.",
               "comment": "She adds right after."
@@ -804,21 +803,21 @@
             {
               "actor": "Smiurl",
               "line": "Everybody hates me...# It's because...# I'm different.",
-              "comment": "He compains, looking down."
+              "comment": "He complains, looking down."
             },
             {
-              "precomment": "You feel compassion for that little man. You can only imagine how miserable his life must be,#\nliving surrounded by that kind of human filth. They must make his life an hell every day.#\n\nYou say to him warmly:",
+              "precomment": "You feel compassion for that little man. You can only imagine how miserable his life must be,#\nliving surrounded by that kind of human filth.# They must make his life a hell every day.#\n\nYou say to him warmly:",
               "actor": "Kriss",
               "line": "I do not hate you! On the contrary: you guys saved my life... and I still haven't thanked you properly!"
             },
             {
               "actor": "Corolla",
               "line": "Our duty.",
-              "comment": "She smiles openly. The white of her teeth uncovers in the light of the stars.#\nSmiurl starts glowing again, puffing up all happy.",
+              "comment": "She smiles openly.# The white of her teeth uncovers under the light of the stars.#\n\nSmiurl starts glowing again, puffing up all happy.",
               "isbreakneeded": true
             },
             {
-              "precomment": "You keep walking with them for a while.# You start wondering how people like them can mingle with those thugs.#\nWhat are they doing here?#\n\nYou reach an area separated from the rest of the encampent by a group of dry trees.#\nYou see few tents next to each other.",
+              "precomment": "You keep walking with them for a while.# You start wondering how people like them can mingle with those thugs.#\nWhat are they doing here?#\n\nYou reach an area separated from the rest of the encampent by a group of dry trees.#\nYou see a few tents next to each other.",
               "actor": "Corolla",
               "line": "There, you can sleep in the tent with Theo.",
               "comment": "She points at the biggest of the group."
@@ -831,12 +830,12 @@
             {
               "actor": "Corolla",
               "line": "Precisely. That's him. Theo, let me introduce you to Kriss.#\nWould you kindly provide him a bedroll of yours, at least for tonight?",
-              "comment": "The giant, from the top of his impressive figure, simply answers:\n\n$B\"Of course.\"#$C and then, to you: $B\"Come.\"$C"
+              "comment": "\nThe giant, from the top of his impressive figure, simply answers:#\n\n$B\"Of course.\"##$C and then, to you:# $B\"Come.\"$C#"
             },
             {
               "actor":"Corolla",
-              "precomment": "You all walk together to his tent. She keeps it open for you to go inside, Smiurl peeking from behind her legs.#\nShe looks at you and smiling confidently says:",
-              "line": "Goodnight. With Theo around, no one will dare getting anywhere near."
+              "precomment": "You all walk together to his tent.# She keeps it open for you to enter it, Smiurl peeking from behind her legs.#\nShe looks at you and smiling confidently says:",
+              "line": "Goodnight. With Theo around, no one will dare getting anywhere near here."
             },
             {
               "actor": "Kriss",
@@ -851,22 +850,22 @@
         "type": "Action",
         "recap": "Theo's tent",
         "isvisited": false,
-        "text": "You stand inside the tent. Theo,# expressionless,# is looking at you.#\nHe looks like he's waiting for you to say something.",
+        "text": "You stand inside the tent.## Theo,# expressionless,# is looking at you.#\nHe looks like he's waiting for you to say something.",
         "actions": [
           {
             "verb": "look",
             "objects": [
               {
                 "obj": "around",
-                "answer": "Tent description"
+                "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow.#\nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?#\nBut the most striking feature to be observed is Theo himself."
               },
               {
                 "obj": "theo",
-                "answer": "Theo description"
+                "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance.#\nHe's even taller and massive than Jeorghe, and the similarities end there.#\nHe has ash blonde hair, almost white,# worn in a thick, quite long braid.#\nHe has a well-kept beard,# not long,# and just a little darker than the rest of his hair,#\nwhich frames his sturdy, squared face.#\n\nHis eyes are clear and cold as ice,# still there is something in him softening his gaze...\nAnd his talking,# even if so succint,# wasn't rough, neither veined with hate like those of the other men around there."
               },
               {
                 "obj": "bed",
-                "answer": "I see the mat.",
+                "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
                 "condition": {
                   "item": "mat",
                   "value": true,
@@ -876,20 +875,41 @@
             ]
           },
           {
+            "verb": "say",
+            "objects": [
+              {
+                "obj": "hello",
+                "answer": "$B\"Hello to you.\"#$C He says."
+              },
+              {
+                "obj": "hi",
+                "answer": "$B\"Hi to you.\"#$C He says."
+              }
+            ]
+          },
+          {
+            "verb": "hello",
+            "answer": "$B\"Hello to you.\"#$C He says."
+          },
+          {
+            "verb": "hi",
+            "answer": "$B\"Hi to you.\"#$C He says."
+          },
+          {
             "verb": "sleep",
             "objects": [
               {
                 "obj": "bed",
-                "answer": "You put the mat where Theo pointed you.",
+                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
                 "condition": {
                   "item": "mat",
                   "value": true,
                   "refusal": "I cannot just lay on the ground."
-                }                
+                }
               },
               {
                 "obj": "mat",
-                "answer": "You put the mat where Theo pointed you.",
+                "answer": "You put the mat on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
                 "condition": {
                   "item": "mat",
                   "value": true,
@@ -903,22 +923,20 @@
             "objects": [
               {
                 "obj": "bed",
-                "answer": "He gives you a mat and point.",
-                "effect":
-                {
+                "answer": "He gives you a bedroll and points you to the freer side of the tent.",
+                "effect": {
                   "item": "mat",
                   "value": true
                 }
               },
               {
                 "obj": "sleep",
-                "answer": "He gives you a mat and point.",
-                "effect":
-                {
+                "answer": "He gives you a mat and points you to the freer side of the tent.",
+                "effect": {
                   "item": "mat",
                   "value": true
                 }
-              }                
+              }
             ]
           }
         ]

@@ -15,11 +15,11 @@ namespace ConsoleGame.Nodes
         ConsoleKeyInfo key;
         int selectedRow = 0;
 
-        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)       //lineid iterates over elements of dialogues[] 
+        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
         {
             TextFlow(false);
 
-            var currentLine = Dialogues[lineId];                                //cureent object selected in the iteration
+            var currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)
 
@@ -39,16 +39,24 @@ namespace ConsoleGame.Nodes
                 Console.ForegroundColor = DataLayer.ActorsColors[currentLine.Actor]; 
 
                 TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ");
-                Console.ResetColor();                
             }
             if(currentLine.Comment != null)      
             {
+                if (isLineFlowing)
+                    Thread.Sleep(ParagraphBreak);
+
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
 
                 TextFlow(isLineFlowing, currentLine.Comment);
                 if (isLineFlowing)
                     Thread.Sleep(ParagraphBreak);
             }
+            else
+            {
+                if (isLineFlowing)
+                    Thread.Sleep(ParagraphBreak);                                   //if there was no comment after the line, wait a bit
+            }
+
             Console.WriteLine();
             Console.WriteLine();
             

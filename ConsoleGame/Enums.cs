@@ -42,7 +42,7 @@
             Descend,
             Wear,
             Remove,
-            Ask   
+               
         }
        
     }
