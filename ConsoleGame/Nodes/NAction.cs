@@ -103,41 +103,52 @@ namespace ConsoleGame.Nodes
             string[] words = typed.Split(delimiterChars);
 
             foreach (string word in words)                                  //is there one word matching one action?
-                act = Actions.Find(a => a.Verb == word) ?? act;
+            {
+                act = Actions.Find(a => a.Verb == word) ?? act;             //and stop at the first you find
+                if (act != null)
+                    break;
+            }
 
             if (act != null)                                                //if there's an action available...
             {
                 if (act.Objects.Count == 0)                                 //...and is objectless...
                 {
-                    if(act.Effect != null)                                  //in case the action has an Effect (inventory)
-                        act.StoreItem(act.Effect);
+                    if (!act.EvaluateSimple())                              //if for some reason Kriss can't do it, say it...
+                        CustomRefusal(act.Condition.Refusal);
+                    else
+                    {
+                        if(act.Effect != null)                              //in case the action has an Effect (inventory)
+                            act.StoreItem(act.Effect);
 
-                    SaveStatusOnExit();                                     //...just do it
-                    NodeFactory.CreateNode(act.ChildId);
+                        SaveStatusOnExit();                                 //...just do it
+                        NodeFactory.CreateNode(act.ChildId);
+                    }
                 }
                 else
                 {                                                           //...otherwise, examine Objects 
                     for (int i = 0; i < act.Objects.Count; i++)             //this is not O^2. only iterates over <10 x <10 items 
                     {
+                        Models.Object o = act.Objects[i];
+
                         foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                         {
-                            if (word == act.Objects[i].Obj)                 //the action is right, and there is a acceptable object specified
+                            if (word == o.Obj)                         //the action is right, and there is a acceptable object specified
                             {
-                                if (!act.Evaluate())                        //if for some reason Kriss can't do it, say it...
-                                    CustomRefusal(act.Condition.Refusal);
-                               
+                                if (!act.EvaluateCombination(o))       //if for some reason Kriss can't do it, say it...
+                                    CustomRefusal(o.Condition.Refusal);
+                                    
                                 else                                        //...otherwise, do it
                                 {
-                                    if (act.Objects[i].Effect != null)      //in case the obj has an Effect (inventory)
-                                        act.StoreItem(act.Objects[i].Effect);
+                                    if (o.Effect != null)              //in case the obj has an Effect (inventory)
+                                        act.StoreItem(o.Effect);
 
-                                    if (act.Objects[i].ChildId != null)     //if the action leads to another node
+                                    if (o.ChildId != null)             //if the action leads to another node
                                     {
                                         SaveStatusOnExit();
-                                        NodeFactory.CreateNode(act.Objects[i].ChildId);
+                                        NodeFactory.CreateNode(o.ChildId);
                                     }
                                     else                                    //if the action causes only an effect
-                                        DisplaySuccess(act.Objects[i]);
+                                        DisplaySuccess(o);
                                 }
                             }
                         }
@@ -147,16 +158,13 @@ namespace ConsoleGame.Nodes
             }
             else                                                            //if there's no action available, redraw node and display standard refuse
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-                TextFlow(false);
+                RedrawNode();
                 PrepareForAction(false);
             }
         }
         void CustomRefusal(string refusal)
         {
-            Console.Clear();                //redraw node 
-            TextFlow(false);
+            RedrawNode();
 
             Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
@@ -170,8 +178,7 @@ namespace ConsoleGame.Nodes
         }
         void DisplaySuccess(Models.Object obj) 
         {
-            Console.Clear();                  //redraw node 
-            TextFlow(false);
+            RedrawNode();
 
             Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
@@ -182,6 +189,12 @@ namespace ConsoleGame.Nodes
             Console.WriteLine();
 
             PrepareForAction(true); //display prompt without standard refuse
+        }
+        void RedrawNode()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            TextFlow(false);
         }
     }
 }

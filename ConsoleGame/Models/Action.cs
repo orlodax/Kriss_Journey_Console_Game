@@ -41,7 +41,7 @@ namespace ConsoleGame.Models
         }
        
 
-        public bool Evaluate()                      // check according to the condition
+        public bool EvaluateSimple()                            // check according to the condition
         {
             if (Condition != null)
             {
@@ -49,6 +49,20 @@ namespace ConsoleGame.Models
                 if (storedItem != null)
                 {
                     if (storedItem.Had & Condition.Value)
+                        return true;
+                }
+                return false;
+            }
+            return true;
+        }
+        public bool EvaluateCombination(Models.Object o)                       // check according to the condition
+        {
+            if (o.Condition != null)
+            {
+                var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == o.Condition.Item);
+                if (storedItem != null)
+                {
+                    if (storedItem.Had & o.Condition.Value)
                         return true;
                 }
                 return false;
@@ -63,10 +77,11 @@ namespace ConsoleGame.Models
     }
     public class Object
     {
-        public string Obj { get; set; } //object of the action
-        public string Answer { get; set; } //answer for incomplete player requests 
-        public string ChildId { get; set; } //key for matching next node
-        public Effect Effect { get; set; } //consequence from the object
+        public string Obj { get; set; }         //object of the action
+        public string Answer { get; set; }      //answer for incomplete player requests 
+        public string ChildId { get; set; }     //key for matching next node
+        public Effect Effect { get; set; }      //consequence from the object
+        public Condition Condition { get; set; }//combinations of actions and objects can have conditions too
     }
     public class Condition                      //condition for the viability of the action. normally an item
     {

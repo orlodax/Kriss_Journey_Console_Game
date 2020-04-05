@@ -12,6 +12,7 @@ namespace ConsoleGame.Nodes
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
             Console.CursorLeft = Console.WindowLeft;
 
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("Press a key to continue...");
             
             while (Console.KeyAvailable) 

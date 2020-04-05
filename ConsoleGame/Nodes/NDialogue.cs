@@ -39,6 +39,7 @@ namespace ConsoleGame.Nodes
                 Console.ForegroundColor = DataLayer.ActorsColors[currentLine.Actor]; 
 
                 TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ");
+                Console.ResetColor();                
             }
             if(currentLine.Comment != null)      
             {

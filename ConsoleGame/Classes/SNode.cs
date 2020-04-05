@@ -29,6 +29,8 @@ namespace ConsoleGame.Classes
         public SNode(NodeBase nb)
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
+
             node = nb;
 
             ID = node.Id;
@@ -63,7 +65,7 @@ namespace ConsoleGame.Classes
         internal void TextFlow(bool isFlowing, string text = "default")
         {
             //debug disable effect
-            //isFlowing = false;
+            isFlowing = false;
             //debug
 
             if (text == "default")
@@ -73,9 +75,6 @@ namespace ConsoleGame.Classes
             {
                 int flow = FlowDelay;
                 int paragraph = ParagraphBreak;
-
-                if (this is NStory)
-                    Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
 
                 if (!isFlowing)
                 {
