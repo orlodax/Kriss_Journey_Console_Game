@@ -8,6 +8,7 @@ namespace ConsoleGame.Nodes
     public class NAction : SNode
     {
         Models.Action act = null;
+        readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
 
         public NAction(NodeBase nb) : base(nb)
         {
@@ -26,8 +27,12 @@ namespace ConsoleGame.Nodes
                 Console.WriteLine(" You can't or won't do that. Try again.");
             }
             Console.Write(" \\> ");
+            
+            //if redrawing after backspacing, rewrite stack
+            if (keysPressed.Count > 0)
+                for (int i = 0; i < keysPressed.Count; i++)
+                    Console.Write(keysPressed[i].KeyChar.ToString());
 
-            List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
             ConsoleKeyInfo key;
 
             do
@@ -84,9 +89,9 @@ namespace ConsoleGame.Nodes
             if (keysPressed.Count > 0)
             {
                 keysPressed.RemoveAt(keysPressed.Count - 1);
-                Console.Write("\b");
-                Console.Write(" ");
-                Console.Write("\b");
+                Console.Clear();
+                TextFlow(false);
+                PrepareForAction(true);
             }
         }
         void EnterPressed(List<ConsoleKeyInfo> keysPressed)
@@ -97,6 +102,8 @@ namespace ConsoleGame.Nodes
 
             for (int i = 0; i < keysPressed.Count; i++)
                 typed += keysPressed[i].KeyChar.ToString().ToLower();
+
+            keysPressed.Clear();                                            //clear the stack after giving command
 
             char[] delimiterChars = { ' ', ',', '.', ':', '\t', '!', '\r' };
 
@@ -172,8 +179,7 @@ namespace ConsoleGame.Nodes
             Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            TextFlow(true, "<<" + refusal + ">>");
+            TextFlow(true, "<<" + refusal + ">>", ConsoleColor.Cyan);
             Console.WriteLine();
             Console.WriteLine();
 
@@ -192,8 +198,7 @@ namespace ConsoleGame.Nodes
             Console.CursorTop = offset;
             Console.CursorLeft = Console.WindowLeft;
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            TextFlow(true, answer);
+            TextFlow(true, answer, ConsoleColor.DarkYellow);
             Console.WriteLine();
             Console.WriteLine();
 
@@ -202,7 +207,6 @@ namespace ConsoleGame.Nodes
         void RedrawNode()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
             TextFlow(false);
         }
     }

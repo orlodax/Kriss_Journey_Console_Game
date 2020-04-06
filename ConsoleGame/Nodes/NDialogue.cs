@@ -25,8 +25,6 @@ namespace ConsoleGame.Nodes
 
             if(currentLine.PreComment != null)
             {
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-
                 TextFlow(isLineFlowing, currentLine.PreComment);
                 if (isLineFlowing)
                     Thread.Sleep(ParagraphBreak);
@@ -34,28 +32,26 @@ namespace ConsoleGame.Nodes
                 Console.WriteLine();
                 Console.WriteLine();
             }
+            
             if(currentLine.Line != null)
-            {
-                Console.ForegroundColor = DataLayer.ActorsColors[currentLine.Actor]; 
-
-                TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ");
-            }
+                TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
+            
             if(currentLine.Comment != null)      
             {
                 if (isLineFlowing)
+                {
                     Thread.Sleep(ParagraphBreak);
 
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    TextFlow(isLineFlowing, currentLine.Comment);
 
-                TextFlow(isLineFlowing, currentLine.Comment);
-                if (isLineFlowing)
                     Thread.Sleep(ParagraphBreak);
+                }
+                else
+                    TextFlow(isLineFlowing, currentLine.Comment);
             }
             else
-            {
                 if (isLineFlowing)
                     Thread.Sleep(ParagraphBreak);                                   //if there was no comment after the line, wait a bit
-            }
 
             Console.WriteLine();
             Console.WriteLine();
@@ -70,6 +66,7 @@ namespace ConsoleGame.Nodes
             if (currentLine.ChildId != null)                                        //if it encounters a link, jump to the node
             {      
                 HoldScreen();
+                SaveStatusOnExit();
                 NodeFactory.CreateNode(currentLine.ChildId);
             }
 
@@ -117,6 +114,7 @@ namespace ConsoleGame.Nodes
                 if (currentLine.Replies[selectedRow].ChildId != null)                 //on selecion, either 
                 {
                     Console.ReadKey(true);
+                    SaveStatusOnExit();
                     NodeFactory.CreateNode(currentLine.Replies[selectedRow].ChildId); //navigate to node specified in selected reply
                 }
                 else

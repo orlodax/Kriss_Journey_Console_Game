@@ -29,7 +29,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "rain intensify",
-        "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n##You shudder, stunned with its power.\n\n##After few breathless seconds, #you breathe again \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules.\n\n##You realise you have to move fast if you don't want to end up way more soaked than you already are.\n\n\n\n$D[Select with arrow keys and press enter]$C.\n\n",
+        "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n##You shudder, stunned with its power.\n\n##After few breathless seconds, #you breathe again \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules.\n\n##You realise you have to move fast if you don't want to end up way more soaked than you already are.\n\n\n\n$D[Select with arrow keys and press enter]$C.",
         "choices": [
           {
             "desc": "You start running. Let's minimise the water intake.",
@@ -54,7 +54,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "walking home",
-        "text": "Resigned to your fate, you try to keep your head down,\ntrying to avoid being temporarily blinded by the water in your eyes.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#\nYou also try to avoid the huge pools of water that are now forming on the road,\npraying that no vehicle will rush over them splattering you with some nice mud.\n#\nYou reach the bottom of the little hill that is in front of your house.\n#You raise your eyes, and right when you are about to turn towards your gate, you see something.\n#\nOn the top of the hill, there is something...# someone...# you can't say for sure.\n##\n\n",
+        "text": "Resigned to your fate, you try to keep your head down,\ntrying to avoid being temporarily blinded by the water in your eyes.\n#\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt.\n#\nYou also try to avoid the huge pools of water that are now forming on the road,\npraying that no vehicle will rush over them splattering you with some nice mud.\n#\nYou reach the bottom of the little hill that is in front of your house.\n#You raise your eyes, and right when you are about to turn towards your gate, you see something.\n#\nOn the top of the hill, there is something...# someone...# you can't say for sure.",
         "choices": [
           {
             "desc": "You think you saw it wrong. Why waste time climbing the hill with this weather?",
@@ -71,7 +71,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "who whispered",
-        "text": "You turn around, looking for the source of the voice.\n#\nIt's hard to see something in the midst of this unexpected thunderstorm.\n#You squint your eyes, fighting against the trickles of water that run into them.\n#\nAfter few seconds, you think you're seeing something.# On the top of the hill in front of your house.\n#It looks like there is something... #someone...# there.\n##But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.##\n\n\n",
+        "text": "You turn around, looking for the source of the voice.\n#\nIt's hard to see something in the midst of this unexpected thunderstorm.\n#You squint your eyes, fighting against the trickles of water that run into them.\n#\nAfter few seconds, you think you're seeing something.# On the top of the hill in front of your house.\n#It looks like there is something... #someone...# there.\n##But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.",
         "choices": [
           {
             "desc": "You hate to stay more time under the rain... but... you never know?",
@@ -107,7 +107,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "awoke",
-        "text": "-------------------------------\n|          CHAPTER 2          |\n-------------------------------\n\n\n$G<<You are alive...>>$C##\n\nWhose is that voice?# Your own?# Have you actually heard it?#\n\nYou slowly open your eyes, as thoughts resume their flow in your mind, trying to re-establish contact with reality.\n#\nIt takes several second to clear up your sight. You feel quite wrecked.\n#Just breathing deeply is a pain. You painfully, slowly sit up, and look around.\n#\nYou don't recognise what you see. You try hard to remember, and it finally gets back to you.\nHow can you still be alive after being hit by...# the lightning?\n#By the way,# you are still soaked to the bone.\n",
+        "text": "-------------------------------\n|          CHAPTER 2          |\n-------------------------------\n\n\n$G<<You are alive...>>$C##\n\nWhose is that voice?# Your own?# Have you actually heard it?#\n\nYou slowly open your eyes, as thoughts resume their flow in your mind, trying to re-establish contact with reality.\n#\nIt takes several seconds to clear up your sight. You feel quite wrecked.\n#Just breathing deeply is a pain. You painfully, slowly sit up, and look around.\n#\nYou don't recognise what you see. You try hard to remember, and it finally gets back to you.\nHow can you still be alive after being hit by...# the lightning?\n#By the way,# you are still soaked to the bone.\n",
         "childid": "1_02"
       },
       {
@@ -115,7 +115,7 @@
         "type": "Action",
         "isvisited": false,
         "recap": "look around",
-        "text": "$c\"Maybe I am dead,# afer all.\"$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
+        "text": "$c\"Maybe I am dead,# afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
         "actions": [
           {
             "verb": "look",
@@ -253,7 +253,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "findshelter",
-        "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better.\n#\nYou keep on walking and realise the road is scattered with corpses.# Some kind of battle must have taken place...\n#\nYou keep on walking, slowly, appalled.# You lose track of time, while your mind tries to grasp the reality.\n#You cannot find an explanation to any of the things you are experiencing.\n\n\n##After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire.\n#\nYou shake up, shuddering. This reminds you that you should find some kind of shelter for the night,\n#get dry,# and possibly not burnt.\n\n\n\n",
+        "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better.\n#\nYou keep on walking and realise the road is scattered with corpses.# Some kind of battle must have taken place...\n#\nYou keep on walking, slowly, appalled.# You lose track of time, while your mind tries to grasp the reality.\n#You cannot find an explanation to any of the things you are experiencing.\n\n\n##After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire.\n#\nYou shake up, shuddering. This reminds you that you should find some kind of shelter for the night,\n#get dry,# and possibly not burnt.",
         "choices": [
           {
             "desc": "You had enough for today. Nothing you may find inside the house could be worse than what is outside.",
@@ -429,7 +429,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "reach camp",
-        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster.##\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhythm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# Women,# children.#\nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.\n\n\n",
+        "text": "You walked all day long.# All you saw were little isolated trees, some bushes and some birds.\n#You feel exhausted. It's almost sunset, and you are about to despair.#\nBut then, you see it. A thin plume of smoke rising.\n#\n$c<<Please not another dead town>>$C you say in your mind,# while you start walking faster.##\n\nBy the time you get there, it's completely dark. In front of you, an encampment.\n#Your survival instinct tells you to lay down and crawl among the sparse low bushes and grass.\n\n#There are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it.\n#The smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours.\n#Around the fire, many men are dancing to the rhythm of crude songs with obscure words.\n#Between a song and a piece of meat, they gulp down impressive mugs of what must be beer.\n\n#You look around: no movement at the sides of the encampent. And then you see them.##\n\nSlaves.# Women,# children.#\nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day.# Then it dawns on you:\n\n#$c<<These thugs must be the responsibles of what I saw at that village!>>$C##\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage.# You shouldn't, but you $Whave$C to do something.",
         "choices": [
           {
             "desc": "You feel you must do something... But it's too dangerous, you don't want to end up in one of those cages.",
@@ -567,7 +567,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "jeorghe attack",
-        "text": "$CJeorghe, a mass of muscles, rises his improvised weapon and lunges for you.#\n\nIn emergency mode, your brain instantly tells you that you need to act quickly.#\nAdrenaline starts pumping through your every vein.#\n\nWhere to go, in the middle of a desert?\n\n\n",
+        "text": "$CJeorghe, a mass of muscles, rises his improvised weapon and lunges for you.#\n\nIn emergency mode, your brain instantly tells you that you need to act quickly.#\nAdrenaline starts pumping through your every vein.#\n\nWhere to go, in the middle of a desert?",
         "choices": [
           {
             "desc": "There's no way you can beat him. Run for your life...!",
@@ -646,7 +646,7 @@
         "type": "Choice",
         "isvisited": false,
         "recap": "chief question",
-        "text": "$M\"How come you happen to be here?\"$C##\n\nYou are not prepared to answer this question.#\nYou had no chance so far to even think about it.#\n\n\n",
+        "text": "$M\"How come you happen to be here?\"$C##\n\nYou are not prepared to answer this question.#\nYou had no chance so far to even think about it.",
         "choices": [
           {
             "desc": "Lie blatantly",
@@ -727,124 +727,124 @@
         "recap": "meet the others",
         "isvisited": false,
         "dialogues": [
-            {
-              "actor": "Corolla",
-              "precomment": "You walk with Corolla, quick-paced, going somewhere only she knows.#\nYou see her picking up the bolas that hit Jeorghe, hanging them to her hip...# so it was her saving you!#\nSomething else attracts your attention though, a movement, in the darkness.#\nUnintetionally, you wince. She notices that and says:",
-              "line": "Don't worry. That is Smiurl..."
-            },
-            {
-              "actor": "Kriss",
-              "line": "Smiurl...?",
-              "comment": "You don't understand what she's talking about.#\nIn the meantime, you unintentionally draw closer to her."
-            },
-            {
-              "actor": "Corolla",
-              "line": "Yep. It was him to knock Jeorghe down, after I tied him up."
-            },
-            {
-              "precomment": "You remember you glimpsed something.# You just weren't thinking that it could be someone.",
-              "actor": "Corolla",
-              "line": "Smiurl, don't you think it's time to introduce yourself?",
-              "comment": "She says after she stopped walking,\napparently talking to the shadows." 
-            },
-            {
-              "actor": "Smiurl",
-              "line": "I really have to, haven't I?",
-              "comment": "you hear a squeaky little voice, not distant."
-            },
-            {
-              "actor": "Smiurl",
-              "line": "Well, I guess I have to...",
-              "comment": "He then adds.#\n\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height.#\nHe has a shy look in his eyes.",
-              "isbreakneeded": true
-            },
-            {
-              "actor": "Smiurl",
-              "precomment": "He stretches up his little wrinkly hand to you and says:",
-              "line": "Hello Kriss, I am Smiurl.",
-              "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf.#\nHe has huge ears, pierced with a plethora of earrings, which jingle faintly when he jolts his head.#\nThe nose is also quite big, compared to the rest of the face.#\nHe's wearing a shirt and a pair of short discolored leather trousers.#\nHis face looks like it's made to constantly display a lost-puppy-like expression...#"
-            },
-            {
-              "precomment": "Somehow Corolla must know what you are thinking.#",
-              "actor":"Corolla",
-              "line": "Don't let him deceive you... Smiurl is a true valiant when you need him.",
-              "comment": "Hearing that compliment,#\nthe little guy lits up everywhere.##\n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C##\nHe actually starts emanating a vague, multicoloured luminescence.#"
-            },
-            {
-              "actor": "Kriss",
-              "line": "Whoa!",
-              "comment": "You exclaim, not believing your eyes."
-            },
-            {
-              "actor": "Corolla",
-              "line": "Easy, he's innocuous!",
-              "comment": "She laughs heartily.# Her laughter rises up, clear and silvery."
-            },
-            {
-              "actor": "Corolla",
-              "line": "Smiurl is a mutant.",
-              "comment": "She adds right after."
-            },
-            {
-              "actor": "Kriss",
-              "line": "Incredible...!",
-              "comment": "You observe him, amazed. In the meantime, he has somehow 'turned off'.",
-              "isbreakneeded": true
-            },
-            {
-              "actor": "Smiurl",
-              "line": "You aren't angry, are you?",
-              "comment": "He asks with trembling voice."
-            },
-            {
-              "actor": "Kriss",
-              "line": "Angry?! Why would I be angry?"
-            },
-            {
-              "actor": "Smiurl",
-              "line": "Everybody hates me...# It's because...# I'm different.",
-              "comment": "He complains, looking down."
-            },
-            {
-              "precomment": "You feel compassion for that little man. You can only imagine how miserable his life must be,#\nliving surrounded by that kind of human filth.# They must make his life a hell every day.#\n\nYou say to him warmly:",
-              "actor": "Kriss",
-              "line": "I do not hate you! On the contrary: you guys saved my life... and I still haven't thanked you properly!"
-            },
-            {
-              "actor": "Corolla",
-              "line": "Our duty.",
-              "comment": "She smiles openly.# The white of her teeth uncovers under the light of the stars.#\n\nSmiurl starts glowing again, puffing up all happy.",
-              "isbreakneeded": true
-            },
-            {
-              "precomment": "You keep walking with them for a while.# You start wondering how people like them can mingle with those thugs.#\nWhat are they doing here?#\n\nYou reach an area separated from the rest of the encampent by a group of dry trees.#\nYou see a few tents next to each other.",
-              "actor": "Corolla",
-              "line": "There, you can sleep in the tent with Theo.",
-              "comment": "She points at the biggest of the group."
-            },
-            {
-              "actor": "Kriss",
-              "line": "Who is...",
-              "comment": "You are about to say, but a man is already coming towards you."
-            },
-            {
-              "actor": "Corolla",
-              "line": "Precisely. That's him. Theo, let me introduce you to Kriss.#\nWould you kindly provide him a bedroll of yours, at least for tonight?",
-              "comment": "\nThe giant, from the top of his impressive figure, simply answers:#\n\n$B\"Of course.\"##$C and then, to you:# $B\"Come.\"$C#"
-            },
-            {
-              "actor":"Corolla",
-              "precomment": "You all walk together to his tent.# She keeps it open for you to enter it, Smiurl peeking from behind her legs.#\nShe looks at you and smiling confidently says:",
-              "line": "Goodnight. With Theo around, no one will dare getting anywhere near here."
-            },
-            {
-              "actor": "Kriss",
-              "line": "Goodnight... And thank you, again!",
-              "comment": "You reply as she disappears into the night, without a sound.",
-              "childid": "2_02"
-            }
-          ]
-        },
+          {
+            "actor": "Corolla",
+            "precomment": "You walk with Corolla, quick-paced, going somewhere only she knows.#\nYou see her picking up the bolas that hit Jeorghe, hanging them to her hip...# so it was her saving you!#\nSomething else attracts your attention though, a movement, in the darkness.#\nUnintetionally, you wince. She notices that and says:",
+            "line": "Don't worry. That is Smiurl..."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Smiurl...?",
+            "comment": "You don't understand what she's talking about.#\nIn the meantime, you unintentionally draw closer to her."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Yep. It was him to knock Jeorghe down, after I tied him up."
+          },
+          {
+            "precomment": "You remember you glimpsed something.# You just weren't thinking that it could be someone.",
+            "actor": "Corolla",
+            "line": "Smiurl, don't you think it's time to introduce yourself?",
+            "comment": "She says after she stopped walking,\napparently talking to the shadows."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "I really have to, haven't I?",
+            "comment": "you hear a squeaky little voice, not distant."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Well, I guess I have to...",
+            "comment": "He then adds.#\n\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height.#\nHe has a shy look in his eyes.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "He stretches up his little wrinkly hand to you and says:",
+            "line": "Hello Kriss, I am Smiurl.",
+            "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf.#\nHe has huge ears, pierced with a plethora of earrings, which jingle faintly when he jolts his head.#\nThe nose is also quite big, compared to the rest of the face.#\nHe's wearing a shirt and a pair of short discolored leather trousers.#\nHis face looks like it's made to constantly display a lost-puppy-like expression...#"
+          },
+          {
+            "precomment": "Somehow Corolla must know what you are thinking.#",
+            "actor": "Corolla",
+            "line": "Don't let him deceive you... Smiurl is a true valiant when you need him.",
+            "comment": "Hearing that compliment,#\nthe little guy lits up everywhere.##\n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C##\nHe actually starts emanating a vague, multicoloured luminescence.#"
+          },
+          {
+            "actor": "Kriss",
+            "line": "Whoa!",
+            "comment": "You exclaim, not believing your eyes."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Easy, he's innocuous!",
+            "comment": "She laughs heartily.# Her laughter rises up, clear and silvery."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Smiurl is a mutant.",
+            "comment": "She adds right after."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Incredible...!",
+            "comment": "You observe him, amazed. In the meantime, he has somehow 'turned off'.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Smiurl",
+            "line": "You aren't angry, are you?",
+            "comment": "He asks with trembling voice."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Angry?! Why would I be angry?"
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Everybody hates me...# It's because...# I'm different.",
+            "comment": "He complains, looking down."
+          },
+          {
+            "precomment": "You feel compassion for that little man. You can only imagine how miserable his life must be,#\nliving surrounded by that kind of human filth.# They must make his life a hell every day.#\n\nYou say to him warmly:",
+            "actor": "Kriss",
+            "line": "I do not hate you! On the contrary: you guys saved my life... and I still haven't thanked you properly!"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Our duty.",
+            "comment": "She smiles openly.# The white of her teeth uncovers under the light of the stars.#\n\nSmiurl starts glowing again, puffing up all happy.",
+            "isbreakneeded": true
+          },
+          {
+            "precomment": "You keep walking with them for a while.# You start wondering how people like them can mingle with those thugs.#\nWhat are they doing here?#\n\nYou reach an area separated from the rest of the encampent by a group of dry trees.#\nYou see a few tents next to each other.",
+            "actor": "Corolla",
+            "line": "There, you can sleep in the tent with Theo.",
+            "comment": "She points at the biggest of the group."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Who is...",
+            "comment": "You are about to say, but a man is already coming towards you."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Precisely. That's him. Theo, let me introduce you to Kriss.#\nWould you kindly provide him a bedroll of yours, at least for tonight?",
+            "comment": "\nThe giant, from the top of his impressive figure, simply answers:#\n\n$B\"Of course.\"##$C and then, to you:# $B\"Come.\"$C#"
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You all walk together to his tent.# She keeps it open for you to enter it, Smiurl peeking from behind her legs.#\nShe looks at you and smiling confidently says:",
+            "line": "Goodnight. With Theo around, no one will dare getting anywhere near here."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Goodnight... And thank you, again!",
+            "comment": "You reply as she disappears into the night, without a sound.",
+            "childid": "2_02"
+          }
+        ]
+      },
       {
         "id": "2_02",
         "type": "Action",
@@ -876,6 +876,7 @@
           },
           {
             "verb": "say",
+            "answer": "He keeps on staring at me...",
             "objects": [
               {
                 "obj": "hello",
@@ -897,10 +898,12 @@
           },
           {
             "verb": "sleep",
+            
             "objects": [
               {
                 "obj": "bed",
                 "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
+                "childid": "2_03",
                 "condition": {
                   "item": "mat",
                   "value": true,
@@ -910,6 +913,7 @@
               {
                 "obj": "mat",
                 "answer": "You put the mat on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
+                "childid": "2_03",
                 "condition": {
                   "item": "mat",
                   "value": true,
@@ -940,6 +944,51 @@
             ]
           }
         ]
+      },
+      {
+        "id": "2_03",
+        "recap": "awake in the encampent",
+        "type": "Choice",
+        "text": "##$G<<Kriss...>>$C##\n\nYou open your eyes.# You hear that 'voice' again.# Are you imagining it?# Are you going crazy?# Who knows.##\n\nSomehow you feel rested enough.# The tent is now empty, Theo must have left earlier.#\n\nThe sun seeps through: it must be quite high already.#\nYou hear noises coming from the camp. It feels like it's rustling with activity.#\nYou lay down a little longer, not sure about how you should feel. All of this is just crazy.#\nYou acted impulsively last night. What are you supposed to do now?##\n\nWell, at least you have Corolla and Smiurl and... Theo...# They seem good persons.#\n\n$c<<The hot girl, the dwarf and the giant. What kind of joke is this??>>$C##\n\nYou just can't wrap yuour mind around all of it.# At least, not yet.",
+        "choices": [
+          {
+            "desc": "You feel depressed, you need more time to assimilate the rality. You stay in bed to think it through.",
+            "childid": "2_05"
+          },
+          {
+            "desc": "No point in helplessly laying down. Better move on and see what's coming next.",
+            "childid": "2_04"
+          }
+        ]
+      },
+      {
+        "id": "2_04",
+        "recap": "try sneak"
+      },
+      {
+        "id": "2_05",
+        "recap": "wait thinking"
+      },
+      {
+        "id": "2_06",
+        "recap": "Smiurl catches you"
+      },
+      {
+        "id": "2_07",
+        "recap": "Smiurl calls you"
+      },
+      {
+        "id": "2_08",
+        "recap": "talk before leaving",
+        "type": "Dialogue"
+      },
+      {
+        "recap": "get changed",
+        "type": "Story"
+      },
+      {
+        "recap": "Corolla says we attack",
+        "type": "Dialogue"
       }
     ]
   ]
