@@ -62,11 +62,13 @@ namespace ConsoleGame.Classes
         internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
         internal int ParagraphBreak { get; set; } = 1000; // fine-tunes the pause between blocks
 
-        internal void TextFlow(bool isFlowing, string text = "default")
+        internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
             //debug disable effect
-            isFlowing = false;
+            //isFlowing = false;
             //debug
+
+            Console.ForegroundColor = color;
 
             if (text == "default")
                 text = Text;
@@ -89,43 +91,43 @@ namespace ConsoleGame.Classes
                         switch (c.ToString())
                         {
                             case "R":
-                                Console.ForegroundColor = ConsoleColor.Red; //Corolla
+                                color = ConsoleColor.Red; //Corolla
                                 break;
                             case "r":
-                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                color = ConsoleColor.DarkRed;
                                 break;
                             case "G":
-                                Console.ForegroundColor = ConsoleColor.Green;
+                                color = ConsoleColor.Green;
                                 break;
                             case "B":
-                                Console.ForegroundColor = ConsoleColor.Blue; //Theo
+                                color = ConsoleColor.Blue; //Theo
                                 break;
                             case "C":
-                                Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator
+                                color = ConsoleColor.DarkCyan; //narrator
                                 break;
                             case "c":
-                                Console.ForegroundColor = ConsoleColor.Cyan; //yourself
+                                color = ConsoleColor.Cyan; //yourself
                                 break;
                             case "M":
-                                Console.ForegroundColor = ConsoleColor.Magenta;
+                                color = ConsoleColor.Magenta;
                                 break;
                             case "Y":
-                                Console.ForegroundColor = ConsoleColor.Yellow; //Smiurl
+                                color = ConsoleColor.Yellow; //Smiurl
                                 break;
                             case "K":
-                                Console.ForegroundColor = ConsoleColor.Black;
+                                color = ConsoleColor.Black;
                                 break;
                             case "W":
-                                Console.ForegroundColor = ConsoleColor.White;
+                                color = ConsoleColor.White;
                                 break;
                             case "S":
                                 Console.BackgroundColor = ConsoleColor.White;
                                 break;
                             case "D":
-                                Console.ForegroundColor = ConsoleColor.DarkGray; //menus, help
+                                color = ConsoleColor.DarkGray; //menus, help
                                 break;
                             case "d":
-                                Console.ForegroundColor = ConsoleColor.Gray; //menus, help
+                                color = ConsoleColor.Gray; //menus, help
                                 break;
                             default:
                                 break;
@@ -134,6 +136,7 @@ namespace ConsoleGame.Classes
                     {
                         if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
                         {
+                            Console.ForegroundColor = color;
                             Console.Write(c);
                             Thread.Sleep(flow);
                         }

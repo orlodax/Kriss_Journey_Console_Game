@@ -15,18 +15,16 @@ namespace ConsoleGame.Nodes
         ConsoleKeyInfo key;
         int selectedRow = 0;
 
-        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)       //lineid iterates over elements of dialogues[] 
+        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
         {
             TextFlow(false);
 
-            var currentLine = Dialogues[lineId];                                //cureent object selected in the iteration
+            var currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)
 
             if(currentLine.PreComment != null)
             {
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-
                 TextFlow(isLineFlowing, currentLine.PreComment);
                 if (isLineFlowing)
                     Thread.Sleep(ParagraphBreak);
@@ -34,21 +32,27 @@ namespace ConsoleGame.Nodes
                 Console.WriteLine();
                 Console.WriteLine();
             }
+            
             if(currentLine.Line != null)
-            {
-                Console.ForegroundColor = DataLayer.ActorsColors[currentLine.Actor]; 
-
-                TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ");
-                Console.ResetColor();                
-            }
+                TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
+            
             if(currentLine.Comment != null)      
             {
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-
-                TextFlow(isLineFlowing, currentLine.Comment);
                 if (isLineFlowing)
+                {
                     Thread.Sleep(ParagraphBreak);
+
+                    TextFlow(isLineFlowing, currentLine.Comment);
+
+                    Thread.Sleep(ParagraphBreak);
+                }
+                else
+                    TextFlow(isLineFlowing, currentLine.Comment);
             }
+            else
+                if (isLineFlowing)
+                    Thread.Sleep(ParagraphBreak);                                   //if there was no comment after the line, wait a bit
+
             Console.WriteLine();
             Console.WriteLine();
             
@@ -62,6 +66,7 @@ namespace ConsoleGame.Nodes
             if (currentLine.ChildId != null)                                        //if it encounters a link, jump to the node
             {      
                 HoldScreen();
+                SaveStatusOnExit();
                 NodeFactory.CreateNode(currentLine.ChildId);
             }
 
@@ -109,6 +114,7 @@ namespace ConsoleGame.Nodes
                 if (currentLine.Replies[selectedRow].ChildId != null)                 //on selecion, either 
                 {
                     Console.ReadKey(true);
+                    SaveStatusOnExit();
                     NodeFactory.CreateNode(currentLine.Replies[selectedRow].ChildId); //navigate to node specified in selected reply
                 }
                 else

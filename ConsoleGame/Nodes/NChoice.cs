@@ -1,6 +1,7 @@
 ﻿using ConsoleGame.Classes;
 using ConsoleGame.Models;
 using System;
+using System.Threading;
 
 namespace ConsoleGame.Nodes
 {
@@ -9,6 +10,10 @@ namespace ConsoleGame.Nodes
         int selectedRow = 0;
         public NChoice(NodeBase nb) : base(nb)
         {
+            Thread.Sleep(ParagraphBreak);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
             NodeFactory.CreateNode(Choices[WaitForChoice()].ChildId);
         }
         int WaitForChoice()
