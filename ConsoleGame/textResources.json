@@ -898,7 +898,7 @@
           },
           {
             "verb": "sleep",
-            
+
             "objects": [
               {
                 "obj": "bed",
@@ -949,10 +949,10 @@
         "id": "2_03",
         "recap": "awake in the encampent",
         "type": "Choice",
-        "text": "##$G<<Kriss...>>$C##\n\nYou open your eyes.# You hear that 'voice' again.# Are you imagining it?# Are you going crazy?# Who knows.##\n\nSomehow you feel rested enough.# The tent is now empty, Theo must have left earlier.#\n\nThe sun seeps through: it must be quite high already.#\nYou hear noises coming from the camp. It feels like it's rustling with activity.#\nYou lay down a little longer, not sure about how you should feel. All of this is just crazy.#\nYou acted impulsively last night. What are you supposed to do now?##\n\nWell, at least you have Corolla and Smiurl and... Theo...# They seem good persons.#\n\n$c<<The hot girl, the dwarf and the giant. What kind of joke is this??>>$C##\n\nYou just can't wrap yuour mind around all of it.# At least, not yet.",
+        "text": "##$G<<Kriss...>>$C##\n\nYou open your eyes.# You hear that 'voice' again.# Are you imagining it?# Are you going crazy?# Who knows.##\n\nSomehow you feel rested enough.# The tent is now empty, Theo must have left earlier.#\n\nThe sun seeps through: it must be quite high already.#\nYou hear noises coming from the camp. It feels like it's rustling with activity.#\nYou lay down a little longer, not sure about how you should feel. All of this is just crazy.#\nYou acted impulsively last night. What are you supposed to do now?##\n\nWell, at least you met Corolla and Smiurl and... Theo...# They seem good persons.#\n\n$c<<The hot girl, the dwarf and the giant. What kind of joke is this??>>$C##\n\nYou just can't wrap yuour mind around all of it.# At least, not yet.",
         "choices": [
           {
-            "desc": "You feel depressed, you need more time to assimilate the rality. You stay in bed to think it through.",
+            "desc": "You don't know what to do. You need more time to assimilate the rality. You stay in bed to think it through.",
             "childid": "2_05"
           },
           {
@@ -963,33 +963,114 @@
       },
       {
         "id": "2_04",
-        "recap": "try sneak"
+        "recap": "try sneak",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You get up, stretch your limbs and go outside shielding your eyes from the sun with your hand.#\n\nAll around, the camp is abuzz. Looking at it in the broad daylight, it reveals itself to be bigger than you thought.#\n\nThe majority of the tents has been already packed.#\nIt's full of men and horses going in all directions more or less hastily.#\n\nIn the middle of it all, there is an open jeep. The Chief is standing on its hood, distributing orders here and there.##",
+            "actor": "Smiurl",
+            "line": "Watch out!",
+            "comment": "At that sudden sound,# you wince,# to say the least.#\nSmiurl comes out from behind a pile of straw."
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "Noticing your reaction, he istantly assumes a sorry expression, while he starts explaining:",
+            "line": "It's dangerous...## Corolla ordered me to stand guard and give alarm in case of danger.#\nShe thinks someone may want to hurt you...##"
+          },
+          {
+            "actor": "Theo",
+            "line": "And she's right.",
+            "comment": "You turn around hearing that baritone voice behind you."
+          },
+          {
+            "actor": "Theo",
+            "line": "You'd better get ready.# We'll leave soon.# Wear these.",
+            "comment": "Theo hands you some clothes.\n#It is clear that what you're wearing is not suitable for the journey that awaits you."
+          },
+          {
+            "actor": "Theo",
+            "line": "Above all,# take off those shoes...",
+            "comment": "He then adds looking at your popular sneakers.#\nYou have to admit they look alien in that place.## You go back to the tent to get changed.",
+            "childid": "2_06"
+          }
+        ]
       },
       {
         "id": "2_05",
-        "recap": "wait thinking"
+        "recap": "wait thinking",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You are lost in your thoughts...##\nRuminating on what's happening,#\nif this is all inside your head,#\nif you are still alive,\n#and many other good amenities.##\n\nThen a voice abruptly snatches you off your thinking:",
+            "actor": "Smiurl",
+            "line": "Good morning!",
+            "comment": "At that sudden sound,# you wince,# to say the least.#\nSmiurl is poking whit his head into the tent.# He looks at you with a mixture of cheerfulness and agitation."
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "Noticing your reaction, he istantly assumes a sorry expression, while he starts explaining:",
+            "line": "Corolla ordered me to stand guard and give alarm in case of danger.#\nShe thinks someone may want to hurt you..."
+          },
+          {
+            "actor": "Theo",
+            "line": "And she's right.",
+            "comment": "Theo opens wide the tent around Smiurl in order to let himself inside."
+          },
+          {
+            "actor": "Theo",
+            "line": "You'd better get ready.# We'll leave soon.# Wear these.",
+            "comment": "Theo hands you some clothes.\n#It is clear that what you're wearing is not suitable for the journey that awaits you."
+          },
+          {
+            "actor": "Theo",
+            "line": "Above all, take off those shoes...",
+            "comment": "He then adds looking at your popular sneakers.#\nYou have to admit they look alien in that place.## They both leave you alone to let you change.",
+            "childid": "2_06"
+          }
+        ]
       },
       {
         "id": "2_06",
-        "recap": "Smiurl catches you"
+        "recap": "time to leave",
+        "type": "Story",
+        "text": "You inspect the clothes Theo gave you.#\nA big, heavy pair of combat/trekking boots.#\nWide hat which will covers a substantial part of your face.#\nLeather trousers, shirt and a kind of cape, resembling a poncho.##\n\nBut waht surprises you is a very heavy mallet.#\n\n$c<<What am I supposed to do with this?>>##$C\n\nYou wear the clothes, then look more closely at the big hammer.# You can hardly handle it with just one hand.#\nYou don't recognise the metallic material it's made of.#\nThe wider sides are adorned with golden friezes, the shorter fitted with metal spikes.##\n\nFirst, you wonder in what kind of situation you may need to use it.#\nThen you wonder how you could even wield it.##\n\nAfter few instants, you shake your head and put the mallet down with the other weapons there.#\nThat thing is not for you.",
+        "childid": "2_07"
       },
       {
         "id": "2_07",
-        "recap": "Smiurl calls you"
-      },
-      {
-        "id": "2_08",
-        "recap": "talk before leaving",
-        "type": "Dialogue"
-      },
-      {
-        "recap": "get changed",
-        "type": "Story"
-      },
-      {
-        "recap": "Corolla says we attack",
-        "type": "Dialogue"
+        "recap": "time to leave",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You just finished changing and examining the hammer, when Corolla steps inside.",
+            "actor": "Corolla",
+            "line": "Hi! I see you are ready: good.# It's time to go."
+          },
+          {
+            "actor": "Kriss",
+            "line": "What is this place we are going to...?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "The Chief heard about a trade caravan in transit in the valley west from here."
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You stare at her, not understanding what she means.# Maybe you assume an expression a bit stupid.#\n\nCorolla puts her hands onto your shoulders,# transfixing you with her eyes:",
+            "line": "We are going to $Wattack$R them,# Kriss.",
+            "childid": "3_01"
+          }
+        ]
       }
+    ],
+    [
+      {
+        "id": "3_01",
+        "recap": "nope",
+        "type": "Story",
+        "text": "$DEND OF CHAPTER 3",
+        "childid":  "3_01"
+      }    
     ]
   ]
 }
