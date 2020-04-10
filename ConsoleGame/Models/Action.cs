@@ -5,20 +5,20 @@ namespace ConsoleGame.Models
 {
     public class Action
     {
-        public string Verb { get; set; } //verb of the action
+        public List<Word> Verbs { get; set; } //verb of the action
         public string ChildId { get; set; } //key for matching next node
         public string Answer { get; set; } //answer for incomplete player requests 
         public List<Object> Objects { get; set; } = new List<Object>(); //objects for the verbs
         public Condition Condition { get; set; } //condition for the viability of the action. normally an item
         public Effect Effect { get; set; } //consequence from the base action
-        public string GetOpinion()           // to get response message when action requires an object and player does not provide any valid
+        public string GetOpinion(string word)           // to get response message when action requires an object and player does not provide any valid
         {
             if (Answer != null)
                 return Answer;
             else
             {
-                if (Verb != null && !string.IsNullOrWhiteSpace(Verb))
-                    switch (Verb)
+                if (word != null && !string.IsNullOrWhiteSpace(word))
+                    switch (word)
                     {
                         case "look":
                             return "What shoud I look at? Where?";
@@ -41,12 +41,14 @@ namespace ConsoleGame.Models
                         case "sleep":
                             return "Where can I sleep?";
                         case "say":
-                            return "What could I say";
+                            return "What could I say?";
+                        case "ask":
+                            return "What will I ask?";
                     }
                 return "Sorry can't do that.";
             }
         }
-       
+
 
         public bool EvaluateSimple()                            // check according to the condition
         {
@@ -100,5 +102,9 @@ namespace ConsoleGame.Models
     {
         public string Item { get; set; }        // name of the resource 
         public bool Value { get; set; }         // value of the resource
+    }
+    public class Word
+    { 
+    public string Term { get; set; }
     }
 }

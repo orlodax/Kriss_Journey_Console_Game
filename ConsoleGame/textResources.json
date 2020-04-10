@@ -118,35 +118,33 @@
         "text": "$c\"Maybe I am dead,# afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario.\n#\nIn the meanwhile, you look at the small reddish vale that lies downhill.\n#There is smoke ascending from what it looks like several fires or arsons.\n#\nYou carefully stand up, getting dizzy until your sense of balance stabilises.\n#\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
         "actions": [
           {
-            "verb": "look",
+            "verbs": [ { "term": "look" } ],
             "childid": "1_03"
           },
           {
-            "verb": "walk",
+            "verbs": [
+              { "term": "walk" },
+              { "term": "go" }
+            ],
             "childid": "1_04"
           },
           {
-            "verb": "go",
-            "childid": "1_04"
-          },
-          {
-            "verb": "run",
+            "verbs": [ { "term": "run" } ],
             "childid": "1_05"
           },
           {
-            "verb": "laugh",
+            "verbs": [ { "term": "laugh" } ],
             "childid": "1_06"
           },
           {
-            "verb": "cry",
+            "verbs": [ { "term": "cry" } ],
             "childid": "1_07"
           },
           {
-            "verb": "shout",
-            "childid": "1_08"
-          },
-          {
-            "verb": "scream",
+            "verbs": [
+              { "term": "shout" },
+              { "term": "scream" }
+            ],
             "childid": "1_08"
           }
         ]
@@ -207,35 +205,33 @@
         "text": "You stand on this hill, like the one that is in front of your house.\n#But the similarities end there. There are no places like this around your place,\nmaybe not even in your whole nation.\n#\nYou are still wondering what happened and how did you end up here.\nYou try to keep calm, thinking about what to do next.\n",
         "actions": [
           {
-            "verb": "look",
+            "verbs": [ { "term": "look" } ],
             "childid": "1_03"
           },
           {
-            "verb": "walk",
+            "verbs": [
+              { "term": "walk" },
+              { "term": "go" }
+            ],
             "childid": "1_04"
           },
           {
-            "verb": "go",
-            "childid": "1_04"
-          },
-          {
-            "verb": "run",
+            "verbs": [ { "term": "run" } ],
             "childid": "1_05"
           },
           {
-            "verb": "laugh",
+            "verbs": [ { "term": "laugh" } ],
             "childid": "1_06"
           },
           {
-            "verb": "cry",
+            "verbs": [ { "term": "cry" } ],
             "childid": "1_07"
           },
           {
-            "verb": "shout",
-            "childid": "1_08"
-          },
-          {
-            "verb": "scream",
+            "verbs": [
+              { "term": "shout" },
+              { "term": "scream" }
+            ],
             "childid": "1_08"
           }
         ]
@@ -273,122 +269,103 @@
         "text": "Overcoming fear with need, you enter the silent,# dark,# house.# You don't expect to find anybody in there.\n#It's a very humble abode, earthen floor, small windows, few ornaments.\n#\nA fireplace signals the kitchen. A table, some chairs.# You suddenly realise how hungry you are.\n#The only other room is the bedroom, a simple bed, a closet.\n#All furniture pieces are made of the same wood.\n#It doesn't look like there is running water anywhere. You can't even find a toilet.\n#\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]$C",
         "actions": [
           {
-            "verb": "search",
-            "objects": [
-              {
-                "obj": "food",
-                "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
-                "effect": {
-                  "item": "food",
-                  "value": true
-                }
-              },
-              {
-                "obj": "water",
-                "answer": "There is covered jug full of water on the kitchen counter.",
-                "effect": {
-                  "item": "water",
-                  "value": true
-                }
-              },
-              {
-                "obj": "clothes",
-                "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
-                "effect": {
-                  "item": "clothes",
-                  "value": true
-                }
-              },
-              {
-                "obj": "money",
-                "answer": "You can't find anything valuable."
-              }
-            ]
-          },
-          {
-            "verb": "sleep",
-            "objects": [
-              {
-                "obj": "bed",
-                "condition": {
-                  "item": "clothes",
-                  "value": true,
-                  "refusal": "I don't want to lay down with these dirty clothes on."
+            "verbs": [
+              { "term": "search" }
+            ],
+              "objects"
+              :
+              [
+                {
+                  "obj": "food",
+                  "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
+                  "effect": {
+                    "item": "food",
+                    "value": true
+                  }
                 },
-                "childid": "1_14"
-              }
-            ]
+                {
+                  "obj": "water",
+                  "answer": "There is covered jug full of water on the kitchen counter.",
+                  "effect": {
+                    "item": "water",
+                    "value": true
+                  }
+                },
+                {
+                  "obj": "clothes",
+                  "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
+                  "effect": {
+                    "item": "clothes",
+                    "value": true
+                  }
+                },
+                {
+                  "obj": "money",
+                  "answer": "You can't find anything valuable."
+                }
+              ]
           },
           {
-            "verb": "remove",
-            "objects": [
-              {
-                "obj": "clothes",
-                "answer": "You remove your soaked clothes wearing what you just found.",
-                "condition": {
-                  "item": "clothes",
-                  "value": true,
-                  "refusal": "I need to find something to wear first."
+            "verbs": [
+              { "term": "sleep" },
+              { "term": "rest" },
+              { "term": "lay" }
+            ],
+              "objects"
+              :
+              [
+                {
+                  "obj": "bed",
+                  "condition": {
+                    "item": "clothes",
+                    "value": true,
+                    "refusal": "I don't want to lay down with these dirty clothes on."
+                  },
+                  "childid": "1_14"
                 }
-              }
-            ]
-           
+              ]
           },
           {
-            "verb": "wear",
-            "objects": [
-              {
-                "obj": "clothes",
-                "answer": "You remove your soaked clothes wearing what you just found.",
-                "condition": {
-                  "item": "clothes",
-                  "value": true,
-                  "refusal": "I need to find something to wear."
+            "verbs": [
+              { "term": "remove" },
+              { "term": "change" },
+              { "term": "wear" }
+            ],
+              "objects"
+              :
+              [
+                {
+                  "obj": "clothes",
+                  "answer": "You remove your soaked clothes wearing what you just found.",
+                  "condition": {
+                    "item": "clothes",
+                    "value": true,
+                    "refusal": "I need to find something to wear first."
+                  }
                 }
-              }
-            ]
+              ]
           },
           {
-            "verb": "rest",
-            "objects": [
-              {
-                "obj": "bed",
-                "childid": "1_14",
-                "condition": {
-                  "item": "clothes",
-                  "value": true,
-                  "refusal": "I don't want to lay down with these dirty clothes on."
-                }
-              }
-            ]
+            "verbs": [
+              { "term": "drink" }
+            ],
+            "condition": {
+              "item": "water",
+              "value": true,
+              "refusal": "I need to find some water."
+            },
+            "answer": "You avidly drink the water, not caring about its taste."
           },
           {
-            "verb": "drink",
-            "objects": [
-              {
-                "obj": "water",
-                "answer": "You avidly drink the water, not caring about its taste.",
-                "condition": {
-                  "item": "water",
-                  "value": true,
-                  "refusal": "I need to find some water."
-                }
-              }
-            ]
-          },
-          {
-            "verb": "eat",
-            "objects": [
-              {
-                "obj": "food",
-                "answer": "You devour what you have found.",
-                "condition": {
-                  "item": "food",
-                  "value": true,
-                  "refusal": "I need to find something to eat."
-                }
-              }
-            ]
+            "verbs": [
+              { "term": "eat" }
+            ],
+            "condition": {
+              "item": "food",
+              "value": true,
+              "refusal": "I need to find something to eat."
+            },
+            "answer" :  "You devour what you just found."
           }
         ]
       },
@@ -501,7 +478,7 @@
               {
                 "actor": "Jeorghe",
                 "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
-                "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+                "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log almost big as your leg, in order to crack your head open.",
                 "childid": "1_19"
               }
             ]
@@ -557,7 +534,7 @@
           {
             "actor": "Jeorghe",
             "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
-            "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log amost big as your leg, in order to crack your head open.",
+            "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log almost big as your leg, in order to crack your head open.",
             "childid": "1_19"
           }
         ]
@@ -703,7 +680,8 @@
           {
             "actor": "Chief",
             "line": "Here is my proposal: join us!",
-            "comment": "Immediately a choir of protesting sounds arises.#\nMost of the men were hoping to enjoy an execution.#\nShe remains stoic."
+            "comment": "Immediately a choir of protesting sounds arises.#\nMost of the men were hoping to enjoy an execution.#\nShe remains stoic.",
+            "isbreakneeded": true
           },
           {
             "precomment": "You yourself are surprised.# After a while, not having other choices, you say:",
@@ -853,29 +831,33 @@
         "text": "You stand inside the tent.## Theo,# expressionless,# is looking at you.#\nHe looks like he's waiting for you to say something.",
         "actions": [
           {
-            "verb": "look",
-            "objects": [
-              {
-                "obj": "around",
-                "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow.#\nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?#\nBut the most striking feature to be observed is Theo himself."
-              },
-              {
-                "obj": "theo",
-                "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance.#\nHe's even taller and massive than Jeorghe, and the similarities end there.#\nHe has ash blonde hair, almost white,# worn in a thick, quite long braid.#\nHe has a well-kept beard,# not long,# and just a little darker than the rest of his hair,#\nwhich frames his sturdy, squared face.#\n\nHis eyes are clear and cold as ice,# still there is something in him softening his gaze...\nAnd his talking,# even if so succint,# wasn't rough, neither veined with hate like those of the other men around there."
-              },
-              {
-                "obj": "bed",
-                "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
-                "condition": {
-                  "item": "mat",
-                  "value": true,
-                  "refusal": "You don't see any."
+            "verbs": [
+              { "term": "look" }
+            ],
+              "objects": [
+                {
+                  "obj": "around",
+                  "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow.#\nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?#\nBut the most striking feature to be observed is Theo himself."
+                },
+                {
+                  "obj": "theo",
+                  "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance.#\nHe's even taller and massive than Jeorghe, and the similarities end there.#\nHe has ash blonde hair, almost white,# worn in a thick, quite long braid.#\nHe has a well-kept beard,# not long,# and just a little darker than the rest of his hair,#\nwhich frames his sturdy, squared face.#\n\nHis eyes are clear and cold as ice,# still there is something in him softening his gaze...\nAnd his talking,# even if so succint,# wasn't rough, neither veined with hate like those of the other men around there."
+                },
+                {
+                  "obj": "bed",
+                  "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
+                  "condition": {
+                    "item": "mat",
+                    "value": true,
+                    "refusal": "You don't see any."
+                  }
                 }
-              }
-            ]
+              ]
           },
           {
-            "verb": "say",
+            "verbs": [
+              { "term": "say" }
+            ],
             "answer": "He keeps on staring at me...",
             "objects": [
               {
@@ -889,15 +871,21 @@
             ]
           },
           {
-            "verb": "hello",
+            "verbs": [
+              { "term": "hello" }
+            ],
             "answer": "$B\"Hello to you.\"#$C He says."
           },
           {
-            "verb": "hi",
+            "verbs": [
+              { "term": "hi" }
+            ],
             "answer": "$B\"Hi to you.\"#$C He says."
           },
           {
-            "verb": "sleep",
+            "verbs": [
+              { "term": "sleep" }
+            ],
 
             "objects": [
               {
@@ -919,11 +907,23 @@
                   "value": true,
                   "refusal": "I cannot just lay on the ground."
                 }
+              },
+              {
+                "obj": "bedroll",
+                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
+                "childid": "2_03",
+                "condition": {
+                  "item": "mat",
+                  "value": true,
+                  "refusal": "I cannot just lay on the ground."
+                }
               }
             ]
           },
           {
-            "verb": "ask",
+            "verbs": [
+              { "term": "ask" }
+            ],
             "objects": [
               {
                 "obj": "bed",

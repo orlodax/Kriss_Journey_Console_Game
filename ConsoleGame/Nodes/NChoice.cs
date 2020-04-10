@@ -48,6 +48,9 @@ namespace ConsoleGame.Nodes
 
                 Console.Clear();
                 TextFlow(false);
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
 
             } while (key.Key != ConsoleKey.Enter);
 
