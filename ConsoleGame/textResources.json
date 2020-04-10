@@ -1066,11 +1066,39 @@
     [
       {
         "id": "3_01",
-        "recap": "nope",
+        "recap": "start of chap 4",
         "type": "Story",
-        "text": "$DEND OF CHAPTER 3",
-        "childid":  "3_01"
-      }    
+        "text": "",
+        "childid": "3_01"
+      },
+      {
+        "id": "3_02",
+        "recap": "Chief's last order",
+        "type": "Story",
+        "text": "",
+        "childid": "3_01"
+      },
+      {
+        "id": "3_03",
+        "recap": "Corolla explains",
+        "type": "Dialogue",
+        "text": "",
+        "childid": "3_01"
+      },
+      {
+        "id": "3_04",
+        "recap": "caravan approaches",
+        "type": "Story",
+        "text": "",
+        "childid": "3_01"
+      },
+      {
+        "id": "3_05",
+        "recap": "attack of the lights",
+        "type": "Story",
+        "text": "",
+        "childid": "3_01"
+      }
     ]
   ]
 }

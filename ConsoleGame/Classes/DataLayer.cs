@@ -38,6 +38,10 @@ namespace ConsoleGame.Classes
                 Titles.Add("1. THE JOURNEY STARTS");
                 Titles.Add("2. THE HORDE");
                 Titles.Add("3. SOME FRIENDS");
+                Titles.Add("4. THE SWORD");
+                Titles.Add("5. NOI-HERT");
+                Titles.Add("6. BEACONS");
+                Titles.Add("7. SEER'S ROCK");
             }
         }
         public static void SaveProgress(int chapterNo)
