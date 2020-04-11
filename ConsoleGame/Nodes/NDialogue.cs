@@ -136,7 +136,7 @@ namespace ConsoleGame.Nodes
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("Press any key...");
+            Console.Write("Press any key...");
             Console.ReadKey(true);
         }
     }

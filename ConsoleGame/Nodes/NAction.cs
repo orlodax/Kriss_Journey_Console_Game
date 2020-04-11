@@ -218,7 +218,7 @@ namespace ConsoleGame.Nodes
             {
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine("Press any key...");
+                Console.Write("Press any key...");
                 Console.ReadKey(true);
 
                 SaveStatusOnExit();
@@ -258,7 +258,7 @@ namespace ConsoleGame.Nodes
             var newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;
             var rows = answer.Length / Console.WindowWidth;
 
-            return Math.Min(Console.WindowHeight - (rows + newLines), Console.WindowHeight - 5);
+            return Math.Min(Console.WindowHeight - (rows + newLines), Console.WindowHeight - 5) - 1;
         }
     }
 }
