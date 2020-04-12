@@ -57,8 +57,6 @@ namespace ConsoleGame
 
                 var key = Console.ReadKey(true);
 
-                var boo = char.IsDigit(key.KeyChar);
-
                 if (char.IsDigit(key.KeyChar))
                     NodeFactory.CreateChapter(Convert.ToInt32(key.KeyChar.ToString()) - 1);
                 else
