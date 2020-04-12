@@ -703,6 +703,7 @@
         "id": "2_01",
         "type": "Dialogue",
         "recap": "meet the others",
+        "text": "-------------------------------\n|          CHAPTER 3          |\n-------------------------------\n\n\n",
         "isvisited": false,
         "dialogues": [
           {
@@ -728,13 +729,13 @@
           {
             "actor": "Smiurl",
             "line": "I really have to, haven't I?",
-            "comment": "you hear a squeaky little voice, not distant."
+            "comment": "you hear a squeaky little voice, not distant.",
+            "isbreakneeded": true
           },
           {
             "actor": "Smiurl",
             "line": "Well, I guess I have to...",
-            "comment": "He then adds.#\n\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height.#\nHe has a shy look in his eyes.",
-            "isbreakneeded": true
+            "comment": "He then adds.#\n\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height.#\nHe has a shy look in his eyes."
           },
           {
             "actor": "Smiurl",
@@ -746,7 +747,7 @@
             "precomment": "Somehow Corolla must know what you are thinking.#",
             "actor": "Corolla",
             "line": "Don't let him deceive you... Smiurl is a true valiant when you need him.",
-            "comment": "Hearing that compliment,#\nthe little guy lits up everywhere.##\n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C##\nHe actually starts emanating a vague, multicoloured luminescence.#"
+            "comment": "Hearing that compliment,#\nthe little guy lits up everywhere.##\n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C## He actually starts emanating a vague, multicoloured luminescence.#"
           },
           {
             "actor": "Kriss",
@@ -1161,7 +1162,7 @@
         "id": "3_05",
         "recap": "attack the transports",
         "type": "Story",
-        "text": "aa",
+        "text": "At once,# you start hearing a distant noise.# It must be the convoy.##\n\nAfter few more endless minutes spent listening to that noise increase,#\nyou and the others peek outside.#\nDown there are a dozen of big slow transports.# Some of them are pulled by horses, others by motor vehicles.#\nThey are escorted by many horsemen.##\n\nWithout delay, the attack begins.#\nShouts arise in the canyon, echoing countless times on the stone walls, confounding the enemy.#\nThen the Chief's roaring jeep charges, suddenly appearing out of its hiding place.#\nThe entire convoy halts suddenly, and the defensors spread aroud the first chariots.#\n\nThe stranglehold works, as the rest of the horde attacks them from their back.#\nThe noise now saturates the canyon like water in a bottle.#\n\nIt's all over very soon.# The attackers are taking out the very last men,# when Corolla says alarmed:#\n\n$R\"Wait a second!# What is this noise...??\"##",
         "childid": "3_01"
       },
       {

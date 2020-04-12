@@ -41,7 +41,7 @@ namespace ConsoleGame
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine();
             //debug: start from
-            NodeFactory.CreateNode("3_04");
+            //NodeFactory.CreateNode("3_05");
             //debug
 
 
@@ -56,6 +56,8 @@ namespace ConsoleGame
                     Console.WriteLine(DataLayer.Titles[i]);
 
                 var key = Console.ReadKey(true);
+
+                var boo = char.IsDigit(key.KeyChar);
 
                 if (char.IsDigit(key.KeyChar))
                     NodeFactory.CreateChapter(Convert.ToInt32(key.KeyChar.ToString()) - 1);

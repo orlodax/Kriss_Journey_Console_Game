@@ -17,8 +17,6 @@ namespace ConsoleGame.Nodes
 
         void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
         {
-            TextFlow(false);
-
             var currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)

@@ -11,8 +11,7 @@ namespace ConsoleGame.Classes
         {
             string id = (number).ToString() + "_01";
 
-            NodeBase nb = DataLayer.DB.Chapters[number].Find(n => n.Id == id);
-            return CurrentNode = new NStory(nb);
+            return CurrentNode = CreateNode(id);
         }
 
         public static SNode CreateNode(string id)
