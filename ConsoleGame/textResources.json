@@ -88,7 +88,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "at the tree",
-        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n#\n$G<<Chris!>>$C\n#\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
+        "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands.\n#It looks like nobody is here after all.\n#\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n#\n$G<<Chris!>>$C\n#\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain...\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happens in an instant...##\n\nThe figure at the corner of your eye...\n###The realisation that standing beneath a tree during a storm is not the safest option...\n###The blinding light and the deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.##",
         "childid": "1_01"
       },
       {
@@ -96,7 +96,7 @@
         "type": "Story",
         "isvisited": false,
         "recap": "by the gate",
-        "text": "You are about to enter past your gate, to the comfort of your home at last, when you hear it!\n#\n$G<<Chris!>>$C\n#\nIt feels like the wind is calling your name to the rain...\n#It feels like the sound comes from behind your shoulders, but at the same time from afar.\n\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happen in an instant...##\n\nThe figure at the corner of your eye...\n###The blinding light...\n###The deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.",
+        "text": "You are about to enter past your gate, to the comfort of your home at last, when you hear it!\n#\n$G<<Chris!>>$C\n#\nIt feels like the wind is calling your name to the rain...\n#It feels like the sound comes from behind your shoulders, but at the same time from afar.\n\n#You feel a tingling sensation in the back of your neck,# somehow you $Wfeel$C someone's behind you.\n#\n#Then...## it all happens in an instant...##\n\nThe figure at the corner of your eye...\n###The blinding light...\n###The deafening boom suddenly engulfing you.\n###\n###Then...## only darkness.",
         "childid": "1_01"
       }
     ],
@@ -911,6 +911,26 @@
               },
               {
                 "obj": "bedroll",
+                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
+                "childid": "2_03",
+                "condition": {
+                  "item": "mat",
+                  "value": true,
+                  "refusal": "I cannot just lay on the ground."
+                }
+              },
+              {
+                "obj": "ground",
+                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
+                "childid": "2_03",
+                "condition": {
+                  "item": "mat",
+                  "value": true,
+                  "refusal": "I cannot just lay on the ground."
+                }
+              },
+              {
+                "obj": "floor",
                 "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
                 "childid": "2_03",
                 "condition": {

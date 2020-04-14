@@ -64,8 +64,11 @@ namespace ConsoleGame.Nodes
         #region Special keys pressed
         void TabPressed() 
         {
-            Console.CursorLeft -= 5;
-            Console.CursorTop -= 3;
+            RedrawNode();
+
+            Console.CursorTop = Console.WindowHeight - 6;
+            Console.CursorLeft = Console.WindowLeft;
+
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Possible actions here: ");
 
@@ -80,6 +83,7 @@ namespace ConsoleGame.Nodes
 
             if (ID == "1_02") //first action node. this if clause is to mock player just the first time they use help
             {
+                Console.CursorTop += 1;
                 Console.WriteLine("\\> you pressed tab for help. noob.");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.Write("\\>");
@@ -143,8 +147,7 @@ namespace ConsoleGame.Nodes
                             if (act.Effect != null)                             //in case the action has an Effect (inventory)
                                 act.StoreItem(act.Effect);
 
-                            if (act.Answer != null)
-                                DisplaySuccess(act.Answer, act.ChildId);        //...just do it
+                            DisplaySuccess(act.Answer, act.ChildId);            //...just do it
                         }
                     }
                     else
@@ -202,30 +205,39 @@ namespace ConsoleGame.Nodes
         }
         void DisplaySuccess(string answer, string childId = null) 
         {
-            RedrawNode();
+            if (answer != null)
+            {
+                RedrawNode();
 
-            BottomMessage = answer;
-            BottomMessageColor = ConsoleColor.DarkYellow;
+                BottomMessage = answer;
+                BottomMessageColor = ConsoleColor.DarkYellow;
 
-            Console.CursorTop = MeasureMessage(answer);
-            Console.CursorLeft = Console.WindowLeft;
+                Console.CursorTop = MeasureMessage(answer);
+                Console.CursorLeft = Console.WindowLeft;
 
-            TextFlow(true, answer, ConsoleColor.DarkYellow);
-            Console.WriteLine();
-            Console.WriteLine();
+                TextFlow(true, answer, ConsoleColor.DarkYellow);
+                Console.WriteLine();
+                Console.WriteLine();
 
+                if (childId != null)
+                {
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write("Press any key...");
+                    Console.ReadKey(true);
+
+                    SaveStatusOnExit();
+                    NodeFactory.CreateNode(childId);
+                }
+            }
             if (childId != null)
             {
-                Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("Press any key...");
-                Console.ReadKey(true);
-
                 SaveStatusOnExit();
                 NodeFactory.CreateNode(childId);
             }
-            else
-                PrepareForAction(true); //display prompt without standard refuse
+
+            //if everything fails:
+            PrepareForAction(true); //display prompt without standard refuse
         }
         void RedrawNode(bool isDeleting = false)
         {
