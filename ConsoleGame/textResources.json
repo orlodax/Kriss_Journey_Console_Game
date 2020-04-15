@@ -1219,6 +1219,13 @@
         "type": "Story",
         "text": "You suddenly come back to your senses.# You return to feel the ground beneath your feet,#\nthe air of the night against your skin,# the glances of the other three,#\nthe mighty weight of the sword,# too long and heavy to be wielded with one hand only.#\n\nYou immediately put it down with the tip in the ground,# then you lean with your own weight on it.\n\n$R\"Are you ok...?\"#$C Asks you Corolla, putting a hand on your shoulder.#\n\n$c\"Huh? I think...# I think I am...\"#$C You answer.# But you have no idea what just happened.##\n\n$B\"We camp here, until daybreak.\"#$C Theo deliberates, walking back to the cave. ",
         "childid": "3_11"
+      },
+      {
+        "id": "3_11",
+        "recap": "end4",
+        "type": "Story",
+        "text": "$D-----END OF CHAPTER 4-----",
+        "childid": "3_11"
       }
     ]
   ]
