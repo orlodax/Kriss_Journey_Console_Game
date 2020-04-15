@@ -41,7 +41,7 @@ namespace ConsoleGame
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine();
             //debug: start from
-            //NodeFactory.CreateNode("2_02");
+            NodeFactory.CreateNode("3_09");
             //debug
 
 
@@ -57,6 +57,7 @@ namespace ConsoleGame
 
                 var key = Console.ReadKey(true);
 
+                //TODO: cycle input waiting because number could be higher than last chapter ...
                 if (char.IsDigit(key.KeyChar))
                     NodeFactory.CreateChapter(Convert.ToInt32(key.KeyChar.ToString()) - 1);
                 else

@@ -122,6 +122,9 @@ namespace ConsoleGame.Classes
                             case "S":
                                 Console.BackgroundColor = ConsoleColor.White;
                                 break;
+                            case "s":
+                                Console.BackgroundColor = ConsoleColor.Black;
+                                break;
                             case "D":
                                 color = ConsoleColor.DarkGray; //menus, help
                                 break;

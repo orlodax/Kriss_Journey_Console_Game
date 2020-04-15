@@ -285,7 +285,7 @@
                 },
                 {
                   "obj": "water",
-                  "answer": "There is covered jug full of water on the kitchen counter.",
+                  "answer": "There is a covered jug full of water on the kitchen counter.",
                   "effect": {
                     "item": "water",
                     "value": true
@@ -1183,35 +1183,42 @@
         "recap": "attack the transports",
         "type": "Story",
         "text": "At once,# you start hearing a distant noise.# It must be the convoy.##\n\nAfter few more endless minutes spent listening to that noise increase,#\nyou and the others peek outside.#\nDown there are a dozen of big slow transports.# Some of them are pulled by horses, others by motor vehicles.#\nThey are escorted by many horsemen.##\n\nWithout delay, the attack begins.#\nShouts arise in the canyon, echoing countless times on the stone walls, confounding the enemy.#\nThen the Chief's roaring jeep charges, suddenly appearing out of its hiding place.#\nThe entire convoy halts suddenly, and the defensors spread aroud the first chariots.#\n\nThe stranglehold works, as the rest of the horde attacks them from their back.#\nThe noise now saturates the canyon like water in a bottle.#\n\nIt's all over very soon.# The attackers are taking out the very last men,# when Corolla says alarmed:#\n\n$R\"Wait a second!# What is this noise...??\"##",
-        "childid": "3_01"
+        "childid": "3_06"
       },
       {
         "id": "3_06",
         "recap": "attack of the lights",
         "type": "Story",
-        "text": "aa",
-        "childid": "3_01"
+        "text": "A gloomy vibration is quickly increasing, propagating through the canyon, echoing between the rocks.##\n\nSuddenly,# a high sound blares all around;# all the fighters stop, starting to look around puzzled.#\n\nAbruptly,# the ringing,# deafening horn-like sound stops,# giving way to silence once more.##\n\nAnd,# quietly,# silently,# the edges of the canyon start getting filled with lights.#\nThey appear gradually, randomly,# in different sizes and colours.#\nThey look like $Ywisps,# $Rignis $Bfatuuses,# $Gslowly $Mwiggling $caround.##\n\n\n$CYou shudder.",
+        "childid": "3_07"
       },
       {
         "id": "3_07",
-        "recap": "recover and explore",
-        "type": "Action",
-        "text": "aa",
-        "childid": "3_01"
+        "recap": "attack of the lights continued",
+        "type": "Story",
+        "text": "$S$KThe darkness gets bluntly ripped apart by a shaft of light,#\npure white with reflexes in the whole color spectrum,#\nblinding you completely.#\n\nThere is no use in shutting your eyes,# as the light seems to directly reach into your mind.#\n\nA lot of commotion follows.# When your eyes start to work again you assist to the slaughtering.#\nThe lights attack somehow everybody in the canyon,# the horde as well as the men of the convoy.#\n\n$s$CIt's all very quick.#\nBlinded and panicking, nodoby seems to escape.# After few minutes, it's all over.#\n\nThe lights are rushing and fading away in the distance already, leaving only a dead silence behind...",
+        "childid": "3_08"
       },
       {
         "id": "3_08",
-        "recap": "Chief",
+        "recap": "inspect",
         "type": "Story",
-        "text": "aa",
-        "childid": "3_01"
+        "text": "You all stay hidden for a while.# When you are all sure it's 'safe' you cautiously go outside.#\n\nThe chariots lie abandoned, their torches still lit. Their scattered faint light reveals aspects of the scene.#\n\nIt seems there's no survivor;# from this distance it's hard to say.#\n\n$B\"Let's look for survivors.\"#$C Theo says, unsurprisingly.# His voice sounds like he does not believe he'll find any.##\n\nYou follow them, not knowing what to think,# once again.#\n\nAs you descend, you encounter a increasing number of bodies.# You are just thankful it's dark:#\nyou won't have their terrified expressions imprinted in your memory forever.##\n\nYou all go towards a plume of smoke rising from behind a big boulder.#\nBehind there is the Chief's jeep, which upholstery is feeding the flames you saw.#\n\n$Y\"The Chief!\"$C Smiurl shouts out.#\n\nThen you see him.# Sitting on the ground, his back against the front fender.#\nHe must be dying;# he's losing a lot of blood from a conspicuous wound in his chest.#\nNot just you, also Corolla, Theo and Smiurl freeze looking at him, not knowing what to say.#\nThus it surprises you, the fact that after few instants you step forward.#\n\nThe Chief slowly lift his chin looking at you, and,# despite everything,# he manages to grin.",
+        "childid": "3_09"
       },
       {
         "id": "3_09",
+        "recap": "Chief",
+        "type": "Story",
+        "text": "$M\"Were you a spy after all...?\" $CHe coughs, blood leaking from the corner of his mouth.#\nThen he seems to notice the others:#\n\n$M\"I should have expected this...\"$C He looks back at you, and after taking one painful breath,#\nhe smirks one more time, then adds:#\n\n$M\"Young man,# what about...# avenging me...\"$C# But his last words die this way along with his last breath.##\n\nYou all stand there still, unable to do anything.#\nAfter all you witnessed since you arrived in this place, you feel like you have just reached the point of no return.#\nYou feel like something in you mind just cracked.# Like you're losing touch with reality.##\n\nThen,# it happens.##\n\n$cYou find yourself walking towards him.# You feel like you're projected outside of your own body,#\nas if $Gsomeone else$c is moving your muscles.#\nYou lean on him and absent-mindedly observe your own hands untying his sword from his side.\n#Next thing you notice,# you are wielding it,# pointed to the sky,# staring at the blade glinting with ominous glares.##\n\n\n$CIn the meantime, Smiurl has retracted in himself, gaining a brownish hue.#\nTheo is back to being impassible as usal.#\nFor some reason,# Corolla seems to approve your actions and retrieves the Chief's chain.",
+        "childid": "3_10"
+      },
+      {
+        "id": "3_10",
         "recap": "Sword",
         "type": "Story",
-        "text": "aa",
-        "childid": "3_01"
+        "text": "You suddenly come back to your senses.# You return to feel the ground beneath your feet,#\nthe air of the night against your skin,# the glances of the other three,#\nthe mighty weight of the sword,# too long and heavy to be wielded with one hand only.#\n\nYou immediately put it down with the tip in the ground,# then you lean with your own weight on it.\n\n$R\"Are you ok...?\"#$C Asks you Corolla, putting a hand on your shoulder.#\n\n$c\"Huh? I think...# I think I am...\"#$C You answer.# But you have no idea what just happened.##\n\n$B\"We camp here, until daybreak.\"#$C Theo deliberates, walking back to the cave. ",
+        "childid": "3_11"
       }
     ]
   ]
