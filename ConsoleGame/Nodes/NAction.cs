@@ -66,7 +66,7 @@ namespace ConsoleGame.Nodes
         {
             RedrawNode();
 
-            Console.CursorTop = Console.WindowHeight - 6;
+            Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -78,20 +78,20 @@ namespace ConsoleGame.Nodes
                     Console.Write(verb.Term + " ");
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.CursorTop += 2;
+            Console.CursorTop += 1;
             Console.CursorLeft = 0;
 
             if (ID == "1_02") //first action node. this if clause is to mock player just the first time they use help
             {
                 Console.CursorTop += 1;
                 Console.WriteLine("\\> you pressed tab for help. noob.");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write("\\>");
-                Console.CursorLeft += 3;
             }
+            else
+                Console.CursorTop += 2;
 
-            Console.CursorLeft = Console.WindowLeft + 3;
             Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("\\>");
+            Console.CursorLeft += 1;
         }
         void BackSpacePressed(List<ConsoleKeyInfo> keysPressed)
         {
@@ -181,6 +181,12 @@ namespace ConsoleGame.Nodes
                     BottomMessage = string.Empty;
                     PrepareForAction(false);
                 }
+            }
+            else
+            {
+                RedrawNode();
+                BottomMessage = string.Empty;
+                PrepareForAction(true);
             }
         }
         #endregion
