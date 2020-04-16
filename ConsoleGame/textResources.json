@@ -272,38 +272,36 @@
             "verbs": [
               { "term": "search" }
             ],
-              "objects"
-              :
-              [
-                {
-                  "obj": "food",
-                  "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
-                  "effect": {
-                    "item": "food",
-                    "value": true
-                  }
-                },
-                {
-                  "obj": "water",
-                  "answer": "There is a covered jug full of water on the kitchen counter.",
-                  "effect": {
-                    "item": "water",
-                    "value": true
-                  }
-                },
-                {
-                  "obj": "clothes",
-                  "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
-                  "effect": {
-                    "item": "clothes",
-                    "value": true
-                  }
-                },
-                {
-                  "obj": "money",
-                  "answer": "You can't find anything valuable."
+            "objects": [
+              {
+                "obj": "food",
+                "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
+                "effect": {
+                  "item": "food",
+                  "value": true
                 }
-              ]
+              },
+              {
+                "obj": "water",
+                "answer": "There is a covered jug full of water on the kitchen counter.",
+                "effect": {
+                  "item": "water",
+                  "value": true
+                }
+              },
+              {
+                "obj": "clothes",
+                "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
+                "effect": {
+                  "item": "clothes",
+                  "value": true
+                }
+              },
+              {
+                "obj": "money",
+                "answer": "You can't find anything valuable."
+              }
+            ]
           },
           {
             "verbs": [
@@ -311,19 +309,17 @@
               { "term": "rest" },
               { "term": "lay" }
             ],
-              "objects"
-              :
-              [
-                {
-                  "obj": "bed",
-                  "condition": {
-                    "item": "clothes",
-                    "value": true,
-                    "refusal": "I don't want to lay down with these dirty clothes on."
-                  },
-                  "childid": "1_14"
-                }
-              ]
+            "objects": [
+              {
+                "obj": "bed",
+                "condition": {
+                  "item": "clothes",
+                  "value": true,
+                  "refusal": "I don't want to lay down with these dirty clothes on."
+                },
+                "childid": "1_14"
+              }
+            ]
           },
           {
             "verbs": [
@@ -331,19 +327,17 @@
               { "term": "change" },
               { "term": "wear" }
             ],
-              "objects"
-              :
-              [
-                {
-                  "obj": "clothes",
-                  "answer": "You remove your soaked clothes wearing what you just found.",
-                  "condition": {
-                    "item": "clothes",
-                    "value": true,
-                    "refusal": "I need to find something to wear first."
-                  }
+            "objects": [
+              {
+                "obj": "clothes",
+                "answer": "You remove your soaked clothes wearing what you just found.",
+                "condition": {
+                  "item": "clothes",
+                  "value": true,
+                  "refusal": "I need to find something to wear first."
                 }
-              ]
+              }
+            ]
           },
           {
             "verbs": [
@@ -365,7 +359,7 @@
               "value": true,
               "refusal": "I need to find something to eat."
             },
-            "answer" :  "You devour what you just found."
+            "answer": "You devour what you just found."
           }
         ]
       },
@@ -433,55 +427,55 @@
         "recap": "meet corolla",
         "text": "",
         "dialogues": [
+          {
+            "actor": "Corolla",
+            "line": "And who would you be...?",
+            "comment": "You freeze.#\nAfter few paralyzing istants, you manage to close your mouth, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently, head tilted on one side.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her hips.#\n\nInteresting posture, self confident... with such a delicious narrow waist...#",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Corolla",
+            "line": "Hey I asked you a question!",
+            "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+            "replies": [
               {
-                "actor": "Corolla",
-                "line": "And who would you be...?",
-                "comment": "You freeze.#\nAfter few paralyzing istants, you manage to close your mouth, trying to dissimulate your fear.#\n\nThe voice belongs to a young woman; she is studying you intently, head tilted on one side.#\n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around.#\nShe's wearing a wide shirt, quite open on her cleavage.#\nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings.\n#Your eyes wonder maybe a little too long on the curve of her hips.#\n\nInteresting posture, self confident... with such a delicious narrow waist...#",
-                "isbreakneeded": true
+                "line": "Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...",
+                "nextline": "JeorgheStepsIn"
               },
               {
-                "actor": "Corolla",
-                "line": "Hey I asked you a question!",
-                "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
-                "replies": [
-                  {
-                    "line": "Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...",
-                    "nextline": "JeorgheStepsIn"
-                  },
-                  {
-                    "line": "Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...",
-                    "nextline": "JeorgheStepsIn"
-                  }
-                ]
-              },
-              {
-                "linename": "JeorgheStepsIn",
-                "actor": "Jeorghe",
-                "precomment": "The girl is about to answer, when a third rough, hoarse voice steps in.",
-                "line": "What the heck is going on here?!",
-                "comment": "A huge man appears. His malevolent scowl directed at her as at you."
-              },
-              {
-                "actor": "Corolla",
-                "line": "Jeorghe, you're always so dear...",
-                "comment": "she answers back with sarcasm."
-              },
-              {
-                "actor": "Jeorghe",
-                "line": "You ugly b...!!"
-              },
-              {
-                "actor": "Corolla",
-                "line": "Ha! Watch your tongue...# or you may lose it!",
-                "comment": "she interrupts him drawing a sharp knife from her belt in an instant.#\nStill, she is pointing it at his crotch, not at his tongue.#\n\nJeorghe growls, very openly suggesting he would try to kill her if he could.#\n\nThen his attention goes back to you."
-              },
-              {
-                "actor": "Jeorghe",
-                "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
-                "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log almost big as your leg, in order to crack your head open.",
-                "childid": "1_19"
+                "line": "Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...",
+                "nextline": "JeorgheStepsIn"
               }
             ]
+          },
+          {
+            "linename": "JeorgheStepsIn",
+            "actor": "Jeorghe",
+            "precomment": "The girl is about to answer, when a third rough, hoarse voice steps in.",
+            "line": "What the heck is going on here?!",
+            "comment": "A huge man appears. His malevolent scowl directed at her as at you."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Jeorghe, you're always so dear...",
+            "comment": "she answers back with sarcasm."
+          },
+          {
+            "actor": "Jeorghe",
+            "line": "You ugly b...!!"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Ha! Watch your tongue...# or you may lose it!",
+            "comment": "she interrupts him drawing a sharp knife from her belt in an instant.#\nStill, she is pointing it at his crotch, not at his tongue.#\n\nJeorghe growls, very openly suggesting he would try to kill her if he could.#\n\nThen his attention goes back to you."
+          },
+          {
+            "actor": "Jeorghe",
+            "line": "Who is this filth??# A prisoner?# No...# There were no men among them...# An intruder! A spy!",
+            "comment": "He starts laughing wildly,\nsounding like an outboard motor who doesn't really want to start.#\nHe grabs a log almost big as your leg, in order to crack your head open.",
+            "childid": "1_19"
+          }
+        ]
       },
       {
         "id": "1_18",
@@ -835,25 +829,25 @@
             "verbs": [
               { "term": "look" }
             ],
-              "objects": [
-                {
-                  "obj": "around",
-                  "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow.#\nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?#\nBut the most striking feature to be observed is Theo himself."
-                },
-                {
-                  "obj": "theo",
-                  "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance.#\nHe's even taller and massive than Jeorghe, and the similarities end there.#\nHe has ash blonde hair, almost white,# worn in a thick, quite long braid.#\nHe has a well-kept beard,# not long,# and just a little darker than the rest of his hair,#\nwhich frames his sturdy, squared face.#\n\nHis eyes are clear and cold as ice,# still there is something in him softening his gaze...\nAnd his talking,# even if so succint,# wasn't rough, neither veined with hate like those of the other men around there."
-                },
-                {
-                  "obj": "bed",
-                  "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
-                  "condition": {
-                    "item": "mat",
-                    "value": true,
-                    "refusal": "You don't see any."
-                  }
+            "objects": [
+              {
+                "obj": "around",
+                "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow.#\nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?#\nBut the most striking feature to be observed is Theo himself."
+              },
+              {
+                "obj": "theo",
+                "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance.#\nHe's even taller and massive than Jeorghe, and the similarities end there.#\nHe has ash blonde hair, almost white,# worn in a thick, quite long braid.#\nHe has a well-kept beard,# not long,# and just a little darker than the rest of his hair,#\nwhich frames his sturdy, squared face.#\n\nHis eyes are clear and cold as ice,# still there is something in him softening his gaze...\nAnd his talking,# even if so succint,# wasn't rough, neither veined with hate like those of the other men around there."
+              },
+              {
+                "obj": "bed",
+                "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
+                "condition": {
+                  "item": "mat",
+                  "value": true,
+                  "refusal": "You don't see any."
                 }
-              ]
+              }
+            ]
           },
           {
             "verbs": [
@@ -1218,14 +1212,49 @@
         "recap": "Sword",
         "type": "Story",
         "text": "You suddenly come back to your senses.# You return to feel the ground beneath your feet,#\nthe air of the night against your skin,# the glances of the other three,#\nthe mighty weight of the sword,# too long and heavy to be wielded with one hand only.#\n\nYou immediately put it down with the tip in the ground,# then you lean with your own weight on it.\n\n$R\"Are you ok...?\"#$C Asks you Corolla, putting a hand on your shoulder.#\n\n$c\"Huh? I think...# I think I am...\"#$C You answer.# But you have no idea what just happened.##\n\n$B\"We camp here, until daybreak.\"#$C Theo deliberates, walking back to the cave. ",
-        "childid": "3_11"
+        "childid": "4_01"
+      }
+    ],
+    [
+      {
+        "id": "4_01",
+        "recap": "intro 5",
+        "type": "Story",
+        "text": "Intro ch 5",
+        "childid": "4_02"
       },
       {
-        "id": "3_11",
-        "recap": "end4",
-        "type": "Story",
-        "text": "$D-----END OF CHAPTER 4-----",
-        "childid": "3_11"
+        "id": "4_02",
+        "recap": "talk,eat,investigate",
+        "type": "Action",
+        "text": "choose or do stuff"
+      },
+      {
+        "id": "4_03",
+        "recap": "breakfast at Smiurl's",
+        "type": "Dialogue",
+        "text": "talk about food"
+      },
+      {
+        "id": "4_04",
+        "recap": "revelations",
+        "type": "Dialogue"
+      },
+      {
+        "id": "4_05",
+        "recap": "find Ayonn tech",
+        "type": "Dialogue",
+        "childid": "4_06"
+      },
+      {
+        "id": "4_06",
+        "recap": "like 4_02 without investigate",
+        "type": "Choice"
+      },
+      {
+        "id": "4_07",
+        "recap": "is this my party - towards Ayonn",
+        "type": "Dialogue"
       }
     ]
   ]

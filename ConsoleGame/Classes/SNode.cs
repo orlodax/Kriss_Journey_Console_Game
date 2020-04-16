@@ -1,5 +1,4 @@
-﻿using ConsoleGame.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -14,18 +13,18 @@ namespace ConsoleGame.Classes
         internal string ID { get; set; }
         internal string Text { get; set; } = string.Empty;
         internal string ChildId { get; set; }
-        internal List<Choice> Choices { get; set; }
+        internal List<Models.Choice> Choices { get; set; }
         internal List<Models.Action> Actions { get; set; }
-        internal List<Dialogue> Dialogues { get; set; }
+        internal List<Models.Dialogue> Dialogues { get; set; }
 
-        readonly NodeBase node;
+        readonly Models.NodeBase node;
         #endregion
 
         #region CTOR & "SaveStatusOnExit"
         /// <summary>
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
-        public SNode(NodeBase nb)
+        public SNode(Models.NodeBase nb)
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color

@@ -11,17 +11,17 @@ namespace ConsoleGame.Models
         public List<Choice> Choices { get; set; } //list of possible choices
         public List<Action> Actions { get; set; } = new List<Action>(); //list of possible actions
         public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
-
         public bool IsVisited { get; set; }
     }
-    public class Child
+    public class Condition                      //condition for the viability of the action. normally an item
     {
-        public string Id { get; set; }
+        public string Item { get; set; }        // name of the resource
+        public bool Value { get; set; }         // value of the resource
+        public string Refusal { get; set; }     // message for condition not met
     }
-    public class Choice
+    public class Effect                         // now it affect player. normally inventory
     {
-        public string Desc { get; set; }
-        public string ChildId { get; set; }
+        public string Item { get; set; }        // name of the resource 
+        public bool Value { get; set; }         // value of the resource
     }
-
 }

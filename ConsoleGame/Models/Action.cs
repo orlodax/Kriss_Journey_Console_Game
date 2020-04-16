@@ -92,17 +92,6 @@ namespace ConsoleGame.Models
         public Effect Effect { get; set; }      //consequence from the object
         public Condition Condition { get; set; }//combinations of actions and objects can have conditions too
     }
-    public class Condition                      //condition for the viability of the action. normally an item
-    {
-        public string Item { get; set; }        // name of the resource
-        public bool Value { get; set; }         // value of the resource
-        public string Refusal { get; set; }     // message for condition not met
-    }
-    public class Effect                         // now it affect player. normally inventory
-    {
-        public string Item { get; set; }        // name of the resource 
-        public bool Value { get; set; }         // value of the resource
-    }
     public class Word
     { 
     public string Term { get; set; }
