@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleGame.Classes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,5 +11,28 @@ namespace ConsoleGame.Models
         public string ChildId { get; set; }
         public Condition Condition { get; set; } //condition for the viability of the action. normally an item
         public Effect Effect { get; set; } //consequence from the base action
+        public string Refusal { get; set; }
+        public bool IsHidden { get; set; } //to unlock choices as effect of others
+        public int? UnHide { get; set; }
+
+        public bool Evaluate()
+        {
+            if (Condition != null)
+            {
+                var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == Condition.Item);
+                if (storedItem != null)
+                {
+                    if (storedItem.Had & Condition.Value)
+                        return true;
+                }
+                return false;
+            }
+            return true;
+        }
+        public void StoreItem(Effect effect)       // consequent modify of inventory
+        {
+            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
+            DataLayer.DB.Inventory.Add(itemToStore);
+        }
     }
 }

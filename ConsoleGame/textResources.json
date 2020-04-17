@@ -1220,41 +1220,250 @@
         "id": "4_01",
         "recap": "intro 5",
         "type": "Story",
-        "text": "Intro ch 5",
+        "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness.#\nYou have no body,# no eyes.#\nJust an adimensional point,# in the void.#\nYou 'hear' hollow sounds around,# like thunders.##\n\nThen, you think you can see sinsters glares.#\nThe Chief's sword gets closer and closer,# its tip menacingly pointed at your eyes.#\nThe shiny edge is ever closer,# closer...##\n\nYou shout.# The darkness reacts,# vibrating in response to such a huge amount of anger and pain.#\nThen,# suddenly,# as answering to the farthest echoes of your unaware call,# light comes to you.#\nA blinding flash hit you,# piercing through every particle in your body.##\n\nYou are one with the light now.#\nYou hear a warm voice whispering,# or maybe thinking of whispering:##\n\n$G<<Have courage!>>##\n\n$c...# Are you not alone?",
         "childid": "4_02"
       },
       {
         "id": "4_02",
         "recap": "talk,eat,investigate",
-        "type": "Action",
-        "text": "choose or do stuff"
+        "type": "Choice",
+        "text": "The light keeps on tormenting you.# You open your eyes, and realise the sun is lighting your face.#\nWas it just a dream?##\n\nYou rub your eyes, stand up and exit the cave.#\nAs you stretch your body,# you look around.# Someone has lit a fire.#\nYou appreciate its warmth,# as you feel the chill early morning air on your skin.#\n\nFew seconds later,# Smiurl appears from behind a boulder,# carrying some bundle in his arms.",
+        "choices": [
+          {
+            "desc": "You are starving. Ask him about breakfast.",
+            "childid": "4_03"
+          },
+          {
+            "desc": "You need to know what's going on... Before something else happens.",
+            "childid": "4_04"
+          },
+          {
+            "desc": "Better look around the caravan spoils for something useful.",
+            "childid": "4_05"
+          }
+        ]
       },
       {
         "id": "4_03",
         "recap": "breakfast at Smiurl's",
         "type": "Dialogue",
-        "text": "talk about food"
+        "dialogues": [
+          {
+            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+            "actor": "Corolla",
+            "line": "Did you enjoy the show?",
+            "comment": "She exclaims with sarcasm."
+          },
+          {
+            "actor": "Theo",
+            "line": "We need to find shelter.",
+            "comment": "Theo is intently looking around."
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You don't understand what's going on.",
+            "line": "What's happening?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
+            "comment": "She utters bitterly.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
+            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Each of which would gladly take the three... four of us out!",
+            "comment": "Adds Smiurl, who was quiet so far."
+          },
+          {
+            "actor": "Corolla",
+            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
+            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
+            "childid": "3_04"
+          }
+        ]
       },
       {
         "id": "4_04",
         "recap": "revelations",
-        "type": "Dialogue"
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+            "actor": "Corolla",
+            "line": "Did you enjoy the show?",
+            "comment": "She exclaims with sarcasm."
+          },
+          {
+            "actor": "Theo",
+            "line": "We need to find shelter.",
+            "comment": "Theo is intently looking around."
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You don't understand what's going on.",
+            "line": "What's happening?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
+            "comment": "She utters bitterly.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
+            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Each of which would gladly take the three... four of us out!",
+            "comment": "Adds Smiurl, who was quiet so far."
+          },
+          {
+            "actor": "Corolla",
+            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
+            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
+            "childid": "3_04"
+          }
+        ]
       },
       {
         "id": "4_05",
         "recap": "find Ayonn tech",
         "type": "Dialogue",
-        "childid": "4_06"
+        "dialogues": [
+          {
+            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+            "actor": "Corolla",
+            "line": "Did you enjoy the show?",
+            "comment": "She exclaims with sarcasm."
+          },
+          {
+            "actor": "Theo",
+            "line": "We need to find shelter.",
+            "comment": "Theo is intently looking around."
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You don't understand what's going on.",
+            "line": "What's happening?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
+            "comment": "She utters bitterly.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
+            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Each of which would gladly take the three... four of us out!",
+            "comment": "Adds Smiurl, who was quiet so far."
+          },
+          {
+            "actor": "Corolla",
+            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
+            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
+            "childid": "3_04"
+          }
+        ]
       },
       {
         "id": "4_06",
-        "recap": "like 4_02 without investigate",
-        "type": "Choice"
+        "recap": "still at the fire",
+        "type": "Choice",
+        "text": "You are still by the fire, with the others around.",
+        "choices": [
+          {
+            "desc": "You are starving. Ask Smiurl about breakfast.",
+            "childid": "4_03"
+          },
+          {
+            "desc": "You need to know what's going on... Before something else happens.",
+            "childid": "4_04"
+          },
+          {
+            "desc": "Better look around the caravan spoils for something useful.",
+            "childid": "4_05",
+            "unhide": "3"
+          },
+          {
+            "ishidden": true,
+            "desc": "You are done here. Better get moving now.",
+            "childid": "4_07"
+          }
+        ]
       },
       {
         "id": "4_07",
         "recap": "is this my party - towards Ayonn",
-        "type": "Dialogue"
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+            "actor": "Corolla",
+            "line": "Did you enjoy the show?",
+            "comment": "She exclaims with sarcasm."
+          },
+          {
+            "actor": "Theo",
+            "line": "We need to find shelter.",
+            "comment": "Theo is intently looking around."
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You don't understand what's going on.",
+            "line": "What's happening?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
+            "comment": "She utters bitterly.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
+            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Each of which would gladly take the three... four of us out!",
+            "comment": "Adds Smiurl, who was quiet so far."
+          },
+          {
+            "actor": "Corolla",
+            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
+            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
+            "childid": "3_04"
+          }
+        ]
       }
     ]
   ]

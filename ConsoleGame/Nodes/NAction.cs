@@ -130,7 +130,7 @@ namespace ConsoleGame.Nodes
                         if (verb != null)
                         {
                             act = action;
-                            matchingVerb = word;                                    //store the typed everb which triggered the action
+                            matchingVerb = word;                                //store the typed everb which triggered the action
                             break;
                         }
                     }
@@ -158,7 +158,7 @@ namespace ConsoleGame.Nodes
 
                             foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                             {
-                                if (o.Obj.Contains(word)) //the action is right, and there is a acceptable object specified
+                                if (o.Obj.Contains(word))                       //the action is right, and there is a acceptable object specified
                                 {
                                     if (!act.EvaluateCombination(o))            //if for some reason Kriss can't do it, say it...
                                         CustomRefusal(o.Condition.Refusal);
