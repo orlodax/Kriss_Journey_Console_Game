@@ -439,11 +439,11 @@
             "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
             "replies": [
               {
-                "line": "Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...",
+                "line": "\"Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...\"",
                 "nextline": "JeorgheStepsIn"
               },
               {
-                "line": "Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...",
+                "line": "\"Sorry ma'am, I didn't mean to be disrespectful. Could I explain? It's not as it seems...\"",
                 "nextline": "JeorgheStepsIn"
               }
             ]
@@ -495,11 +495,11 @@
             "comment": "With these words she snaps you out of your examining trance, smiling mischievously.#\nYou blush, while frantically trying to find something dignifying to say.#\nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
             "replies": [
               {
-                "line": "Wai... Wait a second! You won't tell him right? I, erm...!",
+                "line": "\"Wai... Wait a second! You won't tell him right? I, erm...!\"",
                 "nextline": "JeorgheStepsIn"
               },
               {
-                "line": "Rrright! Hey I was just looking... Wait, have we met before?",
+                "line": "\"Rrright! Hey I was just looking... Wait, have we met before?\"",
                 "nextline": "JeorgheStepsIn"
               }
             ]
@@ -1430,10 +1430,90 @@
         "type": "Dialogue",
         "dialogues": [
           {
-            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+            "precomment": "You slowly walk towards what's left of the convoy.# You are already having second thoughts,#\nsince you have to traverse that field of death alone now.#\n\nLuckily, you spot Theo far ahead and Corolla too,# among the wreckage.# They must have thought the same thing.##\n\nIn the daylight, the view is miserable.#\nBodies,# burnt chariots,# debris...##\nYou start thinking about the eventuality of searching the bodies...##\n\n$Y\"Hey look what I found!\"$C Smiurl calls from behind.#\n\nYou and the others walk to him to see.#\n\nHe's leaning over a body, close to his dead horse.# You don't recognise him.# Was he one of the defensors?",
             "actor": "Corolla",
-            "line": "Did you enjoy the show?",
-            "comment": "She exclaims with sarcasm.",
+            "line": "What's this stuff?",
+            "comment": "Corolla points at some kind of armor the guy wears.# Wore.# You got it.",
+            "replies": [
+              {
+                "line": "You think it's time to man up. Show her... them... you are not a crybaby.",
+                "nextline": "touchArmor"
+              },
+              {
+                "line": "Getting even closer? Touching the dead body? no way!",
+                "nextline": "theoTouches"
+              }
+            ]
+          },
+          {
+            "linename": "touchArmor",
+            "precomment": "You kneel down.# You try not to look the dead man in his glassy eyes.# You focus on the plates on his chest.##\nYou touch slighlty the surface of the armor, and suddenly it lights up!#\nYou abruptly withdraw your hand, and the armor fades off again, slowly.#\nBefore shutting off completely, it lights up with glares like little electrical storms, looking like...# holograms?",
+            "actor": "Corolla",
+            "line": "What the...!",
+            "nextline": "itsAyonnbaby"
+          },
+          {
+            "linename": "theoTouches",
+            "precomment": "Theo senses your hesitation, and quickly kneels down.#\nHe touches slighlty the surface of the armor, and suddenly it lights up!#\nHe abruptly withdraws his hand, and the armor fades off again, slowly.#\nBefore shutting off completely, it lights up with glares like little electrical storms, looking like...# holograms?",
+            "actor": "Corolla",
+            "line": "What the...!",
+            "nextline": "itsAyonnbaby"
+          },
+          {
+            "linename": "itsAyonnbaby",
+            "precomment": "Theo grabs several plates, pulling them and detaching them from the rest of the armor.#\nYou all go in a well lit place, and away from the body, to better look at that piece of technology.#\n\nYou watch as Theo handles the plates, studying them from every angle.#\nAfter a short while he points at some kind of bulge with two indicator lights.",
+            "actor": "Theo",
+            "line": "This is the energy supply..."
+          },
+          {
+            "precomment": "Then, pointing at the whole thing:",
+            "actor": "Theo",
+            "line": "This can only be a product of Ayonn."
+          },
+          {
+            "precomment": "Smiurl shrieks in fear.",
+            "actor": "Corolla",
+            "line": "Are you sure of it?",
+            "comment": "She asks, suddenly serious."
+          },
+          {
+            "actor": "Theo",
+            "line": "Absolutely. No one else has tech like this anymore.",
+            "isbreakneeded": true
+          },
+          {
+            "precomment": "After a while, you break the silence:",
+            "actor": "Kriss",
+            "line": "What this Ayonn would be?"
+          },
+          {
+            "actor": "Smiurl",
+            "line": "The legendary city of Ayonn, the impenetrable!",
+            "comment": "He declaims, with a fearful voice."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Impenetrable?"
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Yes! Ayonn, the city of light, protected by its everlasting magic shield!",
+            "comment": "He breathes in sharply, then continues:"
+          },
+          {
+            "actor": "Smiurl",
+            "line": "You see, Ayonn is the magical city which resist, eternal, since the times of the abandon!#\nNobody can get in, not even get close to it.#\nIts magic shield is an invincible defense, even from just the $Wthought$Y of attacking it!#\n\nInside the city are untold riches and luxuries...#\nAnd they say the few dwellers of the city that have ever been seen,# they shine their own light!",
+            "comment": "\nHe explains in an excited crescendo.#\nThen he falls silent at once, as if he fears his own words."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Ïnteresting.# At least this could explain what we saw last night...",
+            "comment": "You say unimpressed."
+          },
+          {
+            "actor": "Theo",
+            "line": "And this armor as well",
+            "comment": "Theo concludes.",
             "childid": "4_02"
           }
         ]
@@ -1441,51 +1521,8 @@
       {
         "id": "4_07",
         "recap": "is this my party - towards Ayonn",
-        "type": "Dialogue",
-        "dialogues": [
-          {
-            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
-            "actor": "Corolla",
-            "line": "Did you enjoy the show?",
-            "comment": "She exclaims with sarcasm."
-          },
-          {
-            "actor": "Theo",
-            "line": "We need to find shelter.",
-            "comment": "Theo is intently looking around."
-          },
-          {
-            "actor": "Kriss",
-            "precomment": "You don't understand what's going on.",
-            "line": "What's happening?"
-          },
-          {
-            "actor": "Corolla",
-            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
-            "comment": "She utters bitterly.",
-            "isbreakneeded": true
-          },
-          {
-            "actor": "Corolla",
-            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
-            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
-          },
-          {
-            "actor": "Smiurl",
-            "line": "Each of which would gladly take the three... four of us out!",
-            "comment": "Adds Smiurl, who was quiet so far."
-          },
-          {
-            "actor": "Corolla",
-            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
-            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
-          },
-          {
-            "actor": "Corolla",
-            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
-            "childid": "3_04"
-          }
-        ]
+        "type": "Story",
+        "text": "You walk away from the fire and the others.#\nYou start to have a weird feeling.#\n\nYou can't be here just randomly.# There must be some reason.#\n\nAnd if there is a thing you know now,# it's you won't have peace until you'll find it.##\n\n$c<<And these guys here they seem to believe in me.# Like they were...# waiting for someone like me?>>#\n\n<<What am I thinking!# What should I expect from myself now,# to become their leader?>>$C#\n\nYou are lost in your thoughts, looking at the horizon.#\nYou barely notice the others getting close to behind you.#\nYou barely notice your own hand moving,# as it has its own will,# reaching for the sword.##\n\nYou don't know what you feel more,# if surprised,# or determined,# when you find yourself exclaiming,#\nwhile you theatrically draw your sword,# pointing it to the west:##\n\n$c\"To Ayonn!\""
       }
     ]
   ]

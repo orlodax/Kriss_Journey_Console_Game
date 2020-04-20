@@ -18,7 +18,7 @@ namespace ConsoleGame.Classes
         internal List<Models.Dialogue> Dialogues { get; set; }
 
         readonly Models.NodeBase node;
-        readonly bool debug;
+        readonly bool DEBUG;
         #endregion
 
         #region CTOR & "SaveStatusOnExit"
@@ -27,7 +27,7 @@ namespace ConsoleGame.Classes
         /// This root node loads text resources for everybody
         public SNode(Models.NodeBase nb)
         {
-            debug = true;
+            DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
@@ -66,7 +66,7 @@ namespace ConsoleGame.Classes
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
             //debug disable effect
-            if (debug)
+            if (DEBUG)
             {
                 isFlowing = false;
                 ParagraphBreak = 0;

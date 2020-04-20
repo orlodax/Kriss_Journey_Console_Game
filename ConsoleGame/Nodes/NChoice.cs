@@ -1,6 +1,7 @@
 ﻿using ConsoleGame.Classes;
 using ConsoleGame.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace ConsoleGame.Nodes
@@ -8,12 +9,16 @@ namespace ConsoleGame.Nodes
     public class NChoice : SNode
     {
         int selectedRow = 0;
+        readonly List<Choice> visibleChoices = new List<Choice>();
+
         public NChoice(NodeBase nb) : base(nb)
         {
             Thread.Sleep(ParagraphBreak);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
+
+            visibleChoices = Choices.FindAll(c => c.IsHidden == false);
 
             WaitForChoice();
         }
@@ -22,40 +27,38 @@ namespace ConsoleGame.Nodes
             ConsoleKeyInfo key;
             do
             {
-                for (int i = 0; i < Choices.Count; i++)
+                for (int i = 0; i < visibleChoices.Count; i++)
                 {
-                    if (!Choices[i].IsHidden)
-                    {
-                        var foreground = ConsoleColor.DarkCyan;
-                        var background = ConsoleColor.Black;
+                   
+                    var foreground = ConsoleColor.DarkCyan;
+                    var background = ConsoleColor.Black;
                         
-                        if (Choices[i].IsPlayed)
+                    if (Choices[i].IsPlayed)
+                    {
+                        foreground = ConsoleColor.DarkGray;
+                        if (i == selectedRow)
                         {
-                            foreground = ConsoleColor.DarkGray;
-                            if (i == selectedRow)
-                            {
-                                background = ConsoleColor.DarkGray;
-                                foreground = ConsoleColor.White;
-                            }
+                            background = ConsoleColor.DarkGray;
+                            foreground = ConsoleColor.White;
                         }
-                        else
-                        {
-                            if (i == selectedRow)
-                            {
-                                background = ConsoleColor.DarkBlue;
-                                foreground = ConsoleColor.White;
-                            }
-                        }
-              
-                        Console.Write("\t");
-                        Console.ForegroundColor = foreground;
-                        Console.BackgroundColor = background;
-                        Console.Write((i + 1) + ". " + Choices[i].Desc);
-
-                        Console.ResetColor();
-                        Console.WriteLine();
-                        Console.CursorLeft = Console.WindowLeft;
                     }
+                    else
+                    {
+                        if (i == selectedRow)
+                        {
+                            background = ConsoleColor.DarkBlue;
+                            foreground = ConsoleColor.White;
+                        }
+                    }
+              
+                    Console.Write("\t");
+                    Console.ForegroundColor = foreground;
+                    Console.BackgroundColor = background;
+                    Console.Write((i + 1) + ". " + visibleChoices[i].Desc);
+
+                    Console.ResetColor();
+                    Console.WriteLine();
+                    Console.CursorLeft = Console.WindowLeft;
                 }
 
                 while (Console.KeyAvailable)
@@ -64,7 +67,7 @@ namespace ConsoleGame.Nodes
 
                 if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
                     selectedRow--;
-                if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Choices.Count - 1)
+                if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < visibleChoices.Count - 1)
                     selectedRow++;
 
                 Console.Clear();
@@ -75,7 +78,7 @@ namespace ConsoleGame.Nodes
 
             } while (key.Key != ConsoleKey.Enter);
 
-            var choice = Choices[selectedRow];
+            var choice = visibleChoices[selectedRow];
 
             if (choice.IsPlayed)
             {

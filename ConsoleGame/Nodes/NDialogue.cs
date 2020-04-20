@@ -80,7 +80,7 @@ namespace ConsoleGame.Nodes
                             Console.ForegroundColor = ConsoleColor.White;
                         }
                         Console.Write("\t");
-                        Console.Write((i + 1) + ". \"" + Dialogues[lineId].Replies[i].Line + "\"");
+                        Console.Write((i + 1) + ". " + Dialogues[lineId].Replies[i].Line);
 
                         Console.ResetColor();
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -123,14 +123,19 @@ namespace ConsoleGame.Nodes
             }
             else
             {
-                if (Dialogues.Count > lineId + 1)                       
-                    RecursiveDialogues(lineId + 1);  
+                if (!string.IsNullOrWhiteSpace(currentLine.NextLine))
+                {
+                    var nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.NextLine);
+                    RecursiveDialogues(nextLineId);
+                }
+                else 
+                    if (Dialogues.Count > lineId + 1)                       
+                        RecursiveDialogues(lineId + 1);  
             }
         }
 
         void HoldScreen()
         {
-            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkGray;
