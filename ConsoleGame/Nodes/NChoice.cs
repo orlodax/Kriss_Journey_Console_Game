@@ -26,16 +26,33 @@ namespace ConsoleGame.Nodes
                 {
                     if (!Choices[i].IsHidden)
                     {
-                        if (i == selectedRow)
+                        var foreground = ConsoleColor.DarkCyan;
+                        var background = ConsoleColor.Black;
+                        
+                        if (Choices[i].IsPlayed)
                         {
-                            Console.BackgroundColor = ConsoleColor.DarkBlue;
-                            Console.ForegroundColor = ConsoleColor.White;
+                            foreground = ConsoleColor.DarkGray;
+                            if (i == selectedRow)
+                            {
+                                background = ConsoleColor.DarkGray;
+                                foreground = ConsoleColor.White;
+                            }
                         }
+                        else
+                        {
+                            if (i == selectedRow)
+                            {
+                                background = ConsoleColor.DarkBlue;
+                                foreground = ConsoleColor.White;
+                            }
+                        }
+              
                         Console.Write("\t");
+                        Console.ForegroundColor = foreground;
+                        Console.BackgroundColor = background;
                         Console.Write((i + 1) + ". " + Choices[i].Desc);
 
                         Console.ResetColor();
-                        Console.ForegroundColor = ConsoleColor.DarkCyan;
                         Console.WriteLine();
                         Console.CursorLeft = Console.WindowLeft;
                     }
@@ -58,24 +75,37 @@ namespace ConsoleGame.Nodes
 
             } while (key.Key != ConsoleKey.Enter);
 
-            if (Choices[selectedRow].Evaluate())
+            var choice = Choices[selectedRow];
+
+            if (choice.IsPlayed)
             {
-                if (Choices[selectedRow].Effect != null)
-                    Choices[selectedRow].StoreItem(Choices[selectedRow].Effect);
-                if (Choices[selectedRow].UnHide != null)
+                if (choice.IsNotRepeatable)
                 {
-                    int UnHide = (int)Choices[selectedRow].UnHide;
+                    RedrawNode();
+                    WaitForChoice();
+                }
+            }
+            if (choice.Evaluate())
+            {
+                if (choice.Effect != null)
+                    choice.StoreItem(choice.Effect);
+
+                if (choice.UnHide.HasValue)                  //if this choice unlocks others
+                {
+                    int UnHide = (int)choice.UnHide;
                     Choices[UnHide].IsHidden = false;
                 }
 
+                choice.IsPlayed = true;
+
                 SaveStatusOnExit();
-                NodeFactory.CreateNode(Choices[selectedRow].ChildId);
+                NodeFactory.CreateNode(choice.ChildId);
             }
             else
             {
                 Console.CursorTop = Console.WindowHeight - 4;
                 Console.CursorLeft = Console.WindowLeft;
-                TextFlow(true, Choices[selectedRow].Refusal, ConsoleColor.DarkYellow);
+                TextFlow(true, choice.Refusal, ConsoleColor.DarkYellow);
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.Write("Press any key...");
@@ -84,7 +114,6 @@ namespace ConsoleGame.Nodes
                 RedrawNode();
                 WaitForChoice();
             }
-            // return selectedRow;
         }
         void RedrawNode() 
         {

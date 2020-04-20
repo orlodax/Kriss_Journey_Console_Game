@@ -735,7 +735,7 @@
             "actor": "Smiurl",
             "precomment": "He stretches up his little wrinkly hand to you and says:",
             "line": "Hello Kriss, I am Smiurl.",
-            "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf.#\nHe has huge ears, pierced with a plethora of earrings, which jingle faintly when he jolts his head.#\nThe nose is also quite big, compared to the rest of the face.#\nHe's wearing a shirt and a pair of short discolored leather trousers.#\nHis face looks like it's made to constantly display a lost-puppy-like expression...#"
+            "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf.#\nHe has huge ears, pierced with a plethora of earrings, which jingle faintly with each jolt of his head.#\nThe nose is also quite big, compared to the rest of the face.#\nHe's wearing a shirt and a pair of short discolored leather trousers.#\nHis face looks like it's made to constantly display a lost-puppy-like expression...#"
           },
           {
             "precomment": "Somehow Corolla must know what you are thinking.#",
@@ -1220,181 +1220,21 @@
         "id": "4_01",
         "recap": "intro 5",
         "type": "Story",
-        "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness.#\nYou have no body,# no eyes.#\nJust an adimensional point,# in the void.#\nYou 'hear' hollow sounds around,# like thunders.##\n\nThen, you think you can see sinsters glares.#\nThe Chief's sword gets closer and closer,# its tip menacingly pointed at your eyes.#\nThe shiny edge is ever closer,# closer...##\n\nYou shout.# The darkness reacts,# vibrating in response to such a huge amount of anger and pain.#\nThen,# suddenly,# as answering to the farthest echoes of your unaware call,# light comes to you.#\nA blinding flash hit you,# piercing through every particle in your body.##\n\nYou are one with the light now.#\nYou hear a warm voice whispering,# or maybe thinking of whispering:##\n\n$G<<Have courage!>>##\n\n$c...# Are you not alone?",
+        "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness.#\nYou have no body,# no eyes.#\nJust an adimensional point,# in the void.#\nYou 'hear' hollow sounds around,# like thunders.##\n\nThen, you think you can see sinisters glares.#\nThe Chief's sword gets closer and closer,# its tip menacingly pointed at your eyes.#\nThe shiny edge is ever closer,# closer...##\n\nYou shout.# The darkness reacts,# vibrating in response to such a huge amount of anger and pain.#\nThen,# suddenly,# as answering to the farthest echoes of your unaware call,# light comes to you.#\nA blinding flash hits you,# piercing through every particle in your body.##\n\nYou are one with the light now.#\nYou hear a warm voice whispering,# or maybe thinking of whispering:##\n\n$G<<Have courage!>>##\n\n$c...# Are you not alone?",
+        "childid": "4_06"
+      },
+      {
+        "id": "4_06",
+        "recap": "prechoice",
+        "type": "Story",
+        "text": "The light keeps on tormenting you.# You open your eyes, and realise the sun is lighting your face.#\nWas it just a dream?##\n\nYou rub your eyes, stand up and exit the cave.#\nAs you stretch your body,# you look around.# Someone has lit a fire.#\nYou appreciate its warmth,# as you feel the chill early morning air on your skin.##\n\nThe absurdity of what you're experiencing comes back haunting you.##\nWhat is this place?# Who are these people?# Where is home?##\n\nEverything is too surreal to be true.# The Horde...# And what about them three?#\nThe girl has something peculiar, something that makes her different from the others around.#\nThere is a special light in her eyes,# and her poise is always elegant,# self-confident# and seductive.#\nIn her gaze there's something noble, something you sense clearly in the giant as well.#\nOnly the dwarf seems to be completely unrelated to everything and everyone else you've seen so far...#\n\nBut,# somehow,# you don't know why but you feel you can trust them.#\nMaybe they are savages,# but not $Wanimals$C.##\n\n\nInterrupting your thoughts,# Smiurl appears from behind a boulder,# carrying some bundle in his arms.",
         "childid": "4_02"
       },
       {
         "id": "4_02",
         "recap": "talk,eat,investigate",
         "type": "Choice",
-        "text": "The light keeps on tormenting you.# You open your eyes, and realise the sun is lighting your face.#\nWas it just a dream?##\n\nYou rub your eyes, stand up and exit the cave.#\nAs you stretch your body,# you look around.# Someone has lit a fire.#\nYou appreciate its warmth,# as you feel the chill early morning air on your skin.#\n\nFew seconds later,# Smiurl appears from behind a boulder,# carrying some bundle in his arms.",
-        "choices": [
-          {
-            "desc": "You are starving. Ask him about breakfast.",
-            "childid": "4_03"
-          },
-          {
-            "desc": "You need to know what's going on... Before something else happens.",
-            "childid": "4_04"
-          },
-          {
-            "desc": "Better look around the caravan spoils for something useful.",
-            "childid": "4_05"
-          }
-        ]
-      },
-      {
-        "id": "4_03",
-        "recap": "breakfast at Smiurl's",
-        "type": "Dialogue",
-        "dialogues": [
-          {
-            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
-            "actor": "Corolla",
-            "line": "Did you enjoy the show?",
-            "comment": "She exclaims with sarcasm."
-          },
-          {
-            "actor": "Theo",
-            "line": "We need to find shelter.",
-            "comment": "Theo is intently looking around."
-          },
-          {
-            "actor": "Kriss",
-            "precomment": "You don't understand what's going on.",
-            "line": "What's happening?"
-          },
-          {
-            "actor": "Corolla",
-            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
-            "comment": "She utters bitterly.",
-            "isbreakneeded": true
-          },
-          {
-            "actor": "Corolla",
-            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
-            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
-          },
-          {
-            "actor": "Smiurl",
-            "line": "Each of which would gladly take the three... four of us out!",
-            "comment": "Adds Smiurl, who was quiet so far."
-          },
-          {
-            "actor": "Corolla",
-            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
-            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
-          },
-          {
-            "actor": "Corolla",
-            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
-            "childid": "3_04"
-          }
-        ]
-      },
-      {
-        "id": "4_04",
-        "recap": "revelations",
-        "type": "Dialogue",
-        "dialogues": [
-          {
-            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
-            "actor": "Corolla",
-            "line": "Did you enjoy the show?",
-            "comment": "She exclaims with sarcasm."
-          },
-          {
-            "actor": "Theo",
-            "line": "We need to find shelter.",
-            "comment": "Theo is intently looking around."
-          },
-          {
-            "actor": "Kriss",
-            "precomment": "You don't understand what's going on.",
-            "line": "What's happening?"
-          },
-          {
-            "actor": "Corolla",
-            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
-            "comment": "She utters bitterly.",
-            "isbreakneeded": true
-          },
-          {
-            "actor": "Corolla",
-            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
-            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
-          },
-          {
-            "actor": "Smiurl",
-            "line": "Each of which would gladly take the three... four of us out!",
-            "comment": "Adds Smiurl, who was quiet so far."
-          },
-          {
-            "actor": "Corolla",
-            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
-            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
-          },
-          {
-            "actor": "Corolla",
-            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
-            "childid": "3_04"
-          }
-        ]
-      },
-      {
-        "id": "4_05",
-        "recap": "find Ayonn tech",
-        "type": "Dialogue",
-        "dialogues": [
-          {
-            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
-            "actor": "Corolla",
-            "line": "Did you enjoy the show?",
-            "comment": "She exclaims with sarcasm."
-          },
-          {
-            "actor": "Theo",
-            "line": "We need to find shelter.",
-            "comment": "Theo is intently looking around."
-          },
-          {
-            "actor": "Kriss",
-            "precomment": "You don't understand what's going on.",
-            "line": "What's happening?"
-          },
-          {
-            "actor": "Corolla",
-            "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say.#\nBut this time, there's something he does not know.#\nFor too long he had us all dwell in a snake pit...#\nAnd now, he's gonna reap the betrayal he himself sowed.",
-            "comment": "She utters bitterly.",
-            "isbreakneeded": true
-          },
-          {
-            "actor": "Corolla",
-            "precomment": "You still don't understand.#\nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
-            "line": "Many in the horde are tired of his leadership.# Think about Jeorghe: many others here are just like him."
-          },
-          {
-            "actor": "Smiurl",
-            "line": "Each of which would gladly take the three... four of us out!",
-            "comment": "Adds Smiurl, who was quiet so far."
-          },
-          {
-            "actor": "Corolla",
-            "line": "And not just us; these thugs have an appetite for killing.#\nI cannot stand watching any more villages be burnt to the ground.",
-            "comment": "She clenches her fists and her jaw,#\nembers in her eyes.#"
-          },
-          {
-            "actor": "Corolla",
-            "line": "Now,# there's no time to explain to you how we ended up with these guys.#\nWe wanted to warn the Chief about the mutiny plans that are being devised,#\nbut Jeorghe and his friends prevented us...# Then you arrived out of nowhere...#\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
-            "childid": "3_04"
-          }
-        ]
-      },
-      {
-        "id": "4_06",
-        "recap": "still at the fire",
-        "type": "Choice",
-        "text": "You are still by the fire, with the others around.",
+        "text": "Standing close to the fire, you think about what to do next.",
         "choices": [
           {
             "desc": "You are starving. Ask Smiurl about breakfast.",
@@ -1407,12 +1247,194 @@
           {
             "desc": "Better look around the caravan spoils for something useful.",
             "childid": "4_05",
-            "unhide": "3"
+            "unhide": "3",
+            "isnotrepeatable": true
           },
           {
             "ishidden": true,
             "desc": "You are done here. Better get moving now.",
             "childid": "4_07"
+          }
+        ]
+      },
+      {
+        "id": "4_03",
+        "recap": "breakfast at Smiurl's",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "actor": "Smiurl",
+            "line": "Oh! Goodmorning Kriss! Slept well? Are you hungry?",
+            "comment": "He anticipates you, thoughtfully."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Hi Smiurl. I am not entirely certain, but I'm hungry for sure!"
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "He goes next to the fire and starts handling and unpacking the stuff he has carried.",
+            "line": "The chariots have been raided... But I managed to find some food.#\nHere it is: a jar of water,# some brandy,# dried meat, some sand-fruit and pears..."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Sand-what?"
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Sand-fruit!# Don't tell me you don't know what they are!# It's a delicacy.#\nThey should be prepared with Pinzerro sap, shouldn't they?#\nI guess I'll have to work it out with what I have here..."
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You still have no idea what he's talking about.# He hands you one of them to let you see.#\nIt looks a bit like a seashell, as big as a walnut.",
+            "line": "What kind of stuff is this?",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Smiurl",
+            "line": "I can't believe you're asking it! These are Croeggs larvae."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Larvae?...# You mean...# insects??",
+            "comment": "You give him back his 'sand-fruit'."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Insects, of course! But not just any insect.# An elder Croegg can weigh as much as you.# I caught one this big once...",
+            "comment": "\nAnd he measures the air indicating something over one meter long."
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "You must have made a disgusted expression, as he adds, after looking suprised seeing your face:",
+            "line": "Well, I'll have to eat your serving too!",
+            "comment": "And he merrily takes the sand-fruit back.",
+            "childid": "4_02"
+          }
+        ]
+      },
+      {
+        "id": "4_04",
+        "recap": "revelations",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "actor": "Kriss",
+            "line": "Listen, Smiurl...",
+            "comment": "You start, looking at him seriously."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Could you tell me something...?# I mean...## Where are we exactly?"
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "#He looks at you, puzzled.",
+            "line": "Uh? We're still in the canyon, aren't we? What do you mean..."
+          },
+          {
+            "actor": "Theo",
+            "line": "I don't think that's what he's asking.",
+            "comment": "You hear Theo and Corolla approaching from behind your back."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Yep.",
+            "comment": "#\n\nYou turn around. They stop and stand there staring at you.#\nThey seem to expect from you to say something next.",
+            "isbreakneeded": true
+          },
+          {
+            "precomment": "$c<<That's it>># $CYou think. #$c<<The 'moment of truth'>>$C Where to start?#\nYou start with the very basics.# You smile nervously, and say in a quiet voice:",
+            "actor": "Kriss",
+            "line": "First of all,# we are still on Earth,# right?"
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "Corolla startles. Even Theo's face darkens,# in spite of his usual imperturbability.",
+            "line": "No.",
+            "comment": "The little guy answers simply,# as it was a normal thing for you to say."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "This is $WNoi-Hert$Y.",
+            "comment": "He looks at you calmly, as he continues preparing breakfast."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Huh??# No-what??",
+            "comment": "As your disbelief increases."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Wait a minute...# Kriss,# could you tell us in which time are we?"
+          },
+          {
+            "precomment": "Afraid of answering at this point, you almost beg:",
+            "actor": "Kriss",
+            "line": "Please,# tell me this is the 21st century!"
+          },
+          {
+            "precomment": "Corolla bows her head, looking away.# Theo shakes his.",
+            "actor": "Theo",
+            "line": "You'd better sit down,# young man.",
+            "comment": "#\n\nThen,# he starts talking again.",
+            "childid": "4_02"
+          }
+        ]
+      },
+      {
+        "id": "4_08",
+        "recap": "Theo tells Noi-Hert's story",
+        "type": "Story",
+        "text": "$BNoi-Hert was discovered five centuries after the Great Religion War,#\nfew decades after interstellar travel was made possible.#\n\nIt was the first inhabitable planet discovered by the Earthers ships.#\nIt is a little smaller than the Earth, about two-thirds of its volume,#\nbut it has a greater nucleus density, so the gravity is about the same.#\n\nWith just a little moon, it orbits lonely around a G-type star\nthat everybody called sun but had no real name.#\n\nOver time, the Earthers established many colonies on the surface,#\nfor commercial, reasearch and overpopulation reasons.#\n\nThe best and the worst of the Earth arrived here.#\nA lot of brilliant minds, scientists, artists, pursuing new discoveries\nand exploring new horizons, with a whole planet at their disposal.#\nBut, also, a lot of low-lives, jailbirds, the most despicable\nfrom every kind of culture and environment, fleeing from the world\nthat rejected, hunted them down relentlessly.#\n\nA huge penitentiary complex was also built on the other side of this planet,#\nas this side flourished giving way to new, unmatched scientific progress.#\nThere was space for everybody, and every commodity and resource#\nwas shipped by the Earth on its $WTitans$B, the huge orbital ships.#\n\nBut this was one of the reasons of the collapse, too.",
+        "childid": "4_09"
+      },
+      {
+        "id": "4_09",
+        "recap": "More story",
+        "type": "Story",
+        "text": "$BOne day, without notice, after some twenty years of frantic development,#\nthe earthers abandoned the colonies to themselves.##\n\nIn time, legends started spreading.#\nFunny stories about spirits of this planet emerging from the sea and the land to drive out the human invaders,#\nonly sparing those who were born here.# At first, very few believed such myths.#\nThe wisest ones were convinced there had to be a way more concrete explanation behind all of it.#\nA war,# maybe some cataclysm,# on the Earth...##\n\nRegardless of the actual reason, the colonists soon realised there was little they could do,#\nin order to limit the damage deriving from the exile imposed on them.#\nWithout the Titans, global communications broke down, as well the great commercial routes.#\nMachines and Earth technology started to fade as there was no proper supply chain\nto refurbish and repair and improve the existent.#\nWithout access to Earth's knowledge, scientists and researchers had to start over, takin a massive leap backwards.##\n\nThen,# with decades, centuries,# the old generations were replaced,#\ngiving way to a fragmenting society led by the strongest, most violent elements.#\n\nHordes started forming and everything descended more and more into anarchy.",
+        "childid": "4_10"
+      },
+      {
+        "id": "4_10",
+        "recap": "take in the truth",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You sit down on the ground taking in what Theo just told you.# $c<<He never talks, but when he does...!>>$C##\n\nYou try to make some sense of his story,# and after few minutes of silent meditating, you resolutely say:",
+            "actor": "Kriss",
+            "line": "I can't believe it.## It would mean I traveled through time!# It's clearly impossible!"
+          },
+          {
+            "actor": "Corolla",
+            "line": "We're having an hard time believing you too, so we are kinda even...",
+            "comment": "Corolla smiles shrugging her shoulders."
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "You still can't wrap your mind around it.##\nWhat are you doing there?# Where will you go?# What will be of you?#\nYou think about all the people you left home, they must be so worried...#\n$c<<You are a missing person>># $CYou say to yourself.##\n\nCorolla sees your distress,# kneels next to you and says, hand on your shoulder:#",
+            "line": "Do not worry too much now.# We'll find an answer somehow."
+          },
+          {
+            "precomment": "You look at her, still depressed.# Why do she and the others seem to care about you?#\nLooking at her expression, you manage to produce half a smile and say, actually feeling it:",
+            "actor": "Kriss",
+            "line": "Thanks...",
+            "childid": "4_02"
+          }
+        ]
+      },
+      {
+        "id": "4_05",
+        "recap": "find Ayonn tech",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+            "actor": "Corolla",
+            "line": "Did you enjoy the show?",
+            "comment": "She exclaims with sarcasm.",
+            "childid": "4_02"
           }
         ]
       },
