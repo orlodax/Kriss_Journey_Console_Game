@@ -78,16 +78,14 @@ namespace ConsoleGame.Nodes
                     Console.Write(verb.Term + " ");
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.CursorTop += 1;
+            Console.CursorTop = Console.WindowHeight - 1;
             Console.CursorLeft = 0;
 
             if (ID == "1_02") //first action node. this if clause is to mock player just the first time they use help
             {
-                Console.CursorTop += 1;
+                Console.CursorTop -= 1;
                 Console.WriteLine("\\> you pressed tab for help. noob.");
             }
-            else
-                Console.CursorTop += 2;
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("\\>");
@@ -130,7 +128,7 @@ namespace ConsoleGame.Nodes
                         if (verb != null)
                         {
                             act = action;
-                            matchingVerb = word;                                //store the typed everb which triggered the action
+                            matchingVerb = word;                                //store the typed verb which triggered the action
                             break;
                         }
                     }
@@ -172,7 +170,10 @@ namespace ConsoleGame.Nodes
                                 }
                             }
                         }
-                        CustomRefusal(act.GetOpinion(matchingVerb));            //the action is right, but no required object is specified
+                        if (act.Answer != null)
+                            DisplaySuccess(act.Answer, act.ChildId);
+                        else
+                            CustomRefusal(act.GetOpinion(matchingVerb));            //the action is right, but no required object is specified
                     }
                 }
                 else                                                            //if there's no action available, redraw node and display standard refuse

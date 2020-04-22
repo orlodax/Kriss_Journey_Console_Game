@@ -1522,7 +1522,90 @@
         "id": "4_07",
         "recap": "is this my party - towards Ayonn",
         "type": "Story",
-        "text": "You walk away from the fire and the others.#\nYou start to have a weird feeling.#\n\nYou can't be here just randomly.# There must be some reason.#\n\nAnd if there is a thing you know now,# it's you won't have peace until you'll find it.##\n\n$c<<And these guys here they seem to believe in me.# Like they were...# waiting for someone like me?>>#\n\n<<What am I thinking!# What should I expect from myself now,# to become their leader?>>$C#\n\nYou are lost in your thoughts, looking at the horizon.#\nYou barely notice the others getting close to behind you.#\nYou barely notice your own hand moving,# as it has its own will,# reaching for the sword.##\n\nYou don't know what you feel more,# if surprised,# or determined,# when you find yourself exclaiming,#\nwhile you theatrically draw your sword,# pointing it to the west:##\n\n$c\"To Ayonn!\""
+        "text": "You walk away from the fire and the others.#\nYou start to have a weird feeling.#\n\nYou can't be here just randomly.# There must be some reason.#\n\nAnd if there is a thing you know now,# it's you won't have peace until you'll find it.##\n\n$c<<And these guys here they seem to believe in me.# Like they were...# waiting for someone like me?>>#\n\n<<What am I thinking!# What should I expect from myself now,# to become their leader?>>$C#\n\nYou are lost in your thoughts, looking at the horizon.#\nYou barely notice the others getting close to behind you.#\nYou barely notice your own hand moving,# as it has its own will,# reaching for the sword.##\n\nYou don't know what you feel more,# if surprised,# or determined,# when you find yourself exclaiming,#\nwhile you theatrically draw your sword,# pointing it to the west:##\n\n$c\"To Ayonn!\"",
+        "childid": "5_01"
+      }
+    ],
+    [
+      {
+        "id": "5_01",
+        "recap": "start ch 6",
+        "type": "Dialogue",
+        "text": "-------------------------------\n|          CHAPTER 6          |\n-------------------------------\n\n\n#",
+        "dialogues": [
+          {
+            "actor": "Smiurl",
+            "line": "Hey Kriss...# tell me...# how did you know this was the direction to take?",
+            "comment": "Smiurl asks you,#\nwhile he fights with the straps of his backpack, almost double in size compared to him."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Huh...?# I don't know...## Instinct?",
+            "comment": "You shrug your shoulders, smiling at the little guy."
+          },
+          {
+            "actor": "Theo",
+            "precomment": "Corolla is silently looking sideways at you.# Theo notices it,# then says:",
+            "line": "You got guts, kid,# that's for sure..."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Why would I?# It can't be so terrible...# I mean,# It's just a city.#\nBesides,# we go in peace.# I don't see why...",
+            "comment": "You stop talking,# seeing how Theo looks away and sighs,#\nsilently staring at the ground in front of his feet.##\n\nYou all fall silent for the rest of the morning.#\n\nYou wonder if everyone is busy thinking about what's going on,# if they should stop indulging you.#\nYou still don't understand why they're sticking to you.#\n\nIt is with relief, after few hours,#\nthat you stop and sit down against a rock,# when Theo signals to rest and eat something.",
+            "childid": "5_02"
+          }
+        ]
+      },
+      {
+        "id": "5_02",
+        "type": "Action",
+        "text": "The weight of the sword tied on your backpack had started taking its toll.#\nYou insisted in wanting to carry it yourself.# You wonder if it actually makes sense,#\nbut something prevents you from parting with it.#\nYou feel like it's $cyour sword$C.##\n\nThe fact that you just took it from the Chief means nothing to you.#\nEven if it did not belong to you until today,#\neven if you have never seen any sword up close in the first place.",
+        "actions": [
+          {
+            "verbs": [
+              { "term": "look" }
+            ],
+            "answer": "The reddish landscape stretches wide all around you.# You think it looks like Arizona, or Nevada, back on earth.#\n\nBack on earth.## Ridiculous.##\n\nThe sun hits hard on you;# now you thankfully understand why the hat.\n\nHow exactly far is this Ayonn city?# You worry now:#\nyou have only a limited supply of food with you.# How will you survive the desert?",
+            "objects": [
+              {
+                "obj": "sword",
+                "childid": "5_03"
+              }
+            ]
+          },
+          {
+            "verbs": [
+              { "term": "ask" }
+            ],
+            "objects": [
+              {
+                "obj": "food",
+                "answer": "Theo: Hunting?"
+              },
+              {
+                "obj": "water",
+                "answer": "Smiurl explain 2 days..?"
+              },
+              {
+                "obj": "travel",
+                "answer": "Corolla says ten days?"
+              },
+              {
+                "obj": "journey",
+                "answer": "Corolla says ten days?"
+              },
+              {
+                "obj": "distance",
+                "answer": "Corolla says ten days?"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "5_03",
+        "type": "Story",
+        "text": "sword text"
       }
     ]
   ]

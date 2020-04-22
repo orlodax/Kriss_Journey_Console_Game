@@ -34,6 +34,10 @@ namespace ConsoleGame.Classes
                 ActorsColors.Add("Theo", ConsoleColor.Blue);
                 ActorsColors.Add("Jeorghe", ConsoleColor.DarkMagenta);
                 ActorsColors.Add("Chief", ConsoleColor.Magenta);
+                ActorsColors.Add("Efeliah", ConsoleColor.DarkGreen);
+                ActorsColors.Add("Math", ConsoleColor.DarkRed);
+                ActorsColors.Add("Seer", ConsoleColor.Magenta);
+
                 //chapters titles
                 Titles.Add("1. THE JOURNEY STARTS");
                 Titles.Add("2. THE HORDE");

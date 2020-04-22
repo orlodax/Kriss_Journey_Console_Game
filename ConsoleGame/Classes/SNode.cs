@@ -95,34 +95,37 @@ namespace ConsoleGame.Classes
                         switch (c.ToString())
                         {
                             case "R":
-                                color = ConsoleColor.Red; //Corolla
+                                color = ConsoleColor.Red;           //Corolla
                                 break;
                             case "r":
-                                color = ConsoleColor.DarkRed;
+                                color = ConsoleColor.DarkRed;       //Math
                                 break;
                             case "G":
                                 color = ConsoleColor.Green;
                                 break;
+                            case "g":
+                                color = ConsoleColor.DarkGreen;     //Efeliah
+                                break;
                             case "B":
-                                color = ConsoleColor.Blue; //Theo
+                                color = ConsoleColor.Blue;          //Theo
                                 break;
                             case "C":
-                                color = ConsoleColor.DarkCyan; //narrator
+                                color = ConsoleColor.DarkCyan;      //narrator
                                 break;
                             case "c":
-                                color = ConsoleColor.Cyan; //yourself
+                                color = ConsoleColor.Cyan;          //yourself
                                 break;
                             case "M":
                                 color = ConsoleColor.Magenta;
                                 break;
                             case "Y":
-                                color = ConsoleColor.Yellow; //Smiurl
+                                color = ConsoleColor.Yellow;        //Smiurl
                                 break;
                             case "K":
                                 color = ConsoleColor.Black;
                                 break;
                             case "W":
-                                color = ConsoleColor.White;
+                                color = ConsoleColor.White;         //highlight
                                 break;
                             case "S":
                                 Console.BackgroundColor = ConsoleColor.White;
@@ -131,10 +134,10 @@ namespace ConsoleGame.Classes
                                 Console.BackgroundColor = ConsoleColor.Black;
                                 break;
                             case "D":
-                                color = ConsoleColor.DarkGray; //menus, help
+                                color = ConsoleColor.DarkGray;      //menus, help
                                 break;
                             case "d":
-                                color = ConsoleColor.Gray; //menus, help
+                                color = ConsoleColor.Gray;          //menus, help
                                 break;
                             default:
                                 break;
@@ -152,13 +155,6 @@ namespace ConsoleGame.Classes
                             Thread.Sleep(paragraph);
                         }
                     }
-                    //if (prevChar.ToString().Equals("@"))
-                    //{
-                    //    Random rnd = new Random();
-                    //    Random rnd2 = new Random();
-                    //    for (int i = 0; i < 10000; i++)
-                    //        Console.Beep(rnd2.Next(500, 2000), rnd.Next(50, 500));
-                    //} 
                         
                     prevChar = c;
                 }
