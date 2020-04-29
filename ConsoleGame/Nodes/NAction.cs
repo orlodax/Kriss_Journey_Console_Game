@@ -277,7 +277,7 @@ namespace ConsoleGame.Nodes
             var newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;
             var rows = answer.Length / Console.WindowWidth;
 
-            return Math.Min(Console.WindowHeight - (rows + newLines), Console.WindowHeight - 5) - 1;
+            return Math.Min(Console.WindowHeight - (rows + newLines), Console.WindowHeight - 5) - 2;
         }
     }
 }

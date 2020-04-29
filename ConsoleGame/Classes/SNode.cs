@@ -121,6 +121,9 @@ namespace ConsoleGame.Classes
                             case "Y":
                                 color = ConsoleColor.Yellow;        //Smiurl
                                 break;
+                            case "y":
+                                color = ConsoleColor.DarkYellow;    //Console answers
+                                break;
                             case "K":
                                 color = ConsoleColor.Black;
                                 break;

@@ -1559,6 +1559,7 @@
       {
         "id": "5_02",
         "type": "Action",
+        "recap": "rest in desert",
         "text": "The weight of the sword tied on your backpack had started taking its toll.#\nYou insisted in wanting to carry it yourself.# You wonder if it actually makes sense,#\nbut something prevents you from parting with it.#\nYou feel like it's $cyour sword$C.##\n\nThe fact that you just took it from the Chief means nothing to you.#\nEven if it did not belong to you until today,#\neven if you have never seen any sword up close in the first place.",
         "actions": [
           {
@@ -1580,33 +1581,472 @@
             "objects": [
               {
                 "obj": "food",
-                "answer": "Theo: Hunting?"
+                "answer": "$B\"We have enough for 3 days. Then, we will hunt.\"#$y So naturally.\n\n#You wonder what kind of prey he has in mind.# All you saw so far were just few lizards.#\n\nWell,# you already decided you will need to trust these guys,# so no use in worrying at this point."
               },
               {
                 "obj": "water",
-                "answer": "Smiurl explain 2 days..?"
+                "answer": "$Y\"We have two days worth of water. We need to find some more along the way.\"#\n\n$yYou try not to look worried.#\n\n$Y\"Don't you worry about that.# It's not our first time in the desert!\"#$y He smiles at you reassuringly."
               },
               {
                 "obj": "travel",
-                "answer": "Corolla says ten days?"
+                "answer": "$R\"The location of the city of Ayonn is not a mistery.#\nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks.#\n\n$R\"So...# the so-called plain of Ayonn it's ten days of walking west from here.#\nAt the end of this desert, we'll have to cross the Mazerock.# Then...# We'll see.\"#\n\n$ySmiurl squeals."
               },
               {
                 "obj": "journey",
-                "answer": "Corolla says ten days?"
+                "answer": "$R\"The location of the city of Ayonn is not a mistery.#\nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks.#\n\n$R\"So...# the so-called plain of Ayonn it's ten days of walking west from here.#\nAt the end of this desert, we'll have to cross the Mazerock.# Then...# We'll see.\"#\n\n$ySmiurl squeals."
               },
               {
                 "obj": "distance",
-                "answer": "Corolla says ten days?"
+                "answer": "$R\"The location of the city of Ayonn is not a mistery.#\nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks.#\n\n$R\"So...# the so-called plain of Ayonn it's ten days of walking west from here.#\nAt the end of this desert, we'll have to cross the Mazerock.# Then...# We'll see.\"#\n\n$ySmiurl squeals.#"
+              },
+              {
+                "obj": "mazerocks",
+                "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!#\nIf the place itself doesn't kill you,# an Oxengutter or some other fiend will surely fix it!\"#$y You gulp.#\n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,#\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence.#\n\nTheo, as per usual, doesn't even seem interested in what they're saying."
               }
             ]
+          },
+          {
+            "verbs": [
+              { "term": "mazerock" }
+            ],
+            "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!#\nIf the place itself doesn't kill you,# an Oxengutter or some other fiend will surely fix it!\"#$y You gulp.#\n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,#\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence.#\n\nTheo, as per usual, doesn't even seem interested in what they're saying."
+          },
+          {
+            "verbs": [
+              { "term": "rest" }
+            ],
+            "effect": {
+              "item": "desertrest",
+              "value": true
+            },
+            "answer": "You all sit with your shoulder against a boulder, sheltered from the high sun.#\nYou eat some of the food prepared before by Smiurl, and drink some of the water.#\n\nYou really needed this.# The others do not look tired at all,# compared to you."
+          },
+          {
+            "verbs": [
+              { "term": "walk" },
+              { "term": "leave" }
+            ],
+            "answer": "$R\"Better keep going.# It's still a long way.\"$y",
+            "childid": "5_05",
+            "condition": {
+              "item": "desertrest",
+              "value": true,
+              "refusal": "You need to rest for a while."
+            }
           }
         ]
       },
       {
         "id": "5_03",
+        "recap": "in sword",
         "type": "Story",
-        "text": "sword text"
+        "text": "The sword is very long and heavy.# It is perfectly balanced.#\nThe long grip seems made of some metal, darkened through time.# But it's surprising, to the touch.#\nIt feels like it adapts perfectly to your hands,# as if it is...# alive.# It is not cold nor rigid.#\nIt is extremely hard though, and it resists all of your attempts at sctratching it.#\n\nYou shrug your shoulders,# and you move on to inspect the blade.#\n\nThe blade is double-edged,# and this looks weird to you because it is also slightly curved.#\nIt's four fingers wide at the intersection with the guard,#\nthen it spreads outward with an arc on each side reaching about a handbreadth.#\nThe width decreases towards the point.# And the point looks strange: it is oddly asymmetrical,#\nas if the blacksmith wanted to make it look as a broken, splintered blade,# that was later resharped as a razor.#\n\nYou think it's impossible to fight with a weapon like that.#\nNonetheless, when you wield it you feel as your arm is one thing with the sword,#\nand it does not looks like you and the sword move in a clumsy or unbalanced way at all.##\n\nThe metal of the blade itself looks strange.# It reflects the light unevenly,#\nand you don't know why but you think it's like its molecular structure is constantly shifting.#\nSometimes you can see your own image reflected on the blade as a mirror;#\nyet a second after the reflection seems to swim or evaporate in different directions,#\nas if it is subject to a sudden and impossible turbulence.#\nIf you keep on staring at it, the blade looks like it's subtly moving back and forth,#\nlike a living thing,# even if it's cold and solid to the touch.#\n\nAs if all of that isn't enough,# you also feel like you can glimpse an inscription flowing along its entire lenght.#\nBut it's more a feeling than an actual visual input.# You can't explain it to yourself.",
+        "childid": "5_04"
+      },
+      {
+        "id": "5_04",
+        "recap": "out sword",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "precomment": "You sigh,# ceasing your examination.# It doesn't seem there is much else you can discover now.#\nYou look up,# and see your friends staring at you.# You did not notice they fell silent earlier.",
+            "actor": "Kriss",
+            "line": "What is it?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "You spent a lot of time lost in contemplation..."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "You looked like you were in a trance.",
+            "comment": "Smiurl intervenes."
+          },
+          {
+            "actor": "Corolla",
+            "line": "...you actually looked like you were somewhere else, totally alienated.#\nAre you sure you are well?",
+            "comment": "She continues."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Sure, never been better...",
+            "comment": "You are not entirely sure about that,# still,# you don't feel unwell either."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Good thing...",
+            "comment": "She sighs.",
+            "childid": "5_02"
+          }
+        ]
+      },
+      {
+        "id": "5_05",
+        "recap": "see something",
+        "type": "Dialogue",
+        "text": "After another couple of hours spent walking,# the flat scene in front of you shows the first change.#\nA kind of spire of rock,# solitary,# direction south-west.#\nIt appears fading in:# you now become aware of the atmoshperic haze that limits visibility to maybe 20 kilometers.#\n\n",
+        "dialogues": [
+          {
+            "actor": "Kriss",
+            "line": "What is that?",
+            "comment": "You ask."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "A rock like many others.# There's nothing else in this desert but sun and rocks.",
+            "comment": "Smiurl shrugs."
+          },
+          {
+            "precomment": "You go back peering at the distant shape.# You can't stop staring at it.#\nOnce again,# you perceive something weird, something you can't explain.#\n\nYou keep on walking, eyes on the top of the pinnacle.#\nIt's a vague feeling,# you wonder if it isn't just your sight deceiving you:#\nthe rock looks like it's moving, or like it's glowing slightly.#\nYou hear or think to hear faint sounds, like many barely perceptible whispers.##",
+            "actor": "Smiurl",
+            "line": "Hey!",
+            "comment": "He suddenly exclaims, breaking that 'spell'."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Huh...? What?",
+            "comment": "You snap out of your mind focus."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "It's like ten minutes now, you've been walking like a ghost, staring into nothing..."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Ten minutes...?",
+            "comment": "They felt like few seconds to you.",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Corolla",
+            "line": "Is something wrong?",
+            "comment": "Corolla asks you."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Erm...# No...# I mean, maybe...# I can't explain it.# I don't even know if it's not just my imagination."
+          },
+          {
+            "precomment": "Everybody falls silent for a while.# You keep on watching each other,# in turns.#\nAfter a while,# you feel that kind of impulse,# and say abruptly and resolutely:",
+            "actor": "Kriss",
+            "line": "I want to see this through.# Let's go to the spire!"
+          },
+          {
+            "precomment": "Corolla questions Theo with her eyes.# He says:",
+            "actor": "Theo",
+            "line": "Are you sure of this?# We don't have much food and water.# A detour like this could cost us a lot.#\nIs it really necessary?"
+          },
+          {
+            "precomment": "You stare into those imperturbable sky blue eyes.",
+            "actor": "Kriss",
+            "line": "I believe it is.# But,# you don't have to come with me...",
+            "comment": "You start saying,#\nstill feeling there's no reason why they should baby-sit you."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Nonsense!# We won't leave you alone..."
+          },
+          {
+            "actor": "Theo",
+            "line": "Then it's settled.",
+            "childid": "5_06"
+          }
+        ]
+      },
+      {
+        "id": "5_06",
+        "type": "Choice",
+        "recap": "climb?",
+        "text": "You reach the rock wall at sunset.# The feeling hasn't left you.# On the contrary, it intensified.#\n\nThe spire has revealed itself to be bigger than you expected.# It's more like a peak,# a small, sharp mountain.#\nIt also looks higher, now that you are standing at its foot.##\n\nA natural tower in the middle of the desert.##\n\n$R\"Don't you think we'd better camp here for tonight?\"$C Corolla asks,#\nseeing how yearningly you're looking at the vertical rock wall.#\n\n$Y\"I'm tired... we walked all day.\"$C Smiurl adds, complaining.#\n\nYou are not sure about what to do.# Your sensation it's so strong now, you can't think of anything else.",
+        "choices": [
+          {
+            "desc": "You don't know why or how, you just know you have to climb that mountain right now.",
+            "childid": "5_07"
+          },
+          {
+            "desc": "Corolla is right. Night is about to fall, and you are all tired.",
+            "childid": "5_08"
+          }
+        ]
+      },
+      {
+        "id": "5_08",
+        "type": "Story",
+        "recap": "prepare for the night",
+        "text": "You agree with Corolla, slowly turning away from the wall in front of you.#\nSmiurl starts to unpack in order to light a fire and eat.#\n\n$B\"We'll take turns guarding tonight.\"$C Theo states.##\n\nYou eat sitting around the fire.#\nNobody talks much,# and soon comes the time to sleep.#\n\nYou fight to ignore the whispers you are still convinced to be hearing,#\nand finally fall in a restless sleep.",
+        "childid": "5_09"
+      },
+      {
+        "id": "5_09",
+        "type": "Story",
+        "recap": "gameover under the rock",
+        "text": "A $Wshout$C awakes you abruptly.##\nYou sit up, trying to understand what's happening.# Under the starlight, you can only partially guess.#\nWhat shocks you is the noise.##\n\nA... Growl?# Howl?# Snarl?##\n\nIt's interrupted only by loud thuds followed by Theo's grunts.#\n\nYou hear Corolla and Smiurl shouting at each other and at you.#\n\nAdrenaline rushes through you;# you frantically shoot out of your bedroll trying to reach your sword.##\n\nSomething hits you,# you're on the ground now, on your back.##\nSomething is keeping you pinned.#\nThe only thing you can see are two malevolent eyes,# glinting menacingly in the darkness.#\n\nThe last thing you see,## the fangs of the beast upon you,# shining under the faint light of the night.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+        "childid": "5_06"
+      },
+      {
+        "id": "5_07",
+        "type": "Story",
+        "recap": "start climbing",
+        "text": "$c\"I can't wait the whole night under here...# I couldn't sleep anyway.#\nMy...# 'sensation' now is so strong, it wouldn't let me rest.# I have to go,# now.#\nYou can wait for me here...\"$C#\nYou don't even wait for their answer: you turn your back and start walking towards the crag.#\n\nYou don't understand what compels you like that, you just know you can't help it now.#\n\n$R\"Hey!# What are you thinking?\"$C Corolla shouts from behind after a while.#\nYou see you upset her.# You feel guilty,# but comforted too seeing that the three of them are still following you.#\nHer, in the front.# Smiurl, obediently following her.# Theo, impassible, on the rear.#\n\nThey reach you.# Her look is hard, as she stares you in the eyes.# But soon she softens.#\nShe rolls her eyes and snorts: $R\"Oh, don't ask me why, I can't be mad at you.# Let's climb this thing.\"#\n\n$CYou can't help feeling relieved.",
+        "childid": "5_512"
+      },
+      {
+        "id": "5_99",
+        "type": "Story",
+        "recap": "falling",
+        "text": "Your hand slips, losing grip.##\nThe stone under your foot crumbles.#\n\nYou hear Corolla screaming as you fall off the precipice.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, climber traveler.",
+        "childid": "5_512"
+      },
+      {
+        "id": "5_512",
+        "type": "Choice",
+        "text": "The sun keeps on going down, and light decreases.# You keep on climbing.#\nIn the back of your mind,# you ask yourself how will you be able to continue after sunset.#\n\nIt looks like you won't be able to rest,# not without plunging into the void.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_520"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_513"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_511"
+          }
+        ]
+      },
+      {
+        "id": "5_511",
+        "type": "Choice",
+        "text": "You move safely to the next spot.",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_512"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_510"
+          }
+        ]
+      },
+      {
+        "id": "5_510",
+        "type": "Choice",
+        "text": "You reach the next foothold.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_530"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_511"
+          }
+        ]
+      },
+      {
+        "id": "5_513",
+        "type": "Choice",
+        "text": "It looks like a dead end. You can only go back to where you came from.",
+        "choices": [
+          {
+            "desc": "Move to the left.",
+            "childid": "5_512"
+          }
+        ]
+      },
+      {
+        "id": "5_520",
+        "type": "Choice",
+        "text": "You manage to get there. Now you can either:",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_532"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_521"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_512"
+          }
+        ]
+      },
+      {
+        "id": "5_521",
+        "type": "Choice",
+        "text": "You slide here. What now?",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_543"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_520"
+          }
+        ]
+      },
+      {
+        "id": "5_530",
+        "type": "Choice",
+        "text": "The way is partially obstructed here.",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_531"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_510"
+          }
+        ]
+      },
+      {
+        "id": "5_531",
+        "type": "Choice",
+        "text": "Where to go now?",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_541"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_530"
+          }
+        ]
+      },
+      {
+        "id": "5_532",
+        "type": "Choice",
+        "text": "Two find yourself in a fissure, masses of rock to your right and left.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_542"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_520"
+          }
+        ]
+      },
+      {
+        "id": "5_540",
+        "type": "Choice",
+        "text": "You reach the next spot.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_550"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_541"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_99"
+          }
+        ]
+      },
+      {
+        "id": "5_541",
+        "type": "You stop again. A massive boulder is hanging over your head.",
+        "text": "desc.",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_542"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_540"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_531"
+          }
+        ]
+      },
+      {
+        "id": "5_542",
+        "type": "Choice",
+        "text": "You reach a new foothold. What now?",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_543"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_541"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_532"
+          }
+        ]
+      },
+      {
+        "id": "5_543",
+        "type": "Choice",
+        "text": "After a while, choose again.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_552"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_544"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_542"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_521"
+          }
+        ]
+      },
+      {
+        "id": "5_544",
+        "type": "Choice",
+        "text": "You can only move horizontally here, smooth rock over and beneath you.",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_543"
+          }
+        ]
       }
+
+
+
+
     ]
   ]
 }
