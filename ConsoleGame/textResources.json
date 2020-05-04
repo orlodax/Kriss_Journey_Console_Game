@@ -2525,7 +2525,14 @@
         "id": "5_11",
         "type": "Story",
         "recap": "Math welcomes",
-        "text": "You turn around,# trying to distinguish something in that unrelentless dance of lights and shadows.#\nIt keeps on increasing in intensity:# you can now see clearly the stone balcony you are resting on,#\nbordered by the void of the precipice,# beyond a thin line of darkness.#\n\nTheo's prediction proves to be right:# the light does come from that direction.##\n\nAnd after few seconds,# suddenly,# from behind a rock,##\na man appears,# torch in his hand,# startling all of you, excepted Theo of course.#\n\nHe's wearing a long white robe.# His skin looks dark, his hair is short, curly and black.#\n\nHe starts speaking, saying:#\n\n$m\"Hello Smiurl,# Kriss,# Corolla# and Theo,# and welcome.#\nYou were waited here at Seer's Rock.#\nPlease,# if you would like to follow me through the passage...#\nMy name is Math.\"##$C He concludes with a half bow.##\n\nYou all stay there,# diversely petrified.#\n\nAfter many seconds of the newcomner Math silent,# smiling waiting,# all you say is:###\n\n$c\"Hi...\"##"
+        "text": "You turn around,# trying to distinguish something in that unrelentless dance of lights and shadows.#\nIt keeps on increasing in intensity:# you can now see clearly the stone balcony you are resting on,#\nbordered by the void of the precipice,# beyond a thin line of darkness.#\n\nTheo's prediction proves to be right:# the light does come from that direction.##\n\nAnd after few seconds,# suddenly,# from behind a rock,##\na man appears,# torch in his hand,# startling all of you, excepted Theo of course.#\n\nHe's wearing a long white robe.# His skin looks dark, his hair is short, curly and black.#\n\nHe starts speaking, saying:#\n\n$m\"Hello Smiurl,# Kriss,# Corolla# and Theo,# and welcome.#\nYou were waited here at Seer's Rock.#\nPlease,# if you would like to follow me through the passage...#\nMy name is Math.\"##$C He concludes with a half bow.##\n\nYou all stay there,# diversely petrified.#\n\nAfter many seconds of the newcomner Math silent,# smiling waiting,# all you say is:###\n\n$c\"Hi...\"##",
+        "childid": "5_12"
+      },
+      {
+        "id": "5_12",
+        "type": "Story",
+        "text": "$d------END OF CHAPTER 6-----",
+        "childid": "5_12"
       }
     ]
   ]
