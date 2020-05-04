@@ -35,7 +35,7 @@ namespace ConsoleGame.Classes
                 ActorsColors.Add("Jeorghe", ConsoleColor.DarkMagenta);
                 ActorsColors.Add("Chief", ConsoleColor.Magenta);
                 ActorsColors.Add("Efeliah", ConsoleColor.DarkGreen);
-                ActorsColors.Add("Math", ConsoleColor.DarkRed);
+                ActorsColors.Add("Math", ConsoleColor.DarkMagenta);
                 ActorsColors.Add("Seer", ConsoleColor.Magenta);
 
                 //chapters titles

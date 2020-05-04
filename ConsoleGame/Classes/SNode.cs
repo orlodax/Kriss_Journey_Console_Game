@@ -107,7 +107,7 @@ namespace ConsoleGame.Classes
                                 color = ConsoleColor.DarkGreen;     //Efeliah
                                 break;
                             case "B":
-                                color = ConsoleColor.Blue;          //Theo
+                                color = ConsoleColor.Blue;          
                                 break;
                             case "C":
                                 color = ConsoleColor.DarkCyan;      //narrator
@@ -117,6 +117,9 @@ namespace ConsoleGame.Classes
                                 break;
                             case "M":
                                 color = ConsoleColor.Magenta;
+                                break;
+                            case "m":
+                                color = ConsoleColor.DarkMagenta;
                                 break;
                             case "Y":
                                 color = ConsoleColor.Yellow;        //Smiurl

@@ -1798,6 +1798,13 @@
         "childid": "5_512"
       },
       {
+        "id": "5_98",
+        "type": "Story",
+        "recap": "falling2",
+        "text": "Your hand slips, losing grip.##\nThe stone under your foot crumbles.#\n\nYou hear Corolla screaming as you fall off the precipice.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, climber traveler.",
+        "childid": "5_512"
+      },
+      {
         "id": "5_512",
         "type": "Choice",
         "text": "The sun keeps on going down, and light decreases.# You keep on climbing.#\nIn the back of your mind,# you ask yourself how will you be able to continue after sunset.#\n\nIt looks like you won't be able to rest,# not without plunging into the void.",
@@ -2042,11 +2049,484 @@
             "childid": "5_543"
           }
         ]
+      },
+      {
+        "id": "5_550",
+        "type": "Choice",
+        "text": "Your reach a higher point. Where to move now?",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_540"
+          }
+        ]
+      },
+      {
+        "id": "5_551",
+        "type": "Choice",
+        "text": "You reach the next spot. Now choose again.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_562"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_552"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_99"
+          }
+        ]
+      },
+      {
+        "id": "5_552",
+        "type": "Choice",
+        "text": "You stop again. A huge smooth rock prevents you from going higher.",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_553"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_551"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_543"
+          }
+        ]
+      },
+      {
+        "id": "5_553",
+        "type": "Choice",
+        "text": "After a while, choose again.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_564"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_99"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_552"
+          }
+        ]
+      },
+      {
+        "id": "5_560",
+        "type": "Choice",
+        "text": "You move sideways and reach a foothold. Which direction now?",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_561"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_99"
+          }
+        ]
+      },
+      {
+        "id": "5_561",
+        "type": "Choice",
+        "text": "There is a solid stone ledge here. You look around for your next move.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_571"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_562"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_560"
+          }
+        ]
+      },
+      {
+        "id": "5_562",
+        "type": "Choice",
+        "text": "You thankfully rest on a kind of natural balcony.#\n You have still some way to go,#\nbut at least you all can catch your breath,# while you look at the scenario lying at your feet.#\n\nNight has fallen on the desert plains.# You look at the moonlight shimmering over the rocky surface.#\nNo sign of artificial lights anywhere.##\n\nYou better keep moving.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_572"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_563"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_561"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_551"
+          }
+        ]
+      },
+      {
+        "id": "5_563",
+        "type": "Choice",
+        "text": "You have only two options here.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_573"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_562"
+          }
+        ]
+      },
+      {
+        "id": "5_570",
+        "type": "Choice",
+        "text": "You have only two options here.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_571"
+          }
+        ]
+      },
+      {
+        "id": "5_571",
+        "type": "Choice",
+        "text": "You stop again. Choose the next direction.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_581"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_572"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_570"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_561"
+          }
+        ]
+      },
+      {
+        "id": "5_572",
+        "type": "Choice",
+        "text": "Movement is blocked on the right side. Choose where to go now.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_582"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_571"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_562"
+          }
+        ]
+      },
+      {
+        "id": "5_573",
+        "type": "Choice",
+        "text": "You stop again. Choose where to go now.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_563"
+          }
+        ]
+      },
+      {
+        "id": "5_580",
+        "type": "Choice",
+        "text": "You have only two options here.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_590"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_581"
+          }
+        ]
+      },
+      {
+        "id": "5_581",
+        "type": "Choice",
+        "text": "You stop again. Choose where to go now.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_591"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_582"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_580"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_571"
+          }
+        ]
+      },
+      {
+        "id": "5_582",
+        "type": "Choice",
+        "text": "You stop again here. Choose where to go next.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_583"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_581"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_572"
+          }
+        ]
+      },
+      {
+        "id": "5_583",
+        "type": "Choice",
+        "text": "You rest briefly on the next foothold.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_592"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_582"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_98"
+          }
+        ]
+      },
+      {
+        "id": "5_590",
+        "type": "Choice",
+        "text": "You rest briefly on this foothold.",
+        "choices": [
+          {
+            "desc": "Move to the right.",
+            "childid": "5_591"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_580"
+          }
+        ]
+      },
+      {
+        "id": "5_591",
+        "type": "Choice",
+        "text": "You stop again. Choose where to go now.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_5100"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_590"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_581"
+          }
+        ]
+      },
+      {
+        "id": "5_592",
+        "type": "Choice",
+        "text": "You stop again here. Choose where to go next.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_5101"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_583"
+          }
+        ]
+      },
+      {
+        "id": "5_5100",
+        "type": "Choice",
+        "text": "You rest briefly on this foothold.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_10"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_591"
+          }
+        ]
+      },
+      {
+        "id": "5_5101",
+        "type": "Choice",
+        "text": "You stop again. Choose where to go now.",
+        "choices": [
+          {
+            "desc": "Climb a little higher.",
+            "childid": "5_10"
+          },
+          {
+            "desc": "Move to the right.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Move to the left.",
+            "childid": "5_98"
+          },
+          {
+            "desc": "Descend a little.",
+            "childid": "5_592"
+          }
+        ]
+      },
+      {
+        "id": "5_10",
+        "type": "Dialogue",
+        "recap": "arrival",
+        "text": "The rock wall ends abruptly,# like a neat, manmade step.# You fumble with your arm searching for grip,#\nthen you manage to hoist yourself up the stone floor.##\n\nYou all pant and gasp because of the effort (and the fear) after this night climbing.# It was a crazy idea indeed.##\n\nYou are still laying on the ground with your face down, when you start laughing.##\n\nAt first,# very quietly,# just chuckling.# Then,# louder and louder,# in a crescendo,#\nto the point you bend over with tears in your eyes.## It must be a nervous reaction.##\n\nThen you stop,# and a very weird echo starts mocking you.#\nIt goes on for about 30 seconds.##\nHearing those eerie sounds coming from the rocks around you,# Smiurl starts wailing,# in fear.#\n\n",
+        "dialogues": [
+          {
+            "actor": "Smiurl",
+            "line": "This place is haunted...! Alas! We are going to die for sure!"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Knock it off Smiurl!",
+            "comment": "But he does not seem to listen.",
+            "isbreakneeded": true
+          },
+          {
+            "precomment": "After few seconds,# while Smiurl is still whimpering,# odds, faint glares start dancing around you.#\nThey clothe that crevice's walls with grotesque figures and dreadful masks of living stone.",
+            "actor": "Kriss",
+            "line": "What's this sound?",
+            "comment": "You ask as you start to hear a rattling, repetitive noise."
+          },
+          {
+            "actor": "Corolla",
+            "line": "That's Smiurl's teeth...",
+            "comment": "She says with disapproval.# Is she actually so calm as she seems?"
+          },
+          {
+            "actor": "Kriss",
+            "line": "Smiurl, I am surprised at you..! I thought of you as a valiant warrior!#\nYou can engage a beast like Jeorghe,# yet you tremble in front of...# this?",
+            "comment": "\nYou point somewhere around you.# You try to calm him down,# worried that his terror might spread to you and the others."
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "He answers, trying not to bite his own tongue:",
+            "line": "One thing is fighting with men or animals, quite another is to face a phantom!#\nAnd this place looks like it's crawling with them!",
+            "comment": "He's even more scared now.#\nHe spoke in an increasingly shrieking voice,# pointing at the lights increasing in intensity around you."
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You look around anxiously,# when you finally notice Theo:#\nhe's stoic as always,# as he was peacefully sitting in his tent.",
+            "line": "What do we do?",
+            "comment": "You ask him, nervously."
+          },
+          {
+            "actor": "Theo",
+            "precomment": "He points somewhere in front of him, on the left side, and says:",
+            "line": "Be patient.# If I'm right, we should meet Smiurl's phantom in seconds...",
+            "childid": "5_11"
+          }
+        ]
+      },
+      {
+        "id": "5_11",
+        "type": "Story",
+        "recap": "Math welcomes",
+        "text": "You turn around,# trying to distinguish something in that unrelentless dance of lights and shadows.#\nIt keeps on increasing in intensity:# you can now see clearly the stone balcony you are resting on,#\nbordered by the void of the precipice,# beyond a thin line of darkness.#\n\nTheo's prediction proves to be right:# the light does come from that direction.##\n\nAnd after few seconds,# suddenly,# from behind a rock,##\na man appears,# torch in his hand,# startling all of you, excepted Theo of course.#\n\nHe's wearing a long white robe.# His skin looks dark, his hair is short, curly and black.#\n\nHe starts speaking, saying:#\n\n$m\"Hello Smiurl,# Kriss,# Corolla# and Theo,# and welcome.#\nYou were waited here at Seer's Rock.#\nPlease,# if you would like to follow me through the passage...#\nMy name is Math.\"##$C He concludes with a half bow.##\n\nYou all stay there,# diversely petrified.#\n\nAfter many seconds of the newcomner Math silent,# smiling waiting,# all you say is:###\n\n$c\"Hi...\"##"
       }
-
-
-
-
     ]
   ]
 }
