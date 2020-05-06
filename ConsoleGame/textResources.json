@@ -2203,6 +2203,17 @@
         ]
       },
       {
+        "id": "5_564",
+        "type": "Choice",
+        "text": "This is a dead end. You need to go back.",
+        "choices": [
+          {
+            "desc": "Descend a little.",
+            "childid": "5_553"
+          }
+        ]
+      },
+      {
         "id": "5_570",
         "type": "Choice",
         "text": "You have only two options here.",
