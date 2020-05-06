@@ -1378,7 +1378,7 @@
             "actor": "Theo",
             "line": "You'd better sit down,# young man.",
             "comment": "#\n\nThen,# he starts talking again.",
-            "childid": "4_02"
+            "childid": "4_08"
           }
         ]
       },
@@ -2199,6 +2199,17 @@
           {
             "desc": "Move to the left.",
             "childid": "5_562"
+          }
+        ]
+      },
+      {
+        "id": "5_564",
+        "type": "Choice",
+        "text": "This is a dead end. You need to go back.",
+        "choices": [
+          {
+            "desc": "Descend a little.",
+            "childid": "5_553"
           }
         ]
       },
