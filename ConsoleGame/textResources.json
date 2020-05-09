@@ -1607,12 +1607,6 @@
           },
           {
             "verbs": [
-              { "term": "mazerock" }
-            ],
-            "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!#\nIf the place itself doesn't kill you,# an Oxengutter or some other fiend will surely fix it!\"#$y You gulp.#\n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,#\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence.#\n\nTheo, as per usual, doesn't even seem interested in what they're saying."
-          },
-          {
-            "verbs": [
               { "term": "rest" }
             ],
             "effect": {
