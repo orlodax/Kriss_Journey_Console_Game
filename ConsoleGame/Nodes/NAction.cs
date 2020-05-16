@@ -150,7 +150,7 @@ namespace ConsoleGame.Nodes
                     }
                     else
                     {                                                           //...otherwise, examine Objects 
-                        for (int i = 0; i < act.Objects.Count; i++)             //this is not O^2. only iterates over <10 x <10 items 
+                        for (int i = 0; i < act.Objects.Count; i++)             
                         {
                             Models.Object o = act.Objects[i];
 

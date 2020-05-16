@@ -1607,12 +1607,6 @@
           },
           {
             "verbs": [
-              { "term": "mazerock" }
-            ],
-            "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!#\nIf the place itself doesn't kill you,# an Oxengutter or some other fiend will surely fix it!\"#$y You gulp.#\n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,#\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence.#\n\nTheo, as per usual, doesn't even seem interested in what they're saying."
-          },
-          {
-            "verbs": [
               { "term": "rest" }
             ],
             "effect": {
@@ -2536,7 +2530,82 @@
         "id": "5_11",
         "type": "Story",
         "recap": "Math welcomes",
-        "text": "You turn around,# trying to distinguish something in that unrelentless dance of lights and shadows.#\nIt keeps on increasing in intensity:# you can now see clearly the stone balcony you are resting on,#\nbordered by the void of the precipice,# beyond a thin line of darkness.#\n\nTheo's prediction proves to be right:# the light does come from that direction.##\n\nAnd after few seconds,# suddenly,# from behind a rock,##\na man appears,# torch in his hand,# startling all of you, excepted Theo of course.#\n\nHe's wearing a long white robe.# His skin looks dark, his hair is short, curly and black.#\n\nHe starts speaking, saying:#\n\n$m\"Hello Smiurl,# Kriss,# Corolla# and Theo,# and welcome.#\nYou were waited here at Seer's Rock.#\nPlease,# if you would like to follow me through the passage...#\nMy name is Math.\"##$C He concludes with a half bow.##\n\nYou all stay there,# diversely petrified.#\n\nAfter many seconds of the newcomner Math silent,# smiling waiting,# all you say is:###\n\n$c\"Hi...\"##"
+        "text": "You turn around,# trying to distinguish something in that unrelentless dance of lights and shadows.#\nIt keeps on increasing in intensity:# you can now see clearly the stone balcony you are resting on,#\nbordered by the void of the precipice,# beyond a thin line of darkness.#\n\nTheo's prediction proves to be right:# the light does come from that direction.##\n\nAnd after few seconds,# suddenly,# from behind a rock,##\na man appears,# torch in his hand,# startling all of you, excepted Theo of course.#\n\nHe's wearing a long white robe.# His skin looks dark, his hair is short, curly and black.#\n\nHe starts speaking, saying:#\n\n$m\"Hello Smiurl,# Kriss,# Corolla# and Theo,# and welcome.#\nYou were waited here at Seer's Rock.#\nPlease,# if you would like to follow me through the passage...#\nMy name is Math.\"##$C He concludes with a half bow.##\n\nYou all stay there,# diversely petrified.#\n\nAfter many seconds of the newcomner Math silent,# smiling waiting,# all you say is:###\n\n$c\"Hi...\"##",
+        "childid": "6_01"
+      }
+    ],
+    [
+      {
+        "id": "6_01",
+        "type": "Story",
+        "recap": "Into the rock",
+        "text": "-------------------------------\n|          CHAPTER 7          |\n-------------------------------\n\n\n#You are walking behind Math in a single line.# He is leading you somewhere only he knows,#\nthrough a narrow, twisting trail carved into the rock.#\nQuite often it becomes a tunnel and sometimes you have to lower your head.#\nIt steadily goes uphill,# and after a half hour,# you are wheezing again.##\n\n$R\"Seer's Rock...\"#$C Corolla mumbles.# $R\"Do you know something about it?\"$C#\nTheo shakes his head.##\n\n$c\"Why don't we ask him...?\"#$C you propose.##\n\n$Y\"I don't trust him!# This place is cursed!# We won't get out of here alive!\"#$C Smiurl starts whining again.##\n\nSeemingly deaf to your conversation, Math keeps on leading you forward.#\n\n$m\"Please, this way.\"#$C He says at every junction.##\n\nAfter an hour or so,# climbing into the rock,# the trail suddenly ends,#\nrevealing a surprising scene.",
+        "childid": "6_02"
+      },
+      {
+        "id": "6_02",
+        "type": "Action",
+        "recap": "the village in the rock",
+        "text": "You just entered a wide cavity that must lie at the top of the spire.#\nIt looks a bit like the mouth of a volcano,# with you standing at its base.#\n\nThere are plenty of houses,# and streets and pathways and suspended walkways.#\n\nCountless little openings dot the rocky walls, leading who knows where.",
+        "actions": [
+          {
+            "verbs": [
+              { "term": "look" },
+              { "term": "watch" },
+              { "term": "observe" }
+            ],
+            "answer": "Gentle lights illuminate the main roads.# Many other lights peeks out the windows of the dwellings.#\nThose houses have a similar shape:# round earthen walls covered by an hemispheric dome made of something like straw.##\n\nYou feel odd,# as if somebody is watching you."
+          },
+          {
+            "verbs": [
+              { "term": "listen" }
+            ],
+            "answer": "You follow Math silently.# Your steps resonate on the stone.##\n\nAll is quiet,# but the air seems to be permeated with a subtle...# $csinging?##$y\nAt the very edge of your hearing threshold,# you think of hearing a melodic whispering,#\nmany voices yet no voice at all,# coming and going like they were carried around by the shifting movement of the air. "
+          },
+          {
+            "verbs": [
+              { "term": "walk" },
+              { "term": "follow" }
+            ],
+            "answer": "The lights along the main road are huge torches,# emanating a noticeable warmth along with light.#\nSparkles ascend,# carried by the warm air,# dancing around and then extinguishing in the dark.#\n\nYou start to notice some dwellers showing themselves,#\nsome along the streets,# others looking out the windows.#\nAll of them are observing you with the same moderate interest.##\n\nAfter a while,# you stop at the base of a little hill,# or mound.",
+            "childid": "6_03"
+          }
+        ]
+      },
+      {
+        "id": "6_03",
+        "type": "Dialogue",
+        "recap": "Elder's hut",
+        "text": "enter or go 6_04",
+        "childid": "6_03"
+      },
+      {
+        "id": "6_04",
+        "type": "Story",
+        "recap": "walking in circle",
+        "text": "wonder uselessly",
+        "childid": "6_05"
+      },
+      {
+        "id": "6_05",
+        "type": "Choice",
+        "recap": "walking in circle",
+        "text": "enter or loop again 6_04",
+        "childid": "6_05"
+      },
+      {
+        "id": "6_06",
+        "type": "Story",
+        "recap": "at Elder's",
+        "text": " ",
+        "childid": "6_07"
+      },
+      {
+        "id": "6_07",
+        "type": "Dialogue",
+        "recap": "walking in circle",
+        "text": "talk with Elder. this should be a multipath dialogue",
+        "childid": "6_07"
       }
     ]
   ]
