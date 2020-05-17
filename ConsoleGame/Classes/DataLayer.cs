@@ -46,7 +46,7 @@ namespace ConsoleGame.Classes
                 Titles.Add("5. NOI-HERT");
                 Titles.Add("6. BEACONS");
                 Titles.Add("7. SEER'S ROCK");
-                Titles.Add("7. MAZEROCK");
+                Titles.Add("8. MAZEROCK");
             }
         }
         public static void SaveProgress(int chapterNo)

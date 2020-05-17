@@ -2574,24 +2574,42 @@
       },
       {
         "id": "6_03",
-        "type": "Dialogue",
+        "type": "Choice",
         "recap": "Elder's hut",
-        "text": "enter or go 6_04",
-        "childid": "6_03"
+        "text": "$m\"This is the Elder's house, the wise Long.# He is expecting you.\"$C#\n\nAll of you look at Math repeatedly.#\nAfter few instants you realise he is inviting you to enter.#\n\nSo this must be the one in command of this place,# or something like that,# you think.",
+        "choices": [
+          {
+            "desc": "You followed Math so far. Now, get inside that house? Why not?",
+            "childid": "6_06"
+          },
+          {
+            "desc": "Are you supposed to just comply? Let's go exploring this place instead.",
+            "childid": "6_04"
+          }
+        ]
       },
       {
         "id": "6_04",
         "type": "Story",
         "recap": "walking in circle",
-        "text": "wonder uselessly",
+        "text": "Without further notice,# you turn your back to Math,# nodding briefly to Corolla,# and start walking.#\n\nThe others hesitate just a little,# then start to following you.#\nMath does not seem to care.#\n\n$R\"Hey where are you going now?\"#$C Corolla whispers to you from behind your back.#\nYou don't know why, but you feel compelled to whisper as well when you answer:#\n\n$c\"I just want to take a look around...\"#$C You have the impression she wants to answer something,#\nbut she just sighs as you all keep walking.##\n\nThe scenery is pretty boring after a while.#\nThe apparently chaotic network of little streets, passageways,#\nbuildings ranging from little huts to big houses like the Elder's one,#\nafter few minutes everything seems to just repeat itself.#\nYou don't meet anyone, and with the passing of time you start to feel a bit...# stupid?#\n\nAnyway, all of a sudden, after a bend you see Math again.# Has he come in search of you?##\n\nSoon you realise he's still standing in the very same spot,# smiling at you guys.#\n\nSomehow you walked in a circle, returning right where you started.",
         "childid": "6_05"
       },
       {
         "id": "6_05",
         "type": "Choice",
         "recap": "walking in circle",
-        "text": "enter or loop again 6_04",
-        "childid": "6_05"
+        "text": "Math looks at you as if nothing happened,#\nlike it's perfectly natural to stand still there and keep on staring at you.#\n\nFunnily, you don't know if you should get more angry or embarassed.",
+        "choices": [
+          {
+            "desc": "No point in wasting more time... Let's see who this geezer is and what he has to say.",
+            "childid": "6_06"
+          },
+          {
+            "desc": "No way! You'll show them... Just keep moving!",
+            "childid": "6_04"
+          }
+        ]
       },
       {
         "id": "6_06",
