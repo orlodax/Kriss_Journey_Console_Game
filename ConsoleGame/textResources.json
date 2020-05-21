@@ -2599,7 +2599,7 @@
         "id": "6_05",
         "type": "Choice",
         "recap": "walking in circle",
-        "text": "Math looks at you as if nothing happened,#\nlike it's perfectly natural to stand still there and keep on staring at you.#\n\nFunnily, you don't know if you should get more angry or embarassed.",
+        "text": "Math looks at you as if nothing happened,#\nlike it's perfectly natural to stand still there and keep on staring at you.#\n\nFunnily, you don't know if you should feel more angry or more embarrassed.",
         "choices": [
           {
             "desc": "No point in wasting more time... Let's see who this geezer is and what he has to say.",
@@ -2607,7 +2607,7 @@
           },
           {
             "desc": "No way! You'll show them... Just keep moving!",
-            "childid": "6_04"
+            "childid": "6_08"
           }
         ]
       },
@@ -2615,15 +2615,22 @@
         "id": "6_06",
         "type": "Story",
         "recap": "at Elder's",
-        "text": " ",
+        "text": "Y",
         "childid": "6_07"
       },
       {
         "id": "6_07",
         "type": "Dialogue",
-        "recap": "walking in circle",
+        "recap": "talk with Long",
         "text": "talk with Elder. this should be a multipath dialogue",
         "childid": "6_07"
+      },
+      {
+        "id": "6_08",
+        "type": "Story",
+        "recap": "still walking in circle",
+        "text": "You keep your stride and move towards what looks like a new direction.#\nYou can hear the others murmuring,# yet they keep on following you.#\n\nYou soon discover that the scenery goes back to repeating itself.#\nAnd right when you think you're about to turn into an unexplored alley,# you find him still there waiting for you.#\n\nMath is still there, looking at you as if nothing happened.#\n\nAnd,# again,# you don't know if you should feel more angry or more embarrassed.##\n\nIt looks like you'll just have to do as you're told.",
+        "childid": "6_06"
       }
     ]
   ]
