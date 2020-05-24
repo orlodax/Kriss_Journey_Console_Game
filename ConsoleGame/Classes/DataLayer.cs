@@ -36,7 +36,7 @@ namespace ConsoleGame.Classes
                 ActorsColors.Add("Chief", ConsoleColor.Magenta);
                 ActorsColors.Add("Efeliah", ConsoleColor.DarkGreen);
                 ActorsColors.Add("Math", ConsoleColor.DarkMagenta);
-                ActorsColors.Add("Seer", ConsoleColor.Magenta);
+                ActorsColors.Add("Elder", ConsoleColor.Magenta);
 
                 //chapters titles
                 Titles.Add("1. THE JOURNEY STARTS");

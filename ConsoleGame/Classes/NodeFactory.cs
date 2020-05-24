@@ -14,8 +14,11 @@ namespace ConsoleGame.Classes
             return CurrentNode = CreateNode(id);
         }
 
-        public static SNode CreateNode(string id)
+        public static SNode CreateNode(string id, SNode previous = null)
         {
+            if (previous != null)
+                previous.SaveStatusOnExit();
+
             if (id != null)
             {
                 //testing purposes
@@ -23,7 +26,6 @@ namespace ConsoleGame.Classes
                     return CurrentNode = new NStory(DataLayer.DB.Chapters[0].Find(n => n.Id == "test"));
 
                 //-----------------
-
 
                 var chapIndex = Convert.ToInt32(id[0].ToString());
                 NodeBase nb = DataLayer.DB.Chapters[chapIndex].Find(n => n.Id == id);

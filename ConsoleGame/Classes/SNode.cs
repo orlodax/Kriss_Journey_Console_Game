@@ -21,13 +21,13 @@ namespace ConsoleGame.Classes
         readonly bool DEBUG;
         #endregion
 
-        #region CTOR & "SaveStatusOnExit"
+        #region CTOR
         /// <summary>
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
         public SNode(Models.NodeBase nb)
         {
-            //DEBUG = true;
+            DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color

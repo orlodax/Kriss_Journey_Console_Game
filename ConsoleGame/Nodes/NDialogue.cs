@@ -34,9 +34,9 @@ namespace ConsoleGame.Nodes
             if (currentLine.Line != null)
             {
                 if (currentLine.IsTelepathy)
-                    TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
-                else
                     TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", DataLayer.ActorsColors[currentLine.Actor]);
+                else
+                    TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
             }
             
             if(currentLine.Comment != null)      
@@ -69,8 +69,7 @@ namespace ConsoleGame.Nodes
             if (currentLine.ChildId != null)                                        //if it encounters a link, jump to the node
             {      
                 HoldScreen();
-                SaveStatusOnExit();
-                NodeFactory.CreateNode(currentLine.ChildId);
+                NodeFactory.CreateNode(currentLine.ChildId, this);
             }
 
             if (currentLine.Replies != null && currentLine.Replies.Count > 0)       //if there are replies inside, display choice
@@ -116,9 +115,7 @@ namespace ConsoleGame.Nodes
 
                 if (currentLine.Replies[selectedRow].ChildId != null)                 //on selecion, either 
                 {
-                    Console.ReadKey(true);
-                    SaveStatusOnExit();
-                    NodeFactory.CreateNode(currentLine.Replies[selectedRow].ChildId); //navigate to node specified in selected reply
+                    NodeFactory.CreateNode(currentLine.Replies[selectedRow].ChildId, this); //navigate to node specified in selected reply
                 }
                 else
                 {

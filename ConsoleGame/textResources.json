@@ -2636,8 +2636,89 @@
         "id": "6_09",
         "type": "Dialogue",
         "recap": "talk with Long",
-        "text": "talk with Elder. this should be a multipath dialogue",
-        "childid": "6_09"
+        "dialogues": [
+          {
+            "precomment": "You are the first one to comply.# You feel you can trust that old man.#\nReading your thoughts,# the Elder looks at you and says:",
+            "actor": "Elder",
+            "istelepathy": true,
+            "line": "Be careful, young man.# Never give your complete trust so easily...#\nJust because I'm old,# it doesn't necessarily mean you have nothing to fear.",
+            "comment": "\nYou hear his voice,# yet he hasn't opened his mouth to speak.# He just stared at you.#\nHis words spring up directly in your mind.# You can't believe it.#\nYou remain silent,# staring at him,# sitting in your little wicker armchair,# mouth half-open."
+          },
+          {
+            "precomment": "Smiurl notices it, and shakes out of silence:",
+            "actor": "Smiurl",
+            "line": "He's ipnotising him!# Help!# Help!",
+            "comment": "He tries to run away.#\nThe Elder glances at Theo,# whom extends his arm,# grabbing the little guy by his collar,#\nthen lifting him from the ground,# all without taking his eyes off the old man stare."
+          },
+          {
+            "precomment": "Then the Elder look at Smiurl,# and adds smiling warmly:",
+            "actor": "Elder",
+            "line": "Be quiet,# little Smiurl.# No harm will come to you.",
+            "comment": "Surprisingly enough,# Smiurl seems to accept that reassurance.#\nApparently,# he doesn't even notice he has been called by name without anybody introducing him first."
+          },
+          {
+            "precomment": "Corolla sits next to you,# dragging along Smiurl as well.#\nTheo remains standing.",
+            "replies": [
+              {
+                "line": "You all want to know what place is this.",
+                "childId": "6_10"
+              },
+              {
+                "line": "What is the real reason you are here?",
+                "childId": "6_11"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "6_10",
+        "type": "Dialogue",
+        "recap": "what is this rock",
+        "dialogues": [
+          {
+            "actor": "Corolla",
+            "line": "Dear Elder,# where are we?"
+          },
+          {
+            "actor": "Elder",
+            "precomment": "He observes with a gently amused expression the glare in her eyes.#\nThen,# chuckling,# getting comfortable in his seat,# he answers:",
+            "line": "Said and done: welcome to Seer's Rock."
+          },
+          {
+            "actor": "Theo",
+            "precomment": "Theo sighs.# Then he says:",
+            "line": "This we know... Math.",
+            "comment": "He nods to the outside."
+          },
+          {
+            "actor": "Elder",
+            "line": "Well,# actually,# there's no need to add anything.",
+            "comment": "He says with his mouth shut.",
+            "isTelepathy": true
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "You are getting used to this.# You answer aloud right away:",
+            "line": "But...# What does that mean?"
+          },
+          {
+            "actor": "Elder",
+            "line": "Oh,# I beg your pardon!# I think aloud all the time!",
+            "comment": "He exclaims."
+          },
+          {
+            "actor": "Elder",
+            "line": "Yes, yes,# I see you do not know the history of this place.# Let me tell it for you.",
+            "comment": "After this,# he takes a breath,# then starts talking.",
+            "isbreakneeded": true
+          }
+        ]
+      },
+      {
+        "id": "6_11",
+        "type": "Dialogue",
+        "recap": "why are we here"
       }
     ]
   ]

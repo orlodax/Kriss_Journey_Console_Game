@@ -101,8 +101,7 @@ namespace ConsoleGame.Nodes
 
                 choice.IsPlayed = true;
 
-                SaveStatusOnExit();
-                NodeFactory.CreateNode(choice.ChildId);
+                NodeFactory.CreateNode(choice.ChildId, this);
             }
             else
             {

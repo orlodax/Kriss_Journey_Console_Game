@@ -233,15 +233,11 @@ namespace ConsoleGame.Nodes
                     Console.Write("Press any key...");
                     Console.ReadKey(true);
 
-                    SaveStatusOnExit();
-                    NodeFactory.CreateNode(childId);
+                    NodeFactory.CreateNode(childId, this);
                 }
             }
             if (childId != null)
-            {
-                SaveStatusOnExit();
-                NodeFactory.CreateNode(childId);
-            }
+                NodeFactory.CreateNode(childId, this);
 
             //if everything fails:
             PrepareForAction(true); //display prompt without standard refuse
