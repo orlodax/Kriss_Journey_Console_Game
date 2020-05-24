@@ -30,9 +30,14 @@ namespace ConsoleGame.Nodes
                 Console.WriteLine();
                 Console.WriteLine();
             }
-            
-            if(currentLine.Line != null)
-                TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
+
+            if (currentLine.Line != null)
+            {
+                if (currentLine.IsTelepathy)
+                    TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
+                else
+                    TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", DataLayer.ActorsColors[currentLine.Actor]);
+            }
             
             if(currentLine.Comment != null)      
             {

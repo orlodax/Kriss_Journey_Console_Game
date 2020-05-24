@@ -13,6 +13,7 @@ namespace ConsoleGame.Models
         public List<Reply> Replies { get; set; }    
         public string ChildId { get; set; }
         public bool IsBreakNeeded { get; set; }
+        public bool IsTelepathy { get; set; }
     }
     public class Reply
     {

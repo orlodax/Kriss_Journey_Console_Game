@@ -2612,25 +2612,32 @@
         ]
       },
       {
+        "id": "6_08",
+        "type": "Story",
+        "recap": "still walking in circle",
+        "text": "You keep your stride and move towards what looks like a new direction.#\nYou can hear the others murmuring,# yet they keep on following you.#\n\nYou soon discover that the scenery goes back to repeating itself.#\nAnd right when you think you're about to turn into an unexplored alley,# you find him still there waiting for you.#\n\nMath is still there, looking at you as if nothing happened.#\n\nAnd,# again,# you don't know if you should feel more angry or more embarrassed.##\n\nSome kind of trick has to be involved in this...#\n\nIt looks like you'll just have to do as you're told.",
+        "childid": "6_06"
+      },
+      {
         "id": "6_06",
         "type": "Story",
         "recap": "at Elder's",
-        "text": "Y",
+        "text": "$c\"Whoever this 'Elder' is,# at least he will be able to tell us how to get back down safely...\"$C#\nYou conciliatory say,# almost talking to yourself.#\n\n$c\"...maybe he will be able to tell us about the reason we climbed up here in the first place...\"#$C You add, half aloud.##\n\n$R\"I have to say, it's not that much of a house...# It looks like they don't care about hierarchy.\"#\n\n$CA feeble,# flickering light comes from inside the house,# like the light of candles.#\n\nSuddenly, you all hear a warm and firm voice inviting you:#\n\n$M<<Please, get inside>>##\n\n$CIt sounded like it came just from the midst of you.# You exchange some puzzled looks.#\nSmiurl is crouching on the ground,# shoulders to the door.##\n\nIn the end, Theo decides for everybody and steps inside,# opening with ease the light, creaky door.",
         "childid": "6_07"
       },
       {
         "id": "6_07",
+        "type": "Story",
+        "recap": "entering",
+        "text": "You find yourself in a narrow corridor,# its walls made of something resembling bamboo wood.#\nBetween the shadows,# you get glimpses of small pieces of furniture,# with many little objects on them.##\n\nThe light appears to be coming from the end of the passage.#\nIt does not look like it's coming from a candle anymore.#\nIt's bluish one moment,# greenish the next one...##\n\nYou all walk behind Theo.# You feel like you can hear Smiurl trembling behind you.#\n\nYou feel a weird sense of unreality.#\nYou catch yourself convulsively squeezing the hilt oh your sword.##\n\n$c<<It's an instinctive reaction.>># $C You think.#\n\n$c<<I don't even know how to use it.>># $C You think.##\n\nSuddenly,# the corridor ends around Theo's silhouette,#\nand the light suddenly lowers, going back to a more natural candlelight.#\n\nYou see an old man sitting on an armchair,# his back turned on you.#\nYou can understand he's old because of the silver mane flowing down on his shoulders.#\n\nHe slowly turns around, and,# in the same voice you heard outside, he says:#\n\n$M\"Have a seat please.# I've just finished brewing some tea\"",
+        "childid": "6_09"
+      },
+      {
+        "id": "6_09",
         "type": "Dialogue",
         "recap": "talk with Long",
         "text": "talk with Elder. this should be a multipath dialogue",
-        "childid": "6_07"
-      },
-      {
-        "id": "6_08",
-        "type": "Story",
-        "recap": "still walking in circle",
-        "text": "You keep your stride and move towards what looks like a new direction.#\nYou can hear the others murmuring,# yet they keep on following you.#\n\nYou soon discover that the scenery goes back to repeating itself.#\nAnd right when you think you're about to turn into an unexplored alley,# you find him still there waiting for you.#\n\nMath is still there, looking at you as if nothing happened.#\n\nAnd,# again,# you don't know if you should feel more angry or more embarrassed.##\n\nIt looks like you'll just have to do as you're told.",
-        "childid": "6_06"
+        "childid": "6_09"
       }
     ]
   ]
