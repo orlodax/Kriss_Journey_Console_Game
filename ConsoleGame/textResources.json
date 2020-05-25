@@ -2693,7 +2693,7 @@
           },
           {
             "actor": "Elder",
-            "line": "Well,# actually,# there's no need to add anything.",
+            "line": "Well,# actually,# there's no need to add anything else.",
             "comment": "He says with his mouth shut.",
             "isTelepathy": true
           },
@@ -2710,15 +2710,55 @@
           {
             "actor": "Elder",
             "line": "Yes, yes,# I see you do not know the history of this place.# Let me tell it for you.",
-            "comment": "After this,# he takes a breath,# then starts talking.",
-            "isbreakneeded": true
+            "comment": "\n\nAfter this,# he takes a breath,# then starts talking.",
+            "childid": "6_12"
           }
         ]
       },
       {
         "id": "6_11",
         "type": "Dialogue",
-        "recap": "why are we here"
+        "recap": "why are we here",
+        "dialogues": [
+          {
+            "actor": "Elder",
+            "line": "Listen here",
+            "childid": "6_13"
+          }
+        ]
+      },
+      {
+        "id": "6_12",
+        "type": "Story",
+        "recap": "the story of the rock",
+        "text": "tells the story",
+        "childid": "6_13"
+      },
+      {
+        "id": "6_13",
+        "type": "Choice",
+        "recap": "asking the elder",
+        "text": "The Elder falls silent,# going back to sipping his tea,# with evident satisfaction.#\n\nYou look at him as he smiles,#\nand as he apparently absent-mindedly casts his eyes as looking at a distant,# far away landscape only he can see.#\n\nIt looks like he does not notice you anymore,#\nor like he does not care anymore you are still there.",
+        "choices": [
+          {
+            "desc": "You all want to know what place is this.",
+            "childid": "6_12"
+          },
+          {
+            "desc": "What is the real reason you are here?",
+            "unhide": "2",
+            "childId": "6_11"
+          },
+          {
+            "desc": "A prophecy? A golden-haired 'fairy'? Come on... What would we be supposed to do?",
+            "condition": {
+              "type": "isNodeVisited",
+              "item": "6_12",
+              "value": true
+            },
+            "childId":  "6_14"
+          }
+        ]
       }
     ]
   ]

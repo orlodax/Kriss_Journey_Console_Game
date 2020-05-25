@@ -26,16 +26,14 @@ namespace ConsoleGame.Classes
                     return CurrentNode = new NStory(DataLayer.DB.Chapters[0].Find(n => n.Id == "test"));
 
                 //-----------------
-
-                var chapIndex = Convert.ToInt32(id[0].ToString());
-                NodeBase nb = DataLayer.DB.Chapters[chapIndex].Find(n => n.Id == id);
+               
+                (NodeBase nb, int chapIndex, int nodeIndex) = SearchNodeById(id);
 
                 if (nb != null)
                 {
                     //if first node of chapter, save progress
-                    string[] numbers = id.Split("_");
-                    if (Convert.ToInt32(numbers[1]) == 1)
-                        DataLayer.SaveProgress(Convert.ToInt32(numbers[0])); //chapter index 0 based
+                    if (nodeIndex == 1)
+                        DataLayer.SaveProgress(chapIndex); //chapter index 0 based
 
                     switch (nb.Type)
                     {
@@ -53,6 +51,21 @@ namespace ConsoleGame.Classes
                 }
             }
             return null;
+        }
+        /// <summary>
+        /// Parses the id provided to extract the matching NodeBase from DataLayer
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static (NodeBase nb, int chapIndex, int nodeIndex) SearchNodeById(string id)
+        {
+            string[] numbers = id.Split("_");
+
+            int chapIndex = Convert.ToInt32(numbers[0]);
+            int nodeIndex = Convert.ToInt32(numbers[1]);
+            NodeBase nb = DataLayer.DB.Chapters[chapIndex].Find(n => n.Id == id);
+
+            return (nb, chapIndex, nodeIndex);
         }
     }
 }

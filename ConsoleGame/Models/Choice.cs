@@ -21,13 +21,16 @@ namespace ConsoleGame.Models
         {
             if (Condition != null)
             {
-                var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == Condition.Item);
-                if (storedItem != null)
+                if (Condition.Type != "isNodeVisited")
                 {
-                    if (storedItem.Had & Condition.Value)
-                        return true;
+                    var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == Condition.Item);
+                    if (storedItem != null)
+                    {
+                        if (storedItem.Had & Condition.Value)
+                            return true;
+                    }
+                    return false;
                 }
-                return false;
             }
             return true;
         }

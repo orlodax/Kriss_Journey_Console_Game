@@ -18,10 +18,39 @@ namespace ConsoleGame.Nodes
             Console.WriteLine();
             Console.WriteLine();
 
-            visibleChoices = Choices.FindAll(c => c.IsHidden == false);
+            DisplayChoices();
 
             WaitForChoice();
         }
+
+        /// <summary>
+        /// Displays the choices that satisfy a possible condition and that are not hidden
+        /// </summary>
+        void DisplayChoices() 
+        {
+            var notHiddenChoices = Choices.FindAll(c => c.IsHidden == false);   //first filter out all non hidden ones
+
+            foreach (var c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
+            {
+                if (c.Condition != null)
+                {
+                    var cond = c.Condition;
+                    if (cond.Type == "isNodeVisited")
+                    {
+                        (NodeBase nb, int chapIndex, int nodeIndex) = NodeFactory.SearchNodeById(cond.Item);
+                        
+                        if (nb.IsVisited == cond.Value)
+                            visibleChoices.Add(c);
+                    }
+                }
+                else
+                    visibleChoices.Add(c);
+            }
+        }
+
+        /// <summary>
+        /// Recursive method to capture user choice
+        /// </summary>
         void WaitForChoice()
         {
             ConsoleKeyInfo key;
@@ -29,7 +58,6 @@ namespace ConsoleGame.Nodes
             {
                 for (int i = 0; i < visibleChoices.Count; i++)
                 {
-                   
                     var foreground = ConsoleColor.DarkCyan;
                     var background = ConsoleColor.Black;
                         
