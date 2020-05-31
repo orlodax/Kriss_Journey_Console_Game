@@ -1393,7 +1393,7 @@
         "id": "4_09",
         "recap": "More story",
         "type": "Story",
-        "text": "$BOne day, without notice, after some twenty years of frantic development,#\nthe earthers abandoned the colonies to themselves.##\n\nIn time, legends started spreading.#\nFunny stories about spirits of this planet emerging from the sea and the land to drive out the human invaders,#\nonly sparing those who were born here.# At first, very few believed such myths.#\nThe wisest ones were convinced there had to be a way more concrete explanation behind all of it.#\nA war,# maybe some cataclysm,# on the Earth...##\n\nRegardless of the actual reason, the colonists soon realised there was little they could do,#\nin order to limit the damage deriving from the exile imposed on them.#\nWithout the Titans, global communications broke down, as well the great commercial routes.#\nMachines and Earth technology started to fade as there was no proper supply chain\nto refurbish and repair and improve the existent.#\nWithout access to Earth's knowledge, scientists and researchers had to start over, takin a massive leap backwards.##\n\nThen,# with decades, centuries,# the old generations were replaced,#\ngiving way to a fragmenting society led by the strongest, most violent elements.#\n\nHordes started forming and everything descended more and more into anarchy.",
+        "text": "$BOne day, without notice, after some twenty years of frantic development,#\nthe Earthers abandoned the colonies to themselves.##\n\nIn time, legends started spreading.#\nFunny stories about spirits of this planet emerging from the sea and the land to drive out the human invaders,#\nonly sparing those who were born here.# At first, very few believed such myths.#\nThe wisest ones were convinced there had to be a way more concrete explanation behind all of it.#\nA war,# maybe some cataclysm,# on the Earth...##\n\nRegardless of the actual reason, the colonists soon realised there was little they could do,#\nin order to limit the damage deriving from the exile imposed on them.#\nWithout the Titans, global communications broke down, as well the great commercial routes.#\nMachines and Earth technology started to fade as there was no proper supply chain\nto refurbish and repair and improve the existent.#\nWithout access to Earth's knowledge, scientists and researchers had to start over, takin a massive leap backwards.##\n\nThen,# with decades, centuries,# the old generations were replaced,#\ngiving way to a fragmenting society led by the strongest, most violent elements.#\n\nHordes started forming and everything descended more and more into anarchy.",
         "childid": "4_10"
       },
       {
@@ -2722,8 +2722,33 @@
         "dialogues": [
           {
             "actor": "Elder",
-            "line": "Listen here",
+            "line": "I had you brought here,# because you know,# we were expecting you.",
+            "comment": "The Elder says."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Can you see who traverses the desert from up here?"
+          },
+          {
+            "actor": "Elder",
+            "line": "Of course..!",
+            "comment": "And he looks somewhere in the distance in front of him, for a few moments.#\n\nThen he changes expression abruptly:"
+          },
+          {
+            "actor": "Elder",
+            "line": "But no, no!# You fool,# we have been waiting for centuries!# I mean...",
+            "comment": "He adjusts his position,#\nsettling more comfortably on his armchair,# as he proceeds to clarify:"
+          },
+          {
+            "actor": "Elder",
+            "line": "Few years ago,# right after I was elected Elder,# I was studying the memories of The Master himself.#\nThis happened only lately because the Underground Library is only accessible to the Elders.#\nAnyway,# I came across the description of a weird dream or vision.#\nThe details are not clear,# but few things are unmistakable:#\na wonderful, gold-haired girl,# in a halo of light,# gave a message to The Master.#\nHe then arranged for it to be passed down in time from Elder to Elder.#\nI read in those memories about the very day and place where a group of visitors would have appeared.#\nAnd the group would have consisted of a $cyoung man$M,# a $Ydwarf$M,# a $Btall man$M,# and a $Rwoman$M\".##\n\n\"To be honest,# it reminds me of an Earthers' legend...",
+            "comment": "His voice fades and he starts to space out again.#\nThen he comes back to here and now and says:"
+          },
+          {
+            "actor": "Elder",
+            "line": "Well,# now it's clear the message is about you,# today,# and here.#\nThe Master commanded to give you hospitality and to assist you,#\nand you can be sure we will carry out our duty!",
             "childid": "6_13"
+
           }
         ]
       },
@@ -2731,7 +2756,7 @@
         "id": "6_12",
         "type": "Story",
         "recap": "the story of the rock",
-        "text": "tells the story",
+        "text": "He tells you that this place owes its name to its founder,# a man called 'The Seer',# or 'The Master'.#\nHe was the last of the psychic scholars living on Noi-Hert.#\n\nA few decades after the Earthers' abandonment,# being on the run,# he sought refuge from the unrest here.#\nAnd he found shelter indeed,# at the top of this narrow yet superb spike of stone,#\nwhich stands lonely in the middle of the Great Desert.#\n\nSafe from the hordes' attacks,# he set up a community which in time continued to teach the psychic arts to its members.#\nUp to this day,# they live simple lives:#\nthey use to farm a few exemplars of an animal species with a thick skin which uses to roam the desert in small herds.\nThey also grow a herb or cereal that can grow anywhere it finds a handful of soil,#\nfrom which they obtain a weird,# fine flour.#\n\nThe water need is met by a well at the bottom of a pit in the middle of the spire,#\nwhich goes down several kilometers and reaches deep underground# (at least this is what the Elder claims).#\n\nThe eldest and most skilled telepath between them is appointed as 'Elder Telepath',# or just 'Elder'.#\nThat title rewpresents the authority in the village.#\nAnyway# (as the Elder claims)# the election of an Elder is a sporadic event,#\nsince they have an average life span of 200 years.##\n\nThen the old man falls silent,# and goes back to sip his tea.",
         "childid": "6_13"
       },
       {
@@ -2750,10 +2775,10 @@
             "childId": "6_11"
           },
           {
-            "desc": "A prophecy? A golden-haired 'fairy'? Come on... What would we be supposed to do?",
+            "desc": "A prophecy? A golden-haired... 'fairy'? Come on... What would we be supposed to do?",
             "condition": {
               "type": "isNodeVisited",
-              "item": "6_12",
+              "item": "6_11",
               "value": true
             },
             "childId":  "6_14"
