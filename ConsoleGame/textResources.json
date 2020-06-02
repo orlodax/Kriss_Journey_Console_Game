@@ -2748,7 +2748,6 @@
             "actor": "Elder",
             "line": "Well,# now it's clear the message is about you,# today,# and here.#\nThe Master commanded to give you hospitality and to assist you,#\nand you can be sure we will carry out our duty!",
             "childid": "6_13"
-
           }
         ]
       },
@@ -2781,9 +2780,115 @@
               "item": "6_11",
               "value": true
             },
-            "childId":  "6_14"
+            "childId": "6_14"
           }
         ]
+      },
+      {
+        "id": "6_14",
+        "type": "Story",
+        "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand.#\nHe then stands up,# and says:#\n\n$M\"You sure are tired.# Math,# please take them to their designed accommodation.\"#\n\n$CMath appears,# seemingly out of thin air,# emerging from the shadows of the corridor.#\n\nYou follow him outside,# then you all walk quietly to one of the many houses in the surroundings.#\nHe tells you that a certain young woman named Efeliah left it free for you.#\n\nAs you enter the house,# suddenly exhaustion hits you hard as stone.#\nYou collapse on one of the beds,# unable to notice anything around you.#\nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place...##\n\nYour consciousness slips away in a rush,#\nas you fall deeply asleep on what feels like the most comfortable bed you've ever layed on.",
+        "childid": "6_15"
+      },
+      {
+        "id": "6_15",
+        "type": "Dialogue",
+        "text": "You get waken up by the noise of activity in the village.#\nYou feel rested,# but still a bit groggy.#\n\nLight comes through the windows,# you have no idea what time it is or how long you've been asleep.#\nSmiurl seems to be awake,# sitting on a tidy bed,# fully dressed.#\n\n",
+        "dialogues": [
+          {
+            "actor": "Kriss",
+            "line": "What time is it..?",
+            "comment": "You mumble slurring."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "The sun is quite high... I think it's past midday.",
+            "comment": "He shrugs his shoulders."
+          },
+          {
+            "precomment": "He must be thinking you need the toilet:# he points to one of the doors and clarifies:",
+            "actor": "Smiurl",
+            "line": "Theo is in the bathroom."
+          },
+          {
+            "precomment": "At that sound,# the mound of blankets on a bed on the other side of the room comes to life.",
+            "actor": "Corolla",
+            "line": "My turn first!",
+            "comment": "You hear Corolla's muffled voice from underneath the pile of bedsheets.# She immediately adds:"
+          },
+          {
+            "actor": "Corolla",
+            "line": "...I'm starving...!",
+            "comment": "You can't help chuckling,# hearing her tone.#\n\nBut then you become suddenly aware of your own stomach.#\nAt that,# you also start noticing the smell of food (roasted meet) in the air.#\n\nYou start salivating vigorously.",
+            "childid": "6_16"
+          }
+        ]
+      },
+      {
+        "id": "6_16",
+        "type": "Dialogue",
+        "text": "Someone knocks at the door.#\nMath does not wait for your answer,# and just utters from behind the door:#\n\n",
+        "dialogues": [
+          {
+            "actor": "Math",
+            "line": "Goodmorning friends!# Feel free to come outside whenever you are ready."
+          },
+          {
+            "precomment": "In the meantime,# Theo comes out the bathroom,# he has been showering or something.#\nHis wet hair is untied,# and he's wearing only a pair of shorts;#\nyou can observe and possibly envy the impressive muscles on his chest.",
+            "actor": "Theo",
+            "line": "Meal is almost ready",
+            "comment": "He announces,# as he rubs his face with the towel hanging from his neck."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Let's not leave our hosts waiting for us...",
+            "comment": "Corolla crawls out of bed,# and enters the bathroom.#\nShe's wearing just her shirt.# Her legs are quite muscular and good-looking,# and you notice several scars on them.##\n\nThen the door slams.##\n\nAll you can do now is waiting your turn.",
+            "childid": "6_17"
+          }
+        ]
+      },
+      {
+        "id": "6_17",
+        "type": "Dialogue",
+        "text": "The room you slept in is very simple,# and constitutes the majority of the humble house.#\nIt looks like they brought in extra beds in order to provide you with that improvised common room.##\n\nWhen all of you are ready,# you go outside to meet Math.# A young woman is standing next to him.#\n\n",
+        "dialogues": [
+          {
+            "actor": "Math",
+            "line": "Goodmorning.# I hope you rested well."
+          },
+          {
+            "precomment": "Corolla smiles and answers,# bowing slightly:",
+            "actor": "Corolla",
+            "line": "Naturally.# Your hospitality is delightful."
+          },
+          {
+            "actor": "Math",
+            "line": "Let me introduce to you Efeliah.# She offered her house for you.",
+            "comment": "He adds after reciprocating the courtesy."
+          },
+          {
+            "precomment": "She steps forward.# She's slightly taller than Corolla.# You start noticing how in the village everybody is quite tall.#\nShe has wavy, platinum blonde hair,# flowing down to her shoulder blades.#\nHer eyes are $ggreen$C,# a very light, pale green.# And very beautiful too.#\nLike everybody else around them,# she's wearing a simple, plain tunic,# made with a light-coloured fabric.",
+            "actor": "Efeliah",
+            "line": "It is my pleasure to welcome you,# on behalf of the whole village.",
+            "comment": "Another bow."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "Now,# if you don't mind following me,# the banquet is waiting for you,# not to mention how hungry you must be...",
+            "comment": "\nShe pauses,# intently looking at each one of you,# squinting her eyes.## Then she continues:"
+          },
+          {
+            "actor": "Efeliah",
+            "line": "...I see you ate yesterday morning the last time...# This way.",
+            "comment": "She concludes,#\ninviting you to follow her once more with a gesture of her hand.# You happily comply.",
+            "childid": "6_18"
+          }
+        ]
+      },
+      {
+        "id": "6_18",
+        "type": "Action",
+        "text": "hi"
       }
     ]
   ]
