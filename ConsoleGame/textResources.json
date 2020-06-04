@@ -2793,7 +2793,7 @@
       {
         "id": "6_15",
         "type": "Dialogue",
-        "text": "You get waken up by the noise of activity in the village.#\nYou feel rested,# but still a bit groggy.#\n\nLight comes through the windows,# you have no idea what time it is or how long you've been asleep.#\nSmiurl seems to be awake,# sitting on a tidy bed,# fully dressed.#\n\n",
+        "text": "###You get waken up by the noise of activity in the village.#\nYou feel rested,# but still a bit groggy.#\n\nLight comes through the windows,# you have no idea what time it is or how long you've been asleep.#\nSmiurl seems to be awake,# sitting on a tidy bed,# fully dressed.#\n\n",
         "dialogues": [
           {
             "actor": "Kriss",
@@ -2879,7 +2879,7 @@
           },
           {
             "actor": "Efeliah",
-            "line": "...I see you ate yesterday morning the last time...# This way.",
+            "line": "...I see the last time you ate was yesterday morning...# Please come this way.",
             "comment": "She concludes,#\ninviting you to follow her once more with a gesture of her hand.# You happily comply.",
             "childid": "6_18"
           }
@@ -2888,7 +2888,92 @@
       {
         "id": "6_18",
         "type": "Action",
-        "text": "hi"
+        "text": "Efeliah leads you to the central square of the village.# As you walk,# every single person you see either greets you all,#\nor smiles,# or bows slightly,# or a combination of the three.# You start to feel embarrassed.#\n\nFinally, you reach the square.# It is modest,# but quite spacious for the local standards.#\nTorches have been lit and placed all around.# In the middle,# a huge brazier with a massive grill on it.#\nAnd some even more massive pieces of meat are placed on it,# roasting invitingly,#\nthe fat dripping and crackling when it touches the flames.#\n\nOn the right side,# a long table with many chairs has been prepared.#\nOn the left,# a kiosk has been set up,# with many drinks and some people to serve them.#\n\nOn the opposite side in front of you,# you see a kind of wooden podium.",
+        "actions": [
+          {
+            "verbs": [
+              { "term": "ask" }
+            ],
+            "objects": [
+              {
+                "obj": "food",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "table",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "drinks",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "drink",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "podium",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "meat",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "food",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "mind",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "powers",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "psychic",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "telepathy",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              }
+            ],
+            "answer": "You all stand there quietly.# It looks like there is still time before the meal.# You should take advantage now to ask some questions.# These guys TALK WITH THEIR MINDS.# How's that possible??"
+          },
+          {
+            "verbs": [
+              { "term": "eat" }
+            ],
+            "objects": [
+              {
+                "obj": "food",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "meat",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              },
+              {
+                "obj": "table",
+                "answer": "You remove your soaked clothes wearing what you just found."
+              }
+            ]
+          },
+          {
+            "verbs": [
+              { "term": "drink" }
+            ],
+            "answer": "You get some drinks"
+          },
+          {
+            "verbs": [
+              { "term": "drinks" }
+            ],
+            "answer": "You get some drinks"
+          }
+        ]
       }
     ]
   ]

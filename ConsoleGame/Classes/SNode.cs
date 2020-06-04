@@ -27,7 +27,7 @@ namespace ConsoleGame.Classes
         /// This root node loads text resources for everybody
         public SNode(Models.NodeBase nb)
         {
-            DEBUG = true;
+            //DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
