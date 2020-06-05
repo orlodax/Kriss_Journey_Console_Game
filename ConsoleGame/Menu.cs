@@ -40,10 +40,10 @@ namespace ConsoleGame
             
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine();
-            //debug: start from
-            NodeFactory.CreateNode("6_18");
+            
+            //debug: start from. Comment for default start
+            NodeFactory.CreateNode("1_12");
             //debug
-
 
             if (DataLayer.DB.Lastchapter.IsComplete && DataLayer.DB.Lastchapter.Number > 0)
             {

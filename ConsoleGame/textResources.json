@@ -266,15 +266,18 @@
         "type": "Action",
         "isvisited": false,
         "recap": "enter house",
-        "text": "Overcoming fear with need, you enter the silent,# dark,# house.# You don't expect to find anybody in there.\n#It's a very humble abode, earthen floor, small windows, few ornaments.\n#\nA fireplace signals the kitchen. A table, some chairs.# You suddenly realise how hungry you are.\n#The only other room is the bedroom, a simple bed, a closet.\n#All furniture pieces are made of the same wood.\n#It doesn't look like there is running water anywhere. You can't even find a toilet.\n#\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]$C",
+        "text": "Overcoming fear with need, you enter the silent,# dark,# house.# You don't expect to find anybody in there.\n#It's a very humble abode, earthen floor, small windows, few ornaments.\n#\nA fireplace signals the kitchen. A table, some chairs.# You suddenly realise how hungry you are.\n#The only other room is the bedroom, a simple bed, a closet.\n#All furniture pieces are made of the same wood.\n#It doesn't look like there is running water anywhere. You can't even find a toilet.\n#\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]\n\n[You may press TAB again for help about the objects.]$C",
         "actions": [
           {
             "verbs": [
-              { "term": "search" }
+              { "term": "search" },
+              { "term": "look" }
             ],
             "objects": [
               {
-                "obj": "food",
+                "objs": [
+                  { "term": "food" }
+                ],
                 "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
                 "effect": {
                   "item": "food",
@@ -282,7 +285,9 @@
                 }
               },
               {
-                "obj": "water",
+                "objs": [
+                  { "term": "water" }
+                ],
                 "answer": "There is a covered jug full of water on the kitchen counter.",
                 "effect": {
                   "item": "water",
@@ -290,7 +295,9 @@
                 }
               },
               {
-                "obj": "clothes",
+                "objs": [
+                  { "term": "clothes" }
+                ],
                 "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
                 "effect": {
                   "item": "clothes",
@@ -298,7 +305,9 @@
                 }
               },
               {
-                "obj": "money",
+                "objs": [
+                  { "term": "money" }
+                ],
                 "answer": "You can't find anything valuable."
               }
             ]
@@ -311,7 +320,9 @@
             ],
             "objects": [
               {
-                "obj": "bed",
+                "objs": [
+                  { "term": "bed" }
+                ],
                 "condition": {
                   "item": "clothes",
                   "value": true,
@@ -329,7 +340,9 @@
             ],
             "objects": [
               {
-                "obj": "clothes",
+                "objs": [
+                  { "term": "clothes" }
+                ],
                 "answer": "You remove your soaked clothes wearing what you just found.",
                 "condition": {
                   "item": "clothes",
@@ -831,15 +844,27 @@
             ],
             "objects": [
               {
-                "obj": "around",
+                "objs": [
+                  { "term": "around" },
+                  { "term": "tent" }
+                ],
                 "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow.#\nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?#\nBut the most striking feature to be observed is Theo himself."
               },
               {
-                "obj": "theo",
+                "objs": [
+                  { "term": "theo" },
+                  { "term": "him" },
+                  { "term": "man" },
+                  { "term": "guy" }
+                ],
                 "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance.#\nHe's even taller and massive than Jeorghe, and the similarities end there.#\nHe has ash blonde hair, almost white,# worn in a thick, quite long braid.#\nHe has a well-kept beard,# not long,# and just a little darker than the rest of his hair,#\nwhich frames his sturdy, squared face.#\n\nHis eyes are clear and cold as ice,# still there is something in him softening his gaze...\nAnd his talking,# even if so succint,# wasn't rough, neither veined with hate like those of the other men around there."
               },
               {
-                "obj": "bed",
+                "objs": [
+                  { "term": "bed" },
+                  { "term": "mat" },
+                  { "term": "bedroll" }
+                ],
                 "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
                 "condition": {
                   "item": "mat",
@@ -881,50 +906,15 @@
             "verbs": [
               { "term": "sleep" }
             ],
-
             "objects": [
               {
-                "obj": "bed",
-                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
-                "childid": "2_03",
-                "condition": {
-                  "item": "mat",
-                  "value": true,
-                  "refusal": "I cannot just lay on the ground."
-                }
-              },
-              {
-                "obj": "mat",
-                "answer": "You put the mat on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
-                "childid": "2_03",
-                "condition": {
-                  "item": "mat",
-                  "value": true,
-                  "refusal": "I cannot just lay on the ground."
-                }
-              },
-              {
-                "obj": "bedroll",
-                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
-                "childid": "2_03",
-                "condition": {
-                  "item": "mat",
-                  "value": true,
-                  "refusal": "I cannot just lay on the ground."
-                }
-              },
-              {
-                "obj": "ground",
-                "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
-                "childid": "2_03",
-                "condition": {
-                  "item": "mat",
-                  "value": true,
-                  "refusal": "I cannot just lay on the ground."
-                }
-              },
-              {
-                "obj": "floor",
+                "objs": [
+                  { "term": "bed" },
+                  { "term": "mat" },
+                  { "term": "bedroll" },
+                  { "term": "ground" },
+                  { "term": "floor" }
+                ],
                 "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
                 "childid": "2_03",
                 "condition": {
@@ -941,16 +931,14 @@
             ],
             "objects": [
               {
-                "obj": "bed",
+                "objs": [
+                  { "term": "bed" },
+                  { "term": "sleep" },
+                  { "term": "lay" },
+                  { "term": "rest" },
+                  { "term": "do" }
+                ],
                 "answer": "He gives you a bedroll and points you to the freer side of the tent.",
-                "effect": {
-                  "item": "mat",
-                  "value": true
-                }
-              },
-              {
-                "obj": "sleep",
-                "answer": "He gives you a mat and points you to the freer side of the tent.",
                 "effect": {
                   "item": "mat",
                   "value": true
@@ -1564,12 +1552,18 @@
         "actions": [
           {
             "verbs": [
-              { "term": "look" }
+              { "term": "look" },
+              { "term": "examine" },
+              { "term": "observe" }
             ],
-            "answer": "The reddish landscape stretches wide all around you.# You think it looks like Arizona, or Nevada, back on earth.#\n\nBack on earth.## Ridiculous.##\n\nThe sun hits hard on you;# now you thankfully understand why the hat.\n\nHow exactly far is this Ayonn city?# You worry now:#\nyou have only a limited supply of food with you.# How will you survive the desert?",
+            "answer": "The reddish landscape stretches wide all around you.# You think it looks like Arizona, or Nevada, back on earth.#\n\nBack on earth.## Ridiculous.##\n\nThe sun hits hard on you;# now you thankfully understand why the hat.\n\nHow exactly far this Ayonn city is?# How long will it take to get there?#\nYou start to worry:# you have only a limited supply of food with you.#\nHow will you survive the desert?",
             "objects": [
               {
-                "obj": "sword",
+                "objs": [
+                  { "term": "sword" },
+                  { "term": "blade" },
+                  { "term": "weapon" }
+                ],
                 "childid": "5_03"
               }
             ]
@@ -1580,28 +1574,36 @@
             ],
             "objects": [
               {
-                "obj": "food",
+                "objs": [
+                  { "term": "food" }
+                ],
                 "answer": "$B\"We have enough for 3 days. Then, we will hunt.\"#$y So naturally.\n\n#You wonder what kind of prey he has in mind.# All you saw so far were just few lizards.#\n\nWell,# you already decided you will need to trust these guys,# so no use in worrying at this point."
               },
               {
-                "obj": "water",
+                "objs": [
+                  { "term": "water" }
+                ],
                 "answer": "$Y\"We have two days worth of water. We need to find some more along the way.\"#\n\n$yYou try not to look worried.#\n\n$Y\"Don't you worry about that.# It's not our first time in the desert!\"#$y He smiles at you reassuringly."
               },
               {
-                "obj": "travel",
+                "objs": [
+                  { "term": "travel" },
+                  { "term": "journey" },
+                  { "term": "distance" }
+                ],
                 "answer": "$R\"The location of the city of Ayonn is not a mistery.#\nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks.#\n\n$R\"So...# the so-called plain of Ayonn it's ten days of walking west from here.#\nAt the end of this desert, we'll have to cross the Mazerock.# Then...# We'll see.\"#\n\n$ySmiurl squeals."
               },
               {
-                "obj": "journey",
-                "answer": "$R\"The location of the city of Ayonn is not a mistery.#\nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks.#\n\n$R\"So...# the so-called plain of Ayonn it's ten days of walking west from here.#\nAt the end of this desert, we'll have to cross the Mazerock.# Then...# We'll see.\"#\n\n$ySmiurl squeals."
-              },
-              {
-                "obj": "distance",
-                "answer": "$R\"The location of the city of Ayonn is not a mistery.#\nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks.#\n\n$R\"So...# the so-called plain of Ayonn it's ten days of walking west from here.#\nAt the end of this desert, we'll have to cross the Mazerock.# Then...# We'll see.\"#\n\n$ySmiurl squeals.#"
-              },
-              {
-                "obj": "mazerocks",
+                "objs": [
+                  { "term": "mazerock" }
+                ],
                 "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!#\nIf the place itself doesn't kill you,# an Oxengutter or some other fiend will surely fix it!\"#$y You gulp.#\n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,#\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence.#\n\nTheo, as per usual, doesn't even seem interested in what they're saying."
+              },
+              {
+                "objs": [
+                  { "term": "oxengutter" }
+                ],
+                "answer": "$B\"Don't pay attention to everything Smiurl says...# And trust me,# you don't even want to know that.\"#\n$yHis words do not reassure you,# that's for sure."
               }
             ]
           },
@@ -2896,48 +2898,40 @@
             ],
             "objects": [
               {
-                "obj": "food",
+                "objs": [
+                  { "term": "food" },
+                  { "term": "meat" },
+                  { "term": "table" }
+                ],
+                "answer": "Food answer."
+              },
+              {
+                "objs": [
+                  { "term": "drinks" },
+                  { "term": "drink" },
+                  { "term": "kiosk" }
+                ],
+                "answer": "Drink answer."
+              },
+              {
+                "objs": [
+                  { "term": "podium" }
+                ],
                 "answer": "You remove your soaked clothes wearing what you just found."
               },
               {
-                "obj": "table",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "drinks",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "drink",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "podium",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "meat",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "food",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "mind",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "powers",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "psychic",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "telepathy",
-                "answer": "You remove your soaked clothes wearing what you just found."
+                "objs": [
+                  { "term": "mind" },
+                  { "term": "powers" },
+                  { "term": "psychic" },
+                  { "term": "telepathy" },
+                  { "term": "read" },
+                  { "term": "thinking" },
+                  { "term": "thoughts" },
+                  { "term": "explanations" },
+                  { "term": "explanation" }
+                ],
+                "answer": "Psi answer."
               }
             ],
             "answer": "You all stand there quietly.# It looks like there is still time before the meal.# You should take advantage now to ask some questions.# These guys TALK WITH THEIR MINDS.# How's that possible??"
@@ -2948,31 +2942,23 @@
             ],
             "objects": [
               {
-                "obj": "food",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "meat",
-                "answer": "You remove your soaked clothes wearing what you just found."
-              },
-              {
-                "obj": "table",
+                "objs": [
+                  { "term": "food" },
+                  { "term": "meat" },
+                  { "term": "table" }
+                ],
                 "answer": "You remove your soaked clothes wearing what you just found."
               }
             ]
           },
           {
             "verbs": [
-              { "term": "drink" }
-            ],
-            "answer": "You get some drinks"
-          },
-          {
-            "verbs": [
+              { "term": "drink" },
               { "term": "drinks" }
             ],
             "answer": "You get some drinks"
           }
+          
         ]
       }
     ]

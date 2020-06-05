@@ -2,6 +2,7 @@
 using ConsoleGame.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 
 namespace ConsoleGame.Nodes
 {
@@ -66,16 +67,50 @@ namespace ConsoleGame.Nodes
         {
             RedrawNode();
 
+            List<string> helpObjects = new List<string>();                              //if this gets populated, show object help not verbs
+
+            string[] words = ExtractWords();
+
+            string matchingVerb = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(words[0]))
+            {
+                foreach (var action in Actions)
+                {
+                    var verb = action.Verbs.Find(v => v.Term.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
+                    if (verb != null)
+                    {
+                        foreach (var objContainer in action.Objects)                    //when the action is found, iterate through every object term
+                            foreach (var obj in objContainer.Objs)
+                                helpObjects.Add(obj.Term);
+
+                        break;
+                    }
+                }
+            }
+
             Console.CursorTop = Console.WindowHeight - 4;
             Console.CursorLeft = Console.WindowLeft;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("Possible actions here: ");
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            foreach (var action in Actions)
-                foreach (var verb in action.Verbs)
-                    Console.Write(verb.Term + " ");
+            if (helpObjects.Count > 0)
+            {
+                Console.WriteLine("Possible objects for the action typed: ");
+
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                foreach (var term in helpObjects)
+                     Console.Write(term + " ");
+            }
+            else
+            {
+                Console.WriteLine("Possible actions here: ");
+
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                foreach (var action in Actions)
+                    foreach (var verb in action.Verbs)
+                        Console.Write(verb.Term + " ");
+            }
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.CursorTop = Console.WindowHeight - 1;
@@ -90,6 +125,10 @@ namespace ConsoleGame.Nodes
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("\\>");
             Console.CursorLeft += 1;
+
+            if (keysPressed.Count > 0)
+                for (int i = 0; i < keysPressed.Count; i++)
+                    Console.Write(keysPressed[i].KeyChar.ToString());
         }
         void BackSpacePressed(List<ConsoleKeyInfo> keysPressed)
         {
@@ -101,22 +140,27 @@ namespace ConsoleGame.Nodes
                 PrepareForAction(true);
             }
         }
+        string[] ExtractWords() 
+        {
+            //reconstruct
+            string typed = string.Empty;
+
+            for (int i = 0; i < keysPressed.Count; i++)
+                typed += keysPressed[i].KeyChar.ToString().ToLower();
+
+            char[] delimiterChars = { ' ', ',', '.', ':', '\t', '!', '\r' };
+
+            return typed.Split(delimiterChars);
+        }
         void EnterPressed(List<ConsoleKeyInfo> keysPressed)
         {
             if (keysPressed.Count > 0)
             {
                 act = null;
-                //reconstruct
-                string typed = string.Empty;
 
-                for (int i = 0; i < keysPressed.Count; i++)
-                    typed += keysPressed[i].KeyChar.ToString().ToLower();
-
+                string[] words = ExtractWords();
+               
                 keysPressed.Clear();                                            //clear the stack after giving command
-
-                char[] delimiterChars = { ' ', ',', '.', ':', '\t', '!', '\r' };
-
-                string[] words = typed.Split(delimiterChars);
 
                 string matchingVerb = string.Empty;
 
@@ -156,16 +200,19 @@ namespace ConsoleGame.Nodes
 
                             foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                             {
-                                if (o.Obj.Contains(word))                       //the action is right, and there is a acceptable object specified
+                                foreach (var obj in o.Objs)
                                 {
-                                    if (!act.EvaluateCombination(o))            //if for some reason Kriss can't do it, say it...
-                                        CustomRefusal(o.Condition.Refusal);
-                                    else                                        //...otherwise, do it
+                                    if (obj.Term == word)                       //the action is right, and there is a acceptable object specified
                                     {
-                                        if (o.Effect != null)                   //in case the obj has an Effect (inventory)
-                                            act.StoreItem(o.Effect);
+                                        if (!act.EvaluateCombination(o))        //if for some reason Kriss can't do it, say it...
+                                            CustomRefusal(o.Condition.Refusal);
+                                        else                                    //...otherwise, do it
+                                        {
+                                            if (o.Effect != null)               //in case the obj has an Effect (inventory)
+                                                act.StoreItem(o.Effect);
 
-                                        DisplaySuccess(o.Answer, o.ChildId);
+                                            DisplaySuccess(o.Answer, o.ChildId);
+                                        }
                                     }
                                 }
                             }
@@ -173,7 +220,7 @@ namespace ConsoleGame.Nodes
                         if (act.Answer != null)
                             DisplaySuccess(act.Answer, act.ChildId);
                         else
-                            CustomRefusal(act.GetOpinion(matchingVerb));            //the action is right, but no required object is specified
+                            CustomRefusal(act.GetOpinion(matchingVerb));        //the action is right, but no required object is specified
                     }
                 }
                 else                                                            //if there's no action available, redraw node and display standard refuse

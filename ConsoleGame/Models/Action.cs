@@ -86,9 +86,7 @@ namespace ConsoleGame.Models
     }
     public class Object
     {
-        //TODO 
-        //IMPLEMENT LIST<WORD> OBJ AND CHANGE ALL ACTION-NODES (AND NACTION.CS)
-        public string Obj { get; set; }         //object of the action
+        public List<Word> Objs { get; set; }         //objects of the action
         public string Answer { get; set; }      //answer for incomplete player requests 
         public string ChildId { get; set; }     //key for matching next node
         public Effect Effect { get; set; }      //consequence from the object
