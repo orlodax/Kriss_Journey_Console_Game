@@ -105,7 +105,7 @@ namespace ConsoleGame.Classes
                                 color = ConsoleColor.Red;           //Corolla
                                 break;
                             case "r":
-                                color = ConsoleColor.DarkRed;       //Math
+                                color = ConsoleColor.DarkRed;       
                                 break;
                             case "G":
                                 color = ConsoleColor.Green;
@@ -126,7 +126,7 @@ namespace ConsoleGame.Classes
                                 color = ConsoleColor.Magenta;
                                 break;
                             case "m":
-                                color = ConsoleColor.DarkMagenta;
+                                color = ConsoleColor.DarkMagenta;   //Math
                                 break;
                             case "Y":
                                 color = ConsoleColor.Yellow;        //Smiurl

@@ -2893,10 +2893,66 @@
       },
       {
         "id": "6_18",
+        "type": "Dialogue",
+        "recap": "going to the party",
+        "text": "Efeliah takes you under her arm.# Her hand is warm,# and you can smell her natural scent.#\n\n",
+        "dialogues": [
+          {
+            "actor": "Efeliah",
+            "line": "Tonight the Elder is going to give a speech.",
+            "comment": "She says."
+          },
+          {
+            "actor": "Kriss",
+            "line": "What about?",
+            "comment": "You muster to ask back."
+          },
+          {
+            "actor": "Math",
+            "line": "I believe he wants to surprise you.",
+            "comment": "You aren't sure of it,# but you feel like Math is trying to suppress a smile.#\nOn top of that,# over his words you can distinctly hear his voice saying,# or rather thinking:"
+          },
+          {
+            "actor": "Math",
+            "line": "...about you/us...",
+            "comment": "You instinctively turn around,# looking puzzled at your friends.",
+            "istelepathy": true
+          },
+          {
+            "actor": "Corolla",
+            "line": "Everything okay?"
+          },
+          {
+            "actor": "Kriss",
+            "line": "Erm... Yeah,# I suppose so...",
+            "comment": "You smile,# slightly embarrassed.#\nYou look away,# and you notice the Elder's house.# He's watching out the window.#\nYou feel like he's looking right at you."
+          },
+          {
+            "actor": "Elder",
+            "line": "Indeed.",
+            "comment": "He answers your thoughts with his usal 'voice'.# You wonder if you could ever get used to it.",
+            "istelepathy": true
+          },
+          {
+            "actor": "Kriss",
+            "line": "Why do I worry?# Not that I dislike these guys...# But sooner or later we'll leave this place...",
+            "istelepathy": true
+          },
+          {
+            "actor": "Elder",
+            "line": "I wouldn't be so sure of many things...",
+            "istelepathy": true,
+            "comment": "He answers into your mind once again.#\nYou quickly glance at his place,# resentfully.# It looks like he's retracted inside the house.#\n\nYou continue walking,# Efeliah still at your arm.",
+            "childid": "6_19"
+          }
+        ]
+      },
+      {
+        "id": "6_19",
         "recap": "party and the party",
         "type": "Action",
-        "text": "Efeliah leads you to the central square of the village.# As you walk,# every single person you see either greets you all,#\nor smiles,# or bows slightly,# or a combination of the three.# You start to feel embarrassed.#\n\nFinally, you reach the square.# It is modest,# but quite spacious for the local standards.#\nTorches have been lit and placed all around.# In the middle,# a huge brazier with a massive grill on it.#\nAnd some even more massive pieces of meat are placed on it,# roasting invitingly,#\nthe fat dripping and crackling when it touches the flames.#\n\nOn the right side,# a long table with many chairs has been prepared.#\nOn the left,# a kiosk has been set up,# with many drinks and some people to serve them.#\n\nOn the opposite side in front of you,# you see a kind of wooden podium.#\n\nThere are so many things you want to ask.",
-        "altText": "You stand with the others in the middle of the square.# As time passes,# more people is joining you.#\nAfter all the care received,# Smiurl seems calmer.# He's even starting conversations with some of your hosts.",
+        "text": "You reach the central square of the village.# As you walk,# every single person you see either greets you all,#\nor smiles,# or bows slightly,# or a combination of the three.# You start to feel embarrassed.#\n\nFinally, you reach the square.# It is modest,# but quite spacious for the local standards.#\nTorches have been lit and placed all around.# In the middle,# a huge brazier with a massive grill on it.#\nAnd some even more massive pieces of meat are placed on it,# roasting invitingly,#\nthe fat dripping and crackling when it touches the flames.#\n\nOn the right side,# a long table with many chairs has been prepared.#\nOn the left,# a kiosk has been set up,# with many drinks and some people to serve them.#\n\nOn the opposite side in front of you,# you see a kind of wooden podium.#\n\nThere are so many things you want to ask.",
+        "altText": "You are still in the square with the others.# As time passes,# more people are joining you.#\nAfter all the care received,# Smiurl seems calmer.# He's even starting conversations with some of your hosts.#\n\nThe Elder still hasn't shown up.#\nIt seems you have some more time to enjoy the party.",
         "actions": [
           {
             "verbs": [
@@ -2909,7 +2965,7 @@
                   { "term": "meat" },
                   { "term": "table" }
                 ],
-                "answer": "Food answer."
+                "answer": "$m\"The cooks are giving the best of themselves tonight.# Special courses are being prepared for you guys.\"$y"
               },
               {
                 "objs": [
@@ -2917,13 +2973,13 @@
                   { "term": "drink" },
                   { "term": "kiosk" }
                 ],
-                "answer": "Drink answer."
+                "answer": "$g\"Please, have a drink before anything else.# I'm sure you'll be surpised!\"$y"
               },
               {
                 "objs": [
                   { "term": "podium" }
                 ],
-                "answer": "You remove your soaked clothes wearing what you just found."
+                "answer": "That must be where official announcements are made.# It looks small and modest like everything else.#\nThe Elder will surely climb those wooden steps soon."
               },
               {
                 "objs": [
@@ -2937,7 +2993,7 @@
                   { "term": "explanations" },
                   { "term": "explanation" }
                 ],
-                "answer": "Psi answer."
+                "childid": "6_20"
               }
             ],
             "answer": "You all stand there quietly.# It looks like there is still time before the meal.# You should take advantage now to ask some questions.# These guys TALK WITH THEIR MINDS.# How's that possible??"
@@ -2956,13 +3012,13 @@
                 "condition": {
                   "item": "partyDrank",
                   "value": true,
-                  "refusal": "Food is not yet being served.# Maybe you could have something to drink in the meantime."
+                  "refusal": "Food is not yet being served.# Maybe I could have something to drink in the meantime."
                 },
                 "effect": {
                   "item": "partyFed",
                   "value": true
                 },
-                "answer": "You remove your soaked clothes wearing what you just found."
+                "childid": "6_22"
               }
             ]
           },
@@ -2975,7 +3031,7 @@
               "item": "partyDrank",
               "value": true
             },
-            "answer": "You get some drinks"
+            "childid": "6_21"
           },
           {
             "verbs": [
@@ -2984,10 +3040,29 @@
             "condition": {
               "item": "partyFed",
               "value": true,
-              "refusal": "You should honor your hosts enjoying what has been prepared for you."
-            }
+              "refusal": "I should honor our hosts enjoying what has been prepared for us."
+            },
+            "childid": "6_99"
           }
         ]
+      },
+      {
+        "id": "6_20",
+        "recap": "telepathy explained",
+        "type": "Dialogue",
+        "childid": "6_19"
+      },
+      {
+        "id": "6_21",
+        "recap": "let's drink like on earth",
+        "type": "Dialogue",
+        "childid": "6_19"
+      },
+      {
+        "id": "6_22",
+        "recap": "let's eat like on earth",
+        "type": "Dialogue",
+        "childid": "6_19"
       },
       {
         "id": "6_99",

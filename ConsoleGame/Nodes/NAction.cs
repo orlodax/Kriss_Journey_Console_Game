@@ -83,8 +83,7 @@ namespace ConsoleGame.Nodes
                         if (action.Objects.Count > 0)
                         {
                             foreach (var objContainer in action.Objects)                 //when the action is found, iterate through every object term
-                                foreach (var obj in objContainer.Objs)
-                                    helpObjects.Add(obj.Term);
+                                helpObjects.Add(objContainer.Objs[0].Term);
                         }
                         else
                             helpObjects.Add("Just do it.");
@@ -113,8 +112,7 @@ namespace ConsoleGame.Nodes
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 foreach (var action in Actions)
-                    foreach (var verb in action.Verbs)
-                        Console.Write(verb.Term + " ");
+                    Console.Write(action.Verbs[0].Term + " ");
             }
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
