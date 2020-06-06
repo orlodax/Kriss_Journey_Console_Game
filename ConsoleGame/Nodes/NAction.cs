@@ -80,9 +80,14 @@ namespace ConsoleGame.Nodes
                     var verb = action.Verbs.Find(v => v.Term.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
                     if (verb != null)
                     {
-                        foreach (var objContainer in action.Objects)                    //when the action is found, iterate through every object term
-                            foreach (var obj in objContainer.Objs)
-                                helpObjects.Add(obj.Term);
+                        if (action.Objects.Count > 0)
+                        {
+                            foreach (var objContainer in action.Objects)                 //when the action is found, iterate through every object term
+                                foreach (var obj in objContainer.Objs)
+                                    helpObjects.Add(obj.Term);
+                        }
+                        else
+                            helpObjects.Add("Just do it.");
 
                         break;
                     }

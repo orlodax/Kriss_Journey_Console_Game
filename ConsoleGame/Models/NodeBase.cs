@@ -7,6 +7,7 @@ namespace ConsoleGame.Models
         public string Id { get; set; } //unique id primary key
         public string Type { get; set; } //story, choice, action...
         public string Text { get; set; } //text to be flown
+        public string AltText { get; set; } //other text to be flown/displayed (i.e. if the node is already visited)
         public string ChildId { get; set; } //possible id (if single-next)
         public List<Choice> Choices { get; set; } //list of possible choices
         public List<Action> Actions { get; set; } = new List<Action>(); //list of possible actions

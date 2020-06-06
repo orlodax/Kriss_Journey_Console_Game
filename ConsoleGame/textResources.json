@@ -2789,12 +2789,14 @@
       {
         "id": "6_14",
         "type": "Story",
+        "recap": "end of questions",
         "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand.#\nHe then stands up,# and says:#\n\n$M\"You sure are tired.# Math,# please take them to their designed accommodation.\"#\n\n$CMath appears,# seemingly out of thin air,# emerging from the shadows of the corridor.#\n\nYou follow him outside,# then you all walk quietly to one of the many houses in the surroundings.#\nHe tells you that a certain young woman named Efeliah left it free for you.#\n\nAs you enter the house,# suddenly exhaustion hits you hard as stone.#\nYou collapse on one of the beds,# unable to notice anything around you.#\nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place...##\n\nYour consciousness slips away in a rush,#\nas you fall deeply asleep on what feels like the most comfortable bed you've ever layed on.",
         "childid": "6_15"
       },
       {
         "id": "6_15",
         "type": "Dialogue",
+        "recap": "wake up at Efeliah's",
         "text": "###You get waken up by the noise of activity in the village.#\nYou feel rested,# but still a bit groggy.#\n\nLight comes through the windows,# you have no idea what time it is or how long you've been asleep.#\nSmiurl seems to be awake,# sitting on a tidy bed,# fully dressed.#\n\n",
         "dialogues": [
           {
@@ -2829,6 +2831,7 @@
       {
         "id": "6_16",
         "type": "Dialogue",
+        "recap": "wake up at Efeliah's 2",
         "text": "Someone knocks at the door.#\nMath does not wait for your answer,# and just utters from behind the door:#\n\n",
         "dialogues": [
           {
@@ -2852,6 +2855,7 @@
       {
         "id": "6_17",
         "type": "Dialogue",
+        "recap": "before the party",
         "text": "The room you slept in is very simple,# and constitutes the majority of the humble house.#\nIt looks like they brought in extra beds in order to provide you with that improvised common room.##\n\nWhen all of you are ready,# you go outside to meet Math.# A young woman is standing next to him.#\n\n",
         "dialogues": [
           {
@@ -2889,8 +2893,10 @@
       },
       {
         "id": "6_18",
+        "recap": "party and the party",
         "type": "Action",
-        "text": "Efeliah leads you to the central square of the village.# As you walk,# every single person you see either greets you all,#\nor smiles,# or bows slightly,# or a combination of the three.# You start to feel embarrassed.#\n\nFinally, you reach the square.# It is modest,# but quite spacious for the local standards.#\nTorches have been lit and placed all around.# In the middle,# a huge brazier with a massive grill on it.#\nAnd some even more massive pieces of meat are placed on it,# roasting invitingly,#\nthe fat dripping and crackling when it touches the flames.#\n\nOn the right side,# a long table with many chairs has been prepared.#\nOn the left,# a kiosk has been set up,# with many drinks and some people to serve them.#\n\nOn the opposite side in front of you,# you see a kind of wooden podium.",
+        "text": "Efeliah leads you to the central square of the village.# As you walk,# every single person you see either greets you all,#\nor smiles,# or bows slightly,# or a combination of the three.# You start to feel embarrassed.#\n\nFinally, you reach the square.# It is modest,# but quite spacious for the local standards.#\nTorches have been lit and placed all around.# In the middle,# a huge brazier with a massive grill on it.#\nAnd some even more massive pieces of meat are placed on it,# roasting invitingly,#\nthe fat dripping and crackling when it touches the flames.#\n\nOn the right side,# a long table with many chairs has been prepared.#\nOn the left,# a kiosk has been set up,# with many drinks and some people to serve them.#\n\nOn the opposite side in front of you,# you see a kind of wooden podium.#\n\nThere are so many things you want to ask.",
+        "altText": "You stand with the others in the middle of the square.# As time passes,# more people is joining you.#\nAfter all the care received,# Smiurl seems calmer.# He's even starting conversations with some of your hosts.",
         "actions": [
           {
             "verbs": [
@@ -2947,6 +2953,15 @@
                   { "term": "meat" },
                   { "term": "table" }
                 ],
+                "condition": {
+                  "item": "partyDrank",
+                  "value": true,
+                  "refusal": "Food is not yet being served.# Maybe you could have something to drink in the meantime."
+                },
+                "effect": {
+                  "item": "partyFed",
+                  "value": true
+                },
                 "answer": "You remove your soaked clothes wearing what you just found."
               }
             ]
@@ -2956,10 +2971,75 @@
               { "term": "drink" },
               { "term": "drinks" }
             ],
+            "effect": {
+              "item": "partyDrank",
+              "value": true
+            },
             "answer": "You get some drinks"
+          },
+          {
+            "verbs": [
+              { "term": "wait" }
+            ],
+            "condition": {
+              "item": "partyFed",
+              "value": true,
+              "refusal": "You should honor your hosts enjoying what has been prepared for you."
+            }
           }
-          
         ]
+      },
+      {
+        "id": "6_99",
+        "recap": "more friends",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "actor": "Elder",
+            "line": "Hello you all,# friends and guests.",
+            "comment": "The Elder starts abruptly.# He's talking normally,# in a quiet voice,#\nand he's irradiating his verbal thoughts at the same time.# A weird 'stereo' broadcasting.#\nThere's people in the distance following his speech from the windows of their houses, after all.#"
+          },
+          {
+            "actor": "Elder",
+            "precomment": "He then tells everybody the same story you already heard,# only with many more details.#\nThe secret mission the Master left for them,# long time ago...##\n\nYou get a bit distracted hearing all of that once more.# Your eyes wonder and you watch the sky.#\nYou see the moon,# well,# 'A' moon.# You realise it's the first time you see it:#\na thin scythe,# a different shade from the Earth's moon,# and a little bigger.#\nYou didn't notice it was already dark;# you were distracted before,#\nhence you could not see the night smuggling off the sun,# again.##\n\nYou go back to listening to the Elder,# and what he says now surprises you,# to say the least:",
+            "line": "...to better fulfill our obligation,# and to ensure the success and safety of our guests,#\ntwo of us volounteered to escort them...# In order to meet their fate.",
+            "comment": "He waves his hand briefly at you all.#\n\nAs he falls silent for a little,# you look at Math and Efeliah.# They are smiling.##\n\nTheo grunts a little,# expressing something that must lie more or less halfway between approval and doubt.##\n\nSmiurl lights up,# maybe with excitement,# maybe in fear. ",
+            "isbreakneeded": true
+          },
+          {
+            "actor": "Elder",
+            "line": "I thereby officially entrust this mission to Math Fraimann and Efeliah Amas.#\nThey will go with Kriss, Corolla, Theo and Smiurl,# wherever our guests will want,# or need."
+          },
+          {
+            "actor": "Corolla",
+            "precomment": "The Elder bows,# signaling the end of his speech.# A murmur of voices and thoughts rises.#\nEfeliah and Math turn towards you guys smiling.# Corolla smiles back and says:",
+            "line": "We are truly honored.# First the hospitality,# then this...",
+            "comment": "She waves her hand referring to what just happened."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Are you sure you want to do this?",
+            "comment": "From her thoughts seeps out:#\n\n$R<<If I were in your shoes, I would think it twice...!>>$C"
+          },
+          {
+            "actor": "Efeliah",
+            "line": "No need to worry about that Corolla,# I can assure you we did think it through."
+          },
+          {
+            "precomment": "Hearing that,# Corolla gets more serious,# and adds, bowing slightly in the manner of your hosts:",
+            "actor": "Corolla",
+            "line": "Then we are pleased to welcome you.",
+            "childid": "7_01"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "7_01",
+        "type": "Story",
+        "recap": "start of chapter 8",
+        "text": " "
       }
     ]
   ]

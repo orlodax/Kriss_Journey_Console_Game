@@ -12,6 +12,7 @@ namespace ConsoleGame.Classes
         #region Properties
         internal string ID { get; set; }
         internal string Text { get; set; } = string.Empty;
+        internal string AltText { get; set; } = string.Empty;
         internal string ChildId { get; set; }
         internal List<Models.Choice> Choices { get; set; }
         internal List<Models.Action> Actions { get; set; }
@@ -27,7 +28,8 @@ namespace ConsoleGame.Classes
         /// This root node loads text resources for everybody
         public SNode(Models.NodeBase nb)
         {
-            DEBUG = true;
+            //decomment to disable flow effect
+            //DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
@@ -36,6 +38,7 @@ namespace ConsoleGame.Classes
 
             ID = node.Id;
             Text = node.Text;
+            AltText = node.AltText;
             ChildId = node.ChildId;
             Choices = node.Choices;
             Actions = node.Actions;
@@ -65,7 +68,6 @@ namespace ConsoleGame.Classes
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
-            //debug disable effect
             if (DEBUG)
             {
                 isFlowing = false;
@@ -75,7 +77,12 @@ namespace ConsoleGame.Classes
             Console.ForegroundColor = color;
 
             if (text == "default")
-                text = Text;
+            {
+                if (node.IsVisited)
+                    text = AltText;
+                else
+                    text = Text;
+            }
 
             if (text != null)
             {
