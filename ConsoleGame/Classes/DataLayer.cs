@@ -28,6 +28,7 @@ namespace ConsoleGame.Classes
 
                 //color dialogues dictionary assignment
                 ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
+                ActorsColors.Add("Person", ConsoleColor.DarkYellow);
                 ActorsColors.Add("Kriss", ConsoleColor.Cyan);
                 ActorsColors.Add("Corolla", ConsoleColor.Red);
                 ActorsColors.Add("Smiurl", ConsoleColor.Yellow);

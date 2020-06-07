@@ -3042,7 +3042,7 @@
               "value": true,
               "refusal": "I should honor our hosts enjoying what has been prepared for us."
             },
-            "childid": "6_99"
+            "childid": "6_22"
           }
         ]
       },
@@ -3050,28 +3050,125 @@
         "id": "6_20",
         "recap": "telepathy explained",
         "type": "Dialogue",
-        "childid": "6_19"
+        "dialogues": [
+          {
+            "precomment": "Smiurl must have had the same idea,# as you hear him asking:",
+            "actor": "Smiurl",
+            "line": "How can you guys make thoughts speak?# What spells do you use?"
+          },
+          {
+            "precomment": "Math chuckles heartily.# He starts explaining with a smile:",
+            "actor": "Math",
+            "line": "It's not magic..!# As the Master teaches:# 'telepathy is an innate faculty of human minds',# dormant at birth.#\nAnd like any other skill,# it requires excercise,# effort,# and study."
+          },
+          {
+            "precomment": "He has taken on a more solemn expression.# Smiurl is definitely incredulous.",
+            "actor": "Math",
+            "line": "You see,# when you think of something,# when you speak,# anytime you do something,# even when you sleep,#\ninside your brain millions of chemical reaction take place.# Each of them has a certain 'energy signature'.#\nA trained mind is able to catch and discern the meaning of these emissions,# that's all..."
+          },
+          {
+            "actor": "Math",
+            "line": "These signals exists especially in specific dimensions of this universe;#\ninside 'classic' spacetime,# they are very weak and get overshadowed by natural radiation.",
+            "comment": "##\n\nYou are fascinated by his explanation.# He sounds exactly like one of the characters in the sci-fi books you use to read.#\nBack home,# on Earth.##\n\nAs you experience that painful thought,# Math and Efeliah turn suddenly towards you,#\nas if they heard a loud noise.##\n\nYou smile.# Maybe you do can get used to this.",
+            "childid": "6_19"
+          }
+        ]
       },
       {
         "id": "6_21",
         "recap": "let's drink like on earth",
         "type": "Dialogue",
-        "childid": "6_19"
+        "dialogues": [
+          {
+            "precomment": "You go to the drinks kiosk.# A smiling guy welcomes you:",
+            "actor": "Person",
+            "line": "What would you like to try?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Not sure... What do you suggest?",
+            "comment": "Corolla answers first."
+          },
+          {
+            "actor": "Person",
+            "line": "I promise, everything you see is delicious.#\nAnyway,# what I like the most are these cocktails with Pinzerro flavoured Martee'nee."
+          },
+          {
+            "actor": "Kriss",
+            "line": "What did you just said??# 'Martini'?",
+            "comment": "You exclaim surprised."
+          },
+          {
+            "actor": "Person",
+            "line": "Yes,# it's an old recipe,# but..."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Incredible...",
+            "comment": "The first link with your world and this,# is booze.# Corolla looks at you puzzled."
+          },
+          {
+            "actor": "Kriss",
+            "istelepathy": true,
+            "line": "I wonder how do they obtain it...",
+            "comment": "You think to yourself."
+          },
+          {
+            "actor": "Corolla",
+            "line": "We'll take two of those then, please!",
+            "comment": "She then looks back at you.# You smile reassuringly,# coming back to present.#\n\nThe drink is actually extremely good.# You can't pinpoint the exact taste of it,#\nbut it could totally be one in the infinite number of cocktails from Earth.#\n\nYour spirits are a little higher now...",
+            "childid": "6_19"
+          }
+        ]
       },
       {
         "id": "6_22",
         "recap": "let's eat like on earth",
         "type": "Dialogue",
-        "childid": "6_19"
+        "dialogues": [
+          {
+            "precomment": "As you approach the long table,# you are invited to take a seat around the head of the table,#\nwhere in the meantime the Elder went to sit.#\n\nAs soon as you are all ready,# a waiter arrives with the first course.",
+            "actor": "Person",
+            "line": "This is for Mr. Smiurl."
+          },
+          {
+            "precomment": "He put down a silvery plate on the table in front of the dwarf.#\nThen he uncovers it for him,# and Smiurl literally burst out with a flash of delight.#\nHe can't even wait and instantly put a finger into the reddish sauce to get a taste:",
+            "actor": "Smiurl",
+            "line": "Sand-fruit with scrambled Croeggs!# Mmmmm...# So delightful!# And this is true Ghermina Sauce!"
+          },
+          {
+            "precomment": "You stare at him, marveled.# As Smiurl keeps eating,# he keeps on lighting up like a firefly,#\ngoing from $Yyellow$C to $Bblue$C, $Yinter$Bmitten$Ytly$C.##\n\nThen comes your turn.# Another plate is put in front of you.# For a second,# you try peek at its contents,#\nbut soon it gets uncovered by the waiter, as he announces:",
+            "actor": "Person",
+            "line": "For Mr. Kriss, 'Earthers' Steaks'",
+            "comment": "From his tone,# you understand they must be proud of their creation.#\nAnd,# you have to admnit,# it does look familiar.#\nIt could be something you use to eat with your family and friends around your barbecue.#\n\nSuddenly,# you are struck by melancholy again.# You haven't even had the time to think about or miss home.#\nThe place you left only about three days ago.",
+            "isbreakneeded": true
+          },
+          {
+            "precomment": "Math notices your thoughts,# not just your expression,# and brings you back by asking:",
+            "actor": "Math",
+            "line": "Something's wrong?# You can't eat this food?"
+          },
+          {
+            "actor": "Kriss",
+            "line": "No,# not at all...# I am sure it's excellent..."
+          },
+          {
+            "precomment": "Then you grab what must be the local version of a fork,# and stab a huge,# juicy piece of meat.#\nYou stuff it in your mouth,# chewing energetically.##\nAfter few seconds,# you look at Math and the waiter again,#\ndoing your best in an attempt to smile with your mouth still full,# then venturing to say:",
+            "actor": "Kriss",
+            "line": "...HAB-FO-LUTELY..!",
+            "comment": "#And,# at that,# everybody bursts out laughing,# including Theo and the Elder.###\n\nThe rest of the dinner goes smoothly,# sharing jokes and tales with each other.#\n\nAfter a while,# you all stand up again,# while conversations continue.#\n\nThen the Elder climbs up the little podium,# so everybody falls quiet,# waiting for his speech.",
+            "childid": "6_23"
+          }
+        ]
       },
       {
-        "id": "6_99",
+        "id": "6_23",
         "recap": "more friends",
         "type": "Dialogue",
         "dialogues": [
           {
             "actor": "Elder",
-            "line": "Hello you all,# friends and guests.",
+            "line": "Hello you all again,# friends and guests.",
             "comment": "The Elder starts abruptly.# He's talking normally,# in a quiet voice,#\nand he's irradiating his verbal thoughts at the same time.# A weird 'stereo' broadcasting.#\nThere's people in the distance following his speech from the windows of their houses, after all.#"
           },
           {
@@ -3114,7 +3211,8 @@
         "id": "7_01",
         "type": "Story",
         "recap": "start of chapter 8",
-        "text": " "
+        "text": "$D----END OF CHAPTER 7----",
+        "childid": "7_01"
       }
     ]
   ]
