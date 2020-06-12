@@ -9,7 +9,7 @@ namespace ConsoleGame.Classes
         public static SNode CurrentNode; //reference to displayed node (if it's ever needed)
         public static SNode CreateChapter(int number)
         {
-            string id = (number).ToString() + "_01";
+            string id = number.ToString() + "_01";
 
             return CurrentNode = CreateNode(id);
         }
@@ -21,7 +21,7 @@ namespace ConsoleGame.Classes
 
             if (id != null)
             {
-                //testing purposes
+                //testing purposes, debug 
                 if (id == "test")
                     return CurrentNode = new NStory(DataLayer.DB.Chapters[0].Find(n => n.Id == "test"));
 

@@ -29,6 +29,7 @@ namespace ConsoleGame.Classes
                 //color dialogues dictionary assignment
                 ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
                 ActorsColors.Add("Person", ConsoleColor.DarkYellow);
+                ActorsColors.Add("White", ConsoleColor.White);
                 ActorsColors.Add("Kriss", ConsoleColor.Cyan);
                 ActorsColors.Add("Corolla", ConsoleColor.Red);
                 ActorsColors.Add("Smiurl", ConsoleColor.Yellow);
@@ -47,7 +48,8 @@ namespace ConsoleGame.Classes
                 Titles.Add("5. NOI-HERT");
                 Titles.Add("6. BEACONS");
                 Titles.Add("7. SEER'S ROCK");
-                Titles.Add("8. MAZEROCK");
+                Titles.Add("8. BREAKOUT");
+                Titles.Add("8. INTO THE MAZEROCK");
             }
         }
         public static void SaveProgress(int chapterNo)

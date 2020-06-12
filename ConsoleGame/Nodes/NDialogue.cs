@@ -59,7 +59,7 @@ namespace ConsoleGame.Nodes
             Console.WriteLine();
             Console.WriteLine();
             
-            if (currentLine.IsBreakNeeded)
+            if (currentLine.Break)
             {
                 HoldScreen();
                 Console.Clear();
@@ -100,13 +100,13 @@ namespace ConsoleGame.Nodes
                     {
                         selectedRow--;
                         Console.Clear();
-                        RecursiveDialogues(lineId, false);                                //redraw the node to allow the selection effect
+                        RecursiveDialogues(0, false);                                //redraw the node to allow the selection effect
                     }
                     if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
                     {
                         selectedRow++;
                         Console.Clear();
-                        RecursiveDialogues(lineId, false);                                //redraw the node to allow the selection effect
+                        RecursiveDialogues(0, false);                                //redraw the node to allow the selection effect
                     }
 
                 } while (key.Key != ConsoleKey.Enter);
@@ -128,11 +128,11 @@ namespace ConsoleGame.Nodes
                 if (!string.IsNullOrWhiteSpace(currentLine.NextLine))
                 {
                     var nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.NextLine);
-                    RecursiveDialogues(nextLineId);
+                    RecursiveDialogues(nextLineId, isLineFlowing);
                 }
                 else 
                     if (Dialogues.Count > lineId + 1)                       
-                        RecursiveDialogues(lineId + 1);  
+                        RecursiveDialogues(lineId + 1, isLineFlowing);  
             }
         }
 

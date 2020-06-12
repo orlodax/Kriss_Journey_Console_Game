@@ -37,7 +37,7 @@ namespace ConsoleGame.Nodes
                     var cond = c.Condition;
                     if (cond.Type == "isNodeVisited")
                     {
-                        (NodeBase nb, int chapIndex, int nodeIndex) = NodeFactory.SearchNodeById(cond.Item);
+                        (NodeBase nb, int chapIndex, int nodeIndex) = NodeFactory.SearchNodeById(cond.Item);    //item in this case contains node id
                         
                         if (nb.IsVisited == cond.Value)
                             visibleChoices.Add(c);
