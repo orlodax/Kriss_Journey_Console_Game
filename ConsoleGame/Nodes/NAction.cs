@@ -9,15 +9,15 @@ namespace ConsoleGame.Nodes
     public class NAction : SNode
     {
         Models.Action act = null;
-        readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
-        string BottomMessage = string.Empty;
+        internal readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
+        internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
         public NAction(NodeBase nb) : base(nb)
         {
             PrepareForAction(true);
         }
-        void PrepareForAction(bool isFirst)
+        internal void PrepareForAction(bool isFirst)
         {
             ///go to bottom line and prepare prompt
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
@@ -63,7 +63,7 @@ namespace ConsoleGame.Nodes
         }
 
         #region Special keys pressed
-        void TabPressed() 
+        internal virtual void TabPressed() 
         {
             RedrawNode();
 
@@ -143,7 +143,7 @@ namespace ConsoleGame.Nodes
                 PrepareForAction(true);
             }
         }
-        string[] ExtractWords() 
+        internal string[] ExtractWords() 
         {
             //reconstruct
             string typed = string.Empty;
@@ -155,7 +155,7 @@ namespace ConsoleGame.Nodes
 
             return typed.Split(delimiterChars);
         }
-        void EnterPressed(List<ConsoleKeyInfo> keysPressed)
+        internal virtual void EnterPressed(List<ConsoleKeyInfo> keysPressed)
         {
             if (keysPressed.Count > 0)
             {
@@ -292,7 +292,7 @@ namespace ConsoleGame.Nodes
             //if everything fails:
             PrepareForAction(true); //display prompt without standard refuse
         }
-        void RedrawNode(bool isDeleting = false)
+        internal void RedrawNode(bool isDeleting = false)
         {
             Console.Clear();
             TextFlow(false);
@@ -317,7 +317,7 @@ namespace ConsoleGame.Nodes
                 }
         }
 
-        int MeasureMessage(string answer)
+        internal int MeasureMessage(string answer)
         {
             //measure the lenght and the newlines in the answer to determine how up to go to start writing
             var newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;

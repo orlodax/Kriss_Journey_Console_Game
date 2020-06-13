@@ -45,6 +45,8 @@ namespace ConsoleGame.Classes
                             return CurrentNode = new NDialogue(nb);
                         case "Action":
                             return CurrentNode = new NAction(nb);
+                        case "MiniGame01":
+                            return CurrentNode = new MiniGame01(nb);
                         default:
                             break;
                     }

@@ -3417,21 +3417,22 @@
         "id": "7_02",
         "type": "Dialogue",
         "recap": "glimpse of telepathy",
-        "text": "You walked all day long.# The sun is about to set,# and in front of you,# in the distance,#\nyou can see the first rocky ridges rising from the desert plain.#\n\n",
+        "text": "You walk all day long.# The sun is about to set,# and in front of you,# in the distance,#\nyou can see the first rocky ridges rising from the desert plain.#\n\n",
         "dialogues": [
           {
             "actor": "Theo",
-            "line": "Those,# are part the Mazerock.",
+            "line": "There the Mazerock begins.",
             "comment": "Theo comments."
           },
           {
-            "precomment": "You don't like how that name sounds.# Maze...# Labyrinth...# Your mind can't help but thinking about the Labyrinth of Knossos.#\nYou hope that some kind of 'Minotaur' won't be there waiting for you all to be his next meal.##\nAfter few instants,# you smile at that image:",
+            "precomment": "You don't like how that name sounds.# Maze...# Labyrinth...#\nYour mind can't help but thinking about the Labyrinth of Knossos.#\nYou hope that some kind of 'Minotaur' won't be there waiting for you all to be his next meal.##\nAfter few instants,# you smile at that image:",
             "actor": "Kriss",
             "line": "He'll need a steel stomach to digest Theo!",
             "istelepathy": true,
             "comment": "You think to yourself."
           },
           {
+            "precomment": "After a while, something catches your attention:",
             "actor": "Efeliah",
             "line": "Don't you think we should tell him about it...?",
             "istelepathy": true,
@@ -3445,30 +3446,70 @@
             "replies": [
               {
                 "line": "Keep on walking pretending you can't hear them.",
-                "childid": "7_03"
+                "nextline": "dissimulate"
               },
               {
                 "line": "Get closer to better listen what they're saying.",
-                "childid": "7_04"
+                "nextline": "eavesdropper"
               }
             ]
+          },
+          {
+            "linename": "dissimulate",
+            "precomment": "You can't explain how you can hear them right now,# but it's better to keep a low profile...#\nAnd to continue listening.# Just to understand what and who they are talking about...",
+            "actor": "Efeliah",
+            "line": "Think about it though. What if it was true?",
+            "istelepathy": true,
+            "nextline": "privatedialogue"
+          },
+          {
+            "linename": "eavesdropper",
+            "precomment": "You need clarity about what they're saying.# Who do they refer to?# About what?# You walk faster to reach them.",
+            "actor": "Efeliah",
+            "istelepathy": true,
+            "line": "Think about it though. What if it is true?"
+          },
+          {
+            "linename": "privatedialogue",
+            "actor": "Math",
+            "line": "What if it isn't?# How would he react?# We don't know him well enough...",
+            "istelepathy": true
+          },
+          {
+            "actor": "Efeliah",
+            "line": "You should probe him deeper.# Ask his permission first, that's all...#\nIf you don't want to do it,# I will.# I believe it's important we find out.",
+            "istelepathy": true
+          },
+          {
+            "precomment": "They suddenly fall 'silent',# then Math turns towards you,# locking eyes with you:",
+            "actor": "Math",
+            "line": "Yes, Kriss?",
+            "comment": "He asks.# Did they realise you were listening?"
+          },
+          {
+            "actor": "Kriss",
+            "line": "Let's play a game!",
+            "comment": "You say,# feeling a bit stupid.#\n\nIt is the first thing that came to your mind.# And maybe that's why it doesn't raise suspect."
+          },
+          {
+            "precomment": "Theo grunts exasperated.# Corolla and Smiurl get closer.",
+            "actor": "Efeliah",
+            "line": "What kind of game?"
+          },
+          {
+            "actor": "Kriss",
+            "line": "Show us how good you guys are!# Guess what I'm thinking.",
+            "comment": "You continue improvising.",
+            "childid": "7_03"
           }
         ]
       },
       {
         "id": "7_03",
-        "type": "Story",
-        "recap": "dissimulate telepathy"
-      },
-      {
-        "id": "7_04",
-        "type": "Story",
-        "recap": "the eavesdropper"
-      },
-      {
-        "id": "7_05",
-        "type": "Minigame01",
-        "recap": "guess what I'm thinking"
+        "type": "MiniGame01",
+        "recap": "guess what I'm thinking",
+        "text": "They look a little surprised,# but not annoyed by your sudden request.#\n\n$m\"I should have expected this,# sooner or later,# from any of you.\"#$C Math laughs heartily and shrugs his shoulders.#\n\n$g\"Whenever you want Kriss...# Just think of something,# I'll do my best.\"#$C\n\nShe close her eyes,# smiling,# waiting.",
+        "childid": "7_02"
       }
     ]
   ]
