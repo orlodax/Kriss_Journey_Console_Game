@@ -78,7 +78,7 @@ namespace ConsoleGame.Classes
 
             if (text == "default")
             {
-                if (node.IsVisited)
+                if (node.IsVisited && AltText != null)
                     text = AltText;
                 else
                     text = Text;

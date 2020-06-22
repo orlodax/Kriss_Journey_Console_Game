@@ -3417,11 +3417,11 @@
         "id": "7_02",
         "type": "Dialogue",
         "recap": "glimpse of telepathy",
-        "text": "You walk all day long.# The sun is about to set,# and in front of you,# in the distance,#\nyou can see the first rocky ridges rising from the desert plain.#\n\n",
+        "text": "After walking all day long,# the sun is about to set,# and in front of you,# in the distance,#\nyou can see the first rocky ridges rising from the desert plain.#\n\n",
         "dialogues": [
           {
             "actor": "Theo",
-            "line": "There the Mazerock begins.",
+            "line": "There, the Mazerock begins.",
             "comment": "Theo comments."
           },
           {
@@ -3509,7 +3509,163 @@
         "type": "MiniGame01",
         "recap": "guess what I'm thinking",
         "text": "They look a little surprised,# but not annoyed by your sudden request.#\n\n$m\"I should have expected this,# sooner or later,# from any of you.\"#$C Math laughs heartily and shrugs his shoulders.#\n\n$g\"Whenever you want Kriss...# Just think of something,# I'll do my best.\"#$C\n\nShe close her eyes,# smiling,# waiting.",
-        "childid": "7_02"
+        "childid": "7_04"
+      },
+      {
+        "id": "7_04",
+        "type": "Dialogue",
+        "recap": "camp for the night",
+        "dialogues": [
+          {
+            "actor": "Kriss",
+            "line": "Let's try just one more time please!",
+            "comment": "You are now thinking of something you believe they can't guess."
+          },
+          {
+            "actor": "Math",
+            "line": "I've never seen something like that..."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "It looks like food...# Isn't that steam?"
+          },
+          {
+            "actor": "Math",
+            "line": "I'm afraid I can't answer...",
+            "comment": "Math gives up."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "Wait a second...!# Pi...zza..# Yeah, pizza!# I guessed, right?",
+            "comment": "She exclaims smiling triumphantly."
+          },
+          {
+            "actor": "Kriss",
+            "line": "What!!# How did you do?",
+            "comment": "You stand defeated."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "You were either too much or too less careful.# You visualised not just the pizza itself,#\nbut the box in which it's carried too...# along with the writing on top of it: 'Pizza Express'!"
+          },
+          {
+            "actor": "Kriss",
+            "line": "No way!# It's true... You're too good!# You can also see images,# not just verbal thoughts!"
+          },
+          {
+            "actor": "Corolla",
+            "line": "Incredible...",
+            "comment": "Corolla is impressed as much as you are."
+          },
+          {
+            "precomment": "In the meantime,# Theo stopped walking.#\nHe stands there,# mountain of a man,# against the sunset,# fists on his hips,# gazing at the horizon.#\nThen he declares:",
+            "actor": "Theo",
+            "line": "We need to set camp for the night",
+            "childid": "7_05"
+          }
+        ]
+      },
+      {
+        "id": "7_05",
+        "type": "Dialogue",
+        "recap": "camp for the night 2",
+        "dialogues": [
+          {
+            "actor": "Corolla",
+            "line": "Theo is right.# Let's stop here for today.# Also,# we need to establish watch rotations..."
+          },
+          {
+            "actor": "Math",
+            "line": "Just because you can't see it,# it doesn't mean there's no danger...",
+            "comment": "Math anticipates your thoughts."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Mr. Math here is right!# I've heard this area is overrun with packs of Oxengutters..."
+          },
+          {
+            "actor": "Kriss",
+            "line": "That name again...",
+            "comment": "You remember Smiurl mentioning those ominous-named animals."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "They are wild beasts found in this desert...# May I see in your mind what would they like to you...?",
+            "replies": [
+              {
+                "line": "Sure, go ahead.",
+                "nextline": "detailed"
+              },
+              {
+                "line": "Mmm... No thanks.",
+                "nextline": "generic"
+              }
+            ]
+          },
+          {
+            "linename": "generic",
+            "actor": "Corolla",
+            "line": "You don't really want to know...# Ferocious.# Big.# Enough to make you sleep with one eye open.",
+            "nextline": "resume"
+          },
+          {
+            "linename": "detailed",
+            "actor": "Efeliah",
+            "line": "Hmm...# Well,# I think they would look to you as a crossbreed between what you call wolf...# and tigers.",
+            "nextline": "resume"
+          },
+          {
+            "linename": "resume",
+            "actor": "Kriss",
+            "line": "Whoa!",
+            "comment": "You exclaim unpleasantly surprised."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "Yep.# And they are usually very big.",
+            "comment": "She continues."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "You can bet your left ear on it!# My grandad used to tell us about that time when our family caught one as big as..."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Smiurl!# Stop talking nonsense,# make yourself useful instead!",
+            "comment": "\nCorolla shouts at him while she's helping Theo setting up the tents."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Corolla,# at times you're so obnoxious!",
+            "comment": "He rants and sighs,# walking towards them to do his part.",
+            "childid": "7_06"
+          }
+        ]
+      },
+      {
+        "id": "7_06",
+        "type": "Story",
+        "recap": "in the middle of nowhere",
+        "text": "After few minutes the 'camp' #(a bit stretched definition:# just three tents)# was ready.#\nMath and Efeliah were the quickest to set up their tent,#\nafter which they sat and observed you struggling with ropes and pegs...#\nUntil a particularly mercy Smiurl came to help you out.#\n\nIn the meanwhile,# the sun has set,# and the bonfire has been lit.#\n\nOutside that circle of warmth,# everything is darkness.#\nThe shadows,# taking advantage of that quiet night,# are merrily dancing all around you.#\n\nYou take a piece of meat from the fire,# a leftover from the Seer's Rock party,#\nthen you withdraw behind a tent,# lying on the ground.#\n\nFor the first time,# you have the chance to carefully look at Noi-Hert's cloudless sky.#\nThe moon isn't up yet,# a feeble light is irradiated by the choir of stars.#\n\nYou can't pinpoint any familiar constellation.#\nEven the overall distribuition of the stars is not even like in Earth's sky:#\nquite high over the horizon you notice a shiny, compacted mass of stars,# stark against the rest of the firmament.#\nIt degrades down to the right increasingly waning as it approaches the horizon.#\nIt looks like a gigantic jewel.# A celestial tiara.#\n\n$G<<The Milky Way>>#$C A voice whispering inside of you.# From where it's from?#\nThat thought crosses you like the shadow of a little cloud of smoke,# quickly fading.#\nIt has to be an arm of the spiral after all,# from a different perspective...",
+        "childid": "7_07"
+      },
+      {
+        "id": "7_07",
+        "type": "Story",
+        "recap": "looking at the stars",
+        "text": "The light of the galaxy...# That light your generation has forgotten,#\nunable to see it as it's suffocated by the billions artifical lights of the Earth.#\n\nNo wonder you are so impressed:# the clarity of that view!#\nFrom your home,# you've never seen anything like this.#\n\nThe sky,# for the Earthers,# was demoted to a mere 'city roof'...#\nNothing more than something you need over your head in order to not be wiped away in the open space.#\nAnd good riddance to the celestial vista.##\n\nYet another awesome thing is the silence.# Your 'civilised' ear still has to get used to the absence of noises.#\nNo cars.# No water pipes howling and clanging at night.# No TV.#\nJust the crackling of the fire and the sizzling of the fat falling into the flames,#\nthe voices of Corolla,# Smiurl,# and the others.#\n\nSuddenly you feel you love this place,# despite of its desolate state.# And you love these people.#\nYou image to go back to your place at this very moment,# your house,# your room...#\nBut all you could then would be staring at light coming from the street lamps drawing shapes on your ceiling.#\nYou would be thinking back to Noi-Hert,# to all it means now,# to your new friends,# to the starry sky...##\n\n$R\"There you are!\"$C Corolla's head pops out the side of the tent.",
+        "childid": "7_07"
+      },
+      {
+        "id": "7_08",
+        "type": "Dialogue",
+        "recap": "Corollaship",
+        "dialogues": [
+          {
+
+          }
+        ],
+        "childid": "7_08"
       }
     ]
   ]
