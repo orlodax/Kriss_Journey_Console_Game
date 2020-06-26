@@ -3662,7 +3662,77 @@
         "recap": "Corollaship",
         "dialogues": [
           {
+            "actor": "Corolla",
+            "line": "We realised you were gone for a while now..."
+          },
+          {
+            "precomment": "You nod distractly.# You loose your hands behind your neck,# but you're still looking at the sky above you,# not her.",
+            "actor": "Corolla",
+            "line": "Well then,# I'll go back...",
+            "comment": "She points to the others,# hesitating a little.",
+            "replies": [
+              {
+                "line": "Say nothing.",
+                "nextline": "lonely"
+              },
+              {
+                "line": "Make her stay",
+                "nextline": "corollastays"
+              }
+            ]
+          },
+          {
+            "linename": "corollastays",
+            "actor": "Kriss",
+            "line": "No,# stay,# if you like...",
+            "comment": "You absently say,# half-whispering.# She stands there looking at you for few moments.#\nThen she moves,# slowly,# silently,# and sits next to you.#"
+          },
+          {
+            "precomment": "You keep on staring at the stars.# They are reflected in your eyes,# one by one.##\nShe observes you for a while,# then asks:",
+            "actor": "Corolla",
+            "line": "Have you ever seen something like this?"
+          },
+          {
+            "precomment": "You give a long sigh.# Then:",
+            "actor": "Kriss",
+            "line": "Not once in my life.# It's wonderful."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Yeah...# I guess we're used to it.",
+            "comment": "At this she hugs her knees,# and starts to slightly rock herself back and forth."
+          },
+          {
+            "precomment": "You both remain silent for a while.# Then you comment with a note of bitterness in your voice:",
+            "actor": "Kriss",
+            "line": "We, instead,# got used to not have this..."
+          },
+          {
+            "actor": "Corolla",
+            "line": "That's weird!",
+            "comment": "At that she suddenly lays down next to you,# with her arms extended over her head."
+          },
+          {
+            "actor": "Kriss",
+            "line": "What do you mean?",
+            "comment": "Surprised,# you slightly turn your head towards her,# looking at her with the corner of your eye. "
+          },
+          {
+            "actor": "Corolla",
+            "line": "One day,# tired of your 'sky-less cities',# you Earthers will build enormous starships,#\narriving this far to start a new story on this planet...",
+            "comment": "She sighs."
+          },
+          {
+            "actor": "Corolla",
+            "line": "It's weird, I mean...# You could even be one of my ancestors.# Can you imagine?#\nI would be talking with my great-great-grandfather!",
+            "comment": "At that,# she bursts out laughing.#\nYou listen to her argentine laughter sweetly fading out in the night."
+          },
 
+
+          {
+            "linename": "lonely",
+            "precomment": "You are too absorbed in your contemplation to consider conversation.#\n\nYou savour this time you cut out for yourself,# bathing in the night sky as the fatigue from the day takes you over,#\nhaving you sinking into a deep,# dreamless sleep.",
+            "actor": "Kriss"
           }
         ],
         "childid": "7_08"
