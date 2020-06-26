@@ -3666,7 +3666,7 @@
             "line": "We realised you were gone for a while now..."
           },
           {
-            "precomment": "You nod distractly.# You loose your hands behind your neck,# but you're still looking at the sky above you,# not her.",
+            "precomment": "You nod distractly.# You loose your hands behind your neck,# but you're still looking at the sky above you,# not at her.",
             "actor": "Corolla",
             "line": "Well then,# I'll go back...",
             "comment": "She points to the others,# hesitating a little.",
@@ -3705,7 +3705,7 @@
           {
             "precomment": "You both remain silent for a while.# Then you comment with a note of bitterness in your voice:",
             "actor": "Kriss",
-            "line": "We, instead,# got used to not have this..."
+            "line": "We, instead,# got used to not to have this..."
           },
           {
             "actor": "Corolla",
@@ -3715,7 +3715,8 @@
           {
             "actor": "Kriss",
             "line": "What do you mean?",
-            "comment": "Surprised,# you slightly turn your head towards her,# looking at her with the corner of your eye. "
+            "comment": "Surprised,# you slightly turn your head towards her,# looking at her with the corner of your eye.",
+            "break": true
           },
           {
             "actor": "Corolla",
@@ -3724,18 +3725,49 @@
           },
           {
             "actor": "Corolla",
-            "line": "It's weird, I mean...# You could even be one of my ancestors.# Can you imagine?#\nI would be talking with my great-great-grandfather!",
-            "comment": "At that,# she bursts out laughing.#\nYou listen to her argentine laughter sweetly fading out in the night."
+            "line": "It's weird, I mean...# You could even be one of my ancestors.# Can you imagine?#\nI would now be talking with my great-great-grandfather!",
+            "comment": "At that,# she bursts out laughing.#\n\nYou listen to her argentine laughter sweetly fading out in the night."
           },
-
-
+          {
+            "precomment": "Suddenly she gets on all fours,# kneeling over you,# shaking her finger over your face,#\nsaying in a playfully peremptory way:",
+            "actor": "Corolla",
+            "line": "Dear gramps!# Now you have to promise you will always treat your precious offspring good,#\nand that you will teach them to do likewise with their own,# so on and so forth, until it will be my turn!#\nGot it?# Come on,# say: 'I swear'!"
+          },
+          {
+            "precomment": "She's barely holding back her laughter.# Her hair cascades around your face.#\nStarlight reflects in her eyes,# jingling on the piercings in her ear.#\nYou smell her scent,# finding it familiar# (just suggestion?).#\n\nThinking about what the others would say seeing you two like that,# you solemnly say:",
+            "actor": "Kriss",
+            "line": "I swear,# my child.",
+            "comment": "\n\nAt that,# you both violently burst out laughing.#\nShe collapses back on the ground rolling on her side while you're bent in two.#\nYou are gripped by an uncontrollable euphoria,# only partly due to the tension built up during your journey.",
+            "break": true
+          },
+          {
+            "precomment": "Theo's head pops out from the back of the tent,# staring at you two with his usal scowl.#\nFor a moment that glance sliences you,# only to burst laughing harder right after.#\nBy this point,# you are both in tears.#\n\nYou vaguely hear Smiurl,# still by the fire,# saying:",
+            "actor": "Smiurl",
+            "line": "What's gotten into them?# Did a desert tarantula bite them??"
+          },
+          {
+            "precomment": "You keep on laughing together for quite a while,# until exhaustion gets the better of you.",
+            "actor": "Kriss",
+            "line": "And you call her the same girl whom saved me from that Jorghe guy...?!", 
+            "comment": "\n\nYou ask yourself,# as you drift off into deep sleep.",
+            "istelepathy": true,
+            "childid": "7_09"
+          },
           {
             "linename": "lonely",
-            "precomment": "You are too absorbed in your contemplation to consider conversation.#\n\nYou savour this time you cut out for yourself,# bathing in the night sky as the fatigue from the day takes you over,#\nhaving you sinking into a deep,# dreamless sleep.",
-            "actor": "Kriss"
+            "precomment": "You are too absorbed in your contemplation to consider conversation.#\n\nYou savour this time you cut out for yourself,# bathing in the night sky as the fatigue from the day takes you over,#\nhaving you sink into a deep,# dreamless sleep.",
+            "actor": "Kriss",
+            "childid": "7_09"
           }
-        ],
-        "childid": "7_08"
+        ]
+      },
+      {
+        "id": "7_09",
+        "type": "Dialogue",
+        "recap": "Oxengutters1",
+        "dialogues": [
+
+        ]
       }
     ]
   ]

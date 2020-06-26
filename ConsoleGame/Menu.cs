@@ -42,7 +42,7 @@ namespace ConsoleGame
             Console.WriteLine();
             
             //debug: start from. Comment for default start
-            NodeFactory.CreateNode("7_07");
+            NodeFactory.CreateNode("7_08");
             //debug
 
             if (DataLayer.DB.Lastchapter.IsComplete && DataLayer.DB.Lastchapter.Number > 0)
