@@ -3748,7 +3748,7 @@
           {
             "precomment": "You keep on laughing together for quite a while,# until exhaustion gets the better of you.",
             "actor": "Kriss",
-            "line": "And you call her the same girl whom saved me from that Jorghe guy...?!", 
+            "line": "And she would be the same fighter girl whom saved me from that Jorghe guy...?!", 
             "comment": "\n\nYou ask yourself,# as you drift off into deep sleep.",
             "istelepathy": true,
             "childid": "7_09"
@@ -3766,7 +3766,55 @@
         "type": "Dialogue",
         "recap": "Oxengutters1",
         "dialogues": [
-
+          {
+            "actor": "Math",
+            "line": "Hurry!# We must wake them up!",
+            "istelepathy": true,
+            "comment": "Math's voice snatches you out of your slumber."
+          },
+          {
+            "actor": "Efeliah",
+            "precomment": "You stand up,# and walk towards what remains of the bonfire where the two telepaths are.#\nAt the same time,# Theo comes out his tent, followed by Smiurl.",
+            "line": "We sensed two Oxengutters;# they are about to attack us,# from there,# and there.",
+            "comment": "\nEfeliah warns you,# pointing to two opposite directions.# Theo nods:"
+          },
+          {
+            "actor": "Theo",
+            "line": "I know.# Their smell...",
+            "comment": "He indicates the air around him.#\nYou repeatedly smell the air,# but you can't distinguish any specific odour.# Just the palpable tension."
+          },
+          {
+            "actor": "Theo",
+            "precomment": "Then he grabs his huge mallet:",
+            "line": "I will welcome them properly.",
+            "comment": "He states with an icy light in his eyes."
+          },
+          {
+            "precomment": "At that, Corolla comes out her tent too.# She has taken the bolas and a machete:",
+            "actor": "Corolla",
+            "line": "Kriss:#, you, Math and Efeliah,# hide in one of the tents."
+          },
+          {
+            "actor": "Kriss",
+            "line": "But...",
+            "comment": "You start to object."
+          },
+          {
+            "actor": "Corolla",
+            "line": "No buts!# It's too dangerous!",
+            "comment": "She silences you categorically."
+          },
+          {
+            "actor": "Kriss",
+            "line": "I don't want to stay here in hiding,# while you...",
+            "comment": "How could you just sit and wait while they risk their lives?",
+            "break": true
+          },
+          {
+            "actor": "Efeliah",
+            "line": "Come on Kriss,# what could we do?# We would just be in their way...",
+            "comment": "Efeliah takes your hand,#\nand gently but firmly leads you away with Math."
+          }
         ]
       }
     ]
