@@ -112,7 +112,7 @@ namespace ConsoleGame.Classes
                             if (!c.ToString().Equals("\""))         //to not to pause at the end of a line
                                 Thread.Sleep(longPause);
 
-                    if (prevChar.ToString().Equals(","))
+                    if (prevChar.ToString().Equals(",") || prevChar.ToString().Equals(":") || prevChar.ToString().Equals(";"))
                         Thread.Sleep(shortPause);
 
                     if (prevChar.ToString().Equals("$"))

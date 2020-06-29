@@ -601,7 +601,7 @@
         "recap": "chief dialogue",
         "dialogues": [
           {
-            "precomment": "$CThen, he steps into the circle.\n\nYou immediately recognise the Chief:#\nproud posture, well-kept hair and beard, intelligent, disdainful expression, at times malign, at times ironic.\nHe's tall, more slender than all the other men around.\n\nHe wears several jewelry around his neck,\nand he carries a $cbig sword$C in its sheath and a chain (the source of the jingling) both hanging from his belt.\n\nHe stops a few steps from you, his hands on his hips, observing the scene with curiosity.",
+            "precomment": "$CThen, he steps into the circle.\n\nYou immediately recognise the Chief:\nproud posture, well-kept hair and beard, intelligent, disdainful expression, at times malign, at times ironic.\nHe's tall, more slender than all the other men around.\n\nHe wears several jewelry around his neck,\nand he carries a $cbig sword$C in its sheath and a chain (the source of the jingling) both hanging from his belt.\n\nHe stops a few steps from you, his hands on his hips, observing the scene with curiosity.",
             "actor": "Chief",
             "line": "What have you guys been up to? Look at you poor little Jeorghe...!#\nI think I need to choose better guards for myself!",
             "comment": "he mocks his man, kicking him a little to tease him."
@@ -816,7 +816,7 @@
           {
             "actor": "Corolla",
             "line": "Precisely. That's him. Theo, let me introduce you to Kriss.\nWould you kindly provide him a bedroll of yours, at least for tonight?",
-            "comment": "\nThe giant, from the top of his impressive figure, simply answers:#\n\n$B\"Of course.\"##$C and then, to you:# $B\"Come.\"$C#"
+            "comment": "\nThe giant, from the top of his impressive figure, simply answers:\n\n$B\"Of course.\"##$C and then, to you: $B\"Come.\"$C#"
           },
           {
             "actor": "Corolla",
@@ -1071,14 +1071,14 @@
         "id": "3_01",
         "recap": "start of chap 4",
         "type": "Story",
-        "text": "-------------------------------\n|          CHAPTER 4          |\n-------------------------------\n\n\nThe horde rides swiftly across the plateau. In the front, the Chief in his jeep.\nHorses loaded with weapons and men form clouds of dust, galloping spurred by their riders.#\n\nYou are in the rearguard, sharing a horse with Smiurl. Corolla and Theo are right ahead.\n\nYou never thought riding could be so frustrating.\nYou fear that when you'll get back on the ground# (if you will ever do),\nsomeone will have to very mercifully put all of your pieces back together.\nYou feel every jolt in your bones;# your ears are full of the shouts coming from that bunch of...#\nYou don't even know $Wwhat$C they are.\n\nAnd what about Smiurl's own shouts?# Uncomprehensible noise.#\n\n\nAfter what it feels like an eternity to you, that mess starts to wane.\nThe horses slow down, ending up scattered along the edge of a canyon.\nIt quite suddenly cuts everybody off. A long wound scarring the wide, rocky, semi-desert, plain.",
+        "text": "-------------------------------\n|          CHAPTER 4          |\n-------------------------------\n\n\nThe horde rides swiftly across the plateau. In the front, the Chief in his jeep.\nHorses loaded with weapons and men form clouds of dust, galloping spurred by their riders.#\n\nYou are in the rearguard, sharing a horse with Smiurl. Corolla and Theo are right ahead.\n\nYou never thought riding could be so frustrating.\nYou fear that when you'll get back on the ground# (if you will ever do),\nsomeone will have to very mercifully put all of your pieces back together.\nYou feel every jolt in your bones; your ears are full of the shouts coming from that bunch of...#\nYou don't even know $Wwhat$C they are.\n\nAnd what about Smiurl's own shouts?# Uncomprehensible noise.#\n\n\nAfter what it feels like an eternity to you, that mess starts to wane.\nThe horses slow down, ending up scattered along the edge of a canyon.\nIt quite suddenly cuts everybody off. A long wound scarring the wide, rocky, semi-desert, plain.",
         "childid": "3_02"
       },
       {
         "id": "3_02",
         "recap": "Chief's last order",
         "type": "Story",
-        "text": "You watch from the distance the Chief jumping on the hood of the car.\nYou couldn't identify the model so far, it must be custom made or heavily customised.\nHe starts talking loudly:#\n\n$M\"The $Wprey$M will get here shortly after sunset. We'll attack them as fast as lightining,\nand we'll have them defeated before they can even reach out for a spear!\"#$C\n\nA roar rises from the rabble.\n\n$c<<What am I doing among these thugs?>>#$C You go back asking yourself.\nAre you about to witness another slaughter?##\n\n$M\"The vanguard and I will hide in that cove;# the rest of you will be lying in wait here and there, on the other side.\"$C#\nHe points to the other side of the chasm.\n\n$M\"When you'll see us attack from the front, you'll rush down at break-neck speed,\npossibly making a heck of a noise, and deprive them of any escape route.\" $CAnd he laughs hard.#\n\n$M\"See ya!\" $CHe salutes with an happy gesture, as if all of you are about to go for a merry trip to the lake.\nYou watch him rumble down the craggy stone wall rising a big cloud of dust,\nfollowed by a significant number of the horsemen.",
+        "text": "You watch from the distance the Chief jumping on the hood of the car.\nYou couldn't identify the model so far, it must be custom made or heavily customised.\nHe starts talking loudly:\n\n$M\"The $Wprey$M will get here shortly after sunset. We'll attack them as fast as lightining,\nand we'll have them defeated before they can even reach out for a spear!\"#$C\n\nA roar rises from the rabble.\n\n$c<<What am I doing among these thugs?>>#$C You go back asking yourself.\nAre you about to witness another slaughter?##\n\n$M\"The vanguard and I will hide in that cove; the rest of you will be lying in wait here and there, on the other side.\"$C#\nHe points to the other side of the chasm.\n\n$M\"When you'll see us attack from the front, you'll rush down at break-neck speed,\npossibly making a heck of a noise, and deprive them of any escape route.\" $CAnd he laughs hard.#\n\n$M\"See ya!\" $CHe salutes with an happy gesture, as if all of you are about to go for a merry trip to the lake.\nYou watch him rumble down the craggy stone wall rising a big cloud of dust,\nfollowed by a significant number of the horsemen.",
         "childid": "3_03"
       },
       {
@@ -1125,7 +1125,7 @@
           },
           {
             "actor": "Corolla",
-            "line": "Now, there's no time to explain to you how we ended up with these guys.\nWe wanted to warn the Chief about the mutiny plans that are being devised,\nbut Jeorghe and his friends prevented us... Then you arrived out of nowhere...\nLong story short:# all we can do now is hide and hope they won't trouble themselves too much looking for us.",
+            "line": "Now, there's no time to explain to you how we ended up with these guys.\nWe wanted to warn the Chief about the mutiny plans that are being devised,\nbut Jeorghe and his friends prevented us... Then you arrived out of nowhere...\nLong story short: all we can do now is hide and hope they won't trouble themselves too much looking for us.",
             "childid": "3_04"
           }
         ]
@@ -1164,14 +1164,14 @@
         "id": "3_05",
         "recap": "attack the transports",
         "type": "Story",
-        "text": "You start hearing a distant noise. It must be the convoy.#\n\nAfter few more endless minutes spent listening to that noise increase,\nyou and the others peek outside.\nDown there are a dozen of big slow transports. Some of them are pulled by horses, others by motor vehicles.\nThey are escorted by many horsemen.#\n\nWithout delay, the attack begins.\nShouts arise in the canyon, echoing countless times on the stone walls, confounding the enemy.\nThen the Chief's roaring jeep charges, suddenly appearing out of its hiding place.\nThe entire convoy halts suddenly, and the defensors spread aroud the first chariots.\n\nThe stranglehold works, as the rest of the horde attacks them from their back.\nThe noise now saturates the canyon like water in a bottle.\n\nIt's all over very soon. The attackers are taking out the very last men, when Corolla says alarmed:#\n\n$R\"Wait a second!# What is this noise...??\"##",
+        "text": "You start hearing a distant noise. It must be the convoy.#\n\nAfter few more endless minutes spent listening to that noise increase,\nyou and the others peek outside.\nDown there are a dozen of big slow transports. Some of them are pulled by horses, others by motor vehicles.\nThey are escorted by many horsemen.#\n\nWithout delay, the attack begins.\nShouts arise in the canyon, echoing countless times on the stone walls, confounding the enemy.\nThen the Chief's roaring jeep charges, suddenly appearing out of its hiding place.\nThe entire convoy halts suddenly, and the defensors spread aroud the first chariots.\n\nThe stranglehold works, as the rest of the horde attacks them from their back.\nThe noise now saturates the canyon like water in a bottle.\n\nIt's all over very soon. The attackers are taking out the very last men, when Corolla says alarmed:\n\n$R\"Wait a second!# What is this noise...??\"##",
         "childid": "3_06"
       },
       {
         "id": "3_06",
         "recap": "attack of the lights",
         "type": "Story",
-        "text": "A gloomy vibration is quickly increasing, propagating through the canyon, echoing between the rocks.#\n\nSuddenly, a high sound blares all around;# all the fighters stop, looking around puzzled.\n\nAbruptly, the ringing, deafening horn-like sound stops, giving way to silence once more.#\n\nAnd, quietly, silently, the edges of the canyon start getting filled with lights.\nThey appear gradually, randomly, in different sizes and colours.\nThey look like $Ywisps, $Rignis $Bfatuuses, $Gslowly $Mwiggling $caround.#\n\n\n$CYou shudder.",
+        "text": "A gloomy vibration is quickly increasing, propagating through the canyon, echoing between the rocks.#\n\nSuddenly, a high sound blares all around; all the fighters stop, looking around puzzled.\n\nAbruptly, the ringing, deafening horn-like sound stops, giving way to silence once more.#\n\nAnd, quietly, silently, the edges of the canyon start getting filled with lights.\nThey appear gradually, randomly, in different sizes and colours.\nThey look like $Ywisps, $Rignis $Bfatuuses, $Gslowly $Mwiggling $caround.#\n\n\n$CYou shudder.",
         "childid": "3_07"
       },
       {
@@ -1185,14 +1185,14 @@
         "id": "3_08",
         "recap": "inspect",
         "type": "Story",
-        "text": "You all stay hidden for a while. When you are sure it's 'safe', you cautiously go outside.\n\nThe chariots lie abandoned, their torches still lit. Their scattered faint light reveals aspects of the scene.\n\nIt seems there's no survivor;# from this distance it's hard to say.\n\n$B\"Let's look for survivors.\"#$C Theo says, unsurprisingly. His voice sounds like he does not believe he'll find any.#\n\nYou follow them, not knowing what to think, once again.\n\nAs you descend, you encounter an increasing number of bodies. You are just thankful it's dark:#\nyou won't have their terrified expressions imprinted in your memory forever.#\n\nYou all go towards a plume of smoke rising from behind a big boulder.\nBehind there is the Chief's jeep, which upholstery is feeding the flames you saw.\n\n$Y\"The Chief!\"$C Smiurl shouts out.\n\nThen you see him. Sitting on the ground, his back against the front fender.\nHe must be dying;# he's losing a lot of blood from a conspicuous wound in his chest.\nNot just you, also Corolla, Theo and Smiurl freeze looking at him, not knowing what to say.\nThus it surprises you, the fact that after few instants you step forward.\n\nThe Chief slowly lift his chin looking at you, and, despite everything, he manages to grin.",
+        "text": "You all stay hidden for a while. When you are sure it's 'safe', you cautiously go outside.\n\nThe chariots lie abandoned, their torches still lit. Their scattered faint light reveals aspects of the scene.\n\nIt seems there's no survivor; from this distance it's hard to say.\n\n$B\"Let's look for survivors.\"#$C Theo says, unsurprisingly. His voice sounds like he does not believe he'll find any.#\n\nYou follow them, not knowing what to think, once again.\n\nAs you descend, you encounter an increasing number of bodies. You are just thankful it's dark:\nyou won't have their terrified expressions imprinted in your memory forever.#\n\nYou all go towards a plume of smoke rising from behind a big boulder.\nBehind there is the Chief's jeep, which upholstery is feeding the flames you saw.\n\n$Y\"The Chief!\"$C Smiurl shouts out.\n\nThen you see him. Sitting on the ground, his back against the front fender.\nHe must be dying; he's losing a lot of blood from a conspicuous wound in his chest.\nNot just you, also Corolla, Theo and Smiurl freeze looking at him, not knowing what to say.\nThus it surprises you, the fact that after few instants you step forward.\n\nThe Chief slowly lift his chin looking at you, and, despite everything, he manages to grin.",
         "childid": "3_09"
       },
       {
         "id": "3_09",
         "recap": "Chief",
         "type": "Story",
-        "text": "$M\"Were you a spy after all...?\" $CHe coughs, blood leaking from the corner of his mouth.\nThen he seems to notice the others:#\n\n$M\"I should have expected this...\"$C He looks back at you, and after taking one painful breath,\nhe smirks one more time, then adds:#\n\n$M\"Young man, what about... avenging me...\"$C# But his last words die this way along with his last breath.#\n\nYou all stand there still, unable to do anything.\nAfter all you witnessed since you arrived in this place, you feel like you have just reached the point of no return.\nYou feel like something in you mind just cracked. Like you're losing touch with reality.#\n\nThen, it happens.#\n\n$cYou find yourself walking towards him. You feel like you're projected outside of your own body,\nas if $Gsomeone else$c is moving your muscles.\nYou lean on him and absent-mindedly observe your own hands untying his sword from his side.\n#Next thing you notice, you are wielding it, pointed to the sky, staring at the blade glinting with ominous glares.#\n\n\n$CIn the meantime, Smiurl has retracted in himself, gaining a brownish hue.\nTheo is back to being impassible as usal.\nFor some reason, Corolla seems to approve your actions and retrieves the Chief's chain.",
+        "text": "$M\"Were you a spy after all...?\" $CHe coughs, blood leaking from the corner of his mouth.\nThen he seems to notice the others:\n\n$M\"I should have expected this...\"$C He looks back at you, and after taking one painful breath,\nhe smirks one more time, then adds:\n\n$M\"Young man, what about... avenging me...\"$C# But his last words die this way along with his last breath.#\n\nYou all stand there still, unable to do anything.\nAfter all you witnessed since you arrived in this place, you feel like you have just reached the point of no return.\nYou feel like something in you mind just cracked. Like you're losing touch with reality.#\n\nThen, it happens.#\n\n$cYou find yourself walking towards him. You feel like you're projected outside of your own body,\nas if $Gsomeone else$c is moving your muscles.\nYou lean on him and absent-mindedly observe your own hands untying his sword from his side.\n#Next thing you notice, you are wielding it, pointed to the sky, staring at the blade glinting with ominous glares.#\n\n\n$CIn the meantime, Smiurl has retracted in himself, gaining a brownish hue.\nTheo is back to being impassible as usal.\nFor some reason, Corolla seems to approve your actions and retrieves the Chief's chain.",
         "childid": "3_10"
       },
       {
@@ -1208,7 +1208,7 @@
         "id": "4_01",
         "recap": "intro 5",
         "type": "Story",
-        "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness.\nYou have no body, no eyes.\nJust an adimensional point, in the void.\nYou 'hear' hollow sounds around, like thunders.#\n\nThen, you think you can see sinisters glares.\nThe Chief's sword gets closer and closer, its tip menacingly pointed at your eyes.\nThe shiny edge is ever closer, closer...#\n\nYou shout. The darkness reacts, vibrating in response to such a huge amount of anger and pain.\nThen, suddenly, as answering to the farthest echoes of your unaware call, light comes to you.\nA blinding flash hits you, piercing through every particle in your body.#\n\nYou are one with the light now.\nYou hear a warm voice whispering, or maybe thinking of whispering:##\n\n$G<<Have courage!>>##\n\n$c... Are you not alone?",
+        "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness.\nYou have no body, no eyes.\nJust an adimensional point, in the void.\nYou 'hear' hollow sounds around, like thunders.#\n\nThen, you think you can see sinisters glares.\nThe Chief's sword gets closer and closer, its tip menacingly pointed at your eyes.\nThe shiny edge is ever closer, closer...#\n\nYou shout. The darkness reacts, vibrating in response to such a huge amount of anger and pain.\nThen, suddenly, as answering to the farthest echoes of your unaware call, light comes to you.\nA blinding flash hits you, piercing through every particle in your body.#\n\nYou are one with the light now.\nYou hear a warm voice whispering, or maybe thinking of whispering:#\n\n$G<<Have courage!>>##\n\n$c... Are you not alone?",
         "childid": "4_06"
       },
       {
@@ -1401,7 +1401,7 @@
           },
           {
             "actor": "Corolla",
-            "precomment": "You still can't wrap your mind around it.#\nWhat are you doing there?# Where will you go?# What will be of you?#\nYou think about all the people you left home, they must be so worried...\n$c<<You are a missing person>># $CYou say to yourself.#\n\nCorolla sees your distress, kneels next to you and says, hand on your shoulder:#",
+            "precomment": "You still can't wrap your mind around it.#\nWhat are you doing there?# Where will you go?# What will be of you?#\nYou think about all the people you left home, they must be so worried...\n$c<<You are a missing person>># $CYou say to yourself.#\n\nCorolla sees your distress, kneels next to you and says, hand on your shoulder:",
             "line": "Do not worry too much now. We'll find an answer somehow."
           },
           {
@@ -1510,7 +1510,7 @@
         "id": "4_07",
         "recap": "is this my party - towards Ayonn",
         "type": "Story",
-        "text": "You walk away from the fire and the others.\nYou start to have a weird feeling.\n\nYou can't be here just randomly. There must be some reason.\n\nAnd if there is a thing you know now, it's you won't have peace until you'll find it.#\n\n$c<<And these guys here they seem to believe in me. Like they were... waiting for someone like me?>>#\n\n<<What am I thinking!# What should I expect from myself now, to become their leader?>>$C#\n\nYou are lost in your thoughts, looking at the horizon.\nYou barely notice the others getting close to behind you.\nYou barely notice your own hand moving, as it has its own will, reaching for the sword.#\n\nYou don't know what you feel more, if surprised, or determined, when you find yourself exclaiming,\nwhile you theatrically draw your sword, pointing it to the west:##\n\n$c\"To Ayonn!\"",
+        "text": "You walk away from the fire and the others.\nYou start to have a weird feeling.\n\nYou can't be here just randomly. There must be some reason.\n\nAnd if there is a thing you know now, it's you won't have peace until you'll find it.#\n\n$c<<And these guys here they seem to believe in me. Like they were... waiting for someone like me?>>#\n\n<<What am I thinking!# What should I expect from myself now, to become their leader?>>$C#\n\nYou are lost in your thoughts, looking at the horizon.\nYou barely notice the others getting close to behind you.\nYou barely notice your own hand moving, as it has its own will, reaching for the sword.#\n\nYou don't know what you feel more, if surprised, or determined, when you find yourself exclaiming,\nwhile you theatrically draw your sword, pointing it to the west:#\n\n$c\"To Ayonn!\"",
         "childid": "5_01"
       }
     ],
@@ -1556,7 +1556,7 @@
               { "term": "examine" },
               { "term": "observe" }
             ],
-            "answer": "The reddish landscape stretches wide all around you. You think it looks like Arizona, or Nevada, back on earth.\n\nBack on earth.# Ridiculous.#\n\nThe sun hits hard on you;# now you thankfully understand why the hat.\n\nHow exactly far this Ayonn city is?# How long will it take to get there?#\nYou start to worry:# you have only a limited supply of food with you.\nHow will you survive the desert?",
+            "answer": "The reddish landscape stretches wide all around you. You think it looks like Arizona, or Nevada, back on earth.\n\nBack on earth.# Ridiculous.#\n\nThe sun hits hard on you; now you thankfully understand why the hat.\n\nHow exactly far this Ayonn city is?# How long will it take to get there?#\nYou start to worry: you have only a limited supply of food with you.\nHow will you survive the desert?",
             "objects": [
               {
                 "objs": [
@@ -1636,7 +1636,7 @@
         "id": "5_03",
         "recap": "in sword",
         "type": "Story",
-        "text": "The sword is very long and heavy. It is perfectly balanced.\nThe long grip seems made of some metal, darkened through time. But it's surprising, to the touch.\nIt feels like it adapts perfectly to your hands, as if it is... alive. It is not cold nor rigid.\nIt is extremely hard though, and it resists all of your attempts at sctratching it.\n\nYou shrug your shoulders, and you move on to inspect the blade.\n\nThe blade is double-edged, and this looks weird to you because it is also slightly curved.\nIt's four fingers wide at the intersection with the guard,\nthen it spreads outward with an arc on each side reaching about a handbreadth.\nThe width decreases towards the point. And the point looks strange: it is oddly asymmetrical,\nas if the blacksmith wanted to make it look as a broken, splintered blade, that was later resharped as a razor.\n\nYou think it's impossible to fight with a weapon like that.\nNonetheless, when you wield it you feel as your arm is one thing with the sword,\nand it does not looks like you and the sword move in a clumsy or unbalanced way at all.#\n\nThe metal of the blade itself looks strange. It reflects the light unevenly,\nand you don't know why but you think it's like its molecular structure is constantly shifting.\nSometimes you can see your own image reflected on the blade as a mirror;#\nyet a second after the reflection seems to swim or evaporate in different directions,\nas if it is subject to a sudden and impossible turbulence.\nIf you keep on staring at it, the blade looks like it's subtly moving back and forth,\nlike a living thing, even if it's cold and solid to the touch.\n\nAs if all of that isn't enough, you also feel like you can glimpse an inscription flowing along its entire lenght.\nBut it's more a feeling than an actual visual input. You can't explain it to yourself.",
+        "text": "The sword is very long and heavy. It is perfectly balanced.\nThe long grip seems made of some metal, darkened through time. But it's surprising, to the touch.\nIt feels like it adapts perfectly to your hands, as if it is... alive. It is not cold nor rigid.\nIt is extremely hard though, and it resists all of your attempts at sctratching it.\n\nYou shrug your shoulders, and you move on to inspect the blade.\n\nThe blade is double-edged, and this looks weird to you because it is also slightly curved.\nIt's four fingers wide at the intersection with the guard,\nthen it spreads outward with an arc on each side reaching about a handbreadth.\nThe width decreases towards the point. And the point looks strange: it is oddly asymmetrical,\nas if the blacksmith wanted to make it look as a broken, splintered blade, that was later resharped as a razor.\n\nYou think it's impossible to fight with a weapon like that.\nNonetheless, when you wield it you feel as your arm is one thing with the sword,\nand it does not looks like you and the sword move in a clumsy or unbalanced way at all.#\n\nThe metal of the blade itself looks strange. It reflects the light unevenly,\nand you don't know why but you think it's like its molecular structure is constantly shifting.\nSometimes you can see your own image reflected on the blade as a mirror;\nyet a second after the reflection seems to swim or evaporate in different directions,\nas if it is subject to a sudden and impossible turbulence.\nIf you keep on staring at it, the blade looks like it's subtly moving back and forth,\nlike a living thing, even if it's cold and solid to the touch.\n\nAs if all of that isn't enough, you also feel like you can glimpse an inscription flowing along its entire lenght.\nBut it's more a feeling than an actual visual input. You can't explain it to yourself.",
         "childid": "5_04"
       },
       {
@@ -1680,7 +1680,7 @@
         "id": "5_05",
         "recap": "see something",
         "type": "Dialogue",
-        "text": "After another couple of hours spent walking, the flat scene in front of you shows the first change.\nA kind of spire of rock, solitary, direction south-west.\nIt appears fading in:# you now become aware of the atmoshperic haze that limits visibility to maybe 20 kilometers.\n\n",
+        "text": "After another couple of hours spent walking, the flat scene in front of you shows the first change.\nA kind of spire of rock, solitary, direction south-west.\nIt appears fading in: you now become aware of the atmoshperic haze that limits visibility to maybe 20 kilometers.\n\n",
         "dialogues": [
           {
             "actor": "Kriss",
@@ -1693,7 +1693,7 @@
             "comment": "Smiurl shrugs."
           },
           {
-            "precomment": "You go back peering at the distant shape. You can't stop staring at it.\nOnce again, you perceive something weird, something you can't explain.\n\nYou keep on walking, eyes on the top of the pinnacle.\nIt's a vague feeling, you wonder if it isn't just your sight deceiving you:#\nthe rock looks like it's moving, or like it's glowing slightly.\nYou hear or think to hear faint sounds, like many barely perceptible whispers.#",
+            "precomment": "You go back peering at the distant shape. You can't stop staring at it.\nOnce again, you perceive something weird, something you can't explain.\n\nYou keep on walking, eyes on the top of the pinnacle.\nIt's a vague feeling, you wonder if it isn't just your sight deceiving you:\nthe rock looks like it's moving, or like it's glowing slightly.\nYou hear or think to hear faint sounds, like many barely perceptible whispers.#",
             "actor": "Smiurl",
             "line": "Hey!",
             "comment": "He suddenly exclaims, breaking that 'spell'."
@@ -1776,7 +1776,7 @@
         "id": "5_09",
         "type": "Story",
         "recap": "gameover under the rock",
-        "text": "A $Wshout$C awakes you abruptly.#\nYou sit up, trying to understand what's happening. Under the starlight, you can only partially guess.\nWhat shocks you is the noise.#\n\nA... Growl?# Howl?# Snarl?##\n\nIt's interrupted only by loud thuds followed by Theo's grunts.\n\nYou hear Corolla and Smiurl shouting at each other and at you.\n\nAdrenaline rushes through you;# you frantically shoot out of your bedroll trying to reach your sword.#\n\nSomething hits you, you're on the ground now, on your back.#\nSomething is keeping you pinned.\nThe only thing you can see are two malevolent eyes, glinting menacingly in the darkness.\n\nThe last thing you see,# the fangs of the beast upon you, shining under the faint light of the night.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+        "text": "A $Wshout$C awakes you abruptly.#\nYou sit up, trying to understand what's happening. Under the starlight, you can only partially guess.\nWhat shocks you is the noise.#\n\nA... Growl?# Howl?# Snarl?##\n\nIt's interrupted only by loud thuds followed by Theo's grunts.\n\nYou hear Corolla and Smiurl shouting at each other and at you.\n\nAdrenaline rushes through you; you frantically shoot out of your bedroll trying to reach your sword.#\n\nSomething hits you, you're on the ground now, on your back.#\nSomething is keeping you pinned.\nThe only thing you can see are two malevolent eyes, glinting menacingly in the darkness.\n\nThe last thing you see,# the fangs of the beast upon you, shining under the faint light of the night.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
         "childid": "5_06"
       },
       {
@@ -2516,7 +2516,7 @@
           },
           {
             "actor": "Kriss",
-            "precomment": "You look around anxiously, when you finally notice Theo:#\nhe's stoic as always, as he was peacefully sitting in his tent.",
+            "precomment": "You look around anxiously, when you finally notice Theo:\nhe's stoic as always, as he was peacefully sitting in his tent.",
             "line": "What do we do?",
             "comment": "You ask him, nervously."
           },
@@ -2532,7 +2532,7 @@
         "id": "5_11",
         "type": "Story",
         "recap": "Math welcomes",
-        "text": "You turn around, trying to distinguish something in that unrelentless dance of lights and shadows.\nIt keeps on increasing in intensity:# you can now see clearly the stone balcony you are resting on,\nbordered by the void of the precipice, beyond a thin line of darkness.\n\nTheo's prediction proves to be right:# the light does come from that direction.#\n\nAnd after few seconds, suddenly, from behind a rock,#\na man appears, torch in his hand, startling all of you, excepted Theo of course.\n\nHe's wearing a long white robe. His skin looks dark, his hair is short, curly and black.\n\nHe starts speaking, saying:#\n\n$m\"Hello Smiurl, Kriss, Corolla# and Theo, and welcome.\nYou were waited here at Seer's Rock.\nPlease, if you would like to follow me through the passage...\nMy name is Math.\"##$C He concludes with a half bow.#\n\nYou all stay there, diversely petrified.\n\nAfter many seconds of the newcomner Math silent, smiling waiting, all you say is:###\n\n$c\"Hi...\"##",
+        "text": "You turn around, trying to distinguish something in that unrelentless dance of lights and shadows.\nIt keeps on increasing in intensity: you can now see clearly the stone balcony you are resting on,\nbordered by the void of the precipice, beyond a thin line of darkness.\n\nTheo's prediction proves to be right: the light does come from that direction.#\n\nAnd after few seconds, suddenly, from behind a rock,#\na man appears, torch in his hand, startling all of you, excepted Theo of course.\n\nHe's wearing a long white robe. His skin looks dark, his hair is short, curly and black.\n\nHe starts speaking, saying:\n\n$m\"Hello Smiurl, Kriss, Corolla# and Theo, and welcome.\nYou were waited here at Seer's Rock.\nPlease, if you would like to follow me through the passage...\nMy name is Math.\"##$C He concludes with a half bow.#\n\nYou all stay there, diversely petrified.\n\nAfter many seconds of the newcomner Math silent, smiling waiting, all you say is:##\n\n$c\"Hi...\"##",
         "childid": "6_01"
       }
     ],
@@ -2556,7 +2556,7 @@
               { "term": "watch" },
               { "term": "observe" }
             ],
-            "answer": "Gentle lights illuminate the main roads. Many other lights peeks out the windows of the dwellings.\nThose houses have a similar shape:# round earthen walls covered by an hemispheric dome made of something like straw.#\n\nYou feel odd, as if somebody is watching you."
+            "answer": "Gentle lights illuminate the main roads. Many other lights peeks out the windows of the dwellings.\nThose houses have a similar shape: round earthen walls covered by an hemispheric dome made of something like straw.#\n\nYou feel odd, as if somebody is watching you."
           },
           {
             "verbs": [
@@ -2594,7 +2594,7 @@
         "id": "6_04",
         "type": "Story",
         "recap": "walking in circle",
-        "text": "Without further notice, you turn your back to Math, nodding briefly to Corolla, and start walking.\n\nThe others hesitate just a little, then start to following you.\nMath does not seem to care.\n\n$R\"Hey where are you going now?\"#$C Corolla whispers to you from behind your back.\nYou don't know why, but you feel compelled to whisper as well when you answer:#\n\n$c\"I just want to take a look around...\"#$C You have the impression she wants to answer something,\nbut she just sighs as you all keep walking.#\n\nThe scenery is pretty boring after a while.\nThe apparently chaotic network of little streets, passageways,\nbuildings ranging from little huts to big houses like the Elder's one,\nafter few minutes everything seems to just repeat itself.\nYou don't meet anyone, and with the passing of time you start to feel a bit... stupid?#\n\nAnyway, all of a sudden, after a bend you see Math again. Has he come in search of you?##\n\nSoon you realise he's still standing in the very same spot, smiling at you guys.\n\nSomehow you walked in a circle, returning right where you started.",
+        "text": "Without further notice, you turn your back to Math, nodding briefly to Corolla, and start walking.\n\nThe others hesitate just a little, then start to following you.\nMath does not seem to care.\n\n$R\"Hey where are you going now?\"#$C Corolla whispers to you from behind your back.\nYou don't know why, but you feel compelled to whisper as well when you answer:\n\n$c\"I just want to take a look around...\"#$C You have the impression she wants to answer something,\nbut she just sighs as you all keep walking.#\n\nThe scenery is pretty boring after a while.\nThe apparently chaotic network of little streets, passageways,\nbuildings ranging from little huts to big houses like the Elder's one,\nafter few minutes everything seems to just repeat itself.\nYou don't meet anyone, and with the passing of time you start to feel a bit... stupid?#\n\nAnyway, all of a sudden, after a bend you see Math again. Has he come in search of you?##\n\nSoon you realise he's still standing in the very same spot, smiling at you guys.\n\nSomehow you walked in a circle, returning right where you started.",
         "childid": "6_05"
       },
       {
@@ -2624,14 +2624,14 @@
         "id": "6_06",
         "type": "Story",
         "recap": "at Elder's",
-        "text": "$c\"Whoever this 'Elder' is, at least he will be able to tell us how to get back down safely...\"$C#\nYou conciliatory say, almost talking to yourself.\n\n$c\"...maybe he will be able to tell us about the reason we climbed up here in the first place...\"#$C You add, half aloud.#\n\n$R\"I have to say, it's not that much of a house... It looks like they don't care about hierarchy.\"#\n\n$CA feeble, flickering light comes from inside the house, like the light of candles.\n\nSuddenly, you all hear a warm and firm voice inviting you:#\n\n$M<<Please, get inside>>##\n\n$CIt sounded like it came just from the midst of you. You exchange some puzzled looks.\nSmiurl is crouching on the ground, shoulders to the door.#\n\nIn the end, Theo decides for everybody and steps inside, opening with ease the light, creaky door.",
+        "text": "$c\"Whoever this 'Elder' is, at least he will be able to tell us how to get back down safely...\"$C#\nYou conciliatory say, almost talking to yourself.\n\n$c\"...maybe he will be able to tell us about the reason we climbed up here in the first place...\"#$C You add, half aloud.#\n\n$R\"I have to say, it's not that much of a house... It looks like they don't care about hierarchy.\"#\n\n$CA feeble, flickering light comes from inside the house, like the light of candles.\n\nSuddenly, you all hear a warm and firm voice inviting you:\n\n$M<<Please, get inside>>##\n\n$CIt sounded like it came just from the midst of you. You exchange some puzzled looks.\nSmiurl is crouching on the ground, shoulders to the door.#\n\nIn the end, Theo decides for everybody and steps inside, opening with ease the light, creaky door.",
         "childid": "6_07"
       },
       {
         "id": "6_07",
         "type": "Story",
         "recap": "entering",
-        "text": "You find yourself in a narrow corridor, its walls made of something resembling bamboo wood.\nBetween the shadows, you get glimpses of small pieces of furniture, with many little objects on them.#\n\nThe light appears to be coming from the end of the passage.\nIt does not look like it's coming from a candle anymore.\nIt's bluish one moment, greenish the next one...#\n\nYou all walk behind Theo. You feel like you can hear Smiurl trembling behind you.\n\nYou feel a weird sense of unreality.\nYou catch yourself convulsively squeezing the hilt oh your sword.#\n\n$c<<It's an instinctive reaction.>># $C You think.\n\n$c<<I don't even know how to use it.>># $C You think.#\n\nSuddenly, the corridor ends around Theo's silhouette,\nand the light suddenly lowers, going back to a more natural candlelight.\n\nYou see an old man sitting on an armchair, his back turned on you.\nYou can understand he's old because of the silver mane flowing down on his shoulders.\n\nHe slowly turns around, and, in the same voice you heard outside, he says:#\n\n$M\"Have a seat please. I've just finished brewing some tea\"",
+        "text": "You find yourself in a narrow corridor, its walls made of something resembling bamboo wood.\nBetween the shadows, you get glimpses of small pieces of furniture, with many little objects on them.#\n\nThe light appears to be coming from the end of the passage.\nIt does not look like it's coming from a candle anymore.\nIt's bluish one moment, greenish the next one...#\n\nYou all walk behind Theo. You feel like you can hear Smiurl trembling behind you.\n\nYou feel a weird sense of unreality.\nYou catch yourself convulsively squeezing the hilt oh your sword.#\n\n$c<<It's an instinctive reaction.>># $C You think.\n\n$c<<I don't even know how to use it.>># $C You think.#\n\nSuddenly, the corridor ends around Theo's silhouette,\nand the light suddenly lowers, going back to a more natural candlelight.\n\nYou see an old man sitting on an armchair, his back turned on you.\nYou can understand he's old because of the silver mane flowing down on his shoulders.\n\nHe slowly turns around, and, in the same voice you heard outside, he says:\n\n$M\"Have a seat please. I've just finished brewing some tea\"",
         "childid": "6_09"
       },
       {
@@ -2743,7 +2743,7 @@
           },
           {
             "actor": "Elder",
-            "line": "Few years ago, right after I was elected Elder, I was studying the memories of The Master himself.\nThis happened only lately because the Underground Library is only accessible to the Elders.\nAnyway, I came across the description of a weird dream or vision.\nThe details are not clear, but few things are unmistakable:#\na wonderful, gold-haired girl, in a halo of light, gave a message to The Master.\nHe then arranged for it to be passed down in time from Elder to Elder.\nI read in those memories about the very day and place where a group of visitors would have appeared.\nAnd the group would have consisted of a $cyoung man$M, a $Ydwarf$M, a $Btall man$M, and a $Rwoman$M\".#\n\n\"To be honest, it reminds me of an Earthers' legend...",
+            "line": "Few years ago, right after I was elected Elder, I was studying the memories of The Master himself.\nThis happened only lately because the Underground Library is only accessible to the Elders.\nAnyway, I came across the description of a weird dream or vision.\nThe details are not clear, but few things are unmistakable:\na wonderful, gold-haired girl, in a halo of light, gave a message to The Master.\nHe then arranged for it to be passed down in time from Elder to Elder.\nI read in those memories about the very day and place where a group of visitors would have appeared.\nAnd the group would have consisted of a $cyoung man$M, a $Ydwarf$M, a $Btall man$M, and a $Rwoman$M\".#\n\n\"To be honest, it reminds me of an Earthers' legend...",
             "comment": "His voice fades and he starts to space out again.\nThen he comes back to here and now and says:"
           },
           {
@@ -2757,7 +2757,7 @@
         "id": "6_12",
         "type": "Story",
         "recap": "the story of the rock",
-        "text": "He tells you that this place owes its name to its founder, a man called 'The Seer', or 'The Master'.\nHe was the last of the psychic scholars living on Noi-Hert.\n\nA few decades after the Earthers' abandonment, being on the run, he sought refuge from the unrest here.\nAnd he found shelter indeed, at the top of this narrow yet superb spike of stone,\nwhich stands lonely in the middle of the Great Desert.\n\nSafe from the hordes' attacks, he set up a community which in time continued to teach the psychic arts to its members.\nUp to this day, they live simple lives:#\nthey use to farm a few exemplars of an animal species with a thick skin which uses to roam the desert in small herds.\nThey also grow a herb or cereal that can grow anywhere it finds a handful of soil,\nfrom which they obtain a weird, fine flour.\n\nThe water need is met by a well at the bottom of a pit in the middle of the spire,\nwhich goes down several kilometers and reaches deep underground# (at least this is what the Elder claims).\n\nThe eldest and most skilled telepath between them is appointed as 'Elder Telepath', or just 'Elder'.\nThat title rewpresents the authority in the village.\nAnyway# (as the Elder claims)# the election of an Elder is a sporadic event,\nsince they have an average life span of 200 years.#\n\nThen the old man falls silent, and goes back to sip his tea.",
+        "text": "He tells you that this place owes its name to its founder, a man called 'The Seer', or 'The Master'.\nHe was the last of the psychic scholars living on Noi-Hert.\n\nA few decades after the Earthers' abandonment, being on the run, he sought refuge from the unrest here.\nAnd he found shelter indeed, at the top of this narrow yet superb spike of stone,\nwhich stands lonely in the middle of the Great Desert.\n\nSafe from the hordes' attacks, he set up a community which in time continued to teach the psychic arts to its members.\nUp to this day, they live simple lives:\nthey use to farm a few exemplars of an animal species with a thick skin which uses to roam the desert in small herds.\nThey also grow a herb or cereal that can grow anywhere it finds a handful of soil,\nfrom which they obtain a weird, fine flour.\n\nThe water need is met by a well at the bottom of a pit in the middle of the spire,\nwhich goes down several kilometers and reaches deep underground# (at least this is what the Elder claims).\n\nThe eldest and most skilled telepath between them is appointed as 'Elder Telepath', or just 'Elder'.\nThat title rewpresents the authority in the village.\nAnyway# (as the Elder claims)# the election of an Elder is a sporadic event,\nsince they have an average life span of 200 years.#\n\nThen the old man falls silent, and goes back to sip his tea.",
         "childid": "6_13"
       },
       {
@@ -2790,7 +2790,7 @@
         "id": "6_14",
         "type": "Story",
         "recap": "end of questions",
-        "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand.\nHe then stands up, and says:#\n\n$M\"You sure are tired. Math, please take them to their designed accommodation.\"#\n\n$CMath appears, seemingly out of thin air, emerging from the shadows of the corridor.\n\nYou follow him outside, then you all walk quietly to one of the many houses in the surroundings.\nHe tells you that a certain young woman named Efeliah left it free for you.\n\nAs you enter the house, suddenly exhaustion hits you hard as stone.\nYou collapse on one of the beds, unable to notice anything around you.\nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place...#\n\nYour consciousness slips away in a rush,\nas you fall deeply asleep on what feels like the most comfortable bed you've ever layed on.",
+        "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand.\nHe then stands up, and says:\n\n$M\"You sure are tired. Math, please take them to their designed accommodation.\"#\n\n$CMath appears, seemingly out of thin air, emerging from the shadows of the corridor.\n\nYou follow him outside, then you all walk quietly to one of the many houses in the surroundings.\nHe tells you that a certain young woman named Efeliah left it free for you.\n\nAs you enter the house, suddenly exhaustion hits you hard as stone.\nYou collapse on one of the beds, unable to notice anything around you.\nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place...#\n\nYour consciousness slips away in a rush,\nas you fall deeply asleep on what feels like the most comfortable bed you've ever layed on.",
         "childid": "6_15"
       },
       {
@@ -2810,7 +2810,7 @@
             "comment": "He shrugs his shoulders."
           },
           {
-            "precomment": "He must be thinking you need the toilet:# he points to one of the doors and clarifies:",
+            "precomment": "He must be thinking you need the toilet: he points to one of the doors and clarifies:",
             "actor": "Smiurl",
             "line": "Theo is in the bathroom."
           },
@@ -2832,14 +2832,14 @@
         "id": "6_16",
         "type": "Dialogue",
         "recap": "wake up at Efeliah's 2",
-        "text": "Someone knocks at the door.\nMath does not wait for your answer, and just utters from behind the door:#\n\n",
+        "text": "Someone knocks at the door.\nMath does not wait for your answer, and just utters from behind the door:\n\n",
         "dialogues": [
           {
             "actor": "Math",
             "line": "Goodmorning friends!# Feel free to come outside whenever you are ready."
           },
           {
-            "precomment": "In the meantime, Theo comes out the bathroom, he has been showering or something.\nHis wet hair is untied, and he's wearing only a pair of shorts;#\nyou can observe and possibly envy the impressive muscles on his chest.",
+            "precomment": "In the meantime, Theo comes out the bathroom, he has been showering or something.\nHis wet hair is untied, and he's wearing only a pair of shorts;\nyou can observe and possibly envy the impressive muscles on his chest.",
             "actor": "Theo",
             "line": "Meal is almost ready",
             "comment": "He announces, as he rubs his face with the towel hanging from his neck."
@@ -3059,7 +3059,7 @@
           {
             "precomment": "Math chuckles heartily. He starts explaining with a smile:",
             "actor": "Math",
-            "line": "It's not magic..!# As the Master teaches:# 'telepathy is an innate faculty of human minds', dormant at birth.\nAnd like any other skill, it requires excercise, effort, and study."
+            "line": "It's not magic..!# As the Master teaches: 'telepathy is an innate faculty of human minds', dormant at birth.\nAnd like any other skill, it requires excercise, effort, and study."
           },
           {
             "precomment": "He has taken on a more solemn expression. Smiurl is definitely incredulous.",
@@ -3068,7 +3068,7 @@
           },
           {
             "actor": "Math",
-            "line": "These signals exists especially in specific dimensions of this universe;#\ninside 'classic' spacetime, they are very weak and get overshadowed by natural radiation.",
+            "line": "These signals exists especially in specific dimensions of this universe;\ninside 'classic' spacetime, they are very weak and get overshadowed by natural radiation.",
             "comment": "##\n\nYou are fascinated by his explanation. He sounds exactly like one of the characters in the sci-fi books you use to read.\nBack home, on Earth.#\n\nAs you experience that painful thought, Math and Efeliah turn suddenly towards you,\nas if they heard a loud noise.#\n\nYou smile. Maybe you do can get used to this.",
             "childid": "6_19"
           }
@@ -3173,7 +3173,7 @@
           },
           {
             "actor": "Elder",
-            "precomment": "He then tells everybody the same story you already heard, only with many more details.\nThe secret mission the Master left for them, long time ago...#\n\nYou get a bit distracted hearing all of that once more. Your eyes wonder and you watch the sky.\nYou see the moon, well, 'A' moon. You realise it's the first time you see it:#\na thin scythe, a different shade from the Earth's moon, and a little bigger.\nYou didn't notice it was already dark;# you were distracted before,\nhence you could not see the night smuggling off the sun, again.#\n\nYou go back to listening to the Elder, and what he says now surprises you, to say the least:",
+            "precomment": "He then tells everybody the same story you already heard, only with many more details.\nThe secret mission the Master left for them, long time ago...#\n\nYou get a bit distracted hearing all of that once more. Your eyes wonder and you watch the sky.\nYou see the moon, well, 'A' moon. You realise it's the first time you see it:\na thin scythe, a different shade from the Earth's moon, and a little bigger.\nYou didn't notice it was already dark; you were distracted before,\nhence you could not see the night smuggling off the sun, again.#\n\nYou go back to listening to the Elder, and what he says now surprises you, to say the least:",
             "line": "...to better fulfill our obligation, and to ensure the success and safety of our guests,\ntwo of us volounteered to escort them... In order to meet their fate.",
             "comment": "He waves his hand briefly at you all.\n\nAs he falls silent for a little, you look at Math and Efeliah. They are smiling.#\n\nTheo grunts a little, expressing something that must lie more or less halfway between approval and doubt.#\n\nSmiurl lights up, maybe with excitement, maybe in fear. ",
             "break": true
@@ -3191,7 +3191,7 @@
           {
             "actor": "Corolla",
             "line": "Are you sure you want to do this?",
-            "comment": "From her thoughts seeps out:#\n\n$R<<If I were in your shoes, I would think it twice...!>>$C"
+            "comment": "From her thoughts seeps out:\n\n$R<<If I were in your shoes, I would think it twice...!>>$C"
           },
           {
             "actor": "Efeliah",
@@ -3229,7 +3229,7 @@
           },
           {
             "actor": "Corolla",
-            "line": "You can believe me:# neither would we. It was because of him...",
+            "line": "You can believe me: neither would we. It was because of him...",
             "comment": "She points at you."
           },
           {
@@ -3352,7 +3352,7 @@
           },
           {
             "actor": "Efeliah",
-            "line": "Be reassured Smiurl:# we won't have much to fear from these 'spirits'... as long as we are with you, at least."
+            "line": "Be reassured Smiurl: we won't have much to fear from these 'spirits'... as long as we are with you, at least."
           },
           {
             "actor": "Math",
@@ -3369,7 +3369,7 @@
           },
           {
             "actor": "Efeliah",
-            "line": "...and never hurt anyone, for whatever reason.#\n'Do all you can to avoid conflict;# if it proves to be inevitable, lavishly endeavour to contain the damage'."
+            "line": "...and never hurt anyone, for whatever reason.#\n'Do all you can to avoid conflict; if it proves to be inevitable, lavishly endeavour to contain the damage'."
           },
           {
             "actor": "Math",
@@ -3646,14 +3646,14 @@
         "id": "7_06",
         "type": "Story",
         "recap": "in the middle of nowhere",
-        "text": "After few minutes the 'camp' #(a bit stretched definition:# just three tents)# was ready.\nMath and Efeliah were the quickest to set up their tent,\nafter which they sat and observed you struggling with ropes and pegs...\nUntil a particularly mercy Smiurl came to help you out.\n\nIn the meanwhile, the sun has set, and the bonfire has been lit.\n\nOutside that circle of warmth, everything is darkness.\nThe shadows, taking advantage of that quiet night, are merrily dancing all around you.\n\nYou take a piece of meat from the fire, a leftover from the Seer's Rock party,\nthen you withdraw behind a tent, lying on the ground.\n\nFor the first time, you have the chance to carefully look at Noi-Hert's cloudless sky.\nThe moon isn't up yet, a feeble light is irradiated by the choir of stars.\n\nYou can't pinpoint any familiar constellation.\nEven the overall distribuition of the stars is not even like in Earth's sky:#\nquite high over the horizon you notice a shiny, compacted mass of stars, stark against the rest of the firmament.\nIt degrades down to the right increasingly waning as it approaches the horizon.\nIt looks like a gigantic jewel. A celestial tiara.\n\n$G<<The Milky Way>>#$C A voice whispering inside of you. From where it's from?#\nThat thought crosses you like the shadow of a little cloud of smoke, quickly fading.\nIt has to be an arm of the spiral after all, from a different perspective...",
+        "text": "After few minutes the 'camp' #(a bit stretched definition: just three tents)# was ready.\nMath and Efeliah were the quickest to set up their tent,\nafter which they sat and observed you struggling with ropes and pegs...\nUntil a particularly mercy Smiurl came to help you out.\n\nIn the meanwhile, the sun has set, and the bonfire has been lit.\n\nOutside that circle of warmth, everything is darkness.\nThe shadows, taking advantage of that quiet night, are merrily dancing all around you.\n\nYou take a piece of meat from the fire, a leftover from the Seer's Rock party,\nthen you withdraw behind a tent, lying on the ground.\n\nFor the first time, you have the chance to carefully look at Noi-Hert's cloudless sky.\nThe moon isn't up yet, a feeble light is irradiated by the choir of stars.\n\nYou can't pinpoint any familiar constellation.\nEven the overall distribuition of the stars is not even like in Earth's sky:\nquite high over the horizon you notice a shiny, compacted mass of stars, stark against the rest of the firmament.\nIt degrades down to the right increasingly waning as it approaches the horizon.\nIt looks like a gigantic jewel. A celestial tiara.\n\n$G<<The Milky Way>>#$C A voice whispering inside of you. From where it's from?#\nThat thought crosses you like the shadow of a little cloud of smoke, quickly fading.\nIt has to be an arm of the spiral after all, from a different perspective...",
         "childid": "7_07"
       },
       {
         "id": "7_07",
         "type": "Story",
         "recap": "looking at the stars",
-        "text": "The light of the galaxy... That light your generation has forgotten,\nunable to see it as it's suffocated by the billions artifical lights of the Earth.\n\nNo wonder you are so impressed:# the clarity of that view!#\nFrom your home, you've never seen anything like this.\n\nThe sky, for the Earthers, was demoted to a mere 'city roof'...\nNothing more than something you need over your head in order to not be wiped away in the open space.\nAnd good riddance to the celestial vista.#\n\nYet another awesome thing is the silence. Your 'civilised' ear still has to get used to the absence of noises.\nNo cars. No water pipes howling and clanging at night. No TV.\nJust the crackling of the fire and the sizzling of the fat falling into the flames,\nthe voices of Corolla, Smiurl, and the others.\n\nSuddenly you feel you love this place, despite of its desolate state. And you love these people.\nYou image to go back to your place at this very moment, your house, your room...\nBut all you could then would be staring at light coming from the street lamps drawing shapes on your ceiling.\nYou would be thinking back to Noi-Hert, to all it means now, to your new friends, to the starry sky...#\n\n$R\"There you are!\"$C Corolla's head pops out the side of the tent.",
+        "text": "The light of the galaxy... That light your generation has forgotten,\nunable to see it as it's suffocated by the billions artifical lights of the Earth.\n\nNo wonder you are so impressed: the clarity of that view!#\nFrom your home, you've never seen anything like this.\n\nThe sky, for the Earthers, was demoted to a mere 'city roof'...\nNothing more than something you need over your head in order to not be wiped away in the open space.\nAnd good riddance to the celestial vista.#\n\nYet another awesome thing is the silence. Your 'civilised' ear still has to get used to the absence of noises.\nNo cars. No water pipes howling and clanging at night. No TV.\nJust the crackling of the fire and the sizzling of the fat falling into the flames,\nthe voices of Corolla, Smiurl, and the others.\n\nSuddenly you feel you love this place, despite of its desolate state. And you love these people.\nYou image to go back to your place at this very moment, your house, your room...\nBut all you could then would be staring at light coming from the street lamps drawing shapes on your ceiling.\nYou would be thinking back to Noi-Hert, to all it means now, to your new friends, to the starry sky...#\n\n$R\"There you are!\"$C Corolla's head pops out the side of the tent.",
         "childid": "7_07"
       },
       {
@@ -3748,7 +3748,7 @@
           {
             "precomment": "You keep on laughing together for quite a while, until exhaustion gets the better of you.",
             "actor": "Kriss",
-            "line": "And she would be the same fighter girl whom saved me from that Jorghe guy...?!", 
+            "line": "And she would be the same fighter girl whom saved me from that Jorghe guy...?!",
             "comment": "\n\nYou ask yourself, as you drift off into deep sleep.",
             "istelepathy": true,
             "childid": "7_09"
@@ -3775,7 +3775,7 @@
           {
             "actor": "Efeliah",
             "precomment": "You stand up, and walk towards what remains of the bonfire where the two telepaths are.\nAt the same time, Theo comes out of his tent, followed by Smiurl.",
-            "line": "We sensed two Oxengutters;# they are about to attack us, from there, and there.",
+            "line": "We sensed two Oxengutters; they are about to attack us, from there, and there.",
             "comment": "\nEfeliah warns you, pointing to two opposite directions. Theo nods:"
           },
           {
@@ -3792,7 +3792,7 @@
           {
             "precomment": "At that, Corolla comes out her tent too. She has taken the bolas and a machete:",
             "actor": "Corolla",
-            "line": "Kriss:# you, Math and Efeliah, hide in one of the tents."
+            "line": "Kriss: you, Math and Efeliah, hide in one of the tents."
           },
           {
             "actor": "Kriss",
@@ -3817,7 +3817,7 @@
           },
           {
             "actor": "Math",
-            "precomment": "Once inside, you all sit on the ground. But you can't stay still:#\nyou get up and start to nervously walk back and forth inside that limited space.\n\nYou look at the two telepaths:# they turned off the candles, and are now sitting cross-legged, facing each other.\nThey seem to be staring at nothing.# Somehow, this infuriates you even more.\nYou are about to shout something, when Math anticipates you:",
+            "precomment": "Once inside, you all sit on the ground. But you can't stay still:\nyou get up and start to nervously walk back and forth inside that limited space.\n\nYou look at the two telepaths: they turned off the candles, and are now sitting cross-legged, facing each other.\nThey seem to be staring at nothing.# Somehow, this infuriates you even more.\nYou are about to shout something, when Math anticipates you:",
             "line": "Why don't you try to sit and relax?"
           },
           {
@@ -3828,7 +3828,7 @@
           {
             "actor": "Kriss",
             "line": "Are you seriously telling me to relax?? I... I... Ah!!# Dammit!!",
-            "comment": "You are at loss for words.\nIrritated, you start walking around again.#\n\nSuddenly, you hear a scream tearing apart the night, giving you the creeps.\nIt sounds like a deep, raging, murderous growl.\nAfter that, an intense series of struggling sounds.",
+            "comment": "You are at loss for words.\nIrritated, you start walking around again.#\n\nSuddenly, you hear a scream tearing the night apart, giving you the creeps.\nIt sounds like a deep, raging, murderous growl.\nAfter that, an intense series of struggling sounds.",
             "replies": [
               {
                 "line": "The reality of the danger hits you. Better stay inside.",
@@ -3846,15 +3846,22 @@
         "id": "7_10",
         "type": "Story",
         "recap": "g.o.",
-        "text": "The noise continues for several long minutes. Thuds, growls# and howls.\nOccasionally, Theo grunting.\nYou can't hear Corolla and Smiurl voices.\n\nThe two telepaths have closed their eyes and you can't tell if they are just deeply focused, or in pain.\n\nAfter a while, a sudden silence falls.\nYou are not relieved. You can't explain it, but you feel there's something wrong.\n\nFew unbearable moments pass, then a shadow appears against the tent entrance. Is it Theo?##\n\nThe shadow moves, and with horror you recognise the shape of the face of a beast:#\nin the faint night light you can guess the profile of its ears, snout, and many long fangs.\nIt feels like it's staring at you through the fabric. The beast is almost as tall as you.\nYou unawarely take a step back, appalled.\n\nMaybe you just made some noise, or maybe it can simply smell you...\nThe tent starts shaking at once. You hear Efeliah screaming. Something hits you. A sharp pain.\n\nThen, nothing else.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+        "text": "The noise continues for several long minutes. Thuds, growls# and howls.\nOccasionally, Theo grunting.\nYou can't hear Corolla and Smiurl voices.\n\nThe two telepaths have closed their eyes and you can't tell if they are just deeply focused, or in pain.\n\nAfter a while, a sudden silence falls.\nYou are not relieved. You can't explain it, but you feel there's something wrong.\n\nFew unbearable moments pass, then a shadow appears against the tent entrance. Is it Theo?##\n\nThe shadow moves, and with horror you recognise the shape of the face of a beast:\nin the faint night light you can guess the profile of its ears, snout, and many long fangs.\nIt feels like it's staring at you through the fabric. The beast is almost as tall as you.\nYou unawarely take a step back, appalled.\n\nMaybe you just made some noise, or maybe it can simply smell you...\nThe tent starts shaking at once. You hear Efeliah screaming. Something hits you. A sharp pain.\n\nThen, nothing else.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
         "childid": "7_01"
       },
       {
         "id": "7_11",
         "type": "Story",
         "recap": "Oxengutters continued",
-        "text": "",
+        "text": "You poke your face out. You see Theo few meters away, leaning on his mallet, its dirty head on the ground.\nBeside him, a huge #(and quite battered)# carcasse of one of those beasts.\nHe's panting a little, but otherwise seems to be prefectly fine; just few scratches.\n\nYou decide to come outside when you spot Corolla approaching, looking at Theo and smiling with approval.\nHer satisfaction does not last long: everybody's blood runs cold when another shriek lacerates the night.\n\n$W\"Smiurl!!\"#$C You and Corolla shout with one voice.\n\nAt that, time seems to stop for you.\nYou watch Theo and Corolla as they start running, like a movie in slow motion.\nAt the same time, you feel Efeliah next to you wincing violently, and an horrifying image fills your mind right after.\n\n$YYou can somehow experience every detail: the hideous grin in the dark hanging over you;#\nthe nauseating, rotting smell of its breath flowing down on your face;#\nits dirty and sharp fangs opening up in a sick, evil laughter;#\nlong, flickering whiskers on the sides of the canine snout, which eagerly smells the prey;#\nits bloodthirsty eyes, yellow, in which the image of a terrified Smiurl is reflected.#\n\n$CThen, you can feel it happening again. Like when you were in front of the Chief during his last moments.\nYou lose touch with reality once more. Yet, this time feels different. Like a sudden surge of energy inside of you,\nyour brain is suddenly flooded, forced by an invisible force like a chisel on a rusty switch.\n\n$cYou feel your legs initiating movement. In an instant you reach down to the Chief's sword, $Gyour Sword$c.\nWith the corner of your consciousness you notice Efeliah passing out, readily held by Math.\nThen you are pure race, pale shadow with no real consistence under that ephemeral,\nalien moonlight painting everything oniric.",
         "childid": "7_12"
+      },
+      {
+        "id": "7_12",
+        "type": "Story",
+        "recap": "breakout",
+        "text": "$cYou left Corolla and then Theo behind, almost not realising it.\nEven if it's dark, you can dodge any obstacle.\nThere's no stone that manages to make you stumble, or pit in which to fall.\nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws.\nYou can feel his terror as clear as his cries.\n\nYou are screaming now, an unprecedented roar coming out your throat.\nWithout thinking you grab the sword, still in its sheath, by the tip side.\nIt's matter of way less than a second; the beast realises the danger, and you allow yourself a gloating smile.\n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud.\n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.###\n\n\n$CTime resume its normal flow. You feel you strenght failing you, and you fall on your knees.\nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open.\n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.##\n\nThen all is darkness.#\nAll is oblivion.#",
+        "childid": "7_13"
       }
     ]
   ]
