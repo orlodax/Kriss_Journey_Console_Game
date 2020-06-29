@@ -65,8 +65,8 @@ namespace ConsoleGame.Classes
 
         internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
         internal int ParagraphBreak { get; set; } = 1000; // # arbitrary pause
-        internal int ShortPause { get; set; } = 1000; // comma pause
-        internal int LongPause { get; set; } = 2000; // dot pause
+        internal int ShortPause { get; set; } = 700; // comma pause
+        internal int LongPause { get; set; } = 1200; // dot pause
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
@@ -100,12 +100,17 @@ namespace ConsoleGame.Classes
                     shortPause = 0;
                     longPause = 0;
                 }
+                
                 char prevChar = new Char();
 
-                foreach (char c in text)
+                for (int i = 0; i < text.Length; i++)
                 {
+                    char c = text[i];
+
                     if (prevChar.ToString().Equals("."))
-                        Thread.Sleep(longPause);
+                        if (!c.ToString().Equals("."))              //to not to pause when "..."
+                            if (!c.ToString().Equals("\""))         //to not to pause at the end of a line
+                                Thread.Sleep(longPause);
 
                     if (prevChar.ToString().Equals(","))
                         Thread.Sleep(shortPause);
@@ -117,7 +122,7 @@ namespace ConsoleGame.Classes
                                 color = ConsoleColor.Red;           //Corolla
                                 break;
                             case "r":
-                                color = ConsoleColor.DarkRed;       
+                                color = ConsoleColor.DarkRed;
                                 break;
                             case "G":
                                 color = ConsoleColor.Green;
@@ -126,7 +131,7 @@ namespace ConsoleGame.Classes
                                 color = ConsoleColor.DarkGreen;     //Efeliah
                                 break;
                             case "B":
-                                color = ConsoleColor.Blue;          
+                                color = ConsoleColor.Blue;
                                 break;
                             case "C":
                                 color = ConsoleColor.DarkCyan;      //narrator
@@ -180,9 +185,10 @@ namespace ConsoleGame.Classes
                             Thread.Sleep(paragraph);
                         }
                     }
-                        
+
                     prevChar = c;
                 }
+
             }
         }
         #endregion
