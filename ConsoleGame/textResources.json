@@ -3764,7 +3764,7 @@
       {
         "id": "7_09",
         "type": "Dialogue",
-        "recap": "Oxengutters1",
+        "recap": "Oxengutters arrive",
         "dialogues": [
           {
             "actor": "Math",
@@ -3814,8 +3814,47 @@
             "actor": "Efeliah",
             "line": "Come on Kriss,# what could we do?# We would just be in their way...",
             "comment": "Efeliah takes your hand,#\nand gently but firmly leads you away with Math."
+          },
+          {
+            "actor": "Math",
+            "precomment": "Once inside,# you all sit on the ground.# But you can't stay still:#\nyou get up and start to nervously walk back and forth inside that limited space.#\n\nYou look at the two telepaths:# they turned off the candles, and are now sitting cross-legged,# facing each other.#\nThey seem to be staring at nothing.## Somehow,# this infuriates you even more.#\nYou are about to shout something,# when Math anticipates you:",
+            "line": "Why don't you try to sit and relax?"
+          },
+          {
+            "actor": "Kriss",
+            "line": "Relax?",
+            "comment": "You exclaim aghast."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Are you seriously telling me to relax?? I...# I...# Ah!!# Dammit!!",
+            "comment": "You are at loss for words.#\nIrritated,# you start walking around again.##\n\nSuddenly,# you hear a scream tearing apart the night,# giving you the creeps.#\nIt sounds like a deep,# raging,# murderous growl.#\nAfter that,# an intense series of struggling sounds.",
+            "replies": [
+              {
+                "line": "The reality of the danger hits you. Better stay inside.",
+                "childid": "7_10"
+              },
+              {
+                "line": "You can't just stay there in hiding. You need to see what's going on.",
+                "childid": "7_11"
+              }
+            ]
           }
         ]
+      },
+      {
+        "id": "7_10",
+        "type": "Story",
+        "recap": "g.o.",
+        "text": "The noise continues for several long minutes.# Thuds,# growls# and howls.#\nOccasionally,# Theo grunting.#\nYou can't hear Corolla and Smiurl voices.#\n\nThe two telepaths have closed their eyes and you can't tell if they are just deeply focused,# or in pain.##\n\nAfter a while,# a sudden silence falls.#\nYou are not relieved.# You can't explain it,# but you feel there's something wrong.##\n\nFew unbearable moments pass,# then a shadow appears against the tent entrance.# Is it Theo?##\n\nThe shadow moves,# and with horror you recognise the shape of the face of a beast:#\nin the faint night light you can guess the profile of its ears,# snout,# and many long fangs.#\nIt feels like it's staring at you through the fabric.# The beast is almost as tall as you.#\nYou unawarely take a step back,# appalled.#\n\nMaybe you just made some noise,# or maybe it can simply smell you...#\nThe tent starts shaking at once.# You hear Efeliah screaming.# Something hits you.# A sharp pain.##\n\nThen, nothing else.$d###\n\n\n-- GAME OVER --##\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+        "childid": "7_01"
+      },
+      {
+        "id": "7_11",
+        "type": "Story",
+        "recap": "Oxengutters continued",
+        "text": "",
+        "childid": "7_12"
       }
     ]
   ]

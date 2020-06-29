@@ -64,7 +64,9 @@ namespace ConsoleGame.Classes
         /// </summary>
 
         internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
-        internal int ParagraphBreak { get; set; } = 1000; // fine-tunes the pause between blocks
+        internal int ParagraphBreak { get; set; } = 1000; // # arbitrary pause
+        internal int ShortPause { get; set; } = 1000; // comma pause
+        internal int LongPause { get; set; } = 2000; // dot pause
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
@@ -88,16 +90,26 @@ namespace ConsoleGame.Classes
             {
                 int flow = FlowDelay;
                 int paragraph = ParagraphBreak;
+                int shortPause = ShortPause;
+                int longPause = LongPause;
 
                 if (!isFlowing)
                 {
                     flow = 0;
                     paragraph = 0;
+                    shortPause = 0;
+                    longPause = 0;
                 }
                 char prevChar = new Char();
 
                 foreach (char c in text)
                 {
+                    if (prevChar.ToString().Equals("."))
+                        Thread.Sleep(longPause);
+
+                    if (prevChar.ToString().Equals(","))
+                        Thread.Sleep(shortPause);
+
                     if (prevChar.ToString().Equals("$"))
                         switch (c.ToString())
                         {
