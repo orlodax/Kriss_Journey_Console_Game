@@ -108,9 +108,10 @@ namespace ConsoleGame.Classes
                     char c = text[i];
 
                     if (prevChar.ToString().Equals("."))
-                        if (!c.ToString().Equals("."))              //to not to pause when "..."
-                            if (!c.ToString().Equals("\""))         //to not to pause at the end of a line
-                                Thread.Sleep(longPause);
+                        if (!c.ToString().Equals("."))                                              //to not to pause between three dots
+                            if (!c.ToString().Equals("!") && !c.ToString().Equals("?"))             //to not to pause when ".!"/ ".?"
+                                if (!c.ToString().Equals("\""))                                     //to not to pause at the end of a line
+                                    Thread.Sleep(longPause);
 
                     if (prevChar.ToString().Equals(",") || prevChar.ToString().Equals(":") || prevChar.ToString().Equals(";"))
                         Thread.Sleep(shortPause);

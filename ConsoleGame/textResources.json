@@ -3861,7 +3861,92 @@
         "type": "Story",
         "recap": "breakout",
         "text": "$cYou left Corolla and then Theo behind, almost not realising it.\nEven if it's dark, you can dodge any obstacle.\nThere's no stone that manages to make you stumble, or pit in which to fall.\nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws.\nYou can feel his terror as clear as his cries.\n\nYou are screaming now, an unprecedented roar coming out your throat.\nWithout thinking you grab the sword, still in its sheath, by the tip side.\nIt's matter of way less than a second; the beast realises the danger, and you allow yourself a gloating smile.\n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud.\n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.###\n\n\n$CTime resume its normal flow. You feel you strenght failing you, and you fall on your knees.\nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open.\n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.##\n\nThen all is darkness.#\nAll is oblivion.#",
-        "childid": "7_13"
+        "childid": "8_01"
+      }
+    ],
+    [
+      {
+        "id": "8_01",
+        "type": "Dialogue",
+        "recap": "start ch 9",
+        "text": "Voices in the darkness.##\n\n",
+        "dialogues": [
+          {
+            "actor": "Corolla",
+            "line": "How's Smiurl?",
+            "comment": "Corolla asks in a low voice."
+          },
+          {
+            "actor": "Math",
+            "line": "Much better. Ef says he'll be as good as new by tomorrow.",
+            "comment": "Math answers."
+          },
+          {
+            "actor": "Corolla",
+            "line": "But, what about her?# Did she recover?"
+          },
+          {
+            "actor": "Math",
+            "line": "Sure. She just experienced an empathic overload... I mean, a strong emotion. She'll be fine. However, how's he?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "He's breathing normally now. Last night he had a fever, he was delirious... What happened to him?",
+            "comment": "\nYou feel her hand on your forehead."
+          },
+          {
+            "actor": "Math",
+            "line": "I've never seen anything like that before."
+          },
+          {
+            "actor": "Corolla",
+            "line": "Me neither! You heard how he was yelling...!? He beat that Oxengutter's head to a pulp, with just one blow...\nIt was huge. I can't explain how he did that."
+          },
+          {
+            "actor": "Math",
+            "line": "We perceived something... unusual... in his mind.",
+            "comment": "What does he mean?"
+          },
+          {
+            "actor": "Corolla",
+            "line": "What matters is we're 'safe and sound' now.",
+            "comment": "Corolla sighs, relieved.#\n\nYou drift off to sleep again.##",
+            "childid": "8_02"
+          }
+        ]
+      },
+      {
+        "id": "8_02",
+        "type": "Story",
+        "recap": "before breakfast",
+        "text": "$G<<Wake up...!>>$C##\n\nOne of too many voices in the night. But it was $Gthat$C voice, again...#\nYou are too wrecked to worry about that anyway.#\n\nYou can see the daylight. Then you wait for your eyes to focus again.\nYou try to sit up, but your head attempts to explode while the tent starts spinning around you.\n\nYou heavily fall back on the bedroll.\nYou patiently wait for the dizziness to subside, then you carefully roll on your side.\nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up.\n\n$c<<Hm!# Not that bad in the end...>>$C\n\nYou stil feel very poorly, but it seems you are able to function again.\n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time. You feel very thankful.\nShe's asleep now. She must be exhausted. Seeing her this way, she looks so vulnerable...\n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up.\nYou step outside, and the light blinds you, causing renewed pain to your head."
+      },
+      {
+        "id": "8_03",
+        "type": "Choice",
+        "recap": "eggzenbaykon",
+        "text": "You're sitting by the fire with the others.",
+        "choices": [
+          {
+            "desc": "You are starving. Ask Smiurl about breakfast.",
+            "childid": "4_03"
+          },
+          {
+            "desc": "You need to know what's going on... Before something else happens.",
+            "childid": "4_04"
+          },
+          {
+            "desc": "Better look around the caravan spoils for something useful.",
+            "childid": "4_05",
+            "unhide": "3",
+            "isnotrepeatable": true
+          },
+          {
+            "ishidden": true,
+            "desc": "You are done here. Better get moving now.",
+            "childid": "4_07"
+          }
+        ]
       }
     ]
   ]
