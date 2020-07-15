@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace ConsoleGame.Classes
@@ -62,11 +63,11 @@ namespace ConsoleGame.Classes
         /// <summary>
         /// Mimics the flow of text of old console games. 
         /// </summary>
-
         internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
         internal int ParagraphBreak { get; set; } = 1000; // # arbitrary pause
         internal int ShortPause { get; set; } = 700; // comma pause
         internal int LongPause { get; set; } = 1200; // dot pause
+        internal List<string> NotToPause = new List<string>(){ ".", "!", "?", "\"", ">" }; // symbols after . that must not trigger a pause
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
@@ -108,10 +109,8 @@ namespace ConsoleGame.Classes
                     char c = text[i];
 
                     if (prevChar.ToString().Equals("."))
-                        if (!c.ToString().Equals("."))                                              //to not to pause between three dots
-                            if (!c.ToString().Equals("!") && !c.ToString().Equals("?"))             //to not to pause when ".!"/ ".?"
-                                if (!c.ToString().Equals("\""))                                     //to not to pause at the end of a line
-                                    Thread.Sleep(longPause);
+                        if (!NotToPause.Contains(c.ToString()))
+                            Thread.Sleep(longPause);
 
                     if (prevChar.ToString().Equals(",") || prevChar.ToString().Equals(":") || prevChar.ToString().Equals(";"))
                         Thread.Sleep(shortPause);

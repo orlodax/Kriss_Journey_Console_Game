@@ -3919,7 +3919,8 @@
         "id": "8_02",
         "type": "Story",
         "recap": "before breakfast",
-        "text": "$G<<Wake up...!>>$C##\n\nOne of too many voices in the night. But it was $Gthat$C voice, again...#\nYou are too wrecked to worry about that anyway.#\n\nYou can see the daylight. Then you wait for your eyes to focus again.\nYou try to sit up, but your head attempts to explode while the tent starts spinning around you.\n\nYou heavily fall back on the bedroll.\nYou patiently wait for the dizziness to subside, then you carefully roll on your side.\nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up.\n\n$c<<Hm!# Not that bad in the end...>>$C\n\nYou stil feel very poorly, but it seems you are able to function again.\n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time. You feel very thankful.\nShe's asleep now. She must be exhausted. Seeing her this way, she looks so vulnerable...\n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up.\nYou step outside, and the light blinds you, causing renewed pain to your head."
+        "text": "$G<<Wake up...!>>$C##\n\nOne of too many voices in the night. But it was $Gthat$C voice, again...#\nHonestly, you're too wrecked to worry about that too.#\n\nIt is day outside. Still, you need to wait for your eyes to focus properly.\nAs you try to sit up, your head attempts to explode while the tent starts spinning around you.\n\nYou heavily fall back on the bedroll.\nAfter waiting patiently for the dizziness to subside, you cautiously roll on your side.\nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up.\n\n$c<<Hm!# Not that bad after all...>>#$C\n\nYou stil feel very poorly, but it seems you are able to function again.\n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time.\nShe's asleep now. She must be exhausted. Seeing her this way, she looks so vulnerable... You feel very thankful.\n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up.\nOnce outside, the light blinds you, causing renewed pain to your head.#\n\nIt is morning, and Math and Theo are busy around the bonfire.\nYou reach them and sit, suddenly feeling weak and... empty.",
+        "childid": "8_03"
       },
       {
         "id": "8_03",
@@ -3928,25 +3929,47 @@
         "text": "You're sitting by the fire with the others.",
         "choices": [
           {
-            "desc": "You are starving. Ask Smiurl about breakfast.",
-            "childid": "4_03"
+            "desc": "What is Theo doing with that knife...?",
+            "condition": {
+              "type": "isNodeVisited",
+              "item": "8_05",
+              "value": true
+            },
+            "refusal": "$B\"Almost done kid... I'll show you in a while.\"",
+            "childid": "8_04"
           },
           {
-            "desc": "You need to know what's going on... Before something else happens.",
-            "childid": "4_04"
-          },
-          {
-            "desc": "Better look around the caravan spoils for something useful.",
-            "childid": "4_05",
-            "unhide": "3",
+            "desc": "Say hello to Math. Hopefully he's preparing breakfast.",
+            "unhide": "2",
+            "childid": "8_05",
             "isnotrepeatable": true
           },
           {
-            "ishidden": true,
-            "desc": "You are done here. Better get moving now.",
-            "childid": "4_07"
+            "desc": "How is she?",
+            "childid": "8_06",
+            "isnotrepeatable": true
           }
         ]
+      },
+      {
+        "id": "8_04",
+        "recap": "Corolla arrives, Theo's gifts",
+        "childid": "8_07"
+      },
+      {
+        "id": "8_05",
+        "recap": "Math's breakfast; Smiurl arrives, then Ef too",
+        "childid": "8_03"
+      },
+      {
+        "id": "8_06",
+        "recap": "Private chat with Ef",
+        "childid": "8_03"
+      },
+      {
+        "id": "8_07",
+        "recap": "Enter Mazerock",
+        "childid": "8_08"
       }
     ]
   ]
