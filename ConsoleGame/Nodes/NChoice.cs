@@ -42,6 +42,8 @@ namespace ConsoleGame.Nodes
                         if (nb.IsVisited == cond.Value)
                             visibleChoices.Add(c);
                     }
+                    else
+                        visibleChoices.Add(c);
                 }
                 else
                     visibleChoices.Add(c);

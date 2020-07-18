@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ConsoleGame.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
 namespace ConsoleGame.Classes
@@ -15,11 +15,11 @@ namespace ConsoleGame.Classes
         internal string Text { get; set; } = string.Empty;
         internal string AltText { get; set; } = string.Empty;
         internal string ChildId { get; set; }
-        internal List<Models.Choice> Choices { get; set; }
+        internal List<Choice> Choices { get; set; }
         internal List<Models.Action> Actions { get; set; }
-        internal List<Models.Dialogue> Dialogues { get; set; }
+        internal List<Dialogue> Dialogues { get; set; }
 
-        readonly Models.NodeBase node;
+        readonly NodeBase node;
         readonly bool DEBUG;
         #endregion
 
@@ -27,10 +27,10 @@ namespace ConsoleGame.Classes
         /// <summary>
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
-        public SNode(Models.NodeBase nb)
+        public SNode(NodeBase nb)
         {
             //decomment to disable flow effect
-            //DEBUG = true;
+            DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
@@ -68,6 +68,7 @@ namespace ConsoleGame.Classes
         internal int ShortPause { get; set; } = 700; // comma pause
         internal int LongPause { get; set; } = 1200; // dot pause
         internal List<string> NotToPause = new List<string>(){ ".", "!", "?", "\"", ">" }; // symbols after . that must not trigger a pause
+        internal List<string> ToShortPause = new List<string>() { ":", ";", "," }; // symbols after which trigger a short pause
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
@@ -112,7 +113,7 @@ namespace ConsoleGame.Classes
                         if (!NotToPause.Contains(c.ToString()))
                             Thread.Sleep(longPause);
 
-                    if (prevChar.ToString().Equals(",") || prevChar.ToString().Equals(":") || prevChar.ToString().Equals(";"))
+                    if (ToShortPause.Contains(prevChar.ToString()))
                         Thread.Sleep(shortPause);
 
                     if (prevChar.ToString().Equals("$"))

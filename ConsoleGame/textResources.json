@@ -3919,24 +3919,25 @@
         "id": "8_02",
         "type": "Story",
         "recap": "before breakfast",
-        "text": "$G<<Wake up...!>>$C##\n\nOne of too many voices in the night. But it was $Gthat$C voice, again...#\nHonestly, you're too wrecked to worry about that too.#\n\nIt is day outside. Still, you need to wait for your eyes to focus properly.\nAs you try to sit up, your head attempts to explode while the tent starts spinning around you.\n\nYou heavily fall back on the bedroll.\nAfter waiting patiently for the dizziness to subside, you cautiously roll on your side.\nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up.\n\n$c<<Hm!# Not that bad after all...>>#$C\n\nYou stil feel very poorly, but it seems you are able to function again.\n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time.\nShe's asleep now. She must be exhausted. Seeing her this way, she looks so vulnerable... You feel very thankful.\n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up.\nOnce outside, the light blinds you, causing renewed pain to your head.#\n\nIt is morning, and Math and Theo are busy around the bonfire.\nYou reach them and sit, suddenly feeling weak and... empty.",
+        "text": "$G<<Wake up...!>>$C##\n\nOne of too many voices in the night. But it was $Gthat$C voice, again...#\nHonestly, you're too wrecked to worry about that too.#\n\nIt is day outside. Still, you need to wait for your eyes to focus properly.\nAs you try to sit up, your head attempts to explode while the tent starts spinning around you.\n\nYou heavily fall back on the bedroll.\nAfter waiting patiently for the dizziness to subside, you cautiously roll on your side.\nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up.\n\n$c<<Hm!# Not that bad after all...>>#$C\n\nYou stil feel very poorly, but it seems you are able to function again.\n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time.\nShe's asleep now. She must be exhausted. Seeing her this way, she looks so vulnerable... You feel very thankful.\n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up.\nOnce outside, the light blinds you, causing renewed pain to your head.#\n\nIt is morning, and Math and Theo are busy around the bonfire, now turned to ashes and embers.\nYou reach them and sit, suddenly feeling weak and... empty.",
         "childid": "8_03"
       },
       {
         "id": "8_03",
         "type": "Choice",
         "recap": "eggzenbaykon",
-        "text": "You're sitting by the fire with the others.",
+        "text": "",
         "choices": [
           {
             "desc": "What is Theo doing with that knife...?",
             "condition": {
-              "type": "isNodeVisited",
-              "item": "8_05",
-              "value": true
+              "type": "readyToMoveOn",
+              "item": "theoDone",
+              "value": true,
+              "childid": "8_04"
             },
             "refusal": "$B\"Almost done kid... I'll show you in a while.\"",
-            "childid": "8_04"
+            "childid": "8_07"
           },
           {
             "desc": "Say hello to Math. Hopefully he's preparing breakfast.",
@@ -3945,9 +3946,14 @@
             "isnotrepeatable": true
           },
           {
-            "desc": "How is she?",
+            "desc": "How is Efeliah?",
             "childid": "8_06",
-            "isnotrepeatable": true
+            "isnotrepeatable": true,
+            "ishidden": true,
+            "effect": {
+              "item": "theoDone",
+              "value": true
+            }
           }
         ]
       },
@@ -3958,17 +3964,59 @@
       },
       {
         "id": "8_05",
-        "recap": "Math's breakfast; Smiurl arrives, then Ef too",
-        "childid": "8_03"
+        "recap": "Math's breakfast; Ef arrives",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "actor": "Math",
+            "line": "I see you're feeling better!",
+            "comment": "He welcomes you smiling. He has a pan in one hand and some bundle under his other arm."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Hello Math. I'm ok, I guess, thank you... What are we going to eat?",
+            "comment": "You nod at the things he's carrying."
+          },
+          {
+            "precomment": "He announces proudly:",
+            "actor": "Math",
+            "line": "The Colonist's Breakfast!# It's an ancient recipe, back to the day when Earthers were still thriving on Noi-Hert."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Like Martini?"
+          },
+          {
+            "actor": "Math",
+            "line": "Correct.",
+            "comment": "Then he puts the items on the ground, and prepares to light the fire again."
+          },
+          {
+            "actor": "Math",
+            "precomment": "After few instants, he abruptly turns his head in the direction of one of the tents, as if he heard a noise.\nHe stares for several moments, than stands up and walk quickly towards it.\nWhen he's about to enter, Efeliah comes out of it. She smiles at him, including you as well for a moment.\nThen she returns to look at him. He then relaxes and smiles, then turns around and says:",
+            "line": "Come, we are about to have breakfast.",
+            "comment": "She follows him and then sits next to you.",
+            "childid": "8_03"
+          }
+        ]
       },
       {
         "id": "8_06",
-        "recap": "Private chat with Ef",
-        "childid": "8_03"
+        "recap": "Private chat with Ef, Smiurl arrives",
+        "type": "Dialogue",
+        "dialogues": [
+          {
+            "actor": "Kriss",
+            "line": "ÿo",
+            "childid": "8_03"
+          }
+        ]
       },
       {
         "id": "8_07",
         "recap": "Enter Mazerock",
+        "type": "Story",
+        "text": "mazerock",
         "childid": "8_08"
       }
     ]
