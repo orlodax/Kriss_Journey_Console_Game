@@ -3959,7 +3959,7 @@
       },
       {
         "id": "8_04",
-        "recap": "Corolla arrives, Theo's gifts",
+        "recap": "Theo's gifts",
         "childid": "8_07"
       },
       {
@@ -3995,7 +3995,7 @@
             "actor": "Math",
             "precomment": "After few instants, he abruptly turns his head in the direction of one of the tents, as if he heard a noise.\nHe stares for several moments, than stands up and walk quickly towards it.\nWhen he's about to enter, Efeliah comes out of it. She smiles at him, including you as well for a moment.\nThen she returns to look at him. He then relaxes and smiles, then turns around and says:",
             "line": "Come, we are about to have breakfast.",
-            "comment": "She follows him and then sits next to you.",
+            "comment": "She follows him and comes to sit next to you.",
             "childid": "8_03"
           }
         ]
@@ -4007,7 +4007,88 @@
         "dialogues": [
           {
             "actor": "Kriss",
-            "line": "ÿo",
+            "line": "Hi Ef! How are you?"
+          },
+          {
+            "actor": "Efeliah",
+            "line": "Hello Kriss... How do you know my surname...?# Oh... I see.",
+            "comment": "She smiles after a sustained look into your eyes."
+          },
+          {
+            "actor": "Kriss",
+            "line": "Has she read my mind?",
+            "istelepathy": true,
+            "comment": "You ask yourself."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "Sorry, I couldn't help it...!",
+            "istelepathy": true,
+            "comment": "She's smiling, as if she had just shrugged her shoulders.\nShe's speaking into your mind. Math does not seem to notice."
+          },
+          {
+            "actor": "Efeliah",
+            "precomment": "Seeing your questioning glance (and thought?), as if waiting for him to join the 'conversation', she warns you:",
+            "line": "Watch your thoughts. I am shielding our communication. But he could notice anyway...",
+            "istelepathy": true
+          },
+          {
+            "actor": "Kriss",
+            "precomment": "Your face must look so funnily baffled, Efeliah nearly burst out laughing.#\n\nIn the meantime Math has lit the fire and pulls out an egg from somewhere.\nI mean, it must be an egg, eggs have a definite shape.\nIt's unlike any egg you saw before, blackish sparkled with green dots.\nHe breaks the egg into the pan and adds some pieces of meat next to it.",
+            "line": "Eggs and bacon...",
+            "comment": "You comment."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "Somebody said Eggzen'bay-kon??",
+            "comment": "A merry little voice behind you.",
+            "break": true
+          },
+          {
+            "actor": "Kriss",
+            "line": "Hey! Hello Smiurl!",
+            "comment": "Everybody joins you welcoming him, happy to see him well and in good spirits."
+          },
+          {
+            "actor": "Smiurl",
+            "precomment": "The dwarf approaches you smiling, walking with his head high and slightly tilted,\nin order to have everybody admiring the scars on his cheek, where the Oxengutter's claws grazed him.\nIt almost killed him; the scratches look pretty bad, but on the way to heal quickly.",
+            "line": "I've never been so hungry my whole life! And this delicious smell...!",
+            "comment": "He cheerfully exclaims sitting next to you.\nThen, he drops serious:"
+          },
+          {
+            "actor": "Smiurl",
+            "line": "You saved my life."
+          },
+          {
+            "actor": "Kriss",
+            "line": "I could never afford losing you... Moreover, I was in debt with you right?",
+            "comment": "You smile warmly.\nAt that, Smiurl's whole body lightens up as he chuckles."
+          },
+          {
+            "actor": "Efeliah",
+            "line": "We have a visitor...",
+            "comment": "She looks at your tent."
+          },
+          {
+            "precomment": "By the time you turn your head around, Corolla is emerging from the tent.\nShe looks at you all squinting and then rubbing her eyes.",
+            "actor": "Corolla",
+            "line": "You make a heck of a noise! It's impossible to rest with you around...!",
+            "comment": "She jokes."
+          },
+          {
+            "actor": "Corolla",
+            "line": "How are you guys?",
+            "comment": "She comes to sit in front of Smiurl and you."
+          },
+          {
+            "actor": "Smiurl",
+            "line": "It takes a lot more to knock down the fierce Smiurl!",
+            "comment": "He hits his chest, which must still be aching, with his fist. "
+          },
+          {
+            "actor": "Kriss",
+            "line": "Well, now... Thanks to you.",
+            "comment": "You add with emphasis, looking into her eyes. She smiles and looks away.",
             "childid": "8_03"
           }
         ]

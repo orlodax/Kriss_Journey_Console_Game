@@ -30,7 +30,7 @@ namespace ConsoleGame.Classes
         public SNode(NodeBase nb)
         {
             //decomment to disable flow effect
-            DEBUG = true;
+            //DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
@@ -67,8 +67,8 @@ namespace ConsoleGame.Classes
         internal int ParagraphBreak { get; set; } = 1000; // # arbitrary pause
         internal int ShortPause { get; set; } = 700; // comma pause
         internal int LongPause { get; set; } = 1200; // dot pause
-        internal List<string> NotToPause = new List<string>(){ ".", "!", "?", "\"", ">" }; // symbols after . that must not trigger a pause
-        internal List<string> ToShortPause = new List<string>() { ":", ";", "," }; // symbols after which trigger a short pause
+        internal List<string> NotToPause = new List<string>(){ ".", "!", "?", "\"", ">", ")" }; // symbols after short pause that must not trigger another pause
+        internal List<string> ToShortPause = new List<string>() { ":", ";", ",", "!", "?" }; // symbols after which trigger a short pause
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
@@ -103,18 +103,24 @@ namespace ConsoleGame.Classes
                     longPause = 0;
                 }
                 
-                char prevChar = new Char();
+                char prevChar = new char();
 
                 for (int i = 0; i < text.Length; i++)
                 {
                     char c = text[i];
 
                     if (prevChar.ToString().Equals("."))
-                        if (!NotToPause.Contains(c.ToString()))
+                    {
+                        //if (!NotToPause.Contains(c.ToString()))
+                        if (c.ToString().Equals(" "))
                             Thread.Sleep(longPause);
-
-                    if (ToShortPause.Contains(prevChar.ToString()))
-                        Thread.Sleep(shortPause);
+                    }
+                    else
+                    {
+                        if (ToShortPause.Contains(prevChar.ToString()))
+                            if (!NotToPause.Contains(c.ToString()))
+                                Thread.Sleep(shortPause);
+                    }
 
                     if (prevChar.ToString().Equals("$"))
                         switch (c.ToString())
