@@ -63,7 +63,7 @@ namespace ConsoleGame.Classes
         /// <summary>
         /// Mimics the flow of text of old console games. 
         /// </summary>
-        internal int FlowDelay { get; set; } = 30; // fine-tunes the speed of TextFlow
+        internal int FlowDelay { get; set; } = 20; // fine-tunes the speed of TextFlow
         internal int ParagraphBreak { get; set; } = 1000; // # arbitrary pause
         internal int ShortPause { get; set; } = 700; // comma pause
         internal int LongPause { get; set; } = 1200; // dot pause

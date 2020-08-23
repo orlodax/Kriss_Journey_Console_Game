@@ -49,8 +49,9 @@ namespace ConsoleGame.Classes
                 Titles.Add("6. BEACONS");
                 Titles.Add("7. SEER'S ROCK");
                 Titles.Add("8. BREAKOUT");
-                Titles.Add("9. INTO THE MAZEROCK");
-                Titles.Add("10. AYONN");
+                Titles.Add("9. THEO'S GIFTS");
+                Titles.Add("10. INTO THE MAZEROCK");
+                Titles.Add("11. AYONN");
             }
         }
         public static void SaveProgress(int chapterNo)
