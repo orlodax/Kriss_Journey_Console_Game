@@ -30,7 +30,7 @@ namespace ConsoleGame.Classes
         public SNode(NodeBase nb)
         {
             //decomment to disable flow effect
-            //DEBUG = true;
+            DEBUG = true;
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color

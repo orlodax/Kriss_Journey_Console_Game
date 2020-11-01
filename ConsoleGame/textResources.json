@@ -3891,7 +3891,7 @@
           },
           {
             "actor": "Corolla",
-            "line": "He's breathing normally now. Last night he had a fever, he was delirious... What happened to him?",
+            "line": "He's breathing normally now. Last night he had a fever, was delirious... What happened to him?",
             "comment": "\nYou feel her hand on your forehead."
           },
           {
@@ -3919,7 +3919,7 @@
         "id": "8_02",
         "type": "Story",
         "recap": "before breakfast",
-        "text": "$G<<Wake up...!>>$C#\n\nOne of too many voices in the night. But it was $Gthat$C voice, again... \nHonestly, you're too wrecked to worry about that too. \n\nIt is day outside. Still, you need to wait for your eyes to focus properly. \nAs you try to sit up, your head attempts to explode while the tent starts spinning around you. \n\nYou heavily fall back on the bedroll. \nAfter waiting patiently for the dizziness to subside, you cautiously roll on your side. \nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up. \n\n$c<<Hm!# Not that bad after all...>>#$C\n\nYou stil feel very poorly, but it seems you are able to function again. \n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time. \nShe's asleep now. She must be exhausted. Seeing her this way, she looks so vulnerable... You feel very thankful. \n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up. \nOnce outside, the light blinds you, causing renewed pain to your head. \n\nIt is morning, and Math and Theo are busy around the bonfire, now turned to ashes and embers. \nYou reach them and sit, suddenly feeling weak and... empty.",
+        "text": "$G<<Wake up...!>>$C#\n\nOne of too many voices in the night. But it was $Gthat$C voice, again... \nHonestly, you're too wrecked to worry about that too. \n\nIt is day outside. Still, you need to wait for your eyes to focus properly. \nAs you try to sit up, your head attempts to explode while the tent starts spinning around you. \n\nYou heavily fall back on the bedroll. \nAfter waiting patiently for the dizziness to subside, you cautiously roll on your side. \nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up. \n\n$c<<Hm!# Not that bad after all...>>#$C\n\nYou stil feel very poorly, but it seems you are able to function again. \n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time. \nShe's asleep now. Must be exhausted. Seeing her this way, she looks so vulnerable... You feel very thankful. \n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up. \nOnce outside, the light blinds you, causing renewed pain to your head. \n\nIt is morning, and Math and Theo are busy around the bonfire, now turned to ashes and embers. \nYou reach them and sit, suddenly feeling weak and... $cempty$C.",
         "childid": "8_03"
       },
       {
@@ -4089,7 +4089,7 @@
             "actor": "Smiurl",
             "precomment": "The dwarf approaches you smiling, walking with his head high and slightly tilted,\nin order to have everybody admiring the scars on his cheek, where the Oxengutter's claws grazed him. \nIt almost killed him; the scratches look pretty bad, but on the way to heal quickly.",
             "line": "I've never been so hungry my whole life! And this delicious smell...!",
-            "comment": "He cheerfully exclaims sitting next to you. \nThen, he drops serious:"
+            "comment": "He cheerfully exclaims sitting next to you.\nThen, he drops serious:"
           },
           {
             "actor": "Smiurl",
@@ -4098,7 +4098,7 @@
           {
             "actor": "Kriss",
             "line": "I could never afford losing you... Moreover, I was in debt with you right?",
-            "comment": "You smile warmly. \nAt that, Smiurl's whole body lightens up as he chuckles."
+            "comment": "You smile warmly. \nAt that, Smiurl's whole body lights up as he chuckles."
           },
           {
             "actor": "Efeliah",
@@ -4108,7 +4108,7 @@
           {
             "precomment": "By the time you turn your head around, Corolla is emerging from the tent. \nShe looks at you all squinting and then rubbing her eyes.",
             "actor": "Corolla",
-            "line": "You make a heck of a noise! It's impossible to rest with you around...!",
+            "line": "You make an abysmal racket! It's impossible to rest with you around...!",
             "comment": "She jokes."
           },
           {
@@ -4136,7 +4136,7 @@
         "recap": "Enter Mazerock",
         "type": "Story",
         "text": "-------------------------------\n|          CHAPTER 10          |\n-------------------------------\n\n",
-        "childid": "8_08"
+        "childid": "9_01"
       }
 
     ]

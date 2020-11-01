@@ -101,7 +101,9 @@ namespace ConsoleGame.Nodes
                     selectedRow++;
 
                 Console.Clear();
+
                 TextFlow(false);
+
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine();
@@ -137,7 +139,9 @@ namespace ConsoleGame.Nodes
             {
                 Console.CursorTop = Console.WindowHeight - 4;
                 Console.CursorLeft = Console.WindowLeft;
+
                 TextFlow(true, choice.Refusal, ConsoleColor.DarkYellow);
+
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.Write("Press any key...");
@@ -150,7 +154,9 @@ namespace ConsoleGame.Nodes
         void RedrawNode() 
         {
             Console.Clear();
+
             TextFlow(false);
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
