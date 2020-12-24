@@ -1,27 +1,30 @@
-﻿using ConsoleGame.Models;
+﻿using kriss.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ConsoleGame.Classes
+namespace kriss.Classes
 {
     public static class DataLayer
     {
+        public static Status Status { get; set; }
+        public static List<Chapter> Chapters { get; set; } = new();
+        public static Chapter CurrentChapter { get; set; }
+
         public static bool IsReady { get; private set; }
-        public static Database DB { get; set; }
 
         public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
-        public static List<string> Titles { get; private set; } = new List<string>();
 
         public static void Init()
         {
             if (!IsReady)
             {
-                var filePath = Path.Combine(AppContext.BaseDirectory, "textResources.json");
-                if (File.Exists(filePath))
+                // Load Status
+                var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
+                if (File.Exists(statusFile))
                 {
-                    string json = File.ReadAllText(filePath);
-                    DB = Newtonsoft.Json.JsonConvert.DeserializeObject<Database>(json);
+                    string json = File.ReadAllText(statusFile);
+                    Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
 
                     IsReady = true;
                 }
@@ -41,47 +44,65 @@ namespace ConsoleGame.Classes
                 ActorsColors.Add("Elder", ConsoleColor.Magenta);
 
                 //chapters titles
-                Titles.Add("1. THE JOURNEY STARTS");
-                Titles.Add("2. THE HORDE");
-                Titles.Add("3. SOME FRIENDS");
-                Titles.Add("4. THE SWORD");
-                Titles.Add("5. NOI-HERT");
-                Titles.Add("6. BEACONS");
-                Titles.Add("7. SEER'S ROCK");
-                Titles.Add("8. BREAKOUT");
-                Titles.Add("9. THEO'S GIFTS");
-                Titles.Add("10. INTO THE MAZEROCK");
-                Titles.Add("11. AYONN");
+                //Titles.Add("1. THE JOURNEY STARTS");
+                //Titles.Add("2. THE HORDE");
+                //Titles.Add("3. SOME FRIENDS");
+                //Titles.Add("4. THE SWORD");
+                //Titles.Add("5. NOI-HERT");
+                //Titles.Add("6. BEACONS");
+                //Titles.Add("7. SEER'S ROCK");
+                //Titles.Add("8. BREAKOUT");
+                //Titles.Add("9. THEO'S GIFTS");
+                //Titles.Add("10. INTO THE MAZEROCK");
+                //Titles.Add("11. AYONN");
             }
         }
-        public static void SaveProgress(int chapterNo)
-        {
-            var filePath = Path.Combine(AppContext.BaseDirectory, "textResources.json");
 
-            if (chapterNo > 0)
+        public static void LoadChapter(int chapterId = 1)
+        {
+            var jChapter = Path.Combine(AppContext.BaseDirectory, $"TextResources/Chapters/c{chapterId}.json");
+            if (File.Exists(jChapter))
             {
-                DB.Lastchapter.Number = chapterNo;
-                DB.Lastchapter.IsComplete = true;
+                string json = File.ReadAllText(jChapter);
+                Chapters.Add(CurrentChapter = Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(json));
+
+                NodeFactory.BuildNode(SearchNodeById(1));
             }
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(DB, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(filePath, output);
+        }
+
+        /// <summary>
+        /// Marks nodes as done, and if they are last of chapter, also chapter as done
+        /// </summary>
+        /// <param name="chapterNo"></param>
+        public static void SaveProgress()
+        {
+            // save node status
+            var chapterPath = Path.Combine(AppContext.BaseDirectory, $"/TextResources/Chapters/c{CurrentChapter.Id}.json");
+            string jChapter = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentChapter, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(chapterPath, jChapter);
+
+            // save chapter 
+            if (NodeFactory.CurrentNode.IsLast)
+            {
+                var filePath = Path.Combine(AppContext.BaseDirectory, "/TextResources/status.json");
+                Status.LastChapter = CurrentChapter.Id;
+                string output = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
+                File.WriteAllText(filePath, output);
+            }
+        }
+       
+        /// <summary>
+        /// Parses the id provided to extract the matching NodeBase from DataLayer
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static NodeBase SearchNodeById(int nodeId)
+        {
+            return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
         }
     }
-    public class Database
-    {
-        public ChapterBase Lastchapter { get; private set; } = new ChapterBase(); //for saving progress
-        public List<List<NodeBase>> Chapters { get; set; } //all of the nodes grouped by chapter
-        public List<Item> Inventory { get; set; } 
-    }
-    public class ChapterBase
-    {
-        public int Number { get; set; } = 0;
-        public bool IsComplete { get; set; }
-    }
-    public class Item
-    {
-        public string Name { get; set; }
-        public bool Had { get; set; }
-    }
-    
+
+
+
+   
 }

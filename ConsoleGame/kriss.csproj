@@ -9,7 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TextResources\Chapters\c1.json" />
+    <None Remove="TextResources\status.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="textResources.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TextResources\Chapters\c1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TextResources\status.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

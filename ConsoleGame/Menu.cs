@@ -1,4 +1,4 @@
-﻿using ConsoleGame.Classes;
+﻿using kriss.Classes;
 using System;
 
 Console.Title = "KRISS' JOURNEY";
@@ -7,7 +7,7 @@ DataLayer.Init();
            
 ShowMenu();
 
-void ShowMenu()
+static void ShowMenu()
 {
     Console.Clear();
 
@@ -33,28 +33,32 @@ void ShowMenu()
             
     Console.ForegroundColor = ConsoleColor.DarkCyan;
     Console.WriteLine();
-            
+
     //debug: start from. Comment for default start
-    NodeFactory.CreateNode("8_03");
+    //DataLayer.LoadChapter(1);
+    //odeFactory.LoadNode(1);
     //debug
 
-    if (DataLayer.DB.Lastchapter.IsComplete && DataLayer.DB.Lastchapter.Number > 0)
+    if (DataLayer.Status.LastChapter > 1)
     {
         Console.WriteLine("Welcome back, traveler. Press any key to start the next chapter.");
         Console.WriteLine("Press a number if you want to replay an already completed chapter.");
         Console.WriteLine("So far, you completed these chapters:");
         Console.WriteLine();
 
-        for (int i = 0; i < DataLayer.DB.Lastchapter.Number; i++)
-            Console.WriteLine(DataLayer.Titles[i]);
+        for (int i = 0; i < DataLayer.Status.LastChapter; i++)
+            Console.WriteLine(DataLayer.Chapters[i].Title);
 
         var key = Console.ReadKey(true);
 
+        int chapterId;
         //TODO: cycle input waiting because number could be higher than last chapter ...
         if (char.IsDigit(key.KeyChar))
-            NodeFactory.CreateChapter(Convert.ToInt32(key.KeyChar.ToString()) - 1);
+            chapterId = Convert.ToInt32(key.KeyChar);
         else
-            NodeFactory.CreateChapter(DataLayer.DB.Lastchapter.Number); 
+            chapterId = DataLayer.Status.LastChapter;
+
+        DataLayer.LoadChapter(chapterId);
     }
     else
     {
@@ -64,7 +68,7 @@ void ShowMenu()
         Console.WriteLine("Press any key.");
         Console.ReadKey(true);
 
-        NodeFactory.CreateChapter(0);
+        DataLayer.LoadChapter(1);
     }
 }
 

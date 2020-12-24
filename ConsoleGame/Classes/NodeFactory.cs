@@ -1,73 +1,64 @@
-﻿using ConsoleGame.Models;
-using ConsoleGame.Nodes;
-using System;
+﻿using kriss.Models;
+using kriss.Nodes;
 
-namespace ConsoleGame.Classes
+namespace kriss.Classes
 {
     public static class NodeFactory
     {
-        public static SNode CurrentNode; //reference to displayed node (if it's ever needed)
-        public static SNode CreateChapter(int number)
+        public static SNode CurrentNode { get; set; } //reference to displayed node (if it's ever needed)
+
+        public static SNode LoadNode(int? nodeId)
         {
-            string id = number.ToString() + "_01";
-
-            return CurrentNode = CreateNode(id);
-        }
-
-        public static SNode CreateNode(string id, SNode previous = null)
-        {
-            if (previous != null)
-                previous.SaveStatusOnExit();
-
-            if (id != null)
+            if (nodeId.HasValue)
             {
-                //testing purposes, debug 
-                if (id == "test")
-                    return CurrentNode = new NStory(DataLayer.DB.Chapters[0].Find(n => n.Id == "test"));
-
-                //-----------------
-               
-                (NodeBase nb, int chapIndex, int nodeIndex) = SearchNodeById(id);
-
-                if (nb != null)
+                if (CurrentNode != null)
                 {
-                    //if first node of chapter, save progress
-                    if (nodeIndex == 1)
-                        DataLayer.SaveProgress(chapIndex); //chapter index 0 based
+                    // mark exiting node as visited (and chapter if it's last node)
+                    CurrentNode.IsVisited = true;
+                    DataLayer.SaveProgress();
+                }
 
-                    switch (nb.Type)
-                    {
-                        case "Story":
-                            return CurrentNode = new NStory(nb);
-                        case "Choice":
-                            return CurrentNode = new NChoice(nb);
-                        case "Dialogue":
-                            return CurrentNode = new NDialogue(nb);
-                        case "Action":
-                            return CurrentNode = new NAction(nb);
-                        case "MiniGame01":
-                            return CurrentNode = new MiniGame01(nb);
-                        default:
-                            break;
-                    }
+                //testing purposes, debug 
+                if (nodeId == 777)
+                    return CurrentNode = DataLayer.Chapters[0].Nodes.Find(n => n.Id == 777) as NStory;
+                //-----------------
+
+                SNode newNode = DataLayer.SearchNodeById(nodeId.Value);
+
+                return BuildNode(newNode) ?? new SNode() { Text = $"Node not found for id: {nodeId} !" }; 
+            }
+
+            if (CurrentNode.IsLast)
+            {
+                DataLayer.LoadChapter(DataLayer.CurrentChapter.Id + 1);           
+            }
+
+            return new SNode() { Text = $"Id was null and node wasn't the last in the chapter!" };
+        }
+        public static SNode BuildNode(NodeBase node)
+        {
+            if (node != null)
+            {
+                switch (node.Type)
+                {
+                    case "Story":
+                        return CurrentNode = new NStory(node);
+                    case "Choice":
+                        return CurrentNode = new NChoice(node);
+                    case "Dialogue":
+                        return CurrentNode = new NDialogue(node);
+                    case "Action":
+                        return CurrentNode = new NAction(node);
+                    case "MiniGame01":
+                        return CurrentNode = new MiniGame01(node);
+                    default:
+                        break;
                 }
             }
             return null;
         }
-        /// <summary>
-        /// Parses the id provided to extract the matching NodeBase from DataLayer
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public static (NodeBase nb, int chapIndex, int nodeIndex) SearchNodeById(string id)
-        {
-            string[] numbers = id.Split("_");
-
-            int chapIndex = Convert.ToInt32(numbers[0]);
-            int nodeIndex = Convert.ToInt32(numbers[1]);
-            NodeBase nb = DataLayer.DB.Chapters[chapIndex].Find(n => n.Id == id);
-
-            return (nb, chapIndex, nodeIndex);
-        }
     }
+
+
+   
 }

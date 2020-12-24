@@ -1,13 +1,13 @@
-﻿using ConsoleGame.Classes;
-using ConsoleGame.Models;
+﻿using kriss.Classes;
+using kriss.Models;
 using System;
 using System.Threading;
 
-namespace ConsoleGame.Nodes
+namespace kriss.Nodes
 {
     public class NDialogue : SNode
     {
-        public NDialogue(NodeBase nb) : base(nb)
+        public NDialogue(NodeBase node) : base (node)
         {
             RecursiveDialogues();
         }
@@ -66,10 +66,10 @@ namespace ConsoleGame.Nodes
             }
         #endregion
 
-            if (currentLine.ChildId != null)                                        //if it encounters a link, jump to the node
+            if (currentLine.ChildId.HasValue)                                        //if it encounters a link, jump to the node
             {      
                 HoldScreen();
-                NodeFactory.CreateNode(currentLine.ChildId, this);
+                NodeFactory.LoadNode(currentLine.ChildId.Value);
             }
 
             if (currentLine.Replies != null && currentLine.Replies.Count > 0)       //if there are replies inside, display choice
@@ -113,9 +113,9 @@ namespace ConsoleGame.Nodes
 
                 Console.Clear();
 
-                if (currentLine.Replies[selectedRow].ChildId != null)                 //on selecion, either 
+                if (currentLine.Replies[selectedRow].ChildId.HasValue)                 //on selecion, either 
                 {
-                    NodeFactory.CreateNode(currentLine.Replies[selectedRow].ChildId, this); //navigate to node specified in selected reply
+                    NodeFactory.LoadNode(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
                 }
                 else
                 {

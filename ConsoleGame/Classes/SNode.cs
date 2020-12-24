@@ -1,9 +1,9 @@
-﻿using ConsoleGame.Models;
+﻿using kriss.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace ConsoleGame.Classes
+namespace kriss.Classes
 {
     /// <summary>
     /// The main class. It represents every step of the story, every screen which will or won't have several types of player interactions
@@ -11,15 +11,16 @@ namespace ConsoleGame.Classes
     public class SNode
     {
         #region Properties
-        internal string ID { get; set; }
-        internal string Text { get; set; } = string.Empty;
-        internal string AltText { get; set; } = string.Empty;
-        internal string ChildId { get; set; }
-        internal List<Choice> Choices { get; set; }
-        internal List<Models.Action> Actions { get; set; }
-        internal List<Dialogue> Dialogues { get; set; }
+        public int Id { get; set; }
+        public string Text { get; set; }
+        public string AltText { get; set; }
+        public int ChildId { get; set; }
+        public List<Choice> Choices { get; set; } //list of possible choices
+        public List<Models.Action> Actions { get; set; } = new List<Models.Action>(); //list of possible actions
+        public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
+        public bool IsVisited { get; set; }
+        public bool IsLast { get; set; }
 
-        readonly NodeBase node;
         readonly bool DEBUG;
         #endregion
 
@@ -27,7 +28,7 @@ namespace ConsoleGame.Classes
         /// <summary>
         /// At its creation, an instantiated node should clear the screen, print its text and prepare to receive player's input.
         /// This root node loads text resources for everybody
-        public SNode(NodeBase nb)
+        public SNode(NodeBase node)
         {
             //decomment to disable flow effect
             DEBUG = true;
@@ -35,27 +36,10 @@ namespace ConsoleGame.Classes
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
 
-            node = nb;
-
-            ID = node.Id;
-            Text = node.Text;
-            AltText = node.AltText;
-            ChildId = node.ChildId;
-            Choices = node.Choices;
-            Actions = node.Actions;
-            Dialogues = node.Dialogues;
-
-            if (!node.IsVisited)     
+            if (!IsVisited)     
                 TextFlow(true);
             else
                 TextFlow(false);
-        }
-        internal void SaveStatusOnExit()  //this to be called on exit from node to mark it as not new
-        {
-            string[] number = node.Id.Split("_");
-            var updatingNode = DataLayer.DB.Chapters[Convert.ToInt32(number[0])].Find(n => n.Id == node.Id);
-            updatingNode.IsVisited = true;
-            DataLayer.SaveProgress(0);
         }
         #endregion
 
@@ -82,7 +66,7 @@ namespace ConsoleGame.Classes
 
             if (text == "default")
             {
-                if (node.IsVisited && AltText != null)
+                if (IsVisited && AltText != null)
                     text = AltText;
                 else
                     text = Text;

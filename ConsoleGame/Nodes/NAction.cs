@@ -1,10 +1,10 @@
-﻿using ConsoleGame.Classes;
-using ConsoleGame.Models;
+﻿using kriss.Classes;
+using kriss.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 
-namespace ConsoleGame.Nodes
+namespace kriss.Nodes
 {
     public class NAction : SNode
     {
@@ -13,7 +13,7 @@ namespace ConsoleGame.Nodes
         internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
-        public NAction(NodeBase nb) : base(nb)
+        public NAction(NodeBase node) : base (node)
         {
             PrepareForAction(true);
         }
@@ -119,11 +119,12 @@ namespace ConsoleGame.Nodes
             Console.CursorTop = Console.WindowHeight - 1;
             Console.CursorLeft = 0;
 
-            if (ID == "1_02") //first action node. this if clause is to mock player just the first time they use help
-            {
-                Console.CursorTop -= 1;
-                Console.WriteLine("\\> you pressed tab for help. noob.");
-            }
+            if (DataLayer.CurrentChapter.Id == 1)
+                if (Id == 2) //first action node. this if clause is to mock player just the first time they use help
+                {
+                    Console.CursorTop -= 1;
+                    Console.WriteLine("\\> you pressed tab for help. noob.");
+                }
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("\\>");
@@ -260,7 +261,7 @@ namespace ConsoleGame.Nodes
 
             PrepareForAction(true); //display prompt without standard refuse
         }
-        void DisplaySuccess(string answer, string childId = null) 
+        void DisplaySuccess(string answer, int? childId = null) 
         {
             if (answer != null)
             {
@@ -276,18 +277,18 @@ namespace ConsoleGame.Nodes
                 Console.WriteLine();
                 Console.WriteLine();
 
-                if (childId != null)
+                if (childId.HasValue)
                 {
                     Console.WriteLine();
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.Write("Press any key...");
                     Console.ReadKey(true);
 
-                    NodeFactory.CreateNode(childId, this);
+                    NodeFactory.LoadNode(childId.Value);
                 }
             }
-            if (childId != null)
-                NodeFactory.CreateNode(childId, this);
+            if (childId.HasValue)
+                NodeFactory.LoadNode(childId.Value);
 
             //if everything fails:
             PrepareForAction(true); //display prompt without standard refuse

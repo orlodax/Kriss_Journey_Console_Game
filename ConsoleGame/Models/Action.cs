@@ -1,12 +1,12 @@
-﻿using ConsoleGame.Classes;
+﻿using kriss.Classes;
 using System.Collections.Generic;
 
-namespace ConsoleGame.Models
+namespace kriss.Models
 {
     public class Action
     {
         public List<Word> Verbs { get; set; } //verb of the action
-        public string ChildId { get; set; } //key for matching next node
+        public int ChildId { get; set; } //key for matching next node
         public string Answer { get; set; } //answer for incomplete player requests 
         public List<Object> Objects { get; set; } = new List<Object>(); //objects for the verbs
         public Condition Condition { get; set; } //condition for the viability of the action. normally an item
@@ -54,7 +54,7 @@ namespace ConsoleGame.Models
         {
             if (Condition != null)
             {
-                var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == Condition.Item);
+                var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == Condition.Item);
                 if (storedItem != null)
                 {
                     if (storedItem.Had & Condition.Value)
@@ -68,7 +68,7 @@ namespace ConsoleGame.Models
         {
             if (o.Condition != null)
             {
-                var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == o.Condition.Item);
+                var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == o.Condition.Item);
                 if (storedItem != null)
                 {
                     if (storedItem.Had & o.Condition.Value)
@@ -81,14 +81,14 @@ namespace ConsoleGame.Models
         public void StoreItem(Effect effect)       // consequent modify of inventory
         {
             var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
-            DataLayer.DB.Inventory.Add(itemToStore);
+            DataLayer.Status.Inventory.Add(itemToStore);
         }
     }
     public class Object
     {
         public List<Word> Objs { get; set; }         //objects of the action
         public string Answer { get; set; }      //answer for incomplete player requests 
-        public string ChildId { get; set; }     //key for matching next node
+        public int ChildId { get; set; }     //key for matching next node
         public Effect Effect { get; set; }      //consequence from the object
         public Condition Condition { get; set; }//combinations of actions and objects can have conditions too
     }

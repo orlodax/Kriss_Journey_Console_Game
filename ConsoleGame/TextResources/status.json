@@ -1,9 +1,7 @@
 ﻿{
-  "lastchapter": {
-    "number": "0",
-    "iscomplete": false
-  },
-  "inventory": [
+  "lastChapter": "1",
+  "inventory": 
+  [
 
   ]
 }

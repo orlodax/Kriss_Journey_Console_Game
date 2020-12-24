@@ -1,17 +1,12 @@
-﻿using ConsoleGame.Classes;
-using ConsoleGame.Nodes;
+﻿using kriss.Classes;
+using kriss.Nodes;
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleGame.Models
+namespace kriss.Models
 {
     public class MiniGame01 : NAction
     {
-        public MiniGame01(NodeBase nb) : base(nb)
-        {
-            
-        }
-
         internal override void TabPressed() 
         {
             Console.CursorTop = Console.WindowHeight - 4;
@@ -49,7 +44,7 @@ namespace ConsoleGame.Models
             if (!string.IsNullOrWhiteSpace(words[0]))
             {
                 if(words[0].ToLower() == "stop")
-                    NodeFactory.CreateNode(ChildId, this);
+                    NodeFactory.LoadNode(ChildId);
 
                 RedrawNode();
 

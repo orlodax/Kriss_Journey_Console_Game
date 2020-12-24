@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsoleGame.Models
+namespace kriss.Models
 {
     public class Dialogue
     {
@@ -11,7 +11,7 @@ namespace ConsoleGame.Models
         public string Line { get; set; }
         public string Comment { get; set; }
         public List<Reply> Replies { get; set; }    
-        public string ChildId { get; set; }
+        public int? ChildId { get; set; }
         public bool Break { get; set; }
         public bool IsTelepathy { get; set; }
     }
@@ -20,7 +20,7 @@ namespace ConsoleGame.Models
         public string Actor { get; set; }
         public string Line { get; set; }
         public string Comment { get; set; }
-        public string ChildId { get; set; }
+        public int? ChildId { get; set; }
         public string NextLine { get; set; }    //speechpart to jump to        
     }
 }

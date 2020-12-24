@@ -1,17 +1,17 @@
-﻿using ConsoleGame.Classes;
-using ConsoleGame.Models;
+﻿using kriss.Classes;
+using kriss.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace ConsoleGame.Nodes
+namespace kriss.Nodes
 {
     public class NChoice : SNode
     {
         int selectedRow = 0;
         readonly List<Choice> visibleChoices = new List<Choice>();
 
-        public NChoice(NodeBase nb) : base(nb)
+        public NChoice(NodeBase node) : base (node)
         {
             Thread.Sleep(ParagraphBreak);
             Console.WriteLine();
@@ -37,10 +37,15 @@ namespace ConsoleGame.Nodes
                     var cond = c.Condition;
                     if (cond.Type == "isNodeVisited")
                     {
-                        (NodeBase nb, int chapIndex, int nodeIndex) = NodeFactory.SearchNodeById(cond.Item);    //item in this case contains node id
-                        
-                        if (nb.IsVisited == cond.Value)
-                            visibleChoices.Add(c);
+                        if (int.TryParse(cond.Item, out int nodeId))
+                        {
+                            NodeBase nb = DataLayer.SearchNodeById(nodeId);    //item in this case contains node id
+
+                            if (nb.IsVisited == cond.Value)
+                                visibleChoices.Add(c);
+                        }
+                        else
+                            throw new Exception("IsNodeVisited Condition wasn't an integer!!"); 
                     }
                     else
                         visibleChoices.Add(c);
@@ -133,7 +138,7 @@ namespace ConsoleGame.Nodes
 
                 choice.IsPlayed = true;
 
-                NodeFactory.CreateNode(choice.ChildId, this);
+                NodeFactory.LoadNode(choice.ChildId);
             }
             else
             {

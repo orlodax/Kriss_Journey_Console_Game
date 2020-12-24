@@ -1,14 +1,14 @@
-﻿using ConsoleGame.Classes;
+﻿using kriss.Classes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleGame.Models
+namespace kriss.Models
 {
     public class Choice
     {
         public string Desc { get; set; }
-        public string ChildId { get; set; }
+        public int ChildId { get; set; }
         public Condition Condition { get; set; }//condition for the viability of the action. normally an item
         public Effect Effect { get; set; }      //consequence from the base action
         public string Refusal { get; set; }
@@ -23,7 +23,7 @@ namespace ConsoleGame.Models
             {
                 if (Condition.Type != "isNodeVisited")
                 {
-                    var storedItem = DataLayer.DB.Inventory.Find(i => i.Name == Condition.Item);
+                    var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == Condition.Item);
                     if (storedItem != null)
                     {
                         if (storedItem.Had & Condition.Value)
@@ -37,7 +37,7 @@ namespace ConsoleGame.Models
         public void StoreItem(Effect effect)       // consequent modify of inventory
         {
             var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
-            DataLayer.DB.Inventory.Add(itemToStore);
+            DataLayer.Status.Inventory.Add(itemToStore);
         }
     }
 }

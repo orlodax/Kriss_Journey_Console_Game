@@ -1,12 +1,12 @@
-﻿using ConsoleGame.Classes;
-using ConsoleGame.Models;
+﻿using kriss.Classes;
+using kriss.Models;
 using System;
 
-namespace ConsoleGame.Nodes
+namespace kriss.Nodes
 {
     public class NStory : SNode
     {
-        public NStory(NodeBase nb) : base(nb)
+        public NStory(NodeBase node) : base (node)
         {
             ///go to bottom line
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
@@ -20,7 +20,7 @@ namespace ConsoleGame.Nodes
 
             Console.ReadKey(true);
 
-            NodeFactory.CreateNode(ChildId, this);
+            NodeFactory.LoadNode(ChildId);
         }
     }
 }
