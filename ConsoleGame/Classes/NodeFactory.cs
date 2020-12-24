@@ -19,13 +19,13 @@ namespace kriss.Classes
                 }
 
                 //testing purposes, debug 
-                if (nodeId == 777)
-                    return CurrentNode = DataLayer.Chapters[0].Nodes.Find(n => n.Id == 777) as NStory;
+                //if (nodeId == 777)
+                //    return CurrentNode = DataLayer.Chapters[0].Nodes.Find(n => n.Id == 777) as NStory;
                 //-----------------
 
-                SNode newNode = DataLayer.SearchNodeById(nodeId.Value);
+                var newNode = DataLayer.SearchNodeById(nodeId.Value);
 
-                return BuildNode(newNode) ?? new SNode() { Text = $"Node not found for id: {nodeId} !" }; 
+                return BuildNode(newNode) ?? new SNode(new NodeBase()) { Text = $"Node not found for id: {nodeId} !" }; 
             }
 
             if (CurrentNode.IsLast)
@@ -33,7 +33,7 @@ namespace kriss.Classes
                 DataLayer.LoadChapter(DataLayer.CurrentChapter.Id + 1);           
             }
 
-            return new SNode() { Text = $"Id was null and node wasn't the last in the chapter!" };
+            return new SNode(new NodeBase()) { Text = $"Id was null and node wasn't the last in the chapter!" };
         }
         public static SNode BuildNode(NodeBase node)
         {
@@ -42,6 +42,7 @@ namespace kriss.Classes
                 switch (node.Type)
                 {
                     case "Story":
+                        var pop = new NStory(node);
                         return CurrentNode = new NStory(node);
                     case "Choice":
                         return CurrentNode = new NChoice(node);

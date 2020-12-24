@@ -30,9 +30,21 @@ namespace kriss.Classes
         /// This root node loads text resources for everybody
         public SNode(NodeBase node)
         {
-            //decomment to disable flow effect
-            DEBUG = true;
+            // decomment to disable flow effect
+            DEBUG = false;
 
+            // mapping
+            Id = node.Id;
+            Text = node.Text;
+            AltText = node.AltText;
+            ChildId = node.ChildId;
+            Choices = node.Choices;
+            Actions = node.Actions;
+            Dialogues = node.Dialogues;
+            IsVisited = node.IsVisited;
+            IsLast = node.IsLast;
+
+            // start text
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
 

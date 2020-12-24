@@ -68,7 +68,7 @@ static void ShowMenu()
         Console.WriteLine("Press any key.");
         Console.ReadKey(true);
 
-        DataLayer.LoadChapter(1);
+        DataLayer.LoadChapter();
     }
 }
 

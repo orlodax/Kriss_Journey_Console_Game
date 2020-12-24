@@ -7,6 +7,11 @@ namespace kriss.Models
 {
     public class MiniGame01 : NAction
     {
+        public MiniGame01(NodeBase node) : base(node)
+        {
+
+        }
+
         internal override void TabPressed() 
         {
             Console.CursorTop = Console.WindowHeight - 4;

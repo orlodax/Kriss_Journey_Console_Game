@@ -10,52 +10,59 @@ namespace kriss.Classes
         public static Status Status { get; set; }
         public static List<Chapter> Chapters { get; set; } = new();
         public static Chapter CurrentChapter { get; set; }
-
-        public static bool IsReady { get; private set; }
-
         public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
 
         public static void Init()
         {
-            if (!IsReady)
+            // Load Status
+            var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
+            if (File.Exists(statusFile))
             {
-                // Load Status
-                var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
-                if (File.Exists(statusFile))
-                {
-                    string json = File.ReadAllText(statusFile);
-                    Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
+                string json = File.ReadAllText(statusFile);
+                Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
 
-                    IsReady = true;
-                }
-
-                //color dialogues dictionary assignment
-                ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
-                ActorsColors.Add("Person", ConsoleColor.DarkYellow);
-                ActorsColors.Add("White", ConsoleColor.White);
-                ActorsColors.Add("Kriss", ConsoleColor.Cyan);
-                ActorsColors.Add("Corolla", ConsoleColor.Red);
-                ActorsColors.Add("Smiurl", ConsoleColor.Yellow);
-                ActorsColors.Add("Theo", ConsoleColor.Blue);
-                ActorsColors.Add("Jeorghe", ConsoleColor.DarkMagenta);
-                ActorsColors.Add("Chief", ConsoleColor.Magenta);
-                ActorsColors.Add("Efeliah", ConsoleColor.DarkGreen);
-                ActorsColors.Add("Math", ConsoleColor.DarkMagenta);
-                ActorsColors.Add("Elder", ConsoleColor.Magenta);
-
-                //chapters titles
-                //Titles.Add("1. THE JOURNEY STARTS");
-                //Titles.Add("2. THE HORDE");
-                //Titles.Add("3. SOME FRIENDS");
-                //Titles.Add("4. THE SWORD");
-                //Titles.Add("5. NOI-HERT");
-                //Titles.Add("6. BEACONS");
-                //Titles.Add("7. SEER'S ROCK");
-                //Titles.Add("8. BREAKOUT");
-                //Titles.Add("9. THEO'S GIFTS");
-                //Titles.Add("10. INTO THE MAZEROCK");
-                //Titles.Add("11. AYONN");
             }
+
+            if (Status.LastChapter > 1)
+            {
+                for (int i = 1; i <= Status.LastChapter; i++)
+                {
+                    var jChapter = Path.Combine(AppContext.BaseDirectory, $"TextResources/Chapters/c{i}.json");
+                    if (File.Exists(jChapter))
+                    {
+                        string json = File.ReadAllText(jChapter);
+                        Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(json));
+                    }
+                }
+                CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
+            }
+
+            //color dialogues dictionary assignment
+            ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
+            ActorsColors.Add("Person", ConsoleColor.DarkYellow);
+            ActorsColors.Add("White", ConsoleColor.White);
+            ActorsColors.Add("Kriss", ConsoleColor.Cyan);
+            ActorsColors.Add("Corolla", ConsoleColor.Red);
+            ActorsColors.Add("Smiurl", ConsoleColor.Yellow);
+            ActorsColors.Add("Theo", ConsoleColor.Blue);
+            ActorsColors.Add("Jeorghe", ConsoleColor.DarkMagenta);
+            ActorsColors.Add("Chief", ConsoleColor.Magenta);
+            ActorsColors.Add("Efeliah", ConsoleColor.DarkGreen);
+            ActorsColors.Add("Math", ConsoleColor.DarkMagenta);
+            ActorsColors.Add("Elder", ConsoleColor.Magenta);
+
+            //chapters titles
+            //Titles.Add("1. THE JOURNEY STARTS");
+            //Titles.Add("2. THE HORDE");
+            //Titles.Add("3. SOME FRIENDS");
+            //Titles.Add("4. THE SWORD");
+            //Titles.Add("5. NOI-HERT");
+            //Titles.Add("6. BEACONS");
+            //Titles.Add("7. SEER'S ROCK");
+            //Titles.Add("8. BREAKOUT");
+            //Titles.Add("9. THEO'S GIFTS");
+            //Titles.Add("10. INTO THE MAZEROCK");
+            //Titles.Add("11. AYONN");
         }
 
         public static void LoadChapter(int chapterId = 1)
@@ -64,7 +71,10 @@ namespace kriss.Classes
             if (File.Exists(jChapter))
             {
                 string json = File.ReadAllText(jChapter);
-                Chapters.Add(CurrentChapter = Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(json));
+                CurrentChapter = Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(json);
+                
+                if (!Chapters.Contains(CurrentChapter))
+                    Chapters.Add(CurrentChapter);
 
                 NodeFactory.BuildNode(SearchNodeById(1));
             }
