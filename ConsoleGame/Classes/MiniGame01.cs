@@ -1,9 +1,9 @@
-﻿using kriss.Classes;
+﻿using lybra;
 using kriss.Nodes;
 using System;
 using System.Collections.Generic;
 
-namespace kriss.Models
+namespace kriss.Classes
 {
     public class MiniGame01 : NAction
     {

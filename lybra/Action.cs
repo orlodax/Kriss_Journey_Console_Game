@@ -1,7 +1,6 @@
-﻿using kriss.Classes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace kriss.Models
+namespace lybra
 {
     public class Action
     {
@@ -47,41 +46,6 @@ namespace kriss.Models
                     }
                 return "Sorry can't do that.";
             }
-        }
-
-
-        public bool EvaluateSimple()                            // check according to the condition
-        {
-            if (Condition != null)
-            {
-                var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == Condition.Item);
-                if (storedItem != null)
-                {
-                    if (storedItem.Had & Condition.Value)
-                        return true;
-                }
-                return false;
-            }
-            return true;
-        }
-        public bool EvaluateCombination(Models.Object o)                       // check according to the condition
-        {
-            if (o.Condition != null)
-            {
-                var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == o.Condition.Item);
-                if (storedItem != null)
-                {
-                    if (storedItem.Had & o.Condition.Value)
-                        return true;
-                }
-                return false;
-            }
-            return true;
-        }
-        public void StoreItem(Effect effect)       // consequent modify of inventory
-        {
-            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
-            DataLayer.Status.Inventory.Add(itemToStore);
         }
     }
     public class Object

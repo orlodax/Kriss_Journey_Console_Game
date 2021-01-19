@@ -1,5 +1,5 @@
 ﻿using kriss.Classes;
-using kriss.Models;
+using lybra;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -125,10 +125,10 @@ namespace kriss.Nodes
                     WaitForChoice();
                 }
             }
-            if (choice.Evaluate())
+            if (Evaluate(choice.Condition))
             {
                 if (choice.Effect != null)
-                    choice.StoreItem(choice.Effect);
+                    StoreItem(choice.Effect);
 
                 if (choice.UnHide.HasValue)                  //if this choice unlocks others
                 {

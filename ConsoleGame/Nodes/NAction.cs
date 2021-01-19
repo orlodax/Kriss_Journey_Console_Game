@@ -1,5 +1,5 @@
 ﻿using kriss.Classes;
-using kriss.Models;
+using lybra;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -8,7 +8,7 @@ namespace kriss.Nodes
 {
     public class NAction : SNode
     {
-        Models.Action act = null;
+        lybra.Action act = null;
         internal readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
         internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
@@ -186,12 +186,12 @@ namespace kriss.Nodes
                 {
                     if (act.Objects.Count == 0)                                 //...and is objectless...
                     {
-                        if (!act.EvaluateSimple())                              //if for some reason Kriss can't do it, say it...
+                        if (!Evaluate(act.Condition))                           //if for some reason Kriss can't do it, say it...
                             CustomRefusal(act.Condition.Refusal);
                         else
                         {
                             if (act.Effect != null)                             //in case the action has an Effect (inventory)
-                                act.StoreItem(act.Effect);
+                                StoreItem(act.Effect);
 
                             DisplaySuccess(act.Answer, act.ChildId);            //...just do it
                         }
@@ -200,7 +200,7 @@ namespace kriss.Nodes
                     {                                                           //...otherwise, examine Objects 
                         for (int i = 0; i < act.Objects.Count; i++)             
                         {
-                            Models.Object o = act.Objects[i];
+                            lybra.Object o = act.Objects[i];
 
                             foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                             {
@@ -208,12 +208,12 @@ namespace kriss.Nodes
                                 {
                                     if (obj.Term == word)                       //the action is right, and there is a acceptable object specified
                                     {
-                                        if (!act.EvaluateCombination(o))        //if for some reason Kriss can't do it, say it...
+                                        if (!Evaluate(o.Condition))             //if for some reason Kriss can't do it, say it...
                                             CustomRefusal(o.Condition.Refusal);
                                         else                                    //...otherwise, do it
                                         {
                                             if (o.Effect != null)               //in case the obj has an Effect (inventory)
-                                                act.StoreItem(o.Effect);
+                                                StoreItem(o.Effect);
 
                                             DisplaySuccess(o.Answer, o.ChildId);
                                         }

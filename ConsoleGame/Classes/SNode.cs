@@ -1,4 +1,4 @@
-﻿using kriss.Models;
+﻿using lybra;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -16,7 +16,7 @@ namespace kriss.Classes
         public string AltText { get; set; }
         public int ChildId { get; set; }
         public List<Choice> Choices { get; set; } //list of possible choices
-        public List<Models.Action> Actions { get; set; } = new List<Models.Action>(); //list of possible actions
+        public List<lybra.Action> Actions { get; set; } = new List<lybra.Action>(); //list of possible actions
         public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
         public bool IsVisited { get; set; }
         public bool IsLast { get; set; }
@@ -193,6 +193,17 @@ namespace kriss.Classes
                 }
 
             }
+        }
+        #endregion
+
+        #region Forwarding methods
+        public static bool Evaluate(Condition condition)
+        {
+            return DataLayer.Evaluate(condition);
+        }
+        public static void StoreItem(Effect effect)
+        {
+            DataLayer.StoreItem(effect);
         }
         #endregion
     }

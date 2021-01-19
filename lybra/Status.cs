@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace kriss.Models
+namespace lybra
 {
     public class Status                             // represent the current status and the saved game
     {

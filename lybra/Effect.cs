@@ -1,4 +1,4 @@
-﻿namespace kriss.Models
+﻿namespace lybra
 {
     public class Effect                         // now it affects player. normally inventory
     {

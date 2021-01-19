@@ -1,7 +1,8 @@
-﻿using kriss.Models;
+﻿using lybra;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace kriss.Classes
 {
@@ -12,30 +13,41 @@ namespace kriss.Classes
         public static Chapter CurrentChapter { get; set; }
         public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
 
+        private static Assembly Assembly;
+
         public static void Init()
         {
+            Assembly = Assembly.GetExecutingAssembly();
+
+            ///TODO
+            /// ALL'AVVIO CARICA TUTTI I CAPITOLI IN CHAPTERS
+
+            ////string fileName = "kriss.TextResources.Chapters.c1.json";
+            //string statusFileName = "kriss.TextResources.status.json";
+
+            //using Stream stream = Assembly.GetManifestResourceStream(statusFileName);
+            //using StreamReader reader = new StreamReader(stream);
+            //string jStatus = reader.ReadToEnd();
+           
+
             // Load Status
             var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
             if (File.Exists(statusFile))
             {
                 string json = File.ReadAllText(statusFile);
                 Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
-
             }
 
             if (Status.LastChapter > 1)
             {
                 for (int i = 1; i <= Status.LastChapter; i++)
                 {
-                    var jChapter = Path.Combine(AppContext.BaseDirectory, $"TextResources/Chapters/c{i}.json");
-                    if (File.Exists(jChapter))
-                    {
-                        string json = File.ReadAllText(jChapter);
-                        Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(json));
-                    }
+                    string jChapter = LoadResource($"kriss.TextResources.Chapters.c{i}.json");
+                    Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(jChapter));
                 }
                 CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
             }
+
 
             //color dialogues dictionary assignment
             ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
@@ -87,14 +99,14 @@ namespace kriss.Classes
         public static void SaveProgress()
         {
             // save node status
-            var chapterPath = Path.Combine(AppContext.BaseDirectory, $"/TextResources/Chapters/c{CurrentChapter.Id}.json");
+            var chapterPath = Path.Combine(AppContext.BaseDirectory, $"TextResources/Chapters/c{CurrentChapter.Id}.json");
             string jChapter = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentChapter, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(chapterPath, jChapter);
 
             // save chapter 
             if (NodeFactory.CurrentNode.IsLast)
             {
-                var filePath = Path.Combine(AppContext.BaseDirectory, "/TextResources/status.json");
+                var filePath = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
                 Status.LastChapter = CurrentChapter.Id;
                 string output = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
                 File.WriteAllText(filePath, output);
@@ -110,9 +122,45 @@ namespace kriss.Classes
         {
             return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
         }
+
+        static string LoadResource(string resourceName)
+        {
+            using Stream stream = Assembly.GetManifestResourceStream(resourceName);
+            using StreamReader reader = new StreamReader(stream);
+            return reader.ReadToEnd();
+        }
+
+        /// <summary>
+        /// Decides upon the condition of a choice, action, object etc
+        /// </summary>
+        /// <param name="Condition"></param>
+        /// <returns></returns>
+        public static bool Evaluate(Condition Condition)                            // check according to the condition
+        {
+            if (Condition != null)
+            {
+                if (Condition.Type != "isNodeVisited")
+                {
+                    var storedItem = Status.Inventory.Find(i => i.Name == Condition.Item);
+                    if (storedItem != null)
+                    {
+                        if (storedItem.Had & Condition.Value)
+                            return true;
+                    }
+                }
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// You picked something up
+        /// </summary>
+        /// <param name="effect"></param>
+        public static void StoreItem(Effect effect)       // consequent modify of inventory
+        {
+            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
+            Status.Inventory.Add(itemToStore);
+        }
     }
-
-
-
-   
 }

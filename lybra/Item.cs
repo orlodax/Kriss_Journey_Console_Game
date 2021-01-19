@@ -1,4 +1,4 @@
-﻿namespace kriss.Models
+﻿namespace lybra
 {
     public class Item                       // typically an object carried by the characters
     {
