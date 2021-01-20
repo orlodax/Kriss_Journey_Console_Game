@@ -5,6 +5,7 @@ namespace lybra
     public class NodeBase
     {
         public int Id { get; set; } //unique id primary key
+        public string Recap { get; set; } 
         public string Type { get; set; } //story, choice, action...
         public string Text { get; set; } //text to be flown
         public string AltText { get; set; } //other text to be flown/displayed (i.e. if the node is already visited)

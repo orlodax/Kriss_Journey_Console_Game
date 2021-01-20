@@ -10,8 +10,49 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <RelativePanel>
-        <ListView/>
-        <ListView/>
-        <Grid></Grid>
+        <CommandBar x:Name="menu" IsOpen="False" DefaultLabelPosition="Bottom"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignTopWithPanel="True">
+            <AppBarButton Icon="Add" Label="New Chapter" Command="{Binding NewChapter}"/>
+            <AppBarButton Icon="Folder" Label="Choose folder" Command="{Binding ChooseFolder}"/>
+        </CommandBar>
+
+        <ListView x:Name="chapterList" 
+                  RelativePanel.Below="menu"
+                  RelativePanel.AlignLeftWithPanel="True"
+                  RelativePanel.AlignRightWith = "menu"
+                  RelativePanel.AlignBottomWithPanel="True"
+                  ItemsSource="{Binding Chapters, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedChapter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Id}"/>
+                        <TextBlock Text="{Binding Title}" Margin="15,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="nodeList" Width="250"
+                  RelativePanel.RightOf="chapterList"
+                  RelativePanel.AlignBottomWithPanel="True"
+                  RelativePanel.AlignTopWithPanel="True"
+                  ItemsSource="{Binding SelectedChapter.Nodes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedNode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Id}"/>
+                        <TextBlock Text="{Binding Recap}" Margin="15,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid x:Name="detailsPane" RelativePanel.RightOf="nodeList"
+              RelativePanel.AlignBottomWithPanel="True"
+              RelativePanel.AlignTopWithPanel="True"
+              RelativePanel.AlignRightWithPanel="True">
+
+        </Grid>
     </RelativePanel>
 </Page>
