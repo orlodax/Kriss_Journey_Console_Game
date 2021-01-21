@@ -16,6 +16,4 @@ namespace lybra
         public bool IsVisited { get; set; }
         public bool IsLast { get; set; }
     }
-
-
 }

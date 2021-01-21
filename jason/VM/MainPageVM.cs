@@ -12,27 +12,36 @@ namespace jason.VM
         private ObservableCollection<Chapter> chapters = new ObservableCollection<Chapter>();
         private Chapter selectedChapter;
         private NodeBase selectedNode;
+        private string jPath;
 
         public ObservableCollection<Chapter> Chapters { get => chapters; set => SetValue(ref chapters, value); }
         public Chapter SelectedChapter { get => selectedChapter; set => SetValue(ref selectedChapter, value); }
         public NodeBase SelectedNode { get => selectedNode; set => SetValue(ref selectedNode, value); }
-        
+        public string JPath { get => jPath; set => SetValue(ref jPath, value); }
+
+        public string[] NodeTypes { get; set; } = { "Story", "Choice", "Dialogue", "Action" };
+
+
         ApplicationDataContainer LocalSettings;
 
-        public ICommand NewChapter { get; private set; }
+
         public ICommand ChooseFolder { get; private set; }
+        public ICommand NewChapter { get; private set; }
+        public ICommand NewNode { get; private set; }
+
 
         public MainPageVM()
         {
-            NewChapter = new RelayCommand(Exec_NewChapter);
+            LocalSettings = ApplicationData.Current.LocalSettings;
+
             ChooseFolder = new RelayCommand(Exec_ChooseFolder);
+            NewChapter = new RelayCommand(Exec_NewChapter);
+            NewNode = new RelayCommand(Exec_NewNode);
 
             Init();
         }
-
-        private async void Init() 
+        private async void Init()
         {
-            LocalSettings = ApplicationData.Current.LocalSettings;
             if (LocalSettings.Values.TryGetValue("workFolder", out object path))
             {
                 var workFolder = await StorageFolder.GetFolderFromPathAsync(path.ToString());
@@ -40,7 +49,7 @@ namespace jason.VM
                     LoadChapters(workFolder);
             }
         }
-        private async void LoadChapters(StorageFolder folder) 
+        private async void LoadChapters(StorageFolder folder)
         {
             foreach (StorageFile file in await folder.GetFilesAsync())
             {
@@ -61,15 +70,11 @@ namespace jason.VM
                 }
             }
         }
-        private void Exec_NewChapter(object parameter)
-        {
-
-        }
         private async void Exec_ChooseFolder(object parameter)
         {
             var folderPicker = new Windows.Storage.Pickers.FolderPicker();
             folderPicker.FileTypeFilter.Add("*");
-            
+
             StorageFolder folder = await folderPicker.PickSingleFolderAsync();
             if (folder != null)
             {
@@ -80,7 +85,13 @@ namespace jason.VM
                 LoadChapters(folder);
             }
         }
+        private void Exec_NewChapter(object parameter)
+        {
+
+        }
+        private void Exec_NewNode(object parameter)
+        {
+
+        }
     }
-
-
 }
