@@ -141,41 +141,55 @@
             </Button.Content>
         </Button>
 
-        <RelativePanel x:Name="basicElements" RelativePanel.RightOf="nodeList" 
+        <Grid x:Name="basicElements" RelativePanel.RightOf="nodeList" 
               RelativePanel.Below="AppTitleBar"
               RelativePanel.AlignRightWithPanel="True"
               Margin="10,0"
               Visibility="{Binding SelectedNode, Converter={StaticResource IsItemSelected}}">
 
-            <ComboBox x:Name="nodeType"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+           
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <ComboBox x:Name="nodeType"
                       Header="Node Type"
                       SelectedValue="{Binding SelectedNode.Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       ItemsSource="{Binding NodeTypes}"/>
 
-            <TextBox x:Name="recap"
+                <TextBox x:Name="recap"
                      Header="Recap"
                      RelativePanel.Below="nodeType"
                      MinWidth="200"
                      Margin="0,10"
                      Text="{Binding SelectedNode.Recap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <controls:NumberBox x:Name="childId"
+                <controls:NumberBox x:Name="childId"
                                 Header="Child Id"
                                 RelativePanel.Below="recap"
                                 Value="{Binding SelectedNode.ChildId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <CheckBox x:Name="isLast"
+                <CheckBox x:Name="isLast"
                       Content="End of chapter"
                       RelativePanel.Below="childId"
                       Margin="0,10,0,0"
                       IsChecked="{Binding SelectedNode.IsLast}"/>
 
-            <TextBox x:Name="nodeText"
+
+            </StackPanel>
+           
+            <TextBox x:Name="nodeText" Grid.Column="1"
                      Header="Text"
                      RelativePanel.RightOf="recap"
                      RelativePanel.AlignTopWithPanel="True"
                      RelativePanel.AlignBottomWith="isLast"
-                     Width="500"
                      Margin="10,0"
                      TextWrapping="Wrap" 
                      AcceptsReturn="True"
@@ -183,32 +197,28 @@
                      Text="{Binding SelectedNode.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      />
             
-            <TextBox x:Name="nodeAltText"
+            <TextBox x:Name="nodeAltText" Grid.Column="2"
                      Header="Alternate Text"
                      RelativePanel.RightOf="nodeText"
                      RelativePanel.AlignTopWithPanel="True"
                      RelativePanel.AlignBottomWith="isLast"
                      RelativePanel.AlignRightWithPanel="True"
-                     HorizontalAlignment="Left"
-                     Width="500"
+                     HorizontalAlignment="Stretch"
+                     Margin="0,0,10,0"
                      TextWrapping="Wrap" 
                      AcceptsReturn="True"
                      ScrollViewer.IsVerticalRailEnabled="True"
                      Text="{Binding SelectedNode.AltText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      />
 
-        </RelativePanel>
-        
-        
-        <RelativePanel x:Name="typedDetails" RelativePanel.RightOf="nodeList" 
-              RelativePanel.AlignBottomWithPanel="True"
-              RelativePanel.Below="basicElements"
-              RelativePanel.AlignRightWithPanel="True">
-
-
-
-        </RelativePanel>
-
+            <UserControl x:Name="typedDetails" Grid.Row="1"
+                     RelativePanel.RightOf="nodeList" 
+                     Visibility="{Binding TypeDetailVisibility}"
+                     Content="{Binding TypeDetailPane, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     RelativePanel.AlignBottomWithPanel="True"
+                     RelativePanel.Below="basicElements"
+                     RelativePanel.AlignRightWithPanel="True"/>
+        </Grid>
 
     </RelativePanel>
 </Page>

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="TextResources\Chapters\c1.json" />
+    <None Remove="TextResources\Chapters\c2.json" />
     <None Remove="TextResources\status.json" />
   </ItemGroup>
 
@@ -20,6 +21,7 @@
     <EmbeddedResource Include="TextResources\Chapters\c1.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextResources\Chapters\c2.json" />
     <Content Include="TextResources\status.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
