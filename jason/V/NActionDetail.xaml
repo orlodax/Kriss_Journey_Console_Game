@@ -14,11 +14,11 @@
 
     <UserControl.Resources>
         <classes:ConverterExtractFirstVerb x:Key="ConverterExtractFirstVerb"/>
+        <classes:ConverterIsItemSelected x:Key="ConverterIsItemSelected"/>
     </UserControl.Resources>
 
-
     <RelativePanel>
-
+     
         <ListView x:Name="actionsList"
                   Background="{ThemeResource SystemControlAcrylicElementBrush}"
                   Margin="10"
@@ -41,14 +41,29 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Grid x:Name="actionDetails"
+        <Button Command="{Binding NewAction}"
+                Background="Transparent"
+                RelativePanel.AlignTopWith="actionsList"
+                RelativePanel.AlignRightWith="actionsList"
+                Margin="14">
+            <Button.Content>
+                <SymbolIcon Symbol="Add"/>
+            </Button.Content>
+        </Button>
+
+        <StackPanel x:Name="actionDetails" Visibility="{Binding SelectedAction, Converter={StaticResource ConverterIsItemSelected}}"
               Margin="0,10,10,10"
               RelativePanel.AlignTopWithPanel="True"
               RelativePanel.AlignRightWithPanel="True"
               RelativePanel.AlignBottomWithPanel="True"
               RelativePanel.RightOf="actionsList">
-            
-        </Grid>
+
+            <TextBlock x:Name="insertTerm"/>
+            <ListBox x:Name="termsList" 
+                     ItemsSource="{Binding SelectedAction.Verbs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     DisplayMemberPath="{Binding Term}"/>
+
+        </StackPanel>
 
     </RelativePanel>
     

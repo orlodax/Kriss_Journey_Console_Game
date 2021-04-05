@@ -39,6 +39,8 @@ static void ShowMenu()
     //odeFactory.LoadNode(1);
     //debug
 
+    int chapterId = 1;
+
     if (DataLayer.Status.LastChapter > 1)
     {
         Console.WriteLine("Welcome back, traveler. Press any key to start the next chapter.");
@@ -51,14 +53,11 @@ static void ShowMenu()
 
         var key = Console.ReadKey(true);
 
-        int chapterId;
         //TODO: cycle input waiting because number could be higher than last chapter ...
         if (char.IsDigit(key.KeyChar))
             chapterId = Convert.ToInt32(key.KeyChar);
         else
             chapterId = DataLayer.Status.LastChapter;
-
-        DataLayer.LoadChapter(chapterId);
     }
     else
     {
@@ -67,8 +66,9 @@ static void ShowMenu()
         Console.WriteLine();
         Console.WriteLine("Press any key.");
         Console.ReadKey(true);
-
-        DataLayer.LoadChapter();
     }
+
+    // load first node of last (current) chapter
+    DataLayer.StartChapter(chapterId);
 }
 

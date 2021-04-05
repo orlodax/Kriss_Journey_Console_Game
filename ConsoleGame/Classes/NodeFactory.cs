@@ -5,7 +5,7 @@ namespace kriss.Classes
 {
     public static class NodeFactory
     {
-        public static SNode CurrentNode { get; set; } //reference to displayed node (if it's ever needed)
+        public static SNode CurrentNode { get; set; } //reference to displayed node 
 
         public static SNode LoadNode(int? nodeId)
         {
@@ -29,9 +29,7 @@ namespace kriss.Classes
             }
 
             if (CurrentNode.IsLast)
-            {
-                DataLayer.LoadChapter(DataLayer.CurrentChapter.Id + 1);           
-            }
+                return DataLayer.StartChapter(DataLayer.CurrentChapter.Id + 1);           
 
             return new SNode(new NodeBase()) { Text = $"Id was null and node wasn't the last in the chapter!" };
         }
@@ -42,7 +40,6 @@ namespace kriss.Classes
                 switch (node.Type)
                 {
                     case "Story":
-                        var pop = new NStory(node);
                         return CurrentNode = new NStory(node);
                     case "Choice":
                         return CurrentNode = new NChoice(node);

@@ -38,16 +38,13 @@ namespace kriss.Classes
                 Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
             }
 
-            if (Status.LastChapter > 1)
+            for (int i = 1; i <= Status.LastChapter; i++)
             {
-                for (int i = 1; i <= Status.LastChapter; i++)
-                {
-                    string jChapter = LoadResource($"kriss.TextResources.Chapters.c{i}.json");
-                    Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(jChapter));
-                }
-                CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
+                string jChapter = LoadResource($"kriss.TextResources.Chapters.c{i}.json");
+                Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(jChapter));
             }
-
+            CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
+       
 
             //color dialogues dictionary assignment
             ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
@@ -77,25 +74,21 @@ namespace kriss.Classes
             //Titles.Add("11. AYONN");
         }
 
-        public static void LoadChapter(int chapterId = 1)
+        /// <summary>
+        /// Starts the n-th chapter at the beginning (first node)
+        /// </summary>
+        /// <param name="chapterId" the chapter number></param>
+        /// <returns></returns>
+        public static SNode StartChapter(int chapterId)
         {
-            var jChapter = Path.Combine(AppContext.BaseDirectory, $"TextResources/Chapters/c{chapterId}.json");
-            if (File.Exists(jChapter))
-            {
-                string json = File.ReadAllText(jChapter);
-                CurrentChapter = Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(json);
-                
-                if (!Chapters.Contains(CurrentChapter))
-                    Chapters.Add(CurrentChapter);
-
-                NodeFactory.BuildNode(SearchNodeById(1));
-            }
+            var chapter = Chapters.Find(c => c.Id == chapterId);
+            var node = chapter.Nodes.Find(n => n.Id == 1);
+            return NodeFactory.BuildNode(node);
         }
 
         /// <summary>
         /// Marks nodes as done, and if they are last of chapter, also chapter as done
         /// </summary>
-        /// <param name="chapterNo"></param>
         public static void SaveProgress()
         {
             // save node status
@@ -114,19 +107,24 @@ namespace kriss.Classes
         }
        
         /// <summary>
-        /// Parses the id provided to extract the matching NodeBase from DataLayer
+        /// Extract the NodeBase with given id, from DataLayer
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
         /// <returns></returns>
         public static NodeBase SearchNodeById(int nodeId)
         {
             return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
         }
 
+        /// <summary>
+        /// Extracts resources (chapters) from the compiled DLL
+        /// </summary>
+        /// <param name="resourceName" name-path of the resource></param>
+        /// <returns></returns>
         static string LoadResource(string resourceName)
         {
             using Stream stream = Assembly.GetManifestResourceStream(resourceName);
-            using StreamReader reader = new StreamReader(stream);
+            using StreamReader reader = new(stream);
             return reader.ReadToEnd();
         }
 

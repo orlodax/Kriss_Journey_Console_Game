@@ -2,6 +2,7 @@
 using jason.Classes;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace jason.VM
 {
@@ -13,9 +14,18 @@ namespace jason.VM
         public ObservableCollection<Action> Actions { get => actions; set => SetValue(ref actions, value); }
         public Action SelectedAction { get => selectedAction; set => SetValue(ref selectedAction, value); }
 
+        public ICommand NewAction { get; private set; }
+
         public NActionDetailVM(List<Action> SelectedNodeActions)
         {
             Actions = new ObservableCollection<Action>(SelectedNodeActions);
+
+            NewAction = new RelayCommand(Exec_NewAction);
+        }
+
+        void Exec_NewAction(object parameter)
+        { 
+        
         }
     }
 }
