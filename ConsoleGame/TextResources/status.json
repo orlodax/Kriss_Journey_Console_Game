@@ -1,7 +1,16 @@
 ﻿{
   "lastChapter": "1",
-  "inventory": 
-  [
+  "inventory": [
 
+  ],
+  "visitedNodes": [
+    {
+      "chapterId": "1",
+      "nodes": [
+        1,
+        2,
+        3
+      ]
+    }
   ]
 }

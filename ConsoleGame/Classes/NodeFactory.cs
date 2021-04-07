@@ -5,25 +5,25 @@ namespace kriss.Classes
 {
     public static class NodeFactory
     {
-        public static SNode CurrentNode { get; set; } //reference to displayed node 
+        static SNode CurrentNode; //reference to displayed node 
 
         public static SNode LoadNode(int? nodeId)
         {
             if (nodeId.HasValue)
             {
-                if (CurrentNode != null)
-                {
-                    // mark exiting node as visited (and chapter if it's last node)
-                    CurrentNode.IsVisited = true;
-                    DataLayer.SaveProgress();
-                }
+                // mark exiting node as visited (and chapter if it's last node)
+                if (CurrentNode != null)    
+                    DataLayer.SaveProgress(CurrentNode);
 
                 //testing purposes, debug 
                 //if (nodeId == 777)
                 //    return CurrentNode = DataLayer.Chapters[0].Nodes.Find(n => n.Id == 777) as NStory;
                 //-----------------
 
-                var newNode = DataLayer.SearchNodeById(nodeId.Value);
+                var newNode = SearchNodeById(nodeId.Value);
+                newNode.IsVisited = DataLayer.IsNodeVisited(newNode.Id);
+
+                var historyChapter = DataLayer.Status.VisitedNodes.Find(c => c.ChapterId == DataLayer.CurrentChapter.Id);
 
                 return BuildNode(newNode) ?? new SNode(new NodeBase()) { Text = $"Node not found for id: {nodeId} !" }; 
             }
@@ -55,8 +55,15 @@ namespace kriss.Classes
             }
             return null;
         }
+
+        /// <summary>
+        /// Extract the NodeBase with given id, from DataLayer
+        /// </summary>
+        /// <param name="nodeId"></param>
+        /// <returns></returns>
+        public static NodeBase SearchNodeById(int nodeId)
+        {
+            return DataLayer.CurrentChapter.Nodes.Find(n => n.Id == nodeId);
+        }
     }
-
-
-   
 }

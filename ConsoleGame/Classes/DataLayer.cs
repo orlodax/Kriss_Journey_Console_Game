@@ -19,17 +19,6 @@ namespace kriss.Classes
         {
             Assembly = Assembly.GetExecutingAssembly();
 
-            ///TODO
-            /// ALL'AVVIO CARICA TUTTI I CAPITOLI IN CHAPTERS
-
-            ////string fileName = "kriss.TextResources.Chapters.c1.json";
-            //string statusFileName = "kriss.TextResources.status.json";
-
-            //using Stream stream = Assembly.GetManifestResourceStream(statusFileName);
-            //using StreamReader reader = new StreamReader(stream);
-            //string jStatus = reader.ReadToEnd();
-           
-
             // Load Status
             var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
             if (File.Exists(statusFile))
@@ -38,11 +27,20 @@ namespace kriss.Classes
                 Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
             }
 
-            for (int i = 1; i <= Status.LastChapter; i++)
+            // Load all Chapters
+            int id = 1;
+            do
             {
-                string jChapter = LoadResource($"kriss.TextResources.Chapters.c{i}.json");
+                string jChapter = LoadResource($"kriss.TextResources.Chapters.c{id}.json");
+                
+                if (string.IsNullOrEmpty(jChapter))
+                    break;
+                
                 Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(jChapter));
+                id++;
             }
+            while (true);
+
             CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
        
 
@@ -81,39 +79,43 @@ namespace kriss.Classes
         /// <returns></returns>
         public static SNode StartChapter(int chapterId)
         {
-            var chapter = Chapters.Find(c => c.Id == chapterId);
-            var node = chapter.Nodes.Find(n => n.Id == 1);
-            return NodeFactory.BuildNode(node);
+            CurrentChapter = Chapters.Find(c => c.Id == chapterId);
+
+            Status.VisitedNodes.Add(new VisitedNode() { ChapterId = CurrentChapter.Id, Nodes = new List<int>() });
+
+            return NodeFactory.LoadNode(1);
         }
 
         /// <summary>
         /// Marks nodes as done, and if they are last of chapter, also chapter as done
         /// </summary>
-        public static void SaveProgress()
+        public static void SaveProgress(SNode currentNode)
         {
-            // save node status
-            var chapterPath = Path.Combine(AppContext.BaseDirectory, $"TextResources/Chapters/c{CurrentChapter.Id}.json");
-            string jChapter = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentChapter, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(chapterPath, jChapter);
-
-            // save chapter 
-            if (NodeFactory.CurrentNode.IsLast)
-            {
-                var filePath = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
+            // save chapter status
+            if (currentNode.IsLast)
                 Status.LastChapter = CurrentChapter.Id;
-                string output = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
-                File.WriteAllText(filePath, output);
-            }
+
+            // save node status
+            var historyChapter = Status.VisitedNodes.Find(c => c.ChapterId == CurrentChapter.Id);
+            historyChapter.Nodes.Add(currentNode.Id);
+
+            var statusPath = Path.Combine(AppContext.BaseDirectory, $"TextResources/status.json");
+            string status = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(statusPath, status);
         }
-       
+
         /// <summary>
-        /// Extract the NodeBase with given id, from DataLayer
+        /// Check if selected node was visited in the past
         /// </summary>
         /// <param name="nodeId"></param>
         /// <returns></returns>
-        public static NodeBase SearchNodeById(int nodeId)
+        public static bool IsNodeVisited(int nodeId)
         {
-            return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
+            var historyChapter = Status.VisitedNodes.Find(c => c.ChapterId == CurrentChapter.Id);
+            if (historyChapter != null && historyChapter.Nodes.Contains(nodeId))
+                return true;
+
+            return false;
         }
 
         /// <summary>
@@ -124,8 +126,12 @@ namespace kriss.Classes
         static string LoadResource(string resourceName)
         {
             using Stream stream = Assembly.GetManifestResourceStream(resourceName);
-            using StreamReader reader = new(stream);
-            return reader.ReadToEnd();
+            if (stream != null)
+            {
+                using StreamReader reader = new(stream);
+                return reader.ReadToEnd();
+            }
+            return string.Empty;
         }
 
         /// <summary>

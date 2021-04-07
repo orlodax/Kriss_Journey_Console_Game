@@ -39,7 +39,7 @@ namespace kriss.Nodes
                     {
                         if (int.TryParse(cond.Item, out int nodeId))
                         {
-                            NodeBase nb = DataLayer.SearchNodeById(nodeId);    //item in this case contains node id
+                            NodeBase nb = NodeFactory.SearchNodeById(nodeId);    //item in this case contains node id
 
                             if (nb.IsVisited == cond.Value)
                                 visibleChoices.Add(c);
