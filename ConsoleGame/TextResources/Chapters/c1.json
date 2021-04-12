@@ -1,24 +1,24 @@
 {
-  "id": "1",
+  "id": 1,
   "title": "THE JOURNEY STARTS",
   "nodes": [
     {
-      "id": "777",
+      "id": 777,
       "type": "story",
       "text": "play a @sound",
       "childid": "777"
     },
     {
-      "id": "1",
+      "id": 1,
       "type": "Story",
       "isvisited": false,
       "recap": "start of chapter one",
       "text": "-------------------------------\n|          CHAPTER 1          |\n-------------------------------\n\n\n##You are walking home after a long day. \nThere's no doubt, this hasn't been a nice day. \nYou missed every possible bus and/or train. \nThen it started raining, too. #Of course, you do not have an umbrella with you. \n\nLooking up at the sky, it looks like all the clouds in the world just decided to gather right above your head,\nswallowing all of light and propagating dark vibes to the atmosphere and the ground.",
-      "childid": "2"
+      "childid": 2
 
     },
     {
-      "id": "2",
+      "id": 2,
       "type": "Choice",
       "isvisited": false,
       "recap": "rain intensify",
@@ -26,24 +26,24 @@
       "choices": [
         {
           "desc": "You start running. Let's minimise the water intake.",
-          "childid": "3"
+          "childid": 3
         },
         {
           "desc": "The water does not bother you that much. You are already soaked. So why rush?",
-          "childid": "4"
+          "childid": 4
         }
       ]
     },
     {
-      "id": "3",
+      "id": 3,
       "type": "Story",
       "isvisited": false,
       "recap": "running home",
       "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght. \nYou run even faster, trying to ignore the suffocating feeling of the water splashing down your face. \n\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt. \nYou feel your heart bouncing in your chest and hear your now accelerated breathing. \n\nYou are almost home, when you hear it. \n\n$G<<...>>$C\n#\nWas it real? \n#For a split second you thought someone called on your name. It must have been all that noise... \n\n$G<<..ris..>>$C\n#\nIt was clearer this time!\n\n\n",
-      "childid": "5"
+      "childid": 5
     },
     {
-      "id": "4",
+      "id": 4,
       "type": "Choice",
       "isvisited": false,
       "recap": "walking home",
@@ -51,16 +51,16 @@
       "choices": [
         {
           "desc": "You think you saw it wrong. Why waste time climbing the hill with this weather?",
-          "childid": "8"
+          "childid": 8
         },
         {
           "desc": "You decide to go and check. Someone could need help.",
-          "childid": "7"
+          "childid": 7
         }
       ]
     },
     {
-      "id": "5",
+      "id": 5,
       "type": "Choice",
       "isvisited": false,
       "recap": "who whispered",
@@ -68,16 +68,16 @@
       "choices": [
         {
           "desc": "You hate to stay more time under the rain... but... you never know?",
-          "childid": "7"
+          "childid": 7
         },
         {
           "desc": "You must have misheard. And if something's there, it's none of your business.",
-          "childid": "8"
+          "childid": 8
         }
       ]
     },
     {
-      "id": "7",
+      "id": 7,
       "type": "Story",
       "isvisited": false,
       "recap": "at the tree",
@@ -85,7 +85,7 @@
       "isLast": true
     },
     {
-      "id": "8",
+      "id": 8,
       "type": "Story",
       "isvisited": false,
       "recap": "by the gate",
