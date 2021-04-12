@@ -119,7 +119,7 @@ namespace kriss.Nodes
             Console.CursorTop = Console.WindowHeight - 1;
             Console.CursorLeft = 0;
 
-            if (DataLayer.CurrentChapter.Id == 1)
+            if (DataLayer.CurrentChapter.Id == 2)
                 if (Id == 2) //first action node. this if clause is to mock player just the first time they use help
                 {
                     Console.CursorTop -= 1;
