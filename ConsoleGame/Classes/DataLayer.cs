@@ -11,16 +11,12 @@ namespace kriss.Classes
     public static class DataLayer
     {
         public static Status Status { get; set; }
-        public static List<Chapter> Chapters { get; set; } = new();
-        public static Chapter CurrentChapter { get; set; }
+        public static List<Chapter> Chapters { get; private set; } = new();
+        public static Chapter CurrentChapter { get; private set; }
         public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
-
-        private static Assembly Assembly;
 
         public static void Init()
         {
-            Assembly = Assembly.GetExecutingAssembly();
-
             // Load Status
             var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
             if (File.Exists(statusFile))
@@ -155,7 +151,7 @@ namespace kriss.Classes
         /// <summary>
         /// Marks nodes as done, and if they are last of chapter, also chapter as done
         /// </summary>
-        public static void SaveProgress(SNode currentNode)
+        public static void SaveProgress(NodeBase currentNode)
         {
             if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
             {
@@ -194,7 +190,7 @@ namespace kriss.Classes
         /// <returns></returns>
         static string LoadResource(string resourceName)
         {
-            using Stream stream = Assembly.GetManifestResourceStream(resourceName);
+            using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
             if (stream != null)
             {
                 using StreamReader reader = new(stream);
@@ -205,6 +201,7 @@ namespace kriss.Classes
 
         /// <summary>
         /// construct a derived class of from a base class
+        /// https://www.codeproject.com/articles/42221/constructing-an-instance-class-from-its-base-class
         /// </summary>
         /// <typeparam name="F">type of base class</typeparam>
         /// <typeparam name="T">type of class you want</typeparam>
@@ -230,7 +227,6 @@ namespace kriss.Classes
                 )
                     dp.SetValue(derived, dp.GetValue(Base, null), null);
             }
-
             return derived;
         }
     }

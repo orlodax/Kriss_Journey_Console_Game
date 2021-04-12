@@ -25,6 +25,9 @@ namespace kriss.Classes
             else
                 text = node.Text;
 
+            // mark as visited
+            DataLayer.SaveProgress(node);
+
             if (DEBUG)
                 TextFlow(false, text);
             else

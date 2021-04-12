@@ -2,7 +2,6 @@
 using lybra;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 
 namespace kriss.Nodes
 {
@@ -60,7 +59,8 @@ namespace kriss.Nodes
                         keysPressed.Add(input);          //normal keys are registered
                         break;
                 }
-            } while (true);
+            } 
+            while (true);
         }
 
         #region Special keys pressed
