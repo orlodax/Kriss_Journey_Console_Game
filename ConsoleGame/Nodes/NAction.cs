@@ -17,14 +17,14 @@ namespace kriss.Nodes
         {
             PrepareForAction(true);
         }
-        internal void PrepareForAction(bool isFirst)
+        internal void PrepareForAction(bool isFirstTimeDisplayed)
         {
             ///go to bottom line and prepare prompt
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
             Console.CursorLeft = Console.WindowLeft + Console.WindowWidth - 1;
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            if (!isFirst)
+            if (!isFirstTimeDisplayed)
             {
                 Console.CursorTop -= 1;
                 Console.WriteLine(" You can't or won't do that. Try again.");
@@ -37,28 +37,27 @@ namespace kriss.Nodes
                 for (int i = 0; i < keysPressed.Count; i++)
                     Console.Write(keysPressed[i].KeyChar.ToString());
 
-            ConsoleKeyInfo key;
-
             do
             {
-                key = Console.ReadKey();
-                if (key.Key.Equals(ConsoleKey.Tab)) //if player presses tabs looking for help
+                ConsoleKeyInfo input = Console.ReadKey();
+                switch (input.Key)
                 {
-                    TabPressed();
-                }
-                else if (key.Key.Equals(ConsoleKey.Backspace))  //to erase
-                {
-                    BackSpacePressed(keysPressed);
-                }
-                else
-                    if (!key.Key.Equals(ConsoleKey.Enter))  //normal keys are registered
-                        keysPressed.Add(key);
+                    case ConsoleKey.Tab:                 //if player presses tabs looking for help
+                        TabPressed();
+                        break;
 
-                if (key.Key == ConsoleKey.Enter)
-                {
-                    EnterPressed(keysPressed);
-                }
+                    case ConsoleKey.Backspace:          //to erase
+                        BackSpacePressed(keysPressed);
+                        break;
 
+                    case ConsoleKey.Enter:
+                        EnterPressed(keysPressed);
+                        break;
+
+                    default:
+                        keysPressed.Add(input);          //normal keys are registered
+                        break;
+                }
             } while (true);
         }
 
