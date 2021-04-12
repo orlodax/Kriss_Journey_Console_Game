@@ -124,27 +124,32 @@ namespace kriss.Classes
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        public static SNode BuildNode(NodeBase node)
+        public static void BuildNode(NodeBase node)
         {
             if (node != null)
             {
                 switch (node.Type)
                 {
                     case "Story":
-                        return new NStory(node);
+                        Construct<NodeBase, NStory>(node).Activate();
+                        break;
                     case "Choice":
-                        return new NChoice(node);
+                        Construct<NodeBase, NChoice>(node).Activate();
+                        break;
                     case "Dialogue":
-                        return new NDialogue(node);
+                        Construct<NodeBase, NDialogue>(node).Activate();
+                        break;
                     case "Action":
-                        return new NAction(node);
+                        Construct<NodeBase, NAction>(node).Activate();
+                        break;
                     case "MiniGame01":
-                        return new MiniGame01(node);
+                        NAction actionNode = Construct<NodeBase, NAction>(node);
+                        Construct<NAction, MiniGame01>(actionNode).Activate();
+                        break;
                     default:
                         break;
                 }
             }
-            return null;
         }
 
         /// <summary>
@@ -196,6 +201,37 @@ namespace kriss.Classes
                 return reader.ReadToEnd();
             }
             return string.Empty;
+        }
+
+        /// <summary>
+        /// construct a derived class of from a base class
+        /// </summary>
+        /// <typeparam name="F">type of base class</typeparam>
+        /// <typeparam name="T">type of class you want</typeparam>
+        /// <param name="Base">the instance of the base class</param>
+        /// <returns></returns>
+        public static T Construct<F, T>(F Base) where T : F, new()
+        {
+            // create derived instance
+            T derived = new();
+            // get all base class properties
+            PropertyInfo[] properties = typeof(F).GetProperties();
+            foreach (PropertyInfo bp in properties)
+            {
+                // get derived matching property
+                PropertyInfo dp = typeof(T).GetProperty(bp.Name, bp.PropertyType);
+
+                // this property must not be index property
+                if (
+                    (dp != null)
+                    && (dp.GetSetMethod() != null)
+                    && (bp.GetIndexParameters().Length == 0)
+                    && (dp.GetIndexParameters().Length == 0)
+                )
+                    dp.SetValue(derived, dp.GetValue(Base, null), null);
+            }
+
+            return derived;
         }
     }
 }

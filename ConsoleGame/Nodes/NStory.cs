@@ -4,23 +4,25 @@ using System;
 
 namespace kriss.Nodes
 {
-    public class NStory : SNode
+    public class NStory : NodeBase
     {
-        public NStory(NodeBase node) : base (node)
+        public override void Activate()
         {
+            this.Init();
+
             ///go to bottom line
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
             Console.CursorLeft = Console.WindowLeft;
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.Write("Press a key to continue...");
-            
-            while (Console.KeyAvailable) 
+
+            while (Console.KeyAvailable)
                 Console.ReadKey(true);
 
             Console.ReadKey(true);
 
-            AdvanceToNext(ChildId);
+            this.AdvanceToNext(ChildId);
         }
     }
 }

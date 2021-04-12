@@ -15,5 +15,7 @@ namespace lybra
         public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
         public bool IsVisited { get; set; }
         public bool IsLast { get; set; }
+
+        public virtual void Activate() { }
     }
 }

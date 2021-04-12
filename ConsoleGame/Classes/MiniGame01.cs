@@ -7,10 +7,6 @@ namespace kriss.Classes
 {
     public class MiniGame01 : NAction
     {
-        public MiniGame01(NodeBase node) : base(node)
-        {
-
-        }
 
         internal override void TabPressed() 
         {
@@ -49,7 +45,7 @@ namespace kriss.Classes
             if (!string.IsNullOrWhiteSpace(words[0]))
             {
                 if(words[0].ToLower() == "stop")
-                    AdvanceToNext(ChildId);
+                    this.AdvanceToNext(ChildId);
 
                 RedrawNode();
 
@@ -63,10 +59,10 @@ namespace kriss.Classes
                 Console.CursorTop = MeasureMessage(BottomMessage);
                 Console.CursorLeft = Console.WindowLeft;
 
-                TextFlow(true, BottomMessage, ConsoleColor.DarkGreen);
+                NodeMethods.TextFlow(true, BottomMessage, ConsoleColor.DarkGreen);
                 Console.WriteLine();
                 Console.WriteLine();
-                TextFlow(true, "Efeliah opens her eyes,# smiling warmly at you.#", ConsoleColor.DarkCyan);
+                NodeMethods.TextFlow(true, "Efeliah opens her eyes,# smiling warmly at you.#", ConsoleColor.DarkCyan);
 
             }
             

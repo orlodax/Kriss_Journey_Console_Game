@@ -6,14 +6,16 @@ using System.Threading;
 
 namespace kriss.Nodes
 {
-    public class NChoice : SNode
+    public class NChoice : NodeBase
     {
         int selectedRow = 0;
         readonly List<Choice> visibleChoices = new List<Choice>();
 
-        public NChoice(NodeBase node) : base (node)
+        public override void Activate()
         {
-            Thread.Sleep(ParagraphBreak);
+            this.Init();
+
+            Thread.Sleep(NodeMethods.ParagraphBreak);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
@@ -107,7 +109,7 @@ namespace kriss.Nodes
 
                 Console.Clear();
 
-                TextFlow(false);
+                NodeMethods.TextFlow(false, Text);
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -125,10 +127,10 @@ namespace kriss.Nodes
                     WaitForChoice();
                 }
             }
-            if (Evaluate(choice.Condition))
+            if (NodeMethods.Evaluate(choice.Condition))
             {
                 if (choice.Effect != null)
-                    StoreItem(choice.Effect);
+                    NodeMethods.StoreItem(choice.Effect);
 
                 if (choice.UnHide.HasValue)                  //if this choice unlocks others
                 {
@@ -138,14 +140,14 @@ namespace kriss.Nodes
 
                 choice.IsPlayed = true;
 
-                AdvanceToNext(choice.ChildId);
+                this.AdvanceToNext(choice.ChildId);
             }
             else
             {
                 Console.CursorTop = Console.WindowHeight - 4;
                 Console.CursorLeft = Console.WindowLeft;
 
-                TextFlow(true, choice.Refusal, ConsoleColor.DarkYellow);
+                NodeMethods.TextFlow(true, choice.Refusal, ConsoleColor.DarkYellow);
 
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -160,7 +162,7 @@ namespace kriss.Nodes
         {
             Console.Clear();
 
-            TextFlow(false);
+            NodeMethods.TextFlow(false, Text);
 
             Console.WriteLine();
             Console.WriteLine();

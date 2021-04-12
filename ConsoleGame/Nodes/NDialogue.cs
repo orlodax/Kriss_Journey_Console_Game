@@ -5,15 +5,16 @@ using System.Threading;
 
 namespace kriss.Nodes
 {
-    public class NDialogue : SNode
+    public class NDialogue : NodeBase
     {
-        public NDialogue(NodeBase node) : base (node)
-        {
-            RecursiveDialogues();
-        }
-
         ConsoleKeyInfo key;
         int selectedRow = 0;
+
+        public override void Activate()
+        {
+            this.Init();
+            RecursiveDialogues();
+        }
 
         void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
         {
@@ -23,9 +24,9 @@ namespace kriss.Nodes
 
             if(currentLine.PreComment != null)
             {
-                TextFlow(isLineFlowing, currentLine.PreComment);
+                NodeMethods.TextFlow(isLineFlowing, currentLine.PreComment);
                 if (isLineFlowing)
-                    Thread.Sleep(ParagraphBreak);
+                    Thread.Sleep(NodeMethods.ParagraphBreak);
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -34,27 +35,27 @@ namespace kriss.Nodes
             if (currentLine.Line != null)
             {
                 if (currentLine.IsTelepathy)
-                    TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", DataLayer.ActorsColors[currentLine.Actor]);
+                    NodeMethods.TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", DataLayer.ActorsColors[currentLine.Actor]);
                 else
-                    TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
+                    NodeMethods.TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
             }
             
             if(currentLine.Comment != null)      
             {
                 if (isLineFlowing)
                 {
-                    Thread.Sleep(ParagraphBreak);
+                    Thread.Sleep(NodeMethods.ParagraphBreak);
 
-                    TextFlow(isLineFlowing, currentLine.Comment);
+                    NodeMethods.TextFlow(isLineFlowing, currentLine.Comment);
 
-                    Thread.Sleep(ParagraphBreak);
+                    Thread.Sleep(NodeMethods.ParagraphBreak);
                 }
                 else
-                    TextFlow(isLineFlowing, currentLine.Comment);
+                    NodeMethods.TextFlow(isLineFlowing, currentLine.Comment);
             }
             else
                 if (isLineFlowing)
-                    Thread.Sleep(ParagraphBreak);                                   //if there was no comment after the line, wait a bit
+                    Thread.Sleep(NodeMethods.ParagraphBreak);                                   //if there was no comment after the line, wait a bit
 
             Console.WriteLine();
             Console.WriteLine();
@@ -69,7 +70,7 @@ namespace kriss.Nodes
             if (currentLine.ChildId.HasValue)                                        //if it encounters a link, jump to the node
             {      
                 HoldScreen();
-                AdvanceToNext(currentLine.ChildId.Value);
+                this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
             if (currentLine.Replies != null && currentLine.Replies.Count > 0)       //if there are replies inside, display choice
@@ -115,7 +116,7 @@ namespace kriss.Nodes
 
                 if (currentLine.Replies[selectedRow].ChildId.HasValue)                 //on selecion, either 
                 {
-                    AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
+                    this.AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
                 }
                 else
                 {

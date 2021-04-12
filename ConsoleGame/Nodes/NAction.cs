@@ -6,17 +6,19 @@ using System.ComponentModel.Design;
 
 namespace kriss.Nodes
 {
-    public class NAction : SNode
+    public class NAction : NodeBase
     {
         lybra.Action act = null;
         internal readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
         internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
-        public NAction(NodeBase node) : base (node)
+        public override void Activate()
         {
+            this.Init();
             PrepareForAction(true);
         }
+
         internal void PrepareForAction(bool isFirstTimeDisplayed)
         {
             ///go to bottom line and prepare prompt
@@ -185,12 +187,12 @@ namespace kriss.Nodes
                 {
                     if (act.Objects.Count == 0)                                 //...and is objectless...
                     {
-                        if (!Evaluate(act.Condition))                           //if for some reason Kriss can't do it, say it...
+                        if (!NodeMethods.Evaluate(act.Condition))                           //if for some reason Kriss can't do it, say it...
                             CustomRefusal(act.Condition.Refusal);
                         else
                         {
                             if (act.Effect != null)                             //in case the action has an Effect (inventory)
-                                StoreItem(act.Effect);
+                                NodeMethods.StoreItem(act.Effect);
 
                             DisplaySuccess(act.Answer, act.ChildId);            //...just do it
                         }
@@ -207,12 +209,12 @@ namespace kriss.Nodes
                                 {
                                     if (obj.Term == word)                       //the action is right, and there is a acceptable object specified
                                     {
-                                        if (!Evaluate(o.Condition))             //if for some reason Kriss can't do it, say it...
+                                        if (!NodeMethods.Evaluate(o.Condition))             //if for some reason Kriss can't do it, say it...
                                             CustomRefusal(o.Condition.Refusal);
                                         else                                    //...otherwise, do it
                                         {
                                             if (o.Effect != null)               //in case the obj has an Effect (inventory)
-                                                StoreItem(o.Effect);
+                                                NodeMethods.StoreItem(o.Effect);
 
                                             DisplaySuccess(o.Answer, o.ChildId);
                                         }
@@ -254,7 +256,7 @@ namespace kriss.Nodes
             BottomMessage = refusal;
             BottomMessageColor = ConsoleColor.Cyan;
 
-            TextFlow(true, refusal, ConsoleColor.Cyan);
+            NodeMethods.TextFlow(true, refusal, ConsoleColor.Cyan);
             Console.WriteLine();
             Console.WriteLine();
 
@@ -272,7 +274,7 @@ namespace kriss.Nodes
                 Console.CursorTop = MeasureMessage(answer);
                 Console.CursorLeft = Console.WindowLeft;
 
-                TextFlow(true, answer, ConsoleColor.DarkYellow);
+                NodeMethods.TextFlow(true, answer, ConsoleColor.DarkYellow);
                 Console.WriteLine();
                 Console.WriteLine();
 
@@ -283,11 +285,11 @@ namespace kriss.Nodes
                     Console.Write("Press any key...");
                     Console.ReadKey(true);
 
-                    AdvanceToNext(childId.Value);
+                    this.AdvanceToNext(childId.Value);
                 }
             }
             if (childId.HasValue)
-                AdvanceToNext(childId.Value);
+               this.AdvanceToNext(childId.Value);
 
             //if everything fails:
             PrepareForAction(true); //display prompt without standard refuse
@@ -295,11 +297,11 @@ namespace kriss.Nodes
         internal void RedrawNode(bool isDeleting = false)
         {
             Console.Clear();
-            TextFlow(false);
+            NodeMethods.TextFlow(false, Text);
 
             if (isDeleting)
                 if (!string.IsNullOrWhiteSpace(BottomMessage))                      //decide if there is a Bottom Message and of which type
-                    {
+                {
                     switch (BottomMessageColor)
                     {
                         case ConsoleColor.DarkYellow:
@@ -312,8 +314,7 @@ namespace kriss.Nodes
                             Console.CursorLeft = Console.WindowLeft;
                             break;
                     }
-
-                    TextFlow(false, BottomMessage, BottomMessageColor);
+                    NodeMethods.TextFlow(false, BottomMessage, BottomMessageColor);
                 }
         }
 
