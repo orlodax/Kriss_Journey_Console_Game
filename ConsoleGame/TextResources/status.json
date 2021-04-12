@@ -2,15 +2,6 @@
   "lastChapter": "1",
   "inventory": [
 
-  ],
-  "visitedNodes": [
-    {
-      "chapterId": "1",
-      "nodes": [
-        1,
-        2,
-        3
-      ]
-    }
   ]
+  
 }

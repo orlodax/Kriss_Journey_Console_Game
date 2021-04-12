@@ -49,7 +49,7 @@ namespace kriss.Classes
             if (!string.IsNullOrWhiteSpace(words[0]))
             {
                 if(words[0].ToLower() == "stop")
-                    NodeFactory.LoadNode(ChildId);
+                    AdvanceToNext(ChildId);
 
                 RedrawNode();
 

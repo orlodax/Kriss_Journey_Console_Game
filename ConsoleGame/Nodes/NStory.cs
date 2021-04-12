@@ -20,7 +20,7 @@ namespace kriss.Nodes
 
             Console.ReadKey(true);
 
-            NodeFactory.LoadNode(ChildId);
+            AdvanceToNext(ChildId);
         }
     }
 }

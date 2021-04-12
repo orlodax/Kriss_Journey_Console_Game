@@ -30,8 +30,8 @@ namespace kriss.Classes
         /// This root node loads text resources for everybody
         public SNode(NodeBase node)
         {
-            // decomment to disable flow effect
-            DEBUG = false;
+            // uncomment to disable flow effect
+            DEBUG = true;
 
             // mapping
             Id = node.Id;
@@ -44,14 +44,25 @@ namespace kriss.Classes
             IsVisited = node.IsVisited;
             IsLast = node.IsLast;
 
+            // mark current node as visited
+            DataLayer.SaveProgress(this);
+
             // start text
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
 
-            if (!IsVisited)     
-                TextFlow(true);
-            else
+            if (DEBUG)
                 TextFlow(false);
+            else
+                TextFlow(!IsVisited);
+        }
+
+        internal void AdvanceToNext(int childId)
+        {
+            if (IsLast)
+                DataLayer.StartChapter(DataLayer.CurrentChapter.Id + 1);
+
+            DataLayer.LoadNode(childId);
         }
         #endregion
 
@@ -68,12 +79,6 @@ namespace kriss.Classes
 
         internal void TextFlow(bool isFlowing, string text = "default", ConsoleColor color = ConsoleColor.DarkCyan)
         {
-            if (DEBUG)
-            {
-                isFlowing = false;
-                ParagraphBreak = 0;
-            }
-
             Console.ForegroundColor = color;
 
             if (text == "default")
@@ -196,14 +201,38 @@ namespace kriss.Classes
         }
         #endregion
 
-        #region Forwarding methods
-        public static bool Evaluate(Condition condition)
+        #region Other methods
+        /// <summary>
+        /// Decides upon the condition of a choice, action, object etc
+        /// </summary>
+        /// <param name="Condition"></param>
+        /// <returns></returns>
+        public static bool Evaluate(Condition Condition)                            // check according to the condition
         {
-            return DataLayer.Evaluate(condition);
+            if (Condition != null)
+            {
+                if (Condition.Type != "isNodeVisited")
+                {
+                    var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == Condition.Item);
+                    if (storedItem != null)
+                    {
+                        if (storedItem.Had & Condition.Value)
+                            return true;
+                    }
+                }
+                return false;
+            }
+            return true;
         }
-        public static void StoreItem(Effect effect)
+
+        /// <summary>
+        /// You picked something up
+        /// </summary>
+        /// <param name="effect"></param>
+        public static void StoreItem(Effect effect)       // consequent modify of inventory
         {
-            DataLayer.StoreItem(effect);
+            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
+            DataLayer.Status.Inventory.Add(itemToStore);
         }
         #endregion
     }

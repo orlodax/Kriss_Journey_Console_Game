@@ -1,7 +1,9 @@
-﻿using lybra;
+﻿using kriss.Nodes;
+using lybra;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace kriss.Classes
@@ -41,8 +43,14 @@ namespace kriss.Classes
             }
             while (true);
 
-            CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
-       
+            if (Status.VisitedNodes == null)
+                Status.VisitedNodes = new Dictionary<int, List<int>>();
+
+            //CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
+            if (Status.VisitedNodes.Any())
+                CurrentChapter = Chapters.Find(c => c.Id == Status.VisitedNodes.Keys.Max());
+            else
+                CurrentChapter = Chapters[0];
 
             //color dialogues dictionary assignment
             ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
@@ -77,13 +85,66 @@ namespace kriss.Classes
         /// </summary>
         /// <param name="chapterId" the chapter number></param>
         /// <returns></returns>
-        public static SNode StartChapter(int chapterId)
+        public static void StartChapter(int chapterId)
         {
             CurrentChapter = Chapters.Find(c => c.Id == chapterId);
 
-            Status.VisitedNodes.Add(new VisitedNode() { ChapterId = CurrentChapter.Id, Nodes = new List<int>() });
+            LoadNode(1);
+        }
 
-            return NodeFactory.LoadNode(1);
+        /// <summary>
+        /// Find next node and uses node factory to build the proper type
+        /// </summary>
+        /// <param name="nodeId"></param>
+        public static void LoadNode(int? nodeId)
+        {
+            if (nodeId.HasValue)
+            {
+                var newNode = SearchNodeById(nodeId.Value);
+                newNode.IsVisited = IsNodeVisited(newNode.Id);
+
+                BuildNode(newNode);
+            }
+            else
+                Console.WriteLine("Id was null and/or node wasn't the last in the chapter!");
+        }
+
+        /// <summary>
+        /// Extract the NodeBase with given id, from DataLayer
+        /// </summary>
+        /// <param name="nodeId"></param>
+        /// <returns></returns>
+        public static NodeBase SearchNodeById(int nodeId)
+        {
+            return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
+        }
+
+        /// <summary>
+        /// Actually build (hence display) the node
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public static SNode BuildNode(NodeBase node)
+        {
+            if (node != null)
+            {
+                switch (node.Type)
+                {
+                    case "Story":
+                        return new NStory(node);
+                    case "Choice":
+                        return new NChoice(node);
+                    case "Dialogue":
+                        return new NDialogue(node);
+                    case "Action":
+                        return new NAction(node);
+                    case "MiniGame01":
+                        return new MiniGame01(node);
+                    default:
+                        break;
+                }
+            }
+            return null;
         }
 
         /// <summary>
@@ -91,13 +152,16 @@ namespace kriss.Classes
         /// </summary>
         public static void SaveProgress(SNode currentNode)
         {
-            // save chapter status
-            if (currentNode.IsLast)
-                Status.LastChapter = CurrentChapter.Id;
-
-            // save node status
-            var historyChapter = Status.VisitedNodes.Find(c => c.ChapterId == CurrentChapter.Id);
-            historyChapter.Nodes.Add(currentNode.Id);
+            if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
+            {
+                if (!visitedNodes.Contains(currentNode.Id))
+                {
+                    visitedNodes.Add(currentNode.Id);
+                    Status.VisitedNodes[CurrentChapter.Id] = visitedNodes;
+                }
+            }
+            else
+                Status.VisitedNodes[CurrentChapter.Id] = new List<int>() { currentNode.Id };
 
             var statusPath = Path.Combine(AppContext.BaseDirectory, $"TextResources/status.json");
             string status = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
@@ -111,9 +175,9 @@ namespace kriss.Classes
         /// <returns></returns>
         public static bool IsNodeVisited(int nodeId)
         {
-            var historyChapter = Status.VisitedNodes.Find(c => c.ChapterId == CurrentChapter.Id);
-            if (historyChapter != null && historyChapter.Nodes.Contains(nodeId))
-                return true;
+            if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
+                if (visitedNodes.Contains(nodeId))
+                    return true;
 
             return false;
         }
@@ -132,39 +196,6 @@ namespace kriss.Classes
                 return reader.ReadToEnd();
             }
             return string.Empty;
-        }
-
-        /// <summary>
-        /// Decides upon the condition of a choice, action, object etc
-        /// </summary>
-        /// <param name="Condition"></param>
-        /// <returns></returns>
-        public static bool Evaluate(Condition Condition)                            // check according to the condition
-        {
-            if (Condition != null)
-            {
-                if (Condition.Type != "isNodeVisited")
-                {
-                    var storedItem = Status.Inventory.Find(i => i.Name == Condition.Item);
-                    if (storedItem != null)
-                    {
-                        if (storedItem.Had & Condition.Value)
-                            return true;
-                    }
-                }
-                return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// You picked something up
-        /// </summary>
-        /// <param name="effect"></param>
-        public static void StoreItem(Effect effect)       // consequent modify of inventory
-        {
-            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
-            Status.Inventory.Add(itemToStore);
         }
     }
 }

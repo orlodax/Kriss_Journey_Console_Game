@@ -69,7 +69,7 @@ namespace kriss.Nodes
             if (currentLine.ChildId.HasValue)                                        //if it encounters a link, jump to the node
             {      
                 HoldScreen();
-                NodeFactory.LoadNode(currentLine.ChildId.Value);
+                AdvanceToNext(currentLine.ChildId.Value);
             }
 
             if (currentLine.Replies != null && currentLine.Replies.Count > 0)       //if there are replies inside, display choice
@@ -115,7 +115,7 @@ namespace kriss.Nodes
 
                 if (currentLine.Replies[selectedRow].ChildId.HasValue)                 //on selecion, either 
                 {
-                    NodeFactory.LoadNode(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
+                    AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
                 }
                 else
                 {

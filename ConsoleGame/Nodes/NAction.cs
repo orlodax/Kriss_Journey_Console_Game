@@ -284,11 +284,11 @@ namespace kriss.Nodes
                     Console.Write("Press any key...");
                     Console.ReadKey(true);
 
-                    NodeFactory.LoadNode(childId.Value);
+                    AdvanceToNext(childId.Value);
                 }
             }
             if (childId.HasValue)
-                NodeFactory.LoadNode(childId.Value);
+                AdvanceToNext(childId.Value);
 
             //if everything fails:
             PrepareForAction(true); //display prompt without standard refuse
