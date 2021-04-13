@@ -16,6 +16,23 @@ namespace lybra
         public bool IsVisited { get; set; }
         public bool IsLast { get; set; }
 
-        public virtual void Activate() { }
+        public NodeBase(NodeBase n)
+        {
+            Id = n.Id;
+            Recap = n.Recap;
+            Type = n.Type;
+            Text = n.Text;
+            AltText = n.AltText;
+            ChildId = n.ChildId;
+            Choices = n.Choices;
+            Actions = n.Actions;
+            Dialogues = n.Dialogues;
+            IsVisited = n.IsVisited;
+            IsLast = n.IsLast;
+        }
+        public NodeBase()
+        {
+
+        }
     }
 }

@@ -24,6 +24,8 @@ namespace kriss.Classes
                 string json = File.ReadAllText(statusFile);
                 Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
             }
+            else
+                Status = new();
 
             // Load all Chapters
             int id = 1;
@@ -39,10 +41,6 @@ namespace kriss.Classes
             }
             while (true);
 
-            if (Status.VisitedNodes == null)
-                Status.VisitedNodes = new Dictionary<int, List<int>>();
-
-            //CurrentChapter = Chapters.Find(c => c.Id == Status.LastChapter);
             if (Status.VisitedNodes.Any())
                 CurrentChapter = Chapters.Find(c => c.Id == Status.VisitedNodes.Keys.Max());
             else
@@ -120,32 +118,27 @@ namespace kriss.Classes
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        public static void BuildNode(NodeBase node)
+        public static NodeBase BuildNode(NodeBase node)
         {
             if (node != null)
             {
                 switch (node.Type)
                 {
                     case "Story":
-                        Construct<NodeBase, NStory>(node).Activate();
-                        break;
+                        return new NStory(node);
                     case "Choice":
-                        Construct<NodeBase, NChoice>(node).Activate();
-                        break;
+                        return new NChoice(node);
                     case "Dialogue":
-                        Construct<NodeBase, NDialogue>(node).Activate();
-                        break;
+                        return new NDialogue(node);
                     case "Action":
-                        Construct<NodeBase, NAction>(node).Activate();
-                        break;
+                        return new NAction(node);
                     case "MiniGame01":
-                        NAction actionNode = Construct<NodeBase, NAction>(node);
-                        Construct<NAction, MiniGame01>(actionNode).Activate();
-                        break;
+                        return new MiniGame01(node);
                     default:
                         break;
                 }
             }
+            return null;
         }
 
         /// <summary>
@@ -197,37 +190,6 @@ namespace kriss.Classes
                 return reader.ReadToEnd();
             }
             return string.Empty;
-        }
-
-        /// <summary>
-        /// construct a derived class of from a base class
-        /// https://www.codeproject.com/articles/42221/constructing-an-instance-class-from-its-base-class
-        /// </summary>
-        /// <typeparam name="F">type of base class</typeparam>
-        /// <typeparam name="T">type of class you want</typeparam>
-        /// <param name="Base">the instance of the base class</param>
-        /// <returns></returns>
-        public static T Construct<F, T>(F Base) where T : F, new()
-        {
-            // create derived instance
-            T derived = new();
-            // get all base class properties
-            PropertyInfo[] properties = typeof(F).GetProperties();
-            foreach (PropertyInfo bp in properties)
-            {
-                // get derived matching property
-                PropertyInfo dp = typeof(T).GetProperty(bp.Name, bp.PropertyType);
-
-                // this property must not be index property
-                if (
-                    (dp != null)
-                    && (dp.GetSetMethod() != null)
-                    && (bp.GetIndexParameters().Length == 0)
-                    && (dp.GetIndexParameters().Length == 0)
-                )
-                    dp.SetValue(derived, dp.GetValue(Base, null), null);
-            }
-            return derived;
         }
     }
 }

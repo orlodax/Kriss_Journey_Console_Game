@@ -1,12 +1,16 @@
-﻿using lybra;
-using kriss.Nodes;
+﻿using kriss.Classes;
+using lybra;
 using System;
 using System.Collections.Generic;
 
-namespace kriss.Classes
+namespace kriss.Nodes
 {
     public class MiniGame01 : NAction
     {
+        public MiniGame01(NodeBase node) : base(node)
+        {
+
+        }
 
         internal override void TabPressed() 
         {

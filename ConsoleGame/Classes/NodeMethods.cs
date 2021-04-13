@@ -7,14 +7,9 @@ namespace kriss.Classes
 {
     public static class NodeMethods
     {
-        static readonly bool DEBUG;
-
         #region Extensions
         public static void Init(this NodeBase node)
         {
-            // uncomment to disable flow effect
-            //DEBUG = true;
-
             // start text
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
@@ -24,18 +19,20 @@ namespace kriss.Classes
                 text = node.AltText;
             else
                 text = node.Text;
+            
+            #if DEBUG            
+            node.IsVisited = true; 
+            #endif
 
-            // mark as visited
-            DataLayer.SaveProgress(node);
-
-            if (DEBUG)
-                TextFlow(false, text);
-            else
-                TextFlow(!node.IsVisited, text);
+            TextFlow(!node.IsVisited, text);
         }
 
         public static void AdvanceToNext(this NodeBase node, int childId)
         {
+            // mark as visited
+            DataLayer.SaveProgress(node);
+
+            // if it closes chapter load the next chapter, else load next node
             if (node.IsLast)
                 DataLayer.StartChapter(DataLayer.CurrentChapter.Id + 1);
 

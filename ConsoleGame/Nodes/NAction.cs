@@ -12,7 +12,7 @@ namespace kriss.Nodes
         internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
-        public override void Activate()
+        public NAction(NodeBase node) : base(node)
         {
             this.Init();
             PrepareForAction(true);

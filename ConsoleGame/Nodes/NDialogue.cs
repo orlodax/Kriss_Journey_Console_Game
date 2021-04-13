@@ -10,7 +10,7 @@ namespace kriss.Nodes
         ConsoleKeyInfo key;
         int selectedRow = 0;
 
-        public override void Activate()
+        public NDialogue(NodeBase node) : base(node)
         {
             this.Init();
             RecursiveDialogues();

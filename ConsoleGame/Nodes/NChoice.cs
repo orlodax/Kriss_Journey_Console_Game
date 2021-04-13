@@ -11,7 +11,7 @@ namespace kriss.Nodes
         int selectedRow = 0;
         readonly List<Choice> visibleChoices = new List<Choice>();
 
-        public override void Activate()
+        public NChoice(NodeBase node) : base(node)
         {
             this.Init();
 

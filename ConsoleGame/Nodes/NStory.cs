@@ -6,7 +6,7 @@ namespace kriss.Nodes
 {
     public class NStory : NodeBase
     {
-        public override void Activate()
+        public NStory(NodeBase node) : base(node)
         {
             this.Init();
 
