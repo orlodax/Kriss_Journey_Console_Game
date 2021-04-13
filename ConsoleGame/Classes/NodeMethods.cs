@@ -20,7 +20,7 @@ namespace kriss.Classes
             else
                 text = node.Text;
             
-            #if DEBUG            
+            #if DEBUG
             node.IsVisited = true; 
             #endif
 

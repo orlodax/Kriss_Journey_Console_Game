@@ -1,6 +1,7 @@
 ﻿using kriss.Classes;
 using lybra;
 using System;
+using System.Linq;
 using System.Threading;
 
 namespace kriss.Nodes
@@ -73,7 +74,7 @@ namespace kriss.Nodes
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
-            if (currentLine.Replies != null && currentLine.Replies.Count > 0)       //if there are replies inside, display choice
+            if (currentLine.Replies.Any())       //if there are replies inside, display choice
             {
                 do
                 {

@@ -35,7 +35,7 @@ namespace kriss.Classes
                 
                 if (string.IsNullOrEmpty(jChapter))
                     break;
-                
+
                 Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(jChapter));
                 id++;
             }
