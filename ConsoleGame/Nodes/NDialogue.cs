@@ -19,6 +19,9 @@ namespace kriss.Nodes
 
         void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
         {
+            if (IsVisited)
+                isLineFlowing = false;
+
             var currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)
@@ -35,10 +38,18 @@ namespace kriss.Nodes
 
             if (currentLine.Line != null)
             {
+                //var p = (ConsoleColor)currentLine.Actor;
                 if (currentLine.IsTelepathy)
-                    NodeMethods.TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", DataLayer.ActorsColors[currentLine.Actor]);
+                    NodeMethods.TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", (ConsoleColor)currentLine.Actor);
                 else
-                    NodeMethods.TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", DataLayer.ActorsColors[currentLine.Actor]);
+                {
+                    //EnActorsColors actor = EnActorsColors.Saberinne;
+                    //var pop = (string)actor;
+                    //var b = EnActorsColors.Parse(Console.ForegroundColor, currentLine.Actor);
+                    //EnActorsColors.
+                    //var a = (ConsoleColor)10;
+                    NodeMethods.TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", (ConsoleColor)currentLine.Actor);
+                }
             }
             
             if(currentLine.Comment != null)      
@@ -74,7 +85,7 @@ namespace kriss.Nodes
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
-            if (currentLine.Replies.Any())       //if there are replies inside, display choice
+            if (currentLine.Replies!= null && currentLine.Replies.Any())       //if there are replies inside, display choice
             {
                 do
                 {
@@ -134,7 +145,9 @@ namespace kriss.Nodes
                 }
                 else 
                     if (Dialogues.Count > lineId + 1)                       
-                        RecursiveDialogues(lineId + 1, isLineFlowing);  
+                        RecursiveDialogues(lineId + 1, isLineFlowing);
+
+                this.AdvanceToNext(ChildId);
             }
         }
 

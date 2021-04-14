@@ -5,7 +5,6 @@
     {
       "id": 1,
       "type": "Story",
-      "isvisited": false,
       "recap": "awoke",
       "text": "-------------------------------\n|          CHAPTER 2          |\n-------------------------------\n\n\n$G<<You are alive...>>$C#\n\nWhose is that voice?# Your own?# Have you actually heard it?\n\nYou slowly open your eyes, as thoughts resume their flow in your mind, trying to re-establish contact with reality. \n\nIt takes several seconds to clear up your sight. You feel quite wrecked. \nJust breathing deeply is a pain. You painfully, slowly sit up, and look around. \n\nYou don't recognise what you see. You try hard to remember, and it finally comes back to you. \nHow can you still be alive after being hit by... the lightning?\nBy the way, you are still soaked to the bone. \n",
       "childid": 2
@@ -13,7 +12,6 @@
     {
       "id": 2,
       "type": "Action",
-      "isvisited": false,
       "recap": "look around",
       "text": "$c\"Maybe I am dead, afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario. \n\nIn the meanwhile, you look at the small reddish vale that lies downhill. \nThere is smoke ascending from what it looks like several fires or maybe arsons. \n\nYou carefully stand up, becoming dizzy until your sense of balance stabilises. \n\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
       "actions": [
@@ -52,7 +50,6 @@
     {
       "id": 3,
       "type": "Story",
-      "isvisited": false,
       "recap": "lookresult",
       "text": "$CThe first thing you notice is the sky, streaked with a cloud that looks like the jetstream of a plane. \nIt has a strange, alien color. \n\nThe sun is setting, shedding its last light painting with odd glares on the celestial vault,\nwhich is already welcoming the faint sparkle of several stars. \n\nA little downhill, you then notice an earth road going down towards the vale. \nIt points in the direction of the fires. \nLooking more intently, you discern there must be some kind of village there. \n\nIt looks like there's nowhere else to go, at the moment.",
       "childid": 9
@@ -60,7 +57,6 @@
     {
       "id": 4,
       "type": "Story",
-      "isvisited": false,
       "recap": "go or walk",
       "text": "You find your way downhill, following the earth path. \n\nAs you descend, the path gets narrower, meandering between an increasing number of trees. \n\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars. \n\nAs darkness takes hold, $rominous reddish glares$C paint the corners of the scene. \nYou understand it's the light coming from the fires. You are getting closer. \n\nThe trees thin out and you can see the village entry a little further in front of you.",
       "childid": 10
@@ -68,7 +64,6 @@
     {
       "id": 5,
       "type": "Story",
-      "isvisited": false,
       "recap": "run",
       "text": "You won't waste time. You rush downhill flying over the earth road. \n\nAs you descend, the path gets narrower, meandering between an increasing number of trees. \n\nThis does not slow you down, nor the fact that running through the vegetation leaves\nmany marks on your skin, especially your arms and face. You don't even realise it at the moment. \n\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars. \n\nAs darkness takes hold, $rominous reddish glares$C paint the corners of the scene. \nYou understand it's the light coming from the fires. You are getting closer. \n\nThe trees thin out and you can see the village entry a little further in front of you.",
       "childid": 10
@@ -76,7 +71,6 @@
     {
       "id": 6,
       "type": "Story",
-      "isvisited": false,
       "recap": "laugh",
       "text": "You can't explain the reason of it to yourself, but for some reason, you start chuckling. \nMaybe it's the absurdity of the situation, or maybe it's a nervous reaction. \n\nAnyway, you keep on laughing, louder and louder, until your voice becomes hysterical,\ndistorted, overlapped with its own echo. \n\nAfter a while, you fell quite, the sound disperses around, and you feel some kind of sense of awkardness.",
       "childid": 9
@@ -84,7 +78,7 @@
     {
       "id": 7,
       "type": "Story",
-      "isvisited": false,
+      
       "recap": "cry",
       "text": "Your mind is rushing. \n$c<<What is this place?>>\n<<Am I dead?>>\n<<Am I in some hell?>>\n<<How do I get home?>>\n<<Is there anybody here?>>\n\n$CAfter few moments, you burst out crying. You weren't expecting it, but you can't help it. \n\nAfter few minutes of what you classify as a pathetic scene, you feel better for some reason.",
       "childid": 9
@@ -92,7 +86,6 @@
     {
       "id": 8,
       "type": "Story",
-      "isvisited": false,
       "recap": "shout",
       "text": "This is clearly impossible. You must be dreaming. Or maybe it's just some kind of sick prank. \n\nWhatever it is, it's unacceptable. You feel your rage rising, supercharged by your pain and fear. \nIt soon becomes too much to hold inside, so you let out a mighty shout. \n\nYou scream at the space around you. \nTo whoever might be listening. \nTo your own fate. \n\nYou feel liberated.",
       "childid": 9
@@ -100,7 +93,6 @@
     {
       "id": 9,
       "type": "Action",
-      "isvisited": false,
       "recap": "still there",
       "text": "You stand on this hill, like the one that is in front of your house. \nBut the similarities end there. There are no places like this around your place,\nmaybe not even in your whole nation. \n\nYou are still wondering what happened and how did you end up here. \nYou try to keep calm, thinking about what to do next. \n",
       "actions": [
@@ -139,7 +131,6 @@
     {
       "id": 10,
       "type": "Story",
-      "isvisited": false,
       "recap": "raidedvillage",
       "text": "A small town lies in front of you. \nOr, to better say, what is left of it. \n\nThere is one main earth road that divides two main groups of houses, and little else. \nMany buildings are in flames or already burnt to the ground. \nFew others are seemingly intact. \n\nThere are no vehicles. \nNo living soul is to be found around. \n\n\nYou keep on walking, and after few seconds you spot the first one. \n\n$WA man.$C# Lying on his back, eyes wide open, staring into nothingness. \nAn arrow stuck deep in his chest. $WClearly dead.$C# Few flies buzzing around his mouth already. \n\nYou retch.",
       "childid": 11
@@ -147,7 +138,6 @@
     {
       "id": 11,
       "type": "Choice",
-      "isvisited": false,
       "recap": "findshelter",
       "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better. \n\nYou keep on walking and realise the road is scattered with corpses. Some kind of battle must have taken place... \n\nYou keep on going, slowly, appalled. You lose track of time, while your mind tries to grasp the reality. \nYHow to find an explanation to any of the things you are experiencing?\n\n\n#After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire. \n\nYou shudder. This reminds you that you should find some kind of shelter for the night,\nget dry, and possibly not burnt.",
       "choices": [
@@ -164,7 +154,6 @@
     {
       "id": 12,
       "type": "Action",
-      "isvisited": false,
       "recap": "enter house",
       "text": "Overcoming fear with need, you enter the silent, dark, house. You don't expect to find anybody in there. \nIt's a very humble abode, earthen floor, small windows, few ornaments. \n\nA fireplace signals the kitchen. A table, some chairs. You suddenly realise how hungry you are. \nThe only other room is the bedroom, a simple bed, a closet. \nAll furniture pieces are made of the same wood. \nIt doesn't look like there is running water anywhere. You can't even find a toilet. \n\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]\n\n[You may press TAB again for help about the objects.]$C",
       "actions": [
@@ -279,7 +268,6 @@
     {
       "id": 13,
       "type": "Story",
-      "isvisited": false,
       "recap": "still walking",
       "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration. \n\nThe fires are almost out. Hostile embers spy on you from the corner of your eye. \nNot a sound, you feel and hear your own blood pumping in your veins. \n\nYou reach what looks like the center of that lost little town. \nThere is a stone landmark in the middle of the square. \nYou feel a rush of gratitude when you discover it's a fountain. \n\nYou drink in a hurry, only now realising how thirsty you were. \nThe water has a funny taste, but you are too overwhelmed to notice orterra calpestata care. \nYou collapse on the ground, the most possible distant from any building, fire, or corpse.",
       "childid": 15
@@ -287,7 +275,6 @@
     {
       "id": 14,
       "type": "Story",
-      "isvisited": false,
       "recap": "awake(house)",
       "text": "... \n\n$G<<Wake up...>>$c#\n\n\"Who's calling...?\"$C you mutter sitting up on the bed, fighting to regain full consciousness. \nYou open your eyes, and you become freshly aware of the current situtation. \nIt feel like a boulder has been thrown down on you, again. \n\nYou don't know how long you've been asleep. The sun must be high up already,\njudging from the light that filters through the thick, dirty window. \n\nYou don't want to spend another minute in there, so you decide to hit the road. \n\nOnce outside, you hesitate just a moment, spectating the wasted scenario. \nMany other corpses you did not notice the night before, scavengers... You quickly turn your eyes away. \n\nIt looks like the fires are completely extinguished now. \nThe acrid smell of smoke is still all around you. \nYou need to move. You start walking away, in the same direction as yesterday.",
       "childid": 16
@@ -295,7 +282,6 @@
     {
       "id": 15,
       "type": "Story",
-      "isvisited": false,
       "recap": "awake(outside)",
       "text": "... \n\n$G<<Wake up...>>$c#\n\n\"Who's calling...?\"$C you mutter, fighting to regain full consciousness. \nYou open your eyes, and you become freshly aware of the current situtation. \nIt feel like a boulder has been thrown down on you, again. \n\nYou don't know how long you've been asleep. The sun is already high. \nYou slowly get back on your feet, aching after a night spent in an uncomfortable position. \nYou just hope you didn't get a cold or something worse having slept with your wet clothes out in the open. \nLuckily, wherever you are, the season is warm. \n\n$c<<Wherever I am...>>$C You shake your head and start moving. \nYou just resolutely decided you can't remain there for not even just a second. \nThere are many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away. \n\nIt looks like the fires are completely extinguished now. \nThe acrid smell of smoke is still all around you. \nYou quickly walk away, in the same direction as yesterday.",
       "childid": 16
@@ -303,7 +289,6 @@
     {
       "id": 16,
       "type": "Story",
-      "isvisited": false,
       "recap": "exit village",
       "text": "You are just leaving the last houses of the village behind,\nwhen you notice something further away. \n\nWhen you are close enough, you see they are freshly dug graves. A dozen, maybe. \n\nAll there's to see are just piles of earth. No tombstones. Only now nameless corpses. \n\nYou look around, thinking about the fact that someone $Whad$C to be there to bury the bodies. \nObviously, they could not have dug those holes up and then taken turns in burying each other...$\n\nYou laugh at this thought. \nBut then a shiver runs down your spine, wondering if that was what had actually happened. \n\nYou manage to distract yourself by studying the ground. \nIt looks trodden and loose, as if there was a quite big number of people not so long ago. \nThere are two distinctive, neat marks. They look like... \nThey look like a chariot wheels track!# Not that you are familiar with old vehicles tracks... \n\nYou follow them with your eyes, disappearing in the distance in front of you,\nin an open, semi-desert landscape. \n\nYou don't know where else to go, so you start following the trail. \nLuckily, even a child could do that.",
       "childid": 17
@@ -311,7 +296,6 @@
     {
       "id": 17,
       "type": "Choice",
-      "isvisited": false,
       "recap": "reach camp",
       "text": "You walked all day long. All you saw were little isolated trees, some bushes and some birds. \nYou feel exhausted. It's almost sunset, and you are about to despair. \nBut then, you see it. A thin plume of smoke rising. \n\n$c<<Please not another dead town>>$C you say in your mind, while you start walking faster. \n\nBy the time you get there, it's completely dark. In front of you, an encampment. \nYour survival instinct tells you to lay down and crawl among the sparse low bushes and grass. \n\nThere are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it. \nThe smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours. \nAround the fire, many men are dancing to the rhythm of crude songs with obscure words. \nBetween a song and a piece of meat, they gulp down impressive mugs of what must be beer. \n\nYou look around: no movement at the sides of the encampment. And then you see them. \n\nSlaves. Mostly women, and children. \nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day. Then it dawns on you:\n\n$c<<These thugs must be the responsibles of what I saw at that village!>>$C#\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage. You shouldn't, but you $Whave$C to do something.",
       "choices": [
@@ -328,7 +312,6 @@
     {
       "id": 29,
       "type": "Story",
-      "isvisited": false,
       "recap": "exit village",
       "text": "You sneak around, looking for anything you could use in order to survive another day, possibly more. \nYou need to find supplies, and you want to understand who these people are exactly. \nYou need to remain undetected. \n\nLuckily, it looks like there are no guards around. Everybody must be celebrating... # the... victory?#\nThinking about this, disgust and rage fill you again. \nYou take a deep breath to calm down. \n\nYou proceed on resuming your exploration\nwhen the entry of a tent right in front of you shakes as someone is getting out.",
       "childid": 30
@@ -336,7 +319,6 @@
     {
       "id": 30,
       "type": "Dialogue",
-      "isvisited": false,
       "recap": "meet corolla",
       "text": "",
       "dialogues": [
@@ -393,7 +375,6 @@
     {
       "id": 18,
       "type": "Dialogue",
-      "isvisited": false,
       "recap": "meet corolla",
       "text": "",
       "dialogues": [
@@ -449,7 +430,6 @@
     {
       "id": 19,
       "type": "Choice",
-      "isvisited": false,
       "recap": "jeorghe attack",
       "text": "$CJeorghe, a mass of muscles, rises his improvised weapon and lunges for you. \n\nIn emergency mode, your brain instantly tells you that you need to act quickly. \nAdrenaline starts pumping through your every vein. \n\nWhere to go, in the middle of a desert?",
       "choices": [
@@ -466,7 +446,6 @@
     {
       "id": 20,
       "type": "Story",
-      "isvisited": false,
       "recap": "jeorghe attack",
       "text": "Panicking, you dart away, looking for any kind of cover. \nThe brute chases you, smashing everything he encounters on his path and/or swings. \nYou slide under the carriages, then run between the nearest tents... \n\nIt's all useless. He is always one step behind you. \nFor one split second you get distracted by the noises he makes, and you turn your head a little to watch him. \nIt soon proves to be a mistake. \n\nLooking over your shoulder, you cannot see another man suddenly appearing in front of you. \nHe doesn't even try to stop you. He just stands there with arms crossed letting you stumble and fall to his feet,\nlike a prey trapped for its hunter. \nYou realise you are surrounded. There's no way out. \n\nDuring a few instants, you can observe every detail of his face. \n\nHis devious grin, anticipating with perverse joy what he's about to do. \nHis stench, engulfing you as he rushes towards you. \nTime seems to dilate allowing you to count every hateful, alcoholic capillary of his evil eyes. \n\nYou raise your arm, as if it could protect you from what it's surely going to happen. \n\n\n",
       "childid": 22
@@ -474,7 +453,6 @@
     {
       "id": 21,
       "type": "Story",
-      "isvisited": false,
       "recap": "game over",
       "text": "You raise your fists ready to engage your aggressor. \n\nDuring a few instants, you can observe every detail of his face. \n\nHis devious grin, anticipating with perverse joy what he's about to do. \nHis stench, engulfing you as he rushes towards you. \nTime seems to dilate allowing you to count every hateful, alcoholic capillary of his evil eyes. \n\n\nThen, it's all over in an instant. \nYou don't even have the time to think about the absurdity of the very thought of challenging such a brute. \nThe strike, so strong, you don't even feel it. \n\n\n$dYou should have run. \n\n\n-- GAME OVER --#\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
       "childid": 1
@@ -482,7 +460,6 @@
     {
       "id": 22,
       "type": "Dialogue",
-      "isvisited": false,
       "recap": "smiurl rescues",
       "dialogues": [
         {
@@ -497,7 +474,6 @@
     {
       "id": 23,
       "type": "Dialogue",
-      "isvisited": false,
       "recap": "chief dialogue",
       "dialogues": [
         {
@@ -528,7 +504,6 @@
     {
       "id": 24,
       "type": "Choice",
-      "isvisited": false,
       "recap": "chief question",
       "text": "$M\"How come you happen to be here?\"$C#\n\nYou are not prepared to answer this question. \nYou had no chance so far to even think about it.",
       "choices": [
@@ -545,7 +520,6 @@
     {
       "id": 25,
       "type": "Story",
-      "isvisited": false,
       "recap": "improvised story",
       "text": "$c\"I.. erm... am from a nearby village. To the north.\"# $CYou point with your hand in some random direction. \n\n$c\"And, you know... I heard about you guys... What you're doing...\"# $CYou try hard to dissimulate your nervousness,\nand to look tough and convincing enough. \n\n$c\"So i told myself I should leave that rat hole, and go and reach for you and be of help... To... The cause...?\"#",
       "childid": 27
@@ -553,7 +527,6 @@
     {
       "id": 26,
       "type": "Story",
-      "isvisited": false,
       "recap": "honest truth",
       "text": "$c\"To be honest sir... well, I was on my way home yesterday when... \nI was struck by lightning... Yeah, and then I woke up outside that village...\"\n$CYou point somewhere behind you. \n\n$c\"After that, not knowing where to go, I just followed your tracks.\"\n\n$CSome of those guys have been chuckling since you started talking; now almost everybody bursts out. \n\nYou fall silent, you don't know what to expect next. \n\nThe girl is the only one staring seriously at you.",
       "childid": 27
@@ -561,7 +534,6 @@
     {
       "id": 27,
       "type": "Dialogue",
-      "isvisited": false,
       "recap": "Kriss gets his name",
       "isLast": true,
       "dialogues": [

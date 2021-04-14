@@ -117,7 +117,7 @@ namespace kriss.Nodes
 
             } while (key.Key != ConsoleKey.Enter);
 
-            var choice = visibleChoices[selectedRow];
+            Choice choice = visibleChoices[selectedRow];
 
             if (choice.IsPlayed)
             {

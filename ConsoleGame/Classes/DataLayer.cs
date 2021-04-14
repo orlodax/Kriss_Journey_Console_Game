@@ -12,8 +12,7 @@ namespace kriss.Classes
     {
         public static Status Status { get; set; }
         public static List<Chapter> Chapters { get; private set; } = new();
-        public static Chapter CurrentChapter { get; private set; }
-        public static Dictionary<string, ConsoleColor> ActorsColors { get; private set; } = new Dictionary<string, ConsoleColor>();
+        public static Chapter CurrentChapter { get; set; }
 
         public static void Init()
         {
@@ -47,27 +46,10 @@ namespace kriss.Classes
                 CurrentChapter = Chapters[0];
 
             //color dialogues dictionary assignment
-            ActorsColors.Add("Narrator", ConsoleColor.DarkCyan);
-            ActorsColors.Add("Person", ConsoleColor.DarkYellow);
-            ActorsColors.Add("White", ConsoleColor.White);
-            ActorsColors.Add("Kriss", ConsoleColor.Cyan);
-            ActorsColors.Add("Corolla", ConsoleColor.Red);
-            ActorsColors.Add("Smiurl", ConsoleColor.Yellow);
-            ActorsColors.Add("Theo", ConsoleColor.Blue);
-            ActorsColors.Add("Jeorghe", ConsoleColor.DarkMagenta);
-            ActorsColors.Add("Chief", ConsoleColor.Magenta);
-            ActorsColors.Add("Efeliah", ConsoleColor.DarkGreen);
-            ActorsColors.Add("Math", ConsoleColor.DarkMagenta);
-            ActorsColors.Add("Elder", ConsoleColor.Magenta);
+           
 
             //chapters titles
-            //Titles.Add("1. THE JOURNEY STARTS");
-            //Titles.Add("2. THE HORDE");
-            //Titles.Add("3. SOME FRIENDS");
-            //Titles.Add("4. THE SWORD");
-            //Titles.Add("5. NOI-HERT");
-            //Titles.Add("6. BEACONS");
-            //Titles.Add("7. SEER'S ROCK");
+
             //Titles.Add("8. BREAKOUT");
             //Titles.Add("9. THEO'S GIFTS");
             //Titles.Add("10. INTO THE MAZEROCK");

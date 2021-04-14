@@ -5,7 +5,7 @@ namespace lybra
     public class NodeBase
     {
         public int Id { get; set; } //unique id primary key
-        public string Recap { get; set; } 
+        public string Recap { get; set; } //just to sum it up
         public string Type { get; set; } //story, choice, action...
         public string Text { get; set; } //text to be flown
         public string AltText { get; set; } //other text to be flown/displayed (i.e. if the node is already visited)
@@ -13,8 +13,8 @@ namespace lybra
         public List<Choice> Choices { get; set; } //list of possible choices
         public List<Action> Actions { get; set; } = new List<Action>(); //list of possible actions
         public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
-        public bool IsVisited { get; set; }
-        public bool IsLast { get; set; }
+        public bool IsVisited { get; set; } //have we ever played this node?
+        public bool IsLast { get; set; } //more than one node per chapter could be its last
 
         public NodeBase(NodeBase n)
         {

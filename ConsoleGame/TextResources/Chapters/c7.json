@@ -1,0 +1,674 @@
+﻿{
+  "id": 7,
+  "title": "SEER'S ROCK",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Story",
+      "recap": "Into the rock",
+      "text": "-------------------------------\n|          CHAPTER 7          |\n-------------------------------\n\n\nYou are walking behind Math in a single line. He is leading you somewhere only he knows,\nthrough a narrow, twisting trail carved into the rock. \nQuite often it becomes a tunnel and sometimes you have to lower your head. \nIt steadily goes uphill, and after a half hour, you are wheezing again. \n\n$R\"Seer's Rock...\"#$C Corolla mumbles. $R\"Do you know something about it?\"$C\nTheo shakes his head. \n\n$c\"Why don't we ask him...?\"#$C you propose. \n\n$Y\"I don't trust him!# This place is cursed!# We won't get out of here alive!\"#$C Smiurl starts whining again. \n\nSeemingly deaf to your conversation, Math keeps on leading you forward. \n\n$m\"Please, this way.\"#$C He says at every junction. \n\nAfter an hour or so, climbing into the rock, the trail suddenly ends,\nrevealing a surprising scene.",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "type": "Action",
+      "recap": "the village in the rock",
+      "text": "You just entered a wide cavity that must lie at the top of the spire. \nIt looks a bit like the mouth of a volcano, with you standing at its base. \n\nThere are plenty of houses, and streets and pathways and suspended walkways. \n\nCountless little openings dot the rocky walls, leading who knows where.",
+      "actions": [
+        {
+          "verbs": [
+            { "term": "look" },
+            { "term": "watch" },
+            { "term": "observe" }
+          ],
+          "answer": "Gentle lights illuminate the main roads. Many other lights peeks out the windows of the dwellings. \nThose houses have a similar shape: round earthen walls covered by an hemispheric dome made of something like straw. \n\nYou feel odd, as if somebody is watching you."
+        },
+        {
+          "verbs": [
+            { "term": "listen" }
+          ],
+          "answer": "You follow Math silently. Your steps resonate on the stone. \n\nAll is quiet, but the air seems to be permeated with a subtle... $csinging?##$y\nAt the very edge of your hearing threshold, you think of hearing a melodic whispering,\nmany voices yet no voice at all, coming and going like they were carried around by the shifting movement of the air. "
+        },
+        {
+          "verbs": [
+            { "term": "walk" },
+            { "term": "follow" }
+          ],
+          "answer": "The lights along the main road are huge torches, emanating a noticeable warmth along with light. \nSparkles ascend, carried by the warm air, dancing around and then extinguishing in the dark. \n\nYou start to notice some dwellers showing themselves,\nsome along the streets, others looking out the windows. \nAll of them are observing you with the same moderate interest. \n\nAfter a while, you stop at the base of a little hill, or mound.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Choice",
+      "recap": "Elder's hut",
+      "text": "$m\"This is the Elder's house, the wise Long. He is expecting you.\"$C\n\nAll of you look at Math repeatedly. \nAfter few instants you realise he is inviting you to enter. \n\nSo this must be the one in command of this place, or something like that, you think.",
+      "choices": [
+        {
+          "desc": "You followed Math so far. Now, get inside that house? Why not?",
+          "childid": 6
+        },
+        {
+          "desc": "Are you supposed to just comply? Let's go exploring this place instead.",
+          "childid": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Story",
+      "recap": "walking in circle",
+      "text": "Without further notice, you turn your back to Math, nodding briefly to Corolla, and start walking. \n\nThe others hesitate just a little, then start to following you. \nMath does not seem to care. \n\n$R\"Hey where are you going now?\"#$C Corolla whispers to you from behind your back. \nYou don't know why, but you feel compelled to whisper as well when you answer:\n\n$c\"I just want to take a look around...\"#$C You have the impression she wants to answer something,\nbut she just sighs as you all keep walking. \n\nThe scenery is pretty boring after a while. \nThe apparently chaotic network of little streets, passageways,\nbuildings ranging from little huts to big houses like the Elder's one,\nafter few minutes everything seems to just repeat itself. \nYou don't meet anyone, and with the passing of time you start to feel a bit... stupid?\n\nAnyway, all of a sudden, after a bend you see Math again. Has he come in search of you?#\n\nSoon you realise he's still standing in the very same spot, smiling at you guys. \n\nSomehow you walked in a circle, returning right where you started.",
+      "childid": 5
+    },
+    {
+      "id": 5,
+      "type": "Choice",
+      "recap": "walking in circle",
+      "text": "Math looks at you as if nothing happened,\nlike it's perfectly natural to stand still there and keep on staring at you. \n\nFunnily, you don't know if you should feel more angry or more embarrassed.",
+      "choices": [
+        {
+          "desc": "No point in wasting more time... Let's see who this geezer is and what he has to say.",
+          "childid": 6
+        },
+        {
+          "desc": "No way! You'll show them... Just keep moving!",
+          "childid": 8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "Story",
+      "recap": "still walking in circle",
+      "text": "You keep your stride and move towards what looks like a new direction. \nYou can hear the others murmuring, yet they keep on following you. \n\nYou soon discover that the scenery goes back to repeating itself. \nAnd right when you think you're about to turn into an unexplored alley, you find him still there waiting for you. \n\nMath is still there, looking at you as if nothing happened. \n\nAnd, again, you don't know if you should feel more angry or more embarrassed. \n\nSome kind of trick has to be involved in this... \n\nIt looks like you'll just have to do as you're told.",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "at Elder's",
+      "text": "$c\"Whoever this 'Elder' is, at least he will be able to tell us how to get back down safely...\"$C\nYou conciliatory say, almost talking to yourself. \n\n$c\"...maybe he will be able to tell us about the reason we climbed up here in the first place...\"#$C You add, half aloud. \n\n$R\"I have to say, it's not that much of a house... It looks like they don't care about hierarchy.\"\n\n$CA feeble, flickering light comes from inside the house, like the light of candles. \n\nSuddenly, you all hear a warm and firm voice inviting you:\n\n$M<<Please, get inside>>#\n\n$CIt sounded like it came just from the midst of you. You exchange some puzzled looks. \nSmiurl is crouching on the ground, shoulders to the door. \n\nIn the end, Theo decides for everybody and steps inside, opening with ease the light, creaky door.",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "entering",
+      "text": "You find yourself in a narrow corridor, its walls made of something resembling bamboo wood. \nBetween the shadows, you get glimpses of small pieces of furniture, with many little objects on them. \n\nThe light appears to be coming from the end of the passage. \nIt does not look like it's coming from a candle anymore. \nIt's bluish one moment, greenish the next one... \n\nYou all walk behind Theo. You feel like you can hear Smiurl trembling behind you. \n\nYou feel a weird sense of unreality. \nYou catch yourself convulsively squeezing the hilt oh your sword. \n\n$c<<It's an instinctive reaction.>># $C You think. \n\n$c<<I don't even know how to use it.>># $C You think. \n\nSuddenly, the corridor ends around Theo's silhouette,\nand the light suddenly lowers, going back to a more natural candlelight. \n\nYou see an old man sitting on an armchair, his back turned on you. \nYou can understand he's old because of the silver mane flowing down on his shoulders. \n\nHe slowly turns around, and, in the same voice you heard outside, he says:\n\n$M\"Have a seat please. I've just finished brewing some tea\"",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "talk with Long",
+      "dialogues": [
+        {
+          "precomment": "You are the first one to comply. You feel you can trust that old man. \nReading your thoughts, the Elder looks at you and says:",
+          "actor": "Elder",
+          "istelepathy": true,
+          "line": "Be careful, young man. Never give your complete trust so easily... \nJust because I'm old, it doesn't necessarily mean you have nothing to fear.",
+          "comment": "\nYou hear his voice, yet he hasn't opened his mouth to speak. He just stared at you. \nHis words spring up directly in your mind. You can't believe it. \nYou remain silent, staring at him, sitting in your little wicker armchair, mouth half-open."
+        },
+        {
+          "precomment": "Smiurl notices it, and shakes out of silence:",
+          "actor": "Smiurl",
+          "line": "He's ipnotising him!# Help!# Help!",
+          "comment": "He tries to run away. \nThe Elder glances at Theo, whom extends his arm, grabbing the little guy by his collar,\nthen lifting him from the ground, all without taking his eyes off the old man stare."
+        },
+        {
+          "precomment": "Then the Elder look at Smiurl, and adds smiling warmly:",
+          "actor": "Elder",
+          "line": "Be quiet, little Smiurl. No harm will come to you.",
+          "comment": "Surprisingly enough, Smiurl seems to accept that reassurance. \nApparently, he doesn't even notice he has been called by name without anybody introducing him first."
+        },
+        {
+          "precomment": "Corolla sits next to you, dragging along Smiurl as well. \nTheo remains standing.",
+          "replies": [
+            {
+              "line": "You all want to know what place is this.",
+              "childId": 10
+            },
+            {
+              "line": "What is the real reason you are here?",
+              "childId": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Dialogue",
+      "recap": "what is this rock",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "line": "Dear Elder, where are we?"
+        },
+        {
+          "actor": "Elder",
+          "precomment": "He observes with a gently amused expression the glare in her eyes. \nThen, chuckling, getting comfortable in his seat, he answers:",
+          "line": "Said and done: welcome to Seer's Rock."
+        },
+        {
+          "actor": "Theo",
+          "precomment": "Theo sighs. Then he says:",
+          "line": "This we know... Math.",
+          "comment": "He nods to the outside."
+        },
+        {
+          "actor": "Elder",
+          "line": "Well, actually, there's no need to add anything else.",
+          "comment": "He says with his mouth shut.",
+          "isTelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You are getting used to this. You answer aloud right away:",
+          "line": "But... What does that mean?"
+        },
+        {
+          "actor": "Elder",
+          "line": "Oh, I beg your pardon!# I think aloud all the time!",
+          "comment": "He exclaims."
+        },
+        {
+          "actor": "Elder",
+          "line": "Yes, yes, I see you do not know the history of this place. Let me tell it for you.",
+          "comment": "\n\nAfter this, he takes a breath, then starts talking.",
+          "childid": 12
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "Dialogue",
+      "recap": "why are we here",
+      "dialogues": [
+        {
+          "actor": "Elder",
+          "line": "I had you brought here, because you know, we were expecting you.",
+          "comment": "The Elder says."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Can you see who traverses the desert from up here?"
+        },
+        {
+          "actor": "Elder",
+          "line": "Of course..!",
+          "comment": "And he looks somewhere in the distance in front of him, for a few moments. \n\nThen he changes expression abruptly:"
+        },
+        {
+          "actor": "Elder",
+          "line": "But no, no!# You fool, we have been waiting for centuries!# I mean...",
+          "comment": "He adjusts his position,\nsettling more comfortably on his armchair, as he proceeds to clarify:"
+        },
+        {
+          "actor": "Elder",
+          "line": "Few years ago, right after I was elected Elder, I was studying the memories of The Master himself. \nThis happened only lately because the Underground Library is only accessible to the Elders. \nAnyway, I came across the description of a weird dream or vision. \nThe details are not clear, but few things are unmistakable:\na wonderful, gold-haired girl, in a halo of light, gave a message to The Master. \nHe then arranged for it to be passed down in time from Elder to Elder. \nI read in those memories about the very day and place where a group of visitors would have appeared. \nAnd the group would have consisted of a $cyoung man$M, a $Ydwarf$M, a $Btall man$M, and a $Rwoman$M\". \n\n\"To be honest, it reminds me of an Earthers' legend...",
+          "comment": "His voice fades and he starts to space out again. \nThen he comes back to here and now and says:"
+        },
+        {
+          "actor": "Elder",
+          "line": "Well, now it's clear the message is about you, today, and here. \nThe Master commanded to give you hospitality and to assist you,\nand you can be sure we will carry out our duty!",
+          "childid": 13
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "the story of the rock",
+      "text": "He tells you that this place owes its name to its founder, a man called 'The Seer', or 'The Master'. \nHe was the last of the psychic scholars living on Noi-Hert. \n\nA few decades after the Earthers' abandonment, being on the run, he sought refuge from the unrest here. \nAnd he found shelter indeed, at the top of this narrow yet superb spike of stone,\nwhich stands lonely in the middle of the Great Desert. \n\nSafe from the hordes' attacks, he set up a community which in time continued to teach the psychic arts to its members. \nUp to this day, they live simple lives:\nthey use to farm a few exemplars of an animal species with a thick skin which uses to roam the desert in small herds. \nThey also grow a herb or cereal that can grow anywhere it finds a handful of soil,\nfrom which they obtain a weird, fine flour. \n\nThe water need is met by a well at the bottom of a pit in the middle of the spire,\nwhich goes down several kilometers and reaches deep underground# (at least this is what the Elder claims). \n\nThe eldest and most skilled telepath between them is appointed as 'Elder Telepath', or just 'Elder'. \nThat title rewpresents the authority in the village. \nAnyway# (as the Elder claims)# the election of an Elder is a sporadic event,\nsince they have an average life span of 200 years. \n\nThen the old man falls silent, and goes back to sip his tea.",
+      "childid": 13
+    },
+    {
+      "id": 13,
+      "type": "Choice",
+      "recap": "asking the elder",
+      "text": "The Elder falls silent, going back to sipping his tea, with evident satisfaction. \n\nYou look at him as he smiles,\nand as he apparently absent-mindedly casts his eyes as looking at a distant, far away landscape only he can see. \n\nIt looks like he does not notice you anymore,\nor like he does not care anymore you are still there.",
+      "choices": [
+        {
+          "desc": "You all want to know what place is this.",
+          "childid": 12
+        },
+        {
+          "desc": "What is the real reason you are here?",
+          "unhide": 2,
+          "childId": 11
+        },
+        {
+          "desc": "A prophecy? A golden-haired... 'fairy'? Come on... What would we be supposed to do?",
+          "condition": {
+            "type": "isNodeVisited",
+            "item": "11",
+            "value": true
+          },
+          "childId": 14
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "Story",
+      "recap": "end of questions",
+      "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand. \nHe then stands up, and says:\n\n$M\"You sure are tired. Math, please take them to their designed accommodation.\"\n\n$CMath appears, seemingly out of thin air, emerging from the shadows of the corridor. \n\nYou follow him outside, then you all walk quietly to one of the many houses in the surroundings. \nHe tells you that a certain young woman named Efeliah left it free for you. \n\nAs you enter the house, suddenly exhaustion hits you hard as stone. \nYou collapse on one of the beds, unable to notice anything around you. \nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place... \n\nYour consciousness slips away in a rush,\nas you fall deeply asleep on what feels like the most comfortable bed you've ever layed on.",
+      "childid": 15
+    },
+    {
+      "id": 15,
+      "type": "Dialogue",
+      "recap": "wake up at Efeliah's",
+      "text": "###You get waken up by the noise of activity in the village. \nYou feel rested, but still a bit groggy. \n\nLight comes through the windows, you have no idea what time it is or how long you've been asleep. \nSmiurl seems to be awake, sitting on a tidy bed, fully dressed. \n\n",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "line": "What time is it..?",
+          "comment": "You mumble slurring."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "The sun is quite high... I think it's past midday.",
+          "comment": "He shrugs his shoulders."
+        },
+        {
+          "precomment": "He must be thinking you need the toilet: he points to one of the doors and clarifies:",
+          "actor": "Smiurl",
+          "line": "Theo is in the bathroom."
+        },
+        {
+          "precomment": "At that sound, the mound of blankets on a bed on the other side of the room comes to life.",
+          "actor": "Corolla",
+          "line": "My turn first!",
+          "comment": "You hear Corolla's muffled voice from underneath the pile of bedsheets. She immediately adds:"
+        },
+        {
+          "actor": "Corolla",
+          "line": "...I'm starving...!",
+          "comment": "You can't help chuckling, hearing her tone. \n\nBut then you become suddenly aware of your own stomach. \nAt that, you also start noticing the smell of food (roasted meet) in the air. \n\nYou start salivating vigorously.",
+          "childid": 16
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "type": "Dialogue",
+      "recap": "wake up at Efeliah's 2",
+      "text": "Someone knocks at the door. \nMath does not wait for your answer, and just utters from behind the door:\n\n",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "line": "Goodmorning friends!# Feel free to come outside whenever you are ready."
+        },
+        {
+          "precomment": "In the meantime, Theo comes out the bathroom, he has been showering or something. \nHis wet hair is untied, and he's wearing only a pair of shorts;\nyou can observe and possibly envy the impressive muscles on his chest.",
+          "actor": "Theo",
+          "line": "Meal is almost ready",
+          "comment": "He announces, as he rubs his face with the towel hanging from his neck."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Let's not leave our hosts waiting for us...",
+          "comment": "Corolla crawls out of bed, and enters the bathroom. \nShe's wearing just her shirt. Her legs are quite muscular and good-looking, and you notice several scars on them. \n\nThen the door slams. \n\nAll you can do now is waiting your turn.",
+          "childid": 17
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "type": "Dialogue",
+      "recap": "before the party",
+      "text": "The room you slept in is very simple, and constitutes the majority of the humble house. \nIt looks like they brought in extra beds in order to provide you with that improvised common room. \n\nWhen all of you are ready, you go outside to meet Math. A young woman is standing next to him. \n\n",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "line": "Goodmorning. I hope you rested well."
+        },
+        {
+          "precomment": "Corolla smiles and answers, bowing slightly:",
+          "actor": "Corolla",
+          "line": "Naturally. Your hospitality is delightful."
+        },
+        {
+          "actor": "Math",
+          "line": "Let me introduce to you Efeliah. She offered her house for you.",
+          "comment": "He adds after reciprocating the courtesy."
+        },
+        {
+          "precomment": "She steps forward. She's slightly taller than Corolla. You start noticing how in the village everybody is quite tall. \nShe has wavy, platinum blonde hair, flowing down to her shoulder blades. \nHer eyes are $ggreen$C, a very light, pale green. And very beautiful too. \nLike everybody else around them, she's wearing a simple, plain tunic, made with a light-coloured fabric.",
+          "actor": "Efeliah",
+          "line": "It is my pleasure to welcome you, on behalf of the whole village.",
+          "comment": "Another bow."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Now, if you don't mind following me, the banquet is waiting for you, not to mention how hungry you must be...",
+          "comment": "\nShe pauses, intently looking at each one of you, squinting her eyes.# Then she continues:"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "...I see the last time you ate was yesterday morning... Please come this way.",
+          "comment": "She concludes,\ninviting you to follow her once more with a gesture of her hand. You happily comply.",
+          "childid": 18
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "Dialogue",
+      "recap": "going to the party",
+      "text": "Efeliah takes you under her arm. Her hand is warm, and you can smell her natural scent. \n\n",
+      "dialogues": [
+        {
+          "actor": "Efeliah",
+          "line": "Tonight the Elder is going to give a speech.",
+          "comment": "She says."
+        },
+        {
+          "actor": "Kriss",
+          "line": "What about?",
+          "comment": "You muster to ask back."
+        },
+        {
+          "actor": "Math",
+          "line": "I believe he wants to surprise you.",
+          "comment": "You aren't sure of it, but you feel like Math is trying to suppress a smile. \nOn top of that, over his words you can distinctly hear his voice saying, or rather thinking:"
+        },
+        {
+          "actor": "Math",
+          "line": "...about you/us...",
+          "comment": "You instinctively turn around, looking puzzled at your friends.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "Everything okay?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Erm... Yeah, I suppose so...",
+          "comment": "You smile, slightly embarrassed. \nYou look away, and you notice the Elder's house. He's watching out the window. \nYou feel like he's looking right at you."
+        },
+        {
+          "actor": "Elder",
+          "line": "Indeed.",
+          "comment": "He answers your thoughts with his usal 'voice'. You wonder if you could ever get used to it.",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Why do I worry?# Not that I dislike these guys... But sooner or later we'll leave this place...",
+          "istelepathy": true
+        },
+        {
+          "actor": "Elder",
+          "line": "I wouldn't be so sure of many things...",
+          "istelepathy": true,
+          "comment": "He answers into your mind once again. \nYou quickly glance at his place, resentfully. It looks like he's retracted inside the house. \n\nYou continue walking, Efeliah still at your arm.",
+          "childid": 19
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "recap": "party and the party",
+      "type": "Action",
+      "text": "You reach the central square of the village. As you walk, every single person you see either greets you all,\nor smiles, or bows slightly, or a combination of the three. You start to feel embarrassed. \n\nFinally, you reach the square. It is modest, but quite spacious for the local standards. \nTorches have been lit and placed all around. In the middle, a huge brazier with a massive grill on it. \nAnd some even more massive pieces of meat are placed on it, roasting invitingly,\nthe fat dripping and crackling when it touches the flames. \n\nOn the right side, a long table with many chairs has been prepared. \nOn the left, a kiosk has been set up, with many drinks and some people to serve them. \n\nOn the opposite side in front of you, you see a kind of wooden podium. \n\nThere are so many things you want to ask.",
+      "altText": "You are still in the square with the others. As time passes, more people are joining you. \nAfter all the care received, Smiurl seems calmer. He's even starting conversations with some of your hosts. \n\nThe Elder still hasn't shown up. \nIt seems you have some more time to enjoy the party.",
+      "actions": [
+        {
+          "verbs": [
+            { "term": "ask" }
+          ],
+          "objects": [
+            {
+              "objs": [
+                { "term": "food" },
+                { "term": "meat" },
+                { "term": "table" }
+              ],
+              "answer": "$m\"The cooks are giving the best of themselves tonight. Special courses are being prepared for you guys.\"$y"
+            },
+            {
+              "objs": [
+                { "term": "drinks" },
+                { "term": "drink" },
+                { "term": "kiosk" }
+              ],
+              "answer": "$g\"Please, have a drink before anything else. I'm sure you'll be surpised!\"$y"
+            },
+            {
+              "objs": [
+                { "term": "podium" }
+              ],
+              "answer": "That must be where official announcements are made. It looks small and modest like everything else. \nThe Elder will surely climb those wooden steps soon."
+            },
+            {
+              "objs": [
+                { "term": "mind" },
+                { "term": "powers" },
+                { "term": "psychic" },
+                { "term": "telepathy" },
+                { "term": "read" },
+                { "term": "thinking" },
+                { "term": "thoughts" },
+                { "term": "explanations" },
+                { "term": "explanation" }
+              ],
+              "childid": 20
+            }
+          ],
+          "answer": "You all stand there quietly. It looks like there is still time before the meal. You should take advantage now to ask some questions. These guys TALK WITH THEIR MINDS. How's that possible??"
+        },
+        {
+          "verbs": [
+            { "term": "eat" }
+          ],
+          "objects": [
+            {
+              "objs": [
+                { "term": "food" },
+                { "term": "meat" },
+                { "term": "table" }
+              ],
+              "condition": {
+                "item": "partyDrank",
+                "value": true,
+                "refusal": "Food is not yet being served. Maybe I could have something to drink in the meantime."
+              },
+              "effect": {
+                "item": "partyFed",
+                "value": true
+              },
+              "childid": 22
+            }
+          ]
+        },
+        {
+          "verbs": [
+            { "term": "drink" },
+            { "term": "drinks" }
+          ],
+          "effect": {
+            "item": "partyDrank",
+            "value": true
+          },
+          "childid": 21
+        },
+        {
+          "verbs": [
+            { "term": "wait" }
+          ],
+          "condition": {
+            "item": "partyFed",
+            "value": true,
+            "refusal": "I should honor our hosts enjoying what has been prepared for us."
+          },
+          "childid": 22
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "recap": "telepathy explained",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "precomment": "Smiurl must have had the same idea, as you hear him asking:",
+          "actor": "Smiurl",
+          "line": "How can you guys make thoughts speak?# What spells do you use?"
+        },
+        {
+          "precomment": "Math chuckles heartily. He starts explaining with a smile:",
+          "actor": "Math",
+          "line": "It's not magic..!# As the Master teaches: 'telepathy is an innate faculty of human minds', dormant at birth. \nAnd like any other skill, it requires excercise, effort, and study."
+        },
+        {
+          "precomment": "He has taken on a more solemn expression. Smiurl is definitely incredulous.",
+          "actor": "Math",
+          "line": "You see, when you think of something, when you speak, anytime you do something, even when you sleep,\ninside your brain millions of chemical reaction take place. Each of them has a certain 'energy signature'. \nA trained mind is able to catch and discern the meaning of these emissions, that's all..."
+        },
+        {
+          "actor": "Math",
+          "line": "These signals exists especially in specific dimensions of this universe;\ninside 'classic' spacetime, they are very weak and get overshadowed by natural radiation.",
+          "comment": "#\n\nYou are fascinated by his explanation. He sounds exactly like one of the characters in the sci-fi books you use to read. \nBack home, on Earth. \n\nAs you experience that painful thought, Math and Efeliah turn suddenly towards you,\nas if they heard a loud noise. \n\nYou smile. Maybe you do can get used to this.",
+          "childid": 19
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "recap": "let's drink like on earth",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "precomment": "You go to the drinks kiosk. A smiling guy welcomes you:",
+          "actor": "Person",
+          "line": "What would you like to try?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "Not sure... What do you suggest?",
+          "comment": "Corolla answers first."
+        },
+        {
+          "actor": "Person",
+          "line": "I promise, everything you see is delicious. \nAnyway, what I like the most are these cocktails with Pinzerro flavoured Martee'nee."
+        },
+        {
+          "actor": "Kriss",
+          "line": "What did you just said??# 'Martini'?",
+          "comment": "You exclaim surprised."
+        },
+        {
+          "actor": "Person",
+          "line": "Yes, it's an old recipe, but..."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Incredible...",
+          "comment": "The first link with your world and this, is booze. Corolla looks at you puzzled."
+        },
+        {
+          "actor": "Kriss",
+          "istelepathy": true,
+          "line": "I wonder how do they obtain it...",
+          "comment": "You think to yourself."
+        },
+        {
+          "actor": "Corolla",
+          "line": "We'll take two of those then, please!",
+          "comment": "She then looks back at you. You smile reassuringly, coming back to present. \n\nThe drink is actually extremely good. You can't pinpoint the exact taste of it,\nbut it could totally be one in the infinite number of cocktails from Earth. \n\nYour spirits are a little higher now...",
+          "childid": 19
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "recap": "let's eat like on earth",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "precomment": "As you approach the long table, you are invited to take a seat around the head of the table,\nwhere in the meantime the Elder went to sit. \n\nAs soon as you are all ready, a waiter arrives with the first course.",
+          "actor": "Person",
+          "line": "This is for Mr. Smiurl."
+        },
+        {
+          "precomment": "He put down a silvery plate on the table in front of the dwarf. \nThen he uncovers it for him, and Smiurl literally burst out with a flash of delight. \nHe can't even wait and instantly put a finger into the reddish sauce to get a taste:",
+          "actor": "Smiurl",
+          "line": "Sand-fruit with scrambled Croeggs!# Mmmmm... So delightful!# And this is true Ghermina Sauce!"
+        },
+        {
+          "precomment": "You stare at him, marveled. As Smiurl keeps eating, he keeps on lighting up like a firefly,\ngoing from $Yyellow$C to $Bblue$C, $Yinter$Bmitten$Ytly$C. \n\nThen comes your turn. Another plate is put in front of you. For a second, you try peek at its contents,\nbut soon it gets uncovered by the waiter, as he announces:",
+          "actor": "Person",
+          "line": "For Mr. Kriss, 'Earthers' Steaks'",
+          "comment": "From his tone, you understand they must be proud of their creation. \nAnd, you have to admnit, it does look familiar. \nIt could be something you use to eat with your family and friends around your barbecue. \n\nSuddenly, you are struck by melancholy again. You haven't even had the time to think about or miss home. \nThe place you left only about three days ago.",
+          "break": true
+        },
+        {
+          "precomment": "Math notices your thoughts, not just your expression, and brings you back by asking:",
+          "actor": "Math",
+          "line": "Something's wrong?# You can't eat this food?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "No, not at all... I am sure it's excellent..."
+        },
+        {
+          "precomment": "Then you grab what must be the local version of a fork, and stab a huge, juicy piece of meat. \nYou stuff it in your mouth, chewing energetically. \nAfter few seconds, you look at Math and the waiter again,\ndoing your best in an attempt to smile with your mouth still full, then venturing to say:",
+          "actor": "Kriss",
+          "line": "...HAB-FO-LUTELY..!",
+          "comment": "#And, at that, everybody bursts out laughing, including Theo and the Elder.#\n\nThe rest of the dinner goes smoothly, sharing jokes and tales with each other. \n\nAfter a while, you all stand up again, while conversations continue. \n\nThen the Elder climbs up the little podium, so everybody falls quiet, waiting for his speech.",
+          "childid": 23
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "recap": "more friends",
+      "type": "Dialogue",
+      "islast": true,
+      "dialogues": [
+        {
+          "actor": "Elder",
+          "line": "Hello you all again, friends and guests.",
+          "comment": "The Elder starts abruptly. He's talking normally, in a quiet voice,\nand he's irradiating his verbal thoughts at the same time. A weird 'stereo' broadcasting. \nThere's people in the distance following his speech from the windows of their houses, after all."
+        },
+        {
+          "actor": "Elder",
+          "precomment": "He then tells everybody the same story you already heard, only with many more details. \nThe secret mission the Master left for them, long time ago... \n\nYou get a bit distracted hearing all of that once more. Your eyes wonder and you watch the sky. \nYou see the moon, well, 'A' moon. You realise it's the first time you see it:\na thin scythe, a different shade from the Earth's moon, and a little bigger. \nYou didn't notice it was already dark; you were distracted before,\nhence you could not see the night smuggling off the sun, again. \n\nYou go back to listening to the Elder, and what he says now surprises you, to say the least:",
+          "line": "...to better fulfill our obligation, and to ensure the success and safety of our guests,\ntwo of us volounteered to escort them... In order to meet their fate.",
+          "comment": "He waves his hand briefly at you all. \n\nAs he falls silent for a little, you look at Math and Efeliah. They are smiling. \n\nTheo grunts a little, expressing something that must lie more or less halfway between approval and doubt. \n\nSmiurl lights up, maybe with excitement, maybe in fear. ",
+          "break": true
+        },
+        {
+          "actor": "Elder",
+          "line": "I thereby officially entrust this mission to Math Fraimann and Efeliah Amas. \nThey will go with Kriss, Corolla, Theo and Smiurl, wherever our guests will want, or need."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "The Elder bows, signaling the end of his speech. A murmur of voices and thoughts rises. \nEfeliah and Math turn towards you guys smiling. Corolla smiles back and says:",
+          "line": "We are truly honored. First the hospitality, then this...",
+          "comment": "She waves her hand referring to what just happened."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Are you sure you want to do this?",
+          "comment": "From her thoughts seeps out:\n\n$R<<If I were in your shoes, I would think it twice...!>>$C"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "No need to worry about that Corolla, I can assure you we did think it through."
+        },
+        {
+          "precomment": "Hearing that, Corolla gets more serious, and adds, bowing slightly in the manner of your hosts:",
+          "actor": "Corolla",
+          "line": "Then we are pleased to welcome you."
+        }
+      ]
+    }
+  ]
+}

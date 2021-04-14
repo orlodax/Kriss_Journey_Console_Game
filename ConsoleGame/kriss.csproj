@@ -11,6 +11,11 @@
   <ItemGroup>
     <None Remove="TextResources\Chapters\c1.json" />
     <None Remove="TextResources\Chapters\c2.json" />
+    <None Remove="TextResources\Chapters\c3.json" />
+    <None Remove="TextResources\Chapters\c4.json" />
+    <None Remove="TextResources\Chapters\c5.json" />
+    <None Remove="TextResources\Chapters\c6.json" />
+    <None Remove="TextResources\Chapters\c7.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +25,11 @@
     <EmbeddedResource Include="TextResources\Chapters\c1.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextResources\Chapters\c7.json" />
+    <EmbeddedResource Include="TextResources\Chapters\c6.json" />
+    <EmbeddedResource Include="TextResources\Chapters\c5.json" />
+    <EmbeddedResource Include="TextResources\Chapters\c4.json" />
+    <EmbeddedResource Include="TextResources\Chapters\c3.json" />
     <EmbeddedResource Include="TextResources\Chapters\c2.json" />
   </ItemGroup>
 

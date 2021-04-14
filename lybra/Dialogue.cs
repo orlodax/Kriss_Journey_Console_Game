@@ -4,7 +4,7 @@ namespace lybra
 {
     public class Dialogue
     {
-        public string Actor { get; set; }       //who speaks
+        public EnActorColor Actor { get; set; }       //who speaks
         public string LineName { get; set; }      //name of the speechpart (used to link to this)
         public string NextLine { get; set; }    //if ever needed, name of the speechpart to jump to
         public string PreComment { get; set; }  
@@ -17,7 +17,7 @@ namespace lybra
     }
     public class Reply
     {
-        public string Actor { get; set; }
+        public EnActorColor Actor { get; set; }
         public string Line { get; set; }
         public string Comment { get; set; }
         public int? ChildId { get; set; }

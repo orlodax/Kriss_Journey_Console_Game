@@ -1,0 +1,365 @@
+﻿{
+  "id": 3,
+  "title": "SOME FRIENDS",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Dialogue",
+      "recap": "meet the others",
+      "text": "-------------------------------\n|          CHAPTER 3          |\n-------------------------------\n\n\n",
+      "isvisited": false,
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "You walk with Corolla, quick-paced, going somewhere only she knows. \nYou see her picking up the bolas that hit Jeorghe, hanging them to her hip... so it was her saving you!\nSomething else attracts your attention though, a movement, in the darkness. \nUnintentionally, you wince. She notices that and says:",
+          "line": "Don't worry. That is Smiurl..."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Smiurl...?",
+          "comment": "You don't understand what she's talking about. \nIn the meantime, you unintentionally draw closer to her."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Yep. It was him to knock Jeorghe down, after I tied him up."
+        },
+        {
+          "precomment": "You remember you glimpsed something. You just weren't thinking that it could be someone.",
+          "actor": "Corolla",
+          "line": "Smiurl, don't you think it's time to introduce yourself?",
+          "comment": "She says after she stopped walking,\napparently talking to the shadows."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "I really have to, haven't I?",
+          "comment": "you hear a squeaky little voice, not distant.",
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Well, I guess I have to...",
+          "comment": "He then adds. \n\nAs if by magic, a little man surfaces out of the shadows. He barely reaches Corolla's waist in height. \nHe has a shy look in his eyes."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "He stretches up his little wrinkly hand to you and says:",
+          "line": "Hello Kriss, I am Smiurl.",
+          "comment": "you reciprocate, a little unbelieving. He cannot be just a dwarf. \nHe has huge ears, pierced with a plethora of earrings, which jingle faintly with each jolt of his head. \nThe nose is also quite big, compared to the rest of the face. \nHe's wearing a shirt and a pair of short discolored leather trousers. \nHis face looks like it's made to constantly display a lost-puppy-like expression..."
+        },
+        {
+          "precomment": "Somehow Corolla must know what you are thinking.",
+          "actor": "Corolla",
+          "line": "Don't let him deceive you... Smiurl is a true valiant when you need him.",
+          "comment": "Hearing that compliment,\nthe little guy lits up everywhere. \n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C## He actually starts emanating a vague, multicoloured luminescence."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Whoa!",
+          "comment": "You exclaim, not believing your eyes."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Easy, he's innocuous!",
+          "comment": "She laughs heartily. Her laughter rises up, clear and silvery."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Smiurl is a mutant.",
+          "comment": "She adds right after."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Incredible...!",
+          "comment": "You observe him, amazed. In the meantime, he has somehow 'switched off'.",
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "line": "You aren't angry, are you?",
+          "comment": "He asks with trembling voice."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Angry?! Why would I be angry?"
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Everybody hates me... It's because... I'm different.",
+          "comment": "He complains, looking down."
+        },
+        {
+          "precomment": "You feel compassion for that little man. You can only imagine how miserable his life must be,\nliving surrounded by that kind of human filth. They must make his life a hell every day. \n\nYou say to him warmly:",
+          "actor": "Kriss",
+          "line": "I do not hate you! On the contrary: you guys saved my life... and I still haven't thanked you properly!"
+        },
+        {
+          "actor": "Corolla",
+          "line": "Our duty.",
+          "comment": "She smiles openly. The white of her teeth uncovers under the light of the stars. \n\nSmiurl starts glowing again, puffing up all happy.",
+          "break": true
+        },
+        {
+          "precomment": "You keep walking with them for a while. You start wondering how people like them can mingle with those thugs. \nWhat are they doing here?\n\nYou reach an area separated from the rest of the encampent by a group of dry trees. \nYou see a few tents next to each other.",
+          "actor": "Corolla",
+          "line": "There, you can sleep in the tent with Theo.",
+          "comment": "She points at the biggest of the group."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Who is...",
+          "comment": "You are about to say, but a man is already coming towards you."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Precisely. That's him. Theo, let me introduce you to Kriss. \nWould you kindly provide him a bedroll of yours, at least for tonight?",
+          "comment": "\nThe giant, from the top of his impressive figure, simply answers:\n\n$B\"Of course.\"##$C and then, to you: $B\"Come.\"$C#"
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You all walk together to his tent. She keeps it open for you to enter it, Smiurl peeking from behind her legs. \nShe looks at you and smiling confidently says:",
+          "line": "Goodnight. With Theo around, no one will dare getting anywhere near here."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Goodnight... And thank you, again!",
+          "comment": "You reply as she disappears into the night, without a sound.",
+          "childid": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Action",
+      "recap": "Theo's tent",
+      "isvisited": false,
+      "text": "You stand inside the tent.# Theo, expressionless, is looking at you. \nHe looks like he's waiting for you to say something.",
+      "actions": [
+        {
+          "verbs": [
+            { "term": "look" }
+          ],
+          "objects": [
+            {
+              "objs": [
+                { "term": "around" },
+                { "term": "tent" }
+              ],
+              "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow. \nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?\nBut the most striking feature to be observed is Theo himself."
+            },
+            {
+              "objs": [
+                { "term": "theo" },
+                { "term": "him" },
+                { "term": "man" },
+                { "term": "guy" }
+              ],
+              "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance. \nHe's even taller and massive than Jeorghe, and the similarities end there. \nHe has ash blonde hair, almost white, worn in a thick, quite long braid. \nHe has a well-kept beard, not long, and just a little darker than the rest of his hair,\nwhich frames his sturdy, squared face. \n\nHis eyes are clear and cold as ice, still there is something in him softening his gaze... \nAnd his talking, even if so succinct, wasn't rough, neither veined with hate like those of the other men around there."
+            },
+            {
+              "objs": [
+                { "term": "bed" },
+                { "term": "mat" },
+                { "term": "bedroll" }
+              ],
+              "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
+              "condition": {
+                "item": "mat",
+                "value": true,
+                "refusal": "You don't see any."
+              }
+            }
+          ]
+        },
+        {
+          "verbs": [
+            { "term": "say" }
+          ],
+          "answer": "He keeps on staring at me...",
+          "objects": [
+            {
+              "obj": "hello",
+              "answer": "$B\"Hello to you.\"#$C He says."
+            },
+            {
+              "obj": "hi",
+              "answer": "$B\"Hi to you.\"#$C He says."
+            }
+          ]
+        },
+        {
+          "verbs": [
+            { "term": "hello" }
+          ],
+          "answer": "$B\"Hello to you.\"#$C He says."
+        },
+        {
+          "verbs": [
+            { "term": "hi" }
+          ],
+          "answer": "$B\"Hi to you.\"#$C He says."
+        },
+        {
+          "verbs": [
+            { "term": "sleep" }
+          ],
+          "objects": [
+            {
+              "objs": [
+                { "term": "bed" },
+                { "term": "mat" },
+                { "term": "bedroll" },
+                { "term": "ground" },
+                { "term": "floor" }
+              ],
+              "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
+              "childid": 3,
+              "condition": {
+                "item": "mat",
+                "value": true,
+                "refusal": "I cannot just lay on the ground."
+              }
+            }
+          ]
+        },
+        {
+          "verbs": [
+            { "term": "ask" }
+          ],
+          "objects": [
+            {
+              "objs": [
+                { "term": "bed" },
+                { "term": "sleep" },
+                { "term": "lay" },
+                { "term": "rest" },
+                { "term": "do" }
+              ],
+              "answer": "He gives you a bedroll and points you to the emptier side of the tent.",
+              "effect": {
+                "item": "mat",
+                "value": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "recap": "awake in the encampent",
+      "type": "Choice",
+      "text": "##$G<<Kriss...>>$C#\n\nYou open your eyes. You hear that 'voice' again. Are you imagining it?# Are you going crazy?# Who knows. \n\nSomehow you feel rested enough. The tent is now empty, Theo must have left earlier. \n\nThe sun seeps through: it must be quite high already. \nYou hear noises coming from the camp. It feels like it's rustling with activity. \nYou lay down a little longer, not sure about how you should feel. All of this is just crazy. \nYou acted impulsively last night. What are you supposed to do now?#\n\nWell, at least you met Corolla and Smiurl and... Theo... They seem good persons. \n\n$c<<The hot girl, the dwarf and the giant. What kind of joke is this??>>$C#\n\nYou just can't wrap yuour mind around all of it. At least, not yet.",
+      "choices": [
+        {
+          "desc": "You don't know what to do. You need more time to assimilate the rality. You stay in bed to think it through.",
+          "childid": 5
+        },
+        {
+          "desc": "No point in helplessly laying down. Better move on and see what's coming next.",
+          "childid": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "recap": "try sneak",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "precomment": "You get up, stretch your limbs and go outside shielding your eyes from the sun with your hand. \n\nAll around, the camp is abuzz. Looking at it in the broad daylight, it reveals itself to be bigger than you thought. \n\nMost tents have been already packed. \nIt's full of men and horses going more or less hastily in all directions. \n\nIn the middle of it all, there is an open jeep. The Chief is standing on its hood, distributing orders here and there.#",
+          "actor": "Smiurl",
+          "line": "Watch out!",
+          "comment": "At that sudden sound, you wince, to say the least. \nSmiurl comes out from behind a pile of straw."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Noticing your reaction, he istantly assumes a sorry expression, while he starts explaining:",
+          "line": "It's dangerous...# Corolla ordered me to stand guard and give alarm in case of danger. \nShe thinks someone may want to hurt you...#"
+        },
+        {
+          "actor": "Theo",
+          "line": "And she's right.",
+          "comment": "You turn around hearing that baritone voice behind you."
+        },
+        {
+          "actor": "Theo",
+          "line": "You'd better get ready. We'll leave soon. Wear these.",
+          "comment": "Theo hands you some clothes. \nIt is clear that what you're wearing is not suitable for the journey that awaits you."
+        },
+        {
+          "actor": "Theo",
+          "line": "Above all, take off those shoes...",
+          "comment": "He then adds looking at your popular sneakers. \nYou have to admit they look alien in that place.# You go back to the tent to get changed.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "recap": "wait thinking",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "precomment": "You are lost in your thoughts... \nRuminating on what's happening,\nif this is all inside your head,\nif you are still alive,\nand many other good amenities. \n\nThen a voice abruptly snatches you off your thinking:",
+          "actor": "Smiurl",
+          "line": "Good morning!",
+          "comment": "At that sudden sound, you wince, to say the least. \nSmiurl is poking whit his head into the tent. He looks at you with a mixture of cheerfulness and agitation."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "Noticing your reaction, he istantly assumes a sorry expression, while he starts explaining:",
+          "line": "Corolla ordered me to stand guard and give alarm in case of danger. \nShe thinks someone may want to hurt you..."
+        },
+        {
+          "actor": "Theo",
+          "line": "And she's right.",
+          "comment": "Theo opens wide the tent around Smiurl in order to let himself inside."
+        },
+        {
+          "actor": "Theo",
+          "line": "You'd better get ready. We'll leave soon. Wear these.",
+          "comment": "Theo hands you some clothes. \nIt is clear that what you're wearing is not suitable for the journey that awaits you."
+        },
+        {
+          "actor": "Theo",
+          "line": "Above all, take off those shoes...",
+          "comment": "He then adds looking at your popular sneakers. \nYou have to admit they look alien in that place.# They both leave you alone to let you change.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "recap": "time to leave",
+      "type": "Story",
+      "text": "You inspect the clothes Theo gave you. \nA big, heavy pair of combat/trekking boots. \nWide hat which will covers a substantial part of your face. \nLeather trousers, shirt and a kind of cape, resembling a poncho. \n\nBut waht surprises you is a very heavy mallet. \n\n$c<<What am I supposed to do with this?>>##$C\n\nYou wear the clothes, then look more closely at the big hammer. You can hardly handle it with just one hand. \nYou don't recognise the metallic material it's made of. \nThe wider sides are adorned with golden friezes, the shorter fitted with metal spikes. \n\nFirst, you wonder in what kind of situation you may need to use it. \nThen you wonder how you could even wield it. \n\nAfter few instants, you shake your head and put the mallet down with the other weapons there. \nThat thing is not for you.",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "recap": "time to leave",
+      "type": "Dialogue",
+      "islast": true,
+      "dialogues": [
+        {
+          "precomment": "You just finished changing and examining the hammer, when Corolla steps inside.",
+          "actor": "Corolla",
+          "line": "Hi! I see you are ready: good. It's time to go."
+        },
+        {
+          "actor": "Kriss",
+          "line": "What is this place we are going to...?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "The Chief heard about a trade caravan in transit in the valley west from here."
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You stare at her, not understanding what she means. Maybe you assume an expression that is a bit stupid. \n\nCorolla puts her hands onto your shoulders, transfixing you with her eyes:",
+          "line": "We are going to $Wattack$R them, Kriss."
+        }
+      ]
+    }
+  ]
+}

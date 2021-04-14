@@ -1,0 +1,141 @@
+﻿{
+  "id": 4,
+  "title": "THE SWORD",
+  "nodes": [
+    {
+      "id": 1,
+      "recap": "start of chap 4",
+      "type": "Story",
+      "text": "-------------------------------\n|          CHAPTER 4          |\n-------------------------------\n\n\nThe horde rides swiftly across the plateau. In the front, the Chief in his jeep. \nHorses loaded with weapons and men form clouds of dust, galloping spurred by their riders. \n\nYou are in the rearguard, sharing a horse with Smiurl. Corolla and Theo are right ahead. \n\nYou never thought riding could be so frustrating. \nYou fear that when you'll get back on the ground# (if you will ever do),\nsomeone will have to very mercifully put all of your pieces back together. \nYou feel every jolt in your bones; your ears are full of the shouts coming from that bunch of... \nYou don't even know $Wwhat$C they are. \n\nAnd what about Smiurl's own shouts?# Uncomprehensible noise. \n\n\nAfter what it feels like an eternity to you, that mess starts to wane. \nThe horses slow down, ending up scattered along the edge of a canyon. \nIt quite suddenly cuts everybody off. A long wound scarring the wide, rocky, semi-desert, plain.",
+      "childid": 2
+    },
+    {
+      "id": 2,
+      "recap": "Chief's last order",
+      "type": "Story",
+      "text": "You watch from the distance the Chief jumping on the hood of the car. \nYou couldn't identify the model so far, it must be custom made or heavily customised. \nHe starts talking loudly:\n\n$M\"The $Wprey$M will get here shortly after sunset. We'll attack them as fast as lightining,\nand we'll have them defeated before they can even reach out for a spear!\"#$C\n\nA roar rises from the rabble. \n\n$c<<What am I doing among these thugs?>>#$C You go back asking yourself. \nAre you about to witness another slaughter?#\n\n$M\"The vanguard and I will hide in that cove; the rest of you will be lying in wait here and there, on the other side.\"$C\nHe points to the other side of the chasm. \n\n$M\"When you'll see us attack from the front, you'll rush down at break-neck speed,\npossibly making a heck of a noise, and deprive them of any escape route.\" $CAnd he laughs hard. \n\n$M\"See ya!\" $CHe salutes with an happy gesture, as if all of you are about to go for a merry trip to the lake. \nYou watch him rumble down the craggy stone wall rising a big cloud of dust,\nfollowed by a significant number of the horsemen.",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "recap": "Corolla explains",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "precomment": "You are still a bit dazed, when Corolla and Theo catch up with you two.",
+          "actor": "Corolla",
+          "line": "Did you enjoy the show?",
+          "comment": "She exclaims with sarcasm."
+        },
+        {
+          "actor": "Theo",
+          "line": "We need to find shelter.",
+          "comment": "Theo is intently looking around."
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "You don't understand what's going on.",
+          "line": "What's happening?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "It happens that 'a good, healthy battle' is about to start, as the Chief would say. \nBut this time, there's something he does not know. \nFor too long he had us all dwell in a snake pit... \nAnd now, he's gonna reap the betrayal he himself sowed.",
+          "comment": "She utters bitterly.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "precomment": "You still don't understand. \nSomehow your face must make that clear, because Corolla starts again, in a milder tone:",
+          "line": "Many in the horde are tired of his leadership. Think about Jeorghe: many others here are just like him."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Each of which would gladly take the three... four of us out!",
+          "comment": "Adds Smiurl, who was quiet so far."
+        },
+        {
+          "actor": "Corolla",
+          "line": "And not just us; these thugs have an appetite for killing. \nI cannot stand watching any more villages be burnt to the ground.",
+          "comment": "She clenches her fists and her jaw,\nembers in her eyes."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Now, there's no time to explain to you how we ended up with these guys. \nWe wanted to warn the Chief about the mutiny plans that are being devised,\nbut Jeorghe and his friends prevented us... Then you arrived out of nowhere... \nLong story short: all we can do now is hide and hope they won't trouble themselves too much looking for us.",
+          "childid": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "recap": "in the cave",
+      "type": "Action",
+      "text": "You are still taking in what Corolla explained to you, when you reach a cave on the side of the ravine. \nIts access isn't directly visible from where the others are waiting to ambush. \n\nYou prepare to wait.",
+      "actions": [
+        {
+          "verbs": [
+            { "term": "look" },
+            { "term": "watch" },
+            { "term": "observe" }
+          ],
+          "answer": "The sun is sinking down, slowly and relentlessly, anxious and tremulous,\nready to be swallowed up into night's unfathomed lair,\ngiving way to her uncountable shiny emissaries. \n\nAlien gleams dance on the horizon, as the strongest rays run the last race,\ndarkening on the way and turning the reddish wasteland in a huge tapestry,\nwhere the armed men are nothing more than maybe-dreamed shapes."
+        },
+        {
+          "verbs": [
+            { "term": "listen" }
+          ],
+          "answer": "Not the slightest sound disturbs the absolute calm and silence now reigning in the canyon. \nAll you can hear is your own blood flowing inside of your ears,\nas well as your heartbeat. \n\nFor all you know, Theo, Corolla and Smiurl could even have stopped breathing."
+        },
+        {
+          "verbs": [
+            { "term": "wait" },
+            { "term": "waiting" }
+          ],
+          "answer": "The twilight gleam fades away. Darkness grows thicker. \n\nAt once, a distant sound. It must be the caravan you are waiting for. \n\nTime seems to further slow down its pace. You can feel the seconds trickle through your fingers as mercury, liquid,\npainstakingly seeping through and then falling down, with unbearable slowness,\nalmost hesitating, and, in the end, dying on the ground with a thud.",
+          "childid": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "recap": "attack the transports",
+      "type": "Story",
+      "text": "You start hearing a distant noise. It must be the convoy. \n\nAfter few more endless minutes spent listening to that noise increase,\nyou and the others peek outside. \nDown there are a dozen of big slow transports. Some of them are pulled by horses, others by motor vehicles. \nThey are escorted by many horsemen. \n\nWithout delay, the attack begins. \nShouts arise in the canyon, echoing countless times on the stone walls, confounding the enemy. \nThen the Chief's roaring jeep charges, suddenly appearing out of its hiding place. \nThe entire convoy halts suddenly, and the defensors spread aroud the first chariots. \n\nThe stranglehold works, as the rest of the horde attacks them from their back. \nThe noise now saturates the canyon like water in a bottle. \n\nSoon it's over. The attackers are taking out the very last men, when Corolla says alarmed:\n\n$R\"Wait a second!# What is this noise...??\"##",
+      "childid": 6
+    },
+    {
+      "id": 6,
+      "recap": "attack of the lights",
+      "type": "Story",
+      "text": "A gloomy vibration is quickly increasing, propagating through the canyon, echoing between the rocks. \n\nSuddenly, a high sound blares all around; all the fighters stop, looking around puzzled. \n\nAbruptly, the ringing, deafening horn-like sound stops, giving way to silence once more. \n\nAnd, quietly, silently, the edges of the canyon start getting filled with lights. \nThey appear gradually, randomly, in different sizes and colours. \nThey look like $Ywisps, $Rignis $Bfatuuses, $Gslowly $Mswaying $caround. \n\n\n$CYou shudder.",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "recap": "attack of the lights continued",
+      "type": "Story",
+      "text": "$S$KThe darkness gets bluntly ripped apart by a shaft of light,\npure white refracting in the whole color spectrum,\nblinding you completely. \n\nThere is no use in shutting your eyes, as the light seems to directly reach into your mind. \n\nA lot of commotion follows. When your eyes start to work again you assist to the slaughtering. \nThe lights attack somehow everybody in the canyon, the horde as well as the men of the convoy. \n\n$s$CIt's all very quick. \nBlinded and panicking, nodoby seems to escape. After few minutes, it's all over. \n\nThe lights are rushing and fading away in the distance already, leaving only a dead silence behind...",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "recap": "inspect",
+      "type": "Story",
+      "text": "You all stay hidden for a while. When you are sure it's 'safe', you cautiously go outside. \n\nThe chariots lie abandoned, their torches still lit. Their scattered faint light reveals aspects of the scene. \n\nIt seems there's no survivor; from this distance it's hard to say. \n\n$B\"Let's look for survivors.\"#$C Theo says, unsurprisingly. His voice sounds like he does not believe he'll find any. \n\nYou follow them, not knowing what to think, once again. \n\nAs you descend, you encounter an increasing number of bodies. You are just thankful it's dark:\nyou won't have their terrified expressions imprinted in your memory forever. \n\nYou all go towards a plume of smoke rising from behind a big boulder. \nBehind there is the Chief's jeep, which upholstery is feeding the flames you saw. \n\n$Y\"The Chief!\"$C Smiurl shouts out. \n\nThen you see him. Sitting on the ground, his back against the front fender. \nHe must be dying; he's losing a lot of blood from a conspicuous wound in his chest. \nNot just you, also Corolla, Theo and Smiurl freeze looking at him, not knowing what to say. \nThus it surprises you, the fact that after few instants you step forward. \n\nThe Chief slowly lift his chin looking at you, and, despite everything, he manages to grin.",
+      "childid": 9
+    },
+    {
+      "id": 9,
+      "recap": "Chief",
+      "type": "Story",
+      "text": "$M\"Were you a spy after all...?\" $CHe coughs, blood leaking from the corner of his mouth. \nThen he seems to notice the others:\n\n$M\"I should have expected this...\"$C He looks back at you, and after taking one painful breath,\nhe smirks one more time, then adds:\n\n$M\"Young man, what about... avenging me...\"$C# But his last words die this way along with his last breath. \n\nYou all stand there still, unable to do anything. \nAfter all you witnessed since you arrived in this place, you feel like you have just reached the point of no return. \nYou feel like something in you mind just cracked. Like you're losing touch with reality. \n\nThen, it happens. \n\n$cYou find yourself walking towards him. You feel like you're projected outside of your own body,\nas if $Gsomeone else$c is moving your muscles. \nYou lean on him and absent-mindedly observe your own hands untying his sword from his side. \nNext thing you notice, you are wielding it, pointed to the sky, staring at the blade glinting with ominous glares. \n\n\n$CIn the meantime, Smiurl has retracted in himself, gaining a brownish hue. \nTheo is back to being impassible as usal. \nFor some reason, Corolla seems to approve your actions and retrieves the Chief's chain.",
+      "childid": 10
+    },
+    {
+      "id": 10,
+      "recap": "Sword",
+      "type": "Story",
+      "text": "You suddenly come back to your senses. You return to feel the ground beneath your feet,\nthe air of the night against your skin, the glances of the other three,\nthe mighty weight of the sword, too long and heavy to be wielded with one hand only. \n\nYou immediately put it down with the tip in the ground, then you lean with your own weight on it. \n\n$R\"Are you ok...?\"#$C Asks you Corolla, putting a hand on your shoulder. \n\n$c\"Huh? I think... I think I am...\"#$C You answer. But you have no idea what just happened. \n\n$B\"We camp here, until daybreak.\"#$C Theo deliberates, walking back to the cave. ",
+      "islast": true
+    }
+  ]
+}

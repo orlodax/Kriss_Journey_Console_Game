@@ -5,7 +5,7 @@ namespace lybra
     public class Action
     {
         public List<Word> Verbs { get; set; } //verb of the action
-        public int ChildId { get; set; } //key for matching next node
+        public int? ChildId { get; set; } //key for matching next node
         public string Answer { get; set; } //answer for incomplete player requests 
         public List<Object> Objects { get; set; } = new List<Object>(); //objects for the verbs
         public Condition Condition { get; set; } //condition for the viability of the action. normally an item
@@ -52,7 +52,7 @@ namespace lybra
     {
         public List<Word> Objs { get; set; }         //objects of the action
         public string Answer { get; set; }      //answer for incomplete player requests 
-        public int ChildId { get; set; }     //key for matching next node
+        public int? ChildId { get; set; }     //key for matching next node
         public Effect Effect { get; set; }      //consequence from the object
         public Condition Condition { get; set; }//combinations of actions and objects can have conditions too
     }
