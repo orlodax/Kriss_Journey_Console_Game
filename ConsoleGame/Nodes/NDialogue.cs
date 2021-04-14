@@ -42,18 +42,10 @@ namespace kriss.Nodes
 
             if (currentLine.Line != null)
             {
-                //var p = (ConsoleColor)currentLine.Actor;
                 if (currentLine.IsTelepathy)
                     NodeMethods.TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", (ConsoleColor)currentLine.Actor);
                 else
-                {
-                    //EnActorsColors actor = EnActorsColors.Saberinne;
-                    //var pop = (string)actor;
-                    //var b = EnActorsColors.Parse(Console.ForegroundColor, currentLine.Actor);
-                    //EnActorsColors.
-                    //var a = (ConsoleColor)10;
                     NodeMethods.TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", (ConsoleColor)currentLine.Actor);
-                }
             }
             
             if(currentLine.Comment != null)      
@@ -71,7 +63,7 @@ namespace kriss.Nodes
             }
             else
                 if (isLineFlowing)
-                    Thread.Sleep(NodeMethods.ParagraphBreak);                                   //if there was no comment after the line, wait a bit
+                    Thread.Sleep(NodeMethods.ParagraphBreak);                       //if there was no comment after the line, wait a bit
 
             Console.WriteLine();
             Console.WriteLine();
@@ -83,13 +75,13 @@ namespace kriss.Nodes
             }
         #endregion
 
-            if (currentLine.ChildId.HasValue)                                        //if it encounters a link, jump to the node
+            if (currentLine.ChildId.HasValue)                                       //if it encounters a link, jump to the node
             {      
                 HoldScreen();
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
-            if (currentLine.Replies!= null && currentLine.Replies.Any())       //if there are replies inside, display choice
+            if (currentLine.Replies!= null && currentLine.Replies.Any())            //if there are replies inside, display choice
             {
                 do
                 {
@@ -117,13 +109,13 @@ namespace kriss.Nodes
                     {
                         selectedRow--;
                         Console.Clear();
-                        RecursiveDialogues(0, false);                                //redraw the node to allow the selection effect
+                        RecursiveDialogues(0, false);               //redraw the node to allow the selection effect
                     }
                     if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
                     {
                         selectedRow++;
                         Console.Clear();
-                        RecursiveDialogues(0, false);                                //redraw the node to allow the selection effect
+                        RecursiveDialogues(0, false);               //redraw the node to allow the selection effect
                     }
 
                 } while (key.Key != ConsoleKey.Enter);

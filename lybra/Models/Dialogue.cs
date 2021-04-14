@@ -17,9 +17,7 @@ namespace lybra
     }
     public class Reply
     {
-        public EnActorColor Actor { get; set; }
         public string Line { get; set; }
-        public string Comment { get; set; }
         public int? ChildId { get; set; }
         public string NextLine { get; set; }    //speechpart to jump to        
     }
