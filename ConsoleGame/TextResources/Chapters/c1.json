@@ -6,7 +6,7 @@
       "id": 777,
       "type": "story",
       "text": "play a @sound",
-      "childid": "777"
+      "childid": 777
     },
     {
       "id": 1,

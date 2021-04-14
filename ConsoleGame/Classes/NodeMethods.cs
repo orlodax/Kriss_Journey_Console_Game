@@ -20,10 +20,6 @@ namespace kriss.Classes
             else
                 text = node.Text;
             
-            #if DEBUG
-            node.IsVisited = true; 
-            #endif
-
             TextFlow(!node.IsVisited, text);
         }
 
@@ -50,15 +46,17 @@ namespace kriss.Classes
         {
             if (Condition != null)
             {
-                if (Condition.Type != "isNodeVisited")
+                switch (Condition.Type)
                 {
-                    var storedItem = DataLayer.Status.Inventory.Find(i => i.Name == Condition.Item);
-                    if (storedItem != null)
-                    {
-                        if (storedItem.Had & Condition.Value)
+                    case "isNodeVisited":
+                        return DataLayer.IsNodeVisited(Convert.ToInt32(Condition.Item));
+
+                    default:
+                        if (DataLayer.Status.Inventory.Contains(Condition.Item))
                             return true;
-                    }
+                        break;
                 }
+
                 return false;
             }
             return true;
@@ -70,8 +68,7 @@ namespace kriss.Classes
         /// <param name="effect"></param>
         public static void StoreItem(Effect effect)       // consequent modify of inventory
         {
-            var itemToStore = new Item() { Name = effect.Item, Had = effect.Value };
-            DataLayer.Status.Inventory.Add(itemToStore);
+            DataLayer.Status.Inventory.Add(effect.GainItem);
         }
         #endregion
 
@@ -79,15 +76,20 @@ namespace kriss.Classes
         /// <summary>
         /// Mimics the flow of text of old console games. 
         /// </summary>
-        static readonly int FlowDelay = 20; // fine-tunes the speed of TextFlow
+        static int FlowDelay = 10; // fine-tunes the speed of TextFlow
         internal static readonly int ParagraphBreak = 1000; // # arbitrary pause
-        static readonly int ShortPause = 700; // comma pause
-        static readonly int LongPause = 1200; // dot pause
+        static int ShortPause = 700; // comma pause
+        static int LongPause = 1200; // dot pause
         static readonly List<string> NotToPause = new() { ".", "!", "?", "\"", ">", ")" }; // symbols after short pause that must not trigger another pause
         static readonly List<string> ToShortPause = new() { ":", ";", ",", "!", "?" }; // symbols after which trigger a short pause
 
         public static void TextFlow(bool isFlowing, string text, ConsoleColor color = ConsoleColor.DarkCyan)
         {
+#if DEBUG
+            FlowDelay = 1;
+            ShortPause = 20;
+            LongPause = 40;
+#endif
             Console.ForegroundColor = color;
 
             if (text != null)

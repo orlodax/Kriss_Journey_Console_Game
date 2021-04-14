@@ -135,45 +135,40 @@
       "text": "You stand inside the tent.# Theo, expressionless, is looking at you. \nHe looks like he's waiting for you to say something.",
       "actions": [
         {
-          "verbs": [
-            { "term": "look" }
-          ],
+          "verbs": [ "look" ],
           "objects": [
             {
               "objs": [
-                { "term": "around" },
-                { "term": "tent" }
+                "around",
+                "tent"
               ],
               "answer": "The tent is quite big for your standards. But Theo's massive presence makes it look narrow. \nThere are few things around. Behind the giant's shoulders you spot a bedroll, a huge backpack, some... weapons?\nBut the most striking feature to be observed is Theo himself."
             },
             {
               "objs": [
-                { "term": "theo" },
-                { "term": "him" },
-                { "term": "man" },
-                { "term": "guy" }
+                "theo",
+                "him",
+                "man",
+                "guy"
               ],
               "answer": "There's some light coming from a lantern on the ground, so you can spend few instants looking at the guy's appearance. \nHe's even taller and massive than Jeorghe, and the similarities end there. \nHe has ash blonde hair, almost white, worn in a thick, quite long braid. \nHe has a well-kept beard, not long, and just a little darker than the rest of his hair,\nwhich frames his sturdy, squared face. \n\nHis eyes are clear and cold as ice, still there is something in him softening his gaze... \nAnd his talking, even if so succinct, wasn't rough, neither veined with hate like those of the other men around there."
             },
             {
               "objs": [
-                { "term": "bed" },
-                { "term": "mat" },
-                { "term": "bedroll" }
+                "bed",
+                "mat",
+                "bedroll"
               ],
               "answer": "The thing Theo just gave you is very simple and basic. You guess it will just have to do.",
               "condition": {
                 "item": "mat",
-                "value": true,
                 "refusal": "You don't see any."
               }
             }
           ]
         },
         {
-          "verbs": [
-            { "term": "say" }
-          ],
+          "verbs": [ "say" ],
           "answer": "He keeps on staring at me...",
           "objects": [
             {
@@ -187,57 +182,47 @@
           ]
         },
         {
-          "verbs": [
-            { "term": "hello" }
-          ],
+          "verbs": [ "hello" ],
           "answer": "$B\"Hello to you.\"#$C He says."
         },
         {
-          "verbs": [
-            { "term": "hi" }
-          ],
+          "verbs": [ "hi" ],
           "answer": "$B\"Hi to you.\"#$C He says."
         },
         {
-          "verbs": [
-            { "term": "sleep" }
-          ],
+          "verbs": [ "sleep" ],
           "objects": [
             {
               "objs": [
-                { "term": "bed" },
-                { "term": "mat" },
-                { "term": "bedroll" },
-                { "term": "ground" },
-                { "term": "floor" }
+                "bed",
+                "mat",
+                "bedroll",
+                "ground",
+                "floor"
               ],
               "answer": "You put the bedroll on the ground, in the area Theo indicated. You fall asleep, too tired and shocked to dream.",
               "childid": 3,
               "condition": {
                 "item": "mat",
-                "value": true,
                 "refusal": "I cannot just lay on the ground."
               }
             }
           ]
         },
         {
-          "verbs": [
-            { "term": "ask" }
-          ],
+          "verbs": [ "ask" ],
           "objects": [
             {
               "objs": [
-                { "term": "bed" },
-                { "term": "sleep" },
-                { "term": "lay" },
-                { "term": "rest" },
-                { "term": "do" }
+                "bed",
+                "sleep",
+                "lay",
+                "rest",
+                "do"
               ],
               "answer": "He gives you a bedroll and points you to the emptier side of the tent.",
               "effect": {
-                "item": "mat",
-                "value": true
+                "gainitem": "mat"
               }
             }
           ]

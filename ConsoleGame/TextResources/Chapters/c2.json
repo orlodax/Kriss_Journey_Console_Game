@@ -16,32 +16,32 @@
       "text": "$c\"Maybe I am dead, afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario. \n\nIn the meanwhile, you look at the small reddish vale that lies downhill. \nThere is smoke ascending from what it looks like several fires or maybe arsons. \n\nYou carefully stand up, becoming dizzy until your sense of balance stabilises. \n\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
       "actions": [
         {
-          "verbs": [ { "term": "look" } ],
+          "verbs": [ "look" ],
           "childid": 3
         },
         {
           "verbs": [
-            { "term": "walk" },
-            { "term": "go" }
+            "walk",
+            "go"
           ],
           "childid": 4
         },
         {
-          "verbs": [ { "term": "run" } ],
+          "verbs": [ "run" ],
           "childid": 5
         },
         {
-          "verbs": [ { "term": "laugh" } ],
+          "verbs": [ "laugh" ],
           "childid": 6
         },
         {
-          "verbs": [ { "term": "cry" } ],
+          "verbs": [ "cry" ],
           "childid": 7
         },
         {
           "verbs": [
-            { "term": "shout" },
-            { "term": "scream" }
+            "shout",
+            "scream"
           ],
           "childid": 8
         }
@@ -97,32 +97,32 @@
       "text": "You stand on this hill, like the one that is in front of your house. \nBut the similarities end there. There are no places like this around your place,\nmaybe not even in your whole nation. \n\nYou are still wondering what happened and how did you end up here. \nYou try to keep calm, thinking about what to do next. \n",
       "actions": [
         {
-          "verbs": [ { "term": "look" } ],
+          "verbs": [ "look" ],
           "childid": 3
         },
         {
           "verbs": [
-            { "term": "walk" },
-            { "term": "go" }
+            "walk",
+            "go"
           ],
           "childid": 4
         },
         {
-          "verbs": [ { "term": "run" } ],
+          "verbs": [ "run" ],
           "childid": 5
         },
         {
-          "verbs": [ { "term": "laugh" } ],
+          "verbs": [ "laugh" ],
           "childid": 6
         },
         {
-          "verbs": [ { "term": "cry" } ],
+          "verbs": [ "cry" ],
           "childid": 7
         },
         {
           "verbs": [
-            { "term": "shout" },
-            { "term": "scream" }
+            "shout",
+            "scream" 
           ],
           "childid": 8
         }
@@ -159,62 +159,48 @@
       "actions": [
         {
           "verbs": [
-            { "term": "search" },
-            { "term": "look" }
+            "search",
+            "look"
           ],
           "objects": [
             {
-              "objs": [
-                { "term": "food" }
-              ],
+              "objs": [ "food" ],
               "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
               "effect": {
-                "item": "food",
-                "value": true
+                "gainitem": "food"
               }
             },
             {
-              "objs": [
-                { "term": "water" }
-              ],
+              "objs": [ "water" ],
               "answer": "There is a covered jug full of water on the kitchen counter.",
               "effect": {
-                "item": "water",
-                "value": true
+                "gainitem": "water"
               }
             },
             {
-              "objs": [
-                { "term": "clothes" }
-              ],
+              "objs": [ "clothes" ],
               "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
               "effect": {
-                "item": "clothes",
-                "value": true
+                "gainitem": "clothes"
               }
             },
             {
-              "objs": [
-                { "term": "money" }
-              ],
+              "objs": [ "money" ],
               "answer": "You can't find anything valuable."
             }
           ]
         },
         {
           "verbs": [
-            { "term": "sleep" },
-            { "term": "rest" },
-            { "term": "lay" }
+            "sleep",
+            "rest",
+            "lay" 
           ],
           "objects": [
             {
-              "objs": [
-                { "term": "bed" }
-              ],
+              "objs": [ "bed" ],
               "condition": {
                 "item": "clothes",
-                "value": true,
                 "refusal": "I don't want to lay down with these dirty clothes on."
               },
               "childid": 14
@@ -223,42 +209,33 @@
         },
         {
           "verbs": [
-            { "term": "remove" },
-            { "term": "change" },
-            { "term": "wear" }
+            "wear",
+            "remove",
+            "change"
           ],
           "objects": [
             {
-              "objs": [
-                { "term": "clothes" }
-              ],
+              "objs": [ "clothes" ],
               "answer": "You remove your soaked clothes wearing what you just found.",
               "condition": {
                 "item": "clothes",
-                "value": true,
                 "refusal": "I need to find something to wear first."
               }
             }
           ]
         },
         {
-          "verbs": [
-            { "term": "drink" }
-          ],
+          "verbs": [ "drink" ],
           "condition": {
             "item": "water",
-            "value": true,
             "refusal": "I need to find some water."
           },
           "answer": "You avidly drink the water, not caring about its taste."
         },
         {
-          "verbs": [
-            { "term": "eat" }
-          ],
+          "verbs": [ "eat" ],
           "condition": {
             "item": "food",
-            "value": true,
             "refusal": "I need to find something to eat."
           },
           "answer": "You devour what you just found."

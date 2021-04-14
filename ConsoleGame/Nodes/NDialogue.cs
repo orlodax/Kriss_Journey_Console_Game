@@ -22,6 +22,10 @@ namespace kriss.Nodes
             if (IsVisited)
                 isLineFlowing = false;
 
+#if DEBUG
+            isLineFlowing = false;
+#endif
+
             var currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)

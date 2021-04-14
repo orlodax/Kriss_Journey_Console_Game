@@ -73,22 +73,20 @@
       "actions": [
         {
           "verbs": [
-            { "term": "look" },
-            { "term": "watch" },
-            { "term": "observe" }
+            "look",
+            "watch",
+            "observe"
           ],
           "answer": "The sun is sinking down, slowly and relentlessly, anxious and tremulous,\nready to be swallowed up into night's unfathomed lair,\ngiving way to her uncountable shiny emissaries. \n\nAlien gleams dance on the horizon, as the strongest rays run the last race,\ndarkening on the way and turning the reddish wasteland in a huge tapestry,\nwhere the armed men are nothing more than maybe-dreamed shapes."
         },
         {
-          "verbs": [
-            { "term": "listen" }
-          ],
+          "verbs": [ "listen" ],
           "answer": "Not the slightest sound disturbs the absolute calm and silence now reigning in the canyon. \nAll you can hear is your own blood flowing inside of your ears,\nas well as your heartbeat. \n\nFor all you know, Theo, Corolla and Smiurl could even have stopped breathing."
         },
         {
           "verbs": [
-            { "term": "wait" },
-            { "term": "waiting" }
+            "wait",
+            "waiting"
           ],
           "answer": "The twilight gleam fades away. Darkness grows thicker. \n\nAt once, a distant sound. It must be the caravan you are waiting for. \n\nTime seems to further slow down its pace. You can feel the seconds trickle through your fingers as mercury, liquid,\npainstakingly seeping through and then falling down, with unbearable slowness,\nalmost hesitating, and, in the end, dying on the ground with a thud.",
           "childid": 5

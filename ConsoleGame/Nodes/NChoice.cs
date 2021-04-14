@@ -34,16 +34,14 @@ namespace kriss.Nodes
 
             foreach (var c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
             {
-                if (c.Condition != null)
+                var cond = c.Condition;
+                if (cond != null)
                 {
-                    var cond = c.Condition;
                     if (cond.Type == "isNodeVisited")
                     {
-                        if (int.TryParse(cond.Item, out int nodeId))
+                        if (int.TryParse(cond.Item, out int nodeId))            //item in this case contains node id
                         {
-                            NodeBase nb = DataLayer.SearchNodeById(nodeId);    //item in this case contains node id
-
-                            if (nb.IsVisited == cond.Value)
+                            if (DataLayer.IsNodeVisited(nodeId))
                                 visibleChoices.Add(c);
                         }
                         else

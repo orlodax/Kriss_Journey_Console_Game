@@ -43,7 +43,7 @@ namespace kriss.Nodes
                 ConsoleKeyInfo input = Console.ReadKey();
                 switch (input.Key)
                 {
-                    case ConsoleKey.Tab:                 //if player presses tabs looking for help
+                    case ConsoleKey.Tab:                //if player presses tabs looking for help
                         TabPressed();
                         break;
 
@@ -78,13 +78,13 @@ namespace kriss.Nodes
             {
                 foreach (var action in Actions)
                 {
-                    var verb = action.Verbs.Find(v => v.Term.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
+                    var verb = action.Verbs.Find(v => v.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
                     if (verb != null)
                     {
                         if (action.Objects.Count > 0)
                         {
                             foreach (var objContainer in action.Objects)                 //when the action is found, iterate through every object term
-                                helpObjects.Add(objContainer.Objs[0].Term);
+                                helpObjects.Add(objContainer.Objs[0]);
                         }
                         else
                             helpObjects.Add("Just do it.");
@@ -113,7 +113,7 @@ namespace kriss.Nodes
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 foreach (var action in Actions)
-                    Console.Write(action.Verbs[0].Term + " ");
+                    Console.Write(action.Verbs[0] + " ");
             }
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -173,7 +173,7 @@ namespace kriss.Nodes
                 {
                     foreach (var action in Actions)
                     {
-                        var verb = action.Verbs.Find(v => v.Term.Equals(word));
+                        var verb = action.Verbs.Find(v => v.Equals(word));
                         if (verb != null)
                         {
                             act = action;
@@ -187,7 +187,7 @@ namespace kriss.Nodes
                 {
                     if (act.Objects.Count == 0)                                 //...and is objectless...
                     {
-                        if (!NodeMethods.Evaluate(act.Condition))                           //if for some reason Kriss can't do it, say it...
+                        if (!NodeMethods.Evaluate(act.Condition))               //if for some reason Kriss can't do it, say it...
                             CustomRefusal(act.Condition.Refusal);
                         else
                         {
@@ -207,9 +207,9 @@ namespace kriss.Nodes
                             {
                                 foreach (var obj in o.Objs)
                                 {
-                                    if (obj.Term == word)                       //the action is right, and there is a acceptable object specified
+                                    if (obj == word)                            //the action is right, and there is a acceptable object specified
                                     {
-                                        if (!NodeMethods.Evaluate(o.Condition))             //if for some reason Kriss can't do it, say it...
+                                        if (!NodeMethods.Evaluate(o.Condition)) //if for some reason Kriss can't do it, say it...
                                             CustomRefusal(o.Condition.Refusal);
                                         else                                    //...otherwise, do it
                                         {

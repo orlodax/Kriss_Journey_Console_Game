@@ -17,22 +17,22 @@
       "actions": [
         {
           "verbs": [
-            { "term": "look" },
-            { "term": "watch" },
-            { "term": "observe" }
+            "look",
+            "watch",
+            "observe"
           ],
           "answer": "Gentle lights illuminate the main roads. Many other lights peeks out the windows of the dwellings. \nThose houses have a similar shape: round earthen walls covered by an hemispheric dome made of something like straw. \n\nYou feel odd, as if somebody is watching you."
         },
         {
           "verbs": [
-            { "term": "listen" }
+            "listen"
           ],
           "answer": "You follow Math silently. Your steps resonate on the stone. \n\nAll is quiet, but the air seems to be permeated with a subtle... $csinging?##$y\nAt the very edge of your hearing threshold, you think of hearing a melodic whispering,\nmany voices yet no voice at all, coming and going like they were carried around by the shifting movement of the air. "
         },
         {
           "verbs": [
-            { "term": "walk" },
-            { "term": "follow" }
+            "walk",
+            "follow"
           ],
           "answer": "The lights along the main road are huge torches, emanating a noticeable warmth along with light. \nSparkles ascend, carried by the warm air, dancing around and then extinguishing in the dark. \n\nYou start to notice some dwellers showing themselves,\nsome along the streets, others looking out the windows. \nAll of them are observing you with the same moderate interest. \n\nAfter a while, you stop at the base of a little hill, or mound.",
           "childid": 3
@@ -244,8 +244,7 @@
           "desc": "A prophecy? A golden-haired... 'fairy'? Come on... What would we be supposed to do?",
           "condition": {
             "type": "isNodeVisited",
-            "item": "11",
-            "value": true
+            "item": "11"
           },
           "childId": 14
         }
@@ -420,43 +419,41 @@
       "altText": "You are still in the square with the others. As time passes, more people are joining you. \nAfter all the care received, Smiurl seems calmer. He's even starting conversations with some of your hosts. \n\nThe Elder still hasn't shown up. \nIt seems you have some more time to enjoy the party.",
       "actions": [
         {
-          "verbs": [
-            { "term": "ask" }
-          ],
+          "verbs": [ "ask" ],
           "objects": [
             {
               "objs": [
-                { "term": "food" },
-                { "term": "meat" },
-                { "term": "table" }
+                "food",
+                "meat",
+                "table"
               ],
               "answer": "$m\"The cooks are giving the best of themselves tonight. Special courses are being prepared for you guys.\"$y"
             },
             {
               "objs": [
-                { "term": "drinks" },
-                { "term": "drink" },
-                { "term": "kiosk" }
+                "drinks",
+                "drink",
+                "kiosk"
               ],
               "answer": "$g\"Please, have a drink before anything else. I'm sure you'll be surpised!\"$y"
             },
             {
               "objs": [
-                { "term": "podium" }
+                "podium"
               ],
               "answer": "That must be where official announcements are made. It looks small and modest like everything else. \nThe Elder will surely climb those wooden steps soon."
             },
             {
               "objs": [
-                { "term": "mind" },
-                { "term": "powers" },
-                { "term": "psychic" },
-                { "term": "telepathy" },
-                { "term": "read" },
-                { "term": "thinking" },
-                { "term": "thoughts" },
-                { "term": "explanations" },
-                { "term": "explanation" }
+                "mind",
+                "powers",
+                "psychic",
+                "telepathy",
+                "read",
+                "thinking",
+                "thoughts",
+                "explanations",
+                "explanation"
               ],
               "childid": 20
             }
@@ -464,24 +461,20 @@
           "answer": "You all stand there quietly. It looks like there is still time before the meal. You should take advantage now to ask some questions. These guys TALK WITH THEIR MINDS. How's that possible??"
         },
         {
-          "verbs": [
-            { "term": "eat" }
-          ],
+          "verbs": [ "eat" ],
           "objects": [
             {
               "objs": [
-                { "term": "food" },
-                { "term": "meat" },
-                { "term": "table" }
+                "food",
+                "meat",
+                "table"
               ],
               "condition": {
                 "item": "partyDrank",
-                "value": true,
                 "refusal": "Food is not yet being served. Maybe I could have something to drink in the meantime."
               },
               "effect": {
-                "item": "partyFed",
-                "value": true
+                "gainitem": "partyFed"
               },
               "childid": 22
             }
@@ -489,22 +482,20 @@
         },
         {
           "verbs": [
-            { "term": "drink" },
-            { "term": "drinks" }
+            "drink",
+            "drinks"
           ],
           "effect": {
-            "item": "partyDrank",
-            "value": true
+            "gainitem": "partyDrank"
           },
           "childid": 21
         },
         {
           "verbs": [
-            { "term": "wait" }
+            "wait" 
           ],
           "condition": {
-            "item": "partyFed",
-            "value": true,
+            "item": "partyFed"
             "refusal": "I should honor our hosts enjoying what has been prepared for us."
           },
           "childid": 22

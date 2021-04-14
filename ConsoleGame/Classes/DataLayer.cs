@@ -45,11 +45,6 @@ namespace kriss.Classes
             else
                 CurrentChapter = Chapters[0];
 
-            //color dialogues dictionary assignment
-           
-
-            //chapters titles
-
             //Titles.Add("8. BREAKOUT");
             //Titles.Add("9. THEO'S GIFTS");
             //Titles.Add("10. INTO THE MAZEROCK");

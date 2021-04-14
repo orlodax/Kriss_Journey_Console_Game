@@ -39,17 +39,17 @@
       "actions": [
         {
           "verbs": [
-            { "term": "look" },
-            { "term": "examine" },
-            { "term": "observe" }
+            "look",
+            "examine",
+            "observe"
           ],
           "answer": "The reddish landscape stretches wide all around you. You think it looks like Arizona, or Nevada, back on earth. \n\nBack on earth.# Ridiculous. \n\nThe sun hits hard on you; now you thankfully understand why the hat. \n\nHow exactly far this Ayonn city is?# How long will it take to get there?\nYou start to worry: you have only a limited supply of food with you. \nHow will you survive the desert?",
           "objects": [
             {
               "objs": [
-                { "term": "sword" },
-                { "term": "blade" },
-                { "term": "weapon" }
+                "sword",
+                "blade",
+                "weapon"
               ],
               "childid": 3
             }
@@ -57,63 +57,55 @@
         },
         {
           "verbs": [
-            { "term": "ask" }
+            "ask"
           ],
           "objects": [
             {
               "objs": [
-                { "term": "food" }
+                "food"
               ],
               "answer": "$B\"We have enough for 3 days. Then, we will hunt.\"#$y So naturally. \n\nYou wonder what kind of prey he has in mind. All you saw so far were just few lizards. \n\nWell, you already decided you will need to trust these guys, so no use in worrying at this point."
             },
             {
               "objs": [
-                { "term": "water" }
+                "water"
               ],
               "answer": "$Y\"We have two days worth of water. We need to find some more along the way.\"\n\n$yYou try not to look worried. \n\n$Y\"Don't you worry about that. It's not our first time in the desert!\"#$y He smiles at you reassuringly."
             },
             {
               "objs": [
-                { "term": "travel" },
-                { "term": "journey" },
-                { "term": "distance" }
+                "travel",
+                "journey",
+                "distance"
               ],
               "answer": "$R\"The location of the city of Ayonn is not a mistery. \nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks. \n\n$R\"So... the so-called plain of Ayonn it's ten days of walking west from here. \nAt the end of this desert, we'll have to cross the Mazerock. Then... We'll see.\"\n\n$ySmiurl squeals."
             },
             {
-              "objs": [
-                { "term": "mazerock" }
-              ],
+              "objs": [ "mazerock" ],
               "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!\nIf the place itself doesn't kill you, an Oxengutter or some other fiend will surely fix it!\"#$y You gulp. \n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence. \n\nTheo, as per usual, doesn't even seem interested in what they're saying."
             },
             {
-              "objs": [
-                { "term": "oxengutter" }
-              ],
+              "objs": [ "oxengutter" ],
               "answer": "$B\"Don't pay attention to everything Smiurl says... And trust me, you don't even want to know that.\"\n$yHis words do not reassure you, that's for sure."
             }
           ]
         },
         {
-          "verbs": [
-            { "term": "rest" }
-          ],
+          "verbs": [ "rest" ],
           "effect": {
-            "item": "desertrest",
-            "value": true
+            "gainitem": "desertrest"
           },
           "answer": "You all sit with your shoulder against a boulder, sheltered from the high sun. \nYou eat some of the food prepared before by Smiurl, and drink some of the water. \n\nYou really needed this. The others do not look tired at all, compared to you."
         },
         {
           "verbs": [
-            { "term": "walk" },
-            { "term": "leave" }
+            "walk",
+            "leave"
           ],
           "answer": "$R\"Better keep going. It's still a long way.\"$y",
           "childid": 5,
           "condition": {
             "item": "desertrest",
-            "value": true,
             "refusal": "You need to rest for a while."
           }
         }
