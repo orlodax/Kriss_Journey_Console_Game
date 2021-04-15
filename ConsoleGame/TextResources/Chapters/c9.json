@@ -1,0 +1,268 @@
+﻿{
+  "id": 9,
+  "title": "THEO'S GIFTS",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Dialogue",
+      "recap": "start ch 9",
+      "text": "-------------------------------\n|          CHAPTER 9          |\n-------------------------------\n\nVoices in the darkness.#\n\n",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "line": "How's Smiurl?",
+          "comment": "Corolla asks in a low voice."
+        },
+        {
+          "actor": "Math",
+          "line": "Much better. Ef says he'll be as good as new by tomorrow.",
+          "comment": "Math answers."
+        },
+        {
+          "actor": "Corolla",
+          "line": "But, what about her?# Did she recover?"
+        },
+        {
+          "actor": "Math",
+          "line": "Sure. She just experienced an empathic overload... I mean, a strong emotion. She'll be fine. However, how's he?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "He's breathing normally now. Last night he had a fever, was delirious... What happened to him?",
+          "comment": "\nYou feel her hand on your forehead."
+        },
+        {
+          "actor": "Math",
+          "line": "I've never seen anything like that before."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Me neither! You heard how he was yelling...!? He beat that Oxengutter's head to a pulp, with just one blow... \nIt was huge. I can't explain how he did that."
+        },
+        {
+          "actor": "Math",
+          "line": "We perceived something... unusual... in his mind.",
+          "comment": "What does he mean?"
+        },
+        {
+          "actor": "Corolla",
+          "line": "What matters is we're 'safe and sound' now.",
+          "comment": "Corolla sighs, relieved. \n\nYou drift off to sleep again.##",
+          "childid": "8_02"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Story",
+      "recap": "before breakfast",
+      "text": "$G<<Wake up...!>>$C#\n\nOne of too many voices in the night. But it was $Gthat$C voice, again... \nHonestly, you're too wrecked to worry about that too. \n\nIt is day outside. Still, you need to wait for your eyes to focus properly. \nAs you try to sit up, your head attempts to explode while the tent starts spinning around you. \n\nYou heavily fall back on the bedroll. \nAfter waiting patiently for the dizziness to subside, you cautiously roll on your side. \nYou carefully sit up pushing yourself up with your arms, then slowly raise to your knees, and, finally, stand up. \n\n$c<<Hm!# Not that bad after all...>>#$C\n\nYou stil feel very poorly, but it seems you are able to function again. \n\nLooking around, you spot Corolla laying on a mat on the ground. She must have been to your side the whole time. \nShe's asleep now. Must be exhausted. Seeing her this way, she looks so vulnerable... You feel very thankful. \n\nYou carefully walk around her, trying not to stumble and to be quiet in order to not wake her up. \nOnce outside, the light blinds you, causing renewed pain to your head. \n\nIt is morning, and Math and Theo are busy around the bonfire, now turned to ashes and embers. \nYou reach them and sit, suddenly feeling weak and... $cempty$C.",
+      "childid": 3
+    },
+    {
+      "id": 3,
+      "type": "Choice",
+      "recap": "eggzenbaykon",
+      "text": "",
+      "choices": [
+        {
+          "desc": "What is Theo doing with that knife...?",
+          "condition": {
+            "type": "readyToMoveOn",
+            "item": "theoDone",
+            "childid": 4
+          },
+          "refusal": "$B\"Almost done kid... I'll show you in a while.\"",
+          "childid": 3
+        },
+        {
+          "desc": "Say hello to Math. Hopefully he's preparing breakfast.",
+          "unhide": 2,
+          "childid": 5,
+          "isnotrepeatable": true
+        },
+        {
+          "desc": "How is Efeliah?",
+          "childid": 6,
+          "isnotrepeatable": true,
+          "ishidden": true,
+          "effect": {
+            "gainitem": "theoDone"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "recap": "Theo's gifts",
+      "type": "Dialogue",
+      "islast": true,
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "precomment": "Theo stands up and comes towards you all. He's carrying something.",
+          "line": "What do you have there Theo?",
+          "comment": "Corolla asks with curiosity."
+        },
+        {
+          "actor": "Theo",
+          "line": "The trophy of the valiant.",
+          "comment": "He approaches Smiurl, then rolls out a leather roll on the ground in front of him."
+        },
+        {
+          "actor": "Theo",
+          "line": "The skin of the beast, for the bravery of those who withstand it.",
+          "comment": "\nHe declares solemnly. In the daylight, that fur looks great, similar to a tiger skin."
+        },
+        {
+          "actor": "Theo",
+          "precomment": "Smiurl is awestruck. He thanks Theo with a bow, as he switches on with a bright green. \nThen Theo turns to you. You are surprised.",
+          "line": "The fangs of the beast for the valor of those who kill it.",
+          "comment": "He hands you a necklace. \nIt's made with the Oxengutter's teeth, polished and symmetrically arranged, the biggest one in the middle."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Thank you, Theo!",
+          "comment": "He reacts with a dignified nod and then sits with you. \n\nYou are very impressed by this gesture. And the others are as well: they are all silently staring at him. \nYou wonder where such a man could be from. What is his story?"
+        },
+        {
+          "actor": "Theo",
+          "precomment": "After about a dozen of seconds, he exclaims:",
+          "line": "So! Is this breakfast ready or not??",
+          "comment": "#You cannot help bursting out laughing.",
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "recap": "Math's breakfast; Ef arrives",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "line": "I see you're feeling better!",
+          "comment": "He welcomes you smiling. He has a pan in one hand and some bundle under his other arm."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Hello Math. I'm ok, I guess, thank you... What are we going to eat?",
+          "comment": "You nod at the things he's carrying."
+        },
+        {
+          "precomment": "He announces proudly:",
+          "actor": "Math",
+          "line": "The Colonist's Breakfast!# It's an ancient recipe, back to the day when Earthers were still thriving on Noi-Hert."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Like Martini?"
+        },
+        {
+          "actor": "Math",
+          "line": "Correct.",
+          "comment": "Then he puts the items on the ground, and prepares to light the fire again."
+        },
+        {
+          "actor": "Math",
+          "precomment": "After few instants, he abruptly turns his head in the direction of one of the tents, as if he heard a noise. \nHe stares for several moments, than stands up and walk quickly towards it. \nWhen he's about to enter, Efeliah comes out of it. She smiles at him, including you as well for a moment. \nThen she returns to look at him. He then relaxes and smiles, then turns around and says:",
+          "line": "Come, we are about to have breakfast.",
+          "comment": "She follows him and comes to sit next to you.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "recap": "Private chat with Ef, Smiurl arrives",
+      "type": "Dialogue",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "line": "Hi Ef! How are you?"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Hello Kriss... How do you know my nickname...?# Oh... I see.",
+          "comment": "She smiles after a sustained look into your eyes."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Has she read my mind?",
+          "istelepathy": true,
+          "comment": "You ask yourself."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Sorry, I couldn't help it...!",
+          "istelepathy": true,
+          "comment": "She's smiling, as if she had just shrugged her shoulders. \nShe's speaking into your mind. Math does not seem to notice."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "Seeing your questioning glance (and thought?), as if waiting for him to join the 'conversation', she warns you:",
+          "line": "Watch your thoughts. I am shielding our communication. But he could notice anyway...",
+          "istelepathy": true
+        },
+        {
+          "actor": "Kriss",
+          "precomment": "Your face must look so funnily baffled, Efeliah nearly burst out laughing. \n\nIn the meantime Math has lit the fire and pulls out an egg from somewhere. \nI mean, it must be an egg, eggs have a definite shape. \nIt's unlike any egg you saw before, blackish sparkled with green dots. \nHe breaks the egg into the pan and adds some pieces of meat next to it.",
+          "line": "Eggs and bacon...",
+          "comment": "You comment."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Somebody said Eggzen'bay-kon??",
+          "comment": "A merry little voice behind you.",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "Hey! Hello Smiurl!",
+          "comment": "Everybody joins you welcoming him, happy to see him well and in good spirits."
+        },
+        {
+          "actor": "Smiurl",
+          "precomment": "The dwarf approaches you smiling, walking with his head high and slightly tilted,\nin order to have everybody admiring the scars on his cheek, where the Oxengutter's claws grazed him. \nIt almost killed him; the scratches look pretty bad, but on the way to heal quickly.",
+          "line": "I've never been so hungry my whole life! And this delicious smell...!",
+          "comment": "He cheerfully exclaims sitting next to you.\nThen, he drops serious:"
+        },
+        {
+          "actor": "Smiurl",
+          "line": "You saved my life."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I could never afford losing you... Moreover, I was in debt with you right?",
+          "comment": "You smile warmly. \nAt that, Smiurl's whole body lights up as he chuckles."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "We have a visitor...",
+          "comment": "She looks at your tent."
+        },
+        {
+          "precomment": "By the time you turn your head around, Corolla is emerging from the tent. \nShe looks at you all squinting and then rubbing her eyes.",
+          "actor": "Corolla",
+          "line": "You make an abysmal racket! It's impossible to rest with you around...!",
+          "comment": "She jokes."
+        },
+        {
+          "actor": "Corolla",
+          "line": "How are you guys?",
+          "comment": "She comes to sit in front of Smiurl and you."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "It takes a lot more to knock down the fierce Smiurl!",
+          "comment": "He hits his chest, which must still be aching, with his fist. "
+        },
+        {
+          "actor": "Kriss",
+          "line": "Well, now... Thanks to you.",
+          "comment": "You add with emphasis, looking into her eyes. She smiles and looks away.",
+          "childid": 3
+        }
+      ]
+    }
+  ]
+}

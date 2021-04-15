@@ -44,11 +44,6 @@ namespace kriss.Classes
                 CurrentChapter = Chapters.Find(c => c.Id == Status.VisitedNodes.Keys.Max());
             else
                 CurrentChapter = Chapters[0];
-
-            //Titles.Add("8. BREAKOUT");
-            //Titles.Add("9. THEO'S GIFTS");
-            //Titles.Add("10. INTO THE MAZEROCK");
-            //Titles.Add("11. AYONN");
         }
 
         /// <summary>

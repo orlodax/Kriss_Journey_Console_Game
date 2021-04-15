@@ -1,0 +1,662 @@
+﻿{
+  "id": 8,
+  "title": "BREAKOUT",
+  "nodes": [
+    {
+      "id": 1,
+      "type": "Dialogue",
+      "recap": "il sentiero...",
+      "dialogues": [
+        {
+          "precomment": "-------------------------------\n|          CHAPTER 8          |\n-------------------------------\n\n",
+          "actor": "Kriss",
+          "line": "Hey... Not bad this hidden path huh?",
+          "comment": "You try not to yawn. They awoke you at dawn to leave the Seer's Rock. \nHearing your words, Theo grunts in agreement."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Knowing this way before, we wouldn't have risked our necks climbing that freaking wall..."
+        },
+        {
+          "actor": "Math",
+          "precomment": "You are climbing down treading safely another rock-enclosed path.",
+          "line": "Of course... You showed a lot of guts. I would never dare doing such a thing."
+        },
+        {
+          "actor": "Corolla",
+          "line": "You can believe me: neither would we. It was because of him...",
+          "comment": "She points at you."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Heh!",
+          "comment": "You smile embarrassed, hand on the back of your neck."
+        },
+        {
+          "actor": "Corolla",
+          "line": "He was the one who wanted to climb, by all means. As for us, we could not let him go alone, could we?"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "By all means..?",
+          "comment": "Efeliah repeats, questioning you with her eyes.",
+          "replies": [
+            {
+              "line": "Be honest: You tell you hear voices.",
+              "nextline": "shortAnswer"
+            },
+            {
+              "line": "Be vague: you can't exactly explain why, you just needed to discover what it was.",
+              "nextline": "longAnswer"
+            }
+          ]
+        },
+        {
+          "linename": "shortAnswer",
+          "actor": "Kriss",
+          "line": "Honestly?# I could hear a voice calling me. I've been hearing voices all the time actually. \nI felt I needed to follow it... or them...",
+          "nextline": "toEf"
+        },
+        {
+          "linename": "longAnswer",
+          "actor": "Kriss",
+          "line": "Well, I can't exactly explain how I was feeling... \nI only know that the more I was getting closer, the more the need to found out what it was... hiding.",
+          "nextline": "toMath"
+        },
+        {
+          "linename": "toEf",
+          "actor": "Corolla",
+          "line": "Seriously?# And you say it only now?",
+          "comment": "Corolla looks at you upset."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Voices you say... Interesting...",
+          "comment": "She looks away, thoughtfully, hand on her chin."
+        },
+        {
+          "linename": "toMath",
+          "actor": "Math",
+          "line": "And doing so you fulfilled the prophecy.",
+          "comment": "Math says joining his hands as he is praying."
+        },
+        {
+          "precomment": "In the meantime, you have reached the end of the pathway. \nYou emerge one by one from a pit hidden between the rocks, at the feet of the spire. \nTheo indicates somewhere to the west:",
+          "actor": "Theo",
+          "line": "Ayonn is that way.",
+          "comment": "And without further ado he starts walking. \nHe's carrying a huge backpack no one of you could ever lift, as if it's nothing. \nThe telepaths just informed you the city is closer than you thought. You all promptly start following him."
+        },
+        {
+          "actor": "Math",
+          "line": "Ayonn, the legendary city... Can you explain in this case why you feel you need to go there?"
+        },
+        {
+          "actor": "Smiurl",
+          "line": "The mythic city of light!# You've heard about it too, right?## It's a fearful place!# Where spirits, not men, dwell!"
+        },
+        {
+          "precomment": "Smiurl has interrupted Math with his usual excitement. Efeliah then says reassuringly:",
+          "actor": "Efeliah",
+          "line": "I don't think the 'spirits' will be that fearful...",
+          "comment": "She then waits for your answer.",
+          "break": true
+        },
+        {
+          "actor": "Kriss",
+          "line": "I have a more rational reason this time. So far, excluding your little village,\nI have seen no trace of proper civilisation, and no technology whatsoever. \nIf Ayonn is even remotely what they say it is, well... In that case I am confident I will find some answers there."
+        },
+        {
+          "precomment": "Math and Efeliah look at you with an indecipherable expression. After few seconds, you ask:",
+          "actor": "Kriss",
+          "line": "...what?"
+        },
+        {
+          "precomment": "Math shakes his head:",
+          "actor": "Math",
+          "line": "You won't find the civilisation you seek there...# About the answers, only time will decide on giving them to you."
+        },
+        {
+          "precomment": "Then he moves his attention to Corolla.",
+          "actor": "Math",
+          "line": "What about you instead, Corolla?# What drove you to stick to Kriss here and comply with his 'sensations'?"
+        },
+        {
+          "precomment": "For an instant, she looks like she has been hit by something. But she quickly regain her composure:",
+          "actor": "Corolla",
+          "line": "We had already decided to leave those guys. A Horde is no place for people like us."
+        },
+        {
+          "precomment": "She looks with pride and affection to Theo and Smiurl. Then she adds:",
+          "actor": "Corolla",
+          "line": "I guess Kriss' arrival was the signal we were waiting for. And... \nI also have some kind of hunch about him.",
+          "comment": "She slyly smiles at you as usual."
+        },
+        {
+          "actor": "Math",
+          "line": "I see.",
+          "break": true
+        },
+        {
+          "actor": "Smiurl",
+          "line": "In the city of light there is only terror!# And spirits!",
+          "comment": "Smiurl repeats protesting. \nHe must have felt like the conversation was going off-topic."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Please Smiurl, get it over with it...!"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Be reassured Smiurl: we won't have much to fear from these 'spirits'... as long as we are with you, at least."
+        },
+        {
+          "actor": "Math",
+          "line": "There are other more tangible dangers from which we need to defend ourselves now."
+        },
+        {
+          "actor": "Theo",
+          "line": "Precisely. Do you have any weapon with you?",
+          "comment": "Theo intervenes."
+        },
+        {
+          "actor": "Math",
+          "line": "No Theo. We telepaths follow the Master's teachings, which include never using any wepon..."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "...and never hurt anyone, for whatever reason. \n'Do all you can to avoid conflict; if it proves to be inevitable, lavishly endeavour to contain the damage'."
+        },
+        {
+          "actor": "Math",
+          "line": "So reads the principle no. 372, from 'Memories of the Master'.",
+          "break": true
+        },
+        {
+          "precomment": "After this display of academic knowledge, Theo grunts in answer. Then, after sighing, he states:",
+          "actor": "Theo",
+          "line": "I understand your personal defense is entrusted to us..."
+        },
+        {
+          "actor": "White",
+          "line": "Maybe",
+          "comment": "Math and Efeliah answer simultaneously."
+        },
+        {
+          "actor": "Theo",
+          "line": "What do you mean?"
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Time will answer to you as well, Theo.",
+          "comment": "Efeliah concludes."
+        },
+        {
+          "precomment": "Theo then adds, too low to be heard by the two of them:",
+          "actor": "Theo",
+          "line": "Whatever... If I were a Horde member, I couldn't care less about their code..."
+        },
+        {
+          "actor": "Math",
+          "line": "You are way too clever to be one of them.",
+          "comment": "Math says smiling. Theo rolls his eyes."
+        },
+        {
+          "actor": "Kriss",
+          "line": "You'd better get used to it Theo, like me... Be careful what you 'think'!",
+          "comment": "You playfully whisper next to him.",
+          "childid": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Dialogue",
+      "recap": "glimpse of telepathy",
+      "text": "After walking all day long, the sun is about to set, and in front of you, in the distance,\nyou can see the first rocky ridges rising from the desert plain. \n\n",
+      "dialogues": [
+        {
+          "actor": "Theo",
+          "line": "There, the Mazerock begins.",
+          "comment": "Theo comments."
+        },
+        {
+          "precomment": "You don't like how that name sounds. Maze... Labyrinth... \nYour mind can't help but thinking about the Labyrinth of Knossos. \nYou hope that some kind of 'Minotaur' won't be there waiting for you all to be his next meal. \nAfter few instants, you smile at that image:",
+          "actor": "Kriss",
+          "line": "He'll need a steel stomach to digest Theo!",
+          "istelepathy": true,
+          "comment": "You think to yourself."
+        },
+        {
+          "precomment": "After a while, something catches your attention:",
+          "actor": "Efeliah",
+          "line": "Don't you think we should tell him about it...?",
+          "istelepathy": true,
+          "comment": "You 'hear' Efeliah whispering."
+        },
+        {
+          "actor": "Math",
+          "line": "I don't know... We aren't sure of it after all...",
+          "istelepathy": true,
+          "comment": "Math whispers back. \n\nThey are walking in front of you. You shouldn't be able to hear them whispering like that. \nMoreover, Smiurl is walking with them, and he seems completely unaware of their conversation. \nIf he could hear them, knowing him, you're sure he would not be indifferent like that.",
+          "replies": [
+            {
+              "line": "Keep on walking pretending you can't hear them.",
+              "nextline": "dissimulate"
+            },
+            {
+              "line": "Get closer to better listen what they're saying.",
+              "nextline": "eavesdropper"
+            }
+          ]
+        },
+        {
+          "linename": "dissimulate",
+          "precomment": "You can't explain how you can hear them right now, but it's better to keep a low profile... \nAnd to continue listening. Just to understand what and who they are talking about...",
+          "actor": "Efeliah",
+          "line": "Think about it though. What if it was true?",
+          "istelepathy": true,
+          "nextline": "privatedialogue"
+        },
+        {
+          "linename": "eavesdropper",
+          "precomment": "You need clarity about what they're saying. Who do they refer to?# About what?# You walk faster to reach them.",
+          "actor": "Efeliah",
+          "istelepathy": true,
+          "line": "Think about it though. What if it is true?"
+        },
+        {
+          "linename": "privatedialogue",
+          "actor": "Math",
+          "line": "What if it isn't?# How would he react?# We don't know him well enough...",
+          "istelepathy": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "You should probe him deeper. Ask his permission first, that's all... \nIf you don't want to do it, I will. I believe it's important we find out.",
+          "istelepathy": true
+        },
+        {
+          "precomment": "They suddenly fall 'silent', then Math turns towards you, locking eyes with you:",
+          "actor": "Math",
+          "line": "Yes, Kriss?",
+          "comment": "He asks. Did they realise you were listening?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Let's play a game!",
+          "comment": "You say, feeling a bit stupid. \n\nIt is the first thing that came to your mind. And maybe that's why it doesn't raise suspect."
+        },
+        {
+          "precomment": "Theo grunts exasperated. Corolla and Smiurl get closer.",
+          "actor": "Efeliah",
+          "line": "What kind of game?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Show us how good you guys are!# Guess what I'm thinking.",
+          "comment": "You continue improvising.",
+          "childid": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "MiniGame01",
+      "recap": "guess what I'm thinking",
+      "text": "They look a little surprised, but not annoyed by your sudden request. \n\n$m\"I should have expected this, sooner or later, from any of you.\"#$C Math laughs heartily and shrugs his shoulders. \n\n$g\"Whenever you want Kriss... Just think of something, I'll do my best.\"#$C\n\nShe close her eyes, smiling, waiting.",
+      "childid": 4
+    },
+    {
+      "id": 4,
+      "type": "Dialogue",
+      "recap": "camp for the night",
+      "dialogues": [
+        {
+          "actor": "Kriss",
+          "line": "Let's try just one more time please!",
+          "comment": "You are now thinking of something you believe they can't guess."
+        },
+        {
+          "actor": "Math",
+          "line": "I've never seen something like that..."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "It looks like food... Isn't that steam?"
+        },
+        {
+          "actor": "Math",
+          "line": "I'm afraid I can't answer...",
+          "comment": "Math gives up."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Wait a second...!# Pi...zza.. Yeah, pizza!# I guessed, right?",
+          "comment": "She exclaims smiling triumphantly."
+        },
+        {
+          "actor": "Kriss",
+          "line": "What!!# How did you do?",
+          "comment": "You stand defeated."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "You were either too much or too less careful. You visualised not just the pizza itself,\nbut the box in which it's carried too... along with the writing on top of it: 'Pizza Express'!"
+        },
+        {
+          "actor": "Kriss",
+          "line": "No way!# It's true... You're too good!# You can also see images, not just verbal thoughts!"
+        },
+        {
+          "actor": "Corolla",
+          "line": "Incredible...",
+          "comment": "Corolla is impressed as much as you are."
+        },
+        {
+          "precomment": "In the meantime, Theo stopped walking. \nHe stands there, mountain of a man, against the sunset, fists on his hips, gazing at the horizon. \nThen he declares:",
+          "actor": "Theo",
+          "line": "We need to set camp for the night",
+          "childid": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "Dialogue",
+      "recap": "camp for the night 2",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "line": "Theo is right. Let's stop here for today. Also, we need to establish watch rotations..."
+        },
+        {
+          "actor": "Math",
+          "line": "Just because you can't see it, it doesn't mean there's no danger...",
+          "comment": "Math anticipates your thoughts."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Mr. Math here is right!# I've heard this area is overrun with packs of Oxengutters..."
+        },
+        {
+          "actor": "Kriss",
+          "line": "That name again...",
+          "comment": "You remember Smiurl mentioning those ominous-named animals."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "They are wild beasts found in this desert... May I see in your mind what would they like to you...?",
+          "replies": [
+            {
+              "line": "Sure, go ahead.",
+              "nextline": "detailed"
+            },
+            {
+              "line": "Mmm... No thanks.",
+              "nextline": "generic"
+            }
+          ]
+        },
+        {
+          "linename": "generic",
+          "actor": "Corolla",
+          "line": "You don't really want to know... Ferocious. Big. Enough to make you sleep with one eye open.",
+          "nextline": "resume"
+        },
+        {
+          "linename": "detailed",
+          "actor": "Efeliah",
+          "line": "Hmm... Well, I think they would look to you as a crossbreed between what you call wolf... and tigers.",
+          "nextline": "resume"
+        },
+        {
+          "linename": "resume",
+          "actor": "Kriss",
+          "line": "Whoa!",
+          "comment": "You exclaim unpleasantly surprised."
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Yep. And they are usually very big.",
+          "comment": "She continues."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "You can bet your left ear on it!# My grandad used to tell us about that time when our family caught one as big as..."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Smiurl!# Stop talking nonsense, make yourself useful instead!",
+          "comment": "\nCorolla shouts at him while she's helping Theo setting up the tents."
+        },
+        {
+          "actor": "Smiurl",
+          "line": "Corolla, at times you're so obnoxious!",
+          "comment": "He rants and sighs, walking towards them to do his part.",
+          "childid": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Story",
+      "recap": "in the middle of nowhere",
+      "text": "After few minutes the 'camp' #(a bit stretched definition: just three tents)# was ready. \nMath and Efeliah were the quickest to set up their tent,\nafter which they sat and observed you struggling with ropes and pegs... \nUntil a particularly mercy Smiurl came to help you out. \n\nIn the meanwhile, the sun has set, and the bonfire has been lit. \n\nOutside that circle of warmth, everything is darkness. \nThe shadows, taking advantage of that quiet night, are merrily dancing all around you. \n\nYou take a piece of meat from the fire, a leftover from the Seer's Rock party,\nthen you withdraw behind a tent, lying on the ground. \n\nFor the first time, you have the chance to carefully look at Noi-Hert's cloudless sky. \nThe moon isn't up yet, a feeble light is irradiated by the choir of stars. \n\nYou can't pinpoint any familiar constellation. \nEven the overall distribuition of the stars is not even like in Earth's sky:\nquite high over the horizon you notice a shiny, compacted mass of stars, stark against the rest of the firmament. \nIt degrades down to the right increasingly waning as it approaches the horizon. \nIt looks like a gigantic jewel. A celestial tiara. \n\n$G<<The Milky Way>>#$C A voice whispering inside of you. From where it's from?\nThat thought crosses you like the shadow of a little cloud of smoke, quickly fading. \nIt has to be an arm of the spiral after all, from a different perspective...",
+      "childid": 7
+    },
+    {
+      "id": 7,
+      "type": "Story",
+      "recap": "looking at the stars",
+      "text": "The light of the galaxy... That light your generation has forgotten,\nunable to see it as it's suffocated by the billions artifical lights of the Earth. \n\nNo wonder you are so impressed: the clarity of that view!\nFrom your home, you've never seen anything like this. \n\nThe sky, for the Earthers, was demoted to a mere 'city roof'... \nNothing more than something you need over your head in order to not be wiped away in the open space. \nAnd good riddance to the celestial vista. \n\nYet another awesome thing is the silence. Your 'civilised' ear still has to get used to the absence of noises. \nNo cars. No water pipes howling and clanging at night. No TV. \nJust the crackling of the fire and the sizzling of the fat falling into the flames,\nthe voices of Corolla, Smiurl, and the others. \n\nSuddenly you feel you love this place, despite of its desolate state. And you love these people. \nYou image to go back to your place at this very moment, your house, your room... \nBut all you could then would be staring at light coming from the street lamps drawing shapes on your ceiling. \nYou would be thinking back to Noi-Hert, to all it means now, to your new friends, to the starry sky... \n\n$R\"There you are!\"$C Corolla's head pops out the side of the tent.",
+      "childid": 8
+    },
+    {
+      "id": 8,
+      "type": "Dialogue",
+      "recap": "Corollaship",
+      "dialogues": [
+        {
+          "actor": "Corolla",
+          "line": "We realised you were gone for a while now..."
+        },
+        {
+          "precomment": "You nod distractly. You loose your hands behind your neck, but you're still looking at the sky above you, not at her.",
+          "actor": "Corolla",
+          "line": "Well then, I'll go back...",
+          "comment": "She points to the others, hesitating a little.",
+          "replies": [
+            {
+              "line": "Say nothing.",
+              "nextline": "lonely"
+            },
+            {
+              "line": "Make her stay",
+              "nextline": "corollastays"
+            }
+          ]
+        },
+        {
+          "linename": "corollastays",
+          "actor": "Kriss",
+          "line": "No, stay, if you like...",
+          "comment": "You absently say, half-whispering. She stands there looking at you for few moments. \nThen she moves, slowly, silently, and sits next to you."
+        },
+        {
+          "precomment": "You keep on staring at the stars. They are reflected in your eyes, one by one. \nShe observes you for a while, then asks:",
+          "actor": "Corolla",
+          "line": "Have you ever seen something like this?"
+        },
+        {
+          "precomment": "You give a long sigh. Then:",
+          "actor": "Kriss",
+          "line": "Not once in my life. It's wonderful."
+        },
+        {
+          "actor": "Corolla",
+          "line": "Yeah... I guess we're used to it.",
+          "comment": "At this she hugs her knees, and starts to slightly rock herself back and forth."
+        },
+        {
+          "precomment": "You both remain silent for a while. Then you comment with a note of bitterness in your voice:",
+          "actor": "Kriss",
+          "line": "We, instead, got used to not to have this..."
+        },
+        {
+          "actor": "Corolla",
+          "line": "That's weird!",
+          "comment": "At that she suddenly lays down next to you, with her arms extended over her head."
+        },
+        {
+          "actor": "Kriss",
+          "line": "What do you mean?",
+          "comment": "Surprised, you slightly turn your head towards her, looking at her with the corner of your eye.",
+          "break": true
+        },
+        {
+          "actor": "Corolla",
+          "line": "One day, tired of your 'sky-less cities', you Earthers will build enormous starships,\narriving this far to start a new story on this planet...",
+          "comment": "She sighs."
+        },
+        {
+          "actor": "Corolla",
+          "line": "It's weird, I mean... You could even be one of my ancestors. Can you imagine?\nI would now be talking with my great-great-grandfather!",
+          "comment": "At that, she bursts out laughing. \n\nYou listen to her argentine laughter sweetly fading out in the night."
+        },
+        {
+          "precomment": "Suddenly she gets on all fours, kneeling over you, shaking her finger over your face,\nsaying in a playfully peremptory way:",
+          "actor": "Corolla",
+          "line": "Dear gramps!# Now you have to promise you will always treat your precious offspring good,\nand that you will teach them to do likewise with their own, so on and so forth, until it will be my turn!\nGot it?# Come on, say: 'I swear'!"
+        },
+        {
+          "precomment": "She's barely holding back her laughter. Her hair cascades around your face. \nStarlight reflects in her eyes, jingling on the piercings in her ear. \nYou smell her scent, finding it familiar# (just suggestion?). \n\nThinking about what the others would say seeing you two like that, you solemnly say:",
+          "actor": "Kriss",
+          "line": "I swear, my child.",
+          "comment": "\n\nAt that, you both violently burst out laughing. \nShe collapses back on the ground rolling on her side while you're bent in two. \nYou are gripped by an uncontrollable euphoria, only partly due to the tension built up during your journey.",
+          "break": true
+        },
+        {
+          "precomment": "Theo's head pops out from the back of the tent, staring at you two with his usal scowl. \nFor a moment that glance sliences you, only to burst laughing harder right after. \nBy this point, you are both in tears. \n\nYou vaguely hear Smiurl, still by the fire, saying:",
+          "actor": "Smiurl",
+          "line": "What's gotten into them?# Did a desert tarantula bite them??"
+        },
+        {
+          "precomment": "You keep on laughing together for quite a while, until exhaustion gets the better of you.",
+          "actor": "Kriss",
+          "line": "And she would be the same fighter girl whom saved me from that Jorghe guy...?!",
+          "comment": "\n\nYou ask yourself, as you drift off into deep sleep.",
+          "istelepathy": true,
+          "childid": 9
+        },
+        {
+          "linename": "lonely",
+          "precomment": "You are too absorbed in your contemplation to consider conversation. \n\nYou savour this time you cut out for yourself, bathing in the night sky as the fatigue from the day takes you over,\nhaving you sink into a deep, dreamless sleep.",
+          "actor": "Kriss",
+          "childid": 9
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "Dialogue",
+      "recap": "Oxengutters arrive",
+      "dialogues": [
+        {
+          "actor": "Math",
+          "line": "Hurry!# We must wake them up!",
+          "istelepathy": true,
+          "comment": "Math's voice snatches you out of your slumber."
+        },
+        {
+          "actor": "Efeliah",
+          "precomment": "You stand up, and walk towards what remains of the bonfire where the two telepaths are. \nAt the same time, Theo comes out of his tent, followed by Smiurl.",
+          "line": "We sensed two Oxengutters; they are about to attack us, from there, and there.",
+          "comment": "\nEfeliah warns you, pointing to two opposite directions. Theo nods:"
+        },
+        {
+          "actor": "Theo",
+          "line": "I know. Their smell...",
+          "comment": "He indicates the air around him. \nYou repeatedly smell the air, but you can't distinguish any specific odour. Just the palpable tension."
+        },
+        {
+          "actor": "Theo",
+          "precomment": "Then he grabs his huge mallet:",
+          "line": "I will welcome them properly.",
+          "comment": "He states with an icy light in his eyes."
+        },
+        {
+          "precomment": "At that, Corolla comes out her tent too. She has taken the bolas and a machete:",
+          "actor": "Corolla",
+          "line": "Kriss: you, Math and Efeliah, hide in one of the tents."
+        },
+        {
+          "actor": "Kriss",
+          "line": "But...",
+          "comment": "You start to object."
+        },
+        {
+          "actor": "Corolla",
+          "line": "No buts!# It's too dangerous!",
+          "comment": "She silences you categorically."
+        },
+        {
+          "actor": "Kriss",
+          "line": "I don't want to stay here in hiding, while you...",
+          "comment": "How could you just sit and wait while they risk their lives?",
+          "break": true
+        },
+        {
+          "actor": "Efeliah",
+          "line": "Come on Kriss, what could we do?# We would just be in their way...",
+          "comment": "Efeliah takes your hand,\nand gently but firmly leads you away with Math."
+        },
+        {
+          "actor": "Math",
+          "precomment": "Once inside, you all sit on the ground. But you can't stay still:\nyou get up and start to nervously walk back and forth inside that limited space. \n\nYou look at the two telepaths: they turned off the candles, and are now sitting cross-legged, facing each other. \nThey seem to be staring at nothing.# Somehow, this infuriates you even more. \nYou are about to shout something, when Math anticipates you:",
+          "line": "Why don't you try to sit and relax?"
+        },
+        {
+          "actor": "Kriss",
+          "line": "Relax?",
+          "comment": "You exclaim aghast."
+        },
+        {
+          "actor": "Kriss",
+          "line": "Are you seriously telling me to relax?? I... I... Ah!!# Dammit!!",
+          "comment": "You are at loss for words. \nIrritated, you start walking around again. \n\nSuddenly, you hear a scream tearing the night apart, giving you the creeps. \nIt sounds like a deep, raging, murderous growl. \nAfter that, an intense series of struggling sounds.",
+          "replies": [
+            {
+              "line": "The reality of the danger hits you. Better stay inside.",
+              "childid": 10
+            },
+            {
+              "line": "You can't just stay there in hiding. You need to see what's going on.",
+              "childid": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Story",
+      "recap": "g.o.",
+      "text": "The noise continues for several long minutes. Thuds, growls# and howls. \nOccasionally, Theo grunting. \nYou can't hear Corolla and Smiurl voices. \n\nThe two telepaths have closed their eyes and you can't tell if they are just deeply focused, or in pain. \n\nAfter a while, a sudden silence falls. \nYou are not relieved. You can't explain it, but you feel there's something wrong. \n\nFew unbearable moments pass, then a shadow appears against the tent entrance. Is it Theo?#\n\nThe shadow moves, and with horror you recognise the shape of the face of a beast:\nin the faint night light you can guess the profile of its ears, snout, and many long fangs. \nIt feels like it's staring at you through the fabric. The beast is almost as tall as you. \nYou unawarely take a step back, appalled. \n\nMaybe you just made some noise, or maybe it can simply smell you... \nThe tent starts shaking at once. You hear Efeliah screaming. Something hits you. A sharp pain. \n\nThen, nothing else.$d##\n\n\n-- GAME OVER --#\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+      "childid": 1
+    },
+    {
+      "id": 11,
+      "type": "Story",
+      "recap": "Oxengutters continued",
+      "text": "You poke your face out. You see Theo few meters away, leaning on his mallet, its dirty head on the ground. \nBeside him, a huge #(and quite battered)# carcasse of one of those beasts. \nHe's panting a little, but otherwise seems to be prefectly fine; just few scratches. \n\nYou decide to come outside when you spot Corolla approaching, looking at Theo and smiling with approval. \nHer satisfaction does not last long: everybody's blood runs cold when another shriek lacerates the night. \n\n$W\"Smiurl!!\"#$C You and Corolla shout with one voice. \n\nAt that, time seems to stop for you. \nYou watch Theo and Corolla as they start running, like a movie in slow motion. \nAt the same time, you feel Efeliah next to you wincing violently, and an horrifying image fills your mind right after. \n\n$YYou can somehow experience every detail: the hideous grin in the dark hanging over you;\nthe nauseating, rotting smell of its breath flowing down on your face;\nits dirty and sharp fangs opening up in a sick, evil laughter;\nlong, flickering whiskers on the sides of the canine snout, which eagerly smells the prey;\nits bloodthirsty eyes, yellow, in which the image of a terrified Smiurl is reflected. \n\n$CThen, you can feel it happening again. Like when you were in front of the Chief during his last moments. \nYou lose touch with reality once more. Yet, this time feels different. Like a sudden surge of energy inside of you,\nyour brain is suddenly flooded, forced by an invisible force like a chisel on a rusty switch. \n\n$cYou feel your legs initiating movement. In an instant you reach down to the Chief's sword, $Gyour Sword$c. \nWith the corner of your consciousness you notice Efeliah passing out, readily held by Math. \nThen you are pure race, pale shadow with no real consistence under that ephemeral,\nalien moonlight painting everything oniric.",
+      "childid": 12
+    },
+    {
+      "id": 12,
+      "type": "Story",
+      "recap": "breakout",
+      "islast": true,
+      "text": "$cYou left Corolla and then Theo behind, almost not realising it. \nEven if it's dark, you can dodge any obstacle. \nThere's no stone that manages to make you stumble, or pit in which to fall. \nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws. \nYou can feel his terror as clear as his cries. \n\nYou are screaming now, an unprecedented roar coming out your throat. \nWithout thinking you grab the sword, still in its sheath, by the tip side. \nIt's matter of way less than a second; the beast realises the danger, and you allow yourself a gloating smile. \n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud. \n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.##\n\n\n$CTime resume its normal flow. You feel you strenght failing you, and you fall on your knees. \nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open. \n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.#\n\nThen all is darkness. \nAll is oblivion.#",
+    }
+  ]
+}
