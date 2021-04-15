@@ -26,7 +26,7 @@ namespace kriss.Nodes
             isLineFlowing = false;
 #endif
 
-            var currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
+            Dialogue currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)
 
@@ -105,17 +105,19 @@ namespace kriss.Nodes
                         Console.ReadKey(true);
                     key = Console.ReadKey(true);
 
+                    int thisLineId = Dialogues.FindIndex(l => l.LineName == currentLine.LineName);
+
                     if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
                     {
                         selectedRow--;
                         Console.Clear();
-                        RecursiveDialogues(0, false);               //redraw the node to allow the selection effect
+                        RecursiveDialogues(thisLineId, false);               //redraw the node to allow the selection effect
                     }
                     if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
                     {
                         selectedRow++;
                         Console.Clear();
-                        RecursiveDialogues(0, false);               //redraw the node to allow the selection effect
+                        RecursiveDialogues(thisLineId, false);               //redraw the node to allow the selection effect
                     }
 
                 } while (key.Key != ConsoleKey.Enter);
@@ -128,7 +130,7 @@ namespace kriss.Nodes
                 }
                 else
                 {
-                    var nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine);
+                    int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine);
                     RecursiveDialogues(nextLineId);                                   //step to the next line
                 }
             }
@@ -136,7 +138,7 @@ namespace kriss.Nodes
             {
                 if (!string.IsNullOrWhiteSpace(currentLine.NextLine))
                 {
-                    var nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.NextLine);
+                    int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.NextLine);
                     RecursiveDialogues(nextLineId, isLineFlowing);
                 }
                 else 

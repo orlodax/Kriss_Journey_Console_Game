@@ -246,7 +246,7 @@
       "id": 13,
       "type": "Story",
       "recap": "still walking",
-      "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration. \n\nThe fires are almost out. Hostile embers spy on you from the corner of your eye. \nNot a sound, you feel and hear your own blood pumping in your veins. \n\nYou reach what looks like the center of that lost little town. \nThere is a stone landmark in the middle of the square. \nYou feel a rush of gratitude when you discover it's a fountain. \n\nYou drink in a hurry, only now realising how thirsty you were. \nThe water has a funny taste, but you are too overwhelmed to notice orterra calpestata care. \nYou collapse on the ground, the most possible distant from any building, fire, or corpse.",
+      "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration. \n\nThe fires are almost out. Hostile embers spy on you from the corner of your eye. \nNot a sound, you feel and hear your own blood pumping in your veins. \n\nYou reach what looks like the center of that lost little town. \nThere is a stone landmark in the middle of the square. \nYou feel a rush of gratitude when you discover it's a fountain. \n\nYou drink in a hurry, only now realising how thirsty you were. \nThe water has a funny taste, but you are too overwhelmed to notice or care. \nYou collapse on the ground, the most possible distant from any building, fire, or corpse.",
       "childid": 15
     },
     {
@@ -307,6 +307,7 @@
         },
         {
           "actor": "Corolla",
+          "linename": "question",
           "line": "Hey I asked you a question!",
           "comment": "With these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
           "replies": [

@@ -495,7 +495,7 @@
             "wait" 
           ],
           "condition": {
-            "item": "partyFed"
+            "item": "partyFed",
             "refusal": "I should honor our hosts enjoying what has been prepared for us."
           },
           "childid": 22
