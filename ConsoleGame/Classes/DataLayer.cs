@@ -17,14 +17,14 @@ namespace kriss.Classes
         public static void Init()
         {
             // Load Status
-            var statusFile = Path.Combine(AppContext.BaseDirectory, "TextResources/status.json");
+            string statusFile = Path.Combine(AppContext.BaseDirectory, "status.json");
             if (File.Exists(statusFile))
             {
                 string json = File.ReadAllText(statusFile);
                 Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
             }
             else
-                Status = new();
+                WriteStatusToDisk(); // init file if not present
 
             // Load all Chapters
             int id = 1;
@@ -55,6 +55,8 @@ namespace kriss.Classes
         {
             CurrentChapter = Chapters.Find(c => c.Id == chapterId);
 
+            SaveProgress(CurrentChapter.Nodes.First());
+
             LoadNode(1);
         }
 
@@ -66,13 +68,15 @@ namespace kriss.Classes
         {
             if (nodeId.HasValue)
             {
-                var newNode = SearchNodeById(nodeId.Value);
+                NodeBase newNode = SearchNodeById(nodeId.Value);
                 newNode.IsVisited = IsNodeVisited(newNode.Id);
 
                 BuildNode(newNode);
             }
+#if DEBUG
             else
                 Console.WriteLine("Id was null and/or node wasn't the last in the chapter!");
+#endif
         }
 
         /// <summary>
@@ -129,7 +133,15 @@ namespace kriss.Classes
             else
                 Status.VisitedNodes[CurrentChapter.Id] = new List<int>() { currentNode.Id };
 
-            var statusPath = Path.Combine(AppContext.BaseDirectory, $"TextResources/status.json");
+            WriteStatusToDisk();
+        }
+
+        static void WriteStatusToDisk()
+        {
+            if (Status == null)
+                Status = new();
+
+            string statusPath = Path.Combine(AppContext.BaseDirectory, $"status.json");
             string status = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(statusPath, status);
         }
