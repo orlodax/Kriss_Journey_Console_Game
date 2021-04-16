@@ -86,9 +86,9 @@ namespace kriss.Classes
         public static void TextFlow(bool isFlowing, string text, ConsoleColor color = ConsoleColor.DarkCyan)
         {
 #if DEBUG
-            FlowDelay = 1;
-            ShortPause = 20;
-            LongPause = 40;
+            FlowDelay = 0;
+            ShortPause = 10;
+            LongPause = 20;
 #endif
             Console.ForegroundColor = color;
 

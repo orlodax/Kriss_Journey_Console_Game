@@ -43,7 +43,7 @@ namespace kriss.Classes
             if (Status.VisitedNodes.Any())
                 CurrentChapter = Chapters.Find(c => c.Id == Status.VisitedNodes.Keys.Max());
             else
-                CurrentChapter = Chapters[0];
+                CurrentChapter = Chapters.First();
         }
 
         /// <summary>
@@ -55,7 +55,9 @@ namespace kriss.Classes
         {
             CurrentChapter = Chapters.Find(c => c.Id == chapterId);
 
-            SaveProgress(CurrentChapter.Nodes.First());
+            //to save chapter progress without marking any node as visited
+            Status.VisitedNodes[CurrentChapter.Id] = new List<int>();
+            WriteStatusToDisk();
 
             LoadNode(1);
         }
@@ -130,8 +132,6 @@ namespace kriss.Classes
                     Status.VisitedNodes[CurrentChapter.Id] = visitedNodes;
                 }
             }
-            else
-                Status.VisitedNodes[CurrentChapter.Id] = new List<int>() { currentNode.Id };
 
             WriteStatusToDisk();
         }
