@@ -30,11 +30,11 @@ namespace kriss.Nodes
         /// </summary>
         void DisplayChoices() 
         {
-            var notHiddenChoices = Choices.FindAll(c => c.IsHidden == false);   //first filter out all non hidden ones
+            List<Choice> notHiddenChoices = Choices.FindAll(c => c.IsHidden == false);   //first filter out all non hidden ones
 
-            foreach (var c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
+            foreach (Choice c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
             {
-                var cond = c.Condition;
+                Condition cond = c.Condition;
                 if (cond != null)
                 {
                     if (cond.Type == "isNodeVisited")
@@ -65,8 +65,8 @@ namespace kriss.Nodes
             {
                 for (int i = 0; i < visibleChoices.Count; i++)
                 {
-                    var foreground = ConsoleColor.DarkCyan;
-                    var background = ConsoleColor.Black;
+                    ConsoleColor foreground = ConsoleColor.DarkCyan;
+                    ConsoleColor background = ConsoleColor.Black;
                         
                     if (Choices[i].IsPlayed)
                     {

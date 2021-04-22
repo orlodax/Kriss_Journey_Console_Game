@@ -309,7 +309,7 @@
           "actor": "Corolla",
           "linename": "question",
           "line": "Hey I asked you a question!",
-          "comment": "With these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+          "comment": "\nWith these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
           "replies": [
             {
               "line": "\"Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...\"",

@@ -41,7 +41,7 @@ int chapterId = 1;
 if (DataLayer.Status.VisitedNodes.Count > 1)
 {
     Console.WriteLine("Welcome back, traveler. This is your journey so far.");
-    Console.WriteLine("This game still features autosave. You just won't know when.");
+    Console.WriteLine("This game still features autosave, at least for now.");
     Console.WriteLine("Press a number to select a chapter.");
     Console.WriteLine();
 
@@ -54,7 +54,7 @@ if (DataLayer.Status.VisitedNodes.Count > 1)
 
     do
     {
-        var key = Console.ReadKey(true);
+        ConsoleKeyInfo key = Console.ReadKey(true);
 
         if (int.TryParse(key.KeyChar.ToString(), out int digit))
             if (isValid = digit <= lastChapter)

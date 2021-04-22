@@ -2,12 +2,14 @@
 using lybra;
 using System;
 using System.Collections.Generic;
+using Action = lybra.Action;
+using Object = lybra.Object;
 
 namespace kriss.Nodes
 {
     public class NAction : NodeBase
     {
-        lybra.Action act = null;
+        Action act = null;
         internal readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
         internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
@@ -76,14 +78,14 @@ namespace kriss.Nodes
 
             if (!string.IsNullOrWhiteSpace(words[0]))
             {
-                foreach (var action in Actions)
+                foreach (Action action in Actions)
                 {
-                    var verb = action.Verbs.Find(v => v.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
+                    string verb = action.Verbs.Find(v => v.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
                     if (verb != null)
                     {
                         if (action.Objects.Count > 0)
                         {
-                            foreach (var objContainer in action.Objects)                 //when the action is found, iterate through every object term
+                            foreach (Object objContainer in action.Objects)                 //when the action is found, iterate through every object term
                                 helpObjects.Add(objContainer.Objs[0]);
                         }
                         else
@@ -104,7 +106,7 @@ namespace kriss.Nodes
                 Console.WriteLine("Possible objects for the action typed: ");
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                foreach (var term in helpObjects)
+                foreach (string term in helpObjects)
                      Console.Write(term + " ");
             }
             else
@@ -112,7 +114,7 @@ namespace kriss.Nodes
                 Console.WriteLine("Possible actions here: ");
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                foreach (var action in Actions)
+                foreach (Action action in Actions)
                     Console.Write(action.Verbs[0] + " ");
             }
 
@@ -171,9 +173,9 @@ namespace kriss.Nodes
 
                 foreach (string word in words)                                  //is there one word matching one action?
                 {
-                    foreach (var action in Actions)
+                    foreach (Action action in Actions)
                     {
-                        var verb = action.Verbs.Find(v => v.Equals(word));
+                        string verb = action.Verbs.Find(v => v.Equals(word));
                         if (verb != null)
                         {
                             act = action;
@@ -201,11 +203,11 @@ namespace kriss.Nodes
                     {                                                           //...otherwise, examine Objects 
                         for (int i = 0; i < act.Objects.Count; i++)             
                         {
-                            lybra.Object o = act.Objects[i];
+                            Object o = act.Objects[i];
 
                             foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                             {
-                                foreach (var obj in o.Objs)
+                                foreach (string obj in o.Objs)
                                 {
                                     if (obj == word)                            //the action is right, and there is a acceptable object specified
                                     {
@@ -318,11 +320,11 @@ namespace kriss.Nodes
                 }
         }
 
-        internal int MeasureMessage(string answer)
+        internal static int MeasureMessage(string answer)
         {
             //measure the lenght and the newlines in the answer to determine how up to go to start writing
-            var newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;
-            var rows = answer.Length / Console.WindowWidth;
+            int newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;
+            int rows = answer.Length / Console.WindowWidth;
 
             return Math.Min(Console.WindowHeight - (rows + newLines), Console.WindowHeight - 5) - 2;
         }
