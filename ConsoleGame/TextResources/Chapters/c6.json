@@ -270,14 +270,7 @@
       "type": "Story",
       "recap": "falling",
       "text": "Your hand slips, losing grip. \nThe stone under your foot crumbles. \n\nYou hear Corolla screaming as you fall off the precipice.$d##\n\n\n-- GAME OVER --#\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, climber traveler.",
-      "childid": 512
-    },
-    {
-      "id": 98,
-      "type": "Story",
-      "recap": "falling2",
-      "text": "Your hand slips, losing grip. \nThe stone under your foot crumbles. \n\nYou hear Corolla screaming as you fall off the precipice.$d##\n\n\n-- GAME OVER --#\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, climber traveler.",
-      "childid": 512
+      "childid": 7
     },
     {
       "id": 512,
@@ -441,14 +434,14 @@
         },
         {
           "desc": "Move to the left.",
-          "childid": 599
+          "childid": 99
         }
       ]
     },
     {
       "id": 541,
-      "type": "You stop again. A massive boulder is hanging over your head.",
-      "text": "desc.",
+      "type": "Choice",
+      "text": "You stop again. A massive boulder is hanging over your head.",
       "choices": [
         {
           "desc": "Move to the right.",
@@ -695,7 +688,7 @@
       "choices": [
         {
           "desc": "Climb a little higher.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the right.",
@@ -752,11 +745,11 @@
       "choices": [
         {
           "desc": "Climb a little higher.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the right.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Descend a little.",
@@ -809,7 +802,7 @@
       "choices": [
         {
           "desc": "Climb a little higher.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the right.",
@@ -840,7 +833,7 @@
         },
         {
           "desc": "Descend a little.",
-          "childid": 98
+          "childid": 99
         }
       ]
     },
@@ -855,7 +848,7 @@
         },
         {
           "desc": "Move to the left.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Descend a little.",
@@ -874,7 +867,7 @@
         },
         {
           "desc": "Move to the right.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the left.",
@@ -897,11 +890,11 @@
         },
         {
           "desc": "Move to the right.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the left.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Descend a little.",
@@ -920,11 +913,11 @@
         },
         {
           "desc": "Move to the right.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the left.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Descend a little.",
@@ -943,11 +936,11 @@
         },
         {
           "desc": "Move to the right.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Move to the left.",
-          "childid": 98
+          "childid": 99
         },
         {
           "desc": "Descend a little.",
