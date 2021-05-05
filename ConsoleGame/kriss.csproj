@@ -21,9 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="textResources.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <EmbeddedResource Include="TextResources\Chapters\c1.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

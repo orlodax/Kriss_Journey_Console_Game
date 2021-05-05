@@ -6,7 +6,7 @@
       "id": 1,
       "type": "Story",
       "recap": "awoke",
-      "text": "-------------------------------\n|          CHAPTER 2          |\n-------------------------------\n\n\n$G<<You are alive...>>$C#\n\nWhose is that voice?# Your own?# Have you actually heard it?\n\nYou slowly open your eyes, as thoughts resume their flow in your mind, trying to re-establish contact with reality. \n\nIt takes several seconds to clear up your sight. You feel quite wrecked. \nJust breathing deeply is a pain. You painfully, slowly sit up, and look around. \n\nYou don't recognise what you see. You try hard to remember, and it finally comes back to you. \nHow can you still be alive after being hit by... the lightning?\nBy the way, you are still soaked to the bone. \n",
+      "text": "-------------------------------\n|          CHAPTER 2          |\n-------------------------------\n\n\n$G<<You are alive...>>$C#\n\nWhose is that voice?# Your own?# Have you actually heard it?\n\nYou slowly open your eyes, as thoughts resume their flow in your mind, trying to re-establish contact with reality. \n\nIt takes several seconds to clear up your sight. You feel quite wrecked. \nJust breathing deeply is a pain. You painfully, slowly sit up, and look around. \n\nYou don't recognize what you see. You try hard to remember, and it finally comes back to you. \nHow can you still be alive after being hit by... the lightning?\nBy the way, you are still soaked to the bone. \n",
       "childid": 2
     },
     {
@@ -65,7 +65,7 @@
       "id": 5,
       "type": "Story",
       "recap": "run",
-      "text": "You won't waste time. You rush downhill flying over the earth road. \n\nAs you descend, the path gets narrower, meandering between an increasing number of trees. \n\nThis does not slow you down, nor the fact that running through the vegetation leaves\nmany marks on your skin, especially your arms and face. You don't even realise it at the moment. \n\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars. \n\nAs darkness takes hold, $rominous reddish glares$C paint the corners of the scene. \nYou understand it's the light coming from the fires. You are getting closer. \n\nThe trees thin out and you can see the village entry a little further in front of you.",
+      "text": "You won't waste time. You rush downhill flying over the earth road. \n\nAs you descend, the path gets narrower, meandering between an increasing number of trees. \n\nThis does not slow you down, nor the fact that running through the vegetation leaves\nmany marks on your skin, especially your arms and face. You don't even realize it at the moment. \n\nTime passes, and night falls. Light recedes and you find yourself relying on the faint light of the stars. \n\nAs darkness takes hold, $rominous reddish glares$C paint the corners of the scene. \nYou understand it's the light coming from the fires. You are getting closer. \n\nThe trees thin out and you can see the village entry a little further in front of you.",
       "childid": 10
     },
     {
@@ -139,7 +139,7 @@
       "id": 11,
       "type": "Choice",
       "recap": "findshelter",
-      "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better. \n\nYou keep on walking and realise the road is scattered with corpses. Some kind of battle must have taken place... \n\nYou keep on going, slowly, appalled. You lose track of time, while your mind tries to grasp the reality. \nYHow to find an explanation to any of the things you are experiencing?\n\n\n#After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire. \n\nYou shudder. This reminds you that you should find some kind of shelter for the night,\nget dry, and possibly not burnt.",
+      "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better. \n\nYou keep on walking and realize the road is scattered with corpses. Some kind of battle must have taken place... \n\nYou keep on going, slowly, appalled. You lose track of time, while your mind tries to grasp the reality. \nYHow to find an explanation to any of the things you are experiencing?\n\n\n#After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire. \n\nYou shudder. This reminds you that you should find some kind of shelter for the night,\nget dry, and possibly not burnt.",
       "choices": [
         {
           "desc": "You had enough for today. Nothing you may find inside the house could be worse than what is outside.",
@@ -155,7 +155,7 @@
       "id": 12,
       "type": "Action",
       "recap": "enter house",
-      "text": "Overcoming fear with need, you enter the silent, dark, house. You don't expect to find anybody in there. \nIt's a very humble abode, earthen floor, small windows, few ornaments. \n\nA fireplace signals the kitchen. A table, some chairs. You suddenly realise how hungry you are. \nThe only other room is the bedroom, a simple bed, a closet. \nAll furniture pieces are made of the same wood. \nIt doesn't look like there is running water anywhere. You can't even find a toilet. \n\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]\n\n[You may press TAB again for help about the objects.]$C",
+      "text": "Overcoming fear with need, you enter the silent, dark, house. You don't expect to find anybody in there. \nIt's a very humble abode, earthen floor, small windows, few ornaments. \n\nA fireplace signals the kitchen. A table, some chairs. You suddenly realize how hungry you are. \nThe only other room is the bedroom, a simple bed, a closet. \nAll furniture pieces are made of the same wood. \nIt doesn't look like there is running water anywhere. You can't even find a toilet. \n\n\n$D[Usually, an action (verb) has to match an object (for example: $ddrink $Dthe $dwater$D)]\n\n[You may press TAB again for help about the objects.]$C",
       "actions": [
         {
           "verbs": [
@@ -274,7 +274,7 @@
       "id": 17,
       "type": "Choice",
       "recap": "reach camp",
-      "text": "You walked all day long. All you saw were little isolated trees, some bushes and some birds. \nYou feel exhausted. It's almost sunset, and you are about to despair. \nBut then, you see it. A thin plume of smoke rising. \n\n$c<<Please not another dead town>>$C you say in your mind, while you start walking faster. \n\nBy the time you get there, it's completely dark. In front of you, an encampment. \nYour survival instinct tells you to lay down and crawl among the sparse low bushes and grass. \n\nThere are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it. \nThe smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours. \nAround the fire, many men are dancing to the rhythm of crude songs with obscure words. \nBetween a song and a piece of meat, they gulp down impressive mugs of what must be beer. \n\nYou look around: no movement at the sides of the encampment. And then you see them. \n\nSlaves. Mostly women, and children. \nThey are crammed inside several big cages on carriages,\nwhich tracks you now realise you've been following the whole day. Then it dawns on you:\n\n$c<<These thugs must be the responsibles of what I saw at that village!>>$C#\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage. You shouldn't, but you $Whave$C to do something.",
+      "text": "You walked all day long. All you saw were little isolated trees, some bushes and some birds. \nYou feel exhausted. It's almost sunset, and you are about to despair. \nBut then, you see it. A thin plume of smoke rising. \n\n$c<<Please not another dead town>>$C you say in your mind, while you start walking faster. \n\nBy the time you get there, it's completely dark. In front of you, an encampment. \nYour survival instinct tells you to lay down and crawl among the sparse low bushes and grass. \n\nThere are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it. \nThe smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours. \nAround the fire, many men are dancing to the rhythm of crude songs with obscure words. \nBetween a song and a piece of meat, they gulp down impressive mugs of what must be beer. \n\nYou look around: no movement at the sides of the encampment. And then you see them. \n\nSlaves. Mostly women, and children. \nThey are crammed inside several big cages on carriages,\nwhich tracks you now realize you've been following the whole day. Then it dawns on you:\n\n$c<<These thugs must be the responsibles of what I saw at that village!>>$C#\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage. You shouldn't, but you $Whave$C to do something.",
       "choices": [
         {
           "desc": "You feel you must do something... But it's too dangerous, you don't want to end up in one of those cages.",
@@ -309,10 +309,10 @@
           "actor": "Corolla",
           "linename": "question",
           "line": "Hey I asked you a question!",
-          "comment": "\nWith these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+          "comment": "\nWith these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognize her accent.",
           "replies": [
             {
-              "line": "\"Hey hey...! I don't believe you don't recognise me...! Haha come on let's go get drunk...\"",
+              "line": "\"Hey hey...! I don't believe you don't recognize me...! Haha come on let's go get drunk...\"",
               "nextline": "JeorgheStepsIn"
             },
             {
@@ -364,7 +364,7 @@
         {
           "actor": "Corolla",
           "line": "You know? The Chief could express severe disagreement... and heaven knows what he would do to you!\nNot to mention what Jeorghe would do to you too...",
-          "comment": "With these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognise her accent.",
+          "comment": "With these words she snaps you out of your examining trance, smiling mischievously. \nYou blush, while frantically trying to find something dignifying to say. \nMeanwhile, you notice how strange her English is. You barely understand it. You don't recognize her accent.",
           "replies": [
             {
               "line": "\"Wai... Wait a second! You won't tell him right? I, erm...!\"",
@@ -425,7 +425,7 @@
       "id": 20,
       "type": "Story",
       "recap": "jeorghe attack",
-      "text": "Panicking, you dart away, looking for any kind of cover. \nThe brute chases you, smashing everything he encounters on his path and/or swings. \nYou slide under the carriages, then run between the nearest tents... \n\nIt's all useless. He is always one step behind you. \nFor one split second you get distracted by the noises he makes, and you turn your head a little to watch him. \nIt soon proves to be a mistake. \n\nLooking over your shoulder, you cannot see another man suddenly appearing in front of you. \nHe doesn't even try to stop you. He just stands there with arms crossed letting you stumble and fall to his feet,\nlike a prey trapped for its hunter. \nYou realise you are surrounded. There's no way out. \n\nDuring a few instants, you can observe every detail of his face. \n\nHis devious grin, anticipating with perverse joy what he's about to do. \nHis stench, engulfing you as he rushes towards you. \nTime seems to dilate allowing you to count every hateful, alcoholic capillary of his evil eyes. \n\nYou raise your arm, as if it could protect you from what it's surely going to happen. \n\n\n",
+      "text": "Panicking, you dart away, looking for any kind of cover. \nThe brute chases you, smashing everything he encounters on his path and/or swings. \nYou slide under the carriages, then run between the nearest tents... \n\nIt's all useless. He is always one step behind you. \nFor one split second you get distracted by the noises he makes, and you turn your head a little to watch him. \nIt soon proves to be a mistake. \n\nLooking over your shoulder, you cannot see another man suddenly appearing in front of you. \nHe doesn't even try to stop you. He just stands there with arms crossed letting you stumble and fall to his feet,\nlike a prey trapped for its hunter. \nYou realize you are surrounded. There's no way out. \n\nDuring a few instants, you can observe every detail of his face. \n\nHis devious grin, anticipating with perverse joy what he's about to do. \nHis stench, engulfing you as he rushes towards you. \nTime seems to dilate allowing you to count every hateful, alcoholic capillary of his evil eyes. \n\nYou raise your arm, as if it could protect you from what it's surely going to happen. \n\n\n",
       "childid": 22
     },
     {
@@ -455,7 +455,7 @@
       "recap": "chief dialogue",
       "dialogues": [
         {
-          "precomment": "$CThen, he steps into the circle. \n\nYou immediately recognise the Chief:\nproud posture, well-kept hair and beard, intelligent, disdainful expression, at times malignant, at times ironic. \nHe's tall, more slender than all the other men around. \n\nHe wears several pieces of jewelry around his neck,\nand carries a $cbig sword$C in its sheath and a chain (the source of the jingling) both hanging from his belt. \n\nHe stops a few steps from you, his hands on his hips, observing the scene with curiosity.",
+          "precomment": "$CThen, he steps into the circle. \n\nYou immediately recognize the Chief:\nproud posture, well-kept hair and beard, intelligent, disdainful expression, at times malignant, at times ironic. \nHe's tall, more slender than all the other men around. \n\nHe wears several pieces of jewelry around his neck,\nand carries a $cbig sword$C in its sheath and a chain (the source of the jingling) both hanging from his belt. \n\nHe stops a few steps from you, his hands on his hips, observing the scene with curiosity.",
           "actor": "Chief",
           "line": "What have you guys been up to? Look at you poor little Jeorghe...!\nI think I need to choose better guards for myself!",
           "comment": "he mocks his man, kicking him a little to tease him."

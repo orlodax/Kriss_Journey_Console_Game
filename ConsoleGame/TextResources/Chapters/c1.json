@@ -20,10 +20,10 @@
       "id": 2,
       "type": "Choice",
       "recap": "rain intensify",
-      "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n#You shudder, stunned with its power. \n\n#After few breathless seconds, #you breathe again, \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules. \n\n#You realise you have to move fast if you don't want to end up way more soaked than you already are. \n\n\n\n$D[Select with arrow keys and press enter]$C.",
+      "text": "A $WLightning$C suddenly strikes, #not too far away!\n\n#You shudder, stunned with its power. \n\n#After few breathless seconds, #you breathe again, \nand smell the ozone that was formed by the action of the electricity over the oxygen molecules. \n\n#You realize you have to move fast if you don't want to end up way more soaked than you already are. \n\n\n\n$D[Select with arrow keys and press enter]$C.",
       "choices": [
         {
-          "desc": "You start running. Let's minimise the water intake.",
+          "desc": "You start running. Let's minimize the water intake.",
           "childid": 3
         },
         {
@@ -59,7 +59,7 @@
       "id": 5,
       "type": "Choice",
       "recap": "who whispered",
-      "text": "You turn around, looking for the source of the voice. \n\nIt's hard to see something in the midst of this unexpected thunderstorm. \nYou squint your eyes, fighting against the trickles of water running into them. \n\nAfter few seconds, you think you're seeing something. On the top of the hill in front of your house. \nIt looks like there is something... #someone... there. \n#But then you realise it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.",
+      "text": "You turn around, looking for the source of the voice. \n\nIt's hard to see something in the midst of this unexpected thunderstorm. \nYou squint your eyes, fighting against the trickles of water running into them. \n\nAfter few seconds, you think you're seeing something. On the top of the hill in front of your house. \nIt looks like there is something... #someone... there. \n#But then you realize it's quite unlikely you could have heard your name called from that distance,\nwith all that noise.",
       "choices": [
         {
           "desc": "You hate to stay more time under the rain... but... you never know?",

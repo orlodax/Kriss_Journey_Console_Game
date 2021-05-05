@@ -279,7 +279,7 @@
           "precomment": "They suddenly fall 'silent', then Math turns towards you, locking eyes with you:",
           "actor": "Math",
           "line": "Yes, Kriss?",
-          "comment": "He asks. Did they realise you were listening?"
+          "comment": "He asks. Did they realize you were listening?"
         },
         {
           "actor": "Kriss",
@@ -458,7 +458,7 @@
       "dialogues": [
         {
           "actor": "Corolla",
-          "line": "We realised you were gone for a while now..."
+          "line": "We realized you were gone for a while now..."
         },
         {
           "precomment": "You nod distractly. You loose your hands behind your neck, but you're still looking at the sky above you, not at her.",
@@ -641,7 +641,7 @@
       "id": 10,
       "type": "Story",
       "recap": "g.o.",
-      "text": "The noise continues for several long minutes. Thuds, growls# and howls. \nOccasionally, Theo grunting. \nYou can't hear Corolla and Smiurl voices. \n\nThe two telepaths have closed their eyes and you can't tell if they are just deeply focused, or in pain. \n\nAfter a while, a sudden silence falls. \nYou are not relieved. You can't explain it, but you feel there's something wrong. \n\nFew unbearable moments pass, then a shadow appears against the tent entrance. Is it Theo?#\n\nThe shadow moves, and with horror you recognise the shape of the face of a beast:\nin the faint night light you can guess the profile of its ears, snout, and many long fangs. \nIt feels like it's staring at you through the fabric. The beast is almost as tall as you. \nYou unawarely take a step back, appalled. \n\nMaybe you just made some noise, or maybe it can simply smell you... \nThe tent starts shaking at once. You hear Efeliah screaming. Something hits you. A sharp pain. \n\nThen, nothing else.$d##\n\n\n-- GAME OVER --#\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
+      "text": "The noise continues for several long minutes. Thuds, growls# and howls. \nOccasionally, Theo grunting. \nYou can't hear Corolla and Smiurl voices. \n\nThe two telepaths have closed their eyes and you can't tell if they are just deeply focused, or in pain. \n\nAfter a while, a sudden silence falls. \nYou are not relieved. You can't explain it, but you feel there's something wrong. \n\nFew unbearable moments pass, then a shadow appears against the tent entrance. Is it Theo?#\n\nThe shadow moves, and with horror you recognize the shape of the face of a beast:\nin the faint night light you can guess the profile of its ears, snout, and many long fangs. \nIt feels like it's staring at you through the fabric. The beast is almost as tall as you. \nYou unawarely take a step back, appalled. \n\nMaybe you just made some noise, or maybe it can simply smell you... \nThe tent starts shaking at once. You hear Efeliah screaming. Something hits you. A sharp pain. \n\nThen, nothing else.$d##\n\n\n-- GAME OVER --#\n\n\n$DYou just died. You will start again from the last checkpoint. Make wiser choices, traveler.",
       "childid": 1
     },
     {
@@ -656,7 +656,7 @@
       "type": "Story",
       "recap": "breakout",
       "islast": true,
-      "text": "$cYou left Corolla and then Theo behind, almost not realising it. \nEven if it's dark, you can dodge any obstacle. \nThere's no stone that manages to make you stumble, or pit in which to fall. \nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws. \nYou can feel his terror as clear as his cries. \n\nYou are screaming now, an unprecedented roar coming out your throat. \nWithout thinking you grab the sword, still in its sheath, by the tip side. \nIt's matter of way less than a second; the beast realises the danger, and you allow yourself a gloating smile. \n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud. \n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.##\n\n\n$CTime resume its normal flow. You feel you strenght failing you, and you fall on your knees. \nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open. \n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.#\n\nThen all is darkness. \nAll is oblivion.#",
+      "text": "$cYou left Corolla and then Theo behind, almost not realising it. \nEven if it's dark, you can dodge any obstacle. \nThere's no stone that manages to make you stumble, or pit in which to fall. \nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws. \nYou can feel his terror as clear as his cries. \n\nYou are screaming now, an unprecedented roar coming out your throat. \nWithout thinking you grab the sword, still in its sheath, by the tip side. \nIt's matter of way less than a second; the beast realizes the danger, and you allow yourself a gloating smile. \n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud. \n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.##\n\n\n$CTime resume its normal flow. You feel you strenght failing you, and you fall on your knees. \nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open. \n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.#\n\nThen all is darkness. \nAll is oblivion.#",
     }
   ]
 }

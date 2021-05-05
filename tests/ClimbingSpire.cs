@@ -100,7 +100,7 @@ namespace tests
                     }
                 }
             }
-            Assert.True(isValid);
+            Assert.True(isValid, "Traversed nodes: ", traversed);
         }
     }
 }
