@@ -67,8 +67,8 @@ namespace kriss.Nodes
 
             Console.WriteLine();
             Console.WriteLine();
-            
-            if (currentLine.Break)
+
+            if (currentLine.Break || (IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1))
             {
                 HoldScreen();
                 Console.Clear();
