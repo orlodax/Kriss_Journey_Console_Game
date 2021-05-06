@@ -69,11 +69,10 @@
           "desc": "What is Theo doing with that knife...?",
           "condition": {
             "type": "readyToMoveOn",
-            "item": "theoDone",
-            "childid": 4
+            "item": "theoDone"
           },
           "refusal": "$B\"Almost done kid... I'll show you in a while.\"",
-          "childid": 3
+          "childid": 4
         },
         {
           "desc": "Say hello to Math. Hopefully he's preparing breakfast.",

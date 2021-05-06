@@ -32,8 +32,8 @@ Console.ForegroundColor = ConsoleColor.DarkCyan;
 Console.WriteLine();
 
 //debug: start from. Comment for default start
-DataLayer.CurrentChapter = DataLayer.Chapters[1];
-DataLayer.LoadNode(27);
+DataLayer.CurrentChapter = DataLayer.Chapters[8];
+DataLayer.LoadNode(3);
 //debug
 
 int chapterId = 1;

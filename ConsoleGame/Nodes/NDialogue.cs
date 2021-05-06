@@ -70,7 +70,7 @@ namespace kriss.Nodes
 
             if (currentLine.Break || (IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1))
             {
-                HoldScreen();
+                HoldScreen();                                                       //pause if it's marked as break or if it's last line of chapter
                 Console.Clear();
             }
         #endregion
