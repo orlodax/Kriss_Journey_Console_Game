@@ -105,7 +105,10 @@ namespace kriss.Nodes
                         Console.ReadKey(true);
                     key = Console.ReadKey(true);
 
-                    int thisLineId = Dialogues.FindIndex(l => l.LineName == currentLine.LineName);
+                    int thisLineId = Dialogues.IndexOf(currentLine);
+                    do
+                        thisLineId--;
+                    while (Dialogues[thisLineId - 1].Break == false);
 
                     if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
                     {
