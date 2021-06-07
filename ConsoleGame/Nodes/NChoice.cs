@@ -112,8 +112,8 @@ namespace kriss.Nodes
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine();
-
-            } while (key.Key != ConsoleKey.Enter);
+            } 
+            while (key.Key != ConsoleKey.Enter);
 
             Choice choice = visibleChoices[selectedRow];
 

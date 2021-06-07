@@ -16,6 +16,9 @@ namespace kriss.Classes
 
         public static void Init()
         {
+            // Dump any exception
+            AppDomain.CurrentDomain.UnhandledException += LogError;
+
             // Load Status
             string statusFile = Path.Combine(AppContext.BaseDirectory, "status.json");
             if (File.Exists(statusFile))
@@ -79,8 +82,8 @@ namespace kriss.Classes
             Console.WriteLine();
 
             //debug: start from. Comment for default start
-            CurrentChapter = Chapters[8];
-            LoadNode(1);
+            //CurrentChapter = Chapters[3];
+            //LoadNode(3);
             //debug
 
             int chapterId = 1;
@@ -162,7 +165,7 @@ namespace kriss.Classes
         /// </summary>
         /// <param name="nodeId"></param>
         /// <returns></returns>
-        public static NodeBase SearchNodeById(int nodeId)
+        static NodeBase SearchNodeById(int nodeId)
         {
             return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
         }
@@ -253,6 +256,17 @@ namespace kriss.Classes
                 return reader.ReadToEnd();
             }
             return string.Empty;
+        }
+
+        /// <summary>
+        /// Dump any unhandled exception to txt file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        static void LogError(object sender, UnhandledExceptionEventArgs e)
+        {
+            string path = Path.Combine(AppContext.BaseDirectory, $"errorLog.txt");
+            File.WriteAllText(path, e.ExceptionObject.ToString());
         }
     }
 }
