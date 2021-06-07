@@ -69,7 +69,7 @@ namespace tests
 
             List<int> traversed = new();
 
-            while (stack.Count > 0)
+            while (stack.Any())
             {
                 NodeBase v = stack.Peek();
                 traversed.Add(v.Id);

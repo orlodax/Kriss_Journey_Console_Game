@@ -2,6 +2,7 @@
 using lybra;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace kriss.Nodes
 {
@@ -28,13 +29,13 @@ namespace kriss.Nodes
             Console.Write("\\>");
             Console.CursorLeft += 1;
 
-            if (keysPressed.Count > 0)
+            if (keysPressed.Any())
                 for (int i = 0; i < keysPressed.Count; i++)
                     Console.Write(keysPressed[i].KeyChar.ToString());
         }
         internal override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
         {
-            if (keysPressed.Count > 0)
+            if (keysPressed.Any())
             {
                 string[] words = ExtractWords();
 

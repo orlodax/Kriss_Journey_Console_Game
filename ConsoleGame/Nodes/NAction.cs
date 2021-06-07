@@ -2,6 +2,7 @@
 using lybra;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Action = lybra.Action;
 using Object = lybra.Object;
 
@@ -36,7 +37,7 @@ namespace kriss.Nodes
             Console.Write(" \\> ");
             
             //if redrawing after backspacing, rewrite stack
-            if (keysPressed.Count > 0)
+            if (keysPressed.Any())
                 for (int i = 0; i < keysPressed.Count; i++)
                     Console.Write(keysPressed[i].KeyChar.ToString());
 
@@ -83,7 +84,7 @@ namespace kriss.Nodes
                     string verb = action.Verbs.Find(v => v.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
                     if (verb != null)
                     {
-                        if (action.Objects.Count > 0)
+                        if (action.Objects.Any())
                         {
                             foreach (Object objContainer in action.Objects)                 //when the action is found, iterate through every object term
                                 helpObjects.Add(objContainer.Objs[0]);
@@ -101,7 +102,7 @@ namespace kriss.Nodes
 
             Console.ForegroundColor = ConsoleColor.DarkGray;
 
-            if (helpObjects.Count > 0)
+            if (helpObjects.Any())
             {
                 Console.WriteLine("Possible objects for the action typed: ");
 
@@ -133,13 +134,13 @@ namespace kriss.Nodes
             Console.Write("\\>");
             Console.CursorLeft += 1;
 
-            if (keysPressed.Count > 0)
+            if (keysPressed.Any())
                 for (int i = 0; i < keysPressed.Count; i++)
                     Console.Write(keysPressed[i].KeyChar.ToString());
         }
         void BackSpacePressed(List<ConsoleKeyInfo> keysPressed)
         {
-            if (keysPressed.Count > 0)
+            if (keysPressed.Any())
             {
                 keysPressed.RemoveAt(keysPressed.Count - 1);
 
@@ -161,7 +162,7 @@ namespace kriss.Nodes
         }
         internal virtual void EnterPressed(List<ConsoleKeyInfo> keysPressed)
         {
-            if (keysPressed.Count > 0)
+            if (keysPressed.Any())
             {
                 act = null;
 

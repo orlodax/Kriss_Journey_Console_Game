@@ -36,14 +36,14 @@
       "id": 3,
       "type": "Story",
       "recap": "running home",
-      "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght. \nYou run even faster, trying to ignore the suffocating feeling of the water splashing down your face. \n\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt. \nYou feel your heart bouncing in your chest and hear your now accelerated breathing. \n\nYou are almost home, when you hear it. \n\n$G<<...>>$C\n#\nWas it real? \n#For a split second you thought someone called on your name. It must have been all that noise... \n\n$G<<..ris..>>$C\n#\nIt was clearer this time!\n\n\n",
+      "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght. \nYou run even faster, trying to ignore the suffocating feeling of the water splashing down your face. \n\nThe wind howls between the unstopping, ever increasing noise of asphalt-hammering water. \nYou feel your heart bouncing in your chest and hear your now accelerated breathing. \n\nYou are almost home, when you hear it. \n\n$G<<...>>$C\n#\nWas it real? \n#For a split second you thought someone called on your name. It must have been all that noise... \n\n$G<<..ris..>>$C\n#\nIt was clearer this time!\n\n\n",
       "childid": 5
     },
     {
       "id": 4,
       "type": "Choice",
       "recap": "walking home",
-      "text": "Resigned to your fate, you try to keep your head down,\ntrying to avoid being temporarily blinded by the water in your eyes. \n\nThe wind howls between the unstopping, ever increasing noise of water hammering the asphalt. \n\nYou also try to avoid the huge pools of water that are now forming on the road,\npraying that no vehicle will rush over them splattering you with some nice mud. \n\nYou reach the bottom of the little hill that is in front of your house. \nYou raise your eyes, and right when you are about to turn towards your gate, you see something. \n\nOn the top of the hill, there is something... someone... you can't say for sure.",
+      "text": "Resigned to your fate, you try to keep your head down,\ntrying to avoid being temporarily blinded by the water in your eyes. \n\nThe wind howls between the unstopping, ever increasing noise of asphalt-hammering water. \n\nYou also try to avoid the huge pools of water that are now forming on the road,\npraying that no vehicle will rush over them splattering you with some nice mud. \n\nYou reach the bottom of the little hill that is in front of your house. \nYou raise your eyes, and right when you are about to turn towards your gate, you see something. \n\nOn the top of the hill, there is something... someone... you can't say for sure.",
       "choices": [
         {
           "desc": "You think you saw it wrong. Why waste time climbing the hill with this weather?",

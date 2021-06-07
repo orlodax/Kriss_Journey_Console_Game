@@ -8,7 +8,7 @@ namespace jason.Classes
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            //if (value is List<lybra.Word> verbs && verbs.Count > 0)
+            //if (value is List<lybra.Word> verbs && verbs.Any())
             //    return verbs[0].Term;
             //else
             //    return string.Empty;

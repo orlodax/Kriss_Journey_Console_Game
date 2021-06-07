@@ -32,13 +32,13 @@ Console.ForegroundColor = ConsoleColor.DarkCyan;
 Console.WriteLine();
 
 //debug: start from. Comment for default start
-DataLayer.CurrentChapter = DataLayer.Chapters[8];
-DataLayer.LoadNode(3);
+//DataLayer.CurrentChapter = DataLayer.Chapters[8];
+//DataLayer.LoadNode(3);
 //debug
 
 int chapterId = 1;
 
-if (DataLayer.Status.VisitedNodes.Count > 1)
+if (DataLayer.Status.VisitedNodes.Any())
 {
     Console.WriteLine("Welcome back, traveler. This is your journey so far.");
     Console.WriteLine("This game still features autosave, at least for now.");
