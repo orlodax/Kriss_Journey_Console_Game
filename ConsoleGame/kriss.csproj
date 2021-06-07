@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="sword.ico" />
     <None Remove="TextResources\Chapters\c1.json" />
+    <None Remove="TextResources\Chapters\c10.json" />
     <None Remove="TextResources\Chapters\c2.json" />
     <None Remove="TextResources\Chapters\c3.json" />
     <None Remove="TextResources\Chapters\c4.json" />
@@ -21,9 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="sword.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="TextResources\Chapters\c1.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="TextResources\Chapters\c10.json" />
     <EmbeddedResource Include="TextResources\Chapters\c9.json" />
     <EmbeddedResource Include="TextResources\Chapters\c8.json" />
     <EmbeddedResource Include="TextResources\Chapters\c7.json" />
@@ -43,5 +50,9 @@
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+  <ItemGroup>
+    <_DeploymentManifestIconFile Remove="sword.ico" />
+  </ItemGroup>
 
 </Project>

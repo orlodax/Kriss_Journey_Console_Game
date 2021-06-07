@@ -22,9 +22,9 @@ namespace kriss.Nodes
             if (IsVisited)
                 isLineFlowing = false;
 
-#if DEBUG
-            isLineFlowing = false;
-#endif
+//#if DEBUG
+//            isLineFlowing = false;
+//#endif
 
             Dialogue currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 

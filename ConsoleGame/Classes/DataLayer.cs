@@ -44,6 +44,82 @@ namespace kriss.Classes
                 CurrentChapter = Chapters.Find(c => c.Id == Status.VisitedNodes.Keys.Max());
             else
                 CurrentChapter = Chapters.First();
+
+            DisplayMenu();
+        }
+
+        /// <summary>
+        /// First screen in game. Comes back to this after completing the story or a section
+        /// </summary>
+        public static void DisplayMenu()
+        {
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("            ██╗  ██╗██████╗ ██╗███████╗███████╗              ");
+            Console.WriteLine("            ██║ ██╔╝██╔══██╗██║██╔════╝██╔════╝              ");
+            Console.WriteLine("            █████╔╝ ██████╔╝██║███████╗███████╗              ");
+            Console.WriteLine("            ██╔═██╗ ██╔══██╗██║╚════██║╚════██║              ");
+            Console.WriteLine("            ██║  ██╗██║  ██║██║███████║███████║              ");
+            Console.WriteLine("            ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝              ");
+            Console.WriteLine("     ██╗ ██████╗ ██╗   ██╗██████╗ ███╗   ██╗███████╗██╗   ██╗");
+            Console.WriteLine("     ██║██╔═══██╗██║   ██║██╔══██╗████╗  ██║██╔════╝╚██╗ ██╔╝");
+            Console.WriteLine("     ██║██║   ██║██║   ██║██████╔╝██╔██╗ ██║█████╗   ╚████╔╝ ");
+            Console.WriteLine("██   ██║██║   ██║██║   ██║██╔══██╗██║╚██╗██║██╔══╝    ╚██╔╝  ");
+            Console.WriteLine("╚█████╔╝╚██████╔╝╚██████╔╝██║  ██║██║ ╚████║███████╗   ██║   ");
+            Console.WriteLine(" ╚════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ");
+            Console.WriteLine();
+            Console.WriteLine("              />_________________________________");
+            Console.WriteLine("     [########[]_________________________________>");
+            Console.WriteLine("              \\>");
+            Console.WriteLine();
+            Console.WriteLine("-------------------------------------------------------------");
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine();
+
+            //debug: start from. Comment for default start
+            CurrentChapter = Chapters[8];
+            LoadNode(1);
+            //debug
+
+            int chapterId = 1;
+
+            if (Status.VisitedNodes.Any())
+            {
+                Console.WriteLine("Welcome back, traveler. This is your journey so far.");
+                Console.WriteLine("This game still features autosave, at least for now.");
+                Console.WriteLine("Press a number to select a chapter.");
+                Console.WriteLine();
+
+                int lastChapter = Status.VisitedNodes.Keys.Max();
+
+                for (int i = 0; i < lastChapter; i++)
+                    Console.WriteLine(i + 1 + ". " + Chapters[i].Title);
+
+                bool isValid = false;
+
+                do
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(true);
+
+                    if (int.TryParse(key.KeyChar.ToString(), out int digit))
+                        if (isValid = digit <= lastChapter)
+                            chapterId = digit;
+                }
+                while (!isValid);
+            }
+            else
+            {
+                Console.WriteLine("Welcome traveler. Your journey is yet to be started.");
+                Console.WriteLine("This game features autosave. You just won't know when.");
+                Console.WriteLine();
+                Console.WriteLine("Press any key.");
+                Console.ReadKey(true);
+            }
+
+            // load first node of selected chapter
+            StartChapter(chapterId);
         }
 
         /// <summary>
@@ -124,6 +200,9 @@ namespace kriss.Classes
         /// </summary>
         public static void SaveProgress(NodeBase currentNode)
         {
+            if (!Status.VisitedNodes.ContainsKey(CurrentChapter.Id))
+                Status.VisitedNodes[CurrentChapter.Id] = new List<int>();
+
             if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
             {
                 if (!visitedNodes.Contains(currentNode.Id))

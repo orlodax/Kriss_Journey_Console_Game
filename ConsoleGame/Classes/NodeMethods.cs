@@ -28,6 +28,10 @@ namespace kriss.Classes
             // mark as visited
             DataLayer.SaveProgress(node);
 
+            // if it closes story or section, go back to menu
+            if (node.IsClosing)
+                DataLayer.DisplayMenu();
+
             // if it closes chapter load the next chapter, else load next node
             if (node.IsLast)
                 DataLayer.StartChapter(DataLayer.CurrentChapter.Id + 1);
@@ -52,12 +56,8 @@ namespace kriss.Classes
                         return DataLayer.IsNodeVisited(Convert.ToInt32(Condition.Item));
 
                     default:
-                        if (DataLayer.Status.Inventory.Contains(Condition.Item))
-                            return true;
-                        break;
+                        return DataLayer.Status.Inventory.Contains(Condition.Item);
                 }
-
-                return false;
             }
             return true;
         }
@@ -80,16 +80,16 @@ namespace kriss.Classes
         internal static readonly int ParagraphBreak = 1000; // # arbitrary pause
         static int ShortPause = 700; // comma pause
         static int LongPause = 1200; // dot pause
-        static readonly List<string> NotToPause = new() { ".", "!", "?", "\"", ">", ")" }; // symbols after short pause that must not trigger another pause
+        static readonly List<string> NotToPause = new() { ".", "!", "?", "\"", ">", ")", "]", "}", ":" }; // symbols after short pause that must not trigger another pause
         static readonly List<string> ToShortPause = new() { ":", ";", ",", "!", "?" }; // symbols after which trigger a short pause
 
         public static void TextFlow(bool isFlowing, string text, ConsoleColor color = ConsoleColor.DarkCyan)
         {
-#if DEBUG
-            FlowDelay = 0;
-            ShortPause = 10;
-            LongPause = 20;
-#endif
+//#if DEBUG
+//            FlowDelay = 0;
+//            ShortPause = 10;
+//            LongPause = 20;
+//#endif
             Console.ForegroundColor = color;
 
             if (text != null)
@@ -100,14 +100,9 @@ namespace kriss.Classes
                 int longPause = LongPause;
 
                 if (!isFlowing)
-                {
-                    flow = 0;
-                    paragraph = 0;
-                    shortPause = 0;
-                    longPause = 0;
-                }
+                    flow = paragraph = shortPause = longPause = 0;
 
-                char prevChar = new char();
+                char prevChar = new();
 
                 for (int i = 0; i < text.Length; i++)
                 {
@@ -115,7 +110,7 @@ namespace kriss.Classes
 
                     if (prevChar.ToString().Equals("."))
                     {
-                        if (c.ToString().Equals(" "))
+                        if (c.ToString().Equals(" ") || c.ToString().Equals("\n"))
                             Thread.Sleep(longPause);
                     }
                     else

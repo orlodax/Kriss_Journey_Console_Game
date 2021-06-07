@@ -15,6 +15,7 @@ namespace lybra
         public List<Dialogue> Dialogues { get; set; } //all the lines (thus paths) of the node's dialogues
         public bool IsVisited { get; set; } //have we ever played this node?
         public bool IsLast { get; set; } //more than one node per chapter could be its last
+        public bool IsClosing { get; set; } //close game or return to menu if last node of last chapter/section
 
         public NodeBase(NodeBase n)
         {
@@ -29,6 +30,7 @@ namespace lybra
             Dialogues = n.Dialogues;
             IsVisited = n.IsVisited;
             IsLast = n.IsLast;
+            IsClosing = n.IsClosing;
         }
         public NodeBase()
         {
