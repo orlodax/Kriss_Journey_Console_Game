@@ -5,9 +5,11 @@ using System.Threading;
 
 namespace kriss.Classes
 {
+    /// <summary>
+    /// Extension methods for NodeBase
+    /// </summary>
     public static class NodeMethods
     {
-        #region Extensions
         public static void Init(this NodeBase node)
         {
             // start text
@@ -20,7 +22,7 @@ namespace kriss.Classes
             else
                 text = node.Text;
             
-            TextFlow(!node.IsVisited, text);
+            Typist.RenderText(!node.IsVisited, text);
         }
 
         public static void AdvanceToNext(this NodeBase node, int childId)
@@ -34,166 +36,9 @@ namespace kriss.Classes
 
             // if it closes chapter load the next chapter, else load next node
             if (node.IsLast)
-                DataLayer.StartChapter(DataLayer.CurrentChapter.Id + 1);
+                DataLayer.StartNextChapter();
 
             DataLayer.LoadNode(childId);
         }
-        #endregion
-
-        #region Other methods
-        /// <summary>
-        /// Decides upon the condition of a choice, action, object etc
-        /// </summary>
-        /// <param name="Condition"></param>
-        /// <returns></returns>
-        public static bool Evaluate(Condition Condition)                            // check according to the condition
-        {
-            if (Condition != null)
-            {
-                switch (Condition.Type)
-                {
-                    case "isNodeVisited":
-                        return DataLayer.IsNodeVisited(Convert.ToInt32(Condition.Item));
-
-                    default:
-                        return DataLayer.Status.Inventory.Contains(Condition.Item);
-                }
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// You picked something up
-        /// </summary>
-        /// <param name="effect"></param>
-        public static void StoreItem(Effect effect)       // consequent modify of inventory
-        {
-            DataLayer.Status.Inventory.Add(effect.GainItem);
-        }
-        #endregion
-
-        #region TextFlow
-        /// <summary>
-        /// Mimics the flow of text of old console games. 
-        /// </summary>
-        static int FlowDelay = 10; // fine-tunes the speed of TextFlow
-        internal static readonly int ParagraphBreak = 1000; // # arbitrary pause
-        static int ShortPause = 700; // comma pause
-        static int LongPause = 1200; // dot pause
-        static readonly List<string> NotToPause = new() { ".", "!", "?", "\"", ">", ")", "]", "}", ":" }; // symbols after short pause that must not trigger another pause
-        static readonly List<string> ToShortPause = new() { ":", ";", ",", "!", "?" }; // symbols after which trigger a short pause
-
-        public static void TextFlow(bool isFlowing, string text, ConsoleColor color = ConsoleColor.DarkCyan)
-        {
-//#if DEBUG
-//            FlowDelay = 0;
-//            ShortPause = 10;
-//            LongPause = 20;
-//#endif
-            Console.ForegroundColor = color;
-
-            if (text != null)
-            {
-                int flow = FlowDelay;
-                int paragraph = ParagraphBreak;
-                int shortPause = ShortPause;
-                int longPause = LongPause;
-
-                if (!isFlowing)
-                    flow = paragraph = shortPause = longPause = 0;
-
-                char prevChar = new();
-
-                for (int i = 0; i < text.Length; i++)
-                {
-                    char c = text[i];
-
-                    if (prevChar.ToString().Equals("."))
-                    {
-                        if (c.ToString().Equals(" ") || c.ToString().Equals("\n"))
-                            Thread.Sleep(longPause);
-                    }
-                    else
-                    {
-                        if (ToShortPause.Contains(prevChar.ToString()))
-                            if (!NotToPause.Contains(c.ToString()))
-                                Thread.Sleep(shortPause);
-                    }
-
-                    if (prevChar.ToString().Equals("$"))
-                        switch (c.ToString())
-                        {
-                            case "R":
-                                color = ConsoleColor.Red;           //Corolla
-                                break;
-                            case "r":
-                                color = ConsoleColor.DarkRed;
-                                break;
-                            case "G":
-                                color = ConsoleColor.Green;
-                                break;
-                            case "g":
-                                color = ConsoleColor.DarkGreen;     //Efeliah
-                                break;
-                            case "B":
-                                color = ConsoleColor.Blue;
-                                break;
-                            case "C":
-                                color = ConsoleColor.DarkCyan;      //narrator
-                                break;
-                            case "c":
-                                color = ConsoleColor.Cyan;          //yourself
-                                break;
-                            case "M":
-                                color = ConsoleColor.Magenta;
-                                break;
-                            case "m":
-                                color = ConsoleColor.DarkMagenta;   //Math
-                                break;
-                            case "Y":
-                                color = ConsoleColor.Yellow;        //Smiurl
-                                break;
-                            case "y":
-                                color = ConsoleColor.DarkYellow;    //Console answers
-                                break;
-                            case "K":
-                                color = ConsoleColor.Black;
-                                break;
-                            case "W":
-                                color = ConsoleColor.White;         //highlight
-                                break;
-                            case "S":
-                                Console.BackgroundColor = ConsoleColor.White;
-                                break;
-                            case "s":
-                                Console.BackgroundColor = ConsoleColor.Black;
-                                break;
-                            case "D":
-                                color = ConsoleColor.DarkGray;      //menus, help
-                                break;
-                            case "d":
-                                color = ConsoleColor.Gray;          //menus, help
-                                break;
-                            default:
-                                break;
-                        }
-                    else
-                    {
-                        if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
-                        {
-                            Console.ForegroundColor = color;
-                            Console.Write(c);
-                            Thread.Sleep(flow);
-                        }
-                        else if (c.ToString().Equals("#"))
-                        {
-                            Thread.Sleep(paragraph);
-                        }
-                    }
-                    prevChar = c;
-                }
-            }
-        }
-        #endregion
     }
 }

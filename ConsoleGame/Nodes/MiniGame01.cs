@@ -64,10 +64,10 @@ namespace kriss.Nodes
                 Console.CursorTop = MeasureMessage(BottomMessage);
                 Console.CursorLeft = Console.WindowLeft;
 
-                NodeMethods.TextFlow(true, BottomMessage, ConsoleColor.DarkGreen);
+                Typist.FlowingText(BottomMessage, ConsoleColor.DarkGreen);
                 Console.WriteLine();
                 Console.WriteLine();
-                NodeMethods.TextFlow(true, "Efeliah opens her eyes,# smiling warmly at you.#", ConsoleColor.DarkCyan);
+                Typist.FlowingText("Efeliah opens her eyes,# smiling warmly at you.#");
 
             }
             

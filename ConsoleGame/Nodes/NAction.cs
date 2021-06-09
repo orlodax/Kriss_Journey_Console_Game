@@ -44,6 +44,7 @@ namespace kriss.Nodes
             do
             {
                 ConsoleKeyInfo input = Console.ReadKey();
+
                 switch (input.Key)
                 {
                     case ConsoleKey.Tab:                //if player presses tabs looking for help
@@ -123,12 +124,11 @@ namespace kriss.Nodes
             Console.CursorTop = Console.WindowHeight - 1;
             Console.CursorLeft = 0;
 
-            if (DataLayer.CurrentChapter.Id == 2)
-                if (Id == 2) //first action node. this if clause is to mock player just the first time they use help
-                {
-                    Console.CursorTop -= 1;
-                    Console.WriteLine("\\> you pressed tab for help. noob.");
-                }
+            if (DataLayer.CheckChap2Node2())
+            {
+                Console.CursorTop -= 1;
+                Console.WriteLine("\\> you pressed tab for help. noob.");
+            }
 
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("\\>");
@@ -190,12 +190,12 @@ namespace kriss.Nodes
                 {
                     if (act.Objects.Count == 0)                                 //...and is objectless...
                     {
-                        if (!NodeMethods.Evaluate(act.Condition))               //if for some reason Kriss can't do it, say it...
+                        if (!DataLayer.Evaluate(act.Condition))               //if for some reason Kriss can't do it, say it...
                             CustomRefusal(act.Condition.Refusal);
                         else
                         {
                             if (act.Effect != null)                             //in case the action has an Effect (inventory)
-                                NodeMethods.StoreItem(act.Effect);
+                                DataLayer.StoreItem(act.Effect);
 
                             DisplaySuccess(act.Answer, act.ChildId);            //...just do it
                         }
@@ -212,12 +212,12 @@ namespace kriss.Nodes
                                 {
                                     if (obj == word)                            //the action is right, and there is a acceptable object specified
                                     {
-                                        if (!NodeMethods.Evaluate(o.Condition)) //if for some reason Kriss can't do it, say it...
+                                        if (!DataLayer.Evaluate(o.Condition)) //if for some reason Kriss can't do it, say it...
                                             CustomRefusal(o.Condition.Refusal);
                                         else                                    //...otherwise, do it
                                         {
                                             if (o.Effect != null)               //in case the obj has an Effect (inventory)
-                                                NodeMethods.StoreItem(o.Effect);
+                                                DataLayer.StoreItem(o.Effect);
 
                                             DisplaySuccess(o.Answer, o.ChildId);
                                         }
@@ -259,7 +259,7 @@ namespace kriss.Nodes
             BottomMessage = refusal;
             BottomMessageColor = ConsoleColor.Cyan;
 
-            NodeMethods.TextFlow(true, refusal, ConsoleColor.Cyan);
+            Typist.FlowingText(refusal, ConsoleColor.Cyan);
             Console.WriteLine();
             Console.WriteLine();
 
@@ -277,7 +277,7 @@ namespace kriss.Nodes
                 Console.CursorTop = MeasureMessage(answer);
                 Console.CursorLeft = Console.WindowLeft;
 
-                NodeMethods.TextFlow(true, answer, ConsoleColor.DarkYellow);
+                Typist.FlowingText(answer, ConsoleColor.DarkYellow);
                 Console.WriteLine();
                 Console.WriteLine();
 
@@ -300,7 +300,7 @@ namespace kriss.Nodes
         internal void RedrawNode(bool isDeleting = false)
         {
             Console.Clear();
-            NodeMethods.TextFlow(false, Text);
+            Typist.InstantText(Text);
 
             if (isDeleting)
                 if (!string.IsNullOrWhiteSpace(BottomMessage))                      //decide if there is a Bottom Message and of which type
@@ -317,7 +317,7 @@ namespace kriss.Nodes
                             Console.CursorLeft = Console.WindowLeft;
                             break;
                     }
-                    NodeMethods.TextFlow(false, BottomMessage, BottomMessageColor);
+                    Typist.InstantText(BottomMessage, BottomMessageColor);
                 }
         }
 

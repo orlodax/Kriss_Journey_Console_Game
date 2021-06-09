@@ -9,13 +9,13 @@ namespace kriss.Nodes
     public class NChoice : NodeBase
     {
         int selectedRow = 0;
-        readonly List<Choice> visibleChoices = new List<Choice>();
+        readonly List<Choice> visibleChoices = new();
 
         public NChoice(NodeBase node) : base(node)
         {
             this.Init();
 
-            Thread.Sleep(NodeMethods.ParagraphBreak);
+            Thread.Sleep(1000);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
@@ -44,8 +44,10 @@ namespace kriss.Nodes
                             if (DataLayer.IsNodeVisited(nodeId))
                                 visibleChoices.Add(c);
                         }
+#if DEBUG
                         else
-                            throw new Exception("IsNodeVisited Condition wasn't an integer!!"); 
+                            throw new Exception("IsNodeVisited Condition wasn't an integer!!");
+#endif
                     }
                     else
                         visibleChoices.Add(c);
@@ -107,7 +109,7 @@ namespace kriss.Nodes
 
                 Console.Clear();
 
-                NodeMethods.TextFlow(false, Text);
+                Typist.InstantText(Text);
 
                 Console.WriteLine();
                 Console.WriteLine();
@@ -125,10 +127,10 @@ namespace kriss.Nodes
                     WaitForChoice();
                 }
             }
-            if (NodeMethods.Evaluate(choice.Condition))
+            if (DataLayer.Evaluate(choice.Condition))
             {
                 if (choice.Effect != null)
-                    NodeMethods.StoreItem(choice.Effect);
+                    DataLayer.StoreItem(choice.Effect);
 
                 if (choice.UnHide.HasValue)                  //if this choice unlocks others
                 {
@@ -145,7 +147,7 @@ namespace kriss.Nodes
                 Console.CursorTop = Console.WindowHeight - 4;
                 Console.CursorLeft = Console.WindowLeft;
 
-                NodeMethods.TextFlow(true, choice.Refusal, ConsoleColor.DarkYellow);
+                Typist.FlowingText(choice.Refusal, ConsoleColor.DarkYellow);
 
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -160,7 +162,7 @@ namespace kriss.Nodes
         {
             Console.Clear();
 
-            NodeMethods.TextFlow(false, Text);
+            Typist.InstantText(Text);
 
             Console.WriteLine();
             Console.WriteLine();

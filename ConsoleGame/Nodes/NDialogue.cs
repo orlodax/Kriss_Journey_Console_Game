@@ -19,12 +19,12 @@ namespace kriss.Nodes
 
         void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
         {
+            if (lineId == 0)
+                this.Init();
+
             if (IsVisited)
                 isLineFlowing = false;
-
-//#if DEBUG
-//            isLineFlowing = false;
-//#endif
+            // else, it depends
 
             Dialogue currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
 
@@ -32,38 +32,17 @@ namespace kriss.Nodes
 
             if(currentLine.PreComment != null)
             {
-                NodeMethods.TextFlow(isLineFlowing, currentLine.PreComment);
-                if (isLineFlowing)
-                    Thread.Sleep(NodeMethods.ParagraphBreak);
+                Typist.RenderNonSpeechPart(isLineFlowing, currentLine.PreComment);
 
                 Console.WriteLine();
                 Console.WriteLine();
             }
 
             if (currentLine.Line != null)
-            {
-                if (currentLine.IsTelepathy)
-                    NodeMethods.TextFlow(isLineFlowing, "<<" + currentLine.Line + ">> ", (ConsoleColor)currentLine.Actor);
-                else
-                    NodeMethods.TextFlow(isLineFlowing, "\"" + currentLine.Line + "\" ", (ConsoleColor)currentLine.Actor);
-            }
-            
-            if(currentLine.Comment != null)      
-            {
-                if (isLineFlowing)
-                {
-                    Thread.Sleep(NodeMethods.ParagraphBreak);
+                Typist.RenderLine(isLineFlowing, currentLine.Line, (ConsoleColor)currentLine.Actor, currentLine.IsTelepathy);
 
-                    NodeMethods.TextFlow(isLineFlowing, currentLine.Comment);
-
-                    Thread.Sleep(NodeMethods.ParagraphBreak);
-                }
-                else
-                    NodeMethods.TextFlow(isLineFlowing, currentLine.Comment);
-            }
-            else
-                if (isLineFlowing)
-                    Thread.Sleep(NodeMethods.ParagraphBreak);                       //if there was no comment after the line, wait a bit
+            if (currentLine.Comment != null)      
+                Typist.RenderNonSpeechPart(isLineFlowing, currentLine.Comment);
 
             Console.WriteLine();
             Console.WriteLine();
@@ -76,66 +55,64 @@ namespace kriss.Nodes
         #endregion
 
             if (currentLine.ChildId.HasValue)                                       //if it encounters a link, jump to the node
-            {      
+            {
                 HoldScreen();
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
             if (currentLine.Replies!= null && currentLine.Replies.Any())            //if there are replies inside, display choice
             {
+                for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)           //draw the replies, select them
+                {
+                    if (i == selectedRow)
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkCyan;
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    Console.Write("\t");
+                    Console.Write((i + 1) + ". " + Dialogues[lineId].Replies[i].Line);
+
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine();
+                    Console.CursorLeft = Console.WindowLeft;
+                }
+
+                while (Console.KeyAvailable)
+                    Console.ReadKey(true);
+                key = Console.ReadKey(true);
+
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Console.Clear();
+
+                    if (currentLine.Replies[selectedRow].ChildId.HasValue)                 //on selecion, either 
+                    {
+                        this.AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
+                    }
+                    else
+                    {
+                        int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine);
+                        RecursiveDialogues(nextLineId);                                   //step to the next line
+                    }
+                }
+
+                if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
+                    selectedRow--;
+                if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
+                    selectedRow++;
+
                 do
                 {
-                    for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)       //draw the replies, select them
-                    {
-                        if (i == selectedRow)
-                        {
-                            Console.BackgroundColor = ConsoleColor.DarkCyan;
-                            Console.ForegroundColor = ConsoleColor.White;
-                        }
-                        Console.Write("\t");
-                        Console.Write((i + 1) + ". " + Dialogues[lineId].Replies[i].Line);
+                    if (lineId <= 0)
+                        break;
 
-                        Console.ResetColor();
-                        Console.ForegroundColor = ConsoleColor.DarkCyan;
-                        Console.WriteLine();
-                        Console.CursorLeft = Console.WindowLeft;
-                    }
-
-                    while (Console.KeyAvailable)
-                        Console.ReadKey(true);
-                    key = Console.ReadKey(true);
-
-                    int thisLineId = Dialogues.IndexOf(currentLine);
-                    do
-                        thisLineId--;
-                    while (Dialogues[thisLineId - 1].Break == false);
-
-                    if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
-                    {
-                        selectedRow--;
-                        Console.Clear();
-                        RecursiveDialogues(thisLineId, false);               //redraw the node to allow the selection effect
-                    }
-                    if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < Dialogues[lineId].Replies.Count - 1)
-                    {
-                        selectedRow++;
-                        Console.Clear();
-                        RecursiveDialogues(thisLineId, false);               //redraw the node to allow the selection effect
-                    }
-
-                } while (key.Key != ConsoleKey.Enter);
+                    lineId--;
+                }
+                while (Dialogues[lineId].Break == false);
 
                 Console.Clear();
-
-                if (currentLine.Replies[selectedRow].ChildId.HasValue)                 //on selecion, either 
-                {
-                    this.AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
-                }
-                else
-                {
-                    int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine);
-                    RecursiveDialogues(nextLineId);                                   //step to the next line
-                }
+                RecursiveDialogues(lineId, false);               //redraw the node to allow the selection effect
             }
             else
             {
@@ -152,7 +129,7 @@ namespace kriss.Nodes
             }
         }
 
-        void HoldScreen()
+        static void HoldScreen()
         {
             Console.WriteLine();
             Console.WriteLine();

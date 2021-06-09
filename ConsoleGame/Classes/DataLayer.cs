@@ -10,9 +10,11 @@ namespace kriss.Classes
 {
     public static class DataLayer
     {
-        public static Status Status { get; set; }
         public static List<Chapter> Chapters { get; private set; } = new();
-        public static Chapter CurrentChapter { get; set; }
+
+        static Status Status;
+        static Chapter CurrentChapter;
+        static NodeBase CurrentNode;
 
         public static void Init()
         {
@@ -22,10 +24,7 @@ namespace kriss.Classes
             // Load Status
             string statusFile = Path.Combine(AppContext.BaseDirectory, "status.json");
             if (File.Exists(statusFile))
-            {
-                string json = File.ReadAllText(statusFile);
-                Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(json);
-            }
+                Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(File.ReadAllText(statusFile));
             else
                 WriteStatusToDisk(); // init file if not present
 
@@ -82,8 +81,8 @@ namespace kriss.Classes
             Console.WriteLine();
 
             //debug: start from. Comment for default start
-            //CurrentChapter = Chapters[3];
-            //LoadNode(3);
+            CurrentChapter = Chapters[4];
+            LoadNode(5);
             //debug
 
             int chapterId = 1;
@@ -130,7 +129,7 @@ namespace kriss.Classes
         /// </summary>
         /// <param name="chapterId" the chapter number></param>
         /// <returns></returns>
-        public static void StartChapter(int chapterId)
+        static void StartChapter(int chapterId)
         {
             CurrentChapter = Chapters.Find(c => c.Id == chapterId);
 
@@ -139,6 +138,10 @@ namespace kriss.Classes
             WriteStatusToDisk();
 
             LoadNode(1);
+        }
+        public static void StartNextChapter()
+        {
+            StartChapter(CurrentChapter.Id + 1);
         }
 
         /// <summary>
@@ -149,10 +152,10 @@ namespace kriss.Classes
         {
             if (nodeId.HasValue)
             {
-                NodeBase newNode = SearchNodeById(nodeId.Value);
-                newNode.IsVisited = IsNodeVisited(newNode.Id);
+                CurrentNode = SearchNodeById(nodeId.Value);
+                CurrentNode.IsVisited = IsNodeVisited(CurrentNode.Id);
 
-                BuildNode(newNode);
+                BuildNode(CurrentNode);
             }
 #if DEBUG
             else
@@ -179,21 +182,15 @@ namespace kriss.Classes
         {
             if (node != null)
             {
-                switch (node.Type)
+                return node.Type switch
                 {
-                    case "Story":
-                        return new NStory(node);
-                    case "Choice":
-                        return new NChoice(node);
-                    case "Dialogue":
-                        return new NDialogue(node);
-                    case "Action":
-                        return new NAction(node);
-                    case "MiniGame01":
-                        return new MiniGame01(node);
-                    default:
-                        break;
-                }
+                    "Story" => new NStory(node),
+                    "Choice" => new NChoice(node),
+                    "Dialogue" => new NDialogue(node),
+                    "Action" => new NAction(node),
+                    "MiniGame01" => new MiniGame01(node),
+                    _ => throw new NotImplementedException()
+                };
             }
             return null;
         }
@@ -259,6 +256,33 @@ namespace kriss.Classes
         }
 
         /// <summary>
+        /// Decides upon the condition of a choice, action, object etc
+        /// </summary>
+        /// <param name="Condition"></param>
+        /// <returns></returns>
+        public static bool Evaluate(Condition Condition)                            // check according to the condition
+        {
+            if (Condition != null)
+            {
+                return Condition.Type switch
+                {
+                    "isNodeVisited" => IsNodeVisited(Convert.ToInt32(Condition.Item)),
+                    _ => Status.Inventory.Contains(Condition.Item),
+                };
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// You picked something up
+        /// </summary>
+        /// <param name="effect"></param>
+        public static void StoreItem(Effect effect)       // consequent modify of inventory
+        {
+            Status.Inventory.Add(effect.GainItem);
+        }
+
+        /// <summary>
         /// Dump any unhandled exception to txt file
         /// </summary>
         /// <param name="sender"></param>
@@ -266,7 +290,28 @@ namespace kriss.Classes
         static void LogError(object sender, UnhandledExceptionEventArgs e)
         {
             string path = Path.Combine(AppContext.BaseDirectory, $"errorLog.txt");
-            File.WriteAllText(path, e.ExceptionObject.ToString());
+
+            System.Text.StringBuilder sb = new();
+            sb.AppendLine(e.ExceptionObject.ToString());
+
+            if (CurrentChapter != null)
+                sb.AppendLine("Chapter: " + CurrentChapter.Id);
+
+            if (CurrentNode != null)
+                sb.AppendLine("Node: " + CurrentNode.Id);
+
+            File.WriteAllText(path, sb.ToString());
         }
+
+        #region Jokes
+        public static bool CheckChap2Node2()
+        {
+            //first action node. to mock player just the first time they use help
+            if (CurrentChapter.Id == 2 && CurrentNode.Id == 2)
+                return true;
+
+            return false;
+        }
+        #endregion
     }
 }
