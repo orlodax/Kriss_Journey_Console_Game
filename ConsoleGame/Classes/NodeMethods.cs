@@ -1,7 +1,5 @@
 ﻿using lybra;
 using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace kriss.Classes
 {

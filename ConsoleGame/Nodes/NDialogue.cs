@@ -44,19 +44,16 @@ namespace kriss.Nodes
             if (currentLine.Comment != null)      
                 Typist.RenderNonSpeechPart(isLineFlowing, currentLine.Comment);
 
-            Console.WriteLine();
-            Console.WriteLine();
-
             if (currentLine.Break || (IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1))
             {
-                HoldScreen();                                                       //pause if it's marked as break or if it's last line of chapter
+                Typist.WaitForKey(4);                                 //pause if it's marked as break or if it's last line of chapter
                 Console.Clear();
             }
         #endregion
 
             if (currentLine.ChildId.HasValue)                                       //if it encounters a link, jump to the node
             {
-                HoldScreen();
+                Typist.WaitForKey(4);
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
@@ -86,15 +83,10 @@ namespace kriss.Nodes
                 {
                     Console.Clear();
 
-                    if (currentLine.Replies[selectedRow].ChildId.HasValue)                 //on selecion, either 
-                    {
+                    if (currentLine.Replies[selectedRow].ChildId.HasValue)                  //on selecion, either 
                         this.AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
-                    }
-                    else
-                    {
-                        int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine);
-                        RecursiveDialogues(nextLineId);                                   //step to the next line
-                    }
+                    else                                                                    //or jump to the next line
+                        RecursiveDialogues(Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine));                                   
                 }
 
                 if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
@@ -127,19 +119,6 @@ namespace kriss.Nodes
 
                 this.AdvanceToNext(ChildId);
             }
-        }
-
-        static void HoldScreen()
-        {
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.Write("Press any key...");
-
-            while (Console.KeyAvailable)
-                Console.ReadKey(true);
-
-            Console.ReadKey(true);
         }
     }
 }

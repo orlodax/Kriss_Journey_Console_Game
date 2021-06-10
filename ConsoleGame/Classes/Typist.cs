@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace kriss.Classes
@@ -161,6 +162,28 @@ namespace kriss.Classes
 
             if (!IsDebug())
                 Thread.Sleep(ParagraphBreak);
+        }
+
+        public static void RenderPrompt(List<ConsoleKeyInfo> keysPressed)
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write("\\>");
+            Console.CursorLeft += 1;
+
+            //if redrawing after backspacing, rewrite stack
+            if (keysPressed.Any())
+                for (int i = 0; i < keysPressed.Count; i++)
+                    Console.Write(keysPressed[i].KeyChar.ToString());
+        }
+
+        public static void WaitForKey(int numberOfNewLines)
+        {
+            for (int i = 0; i < numberOfNewLines; i++)
+                Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write("Press a key to continue...");
+            Console.ReadKey(true);
         }
 
         static bool IsDebug()

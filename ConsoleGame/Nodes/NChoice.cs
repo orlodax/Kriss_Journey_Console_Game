@@ -2,7 +2,6 @@
 using lybra;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace kriss.Nodes
 {
@@ -15,7 +14,6 @@ namespace kriss.Nodes
         {
             this.Init();
 
-            Thread.Sleep(1000);
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
@@ -44,10 +42,8 @@ namespace kriss.Nodes
                             if (DataLayer.IsNodeVisited(nodeId))
                                 visibleChoices.Add(c);
                         }
-#if DEBUG
                         else
                             throw new Exception("IsNodeVisited Condition wasn't an integer!!");
-#endif
                     }
                     else
                         visibleChoices.Add(c);
@@ -148,11 +144,7 @@ namespace kriss.Nodes
                 Console.CursorLeft = Console.WindowLeft;
 
                 Typist.FlowingText(choice.Refusal, ConsoleColor.DarkYellow);
-
-                Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("Press any key...");
-                Console.ReadKey(true);
+                Typist.WaitForKey(1);
 
                 RedrawNode();
                 WaitForChoice();

@@ -25,13 +25,7 @@ namespace kriss.Nodes
             Console.CursorTop = Console.WindowHeight - 1;
             Console.CursorLeft = 0;
 
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("\\>");
-            Console.CursorLeft += 1;
-
-            if (keysPressed.Any())
-                for (int i = 0; i < keysPressed.Count; i++)
-                    Console.Write(keysPressed[i].KeyChar.ToString());
+            Typist.RenderPrompt(keysPressed);
         }
         internal override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
         {

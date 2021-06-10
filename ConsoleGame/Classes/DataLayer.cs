@@ -47,7 +47,8 @@ namespace kriss.Classes
             else
                 CurrentChapter = Chapters.First();
 
-            DisplayMenu();
+            if (!Console.IsOutputRedirected)
+                DisplayMenu();
         }
 
         /// <summary>
@@ -81,8 +82,8 @@ namespace kriss.Classes
             Console.WriteLine();
 
             //debug: start from. Comment for default start
-            CurrentChapter = Chapters[4];
-            LoadNode(5);
+            //CurrentChapter = Chapters[4];
+            //LoadNode(5);
             //debug
 
             int chapterId = 1;
@@ -157,10 +158,8 @@ namespace kriss.Classes
 
                 BuildNode(CurrentNode);
             }
-#if DEBUG
             else
-                Console.WriteLine("Id was null and/or node wasn't the last in the chapter!");
-#endif
+                throw new Exception("Id was null and/or node wasn't the last in the chapter!");
         }
 
         /// <summary>

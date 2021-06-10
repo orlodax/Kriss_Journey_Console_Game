@@ -11,7 +11,7 @@ namespace kriss.Nodes
     public class NAction : NodeBase
     {
         Action act = null;
-        internal readonly List<ConsoleKeyInfo> keysPressed = new List<ConsoleKeyInfo>();
+        internal readonly List<ConsoleKeyInfo> keysPressed = new();
         internal string BottomMessage = string.Empty;
         ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
@@ -34,12 +34,7 @@ namespace kriss.Nodes
                 Console.WriteLine(" You can't or won't do that. Try again.");
             }
 
-            Console.Write(" \\> ");
-            
-            //if redrawing after backspacing, rewrite stack
-            if (keysPressed.Any())
-                for (int i = 0; i < keysPressed.Count; i++)
-                    Console.Write(keysPressed[i].KeyChar.ToString());
+            Typist.RenderPrompt(keysPressed);
 
             do
             {
@@ -86,10 +81,8 @@ namespace kriss.Nodes
                     if (verb != null)
                     {
                         if (action.Objects.Any())
-                        {
                             foreach (Object objContainer in action.Objects)                 //when the action is found, iterate through every object term
                                 helpObjects.Add(objContainer.Objs[0]);
-                        }
                         else
                             helpObjects.Add("Just do it.");
 
@@ -130,13 +123,7 @@ namespace kriss.Nodes
                 Console.WriteLine("\\> you pressed tab for help. noob.");
             }
 
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write("\\>");
-            Console.CursorLeft += 1;
-
-            if (keysPressed.Any())
-                for (int i = 0; i < keysPressed.Count; i++)
-                    Console.Write(keysPressed[i].KeyChar.ToString());
+            Typist.RenderPrompt(keysPressed);
         }
         void BackSpacePressed(List<ConsoleKeyInfo> keysPressed)
         {
@@ -259,7 +246,7 @@ namespace kriss.Nodes
             BottomMessage = refusal;
             BottomMessageColor = ConsoleColor.Cyan;
 
-            Typist.FlowingText(refusal, ConsoleColor.Cyan);
+            Typist.FlowingText(refusal, BottomMessageColor);
             Console.WriteLine();
             Console.WriteLine();
 
@@ -277,16 +264,11 @@ namespace kriss.Nodes
                 Console.CursorTop = MeasureMessage(answer);
                 Console.CursorLeft = Console.WindowLeft;
 
-                Typist.FlowingText(answer, ConsoleColor.DarkYellow);
-                Console.WriteLine();
-                Console.WriteLine();
+                Typist.FlowingText(answer, BottomMessageColor);
 
                 if (childId.HasValue)
                 {
-                    Console.WriteLine();
-                    Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.Write("Press any key...");
-                    Console.ReadKey(true);
+                    Typist.WaitForKey(3);
 
                     this.AdvanceToNext(childId.Value);
                 }
