@@ -25,8 +25,8 @@ namespace kriss.Classes
 
         public static void AdvanceToNext(this NodeBase node, int childId)
         {
-            // mark as visited
-            DataLayer.SaveProgress(node);
+            // mark caller as visited
+            DataLayer.SaveProgress();
 
             // if it closes story or section, go back to menu
             if (node.IsClosing)

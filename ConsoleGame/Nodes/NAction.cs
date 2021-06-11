@@ -163,8 +163,7 @@ namespace kriss.Nodes
                 {
                     foreach (Action action in Actions)
                     {
-                        string verb = action.Verbs.Find(v => v.Equals(word));
-                        if (verb != null)
+                        if  (action.Verbs.Contains(word))
                         {
                             act = action;
                             matchingVerb = word;                                //store the typed verb which triggered the action
@@ -173,66 +172,44 @@ namespace kriss.Nodes
                     }
                 }
 
-                if (act != null)                                                //if there's an action available...
+                if (act != null)                                              //if there's an action available...
                 {
-                    if (act.Objects.Count == 0)                                 //...and is objectless...
-                    {
-                        if (!DataLayer.Evaluate(act.Condition))               //if for some reason Kriss can't do it, say it...
-                            CustomRefusal(act.Condition.Refusal);
-                        else
-                        {
-                            if (act.Effect != null)                             //in case the action has an Effect (inventory)
-                                DataLayer.StoreItem(act.Effect);
-
-                            DisplaySuccess(act.Answer, act.ChildId);            //...just do it
-                        }
-                    }
+                    if (!act.Objects.Any())                                   //...and is objectless...
+                        ProcessAction(act);
                     else
                     {                                                           //...otherwise, examine Objects 
-                        for (int i = 0; i < act.Objects.Count; i++)             
-                        {
-                            Object o = act.Objects[i];
-
+                        foreach (Object o in act.Objects)             
                             foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
-                            {
-                                foreach (string obj in o.Objs)
-                                {
-                                    if (obj == word)                            //the action is right, and there is a acceptable object specified
-                                    {
-                                        if (!DataLayer.Evaluate(o.Condition)) //if for some reason Kriss can't do it, say it...
-                                            CustomRefusal(o.Condition.Refusal);
-                                        else                                    //...otherwise, do it
-                                        {
-                                            if (o.Effect != null)               //in case the obj has an Effect (inventory)
-                                                DataLayer.StoreItem(o.Effect);
+                                if (o.Objs.Contains(word))
+                                    ProcessAction(o);                            //the action is right, and there is a acceptable object specified
 
-                                            DisplaySuccess(o.Answer, o.ChildId);
-                                        }
-                                    }
-                                }
-                            }
-                        }
                         if (act.Answer != null)
                             DisplaySuccess(act.Answer, act.ChildId);
                         else
                             CustomRefusal(act.GetOpinion(matchingVerb));        //the action is right, but no required object is specified
                     }
                 }
-                else                                                            //if there's no action available, redraw node and display standard refuse
-                {
-                    RedrawNode();
-                    BottomMessage = string.Empty;
-                    PrepareForAction(false);
-                }
             }
-            else
-            {
-                RedrawNode();
-                BottomMessage = string.Empty;
-                PrepareForAction(true);
-            }
+
+            //if there's no action available/no keys are pressed, redraw node and display standard refuse
+            RedrawNode();
+            BottomMessage = string.Empty;
+            PrepareForAction(true);
         }
         #endregion
+
+        void ProcessAction(IAction action)
+        {
+            if (!DataLayer.Evaluate(action.Condition))              //if for some reason Kriss can't do it, say it...
+                CustomRefusal(action.Condition.Refusal);
+            else                                                    //...otherwise, do it
+            {
+                if (action.Effect != null)                          //in case the obj has an Effect (inventory)
+                    DataLayer.StoreItem(action.Effect);
+
+                DisplaySuccess(action.Answer, action.ChildId);
+            }
+        }
 
         void CustomRefusal(string refusal)
         {

@@ -2,7 +2,7 @@
 
 namespace lybra
 {
-    public class Action
+    public class Action : IAction
     {
         public List<string> Verbs { get; set; } //verb of the action
         public int? ChildId { get; set; } //key for matching next node
@@ -48,12 +48,20 @@ namespace lybra
             }
         }
     }
-    public class Object
+    public class Object : IAction
     {
         public List<string> Objs { get; set; }  //objects of the action
         public string Answer { get; set; }      //answer for incomplete player requests 
         public int? ChildId { get; set; }       //key for matching next node
         public Effect Effect { get; set; }      //consequence from the object
         public Condition Condition { get; set; }//combinations of actions and objects can have conditions too
+    }
+
+    public interface IAction
+    {
+        Condition Condition { get; set; }
+        Effect Effect { get; set; }
+        string Answer { get; set; }
+        int? ChildId { get; set; }
     }
 }

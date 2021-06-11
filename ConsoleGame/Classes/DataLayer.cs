@@ -42,10 +42,10 @@ namespace kriss.Classes
             }
             while (true);
 
-            if (Status.VisitedNodes.Any())
-                CurrentChapter = Chapters.Find(c => c.Id == Status.VisitedNodes.Keys.Max());
-            else
-                CurrentChapter = Chapters.First();
+            //debug: start from. Comment for default start
+            //CurrentChapter = Chapters[4];
+            //LoadNode(5);
+            //debug
 
             if (!Console.IsOutputRedirected)
                 DisplayMenu();
@@ -80,11 +80,6 @@ namespace kriss.Classes
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine();
-
-            //debug: start from. Comment for default start
-            //CurrentChapter = Chapters[4];
-            //LoadNode(5);
-            //debug
 
             int chapterId = 1;
 
@@ -188,7 +183,7 @@ namespace kriss.Classes
                     "Dialogue" => new NDialogue(node),
                     "Action" => new NAction(node),
                     "MiniGame01" => new MiniGame01(node),
-                    _ => throw new NotImplementedException()
+                    _ => throw new Exception(node.Type + " node type does not exist.")
                 };
             }
             return null;
@@ -197,16 +192,16 @@ namespace kriss.Classes
         /// <summary>
         /// Marks nodes as done, and if they are last of chapter, also chapter as done
         /// </summary>
-        public static void SaveProgress(NodeBase currentNode)
+        public static void SaveProgress()
         {
             if (!Status.VisitedNodes.ContainsKey(CurrentChapter.Id))
                 Status.VisitedNodes[CurrentChapter.Id] = new List<int>();
 
             if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
             {
-                if (!visitedNodes.Contains(currentNode.Id))
+                if (!visitedNodes.Contains(CurrentNode.Id))
                 {
-                    visitedNodes.Add(currentNode.Id);
+                    visitedNodes.Add(CurrentNode.Id);
                     Status.VisitedNodes[CurrentChapter.Id] = visitedNodes;
                 }
             }
