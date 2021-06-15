@@ -57,6 +57,9 @@ namespace kriss.Nodes
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
 
+            Console.WriteLine();
+            Console.WriteLine();
+
             if (currentLine.Replies!= null && currentLine.Replies.Any())            //if there are replies inside, display choice
             {
                 for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)           //draw the replies, select them
