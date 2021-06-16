@@ -18,16 +18,16 @@ namespace kriss.Nodes
         public NAction(NodeBase node) : base(node)
         {
             this.Init();
-            PrepareForAction(true);
+            PrepareForAction();
         }
 
-        internal void PrepareForAction(bool isFirstTimeDisplayed)
+        internal void PrepareForAction(bool isFirstTimeDisplayed = true)
         {
             ///go to bottom line and prepare prompt
             Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
             Console.CursorLeft = Console.WindowLeft + Console.WindowWidth - 1;
 
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             if (!isFirstTimeDisplayed)
             {
                 Console.CursorTop -= 1;
@@ -67,7 +67,7 @@ namespace kriss.Nodes
         {
             RedrawNode();
 
-            List<string> helpObjects = new List<string>();                              //if this gets populated, show object help not verbs
+            List<string> helpObjects = new();                                       //if this gets populated, show object help not verbs
 
             string[] words = ExtractWords();
 
@@ -77,11 +77,11 @@ namespace kriss.Nodes
             {
                 foreach (Action action in Actions)
                 {
-                    string verb = action.Verbs.Find(v => v.Equals(words[0]));         //look into each action's verbs to see if there is our typed word
+                    string verb = action.Verbs.Find(v => v.Equals(words[0]));       //look into each action's verbs to see if there is our typed word
                     if (verb != null)
                     {
                         if (action.Objects.Any())
-                            foreach (Object objContainer in action.Objects)                 //when the action is found, iterate through every object term
+                            foreach (Object objContainer in action.Objects)         //when the action is found, iterate through every object term
                                 helpObjects.Add(objContainer.Objs[0]);
                         else
                             helpObjects.Add("Just do it.");
@@ -149,6 +149,8 @@ namespace kriss.Nodes
         }
         internal virtual void EnterPressed(List<ConsoleKeyInfo> keysPressed)
         {
+            bool isFirstTimeDisplayed = true;
+
             if (keysPressed.Any())
             {
                 act = null;
@@ -172,16 +174,16 @@ namespace kriss.Nodes
                     }
                 }
 
-                if (act != null)                                              //if there's an action available...
+                if (act != null)                                                //if there's an action available...
                 {
-                    if (!act.Objects.Any())                                   //...and is objectless...
+                    if (!act.Objects.Any())                                     //...and is objectless...
                         ProcessAction(act);
                     else
                     {                                                           //...otherwise, examine Objects 
-                        foreach (Object o in act.Objects)             
+                        foreach (Object o in act.Objects)
                             foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                                 if (o.Objs.Contains(word))
-                                    ProcessAction(o);                            //the action is right, and there is a acceptable object specified
+                                    ProcessAction(o);                           //the action is right, and there is a acceptable object specified
 
                         if (act.Answer != null)
                             DisplaySuccess(act.Answer, act.ChildId);
@@ -189,12 +191,14 @@ namespace kriss.Nodes
                             CustomRefusal(act.GetOpinion(matchingVerb));        //the action is right, but no required object is specified
                     }
                 }
+                else
+                    isFirstTimeDisplayed = false;
             }
 
             //if there's no action available/no keys are pressed, redraw node and display standard refuse
             RedrawNode();
             BottomMessage = string.Empty;
-            PrepareForAction(true);
+            PrepareForAction(isFirstTimeDisplayed);
         }
         #endregion
 
