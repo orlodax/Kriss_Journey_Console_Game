@@ -8,7 +8,7 @@ namespace kriss.Classes
     public static class Typist
     {
         static readonly int FlowDelay = 10; // fine-tunes the speed of TextFlow
-        static readonly int ParagraphBreak = 1000; // # arbitrary pause
+        static readonly int ParagraphBreak = 1000; // "#" arbitrary pause
         static readonly int ShortPause = 700; // comma pause
         static readonly int LongPause = 1200; // dot pause
         static readonly List<string> NotToPause = new() { ".", "!", "?", "\"", ">", ")", "]", "}", ":" }; // symbols after short pause that must not trigger another pause
@@ -121,9 +121,7 @@ namespace kriss.Classes
                             Thread.Sleep(flow);
                         }
                         else if (c.ToString().Equals("#"))
-                        {
                             Thread.Sleep(paragraph);
-                        }
                     }
                     prevChar = c;
                 }
@@ -149,9 +147,9 @@ namespace kriss.Classes
         public static void RenderLine(bool isFlowing, string line, ConsoleColor actorColor, bool isTelepathy)
         {
             if (isTelepathy)
-                RenderText(isFlowing, "<<" + line + ">>", actorColor);
+                RenderText(isFlowing, "<<" + line + ">> ", actorColor);
             else
-                RenderText(isFlowing, "\"" + line + "\"", actorColor);
+                RenderText(isFlowing, "\"" + line + "\" ", actorColor);
 
             if(!IsDebug())
                 Thread.Sleep(ParagraphBreak);

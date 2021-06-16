@@ -43,8 +43,8 @@ namespace kriss.Classes
             while (true);
 
             //debug: start from. Comment for default start
-            //CurrentChapter = Chapters[4];
-            //LoadNode(5);
+            //CurrentChapter = Chapters[7];
+            //LoadNode(9);
             //debug
 
             if (!Console.IsOutputRedirected)
@@ -87,7 +87,7 @@ namespace kriss.Classes
             {
                 Console.WriteLine("Welcome back, traveler. This is your journey so far.");
                 Console.WriteLine("This game still features autosave, at least for now.");
-                Console.WriteLine("Press a number to select a chapter.");
+                Console.WriteLine("Type a number and press enter to select a chapter.");
                 Console.WriteLine();
 
                 int lastChapter = Status.VisitedNodes.Keys.Max();
@@ -95,13 +95,13 @@ namespace kriss.Classes
                 for (int i = 0; i < lastChapter; i++)
                     Console.WriteLine(i + 1 + ". " + Chapters[i].Title);
 
+                Console.WriteLine();
+
                 bool isValid = false;
 
                 do
                 {
-                    ConsoleKeyInfo key = Console.ReadKey(true);
-
-                    if (int.TryParse(key.KeyChar.ToString(), out int digit))
+                    if (int.TryParse(Console.ReadLine(), out int digit))
                         if (isValid = digit <= lastChapter)
                             chapterId = digit;
                 }

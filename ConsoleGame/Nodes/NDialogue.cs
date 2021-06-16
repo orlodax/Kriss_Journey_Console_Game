@@ -2,7 +2,6 @@
 using lybra;
 using System;
 using System.Linq;
-using System.Threading;
 
 namespace kriss.Nodes
 {
@@ -14,19 +13,19 @@ namespace kriss.Nodes
         public NDialogue(NodeBase node) : base(node)
         {
             this.Init();
-            RecursiveDialogues();
+            RecursiveDialogues(isFirstDraw: true);
         }
 
-        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true)           //lineid iterates over elements of dialogues[] 
+        void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true, bool isFirstDraw = false)           //lineid iterates over elements of dialogues[] 
         {
-            if (lineId == 0)
+            if (lineId == 0 && !isFirstDraw)
                 this.Init();
 
             if (IsVisited)
                 isLineFlowing = false;
             // else, it depends
 
-            Dialogue currentLine = Dialogues[lineId];                                    //cureent object selected in the iteration
+            Dialogue currentLine = Dialogues[lineId];                               //cureent object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)
 
@@ -44,21 +43,21 @@ namespace kriss.Nodes
             if (currentLine.Comment != null)      
                 Typist.RenderNonSpeechPart(isLineFlowing, currentLine.Comment);
 
+            Console.WriteLine();
+            Console.WriteLine();
+
             if (currentLine.Break || (IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1))
             {
-                Typist.WaitForKey(4);                                 //pause if it's marked as break or if it's last line of chapter
+                Typist.WaitForKey(2);                                 //pause if it's marked as break or if it's last line of chapter
                 Console.Clear();
             }
         #endregion
 
             if (currentLine.ChildId.HasValue)                                       //if it encounters a link, jump to the node
             {
-                Typist.WaitForKey(4);
+                Typist.WaitForKey(2);
                 this.AdvanceToNext(currentLine.ChildId.Value);
             }
-
-            Console.WriteLine();
-            Console.WriteLine();
 
             if (currentLine.Replies!= null && currentLine.Replies.Any())            //if there are replies inside, display choice
             {
@@ -105,6 +104,9 @@ namespace kriss.Nodes
                     lineId--;
                 }
                 while (Dialogues[lineId].Break == false);
+
+                if (Dialogues[lineId].Break)
+                    lineId++;
 
                 Console.Clear();
                 RecursiveDialogues(lineId, false);               //redraw the node to allow the selection effect

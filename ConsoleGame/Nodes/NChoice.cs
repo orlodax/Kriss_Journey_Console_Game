@@ -144,7 +144,7 @@ namespace kriss.Nodes
                 Console.CursorLeft = Console.WindowLeft;
 
                 Typist.FlowingText(choice.Refusal, ConsoleColor.DarkYellow);
-                Typist.WaitForKey(1);
+                Typist.WaitForKey(2);
 
                 RedrawNode();
                 WaitForChoice();
