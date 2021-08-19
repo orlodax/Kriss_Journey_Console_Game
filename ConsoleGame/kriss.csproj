@@ -2,10 +2,23 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Configurations>Debug;Release;L</Configurations>
-    <Platforms>AnyCPU;x64</Platforms>
-    <ApplicationIcon>sword.ico</ApplicationIcon>
+    <Platforms>AnyCPU</Platforms>
+    <ApplicationIcon>C:\Users\orlod\source\repos\ConsoleGame\ConsoleGame\swordIcon.ico</ApplicationIcon>
+    <PackageIcon>swordIcon.ico</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='L|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -53,6 +66,16 @@
 
   <ItemGroup>
     <_DeploymentManifestIconFile Remove="sword.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="sword.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Update="swordIcon.ico">
+      <Pack>True</Pack>
+    </None>
   </ItemGroup>
 
 </Project>

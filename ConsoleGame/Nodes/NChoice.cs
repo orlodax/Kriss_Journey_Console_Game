@@ -1,165 +1,161 @@
 ﻿using kriss.Classes;
 using lybra;
-using System;
-using System.Collections.Generic;
 
-namespace kriss.Nodes
+namespace kriss.Nodes;
+
+public class NChoice : NodeBase
 {
-    public class NChoice : NodeBase
+    int selectedRow = 0;
+    readonly List<Choice> visibleChoices = new();
+
+    public NChoice(NodeBase node) : base(node)
     {
-        int selectedRow = 0;
-        readonly List<Choice> visibleChoices = new();
+        this.Init();
 
-        public NChoice(NodeBase node) : base(node)
+        WriteLine();
+        WriteLine();
+        WriteLine();
+
+        DisplayChoices();
+
+        WaitForChoice();
+    }
+
+    /// <summary>
+    /// Displays the choices that satisfy a possible condition and that are not hidden
+    /// </summary>
+    void DisplayChoices() 
+    {
+        List<Choice> notHiddenChoices = Choices.FindAll(c => c.IsHidden == false);   //first filter out all non hidden ones
+
+        foreach (Choice c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
         {
-            this.Init();
-
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
-            DisplayChoices();
-
-            WaitForChoice();
-        }
-
-        /// <summary>
-        /// Displays the choices that satisfy a possible condition and that are not hidden
-        /// </summary>
-        void DisplayChoices() 
-        {
-            List<Choice> notHiddenChoices = Choices.FindAll(c => c.IsHidden == false);   //first filter out all non hidden ones
-
-            foreach (Choice c in notHiddenChoices)                                 //crawl trough looking for those which does not satisfy possible condition
+            Condition cond = c.Condition;
+            if (cond != null)
             {
-                Condition cond = c.Condition;
-                if (cond != null)
+                if (cond.Type == "isNodeVisited")
                 {
-                    if (cond.Type == "isNodeVisited")
+                    if (int.TryParse(cond.Item, out int nodeId))            //item in this case contains node id
                     {
-                        if (int.TryParse(cond.Item, out int nodeId))            //item in this case contains node id
-                        {
-                            if (DataLayer.IsNodeVisited(nodeId))
-                                visibleChoices.Add(c);
-                        }
-                        else
-                            throw new Exception("IsNodeVisited Condition wasn't an integer!!");
+                        if (DataLayer.IsNodeVisited(nodeId))
+                            visibleChoices.Add(c);
                     }
                     else
-                        visibleChoices.Add(c);
+                        throw new Exception("IsNodeVisited Condition wasn't an integer!!");
                 }
                 else
                     visibleChoices.Add(c);
             }
-        }
-
-        /// <summary>
-        /// Recursive method to capture user choice
-        /// </summary>
-        void WaitForChoice()
-        {
-            ConsoleKeyInfo key;
-            do
-            {
-                for (int i = 0; i < visibleChoices.Count; i++)
-                {
-                    ConsoleColor foreground = ConsoleColor.DarkCyan;
-                    ConsoleColor background = ConsoleColor.Black;
-                        
-                    if (Choices[i].IsPlayed)
-                    {
-                        foreground = ConsoleColor.DarkGray;
-                        if (i == selectedRow)
-                        {
-                            background = ConsoleColor.DarkGray;
-                            foreground = ConsoleColor.White;
-                        }
-                    }
-                    else
-                    {
-                        if (i == selectedRow)
-                        {
-                            background = ConsoleColor.DarkBlue;
-                            foreground = ConsoleColor.White;
-                        }
-                    }
-              
-                    Console.Write("\t");
-                    Console.ForegroundColor = foreground;
-                    Console.BackgroundColor = background;
-                    Console.Write((i + 1) + ". " + visibleChoices[i].Desc);
-
-                    Console.ResetColor();
-                    Console.WriteLine();
-                    Console.CursorLeft = Console.WindowLeft;
-                }
-
-                while (Console.KeyAvailable)
-                    Console.ReadKey(true);
-                key = Console.ReadKey(true);
-
-                if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
-                    selectedRow--;
-                if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < visibleChoices.Count - 1)
-                    selectedRow++;
-
-                Console.Clear();
-
-                Typist.InstantText(Text);
-
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine();
-            } 
-            while (key.Key != ConsoleKey.Enter);
-
-            Choice choice = visibleChoices[selectedRow];
-
-            if (choice.IsPlayed)
-            {
-                if (choice.IsNotRepeatable)
-                {
-                    RedrawNode();
-                    WaitForChoice();
-                }
-            }
-            if (DataLayer.Evaluate(choice.Condition))
-            {
-                if (choice.Effect != null)
-                    DataLayer.StoreItem(choice.Effect);
-
-                if (choice.UnHide.HasValue)                  //if this choice unlocks others
-                {
-                    int UnHide = (int)choice.UnHide;
-                    Choices[UnHide].IsHidden = false;
-                }
-
-                choice.IsPlayed = true;
-
-                this.AdvanceToNext(choice.ChildId);
-            }
             else
+                visibleChoices.Add(c);
+        }
+    }
+
+    /// <summary>
+    /// Recursive method to capture user choice
+    /// </summary>
+    void WaitForChoice()
+    {
+        ConsoleKeyInfo key;
+        do
+        {
+            for (int i = 0; i < visibleChoices.Count; i++)
             {
-                Console.CursorTop = Console.WindowHeight - 4;
-                Console.CursorLeft = Console.WindowLeft;
+                ConsoleColor foreground = ConsoleColor.DarkCyan;
+                ConsoleColor background = ConsoleColor.Black;
+                        
+                if (Choices[i].IsPlayed)
+                {
+                    foreground = ConsoleColor.DarkGray;
+                    if (i == selectedRow)
+                    {
+                        background = ConsoleColor.DarkGray;
+                        foreground = ConsoleColor.White;
+                    }
+                }
+                else
+                {
+                    if (i == selectedRow)
+                    {
+                        background = ConsoleColor.DarkBlue;
+                        foreground = ConsoleColor.White;
+                    }
+                }
+              
+                Write("\t");
+                ForegroundColor = foreground;
+                BackgroundColor = background;
+                Write((i + 1) + ". " + visibleChoices[i].Desc);
 
-                Typist.FlowingText(choice.Refusal, ConsoleColor.DarkYellow);
-                Typist.WaitForKey(2);
+                ResetColor();
+                WriteLine();
+                CursorLeft = WindowLeft;
+            }
 
+            while (KeyAvailable)
+                ReadKey(true);
+            key = ReadKey(true);
+
+            if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
+                selectedRow--;
+            if ((key.Key == ConsoleKey.DownArrow || key.Key == ConsoleKey.RightArrow) && selectedRow < visibleChoices.Count - 1)
+                selectedRow++;
+
+            Clear();
+
+            Typist.InstantText(Text);
+
+            WriteLine();
+            WriteLine();
+            WriteLine();
+        } 
+        while (key.Key != ConsoleKey.Enter);
+
+        Choice choice = visibleChoices[selectedRow];
+
+        if (choice.IsPlayed)
+        {
+            if (choice.IsNotRepeatable)
+            {
                 RedrawNode();
                 WaitForChoice();
             }
         }
-        void RedrawNode() 
+        if (DataLayer.Evaluate(choice.Condition))
         {
-            Console.Clear();
+            if (choice.Effect != null)
+                DataLayer.StoreItem(choice.Effect);
 
-            Typist.InstantText(Text);
+            if (choice.UnHide.HasValue)                  //if this choice unlocks others
+            {
+                int UnHide = (int)choice.UnHide;
+                Choices[UnHide].IsHidden = false;
+            }
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            choice.IsPlayed = true;
+
+            this.AdvanceToNext(choice.ChildId);
+        }
+        else
+        {
+            CursorTop = WindowHeight - 4;
+            CursorLeft = WindowLeft;
+
+            Typist.FlowingText(choice.Refusal, ConsoleColor.DarkYellow);
+            Typist.WaitForKey(2);
+
+            RedrawNode();
+            WaitForChoice();
         }
     }
-}
+    void RedrawNode() 
+    {
+        Clear();
 
+        Typist.InstantText(Text);
+
+        WriteLine();
+        WriteLine();
+        WriteLine();
+    }
+}

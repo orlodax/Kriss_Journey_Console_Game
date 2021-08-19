@@ -1,71 +1,67 @@
 ﻿using kriss.Classes;
 using lybra;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace kriss.Nodes
+namespace kriss.Nodes;
+
+public class MiniGame01 : NAction
 {
-    public class MiniGame01 : NAction
+    public MiniGame01(NodeBase node) : base(node)
     {
-        public MiniGame01(NodeBase node) : base(node)
-        {
 
+    }
+
+    internal override void TabPressed() 
+    {
+        CursorTop = WindowHeight - 4;
+        CursorLeft = WindowLeft;
+
+        ForegroundColor = ConsoleColor.DarkGray;
+
+        WriteLine("Type something for Efeliah to guess. Type 'stop' to stop the guessing session.");
+
+        CursorTop = WindowHeight - 1;
+        CursorLeft = 0;
+
+        Typist.RenderPrompt(keysPressed);
+    }
+    internal override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
+    {
+        if (keysPressed.Any())
+        {
+            string[] words = ExtractWords();
+
+            keysPressed.Clear();     
+
+            EfGuesses(words);
         }
+    }
 
-        internal override void TabPressed() 
+    void EfGuesses(string[] words) 
+    {
+        if (!string.IsNullOrWhiteSpace(words[0]))
         {
-            Console.CursorTop = Console.WindowHeight - 4;
-            Console.CursorLeft = Console.WindowLeft;
+            if(words[0].ToLower() == "stop")
+                this.AdvanceToNext(ChildId);
 
-            Console.ForegroundColor = ConsoleColor.DarkGray;
+            RedrawNode();
 
-            Console.WriteLine("Type something for Efeliah to guess. Type 'stop' to stop the guessing session.");
+            BottomMessage = string.Empty;
 
-            Console.CursorTop = Console.WindowHeight - 1;
-            Console.CursorLeft = 0;
-
-            Typist.RenderPrompt(keysPressed);
-        }
-        internal override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
-        {
-            if (keysPressed.Any())
-            {
-                string[] words = ExtractWords();
-
-                keysPressed.Clear();     
-
-                EfGuesses(words);
-            }
-        }
-
-        void EfGuesses(string[] words) 
-        {
-            if (!string.IsNullOrWhiteSpace(words[0]))
-            {
-                if(words[0].ToLower() == "stop")
-                    this.AdvanceToNext(ChildId);
-
-                RedrawNode();
-
-                BottomMessage = string.Empty;
-
-                foreach (string word in words)
-                    BottomMessage += "...# " + word;
+            foreach (string word in words)
+                BottomMessage += "...# " + word;
                 
-                BottomMessage = "\"You are thinking: " + BottomMessage + "...?\"#";
+            BottomMessage = "\"You are thinking: " + BottomMessage + "...?\"#";
                 
-                Console.CursorTop = MeasureMessage(BottomMessage);
-                Console.CursorLeft = Console.WindowLeft;
+            CursorTop = MeasureMessage(BottomMessage);
+            CursorLeft = WindowLeft;
 
-                Typist.FlowingText(BottomMessage, ConsoleColor.DarkGreen);
-                Console.WriteLine();
-                Console.WriteLine();
-                Typist.FlowingText("Efeliah opens her eyes,# smiling warmly at you.#");
+            Typist.FlowingText(BottomMessage, ConsoleColor.DarkGreen);
+            WriteLine();
+            WriteLine();
+            Typist.FlowingText("Efeliah opens her eyes,# smiling warmly at you.#");
 
-            }
+        }
             
-            PrepareForAction(true); //display prompt without standard refuse
-        }
+        PrepareForAction(true); //display prompt without standard refuse
     }
 }

@@ -1,42 +1,40 @@
 ﻿using lybra;
-using System;
 
-namespace kriss.Classes
+namespace kriss.Classes;
+
+/// <summary>
+/// Extension methods for NodeBase
+/// </summary>
+public static class NodeMethods
 {
-    /// <summary>
-    /// Extension methods for NodeBase
-    /// </summary>
-    public static class NodeMethods
+    public static void Init(this NodeBase node)
     {
-        public static void Init(this NodeBase node)
-        {
-            // start text
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
+        // start text
+        Clear();
+        ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
 
-            string text;
-            if (node.IsVisited && node.AltText != null)
-                text = node.AltText;
-            else
-                text = node.Text;
+        string text;
+        if (node.IsVisited && node.AltText != null)
+            text = node.AltText;
+        else
+            text = node.Text;
             
-            Typist.RenderText(!node.IsVisited, text);
-        }
+        Typist.RenderText(!node.IsVisited, text);
+    }
 
-        public static void AdvanceToNext(this NodeBase node, int childId)
-        {
-            // mark caller as visited
-            DataLayer.SaveProgress();
+    public static void AdvanceToNext(this NodeBase node, int childId)
+    {
+        // mark caller as visited
+        DataLayer.SaveProgress();
 
-            // if it closes story or section, go back to menu
-            if (node.IsClosing)
-                DataLayer.DisplayMenu();
+        // if it closes story or section, go back to menu
+        if (node.IsClosing)
+            DataLayer.DisplayMenu();
 
-            // if it closes chapter load the next chapter, else load next node
-            if (node.IsLast)
-                DataLayer.StartNextChapter();
+        // if it closes chapter load the next chapter, else load next node
+        if (node.IsLast)
+            DataLayer.StartNextChapter();
 
-            DataLayer.LoadNode(childId);
-        }
+        DataLayer.LoadNode(childId);
     }
 }
