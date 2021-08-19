@@ -1,11 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <Configurations>Debug;Release;L</Configurations>
     <Platforms>AnyCPU;x64</Platforms>
-    <ApplicationIcon>sword.ico</ApplicationIcon>
+    <ApplicationIcon>C:\Users\orlod\source\repos\ConsoleGame\ConsoleGame\swordIcon.ico</ApplicationIcon>
+    <PackageIcon>sword.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,10 +21,6 @@
     <None Remove="TextResources\Chapters\c7.json" />
     <None Remove="TextResources\Chapters\c8.json" />
     <None Remove="TextResources\Chapters\c9.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="sword.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,10 +46,15 @@
     <ProjectReference Include="..\lybra\lybra.csproj" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
-
   <ItemGroup>
-    <_DeploymentManifestIconFile Remove="sword.ico" />
+    <None Update="sword.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="swordIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
