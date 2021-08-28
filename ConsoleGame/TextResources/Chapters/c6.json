@@ -1,4 +1,4 @@
-﻿{
+{
   "id": 6,
   "title": "BEACONS",
   "nodes": [
@@ -82,17 +82,23 @@
               "answer": "$R\"The location of the city of Ayonn is not a mistery. \nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks. \n\n$R\"So... the so-called plain of Ayonn it's ten days of walking west from here. \nAt the end of this desert, we'll have to cross the Mazerock. Then... We'll see.\"\n\n$ySmiurl squeals."
             },
             {
-              "objs": [ "mazerock" ],
+              "objs": [
+                "mazerock"
+              ],
               "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!\nIf the place itself doesn't kill you, an Oxengutter or some other fiend will surely fix it!\"#$y You gulp. \n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence. \n\nTheo, as per usual, doesn't even seem interested in what they're saying."
             },
             {
-              "objs": [ "oxengutter" ],
+              "objs": [
+                "oxengutter"
+              ],
               "answer": "$B\"Don't pay attention to everything Smiurl says... And trust me, you don't even want to know that.\"\n$yHis words do not reassure you, that's for sure."
             }
           ]
         },
         {
-          "verbs": [ "rest" ],
+          "verbs": [
+            "rest"
+          ],
           "effect": {
             "gainitem": "desertrest"
           },

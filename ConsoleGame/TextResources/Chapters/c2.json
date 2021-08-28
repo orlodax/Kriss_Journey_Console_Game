@@ -1,4 +1,4 @@
-﻿{
+{
   "id": 2,
   "title": "THE HORDE",
   "nodes": [
@@ -16,7 +16,9 @@
       "text": "$c\"Maybe I am dead, afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario. \n\nIn the meanwhile, you look at the small reddish vale that lies downhill. \nThere is smoke ascending from what it looks like several fires or maybe arsons. \n\nYou carefully stand up, becoming dizzy until your sense of balance stabilises. \n\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
       "actions": [
         {
-          "verbs": [ "look" ],
+          "verbs": [
+            "look"
+          ],
           "childid": 3
         },
         {
@@ -27,15 +29,21 @@
           "childid": 4
         },
         {
-          "verbs": [ "run" ],
+          "verbs": [
+            "run"
+          ],
           "childid": 5
         },
         {
-          "verbs": [ "laugh" ],
+          "verbs": [
+            "laugh"
+          ],
           "childid": 6
         },
         {
-          "verbs": [ "cry" ],
+          "verbs": [
+            "cry"
+          ],
           "childid": 7
         },
         {
@@ -78,7 +86,6 @@
     {
       "id": 7,
       "type": "Story",
-      
       "recap": "cry",
       "text": "Your mind is rushing. \n$c<<What is this place?>>\n<<Am I dead?>>\n<<Am I in some hell?>>\n<<How do I get home?>>\n<<Is there anybody here?>>\n\n$CAfter few moments, you burst out crying. You weren't expecting it, but you can't help it. \n\nAfter few minutes of what you classify as a pathetic scene, you feel better for some reason.",
       "childid": 9
@@ -97,7 +104,9 @@
       "text": "You stand on this hill, like the one that is in front of your house. \nBut the similarities end there. There are no places like this around your place,\nmaybe not even in your whole nation. \n\nYou are still wondering what happened and how did you end up here. \nYou try to keep calm, thinking about what to do next. \n",
       "actions": [
         {
-          "verbs": [ "look" ],
+          "verbs": [
+            "look"
+          ],
           "childid": 3
         },
         {
@@ -108,21 +117,27 @@
           "childid": 4
         },
         {
-          "verbs": [ "run" ],
+          "verbs": [
+            "run"
+          ],
           "childid": 5
         },
         {
-          "verbs": [ "laugh" ],
+          "verbs": [
+            "laugh"
+          ],
           "childid": 6
         },
         {
-          "verbs": [ "cry" ],
+          "verbs": [
+            "cry"
+          ],
           "childid": 7
         },
         {
           "verbs": [
             "shout",
-            "scream" 
+            "scream"
           ],
           "childid": 8
         }
@@ -164,28 +179,36 @@
           ],
           "objects": [
             {
-              "objs": [ "food" ],
+              "objs": [
+                "food"
+              ],
               "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
               "effect": {
                 "gainitem": "food"
               }
             },
             {
-              "objs": [ "water" ],
+              "objs": [
+                "water"
+              ],
               "answer": "There is a covered jug full of water on the kitchen counter.",
               "effect": {
                 "gainitem": "water"
               }
             },
             {
-              "objs": [ "clothes" ],
+              "objs": [
+                "clothes"
+              ],
               "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
               "effect": {
                 "gainitem": "clothes"
               }
             },
             {
-              "objs": [ "money" ],
+              "objs": [
+                "money"
+              ],
               "answer": "You can't find anything valuable."
             }
           ]
@@ -194,11 +217,13 @@
           "verbs": [
             "sleep",
             "rest",
-            "lay" 
+            "lay"
           ],
           "objects": [
             {
-              "objs": [ "bed" ],
+              "objs": [
+                "bed"
+              ],
               "condition": {
                 "item": "clothes",
                 "refusal": "I don't want to lay down with these dirty clothes on."
@@ -215,7 +240,9 @@
           ],
           "objects": [
             {
-              "objs": [ "clothes" ],
+              "objs": [
+                "clothes"
+              ],
               "answer": "You remove your soaked clothes wearing what you just found.",
               "condition": {
                 "item": "clothes",
@@ -225,7 +252,9 @@
           ]
         },
         {
-          "verbs": [ "drink" ],
+          "verbs": [
+            "drink"
+          ],
           "condition": {
             "item": "water",
             "refusal": "I need to find some water."
@@ -233,7 +262,9 @@
           "answer": "You avidly drink the water, not caring about its taste."
         },
         {
-          "verbs": [ "eat" ],
+          "verbs": [
+            "eat"
+          ],
           "condition": {
             "item": "food",
             "refusal": "I need to find something to eat."

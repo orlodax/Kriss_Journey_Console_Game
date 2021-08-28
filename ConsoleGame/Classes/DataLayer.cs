@@ -57,8 +57,9 @@ namespace kriss.Classes
         public static void DisplayMenu()
         {
             Console.Clear();
-
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.WriteLine();
             Console.WriteLine("            ██╗  ██╗██████╗ ██╗███████╗███████╗              ");
             Console.WriteLine("            ██║ ██╔╝██╔══██╗██║██╔════╝██╔════╝              ");
             Console.WriteLine("            █████╔╝ ██████╔╝██║███████╗███████╗              ");

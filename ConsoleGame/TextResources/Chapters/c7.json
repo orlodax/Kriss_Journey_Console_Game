@@ -1,4 +1,4 @@
-﻿{
+{
   "id": 7,
   "title": "SEER'S ROCK",
   "nodes": [
@@ -419,7 +419,9 @@
       "altText": "You are still in the square with the others. As time passes, more people are joining you. \nAfter all the care received, Smiurl seems calmer. He's even starting conversations with some of your hosts. \n\nThe Elder still hasn't shown up. \nIt seems you have some more time to enjoy the party.",
       "actions": [
         {
-          "verbs": [ "ask" ],
+          "verbs": [
+            "ask"
+          ],
           "objects": [
             {
               "objs": [
@@ -461,7 +463,9 @@
           "answer": "You all stand there quietly. It looks like there is still time before the meal. You should take advantage now to ask some questions. These guys TALK WITH THEIR MINDS. How's that possible??"
         },
         {
-          "verbs": [ "eat" ],
+          "verbs": [
+            "eat"
+          ],
           "objects": [
             {
               "objs": [
@@ -492,7 +496,7 @@
         },
         {
           "verbs": [
-            "wait" 
+            "wait"
           ],
           "condition": {
             "item": "partyFed",
