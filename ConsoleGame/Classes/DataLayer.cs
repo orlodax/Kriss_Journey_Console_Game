@@ -39,8 +39,8 @@ public static class DataLayer
         while (true);
 
         //debug: start from. Comment for default start
-        //CurrentChapter = Chapters[7];
-        //LoadNode(9);
+        CurrentChapter = Chapters[3];
+        LoadNode(4);
         //debug
 
         if (!IsOutputRedirected)
@@ -55,6 +55,8 @@ public static class DataLayer
         Clear();
 
         ForegroundColor = ConsoleColor.Green;
+        WriteLine("-------------------------------------------------------------");
+        WriteLine();
         WriteLine("            ██╗  ██╗██████╗ ██╗███████╗███████╗              ");
         WriteLine("            ██║ ██╔╝██╔══██╗██║██╔════╝██╔════╝              ");
         WriteLine("            █████╔╝ ██████╔╝██║███████╗███████╗              ");

@@ -22,7 +22,7 @@ public class NAction : NodeBase
     {
         ///go to bottom line and prepare prompt
         CursorTop = WindowTop + WindowHeight - 2;
-        CursorLeft = WindowLeft + WindowWidth - 1;
+        CursorLeft = WindowLeft;
 
         ForegroundColor = ConsoleColor.DarkGray;
         if (!isFirstTimeDisplayed)
