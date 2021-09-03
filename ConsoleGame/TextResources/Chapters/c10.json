@@ -1,14 +1,9 @@
-﻿{
+{
   "id": 10,
-  "title": "THE END, FOR NOW",
-  
+  "title": "INTO THE MAZEROCK",
   "nodes": [
-    {
-      "id": 1,
-      "type": "Story",
-      "isclosing": true,
-      "recap": "end of early release 1",
-      "text": "$yo()xxxx[{::::::::::::::::::>          END OF PART 1          <::::::::::::::::::}]xxxx()o#\n\nThank you for reaching this far, traveler.\nCongratulations: you completed the first part of the journey.\nMy cat committee hopes you had fun.\n\nStay tuned for the next parts of the story!##\n\n...## seriously...# you can close the terminal now.\n\nSee you soon! <3 ~_~ <3#"
-    }
+    {},
+    {},
+    {}
   ]
 }
