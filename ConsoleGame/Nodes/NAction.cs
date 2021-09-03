@@ -28,7 +28,7 @@ public class NAction : NodeBase
         if (!isFirstTimeDisplayed)
         {
             CursorTop -= 1;
-            WriteLine(" You can't or won't do that. Try again.");
+            WriteLine("You can't or won't do that. Try again.");
         }
 
         Typist.RenderPrompt(keysPressed);
