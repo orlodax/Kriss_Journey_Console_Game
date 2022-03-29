@@ -1,6 +1,8 @@
 using kriss.Classes;
 using lybra;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace tests;
 public class Tests

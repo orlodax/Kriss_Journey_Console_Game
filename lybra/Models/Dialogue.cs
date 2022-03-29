@@ -1,4 +1,6 @@
-﻿namespace lybra;
+﻿using System.Collections.Generic;
+
+namespace lybra;
 public class Dialogue
 {
     public EnActorColor Actor { get; set; }       //who speaks

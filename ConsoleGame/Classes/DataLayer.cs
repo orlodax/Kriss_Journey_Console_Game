@@ -1,5 +1,9 @@
 ﻿using kriss.Nodes;
 using lybra;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace kriss.Classes;
@@ -39,8 +43,8 @@ public static class DataLayer
         while (true);
 
         //debug: start from. Comment for default start
-        CurrentChapter = Chapters[3];
-        LoadNode(4);
+        //CurrentChapter = Chapters[2];
+        //LoadNode(2);
         //debug
 
         if (!IsOutputRedirected)

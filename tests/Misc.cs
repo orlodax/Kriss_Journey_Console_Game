@@ -1,5 +1,6 @@
 using kriss.Classes;
 using NUnit.Framework;
+using System.Linq;
 
 namespace tests;
 public class Misc

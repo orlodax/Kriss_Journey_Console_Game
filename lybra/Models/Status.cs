@@ -1,4 +1,6 @@
-﻿namespace lybra;
+﻿using System.Collections.Generic;
+
+namespace lybra;
 
 // stores the items collected and the already visited nodes
 public class Status

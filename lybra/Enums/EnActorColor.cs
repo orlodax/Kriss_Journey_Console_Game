@@ -1,4 +1,6 @@
-﻿namespace lybra;
+﻿using System;
+
+namespace lybra;
 
 public enum EnActorColor
 {

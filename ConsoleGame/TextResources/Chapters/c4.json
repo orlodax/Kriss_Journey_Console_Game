@@ -1,4 +1,4 @@
-﻿{
+{
   "id": 4,
   "title": "THE SWORD",
   "nodes": [
@@ -80,7 +80,9 @@
           "answer": "The sun is sinking down, slowly and relentlessly, anxious and tremulous,\nready to be swallowed up into night's unfathomed lair,\ngiving way to her uncountable shiny emissaries. \n\nAlien gleams dance on the horizon, as the strongest rays run the last race,\ndarkening on the way and turning the reddish wasteland in a huge tapestry,\nwhere the armed men are nothing more than maybe-dreamed shapes."
         },
         {
-          "verbs": [ "listen" ],
+          "verbs": [
+            "listen"
+          ],
           "answer": "Not the slightest sound disturbs the absolute calm and silence now reigning in the canyon. \nAll you can hear is your own blood flowing inside of your ears,\nas well as your heartbeat. \n\nFor all you know, Theo, Corolla and Smiurl could even have stopped breathing."
         },
         {
