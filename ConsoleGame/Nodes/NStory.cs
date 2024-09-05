@@ -2,21 +2,20 @@
 using lybra;
 using System;
 
-namespace kriss.Nodes
+namespace kriss.Nodes;
+
+public class NStory : NodeBase
 {
-    public class NStory : NodeBase
+    public NStory(NodeBase node) : base(node)
     {
-        public NStory(NodeBase node) : base(node)
-        {
-            this.Init();
+        this.Init();
 
-            ///go to bottom line
-            Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
-            Console.CursorLeft = Console.WindowLeft;
+        ///go to bottom line
+        Console.CursorTop = Console.WindowTop + Console.WindowHeight - 2;
+        Console.CursorLeft = Console.WindowLeft;
 
-            Typist.WaitForKey(0);
+        Typist.WaitForKey(0);
 
-            this.AdvanceToNext(ChildId);
-        }
+        this.AdvanceToNext(ChildId);
     }
 }

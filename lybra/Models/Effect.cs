@@ -1,7 +1,6 @@
-﻿namespace lybra
+﻿namespace lybra;
+
+public class Effect                         // now it affects player. normally inventory
 {
-    public class Effect                         // now it affects player. normally inventory
-    {
-        public string GainItem { get; set; }
-    }
+    public string GainItem { get; set; }
 }
