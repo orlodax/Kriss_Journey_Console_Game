@@ -10,7 +10,7 @@ What would you do...?
 Type stuff and try doing things. An help menu will appear for your convenience, if you dare press TAB
 
 ### Revel in fully fledged shell-like graphics
-![action](screenshots/action.jpg)
+![dialogue](screenshots/dialogue.jpg)
 Make sure you have a color monitor in order to fully enjoy the game stunning graphics
 
 ---
