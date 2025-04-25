@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace lybra;
+
 public class Dialogue
 {
+    [JsonConverter(typeof(EnActorColorConverter))]
     public EnActorColor Actor { get; set; }       //who speaks
     public string LineName { get; set; }      //name of the speechpart (used to link to this)
     public string NextLine { get; set; }    //if ever needed, name of the speechpart to jump to

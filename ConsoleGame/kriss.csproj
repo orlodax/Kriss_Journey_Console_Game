@@ -22,7 +22,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="sword.ico" />
     <None Remove="TextResources\Chapters\c1.json" />
     <None Remove="TextResources\Chapters\c10.json" />
     <None Remove="TextResources\Chapters\c2.json" />
@@ -33,10 +32,6 @@
     <None Remove="TextResources\Chapters\c7.json" />
     <None Remove="TextResources\Chapters\c8.json" />
     <None Remove="TextResources\Chapters\c9.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="sword.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,18 +50,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\lybra\lybra.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
-
-  <ItemGroup>
-    <_DeploymentManifestIconFile Remove="sword.ico" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="sword.png">

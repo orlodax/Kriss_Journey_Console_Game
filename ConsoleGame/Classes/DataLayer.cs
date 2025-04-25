@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json;
 
 namespace kriss.Classes;
 
@@ -16,6 +17,13 @@ public static class DataLayer
     static Chapter CurrentChapter;
     static NodeBase CurrentNode;
 
+    static readonly JsonSerializerOptions jOptions = new()
+    {
+        Converters = { new EnActorColorConverter() },
+        PropertyNameCaseInsensitive = true,
+        WriteIndented = true
+    };
+
     public static void Init()
     {
         // Dump any exception
@@ -24,7 +32,7 @@ public static class DataLayer
         // Load Status
         string statusFile = Path.Combine(AppContext.BaseDirectory, "status.json");
         if (File.Exists(statusFile))
-            Status = Newtonsoft.Json.JsonConvert.DeserializeObject<Status>(File.ReadAllText(statusFile));
+            Status = JsonSerializer.Deserialize<Status>(File.ReadAllText(statusFile), jOptions);
         else
             WriteStatusToDisk(); // init file if not present
 
@@ -37,7 +45,7 @@ public static class DataLayer
             if (string.IsNullOrEmpty(jChapter))
                 break;
 
-            Chapters.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<Chapter>(jChapter));
+            Chapters.Add(JsonSerializer.Deserialize<Chapter>(jChapter, jOptions));
             id++;
         }
         while (true);
@@ -217,7 +225,7 @@ public static class DataLayer
             Status = new();
 
         string statusPath = Path.Combine(AppContext.BaseDirectory, $"status.json");
-        string status = Newtonsoft.Json.JsonConvert.SerializeObject(Status, Newtonsoft.Json.Formatting.Indented);
+        string status = JsonSerializer.Serialize(Status, jOptions);
         File.WriteAllText(statusPath, status);
     }
 
