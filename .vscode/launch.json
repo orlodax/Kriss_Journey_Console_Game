@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": ".NET Core Launch (exe)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ConsoleGame/bin/Debug/net6.0/kriss.dll",
+            "program": "${workspaceFolder}/ConsoleGame/bin/Debug/net8.0/kriss.exe",
             "args": [],
             "cwd": "${workspaceFolder}/ConsoleGame",
             "console": "externalTerminal",
