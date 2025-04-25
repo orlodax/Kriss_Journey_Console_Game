@@ -1,5 +1,6 @@
-﻿using Kriss.Nodes;
-using Lybra;
+﻿using KrissJourney.Kriss.Nodes;
+using KrissJourney.Lybra.JsonConverters;
+using KrissJourney.Lybra.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 
-namespace Kriss.Classes;
+namespace KrissJourney.Kriss.Classes;
 
 public static class DataLayer
 {

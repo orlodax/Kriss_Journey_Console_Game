@@ -1,8 +1,9 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using KrissJourney.Lybra.Enums;
 
-namespace Lybra;
+namespace KrissJourney.Lybra.JsonConverters;
 
 public class EnActorColorConverter : JsonConverter<EnActorColor>
 {

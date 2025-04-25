@@ -1,8 +1,8 @@
-using Kriss.Classes;
+using KrissJourney.Kriss.Classes;
 using NUnit.Framework;
 using System.Linq;
 
-namespace tests;
+namespace KrissJourney.Tests;
 
 public class Misc
 {

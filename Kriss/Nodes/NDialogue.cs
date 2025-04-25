@@ -1,9 +1,9 @@
-﻿using Kriss.Classes;
-using Lybra;
+﻿using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 using System;
 using System.Linq;
 
-namespace Kriss.Nodes;
+namespace KrissJourney.Kriss.Nodes;
 
 public class NDialogue : NodeBase
 {
@@ -46,7 +46,7 @@ public class NDialogue : NodeBase
         WriteLine();
         WriteLine();
 
-        if (currentLine.Break || (IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1))
+        if (currentLine.Break || IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1)
         {
             Typist.WaitForKey(2);                                 //pause if it's marked as break or if it's last line of chapter
             Clear();
@@ -69,7 +69,7 @@ public class NDialogue : NodeBase
                     ForegroundColor = ConsoleColor.White;
                 }
                 Write("\t");
-                Write((i + 1) + ". " + Dialogues[lineId].Replies[i].Line);
+                Write(i + 1 + ". " + Dialogues[lineId].Replies[i].Line);
 
                 ResetColor();
                 ForegroundColor = ConsoleColor.DarkCyan;

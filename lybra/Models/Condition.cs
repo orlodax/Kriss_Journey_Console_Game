@@ -1,4 +1,4 @@
-﻿namespace Lybra;
+﻿namespace KrissJourney.Lybra.Models;
 
 public class Condition                      // condition for the viability of the action. normally an item
 {

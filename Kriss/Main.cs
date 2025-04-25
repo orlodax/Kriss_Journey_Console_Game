@@ -1,5 +1,6 @@
 ﻿global using static System.Console;
+using KrissJourney.Kriss.Classes;
 
 Title = "KRISS' JOURNEY";
 
-Kriss.Classes.DataLayer.Init();
+DataLayer.Init();

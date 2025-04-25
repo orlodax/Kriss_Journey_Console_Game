@@ -1,10 +1,11 @@
-using Kriss.Classes;
-using Lybra;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace tests;
+namespace KrissJourney.Tests;
+
 public class Tests
 {
     [SetUp]

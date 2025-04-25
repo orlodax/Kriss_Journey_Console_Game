@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lybra;
+namespace KrissJourney.Lybra.Enums;
 
 public enum EnActorColor
 {

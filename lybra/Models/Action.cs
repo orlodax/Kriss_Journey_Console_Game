@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lybra;
+namespace KrissJourney.Lybra.Models;
 
 public class Action : IAction
 {

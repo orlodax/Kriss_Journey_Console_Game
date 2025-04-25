@@ -1,9 +1,9 @@
-﻿using Kriss.Classes;
-using Lybra;
+﻿using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Kriss.Nodes;
+namespace KrissJourney.Kriss.Nodes;
 
 public class NChoice : NodeBase
 {
@@ -87,7 +87,7 @@ public class NChoice : NodeBase
                 Write("\t");
                 ForegroundColor = foreground;
                 BackgroundColor = background;
-                Write((i + 1) + ". " + visibleChoices[i].Desc);
+                Write(i + 1 + ". " + visibleChoices[i].Desc);
 
                 ResetColor();
                 WriteLine();

@@ -1,10 +1,10 @@
-﻿using Kriss.Classes;
-using Lybra;
+﻿using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kriss.Nodes;
+namespace KrissJourney.Kriss.Nodes;
 
 public class MiniGame01 : NAction
 {

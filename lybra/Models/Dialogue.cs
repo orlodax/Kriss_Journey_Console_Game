@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using KrissJourney.Lybra.Enums;
+using KrissJourney.Lybra.JsonConverters;
 
-namespace Lybra;
+namespace KrissJourney.Lybra.Models;
 
 public class Dialogue
 {
