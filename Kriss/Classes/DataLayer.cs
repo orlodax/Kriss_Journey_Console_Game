@@ -1,5 +1,5 @@
-﻿using kriss.Nodes;
-using lybra;
+﻿using Kriss.Nodes;
+using Lybra;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 
-namespace kriss.Classes;
+namespace Kriss.Classes;
 
 public static class DataLayer
 {
@@ -40,7 +40,7 @@ public static class DataLayer
         int id = 1;
         do
         {
-            string jChapter = LoadResource($"kriss.TextResources.Chapters.c{id}.json");
+            string jChapter = LoadResource($"KrissJourney.Kriss.TextResources.Chapters.c{id}.json");
                 
             if (string.IsNullOrEmpty(jChapter))
                 break;

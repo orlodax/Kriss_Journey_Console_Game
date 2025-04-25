@@ -1,4 +1,4 @@
-﻿namespace lybra;
+﻿namespace Lybra;
 
 public class Choice
 {

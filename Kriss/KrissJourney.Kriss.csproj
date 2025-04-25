@@ -50,7 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\lybra\lybra.csproj" />
+    <ProjectReference Include="..\Lybra\KrissJourney.Lybra.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>

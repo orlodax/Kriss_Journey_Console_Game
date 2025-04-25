@@ -1,7 +1,7 @@
-﻿using kriss.Classes;
-using lybra;
+﻿using Kriss.Classes;
+using Lybra;
 
-namespace kriss.Nodes;
+namespace Kriss.Nodes;
 
 public class NStory : NodeBase
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace lybra;
+namespace Lybra;
 
 public class Dialogue
 {

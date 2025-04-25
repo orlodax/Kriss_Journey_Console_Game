@@ -1,9 +1,9 @@
-﻿using kriss.Classes;
-using lybra;
+﻿using Kriss.Classes;
+using Lybra;
 using System;
 using System.Linq;
 
-namespace kriss.Nodes;
+namespace Kriss.Nodes;
 
 public class NDialogue : NodeBase
 {

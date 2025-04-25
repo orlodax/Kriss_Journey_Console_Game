@@ -1,7 +1,7 @@
-﻿using lybra;
+﻿using Lybra;
 using System;
 
-namespace kriss.Classes;
+namespace Kriss.Classes;
 
 /// <summary>
 /// Extension methods for NodeBase

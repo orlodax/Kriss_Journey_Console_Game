@@ -2,4 +2,4 @@
 
 Title = "KRISS' JOURNEY";
 
-kriss.Classes.DataLayer.Init();
+Kriss.Classes.DataLayer.Init();

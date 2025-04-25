@@ -1,4 +1,4 @@
-﻿namespace lybra;
+﻿namespace Lybra;
 
 public class Effect                         // now it affects player. normally inventory
 {

@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ConsoleGame/bin/Debug/net8.0/kriss.exe",
+            "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
             "args": [],
-            "cwd": "${workspaceFolder}/ConsoleGame",
+            "cwd": "${workspaceFolder}/Kriss",
             "console": "externalTerminal",
             "stopAtEntry": false
         },

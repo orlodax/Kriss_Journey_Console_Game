@@ -1,4 +1,4 @@
-﻿namespace lybra;
+﻿namespace Lybra;
 
 public class Condition                      // condition for the viability of the action. normally an item
 {

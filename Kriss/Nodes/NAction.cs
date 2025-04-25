@@ -1,12 +1,12 @@
-﻿using kriss.Classes;
-using lybra;
+﻿using Kriss.Classes;
+using Lybra;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Action = lybra.Action;
-using Object = lybra.Object;
+using Action = Lybra.Action;
+using Object = Lybra.Object;
 
-namespace kriss.Nodes;
+namespace Kriss.Nodes;
 
 public class NAction : NodeBase
 {

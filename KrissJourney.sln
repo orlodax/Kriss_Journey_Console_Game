@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kriss", "ConsoleGame\kriss.csproj", "{246831A0-FA11-47D1-B267-F188EF301505}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kriss", "Kriss\KrissJourney.Kriss.csproj", "{246831A0-FA11-47D1-B267-F188EF301505}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lybra", "lybra\lybra.csproj", "{EA77EEEC-4E77-4E8C-B3A5-638FB4A09AF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lybra", "Lybra\KrissJourney.Lybra.csproj", "{EA77EEEC-4E77-4E8C-B3A5-638FB4A09AF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tests", "tests\tests.csproj", "{04B571CD-11EC-48AE-9626-7BA1CE47CC7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\KrissJourney.Tests.csproj", "{04B571CD-11EC-48AE-9626-7BA1CE47CC7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

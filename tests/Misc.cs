@@ -1,4 +1,4 @@
-using kriss.Classes;
+using Kriss.Classes;
 using NUnit.Framework;
 using System.Linq;
 

@@ -1,5 +1,5 @@
-using kriss.Classes;
-using lybra;
+using Kriss.Classes;
+using Lybra;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
