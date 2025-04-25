@@ -1,19 +1,13 @@
-﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Lybra.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public class MiniGame01 : NAction
+public class MiniGame01(NodeBase node) : NAction(node)
 {
-    public MiniGame01(NodeBase node) : base(node)
-    {
-
-    }
-
-    internal override void TabPressed() 
+    internal override void TabPressed()
     {
         CursorTop = WindowHeight - 4;
         CursorLeft = WindowLeft;
@@ -29,21 +23,21 @@ public class MiniGame01 : NAction
     }
     internal override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
     {
-        if (keysPressed.Any())
+        if (keysPressed.Count != 0)
         {
             string[] words = ExtractWords();
 
-            keysPressed.Clear();     
+            keysPressed.Clear();
 
             EfGuesses(words);
         }
     }
 
-    void EfGuesses(string[] words) 
+    void EfGuesses(string[] words)
     {
         if (!string.IsNullOrWhiteSpace(words[0]))
         {
-            if(words[0].ToLower() == "stop")
+            if (words[0].Equals("stop", StringComparison.OrdinalIgnoreCase))
                 this.AdvanceToNext(ChildId);
 
             RedrawNode();
@@ -52,9 +46,9 @@ public class MiniGame01 : NAction
 
             foreach (string word in words)
                 BottomMessage += "...# " + word;
-                
+
             BottomMessage = "\"You are thinking: " + BottomMessage + "...?\"#";
-                
+
             CursorTop = MeasureMessage(BottomMessage);
             CursorLeft = WindowLeft;
 
@@ -64,7 +58,7 @@ public class MiniGame01 : NAction
             Typist.FlowingText("Efeliah opens her eyes,# smiling warmly at you.#");
 
         }
-            
+
         PrepareForAction(true); //display prompt without standard refuse
     }
 }

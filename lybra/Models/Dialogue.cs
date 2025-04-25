@@ -1,24 +1,21 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
-using KrissJourney.Lybra.Enums;
-using KrissJourney.Lybra.JsonConverters;
 
 namespace KrissJourney.Lybra.Models;
 
 public class Dialogue
 {
-    [JsonConverter(typeof(EnActorColorConverter))]
-    public EnActorColor Actor { get; set; }       //who speaks
+    public string Actor { get; set; }       //who speaks
     public string LineName { get; set; }      //name of the speechpart (used to link to this)
     public string NextLine { get; set; }    //if ever needed, name of the speechpart to jump to
-    public string PreComment { get; set; }  
+    public string PreComment { get; set; }
     public string Line { get; set; }
     public string Comment { get; set; }
-    public List<Reply> Replies { get; set; }    
+    public List<Reply> Replies { get; set; }
     public int? ChildId { get; set; }
     public bool Break { get; set; }
     public bool IsTelepathy { get; set; }
 }
+
 public class Reply
 {
     public string Line { get; set; }

@@ -1,17 +1,16 @@
-﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Lybra.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 using Action = KrissJourney.Lybra.Models.Action;
 using Object = KrissJourney.Lybra.Models.Object;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public class NAction : NodeBase
+public partial class NAction : NodeBase
 {
     Action act = null;
-    internal readonly List<ConsoleKeyInfo> keysPressed = new();
+    internal readonly List<ConsoleKeyInfo> keysPressed = [];
     internal string BottomMessage = string.Empty;
     ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
@@ -58,16 +57,16 @@ public class NAction : NodeBase
                     keysPressed.Add(input);          //normal keys are registered
                     break;
             }
-        } 
+        }
         while (true);
     }
 
     #region Special keys pressed
-    internal virtual void TabPressed() 
+    internal virtual void TabPressed()
     {
         RedrawNode();
 
-        List<string> helpObjects = new();                                       //if this gets populated, show object help not verbs
+        List<string> helpObjects = [];                                       //if this gets populated, show object help not verbs
 
         string[] words = ExtractWords();
 
@@ -80,7 +79,7 @@ public class NAction : NodeBase
                 string verb = action.Verbs.Find(v => v.Equals(words[0]));       //look into each action's verbs to see if there is our typed word
                 if (verb != null)
                 {
-                    if (action.Objects.Any())
+                    if (action.Objects.Count != 0)
                         foreach (Object objContainer in action.Objects)         //when the action is found, iterate through every object term
                             helpObjects.Add(objContainer.Objs[0]);
                     else
@@ -96,13 +95,13 @@ public class NAction : NodeBase
 
         ForegroundColor = ConsoleColor.DarkGray;
 
-        if (helpObjects.Any())
+        if (helpObjects.Count != 0)
         {
             WriteLine("Possible objects for the action typed: ");
 
             ForegroundColor = ConsoleColor.DarkYellow;
             foreach (string term in helpObjects)
-                    Write(term + " ");
+                Write(term + " ");
         }
         else
         {
@@ -127,7 +126,7 @@ public class NAction : NodeBase
     }
     void BackSpacePressed(List<ConsoleKeyInfo> keysPressed)
     {
-        if (keysPressed.Any())
+        if (keysPressed.Count != 0)
         {
             keysPressed.RemoveAt(keysPressed.Count - 1);
 
@@ -135,7 +134,7 @@ public class NAction : NodeBase
             PrepareForAction(true);
         }
     }
-    internal string[] ExtractWords() 
+    internal string[] ExtractWords()
     {
         //reconstruct
         string typed = string.Empty;
@@ -143,7 +142,7 @@ public class NAction : NodeBase
         for (int i = 0; i < keysPressed.Count; i++)
             typed += keysPressed[i].KeyChar.ToString().ToLower();
 
-        char[] delimiterChars = { ' ', ',', '.', ':', '\t', '!', '\r' };
+        char[] delimiterChars = [' ', ',', '.', ':', '\t', '!', '\r'];
 
         return typed.Split(delimiterChars);
     }
@@ -151,12 +150,12 @@ public class NAction : NodeBase
     {
         bool isFirstTimeDisplayed = true;
 
-        if (keysPressed.Any())
+        if (keysPressed.Count != 0)
         {
             act = null;
 
             string[] words = ExtractWords();
-               
+
             keysPressed.Clear();                                            //clear the stack after giving command
 
             string matchingVerb = string.Empty;
@@ -165,7 +164,7 @@ public class NAction : NodeBase
             {
                 foreach (Action action in Actions)
                 {
-                    if  (action.Verbs.Contains(word))
+                    if (action.Verbs.Contains(word))
                     {
                         act = action;
                         matchingVerb = word;                                //store the typed verb which triggered the action
@@ -176,7 +175,7 @@ public class NAction : NodeBase
 
             if (act != null)                                                //if there's an action available...
             {
-                if (!act.Objects.Any())                                     //...and is objectless...
+                if (act.Objects.Count == 0)                                     //...and is objectless...
                     ProcessAction(act);
                 else
                 {                                                           //...otherwise, examine Objects 
@@ -233,7 +232,7 @@ public class NAction : NodeBase
 
         PrepareForAction(true); //display prompt without standard refuse
     }
-    void DisplaySuccess(string answer, int? childId = null) 
+    void DisplaySuccess(string answer, int? childId = null)
     {
         if (answer != null)
         {
@@ -287,9 +286,12 @@ public class NAction : NodeBase
     internal static int MeasureMessage(string answer)
     {
         //measure the lenght and the newlines in the answer to determine how up to go to start writing
-        int newLines = System.Text.RegularExpressions.Regex.Matches(answer, "\\n").Count;
+        int newLines = NewLineRegex().Matches(answer).Count;
         int rows = answer.Length / WindowWidth;
 
         return Math.Min(WindowHeight - (rows + newLines), WindowHeight - 5) - 2;
     }
+
+    [System.Text.RegularExpressions.GeneratedRegex("\\n")]
+    private static partial System.Text.RegularExpressions.Regex NewLineRegex();
 }

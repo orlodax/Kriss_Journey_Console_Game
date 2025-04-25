@@ -7,7 +7,7 @@ public class Action : IAction
     public List<string> Verbs { get; set; } //verb of the action
     public int? ChildId { get; set; } //key for matching next node
     public string Answer { get; set; } //answer for incomplete player requests 
-    public List<Object> Objects { get; set; } = new(); //objects for the verbs
+    public List<Object> Objects { get; set; } = []; //objects for the verbs
     public Condition Condition { get; set; } //condition for the viability of the action. normally an item
     public Effect Effect { get; set; } //consequence from the base action
     public string GetOpinion(string word)           // to get response message when action requires an object and player does not provide any valid

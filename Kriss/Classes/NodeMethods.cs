@@ -19,7 +19,7 @@ public static class NodeMethods
             text = node.AltText;
         else
             text = node.Text;
-            
+
         Typist.RenderText(!node.IsVisited, text);
     }
 

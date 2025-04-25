@@ -1,18 +1,17 @@
-﻿using KrissJourney.Kriss.Nodes;
-using KrissJourney.Lybra.JsonConverters;
-using KrissJourney.Lybra.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
+using KrissJourney.Kriss.Nodes;
+using KrissJourney.Lybra.Models;
 
 namespace KrissJourney.Kriss.Classes;
 
 public static class DataLayer
 {
-    public static List<Chapter> Chapters { get; private set; } = new();
+    public static List<Chapter> Chapters { get; private set; } = [];
 
     static Status Status;
     static Chapter CurrentChapter;
@@ -20,7 +19,6 @@ public static class DataLayer
 
     static readonly JsonSerializerOptions jOptions = new()
     {
-        Converters = { new EnActorColorConverter() },
         PropertyNameCaseInsensitive = true,
         WriteIndented = true
     };
@@ -42,7 +40,7 @@ public static class DataLayer
         do
         {
             string jChapter = LoadResource($"KrissJourney.Kriss.TextResources.Chapters.c{id}.json");
-                
+
             if (string.IsNullOrEmpty(jChapter))
                 break;
 
@@ -94,7 +92,7 @@ public static class DataLayer
 
         int chapterId = 1;
 
-        if (Status.VisitedNodes.Any())
+        if (Status.VisitedNodes.Count != 0)
         {
             WriteLine("Welcome back, traveler. This is your journey so far.");
             WriteLine("This game still features autosave, at least for now.");
@@ -141,7 +139,7 @@ public static class DataLayer
         CurrentChapter = Chapters.Find(c => c.Id == chapterId);
 
         //to save chapter progress without marking any node as visited
-        Status.VisitedNodes[CurrentChapter.Id] = new List<int>();
+        Status.VisitedNodes[CurrentChapter.Id] = [];
         WriteStatusToDisk();
 
         LoadNode(1);
@@ -206,7 +204,7 @@ public static class DataLayer
     public static void SaveProgress()
     {
         if (!Status.VisitedNodes.ContainsKey(CurrentChapter.Id))
-            Status.VisitedNodes[CurrentChapter.Id] = new List<int>();
+            Status.VisitedNodes[CurrentChapter.Id] = [];
 
         if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
         {
@@ -222,8 +220,7 @@ public static class DataLayer
 
     static void WriteStatusToDisk()
     {
-        if (Status == null)
-            Status = new();
+        Status ??= new();
 
         string statusPath = Path.Combine(AppContext.BaseDirectory, $"status.json");
         string status = JsonSerializer.Serialize(Status, jOptions);

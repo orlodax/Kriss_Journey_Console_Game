@@ -1,14 +1,14 @@
-﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Lybra.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Lybra.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
 public class NChoice : NodeBase
 {
     int selectedRow = 0;
-    readonly List<Choice> visibleChoices = new();
+    readonly List<Choice> visibleChoices = [];
 
     public NChoice(NodeBase node) : base(node)
     {
@@ -26,7 +26,7 @@ public class NChoice : NodeBase
     /// <summary>
     /// Displays the choices that satisfy a possible condition and that are not hidden
     /// </summary>
-    void DisplayChoices() 
+    void DisplayChoices()
     {
         List<Choice> notHiddenChoices = Choices.FindAll(c => c.IsHidden == false);   //first filter out all non hidden ones
 
@@ -65,7 +65,7 @@ public class NChoice : NodeBase
             {
                 ConsoleColor foreground = ConsoleColor.DarkCyan;
                 ConsoleColor background = ConsoleColor.Black;
-                        
+
                 if (Choices[i].IsPlayed)
                 {
                     foreground = ConsoleColor.DarkGray;
@@ -83,7 +83,7 @@ public class NChoice : NodeBase
                         foreground = ConsoleColor.White;
                     }
                 }
-              
+
                 Write("\t");
                 ForegroundColor = foreground;
                 BackgroundColor = background;
@@ -110,7 +110,7 @@ public class NChoice : NodeBase
             WriteLine();
             WriteLine();
             WriteLine();
-        } 
+        }
         while (key.Key != ConsoleKey.Enter);
 
         Choice choice = visibleChoices[selectedRow];
@@ -150,7 +150,7 @@ public class NChoice : NodeBase
             WaitForChoice();
         }
     }
-    void RedrawNode() 
+    void RedrawNode()
     {
         Clear();
 

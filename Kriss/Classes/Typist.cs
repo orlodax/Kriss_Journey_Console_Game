@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
+using KrissJourney.Lybra.Models;
 
 namespace KrissJourney.Kriss.Classes;
 
@@ -11,8 +11,8 @@ public static class Typist
     static readonly int ParagraphBreak = 1000; // "#" arbitrary pause
     static readonly int ShortPause = 700; // comma pause
     static readonly int LongPause = 1200; // dot pause
-    static readonly List<string> NotToPause = new() { ".", "!", "?", "\"", ">", ")", "]", "}", ":" }; // symbols after short pause that must not trigger another pause
-    static readonly List<string> ToShortPause = new() { ":", ";", ",", "!", "?" }; // symbols after which trigger a short pause
+    static readonly List<string> NotToPause = [".", "!", "?", "\"", ">", ")", "]", "}", ":"]; // symbols after short pause that must not trigger another pause
+    static readonly List<string> ToShortPause = [":", ";", ",", "!", "?"]; // symbols after which trigger a short pause
 
     /// <summary>
     /// Main method to render different kinds of text
@@ -132,6 +132,7 @@ public static class Typist
     {
         RenderText(true, text, color);
     }
+
     public static void InstantText(string text, ConsoleColor color = ConsoleColor.DarkCyan)
     {
         RenderText(false, text, color);
@@ -144,16 +145,35 @@ public static class Typist
     /// <param name="line"></param>
     /// <param name="actorColor"></param>
     /// <param name="isTelepathy"></param>
-    public static void RenderLine(bool isFlowing, string line, ConsoleColor actorColor, bool isTelepathy)
+    public static void RenderLine(bool isFlowing, Dialogue dialogue)
     {
-        if (isTelepathy)
-            RenderText(isFlowing, "<<" + line + ">> ", actorColor);
-        else
-            RenderText(isFlowing, "\"" + line + "\" ", actorColor);
+        ConsoleColor actorColor = dialogue.Actor switch
+        {
+            "Narrator" => ConsoleColor.DarkCyan,
+            "Kriss" => ConsoleColor.Cyan,
+            "Corolla" => ConsoleColor.Red,
+            "Smiurl" => ConsoleColor.Yellow,
+            "Theo" => ConsoleColor.Blue,
+            "Efeliah" => ConsoleColor.DarkGreen,
+            "Math" => ConsoleColor.DarkMagenta,
+            "Elder" => ConsoleColor.Magenta,
+            "Jeorghe" => ConsoleColor.DarkMagenta,
+            "Chief" => ConsoleColor.Magenta,
+            "Person" => ConsoleColor.DarkYellow,
+            "White" => ConsoleColor.White,
+            "Saberinne" => ConsoleColor.Green,
+            _ => ConsoleColor.DarkCyan, //default color
+        };
 
-        if(!IsDebug())
+        if (dialogue.IsTelepathy)
+            RenderText(isFlowing, "<<" + dialogue.Line + ">> ", actorColor);
+        else
+            RenderText(isFlowing, "\"" + dialogue.Line + "\" ", actorColor);
+
+        if (!IsDebug())
             Thread.Sleep(ParagraphBreak);
     }
+
     public static void RenderNonSpeechPart(bool isFlowing, string part)
     {
         RenderText(isFlowing, part);
@@ -169,7 +189,7 @@ public static class Typist
         CursorLeft += 1;
 
         //if redrawing after backspacing, rewrite stack
-        if (keysPressed.Any())
+        if (keysPressed.Count != 0)
             for (int i = 0; i < keysPressed.Count; i++)
                 Write(keysPressed[i].KeyChar.ToString());
     }

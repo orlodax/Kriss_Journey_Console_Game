@@ -1,8 +1,7 @@
+using System.Collections.Generic;
 using KrissJourney.Kriss.Classes;
 using KrissJourney.Lybra.Models;
 using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace KrissJourney.Tests;
 
@@ -22,10 +21,10 @@ public class Tests
     {
         Chapter c6 = DataLayer.Chapters[5];
 
-        List<NodeBase> nodes = c6.Nodes.FindAll(n =>n.Id > 90 && n.Type == "Choice");
+        List<NodeBase> nodes = c6.Nodes.FindAll(n => n.Id > 90 && n.Type == "Choice");
 
-        List<NodeBase> accessibleChildren = new();
-        List<int> failingIds = new();
+        List<NodeBase> accessibleChildren = [];
+        List<int> failingIds = [];
 
         bool willPass = true;
 
@@ -63,13 +62,13 @@ public class Tests
         Stack<NodeBase> stack = new();
 
         NodeBase startNode = c6.Nodes.Find(n => n.Id == 512);
-            
+
         startNode.IsVisited = true;
         stack.Push(startNode);
 
-        List<int> traversed = new();
+        List<int> traversed = [];
 
-        while (stack.Any())
+        while (stack.Count != 0)
         {
             NodeBase v = stack.Peek();
             traversed.Add(v.Id);
@@ -78,9 +77,9 @@ public class Tests
             // exclude death node
             if (v.Id != 99)
             {
-                List<NodeBase> neighbors = new();
+                List<NodeBase> neighbors = [];
 
-                if (v.Choices != null && v.Choices.Any())
+                if (v.Choices != null && v.Choices.Count != 0)
                     foreach (Choice c in v.Choices)
                         neighbors.Add(c6.Nodes.Find(n => n.Id == c.ChildId));
 
