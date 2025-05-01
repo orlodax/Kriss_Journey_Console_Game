@@ -13,6 +13,10 @@ public static class DataLayer
 {
     public static List<Chapter> Chapters { get; private set; } = [];
 
+    static readonly string AppDataPath = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        "KrissJourney");
+
     static Status Status;
     static Chapter CurrentChapter;
     static NodeBase CurrentNode;
@@ -29,7 +33,10 @@ public static class DataLayer
         AppDomain.CurrentDomain.UnhandledException += LogError;
 
         // Load Status
-        string statusFile = Path.Combine(AppContext.BaseDirectory, "status.json");
+        if (!Directory.Exists(AppDataPath))
+            Directory.CreateDirectory(AppDataPath);
+
+        string statusFile = Path.Combine(AppDataPath, "status.json");
         if (File.Exists(statusFile))
             Status = JsonSerializer.Deserialize<Status>(File.ReadAllText(statusFile), jOptions);
         else
@@ -138,8 +145,10 @@ public static class DataLayer
     {
         CurrentChapter = Chapters.Find(c => c.Id == chapterId);
 
-        //to save chapter progress without marking any node as visited
-        Status.VisitedNodes[CurrentChapter.Id] = [];
+        if (!Status.VisitedNodes.ContainsKey(CurrentChapter.Id))
+        {
+            Status.VisitedNodes[CurrentChapter.Id] = [];
+        }
         WriteStatusToDisk();
 
         LoadNode(1);
@@ -222,7 +231,7 @@ public static class DataLayer
     {
         Status ??= new();
 
-        string statusPath = Path.Combine(AppContext.BaseDirectory, $"status.json");
+        string statusPath = Path.Combine(AppDataPath, "status.json");
         string status = JsonSerializer.Serialize(Status, jOptions);
         File.WriteAllText(statusPath, status);
     }
