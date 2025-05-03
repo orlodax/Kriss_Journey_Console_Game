@@ -61,4 +61,60 @@
     </None>
   </ItemGroup>
 
+  <!-- Steam files for different platforms -->
+  <ItemGroup>
+    <!-- Windows x64 Steam API -->
+    <None Include="..\SteamworksRedist\Windows-x64\steam_api64.dll"
+      Condition="'$(RuntimeIdentifier)' == 'win-x64' Or ('$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOSPlatform('Windows')))">
+      <Link>steam_api64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\SteamworksRedist\Windows-x64\Steamworks.NET.dll"
+      Condition="'$(RuntimeIdentifier)' == 'win-x64' Or ('$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOSPlatform('Windows')))">
+      <Link>Steamworks.NET.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Visible>false</Visible>
+    </None>
+
+    <!-- Linux x64 Steam API -->
+    <None Include="..\SteamworksRedist\OSX-Linux-x64\libsteam_api.so"
+      Condition="'$(RuntimeIdentifier)' == 'linux-x64' Or ('$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOSPlatform('Linux')))">
+      <Link>libsteam_api.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\SteamworksRedist\OSX-Linux-x64\Steamworks.NET.dll"
+      Condition="'$(RuntimeIdentifier)' == 'linux-x64' Or ('$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOSPlatform('Linux')))">
+      <Link>Steamworks.NET.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Visible>false</Visible>
+    </None>
+
+    <!-- macOS x64 Steam API -->
+    <None
+      Include="..\SteamworksRedist\OSX-Linux-x64\steam_api.bundle\Contents\MacOS\libsteam_api.dylib"
+      Condition="'$(RuntimeIdentifier)' == 'osx-x64' Or ('$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOSPlatform('OSX')))">
+      <Link>libsteam_api.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\SteamworksRedist\OSX-Linux-x64\Steamworks.NET.dll"
+      Condition="'$(RuntimeIdentifier)' == 'osx-x64' Or ('$(RuntimeIdentifier)' == '' And $([MSBuild]::IsOSPlatform('OSX')))">
+      <Link>Steamworks.NET.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Steamworks.NET" Version="20.1.0" />
+  </ItemGroup>
+
 </Project>
