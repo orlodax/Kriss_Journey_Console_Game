@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KrissJourney.Lybra.Models;
+namespace KrissJourney.Models;
 
 public class Dialogue
 {

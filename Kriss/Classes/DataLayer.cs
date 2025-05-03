@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using KrissJourney.Kriss.Nodes;
-using KrissJourney.Lybra.Models;
+using KrissJourney.Models;
 
 namespace KrissJourney.Kriss.Classes;
 

@@ -49,10 +49,6 @@
     <EmbeddedResource Include="TextResources\Chapters\c2.json" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Lybra\KrissJourney.Lybra.csproj" />
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
   <ItemGroup>

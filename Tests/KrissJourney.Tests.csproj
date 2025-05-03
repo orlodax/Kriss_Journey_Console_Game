@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kriss\KrissJourney.Kriss.csproj" />
-    <ProjectReference Include="..\Lybra\KrissJourney.Lybra.csproj" />
   </ItemGroup>
 
 </Project>

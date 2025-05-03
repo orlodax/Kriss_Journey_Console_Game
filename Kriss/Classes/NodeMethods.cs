@@ -1,5 +1,5 @@
 ﻿using System;
-using KrissJourney.Lybra.Models;
+using KrissJourney.Models;
 
 namespace KrissJourney.Kriss.Classes;
 

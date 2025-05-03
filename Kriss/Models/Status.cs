@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KrissJourney.Lybra.Models;
+namespace KrissJourney.Models;
 
 // stores the items collected and the already visited nodes
 public class Status

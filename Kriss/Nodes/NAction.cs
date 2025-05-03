@@ -1,9 +1,9 @@
-﻿using System;
+﻿using KrissJourney.Kriss.Classes;
+using KrissJourney.Models;
+using System;
 using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
-using KrissJourney.Lybra.Models;
-using Action = KrissJourney.Lybra.Models.Action;
-using Object = KrissJourney.Lybra.Models.Object;
+using Action = KrissJourney.Models.Action;
+using Object = KrissJourney.Models.Object;
 
 namespace KrissJourney.Kriss.Nodes;
 
