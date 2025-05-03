@@ -1,9 +1,9 @@
-﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Action = KrissJourney.Models.Action;
-using Object = KrissJourney.Models.Object;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Models;
+using Action = KrissJourney.Kriss.Models.Action;
+using Object = KrissJourney.Kriss.Models.Object;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -16,7 +16,7 @@ public partial class NAction : NodeBase
 
     public NAction(NodeBase node) : base(node)
     {
-        this.Init();
+        Init();
         PrepareForAction();
     }
 
@@ -250,11 +250,11 @@ public partial class NAction : NodeBase
             {
                 Typist.WaitForKey(3);
 
-                this.AdvanceToNext(childId.Value);
+                AdvanceToNext(childId.Value);
             }
         }
         if (childId.HasValue)
-            this.AdvanceToNext(childId.Value);
+            AdvanceToNext(childId.Value);
 
         //if everything fails:
         PrepareForAction(true); //display prompt without standard refuse

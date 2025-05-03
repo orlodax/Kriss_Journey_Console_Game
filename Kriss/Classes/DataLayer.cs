@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
+using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
-using KrissJourney.Models;
 
 namespace KrissJourney.Kriss.Classes;
 

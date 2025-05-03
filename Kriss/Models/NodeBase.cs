@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using KrissJourney.Kriss.Classes;
 
-namespace KrissJourney.Models;
+namespace KrissJourney.Kriss.Models;
 
 public class NodeBase
 {
@@ -35,5 +37,36 @@ public class NodeBase
     public NodeBase()
     {
 
+    }
+
+    protected void Init()
+    {
+        // start text
+        Clear();
+        ForegroundColor = ConsoleColor.DarkCyan; //narrator, default color
+
+        string text;
+        if (IsVisited && AltText != null)
+            text = AltText;
+        else
+            text = Text;
+
+        Typist.RenderText(!IsVisited, text);
+    }
+
+    protected void AdvanceToNext(int childId)
+    {
+        // mark caller as visited
+        DataLayer.SaveProgress();
+
+        // if it closes story or section, go back to menu
+        if (IsClosing)
+            DataLayer.DisplayMenu();
+
+        // if it closes chapter load the next chapter, else load next node
+        if (IsLast)
+            DataLayer.StartNextChapter();
+
+        DataLayer.LoadNode(childId);
     }
 }

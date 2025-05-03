@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using KrissJourney.Kriss.Classes;
-using KrissJourney.Models;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -38,7 +38,7 @@ public class MiniGame01(NodeBase node) : NAction(node)
         if (!string.IsNullOrWhiteSpace(words[0]))
         {
             if (words[0].Equals("stop", StringComparison.OrdinalIgnoreCase))
-                this.AdvanceToNext(ChildId);
+                AdvanceToNext(ChildId);
 
             RedrawNode();
 

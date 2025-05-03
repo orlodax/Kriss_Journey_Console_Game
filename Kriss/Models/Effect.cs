@@ -1,4 +1,4 @@
-﻿namespace KrissJourney.Models;
+﻿namespace KrissJourney.Kriss.Models;
 
 public class Effect                         // now it affects player. normally inventory
 {

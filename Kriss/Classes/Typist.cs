@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using KrissJourney.Models;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Classes;
 

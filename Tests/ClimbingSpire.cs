@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using KrissJourney.Kriss.Classes;
-using KrissJourney.Models;
+using KrissJourney.Kriss.Models;
 using NUnit.Framework;
 
 namespace KrissJourney.Tests;

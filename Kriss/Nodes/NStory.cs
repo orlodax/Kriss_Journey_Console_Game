@@ -1,5 +1,5 @@
 ﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Models;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -7,7 +7,7 @@ public class NStory : NodeBase
 {
     public NStory(NodeBase node) : base(node)
     {
-        this.Init();
+        Init();
 
         ///go to bottom line
         CursorTop = WindowTop + WindowHeight - 2;
@@ -15,6 +15,6 @@ public class NStory : NodeBase
 
         Typist.WaitForKey(0);
 
-        this.AdvanceToNext(ChildId);
+        AdvanceToNext(ChildId);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KrissJourney.Models;
+namespace KrissJourney.Kriss.Models;
 
 // stores the items collected and the already visited nodes
 public class Status

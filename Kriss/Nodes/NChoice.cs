@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using KrissJourney.Kriss.Classes;
-using KrissJourney.Models;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -12,7 +12,7 @@ public class NChoice : NodeBase
 
     public NChoice(NodeBase node) : base(node)
     {
-        this.Init();
+        Init();
 
         WriteLine();
         WriteLine();
@@ -136,7 +136,7 @@ public class NChoice : NodeBase
 
             choice.IsPlayed = true;
 
-            this.AdvanceToNext(choice.ChildId);
+            AdvanceToNext(choice.ChildId);
         }
         else
         {

@@ -1,6 +1,6 @@
 ﻿using System;
 using KrissJourney.Kriss.Classes;
-using KrissJourney.Models;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -11,14 +11,14 @@ public class NDialogue : NodeBase
 
     public NDialogue(NodeBase node) : base(node)
     {
-        this.Init();
+        Init();
         RecursiveDialogues(isFirstDraw: true);
     }
 
     void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true, bool isFirstDraw = false)           //lineid iterates over elements of dialogues[] 
     {
         if (lineId == 0 && !isFirstDraw)
-            this.Init();
+            Init();
 
         if (IsVisited)
             isLineFlowing = false;
@@ -55,7 +55,7 @@ public class NDialogue : NodeBase
         if (currentLine.ChildId.HasValue)                                       //if it encounters a link, jump to the node
         {
             Typist.WaitForKey(2);
-            this.AdvanceToNext(currentLine.ChildId.Value);
+            AdvanceToNext(currentLine.ChildId.Value);
         }
 
         if (currentLine.Replies != null && currentLine.Replies.Count != 0)            //if there are replies inside, display choice
@@ -85,7 +85,7 @@ public class NDialogue : NodeBase
                 Clear();
 
                 if (currentLine.Replies[selectedRow].ChildId.HasValue)                  //on selecion, either 
-                    this.AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
+                    AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
                 else                                                                    //or jump to the next line
                     RecursiveDialogues(Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine));
             }
@@ -121,7 +121,7 @@ public class NDialogue : NodeBase
                 if (Dialogues.Count > lineId + 1)
                 RecursiveDialogues(lineId + 1, isLineFlowing);
 
-            this.AdvanceToNext(ChildId);
+            AdvanceToNext(ChildId);
         }
     }
 }
