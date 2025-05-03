@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
 using Action = KrissJourney.Kriss.Models.Action;
-using Object = KrissJourney.Kriss.Models.Object;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public partial class NAction : NodeBase
+public partial class ActionNode : NodeBase
 {
     Action act = null;
     internal readonly List<ConsoleKeyInfo> keysPressed = [];
     internal string BottomMessage = string.Empty;
     ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
-    public NAction(NodeBase node) : base(node)
+    public List<Action> Actions { get; set; } // list of all possible actions
+
+    public override void Load()
     {
         Init();
         PrepareForAction();
@@ -62,7 +63,7 @@ public partial class NAction : NodeBase
     }
 
     #region Special keys pressed
-    internal virtual void TabPressed()
+    protected virtual void TabPressed()
     {
         RedrawNode();
 
@@ -80,7 +81,7 @@ public partial class NAction : NodeBase
                 if (verb != null)
                 {
                     if (action.Objects.Count != 0)
-                        foreach (Object objContainer in action.Objects)         //when the action is found, iterate through every object term
+                        foreach (ActionObject objContainer in action.Objects)         //when the action is found, iterate through every object term
                             helpObjects.Add(objContainer.Objs[0]);
                     else
                         helpObjects.Add("Just do it.");
@@ -134,7 +135,7 @@ public partial class NAction : NodeBase
             PrepareForAction(true);
         }
     }
-    internal string[] ExtractWords()
+    protected string[] ExtractWords()
     {
         //reconstruct
         string typed = string.Empty;
@@ -146,7 +147,7 @@ public partial class NAction : NodeBase
 
         return typed.Split(delimiterChars);
     }
-    internal virtual void EnterPressed(List<ConsoleKeyInfo> keysPressed)
+    protected virtual void EnterPressed(List<ConsoleKeyInfo> keysPressed)
     {
         bool isFirstTimeDisplayed = true;
 
@@ -179,7 +180,7 @@ public partial class NAction : NodeBase
                     ProcessAction(act);
                 else
                 {                                                           //...otherwise, examine Objects 
-                    foreach (Object o in act.Objects)
+                    foreach (ActionObject o in act.Objects)
                         foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
                             if (o.Objs.Contains(word))
                                 ProcessAction(o);                           //the action is right, and there is a acceptable object specified
@@ -259,7 +260,7 @@ public partial class NAction : NodeBase
         //if everything fails:
         PrepareForAction(true); //display prompt without standard refuse
     }
-    internal void RedrawNode(bool isDeleting = false)
+    protected void RedrawNode(bool isDeleting = false)
     {
         Clear();
         Typist.InstantText(Text);
@@ -283,7 +284,7 @@ public partial class NAction : NodeBase
             }
     }
 
-    internal static int MeasureMessage(string answer)
+    protected static int MeasureMessage(string answer)
     {
         //measure the lenght and the newlines in the answer to determine how up to go to start writing
         int newLines = NewLineRegex().Matches(answer).Count;

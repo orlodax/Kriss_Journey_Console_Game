@@ -22,31 +22,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="TextResources\Chapters\c1.json" />
-    <None Remove="TextResources\Chapters\c10.json" />
-    <None Remove="TextResources\Chapters\c2.json" />
-    <None Remove="TextResources\Chapters\c3.json" />
-    <None Remove="TextResources\Chapters\c4.json" />
-    <None Remove="TextResources\Chapters\c5.json" />
-    <None Remove="TextResources\Chapters\c6.json" />
-    <None Remove="TextResources\Chapters\c7.json" />
-    <None Remove="TextResources\Chapters\c8.json" />
-    <None Remove="TextResources\Chapters\c9.json" />
+    <None Remove="Chapters\c1.json" />
+    <None Remove="Chapters\c10.json" />
+    <None Remove="Chapters\c2.json" />
+    <None Remove="Chapters\c3.json" />
+    <None Remove="Chapters\c4.json" />
+    <None Remove="Chapters\c5.json" />
+    <None Remove="Chapters\c6.json" />
+    <None Remove="Chapters\c7.json" />
+    <None Remove="Chapters\c8.json" />
+    <None Remove="Chapters\c9.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="TextResources\Chapters\c1.json">
+    <EmbeddedResource Include="Chapters\c1.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextResources\Chapters\c10.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c9.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c8.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c7.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c6.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c5.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c4.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c3.json" />
-    <EmbeddedResource Include="TextResources\Chapters\c2.json" />
+    <EmbeddedResource Include="Chapters\c10.json" />
+    <EmbeddedResource Include="Chapters\c9.json" />
+    <EmbeddedResource Include="Chapters\c8.json" />
+    <EmbeddedResource Include="Chapters\c7.json" />
+    <EmbeddedResource Include="Chapters\c6.json" />
+    <EmbeddedResource Include="Chapters\c5.json" />
+    <EmbeddedResource Include="Chapters\c4.json" />
+    <EmbeddedResource Include="Chapters\c3.json" />
+    <EmbeddedResource Include="Chapters\c2.json" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>

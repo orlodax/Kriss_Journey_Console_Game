@@ -1,7 +1,9 @@
-using System.Collections.Generic;
 using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Nodes;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace KrissJourney.Tests;
 
@@ -21,14 +23,12 @@ public class Tests
     {
         Chapter c6 = DataLayer.Chapters[5];
 
-        List<NodeBase> nodes = c6.Nodes.FindAll(n => n.Id > 90 && n.Type == "Choice");
-
         List<NodeBase> accessibleChildren = [];
         List<int> failingIds = [];
 
         bool willPass = true;
 
-        foreach (NodeBase n in nodes)
+        foreach (ChoiceNode n in c6.Nodes.OfType<ChoiceNode>())
         {
             foreach (Choice c in n.Choices)
             {
@@ -75,27 +75,27 @@ public class Tests
             stack.Pop();
 
             // exclude death node
-            if (v.Id != 99)
+            if (v.Id == 99)
+                continue;
+
+            List<NodeBase> neighbors = [];
+
+            if (v is ChoiceNode nc && nc.Choices != null && nc.Choices.Count != 0)
+                foreach (Choice c in nc.Choices)
+                    neighbors.Add(c6.Nodes.Find(n => n.Id == c.ChildId));
+
+            if (v.ChildId > 0)
+                neighbors.Add(c6.Nodes.Find(n => n.Id == v.ChildId));
+
+            foreach (NodeBase n in neighbors)
             {
-                List<NodeBase> neighbors = [];
+                if (n.Id == 10)
+                    isValid = true;
 
-                if (v.Choices != null && v.Choices.Count != 0)
-                    foreach (Choice c in v.Choices)
-                        neighbors.Add(c6.Nodes.Find(n => n.Id == c.ChildId));
-
-                if (v.ChildId > 0)
-                    neighbors.Add(c6.Nodes.Find(n => n.Id == v.ChildId));
-
-                foreach (NodeBase n in neighbors)
+                if (!n.IsVisited)
                 {
-                    if (n.Id == 10)
-                        isValid = true;
-
-                    if (!n.IsVisited)
-                    {
-                        stack.Push(n);
-                        n.IsVisited = true;
-                    }
+                    stack.Push(n);
+                    n.IsVisited = true;
                 }
             }
         }

@@ -1,15 +1,18 @@
-﻿using System;
-using KrissJourney.Kriss.Classes;
+﻿using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
+using System;
+using System.Collections.Generic;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public class NDialogue : NodeBase
+public class DialogueNode : NodeBase
 {
     ConsoleKeyInfo key;
     int selectedRow = 0;
 
-    public NDialogue(NodeBase node) : base(node)
+    public List<Dialogue> Dialogues { get; set; } // all the lines (thus paths) of the node's dialogues
+
+    public override void Load()
     {
         Init();
         RecursiveDialogues(isFirstDraw: true);

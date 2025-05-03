@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using KrissJourney.Kriss.Nodes;
+using System.Collections.Generic;
 
 namespace KrissJourney.Kriss.Models;
 

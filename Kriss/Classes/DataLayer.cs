@@ -1,11 +1,11 @@
-﻿using System;
+﻿using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Nodes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
-using KrissJourney.Kriss.Models;
-using KrissJourney.Kriss.Nodes;
 
 namespace KrissJourney.Kriss.Classes;
 
@@ -46,7 +46,7 @@ public static class DataLayer
         int id = 1;
         do
         {
-            string jChapter = LoadResource($"KrissJourney.Kriss.TextResources.Chapters.c{id}.json");
+            string jChapter = LoadResource($"KrissJourney.Kriss.Chapters.c{id}.json");
 
             if (string.IsNullOrEmpty(jChapter))
                 break;
@@ -57,8 +57,8 @@ public static class DataLayer
         while (true);
 
         //debug: start from. Comment for default start
-        //CurrentChapter = Chapters[2];
-        //LoadNode(2);
+        // CurrentChapter = Chapters[8];
+        // LoadNode(4);
         //debug
 
         if (!IsOutputRedirected)
@@ -169,7 +169,7 @@ public static class DataLayer
             CurrentNode = SearchNodeById(nodeId.Value);
             CurrentNode.IsVisited = IsNodeVisited(CurrentNode.Id);
 
-            BuildNode(CurrentNode);
+            CurrentNode.Load();
         }
         else
             throw new Exception("Id was null and/or node wasn't the last in the chapter!");
@@ -183,28 +183,6 @@ public static class DataLayer
     static NodeBase SearchNodeById(int nodeId)
     {
         return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
-    }
-
-    /// <summary>
-    /// Actually build (hence display) the node
-    /// </summary>
-    /// <param name="node"></param>
-    /// <returns></returns>
-    public static NodeBase BuildNode(NodeBase node)
-    {
-        if (node != null)
-        {
-            return node.Type switch
-            {
-                "Story" => new NStory(node),
-                "Choice" => new NChoice(node),
-                "Dialogue" => new NDialogue(node),
-                "Action" => new NAction(node),
-                "MiniGame01" => new MiniGame01(node),
-                _ => throw new Exception(node.Type + " node type does not exist.")
-            };
-        }
-        return null;
     }
 
     /// <summary>

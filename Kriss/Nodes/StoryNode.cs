@@ -1,11 +1,10 @@
 ﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public class NStory : NodeBase
+public class StoryNode : NodeBase
 {
-    public NStory(NodeBase node) : base(node)
+    public override void Load()
     {
         Init();
 

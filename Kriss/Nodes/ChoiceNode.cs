@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
+﻿using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
+using System;
+using System.Collections.Generic;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public class NChoice : NodeBase
+public class ChoiceNode : NodeBase
 {
     int selectedRow = 0;
     readonly List<Choice> visibleChoices = [];
 
-    public NChoice(NodeBase node) : base(node)
+    public List<Choice> Choices { get; set; } // list of all possible choices
+
+    public override void Load()
     {
         Init();
 
@@ -40,15 +42,16 @@ public class NChoice : NodeBase
                     if (int.TryParse(cond.Item, out int nodeId))            //item in this case contains node id
                     {
                         if (DataLayer.IsNodeVisited(nodeId))
-                            visibleChoices.Add(c);
+                            if (!visibleChoices.Contains(c))
+                                visibleChoices.Add(c);
                     }
                     else
                         throw new Exception("IsNodeVisited Condition wasn't an integer!!");
                 }
-                else
+                else if (!visibleChoices.Contains(c))
                     visibleChoices.Add(c);
             }
-            else
+            else if (!visibleChoices.Contains(c))
                 visibleChoices.Add(c);
         }
     }

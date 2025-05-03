@@ -1,13 +1,12 @@
-﻿using System;
+﻿using KrissJourney.Kriss.Classes;
+using System;
 using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
-using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
-public class MiniGame01(NodeBase node) : NAction(node)
+public class MiniGame01 : ActionNode
 {
-    internal override void TabPressed()
+    protected override void TabPressed()
     {
         CursorTop = WindowHeight - 4;
         CursorLeft = WindowLeft;
@@ -21,7 +20,8 @@ public class MiniGame01(NodeBase node) : NAction(node)
 
         Typist.RenderPrompt(keysPressed);
     }
-    internal override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
+
+    protected override void EnterPressed(List<ConsoleKeyInfo> keysPressed)
     {
         if (keysPressed.Count != 0)
         {
