@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Helpers;
 using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Services;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -41,7 +42,7 @@ public class ChoiceNode : NodeBase
                 {
                     if (int.TryParse(cond.Item, out int nodeId))            //item in this case contains node id
                     {
-                        if (DataLayer.IsNodeVisited(nodeId))
+                        if (GameEngine.IsNodeVisited(nodeId))
                             if (!visibleChoices.Contains(c))
                                 visibleChoices.Add(c);
                     }
@@ -126,10 +127,10 @@ public class ChoiceNode : NodeBase
                 WaitForChoice();
             }
         }
-        if (DataLayer.Evaluate(choice.Condition))
+        if (GameEngine.Evaluate(choice.Condition))
         {
             if (choice.Effect != null)
-                DataLayer.StoreItem(choice.Effect);
+                GameEngine.AddItemToInventory(choice.Effect);
 
             if (choice.UnHide.HasValue)                  //if this choice unlocks others
             {

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Helpers;
 using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Services;
 using Action = KrissJourney.Kriss.Models.Action;
 
 namespace KrissJourney.Kriss.Nodes;
@@ -117,7 +118,7 @@ public partial class ActionNode : NodeBase
         CursorTop = WindowHeight - 1;
         CursorLeft = 0;
 
-        if (DataLayer.CheckChap2Node2())
+        if (GameEngine.CheckChap2Node2())
         {
             CursorTop -= 1;
             WriteLine("\\> you pressed tab for help. noob.");
@@ -204,12 +205,12 @@ public partial class ActionNode : NodeBase
 
     void ProcessAction(IAction action)
     {
-        if (!DataLayer.Evaluate(action.Condition))              //if for some reason Kriss can't do it, say it...
+        if (!GameEngine.Evaluate(action.Condition))              //if for some reason Kriss can't do it, say it...
             CustomRefusal(action.Condition.Refusal);
         else                                                    //...otherwise, do it
         {
             if (action.Effect != null)                          //in case the obj has an Effect (inventory)
-                DataLayer.StoreItem(action.Effect);
+                GameEngine.AddItemToInventory(action.Effect);
 
             DisplaySuccess(action.Answer, action.ChildId);
         }
