@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Helpers;
+using KrissJourney.Kriss.Services;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -19,6 +20,13 @@ public abstract class NodeBase
 
     public abstract void Load();
 
+    protected GameEngine GameEngine { get; private set; } // reference to the game engine instance
+
+    public void SetGameEngine(GameEngine gameEngine)
+    {
+        GameEngine = gameEngine;
+    }
+
     protected void Init()
     {
         // start text
@@ -34,16 +42,16 @@ public abstract class NodeBase
     protected void AdvanceToNext(int childId)
     {
         // mark caller as visited
-        DataLayer.SaveProgress();
+        GameEngine.SaveProgress(Id);
 
         // if it closes story or section, go back to menu
         if (IsClosing)
-            DataLayer.DisplayMenu();
+            GameEngine.DisplayMenu();
 
         // if it closes chapter load the next chapter, else load next node
         if (IsLast)
-            DataLayer.StartNextChapter();
+            GameEngine.StartNextChapter();
 
-        DataLayer.LoadNode(childId);
+        GameEngine.LoadNode(childId);
     }
 }
