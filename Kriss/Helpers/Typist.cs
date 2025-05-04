@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using KrissJourney.Kriss.Models;
 
-namespace KrissJourney.Kriss.Classes;
+namespace KrissJourney.Kriss.Helpers;
 
 public static class Typist
 {
@@ -57,26 +57,26 @@ public static class Typist
             if (!isFlowing)
                 flow = paragraph = shortPause = longPause = 0;
 
-            char prevChar = new();
+            string prevChar = string.Empty;
 
             for (int i = 0; i < text.Length; i++)
             {
-                char c = text[i];
+                string c = text[i].ToString(); ;
 
-                if (prevChar.ToString().Equals("."))
+                if (prevChar.Equals("."))
                 {
-                    if (c.ToString().Equals(" ") || c.ToString().Equals("\n"))
+                    if (c.Equals(" ") || c.Equals("\n"))
                         Thread.Sleep(longPause);
                 }
                 else
                 {
-                    if (ToShortPause.Contains(prevChar.ToString()))
-                        if (!NotToPause.Contains(c.ToString()))
+                    if (ToShortPause.Contains(prevChar))
+                        if (!NotToPause.Contains(c))
                             Thread.Sleep(shortPause);
                 }
 
-                if (prevChar.ToString().Equals("$"))
-                    switch (c.ToString())
+                if (prevChar.Equals("$"))
+                    switch (c)
                     {
                         case "R":
                             color = GetMappedColor(ConsoleColor.Red);           //Corolla
@@ -136,13 +136,13 @@ public static class Typist
                     }
                 else
                 {
-                    if (!c.ToString().Equals("#") && !c.ToString().Equals("$"))
+                    if (!c.Equals("#") && !c.Equals("$"))
                     {
                         ForegroundColor = color;
                         Write(c);
                         Thread.Sleep(flow);
                     }
-                    else if (c.ToString().Equals("#"))
+                    else if (c.Equals("#"))
                         Thread.Sleep(paragraph);
                 }
                 prevChar = c;

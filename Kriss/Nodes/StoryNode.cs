@@ -1,4 +1,4 @@
-﻿using KrissJourney.Kriss.Classes;
+﻿using KrissJourney.Kriss.Helpers;
 
 namespace KrissJourney.Kriss.Nodes;
 
