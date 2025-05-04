@@ -1,46 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text.Json;
+using KrissJourney.Kriss.Helpers;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 
-namespace KrissJourney.Kriss.Classes;
+namespace KrissJourney.Kriss.Services;
 
-public static class DataLayer
+public class GameEngine(StatusManager statusManager)
 {
-    public static List<Chapter> Chapters { get; private set; } = [];
+    Chapter currentChapter;
+    NodeBase currentNode;
+    readonly List<Chapter> chapters = [];
 
-    static readonly string AppDataPath = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-        "KrissJourney");
+    readonly StatusManager statusManager = statusManager;
 
-    static Status Status;
-    static Chapter CurrentChapter;
-    static NodeBase CurrentNode;
-
-    static readonly JsonSerializerOptions jOptions = new()
-    {
-        PropertyNameCaseInsensitive = true,
-        WriteIndented = true
-    };
-
-    public static void Init()
+    public void Run()
     {
         // Dump any exception
         AppDomain.CurrentDomain.UnhandledException += LogError;
-
-        // Load Status
-        if (!Directory.Exists(AppDataPath))
-            Directory.CreateDirectory(AppDataPath);
-
-        string statusFile = Path.Combine(AppDataPath, "status.json");
-        if (File.Exists(statusFile))
-            Status = JsonSerializer.Deserialize<Status>(File.ReadAllText(statusFile), jOptions);
-        else
-            WriteStatusToDisk(); // init file if not present
 
         // Load all Chapters
         int id = 1;
@@ -51,7 +31,7 @@ public static class DataLayer
             if (string.IsNullOrEmpty(jChapter))
                 break;
 
-            Chapters.Add(JsonSerializer.Deserialize<Chapter>(jChapter, jOptions));
+            chapters.Add(JsonSerializer.Deserialize<Chapter>(jChapter, JsonHelper.Options));
             id++;
         }
         while (true);
@@ -61,14 +41,14 @@ public static class DataLayer
         // LoadNode(4);
         //debug
 
-        if (!IsOutputRedirected)
+        if (!Console.IsOutputRedirected)
             DisplayMenu();
     }
 
     /// <summary>
     /// First screen in game. Comes back to this after completing the story or a section
     /// </summary>
-    public static void DisplayMenu()
+    public void DisplayMenu()
     {
         Clear();
 
@@ -99,17 +79,17 @@ public static class DataLayer
 
         int chapterId = 1;
 
-        if (Status.VisitedNodes.Count != 0)
+        if (statusManager.HasVisitedNodes())
         {
             WriteLine("Welcome back, traveler. This is your journey so far.");
             WriteLine("This game still features autosave, at least for now.");
             WriteLine("Type a number and press enter to select a chapter.");
             WriteLine();
 
-            int lastChapter = Status.VisitedNodes.Keys.Max();
+            int lastChapter = statusManager.GetLastChapterId();
 
             for (int i = 0; i < lastChapter; i++)
-                WriteLine(i + 1 + ". " + Chapters[i].Title);
+                WriteLine(i + 1 + ". " + chapters[i].Title);
 
             WriteLine();
 
@@ -136,82 +116,42 @@ public static class DataLayer
         StartChapter(chapterId);
     }
 
-    /// <summary>
-    /// Starts the n-th chapter at the beginning (first node)
-    /// </summary>
-    /// <param name="chapterId" the chapter number></param>
-    /// <returns></returns>
-    static void StartChapter(int chapterId)
+    public void StartNextChapter()
     {
-        CurrentChapter = Chapters.Find(c => c.Id == chapterId);
-
-        if (!Status.VisitedNodes.ContainsKey(CurrentChapter.Id))
-        {
-            Status.VisitedNodes[CurrentChapter.Id] = [];
-        }
-        WriteStatusToDisk();
-
-        LoadNode(1);
-    }
-    public static void StartNextChapter()
-    {
-        StartChapter(CurrentChapter.Id + 1);
+        StartChapter(currentChapter?.Id ?? 0 + 1);
     }
 
     /// <summary>
     /// Find next node and uses node factory to build the proper type
     /// </summary>
     /// <param name="nodeId"></param>
-    public static void LoadNode(int? nodeId)
+    public void LoadNode(int? nodeId)
     {
         if (nodeId.HasValue)
         {
-            CurrentNode = SearchNodeById(nodeId.Value);
-            CurrentNode.IsVisited = IsNodeVisited(CurrentNode.Id);
+            ArgumentNullException.ThrowIfNull(currentChapter, "No chapter is loaded.");
 
-            CurrentNode.Load();
+            currentNode = currentChapter.Nodes.Find(n => n.Id == nodeId);
+
+            ArgumentNullException.ThrowIfNull(currentNode, $"Node with ID {nodeId} not found in the current chapter.");
+
+            currentNode.SetGameEngine(this);
+            currentNode.IsVisited = IsNodeVisited(currentNode.Id);
+
+            currentNode.Load();
         }
         else
             throw new Exception("Id was null and/or node wasn't the last in the chapter!");
     }
 
     /// <summary>
-    /// Extract the NodeBase with given id, from DataLayer
-    /// </summary>
-    /// <param name="nodeId"></param>
-    /// <returns></returns>
-    static NodeBase SearchNodeById(int nodeId)
-    {
-        return CurrentChapter.Nodes.Find(n => n.Id == nodeId);
-    }
-
-    /// <summary>
     /// Marks nodes as done, and if they are last of chapter, also chapter as done
     /// </summary>
-    public static void SaveProgress()
+    public void SaveProgress(int nodeId)
     {
-        if (!Status.VisitedNodes.ContainsKey(CurrentChapter.Id))
-            Status.VisitedNodes[CurrentChapter.Id] = [];
+        ArgumentNullException.ThrowIfNull(currentChapter, "Cannot save progress: no chapter is loaded.");
 
-        if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
-        {
-            if (!visitedNodes.Contains(CurrentNode.Id))
-            {
-                visitedNodes.Add(CurrentNode.Id);
-                Status.VisitedNodes[CurrentChapter.Id] = visitedNodes;
-            }
-        }
-
-        WriteStatusToDisk();
-    }
-
-    static void WriteStatusToDisk()
-    {
-        Status ??= new();
-
-        string statusPath = Path.Combine(AppDataPath, "status.json");
-        string status = JsonSerializer.Serialize(Status, jOptions);
-        File.WriteAllText(statusPath, status);
+        statusManager.SaveProgress(currentChapter.Id, nodeId);
     }
 
     /// <summary>
@@ -219,13 +159,53 @@ public static class DataLayer
     /// </summary>
     /// <param name="nodeId"></param>
     /// <returns></returns>
-    public static bool IsNodeVisited(int nodeId)
+    public bool IsNodeVisited(int nodeId)
     {
-        if (Status.VisitedNodes.TryGetValue(CurrentChapter.Id, out List<int> visitedNodes))
-            if (visitedNodes.Contains(nodeId))
-                return true;
+        ArgumentNullException.ThrowIfNull(currentChapter, "Cannot check if node was visited: no chapter is loaded.");
 
-        return false;
+        return statusManager.IsNodeVisited(currentChapter.Id, nodeId);
+    }
+
+    /// <summary>
+    /// Decides upon the condition of a choice, action, object etc
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
+    public bool Evaluate(Condition condition)
+    {
+        if (condition is null || string.IsNullOrEmpty(condition.Item))
+            return true; // no condition, or empty item means always true
+
+        return condition.Type switch
+        {
+            "isNodeVisited" => IsNodeVisited(Convert.ToInt32(condition.Item)),
+            _ => statusManager.IsItemInInventory(condition.Item),
+        };
+    }
+
+    /// <summary>
+    /// You picked something up
+    /// </summary>
+    /// <param name="effect"></param>
+    public void AddItemToInventory(Effect effect)
+    {
+        statusManager.AddItemToInventory(effect.GainItem);
+    }
+
+    /// <summary>
+    /// Starts the n-th chapter at the beginning (first node)
+    /// </summary>
+    /// <param name="chapterId" the chapter number></param>
+    /// <returns></returns>
+    void StartChapter(int chapterId)
+    {
+        currentChapter = chapters.Find(c => c.Id == chapterId);
+
+        ArgumentNullException.ThrowIfNull(currentChapter, $"Chapter with ID {chapterId} not found.");
+
+        SaveProgress(nodeId: 1);
+
+        LoadNode(nodeId: 1);
     }
 
     /// <summary>
@@ -245,58 +225,31 @@ public static class DataLayer
     }
 
     /// <summary>
-    /// Decides upon the condition of a choice, action, object etc
-    /// </summary>
-    /// <param name="Condition"></param>
-    /// <returns></returns>
-    public static bool Evaluate(Condition Condition)                            // check according to the condition
-    {
-        if (Condition != null)
-        {
-            return Condition.Type switch
-            {
-                "isNodeVisited" => IsNodeVisited(Convert.ToInt32(Condition.Item)),
-                _ => Status.Inventory.Contains(Condition.Item),
-            };
-        }
-        return true;
-    }
-
-    /// <summary>
-    /// You picked something up
-    /// </summary>
-    /// <param name="effect"></param>
-    public static void StoreItem(Effect effect)       // consequent modify of inventory
-    {
-        Status.Inventory.Add(effect.GainItem);
-    }
-
-    /// <summary>
     /// Dump any unhandled exception to txt file
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    static void LogError(object sender, UnhandledExceptionEventArgs e)
+    void LogError(object sender, UnhandledExceptionEventArgs e)
     {
         string path = Path.Combine(AppContext.BaseDirectory, $"errorLog.txt");
 
         System.Text.StringBuilder sb = new();
         sb.AppendLine(e.ExceptionObject.ToString());
 
-        if (CurrentChapter != null)
-            sb.AppendLine("Chapter: " + CurrentChapter.Id);
+        if (currentChapter != null)
+            sb.AppendLine("Chapter: " + currentChapter.Id);
 
-        if (CurrentNode != null)
-            sb.AppendLine("Node: " + CurrentNode.Id);
+        if (currentNode != null)
+            sb.AppendLine("Node: " + currentNode.Id);
 
         File.WriteAllText(path, sb.ToString());
     }
 
     #region Jokes
-    public static bool CheckChap2Node2()
+    public bool CheckChap2Node2()
     {
         //first action node. to mock player just the first time they use help
-        if (CurrentChapter.Id == 2 && CurrentNode.Id == 2)
+        if (currentChapter?.Id == 2 && currentNode?.Id == 2)
             return true;
 
         return false;

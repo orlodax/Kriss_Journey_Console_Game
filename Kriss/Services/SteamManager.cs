@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Steamworks;
 
-namespace KrissJourney.Kriss.Classes;
+namespace KrissJourney.Kriss.Services;
 
 public static class SteamManager
 {

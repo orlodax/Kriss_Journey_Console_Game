@@ -1,27 +1,30 @@
-using KrissJourney.Kriss.Classes;
-using KrissJourney.Kriss.Models;
-using KrissJourney.Kriss.Nodes;
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Nodes;
+using KrissJourney.Kriss.Services;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests;
 
-public class Tests
+public class ClimbingSpireTests
 {
-    [SetUp]
-    public void Setup()
+    GameEngine gameEngine;
+
+
+    [TestInitialize]
+    public void TestInitialize()
     {
-        DataLayer.Init();
+        gameEngine = GameEngineTestExtensions.Setup();
     }
 
     /// <summary>
     /// Check if all nodes/choices in chapter 6 climbing are accessible
     /// </summary>
-    [Test]
+    [TestMethod]
     public void AreAllClimbingNodesAccessible()
     {
-        Chapter c6 = DataLayer.Chapters[5];
+        Chapter c6 = gameEngine.GetChapters()[5];
 
         List<NodeBase> accessibleChildren = [];
         List<int> failingIds = [];
@@ -46,19 +49,19 @@ public class Tests
             if (n.ChildId > 0)
                 willPass = false;
         }
-        Assert.True(willPass);
+        Assert.IsTrue(willPass);
     }
 
     /// <summary>
     /// DFS Check if a path to the top of the climbing in chapter 6 really exists
     /// </summary>
-    [Test]
+    [TestMethod]
     public void IsPathValid()
     {
         bool isValid = false;
         //start 512
         //end 10
-        Chapter c6 = DataLayer.Chapters[5];
+        Chapter c6 = gameEngine.GetChapters()[5];
         Stack<NodeBase> stack = new();
 
         NodeBase startNode = c6.Nodes.Find(n => n.Id == 512);
@@ -99,6 +102,6 @@ public class Tests
                 }
             }
         }
-        Assert.True(isValid, "Traversed nodes: ", traversed);
+        Assert.IsTrue(isValid, "Traversed nodes: ", traversed);
     }
 }

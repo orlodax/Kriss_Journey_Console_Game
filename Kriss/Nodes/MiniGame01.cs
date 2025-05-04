@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Helpers;
 
 namespace KrissJourney.Kriss.Nodes;
 
