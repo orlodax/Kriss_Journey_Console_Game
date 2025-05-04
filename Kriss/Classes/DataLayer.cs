@@ -247,26 +247,25 @@ public static class DataLayer
     /// <summary>
     /// Decides upon the condition of a choice, action, object etc
     /// </summary>
-    /// <param name="Condition"></param>
+    /// <param name="condition"></param>
     /// <returns></returns>
-    public static bool Evaluate(Condition Condition)                            // check according to the condition
+    public static bool Evaluate(Condition condition)
     {
-        if (Condition != null)
+        if (condition is null || string.IsNullOrEmpty(condition.Item))
+            return true; // no condition, or empty item means always true
+
+        return condition.Type switch
         {
-            return Condition.Type switch
-            {
-                "isNodeVisited" => IsNodeVisited(Convert.ToInt32(Condition.Item)),
-                _ => Status.Inventory.Contains(Condition.Item),
-            };
-        }
-        return true;
+            "isNodeVisited" => IsNodeVisited(Convert.ToInt32(condition.Item)),
+            _ => Status.Inventory.Contains(condition.Item),
+        };
     }
 
     /// <summary>
     /// You picked something up
     /// </summary>
     /// <param name="effect"></param>
-    public static void StoreItem(Effect effect)       // consequent modify of inventory
+    public static void StoreItem(Effect effect)
     {
         Status.Inventory.Add(effect.GainItem);
     }
