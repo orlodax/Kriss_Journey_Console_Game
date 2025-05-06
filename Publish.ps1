@@ -17,21 +17,58 @@ $runtimes | ForEach-Object -Parallel {
 
 Write-Host "Publishing completed for all platforms." -ForegroundColor Yellow
 
+# Copy the launcher script to Linux and macOS publish directories
+$runtimes | ForEach-Object {
+    $runtime = $_.rid
+    
+    # Only copy for Linux and macOS
+    if ($runtime -eq "linux-x64" -or $runtime -eq "osx-x64") {
+        $publishDir = "H:\KrissJourney\Kriss\bin\Release\net8.0\$runtime\publish"
+        $launcherScript = "H:\KrissJourney\krissLauncher.sh"
+        
+        Write-Host "Copying launcher script to $runtime publish directory..." -ForegroundColor Cyan
+        Copy-Item -Path $launcherScript -Destination $publishDir -Force
+        
+        # Set executable permission attribute (will only matter when extracted on Unix)
+        $targetFile = Join-Path -Path $publishDir -ChildPath "krissLauncher.sh"
+        if (Test-Path $targetFile) {
+            # Mark the file as executable in metadata
+            # This doesn't actually set Unix permissions but helps indicate it should be executable
+            (Get-Item $targetFile).Attributes = 'Archive'
+            Write-Host "Launcher script copied to $targetFile" -ForegroundColor Green
+        }
+        else {
+            Write-Host "Failed to copy launcher script to $runtime publish directory" -ForegroundColor Red
+        }
+    }
+}
+
 $runtimes | ForEach-Object -Parallel {
     $runtime = $_.rid
     
-    # Compress the published file
-    $fileName = "Kriss"
-    if ($runtime -eq "win-x64") {
-        $fileName += ".exe"
-    }
-
-    $publishedFile = "H:\KrissJourney\Kriss\bin\Release\net8.0\$runtime\publish\$fileName"
+    # Create archive with appropriate files
+    $publishDir = "H:\KrissJourney\Kriss\bin\Release\net8.0\$runtime\publish"
     $compressedFile = "H:\KrissJourney\Kriss\bin\Release\net8.0\$runtime\publish\Kriss-$runtime.zip"
     
-    Write-Host "Compressing $runtime executable..." -ForegroundColor Cyan
-    Compress-Archive -Path $publishedFile -DestinationPath $compressedFile -Force
-    Write-Host "Compression completed: $compressedFile" -ForegroundColor Green
+    Write-Host "Creating archive for $runtime..." -ForegroundColor Cyan
+    
+    # Different files to include based on platform
+    if ($runtime -eq "win-x64") {
+        # Windows only needs the exe
+        $filesToInclude = Join-Path -Path $publishDir -ChildPath "Kriss.exe"
+    }
+    else {
+        # Linux and macOS need both the executable and the launcher script
+        $filesToInclude = @(
+            (Join-Path -Path $publishDir -ChildPath "Kriss"),
+            (Join-Path -Path $publishDir -ChildPath "krissLauncher.sh")
+        )
+    }
+    
+    # Create the ZIP archive
+    Compress-Archive -Path $filesToInclude -DestinationPath $compressedFile -Force
+    
+    Write-Host "Archive created: $compressedFile" -ForegroundColor Green
 }
 
-Write-Host "Compressing completed for all platforms." -ForegroundColor Yellow
+Write-Host "Packaging completed for all platforms." -ForegroundColor Yellow
