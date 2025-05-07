@@ -1,27 +1,40 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
-using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
+using KrissJourney.Kriss.Services;
+using KrissJourney.Tests.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using Moq.Protected;
 
 namespace KrissJourney.Tests;
 
 [TestClass]
-public class DataLayerTests
+public class GameEngineTests
 {
-    private string testAppDataPath;
+    string testAppDataPath;
+
+    Mock<StatusManager> statusManagerMock;
+
+    GameEngine gameEngine;
+
 
     [TestInitialize]
     public void TestInitialize()
     {
-        // Initialize DataLayer
-        DataLayer.Init();
-        // simulate user typ
+        statusManagerMock = new Mock<StatusManager>();
+        statusManagerMock.Protected()
+            .Setup<string>("AppDataPath")
+            .Returns(testAppDataPath);
 
         // Setup temporary app data path for testing
         testAppDataPath = Path.Combine(Path.GetTempPath(), "KrissJourneyTests");
         Directory.CreateDirectory(testAppDataPath);
+
+        gameEngine = new GameEngine(statusManagerMock.Object);
+        gameEngine.Run();
     }
 
     [TestCleanup]
@@ -44,13 +57,15 @@ public class DataLayerTests
     [TestMethod]
     public void Init_LoadsChapters()
     {
-        Assert.IsTrue(DataLayer.Chapters.Count > 0, "Chapters should be loaded");
+        List<Chapter> chapters = gameEngine.GetChapters();
+        Assert.IsNotNull(chapters, "Chapters field should not be null");
+        Assert.IsTrue(chapters.Count > 0, "Chapters should be loaded");
     }
 
     [TestMethod]
     public void Evaluate_WithNullCondition_ReturnsTrue()
     {
-        Assert.IsTrue(DataLayer.Evaluate(null), "Null condition should evaluate to true");
+        Assert.IsTrue(gameEngine.Evaluate(null), "Null condition should evaluate to true");
     }
 
     [TestMethod]
@@ -62,11 +77,11 @@ public class DataLayerTests
             Refusal = "You can't do that"
         };
 
-        Assert.IsTrue(DataLayer.Evaluate(condition), "Condition with no required item should evaluate to true");
+        Assert.IsTrue(gameEngine.Evaluate(condition), "Condition with no required item should evaluate to true");
     }
 
     [TestMethod]
-    public void StoreItem_WithGainItem_AddsItemToInventory()
+    public void AddItemToInventory_WithGainItem_AddsItemToInventory()
     {
         // Arrange
         Effect effect = new()
@@ -75,7 +90,7 @@ public class DataLayerTests
         };
 
         // Act
-        DataLayer.StoreItem(effect);
+        gameEngine.AddItemToInventory(effect);
 
         // Assert
         // We can't directly assert the inventory since it's private
@@ -90,7 +105,7 @@ public class DataLayerTests
         // This test checks the method runs without exceptions
 
         // Act
-        bool isVisited = DataLayer.IsNodeVisited(99999); // Using a high number unlikely to be visited
+        bool isVisited = gameEngine.IsNodeVisited(99999); // Using a high number unlikely to be visited
 
         // Assert - we can't guarantee the exact result without mocking private state
         Assert.IsFalse(isVisited, "A non-existent node should not be marked as visited");
@@ -106,7 +121,7 @@ public class DataLayerTests
         try
         {
             // Load the first node of the first chapter to have something to save
-            Chapter firstChapter = DataLayer.Chapters[0];
+            Chapter firstChapter = gameEngine.GetChapters()[0];
             NodeBase firstNode = firstChapter.Nodes[0];
 
             // Save progress method isn't directly testable without reflection

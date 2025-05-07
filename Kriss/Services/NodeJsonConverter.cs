@@ -1,9 +1,9 @@
-using KrissJourney.Kriss.Nodes;
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using KrissJourney.Kriss.Nodes;
 
-namespace KrissJourney.Kriss.Classes;
+namespace KrissJourney.Kriss.Services;
 
 public class NodeJsonConverter : JsonConverter<NodeBase>
 {

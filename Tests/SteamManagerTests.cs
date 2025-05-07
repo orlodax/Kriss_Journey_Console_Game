@@ -1,5 +1,5 @@
 using System;
-using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests;

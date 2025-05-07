@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using KrissJourney.Kriss.Models;
 
-namespace KrissJourney.Kriss.Classes;
+namespace KrissJourney.Kriss.Helpers;
 
 public static class Typist
 {

@@ -1,6 +1,6 @@
 using System.Text.Json;
-using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Nodes;
+using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests

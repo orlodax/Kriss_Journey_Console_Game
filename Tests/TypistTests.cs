@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
+using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests;

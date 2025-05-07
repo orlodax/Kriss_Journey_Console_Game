@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
+using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests
@@ -17,7 +17,7 @@ namespace KrissJourney.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            DataLayer.Init();
+            GameEngine.Init();
 
             // Redirect console output for testing
             stringWriter = new StringWriter();
@@ -34,7 +34,7 @@ namespace KrissJourney.Tests
         [TestMethod]
         public void ThereAreNoLongDialougesWithReplies()
         {
-            IEnumerable<DialogueNode> res = DataLayer.Chapters.SelectMany(c => c.Nodes.OfType<DialogueNode>());
+            IEnumerable<DialogueNode> res = GameEngine.Chapters.SelectMany(c => c.Nodes.OfType<DialogueNode>());
 
             IEnumerable<Dialogue> longOnes = res.SelectMany(x => x.Dialogues.Where(y => y.Break == true));
 

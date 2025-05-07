@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
+using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests;
@@ -12,7 +12,7 @@ public class ClimbingSpireTests
     [TestInitialize]
     public void TestInitialize()
     {
-        DataLayer.Init();
+        GameEngine.Init();
     }
 
     /// <summary>
@@ -21,7 +21,7 @@ public class ClimbingSpireTests
     [TestMethod]
     public void AreAllClimbingNodesAccessible()
     {
-        Chapter c6 = DataLayer.Chapters[5];
+        Chapter c6 = GameEngine.Chapters[5];
 
         List<NodeBase> accessibleChildren = [];
         List<int> failingIds = [];
@@ -58,7 +58,7 @@ public class ClimbingSpireTests
         bool isValid = false;
         //start 512
         //end 10
-        Chapter c6 = DataLayer.Chapters[5];
+        Chapter c6 = GameEngine.Chapters[5];
         Stack<NodeBase> stack = new();
 
         NodeBase startNode = c6.Nodes.Find(n => n.Id == 512);

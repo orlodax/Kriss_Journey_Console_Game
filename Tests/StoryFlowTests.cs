@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
+using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace KrissJourney.Tests;
@@ -14,14 +14,14 @@ public class StoryFlowTests
     [TestInitialize]
     public void TestInitialize()
     {
-        DataLayer.Init();
+        GameEngine.Init();
     }
 
     [TestMethod]
     public void AllChapters_HaveValidStructure()
     {
         // Check all chapters have at least one node
-        foreach (Chapter chapter in DataLayer.Chapters)
+        foreach (Chapter chapter in GameEngine.Chapters)
         {
             Assert.IsTrue(chapter.Nodes.Count > 0, $"Chapter {chapter.Id} has no nodes");
 
@@ -37,7 +37,7 @@ public class StoryFlowTests
     public void AllChapters_ValidateChildNodes()
     {
         // Check that all referenced child nodes exist
-        foreach (Chapter chapter in DataLayer.Chapters)
+        foreach (Chapter chapter in GameEngine.Chapters)
         {
             foreach (NodeBase node in chapter.Nodes)
             {
@@ -118,7 +118,7 @@ public class StoryFlowTests
     [TestMethod]
     public void AllChapters_EnsureAllNodesAreReachable()
     {
-        foreach (Chapter chapter in DataLayer.Chapters)
+        foreach (Chapter chapter in GameEngine.Chapters)
         {
             // Get the first node (entry point)
             NodeBase startNode = chapter.Nodes.OrderBy(n => n.Id).FirstOrDefault();
@@ -209,9 +209,9 @@ public class StoryFlowTests
     public void Chapter1_FirstNodeIsAccessible()
     {
         // Assuming chapter 1 exists and is the start of the game
-        if (DataLayer.Chapters.Count > 0)
+        if (GameEngine.Chapters.Count > 0)
         {
-            Chapter chapter1 = DataLayer.Chapters[0];
+            Chapter chapter1 = GameEngine.Chapters[0];
             Assert.IsNotNull(chapter1, "Chapter 1 should exist");
 
             NodeBase firstNode = chapter1.Nodes.OrderBy(n => n.Id).FirstOrDefault();
@@ -223,7 +223,7 @@ public class StoryFlowTests
     public void AllChapters_ValidateTextContent()
     {
         // Check that all nodes have some text content
-        foreach (Chapter chapter in DataLayer.Chapters)
+        foreach (Chapter chapter in GameEngine.Chapters)
         {
             foreach (NodeBase node in chapter.Nodes)
             {

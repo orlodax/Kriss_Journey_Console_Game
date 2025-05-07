@@ -1,7 +1,7 @@
 ﻿global using static System.Console;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Services;
 
 Title = "KRISS' JOURNEY";
 
@@ -29,4 +29,5 @@ System.AppDomain.CurrentDomain.ProcessExit += (s, e) =>
 };
 #endregion
 
-DataLayer.Init();
+new GameEngine(new StatusManager())
+    .Run();
