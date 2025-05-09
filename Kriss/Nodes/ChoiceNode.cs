@@ -1,7 +1,7 @@
-﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Kriss.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -66,24 +66,24 @@ public class ChoiceNode : NodeBase
         {
             for (int i = 0; i < visibleChoices.Count; i++)
             {
-                ConsoleColor foreground = ConsoleColor.DarkCyan;
-                ConsoleColor background = ConsoleColor.Black;
+                ConsoleColor foreground = Typist.GetMappedColor(ConsoleColor.DarkCyan); ;
+                ConsoleColor background = Typist.GetMappedColor(ConsoleColor.Black); ;
 
                 if (Choices[i].IsPlayed)
                 {
-                    foreground = ConsoleColor.DarkGray;
+                    foreground = Typist.GetMappedColor(ConsoleColor.DarkGray); ;
                     if (i == selectedRow)
                     {
-                        background = ConsoleColor.DarkGray;
-                        foreground = ConsoleColor.White;
+                        background = Typist.GetMappedColor(ConsoleColor.DarkGray); ;
+                        foreground = Typist.GetMappedColor(ConsoleColor.White); ;
                     }
                 }
                 else
                 {
                     if (i == selectedRow)
                     {
-                        background = ConsoleColor.DarkBlue;
-                        foreground = ConsoleColor.White;
+                        background = Typist.GetMappedColor(ConsoleColor.DarkBlue); ;
+                        foreground = Typist.GetMappedColor(ConsoleColor.White); ;
                     }
                 }
 

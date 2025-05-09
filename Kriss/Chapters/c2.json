@@ -16,7 +16,9 @@
       "text": "$c\"Maybe I am dead, afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario. \n\nIn the meanwhile, you look at the small reddish vale that lies downhill. \nThere is smoke ascending from what it looks like several fires or maybe arsons. \n\nYou carefully stand up, becoming dizzy until your sense of balance stabilises. \n\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
       "actions": [
         {
-          "verbs": [ "look" ],
+          "verbs": [
+            "look"
+          ],
           "childid": 3
         },
         {
@@ -27,15 +29,21 @@
           "childid": 4
         },
         {
-          "verbs": [ "run" ],
+          "verbs": [
+            "run"
+          ],
           "childid": 5
         },
         {
-          "verbs": [ "laugh" ],
+          "verbs": [
+            "laugh"
+          ],
           "childid": 6
         },
         {
-          "verbs": [ "cry" ],
+          "verbs": [
+            "cry"
+          ],
           "childid": 7
         },
         {
@@ -72,13 +80,12 @@
       "id": 6,
       "type": "Story",
       "recap": "laugh",
-      "text": "You can't explain the reason of it to yourself, but for some reason, you start chuckling. \nMaybe it's the absurdity of the situation, or maybe it's a nervous reaction. \n\nAnyway, you keep on laughing, louder and louder, until your voice becomes hysterical,\ndistorted, overlapped with its own echo. \n\nAfter a while, you fell quite, the sound disperses around, and you feel some kind of sense of awkardness.",
+      "text": "You can't explain the reason of it to yourself, but for some reason, you start chuckling. \nMaybe it's the absurdity of the situation, or maybe it's a nervous reaction. \n\nAnyway, you keep on laughing, louder and louder, until your voice becomes hysterical,\ndistorted, overlapped with its own echo. \n\nAfter a while, you fell quiet, the sound disperses around, and you feel some kind of sense of awkardness.",
       "childid": 9
     },
     {
       "id": 7,
       "type": "Story",
-      
       "recap": "cry",
       "text": "Your mind is rushing. \n$c<<What is this place?>>\n<<Am I dead?>>\n<<Am I in some hell?>>\n<<How do I get home?>>\n<<Is there anybody here?>>\n\n$CAfter few moments, you burst out crying. You weren't expecting it, but you can't help it. \n\nAfter few minutes of what you classify as a pathetic scene, you feel better for some reason.",
       "childid": 9
@@ -87,7 +94,7 @@
       "id": 8,
       "type": "Story",
       "recap": "shout",
-      "text": "This is clearly impossible. You must be dreaming. Or maybe it's just some kind of sick prank. \n\nWhatever it is, it's unacceptable. You feel your rage rising, supercharged by your pain and fear. \nIt soon becomes too much to hold inside, so you let out a mighty shout. \n\nYou scream at the space around you. \nTo whoever might be listening. \nTo your own fate. \n\nYou feel liberated.",
+      "text": "This is clearly impossible. You must be dreaming. Or maybe it's just some kind of sick prank. \n\nWhatever it is, it's unacceptable. You feel your rage rising, supercharged by your pain and fear. \nIt soon becomes too much to hold inside, so you let out a mighty shout. \n\nYou scream at the space around you. \nTo whomever might be listening. \nTo your own fate. \n\nYou feel liberated.",
       "childid": 9
     },
     {
@@ -97,7 +104,9 @@
       "text": "You stand on this hill, like the one that is in front of your house. \nBut the similarities end there. There are no places like this around your place,\nmaybe not even in your whole nation. \n\nYou are still wondering what happened and how did you end up here. \nYou try to keep calm, thinking about what to do next. \n",
       "actions": [
         {
-          "verbs": [ "look" ],
+          "verbs": [
+            "look"
+          ],
           "childid": 3
         },
         {
@@ -108,21 +117,27 @@
           "childid": 4
         },
         {
-          "verbs": [ "run" ],
+          "verbs": [
+            "run"
+          ],
           "childid": 5
         },
         {
-          "verbs": [ "laugh" ],
+          "verbs": [
+            "laugh"
+          ],
           "childid": 6
         },
         {
-          "verbs": [ "cry" ],
+          "verbs": [
+            "cry"
+          ],
           "childid": 7
         },
         {
           "verbs": [
             "shout",
-            "scream" 
+            "scream"
           ],
           "childid": 8
         }
@@ -139,7 +154,7 @@
       "id": 11,
       "type": "Choice",
       "recap": "findshelter",
-      "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better. \n\nYou keep on walking and realize the road is scattered with corpses. Some kind of battle must have taken place... \n\nYou keep on going, slowly, appalled. You lose track of time, while your mind tries to grasp the reality. \nYHow to find an explanation to any of the things you are experiencing?\n\n\n#After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire. \n\nYou shudder. This reminds you that you should find some kind of shelter for the night,\nget dry, and possibly not burnt.",
+      "text": "$c<<Where the heck am I...?# What is going on?# What am I supposed to do?>>$C you ask yourself when you feel better. \n\nYou keep on walking and realize the road is scattered with corpses. Some kind of battle must have taken place... \n\nYou keep on going, slowly, appalled. You lose track of time, while your mind tries to grasp the reality. \nHow to find an explanation to any of the things you are experiencing?\n\n\n#After a while, you find yourself leaning on an empty doorframe of a house, which was somehow spared by the fire. \n\nYou shudder. This reminds you that you should find some kind of shelter for the night,\nget dry, and possibly not burnt.",
       "choices": [
         {
           "desc": "You had enough for today. Nothing you may find inside the house could be worse than what is outside.",
@@ -164,28 +179,36 @@
           ],
           "objects": [
             {
-              "objs": [ "food" ],
+              "objs": [
+                "food"
+              ],
               "answer": "You find a loaf of bread, some unidentified fruit and some cheese.",
               "effect": {
                 "gainitem": "food"
               }
             },
             {
-              "objs": [ "water" ],
+              "objs": [
+                "water"
+              ],
               "answer": "There is a covered jug full of water on the kitchen counter.",
               "effect": {
                 "gainitem": "water"
               }
             },
             {
-              "objs": [ "clothes" ],
+              "objs": [
+                "clothes"
+              ],
               "answer": "You find a pair of trousers, and a woolen shirt. They feel rough and old.",
               "effect": {
                 "gainitem": "clothes"
               }
             },
             {
-              "objs": [ "money" ],
+              "objs": [
+                "money"
+              ],
               "answer": "You can't find anything valuable."
             }
           ]
@@ -194,11 +217,13 @@
           "verbs": [
             "sleep",
             "rest",
-            "lay" 
+            "lay"
           ],
           "objects": [
             {
-              "objs": [ "bed" ],
+              "objs": [
+                "bed"
+              ],
               "condition": {
                 "item": "clothes",
                 "refusal": "I don't want to lay down with these dirty clothes on."
@@ -215,7 +240,9 @@
           ],
           "objects": [
             {
-              "objs": [ "clothes" ],
+              "objs": [
+                "clothes"
+              ],
               "answer": "You remove your soaked clothes wearing what you just found.",
               "condition": {
                 "item": "clothes",
@@ -225,7 +252,9 @@
           ]
         },
         {
-          "verbs": [ "drink" ],
+          "verbs": [
+            "drink"
+          ],
           "condition": {
             "item": "water",
             "refusal": "I need to find some water."
@@ -233,7 +262,9 @@
           "answer": "You avidly drink the water, not caring about its taste."
         },
         {
-          "verbs": [ "eat" ],
+          "verbs": [
+            "eat"
+          ],
           "condition": {
             "item": "food",
             "refusal": "I need to find something to eat."

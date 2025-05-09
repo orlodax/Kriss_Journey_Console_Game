@@ -11,7 +11,7 @@ public partial class ActionNode : NodeBase
     Action act = null;
     internal readonly List<ConsoleKeyInfo> keysPressed = [];
     internal string BottomMessage = string.Empty;
-    ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
+    ConsoleColor BottomMessageColor = Typist.GetMappedColor(ConsoleColor.DarkCyan);
 
     public List<Action> Actions { get; set; } // list of all possible actions
 
@@ -27,7 +27,7 @@ public partial class ActionNode : NodeBase
         CursorTop = WindowTop + WindowHeight - 2;
         CursorLeft = WindowLeft;
 
-        ForegroundColor = ConsoleColor.DarkGray;
+        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
         if (!isFirstTimeDisplayed)
         {
             CursorTop -= 1;
@@ -94,13 +94,13 @@ public partial class ActionNode : NodeBase
         CursorTop = WindowHeight - 4;
         CursorLeft = WindowLeft;
 
-        ForegroundColor = ConsoleColor.DarkGray;
+        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
 
         if (helpObjects.Count != 0)
         {
             WriteLine("Possible objects for the action typed: ");
 
-            ForegroundColor = ConsoleColor.DarkYellow;
+            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
             foreach (string term in helpObjects)
                 Write(term + " ");
         }
@@ -108,12 +108,12 @@ public partial class ActionNode : NodeBase
         {
             WriteLine("Possible actions here: ");
 
-            ForegroundColor = ConsoleColor.DarkYellow;
+            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
             foreach (Action action in Actions)
                 Write(action.Verbs[0] + " ");
         }
 
-        ForegroundColor = ConsoleColor.DarkGray;
+        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray); ;
         CursorTop = WindowHeight - 1;
         CursorLeft = 0;
 

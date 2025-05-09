@@ -1,0 +1,41 @@
+"In Game Actions"
+{
+    "actions"
+    {
+        "GameControls"
+        {
+            "title"                 "#Set_GameControls"
+            "Button"
+            {
+                "Action_Keyboard"   "#Action_Keyboard"
+                "Action_Interact"   "#Action_Interact"
+                "Action_Up"         "#Action_Up"
+                "Action_Down"       "#Action_Down"
+                "Action_Left"       "#Action_Left"
+                "Action_Right"      "#Action_Right"
+            }
+            "StickPadGyro"
+            {
+                "Move"
+                {
+                    "title"         "#Action_Move"
+                    "input_mode"    "joystick_move"
+                }
+            }
+        }
+    }
+    "localization"
+    {
+        "english"
+        {
+           "Set_GameControls"       "General Controls"
+           "Action_Move"            "Move"
+           "Action_Keyboard"        "Show Keyboard"
+           "Action_Interact"        "Enter"
+           "Action_Up"              "Up"
+           "Action_Down"            "Down"
+           "Action_Left"            "Left"
+           "Action_Right"           "Right"
+        }
+    }
+}

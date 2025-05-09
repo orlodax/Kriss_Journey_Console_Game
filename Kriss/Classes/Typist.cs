@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using KrissJourney.Kriss.Models;
 
@@ -14,6 +15,23 @@ public static class Typist
     static readonly List<string> NotToPause = [".", "!", "?", "\"", ">", ")", "]", "}", ":"]; // symbols after short pause that must not trigger another pause
     static readonly List<string> ToShortPause = [":", ";", ",", "!", "?"]; // symbols after which trigger a short pause
 
+    // Steam Deck / xterm color compatibility
+    static readonly bool UseHighContrast = DetectHighContrastMode();
+    static readonly bool DebugColors = Environment.GetEnvironmentVariable("KRISS_DEBUG_COLORS") == "true";
+
+    // Color remapping for high contrast mode
+    static readonly Dictionary<ConsoleColor, ConsoleColor> HighContrastMap = new()
+    {
+        { ConsoleColor.DarkGray, ConsoleColor.Gray },
+        { ConsoleColor.DarkBlue, ConsoleColor.Blue },
+        { ConsoleColor.DarkCyan, ConsoleColor.Cyan },
+        { ConsoleColor.DarkGreen, ConsoleColor.Green },
+        { ConsoleColor.DarkMagenta, ConsoleColor.Magenta },
+        { ConsoleColor.DarkRed, ConsoleColor.Red },
+        { ConsoleColor.DarkYellow, ConsoleColor.Yellow },
+        { ConsoleColor.Black, ConsoleColor.DarkGray }
+    };
+
     /// <summary>
     /// Main method to render different kinds of text
     /// </summary>
@@ -22,6 +40,9 @@ public static class Typist
     /// <param name="color"></param>
     public static void RenderText(bool isFlowing, string text, ConsoleColor color = ConsoleColor.DarkCyan)
     {
+        // Apply high contrast mapping if needed
+        color = GetMappedColor(color);
+
         ForegroundColor = color;
 
         if (text != null)
@@ -59,55 +80,57 @@ public static class Typist
                     switch (c.ToString())
                     {
                         case "R":
-                            color = ConsoleColor.Red;           //Corolla
+                            color = GetMappedColor(ConsoleColor.Red);           //Corolla
                             break;
                         case "r":
-                            color = ConsoleColor.DarkRed;
+                            color = GetMappedColor(ConsoleColor.DarkRed);
                             break;
                         case "G":
-                            color = ConsoleColor.Green;
+                            color = GetMappedColor(ConsoleColor.Green);
                             break;
                         case "g":
-                            color = ConsoleColor.DarkGreen;     //Efeliah
+                            color = GetMappedColor(ConsoleColor.DarkGreen);     //Efeliah
                             break;
                         case "B":
-                            color = ConsoleColor.Blue;          //Theo
+                            color = GetMappedColor(ConsoleColor.Blue);          //Theo
                             break;
                         case "C":
-                            color = ConsoleColor.DarkCyan;      //narrator
+                            color = GetMappedColor(ConsoleColor.DarkCyan);      //narrator
                             break;
                         case "c":
-                            color = ConsoleColor.Cyan;          //Kriss
+                            color = GetMappedColor(ConsoleColor.Cyan);          //Kriss
                             break;
                         case "M":
-                            color = ConsoleColor.Magenta;
+                            color = GetMappedColor(ConsoleColor.Magenta);
                             break;
                         case "m":
-                            color = ConsoleColor.DarkMagenta;   //Math
+                            color = GetMappedColor(ConsoleColor.DarkMagenta);   //Math
                             break;
                         case "Y":
-                            color = ConsoleColor.Yellow;        //Smiurl
+                            color = GetMappedColor(ConsoleColor.Yellow);        //Smiurl
                             break;
                         case "y":
-                            color = ConsoleColor.DarkYellow;    //Console answers
+                            color = GetMappedColor(ConsoleColor.DarkYellow);    //Console answers
                             break;
                         case "K":
-                            color = ConsoleColor.Black;
+                            color = GetMappedColor(ConsoleColor.Black);
                             break;
                         case "W":
-                            color = ConsoleColor.White;         //highlight
+                            color = GetMappedColor(ConsoleColor.White);         //highlight
                             break;
                         case "D":
-                            color = ConsoleColor.DarkGray;      //menus, help
+                            color = GetMappedColor(ConsoleColor.DarkGray);      //menus, help
                             break;
                         case "d":
-                            color = ConsoleColor.Gray;          //menus, help
+                            color = GetMappedColor(ConsoleColor.Gray);          //menus, help
                             break;
                         case "S":
-                            BackgroundColor = ConsoleColor.White;
+                            if (!UseHighContrast) // Skip background changes in high contrast mode
+                                BackgroundColor = ConsoleColor.White;
                             break;
                         case "s":
-                            BackgroundColor = ConsoleColor.Black;
+                            if (!UseHighContrast) // Skip background changes in high contrast mode
+                                BackgroundColor = ConsoleColor.Black;
                             break;
                         default:
                             break;
@@ -184,7 +207,7 @@ public static class Typist
 
     public static void RenderPrompt(List<ConsoleKeyInfo> keysPressed)
     {
-        ForegroundColor = ConsoleColor.Gray;
+        ForegroundColor = GetMappedColor(ConsoleColor.Gray);
         Write("\\>");
         CursorLeft += 1;
 
@@ -199,9 +222,58 @@ public static class Typist
         for (int i = 0; i < numberOfNewLines; i++)
             WriteLine();
 
-        ForegroundColor = ConsoleColor.DarkGray;
+        // Use light gray instead of dark gray on terminals with poor contrast
+        ForegroundColor = GetMappedColor(ConsoleColor.DarkGray);
+
+        // Debug color display if enabled
+        if (DebugColors)
+        {
+            Write("Color test: ");
+            ConsoleColor originalColor = ForegroundColor;
+
+            foreach (ConsoleColor color in Enum.GetValues(typeof(ConsoleColor)))
+            {
+                ForegroundColor = color;
+                Write($"[{color}] ");
+            }
+
+            ForegroundColor = originalColor;
+            WriteLine();
+        }
+
         Write("Press a key to continue...");
         ReadKey(true);
+    }
+
+    /// <summary>
+    /// Maps colors to high-contrast alternatives when needed
+    /// </summary>
+    public static ConsoleColor GetMappedColor(ConsoleColor original)
+    {
+        if (UseHighContrast && HighContrastMap.TryGetValue(original, out ConsoleColor value))
+            return value;
+
+        return original;
+    }
+
+    /// <summary>
+    /// Detects if we should use high contrast mode based on environment
+    /// </summary>
+    private static bool DetectHighContrastMode()
+    {
+        // Check if explicitly set by launcher
+        string highContrast = Environment.GetEnvironmentVariable("KRISS_USE_HIGH_CONTRAST");
+        if (!string.IsNullOrEmpty(highContrast))
+            return highContrast.Equals("true", StringComparison.CurrentCultureIgnoreCase);
+
+        // Auto-detect terminal type that might need high contrast
+        string termProgram = Environment.GetEnvironmentVariable("TERM_PROGRAM") ?? "";
+        string term = Environment.GetEnvironmentVariable("TERM") ?? "";
+
+        // Steam Deck or xterm detected
+        return termProgram.Contains("steamdeck") ||
+            term.Contains("xterm") ||
+            Environment.GetEnvironmentVariable("SteamDeck") == "1";
     }
 
     static bool IsDebug()

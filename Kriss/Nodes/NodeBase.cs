@@ -1,6 +1,6 @@
-﻿using KrissJourney.Kriss.Classes;
-using System;
+﻿using System;
 using System.Text.Json.Serialization;
+using KrissJourney.Kriss.Classes;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -23,7 +23,7 @@ public abstract class NodeBase
     {
         // start text
         Clear();
-        ForegroundColor = ConsoleColor.DarkCyan; // narrator, default color
+        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); // narrator, default color
 
         if (IsVisited && AltText != null)
             Typist.RenderText(!IsVisited, AltText);

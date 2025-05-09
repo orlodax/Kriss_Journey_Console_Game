@@ -3,11 +3,29 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Steam Runtime build related
+SteamRuntimeBuild/output/
+*.txz
+*.AppImage
+
+# Project build outputs
+Kriss-*.zip
+publish/
+
+# Steam logs
+steam-launch.log
+launch.log
+
+# Docker related
+Dockerfile.steamrt
+
+# .NET specific
+*.userosscache
+
 # User-specific files
 *.rsuser
 *.suo
 *.user
-*.userosscache
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)

@@ -1,6 +1,6 @@
-﻿using KrissJourney.Kriss.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using KrissJourney.Kriss.Classes;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -11,7 +11,7 @@ public class MiniGame01 : ActionNode
         CursorTop = WindowHeight - 4;
         CursorLeft = WindowLeft;
 
-        ForegroundColor = ConsoleColor.DarkGray;
+        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
 
         WriteLine("Type something for Efeliah to guess. Type 'stop' to stop the guessing session.");
 

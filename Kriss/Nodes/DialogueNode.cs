@@ -1,7 +1,7 @@
-﻿using KrissJourney.Kriss.Classes;
-using KrissJourney.Kriss.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using KrissJourney.Kriss.Classes;
+using KrissJourney.Kriss.Models;
 
 namespace KrissJourney.Kriss.Nodes;
 
@@ -67,14 +67,14 @@ public class DialogueNode : NodeBase
             {
                 if (i == selectedRow)
                 {
-                    BackgroundColor = ConsoleColor.DarkCyan;
-                    ForegroundColor = ConsoleColor.White;
+                    BackgroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); ;
+                    ForegroundColor = Typist.GetMappedColor(ConsoleColor.White); ;
                 }
                 Write("\t");
                 Write(i + 1 + ". " + Dialogues[lineId].Replies[i].Line);
 
                 ResetColor();
-                ForegroundColor = ConsoleColor.DarkCyan;
+                ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); ;
                 WriteLine();
                 CursorLeft = WindowLeft;
             }
