@@ -1,16 +1,33 @@
-Kriss' Journey is an interactive fiction game running in your terminal.
+
+# Now live on Steam
+
+![cover](screenshots/vertical_capsule.jpg)
+
+[Steam store page - Free Download](https://store.steampowered.com/app/1734700/Kriss_Journey/)
+
+[Join the Discord server](https://discord.gg/waECzuKArS)
+
+---
+
+Kriss' Journey is an interactive ficition game running in your terminal.
 You will experience the story through the protagonist's eyes.
 
-### Make the right choices
+## Make the right choices
+
 ![choice](screenshots/choice.jpg)
+
 What would you do...?
 
-### Perform actions
+## Perform actions
+
 ![action](screenshots/action.jpg)
+
 Type stuff and try doing things. An help menu will appear for your convenience, if you dare press TAB
 
-### Revel in fully fledged shell-like graphics
+## Revel in fully fledged shell-like graphics
+
 ![dialogue](screenshots/dialogue.jpg)
+
 Make sure you have a color monitor in order to fully enjoy the game stunning graphics
 
 ---
