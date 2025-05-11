@@ -3,7 +3,8 @@
 
 $ErrorActionPreference = "Stop"
 $ProjectRoot = "H:\KrissJourney"
-$BuildRoot = Join-Path -Path $ProjectRoot -ChildPath "SteamRuntimeBuild"
+$ScriptsRoot = Join-Path -Path $ProjectRoot -ChildPath "Scripts"
+$BuildRoot = Join-Path -Path $ScriptsRoot -ChildPath "Linux-SteamOS"
 $OutputDir = Join-Path -Path $BuildRoot -ChildPath "output"
 $DockerfilePath = Join-Path -Path $BuildRoot -ChildPath "Dockerfile.steamrt"
 
@@ -100,7 +101,7 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     Write-Host "Build successful! Output is available in: $OutputDir" -ForegroundColor Green
     
     # Copy the krissLauncher.sh script to the output directory
-    $launcherSource = "krissLauncher.sh"
+    $launcherSource = Join-Path -Path $BuildRoot -ChildPath "krissLauncher.sh"
     $launcherTarget = Join-Path -Path $OutputDir -ChildPath "krissLauncher.sh"
     
     # Copy the launcher script
@@ -118,7 +119,7 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     }
     
     # Create distribution ZIP with only the essential files
-    $zipPath = Join-Path -Path $OutputDir -ChildPath "Kriss-Steam-Linux.zip"
+    $zipPath = Join-Path -Path $OutputDir -ChildPath "Kriss-linux-x64.zip"
     
     # Get all files needed for the distribution package
     $filesToInclude = @(
@@ -137,7 +138,8 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     }
     
     # Remove any existing ZIP files in the output directory before creating a new one
-    Get-ChildItem -Path $OutputDir -Filter "*.zip" | Remove-Item -Force
+    $now = Get-Date
+    Get-ChildItem -Path $OutputDir -Filter "*.zip" | Where-Object { $_.LastWriteTime -lt $now } | Remove-Item -Force
 
     # Create the ZIP file
     Compress-Archive -Path $filesToInclude -DestinationPath $zipPath -Force
@@ -149,6 +151,15 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     }
     
     Write-Host "Created Steam Linux distribution package: $zipPath" -ForegroundColor Green
+
+    # Move the ZIP to the central Scripts/.output directory
+    $finalOutputDir = Join-Path -Path $ScriptsRoot -ChildPath ".output"
+    if (-not (Test-Path $finalOutputDir)) {
+        New-Item -Path $finalOutputDir -ItemType Directory -Force | Out-Null
+    }
+    $finalZip = Join-Path -Path $finalOutputDir -ChildPath "Kriss-linux-x64.zip"
+    Move-Item -Path $zipPath -Destination $finalZip -Force
+    Write-Host "Moved Steam Linux ZIP to: $finalZip" -ForegroundColor Green
 } 
 else {
     Write-Host "Build failed! Check the Docker output for errors." -ForegroundColor Red

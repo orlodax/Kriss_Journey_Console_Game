@@ -27,14 +27,6 @@
             "stopAtEntry": false
         },
         {
-            "name": "PowerShell Publish",
-            "type": "PowerShell",
-            "request": "launch",
-            "script": "${workspaceFolder}/Publish.ps1",
-            "args": [],
-            "cwd": "${workspaceFolder}/Kriss",
-        },
-        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"

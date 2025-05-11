@@ -1,0 +1,142 @@
+﻿using System.Diagnostics;
+using System.IO.Compression;
+
+// execute the multiple steps to publish on the 3 platforms in parallel
+// build windows and mac directly
+// build linux in docker
+string basePath = "H:\\KrissJourney";
+
+// this takes longer, so we wait at the end
+Task linuxbuild = BuildLinuxInDocker();
+
+// clean the output folder
+string outputDir = Path.Combine(basePath, "Scripts", ".output");
+if (Directory.Exists(outputDir))
+    Directory.Delete(outputDir, true);
+Directory.CreateDirectory(outputDir);
+
+// build windows and mac directly in parallel
+Task windowsBuild = BuildPlatform("win-x64");
+Task macBuild = BuildPlatform("osx-x64");
+await Task.WhenAll(windowsBuild, macBuild);
+
+// compress the builds for windows and mac and move them to the output folder
+Task compressWindows = CompressBuild("win-x64");
+Task compressMac = CompressBuild("osx-x64", "krissLauncher.sh");
+
+await Task.WhenAll(compressWindows, compressMac, linuxbuild);
+
+Console.WriteLine("All builds completed successfully.");
+
+void ExecuteCommand(string fileName, string arguments)
+{
+    ProcessStartInfo psi = new()
+    {
+        FileName = fileName,
+        Arguments = fileName == "pwsh.exe" ? $"-Command \"& {{ {arguments} }}\"" : arguments,
+        UseShellExecute = false,
+        RedirectStandardOutput = true,
+        RedirectStandardError = true,
+        CreateNoWindow = true
+    };
+
+    using var process = Process.Start(psi) ?? throw new Exception($"Failed to start process.");
+    process.OutputDataReceived += (s, e) => { if (e.Data != null) Console.WriteLine(e.Data); };
+    process.ErrorDataReceived += (s, e) => { if (e.Data != null) Console.Error.WriteLine(e.Data); };
+    process.BeginOutputReadLine();
+    process.BeginErrorReadLine();
+    process.WaitForExit();
+    if (process.ExitCode != 0)
+    {
+        throw new Exception($"Command {fileName} {arguments} failed with exit code {process.ExitCode}");
+    }
+}
+
+Task BuildLinuxInDocker()
+{
+    return Task.Run(() =>
+    {
+        try
+        {
+            if (Process.GetProcessesByName("Docker Desktop").Length == 0)
+            {
+                ExecuteCommand("cmd.exe", "/c start \"\" \"C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe\"");
+                Thread.Sleep(5000);
+            }
+            else
+            {
+                Console.WriteLine("Docker Desktop is already running.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error starting Docker Desktop: {ex.Message}");
+            throw;
+        }
+
+        string dockerScript = Path.Combine(basePath, "Scripts", "Linux-SteamOS", "build-docker.ps1");
+        try
+        {
+            ExecuteCommand("pwsh.exe", dockerScript);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error executing Docker build script: {ex.Message}");
+            throw;
+        }
+    });
+}
+
+Task BuildPlatform(string platform)
+{
+    return Task.Run(() =>
+    {
+        try
+        {
+            string buildDir = Path.Combine(basePath, "Kriss", "bin", "Release", "net8.0", platform, "build");
+            string publishDir = Path.Combine(basePath, "Kriss", "bin", "Release", "net8.0", platform, "publish");
+            if (Directory.Exists(buildDir))
+                Directory.Delete(buildDir, true);
+            if (Directory.Exists(publishDir))
+                Directory.Delete(publishDir, true);
+
+            ExecuteCommand(
+                "dotnet",
+                $"publish ..\\Kriss\\KrissJourney.Kriss.csproj -c Release -r {platform} -p:PublishSingleFile=true --self-contained true /p:DebugType=None /p:DebugSymbols=false /p:AssemblyName=Kriss");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error publishing for {platform}: {ex.Message}");
+            throw;
+        }
+    });
+}
+
+Task CompressBuild(string platform, string? launcher = null)
+{
+    return Task.Run(() =>
+    {
+        try
+        {
+            string sourceDir = Path.Combine(basePath, "Kriss", "bin", "Release", "net8.0", platform, "publish");
+
+            if (launcher != null)
+            {
+                string launcherSource = Path.Combine(basePath, "Scripts", platform, launcher);
+                string launcherDest = Path.Combine(sourceDir, "krissLauncher.sh");
+                File.Copy(launcherSource, launcherDest, true);
+            }
+
+            string outputZip = Path.Combine(basePath, "Scripts", ".output", $"Kriss-{platform}.zip");
+            if (File.Exists(outputZip))
+                File.Delete(outputZip);
+            ZipFile.CreateFromDirectory(sourceDir, outputZip, CompressionLevel.Optimal, false);
+            Console.WriteLine($"{platform} build compressed.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error compressing {platform} build: {ex.Message}");
+            throw;
+        }
+    });
+}

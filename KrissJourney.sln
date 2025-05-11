@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KrissJourney.Kriss", "Kriss
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KrissJourney.Tests", "Tests\KrissJourney.Tests.csproj", "{04B571CD-11EC-48AE-9626-7BA1CE47CC7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publish", "Publish\KrissJourney.Publish.csproj", "{C677BD78-AA23-4240-89F6-59C39D0D1B95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{04B571CD-11EC-48AE-9626-7BA1CE47CC7D}.Release|x64.Build.0 = Release|Any CPU
 		{04B571CD-11EC-48AE-9626-7BA1CE47CC7D}.Release|x86.ActiveCfg = Release|Any CPU
 		{04B571CD-11EC-48AE-9626-7BA1CE47CC7D}.Release|x86.Build.0 = Release|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Debug|x64.Build.0 = Debug|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Debug|x86.Build.0 = Debug|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Release|x64.ActiveCfg = Release|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Release|x64.Build.0 = Release|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Release|x86.ActiveCfg = Release|Any CPU
+		{C677BD78-AA23-4240-89F6-59C39D0D1B95}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

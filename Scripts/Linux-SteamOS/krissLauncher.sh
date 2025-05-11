@@ -1,5 +1,4 @@
 #!/bin/bash
-# Universal launcher for Kriss Journey
 # This script handles Linux/macOS execution with enhanced Steam compatibility
 # Version: 3.0 - Improved bundled terminal emulator for consistent display across all Linux environments
 
