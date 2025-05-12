@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
-using KrissJourney.Tests.Extensions;
+using KrissJourney.Tests.Infrastructure.Helpers;
+using KrissJourney.Tests.Infrastructure.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Services;
 
 [TestClass]
 public class GameEngineTests

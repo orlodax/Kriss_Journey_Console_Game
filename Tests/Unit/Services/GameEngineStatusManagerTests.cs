@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using KrissJourney.Tests.Infrastructure.Helpers;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Services;
 
 [TestClass]
 public class GameEngineStatusManagerTests
@@ -86,3 +87,5 @@ public class GameEngineStatusManagerTests
     }
 
 }
+
+

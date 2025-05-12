@@ -1,7 +1,7 @@
 using KrissJourney.Kriss.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Models;
 
 [TestClass]
 public class ModelsTests

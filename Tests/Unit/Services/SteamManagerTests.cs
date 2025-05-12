@@ -2,7 +2,7 @@ using System;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Services;
 
 [TestClass]
 public class SteamManagerTests

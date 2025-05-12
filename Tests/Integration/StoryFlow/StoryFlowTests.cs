@@ -5,8 +5,9 @@ using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using KrissJourney.Tests.Infrastructure.Helpers;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Integration.StoryFlow;
 
 [TestClass]
 public class StoryFlowTests
@@ -268,3 +269,4 @@ public class StoryFlowTests
         }
     }
 }
+
