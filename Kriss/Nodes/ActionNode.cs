@@ -182,7 +182,7 @@ public partial class ActionNode : NodeBase
                 {                                                           //...otherwise, examine Objects 
                     foreach (ActionObject o in act.Objects)
                         foreach (string word in words)                      //is there a matching object available? just hand me the first you find please
-                            if (o.Objs.Contains(word))
+                            if (o.Objs is not null && o.Objs.Contains(word))
                                 ProcessAction(o);                           //the action is right, and there is a acceptable object specified
 
                     if (act.Answer != null)
