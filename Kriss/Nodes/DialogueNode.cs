@@ -79,8 +79,6 @@ public class DialogueNode : NodeBase
                 CursorLeft = WindowLeft;
             }
 
-            while (KeyAvailable)
-                ReadKey(true);
             key = ReadKey(true);
 
             if (key.Key == ConsoleKey.Enter)
@@ -120,8 +118,7 @@ public class DialogueNode : NodeBase
                 int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.NextLine);
                 RecursiveDialogues(nextLineId, isLineFlowing);
             }
-            else
-                if (Dialogues.Count > lineId + 1)
+            else if (Dialogues.Count > lineId + 1)
                 RecursiveDialogues(lineId + 1, isLineFlowing);
 
             AdvanceToNext(ChildId);

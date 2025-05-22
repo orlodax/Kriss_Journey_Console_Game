@@ -1,7 +1,7 @@
 using KrissJourney.Kriss.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Models;
 
 [TestClass]
 public class ModelsTests
@@ -43,8 +43,8 @@ public class ModelsTests
         Assert.AreEqual("key", action.Condition.Item);
         Assert.AreEqual("sword", action.Effect.GainItem);
 
-        // Test GetOpinion method
-        string opinion = action.GetOpinion("take");
+        // Test GetAnswer method
+        string opinion = action.GetAnswer("take");
         Assert.AreEqual(action.Answer, opinion);
     }
 }

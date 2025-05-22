@@ -4,7 +4,7 @@ using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Converters;
 
 [TestClass]
 public class NodeJsonConverterTests

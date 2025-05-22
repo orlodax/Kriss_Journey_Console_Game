@@ -4,8 +4,9 @@ using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using KrissJourney.Tests.Infrastructure.Helpers;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Nodes;
 
 [TestClass]
 public class NodeTests
@@ -41,3 +42,4 @@ public class NodeTests
         Assert.IsInstanceOfType(new MiniGame01(), typeof(ActionNode));
     }
 }
+

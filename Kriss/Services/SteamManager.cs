@@ -124,10 +124,7 @@ public static class SteamManager
 
     public static void RunCallbacks()
     {
-        if (!s_Initialized)
-            return;
-
-        // Run Steam client callbacks
-        SteamAPI.RunCallbacks();
+        if (s_Initialized)
+            SteamAPI.RunCallbacks();
     }
 }

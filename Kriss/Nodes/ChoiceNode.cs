@@ -98,8 +98,6 @@ public class ChoiceNode : NodeBase
                 CursorLeft = WindowLeft;
             }
 
-            while (KeyAvailable)
-                ReadKey(true);
             key = ReadKey(true);
 
             if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)

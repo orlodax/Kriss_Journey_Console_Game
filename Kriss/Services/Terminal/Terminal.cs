@@ -2,6 +2,9 @@ using System;
 
 namespace KrissJourney.Kriss.Services.Terminal;
 
+/// <summary>
+/// Forwards all calls to the Console class (production code).
+/// </summary>
 public class Terminal : ITerminal
 {
     public int WindowWidth => Console.WindowWidth;

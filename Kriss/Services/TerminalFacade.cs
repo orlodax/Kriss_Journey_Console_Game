@@ -3,52 +3,56 @@ using KrissJourney.Kriss.Services.Terminal;
 
 namespace KrissJourney.Kriss.Services;
 
+/// <summary>
+/// Facade for the terminal service.
+/// This class is used to abstract the terminal operations and allows for easy testing.
+/// </summary>
 public static class TerminalFacade
 {
-    private static ITerminal _terminal = new Terminal.Terminal();
+    private static ITerminal terminal = new Terminal.Terminal();
 
     public static void SetTestTerminal(ITerminal testTerminal)
     {
-        _terminal = testTerminal;
+        terminal = testTerminal;
     }
 
     public static ITerminal GetCurrentTerminal()
     {
-        return _terminal;
+        return terminal;
     }
 
-    public static int WindowWidth => _terminal.WindowWidth;
-    public static int WindowHeight => _terminal.WindowHeight;
+    public static int WindowWidth => terminal.WindowWidth;
+    public static int WindowHeight => terminal.WindowHeight;
     public static int CursorLeft
     {
-        get => _terminal.CursorLeft;
-        set => _terminal.CursorLeft = value;
+        get => terminal.CursorLeft;
+        set => terminal.CursorLeft = value;
     }
     public static int CursorTop
     {
-        get => _terminal.CursorTop;
-        set => _terminal.CursorTop = value;
+        get => terminal.CursorTop;
+        set => terminal.CursorTop = value;
     }
-    public static int WindowLeft => _terminal.WindowLeft;
-    public static int WindowTop => _terminal.WindowTop;
+    public static int WindowLeft => terminal.WindowLeft;
+    public static int WindowTop => terminal.WindowTop;
     public static ConsoleColor ForegroundColor
     {
-        get => _terminal.ForegroundColor;
-        set => _terminal.ForegroundColor = value;
+        get => terminal.ForegroundColor;
+        set => terminal.ForegroundColor = value;
     }
     public static ConsoleColor BackgroundColor
     {
-        get => _terminal.BackgroundColor;
-        set => _terminal.BackgroundColor = value;
+        get => terminal.BackgroundColor;
+        set => terminal.BackgroundColor = value;
     }
-    public static string ReadLine() => _terminal.ReadLine();
-    public static void WriteLine(string message = null) => _terminal.WriteLine(message);
-    public static void Write(string message) => _terminal.Write(message);
-    public static void WriteLine(string message, ConsoleColor color) => _terminal.WriteLine(message, color);
-    public static void Write(string message, ConsoleColor color) => _terminal.Write(message, color);
-    public static void Clear() => _terminal.Clear();
-    public static void SetCursorPosition(int left, int top) => _terminal.SetCursorPosition(left, top);
-    public static ConsoleKeyInfo ReadKey(bool intercept = false) => _terminal.ReadKey(intercept);
-    public static void ResetColor() => _terminal.ResetColor();
-    public static bool KeyAvailable => _terminal.KeyAvailable;
+    public static string ReadLine() => terminal.ReadLine();
+    public static void WriteLine(string message = null) => terminal.WriteLine(message);
+    public static void Write(string message) => terminal.Write(message);
+    public static void WriteLine(string message, ConsoleColor color) => terminal.WriteLine(message, color);
+    public static void Write(string message, ConsoleColor color) => terminal.Write(message, color);
+    public static void Clear() => terminal.Clear();
+    public static void SetCursorPosition(int left, int top) => terminal.SetCursorPosition(left, top);
+    public static ConsoleKeyInfo ReadKey(bool intercept = false) => terminal.ReadKey(intercept);
+    public static void ResetColor() => terminal.ResetColor();
+    public static bool KeyAvailable => terminal.KeyAvailable;
 }
