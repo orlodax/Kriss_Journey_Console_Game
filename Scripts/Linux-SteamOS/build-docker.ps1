@@ -147,7 +147,7 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     Compress-Archive -Path $filesToInclude -DestinationPath $zipPath -Force
     # Remove uncompressed original files after zipping
     foreach ($item in $filesToInclude) {
-        if (Test-Path $item -and ($item -notlike "*sword.png")) {
+        if ((Test-Path $item) -and ($item -notlike "*sword.png")) {
             Remove-Item -Path $item -Recurse -Force
         }
     }
