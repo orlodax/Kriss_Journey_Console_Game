@@ -96,7 +96,7 @@
       "id": 7,
       "type": "Story",
       "recap": "entering",
-      "text": "You find yourself in a narrow corridor, its walls made of something resembling bamboo wood. \nBetween the shadows, you get glimpses of small pieces of furniture, with many little objects on them. \n\nThe light appears to be coming from the end of the passage. \nIt does not look like it's coming from a candle anymore. \nIt's bluish one moment, greenish the next one... \n\nYou all walk behind Theo. You feel like you can hear Smiurl trembling behind you. \n\nYou feel a weird sense of unreality. \nYou catch yourself convulsively squeezing the hilt oh your sword. \n\n$c<<It's an instinctive reaction.>># $C You think. \n\n$c<<I don't even know how to use it.>># $C You think. \n\nSuddenly, the corridor ends around Theo's silhouette,\nand the light suddenly lowers, going back to a more natural candlelight. \n\nYou see an old man sitting on an armchair, his back turned on you. \nYou can understand he's old because of the silver mane flowing down on his shoulders. \n\nHe slowly turns around, and, in the same voice you heard outside, he says:\n\n$M\"Have a seat please. I've just finished brewing some tea\"",
+      "text": "You find yourself in a narrow corridor, its walls made of something resembling bamboo wood. \nBetween the shadows, you get glimpses of small pieces of furniture, with many little objects on them. \n\nThe light appears to be coming from the end of the passage. \nIt does not look like it's coming from a candle anymore. \nIt's bluish one moment, greenish the next one... \n\nYou all walk behind Theo. You feel like you can hear Smiurl trembling behind you. \n\nYou feel a weird sense of unreality. \nYou catch yourself convulsively squeezing the hilt of your sword. \n\n$c<<It's an instinctive reaction.>># $C You think. \n\n$c<<I don't even know how to use it.>># $C You think. \n\nSuddenly, the corridor ends around Theo's silhouette,\nand the light suddenly lowers, going back to a more natural candlelight. \n\nYou see an old man sitting on an armchair, his back turned on you. \nYou can understand he's old because of the silver mane flowing down on his shoulders. \n\nHe slowly turns around, and, in the same voice you heard outside, he says:\n\n$M\"Have a seat please. I've just finished brewing some tea\"",
       "childid": 9
     },
     {
@@ -114,7 +114,7 @@
         {
           "precomment": "Smiurl notices it, and shakes out of silence:",
           "actor": "Smiurl",
-          "line": "He's ipnotising him!# Help!# Help!",
+          "line": "He's hypnotizing him!# Help!# Help!",
           "comment": "He tries to run away. \nThe Elder glances at Theo, whom extends his arm, grabbing the little guy by his collar,\nthen lifting him from the ground, all without taking his eyes off the old man stare."
         },
         {
@@ -222,7 +222,7 @@
       "id": 12,
       "type": "Story",
       "recap": "the story of the rock",
-      "text": "He tells you that this place owes its name to its founder, a man called 'The Seer', or 'The Master'. \nHe was the last of the psychic scholars living on Noi-Hert. \n\nA few decades after the Earthers' abandonment, being on the run, he sought refuge from the unrest here. \nAnd he found shelter indeed, at the top of this narrow yet superb spike of stone,\nwhich stands lonely in the middle of the Great Desert. \n\nSafe from the hordes' attacks, he set up a community which in time continued to teach the psychic arts to its members. \nUp to this day, they live simple lives:\nthey use to farm a few exemplars of an animal species with a thick skin which uses to roam the desert in small herds. \nThey also grow a herb or cereal that can grow anywhere it finds a handful of soil,\nfrom which they obtain a weird, fine flour. \n\nThe water need is met by a well at the bottom of a pit in the middle of the spire,\nwhich goes down several kilometers and reaches deep underground# (at least this is what the Elder claims). \n\nThe eldest and most skilled telepath between them is appointed as 'Elder Telepath', or just 'Elder'. \nThat title rewpresents the authority in the village. \nAnyway# (as the Elder claims)# the election of an Elder is a sporadic event,\nsince they have an average life span of 200 years. \n\nThen the old man falls silent, and goes back to sip his tea.",
+      "text": "He tells you that this place owes its name to its founder, a man called 'The Seer', or 'The Master'. \nHe was the last of the psychic scholars living on Noi-Hert. \n\nA few decades after the Earthers' abandonment, being on the run, he sought refuge from the unrest here. \nAnd he found shelter indeed, at the top of this narrow yet superb spike of stone,\nwhich stands lonely in the middle of the Great Desert. \n\nSafe from the hordes' attacks, he set up a community which in time continued to teach the psychic arts to its members. \nUp to this day, they live simple lives:\nthey use to farm a few exemplars of an animal species with a thick skin which uses to roam the desert in small herds. \nThey also grow a herb or cereal that can grow anywhere it finds a handful of soil,\nfrom which they obtain a weird, fine flour. \n\nThe water need is met by a well at the bottom of a pit in the middle of the spire,\nwhich goes down several kilometers and reaches deep underground# (at least this is what the Elder claims). \n\nThe eldest and most skilled telepath between them is appointed as 'Elder Telepath', or just 'Elder'. \nThat title represents the authority in the village. \nAnyway# (as the Elder claims)# the election of an Elder is a sporadic event,\nsince they have an average life span of 200 years. \n\nThen the old man falls silent, and goes back to sip his tea.",
       "childid": 13
     },
     {
@@ -254,7 +254,7 @@
       "id": 14,
       "type": "Story",
       "recap": "end of questions",
-      "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand. \nHe then stands up, and says:\n\n$M\"You sure are tired. Math, please take them to their designed accommodation.\"\n\n$CMath appears, seemingly out of thin air, emerging from the shadows of the corridor. \n\nYou follow him outside, then you all walk quietly to one of the many houses in the surroundings. \nHe tells you that a certain young woman named Efeliah left it free for you. \n\nAs you enter the house, suddenly exhaustion hits you hard as stone. \nYou collapse on one of the beds, unable to notice anything around you. \nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place... \n\nYour consciousness slips away in a rush,\nas you fall deeply asleep on what feels like the most comfortable bed you've ever layed on.",
+      "text": "The Elder prevents all of you from making any other question with a simple gesture of his hand. \nHe then stands up, and says:\n\n$M\"You sure are tired. Math, please take them to their designed accommodation.\"\n\n$CMath appears, seemingly out of thin air, emerging from the shadows of the corridor. \n\nYou follow him outside, then you all walk quietly to one of the many houses in the surroundings. \nHe tells you that a certain young woman named Efeliah left it free for you. \n\nAs you enter the house, suddenly exhaustion hits you hard as stone. \nYou collapse on one of the beds, unable to notice anything around you. \nThe only thing you are vaguely aware of is the thankfulness you feel for this girl who owns this place... \n\nYour consciousness slips away in a rush,\nas you fall deeply asleep on what feels like the most comfortable bed you've ever laid on.",
       "childid": 15
     },
     {
@@ -300,7 +300,7 @@
       "dialogues": [
         {
           "actor": "Math",
-          "line": "Goodmorning friends!# Feel free to come outside whenever you are ready."
+          "line": "Good morning friends!# Feel free to come outside whenever you are ready."
         },
         {
           "precomment": "In the meantime, Theo comes out the bathroom, he has been showering or something. \nHis wet hair is untied, and he's wearing only a pair of shorts;\nyou can observe and possibly envy the impressive muscles on his chest.",
@@ -324,7 +324,7 @@
       "dialogues": [
         {
           "actor": "Math",
-          "line": "Goodmorning. I hope you rested well."
+          "line": "Good morning. I hope you rested well."
         },
         {
           "precomment": "Corolla smiles and answers, bowing slightly:",
@@ -394,7 +394,7 @@
         {
           "actor": "Elder",
           "line": "Indeed.",
-          "comment": "He answers your thoughts with his usal 'voice'. You wonder if you could ever get used to it.",
+          "comment": "He answers your thoughts with his usual 'voice'. You wonder if you could ever get used to it.",
           "istelepathy": true
         },
         {
@@ -419,7 +419,9 @@
       "altText": "You are still in the square with the others. As time passes, more people are joining you. \nAfter all the care received, Smiurl seems calmer. He's even starting conversations with some of your hosts. \n\nThe Elder still hasn't shown up. \nIt seems you have some more time to enjoy the party.",
       "actions": [
         {
-          "verbs": [ "ask" ],
+          "verbs": [
+            "ask"
+          ],
           "objects": [
             {
               "objs": [
@@ -435,7 +437,7 @@
                 "drink",
                 "kiosk"
               ],
-              "answer": "$g\"Please, have a drink before anything else. I'm sure you'll be surpised!\"$y"
+              "answer": "$g\"Please, have a drink before anything else. I'm sure you'll be surprised!\"$y"
             },
             {
               "objs": [
@@ -461,7 +463,9 @@
           "answer": "You all stand there quietly. It looks like there is still time before the meal. You should take advantage now to ask some questions. These guys TALK WITH THEIR MINDS. How's that possible??"
         },
         {
-          "verbs": [ "eat" ],
+          "verbs": [
+            "eat"
+          ],
           "objects": [
             {
               "objs": [
@@ -492,7 +496,7 @@
         },
         {
           "verbs": [
-            "wait" 
+            "wait"
           ],
           "condition": {
             "item": "partyFed",
@@ -515,7 +519,7 @@
         {
           "precomment": "Math chuckles heartily. He starts explaining with a smile:",
           "actor": "Math",
-          "line": "It's not magic..!# As the Master teaches: 'telepathy is an innate faculty of human minds', dormant at birth. \nAnd like any other skill, it requires excercise, effort, and study."
+          "line": "It's not magic..!# As the Master teaches: 'telepathy is an innate faculty of human minds', dormant at birth. \nAnd like any other skill, it requires exercise, effort, and study."
         },
         {
           "precomment": "He has taken on a more solemn expression. Smiurl is definitely incredulous.",
@@ -596,7 +600,7 @@
           "precomment": "You stare at him, marveled. As Smiurl keeps eating, he keeps on lighting up like a firefly,\ngoing from $Yyellow$C to $Bblue$C, $Yinter$Bmitten$Ytly$C. \n\nThen comes your turn. Another plate is put in front of you. For a second, you try peek at its contents,\nbut soon it gets uncovered by the waiter, as he announces:",
           "actor": "Person",
           "line": "For Mr. Kriss, 'Earthers' Steaks'",
-          "comment": "From his tone, you understand they must be proud of their creation. \nAnd, you have to admnit, it does look familiar. \nIt could be something you use to eat with your family and friends around your barbecue. \n\nSuddenly, you are struck by melancholy again. You haven't even had the time to think about or miss home. \nThe place you left only about three days ago.",
+          "comment": "From his tone, you understand they must be proud of their creation. \nAnd, you have to admit, it does look familiar. \nIt could be something you use to eat with your family and friends around your barbecue. \n\nSuddenly, you are struck by melancholy again. You haven't even had the time to think about or miss home. \nThe place you left only about three days ago.",
           "break": true
         },
         {
@@ -631,7 +635,7 @@
         {
           "actor": "Elder",
           "precomment": "He then tells everybody the same story you already heard, only with many more details. \nThe secret mission the Master left for them, long time ago... \n\nYou get a bit distracted hearing all of that once more. Your eyes wonder and you watch the sky. \nYou see the moon, well, 'A' moon. You realize it's the first time you see it:\na thin scythe, a different shade from the Earth's moon, and a little bigger. \nYou didn't notice it was already dark; you were distracted before,\nhence you could not see the night smuggling off the sun, again. \n\nYou go back to listening to the Elder, and what he says now surprises you, to say the least:",
-          "line": "...to better fulfill our obligation, and to ensure the success and safety of our guests,\ntwo of us volounteered to escort them... In order to meet their fate.",
+          "line": "...to better fulfill our obligation, and to ensure the success and safety of our guests,\ntwo of us volunteered to escort them... In order to meet their fate.",
           "comment": "He waves his hand briefly at you all. \n\nAs he falls silent for a little, you look at Math and Efeliah. They are smiling. \n\nTheo grunts a little, expressing something that must lie more or less halfway between approval and doubt. \n\nSmiurl lights up, maybe with excitement, maybe in fear. ",
           "break": true
         },

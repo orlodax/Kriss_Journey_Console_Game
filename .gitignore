@@ -13,6 +13,7 @@ SteamRuntimeBuild/output/
 # Project build outputs
 Kriss-*.zip
 publish/
+Scripts/Linux-SteamOS/output/
 
 # Steam logs
 steam-launch.log

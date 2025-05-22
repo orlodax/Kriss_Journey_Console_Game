@@ -79,20 +79,26 @@
                 "journey",
                 "distance"
               ],
-              "answer": "$R\"The location of the city of Ayonn is not a mistery. \nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks. \n\n$R\"So... the so-called plain of Ayonn it's ten days of walking west from here. \nAt the end of this desert, we'll have to cross the Mazerock. Then... We'll see.\"\n\n$ySmiurl squeals."
+              "answer": "$R\"The location of the city of Ayonn is not a mystery. \nAt least, the approximate location, since it's a legendary place we're talking about\"$y# she smirks. \n\n$R\"So... the so-called plain of Ayonn it's ten days of walking west from here. \nAt the end of this desert, we'll have to cross the Mazerock. Then... We'll see.\"\n\n$ySmiurl squeals."
             },
             {
-              "objs": [ "mazerock" ],
+              "objs": [
+                "mazerock"
+              ],
               "answer": "$Y\"Just another example of Ayonn's defenses!# A tricky place from which no one has ever returned!\nIf the place itself doesn't kill you, an Oxengutter or some other fiend will surely fix it!\"#$y You gulp. \n\n$R\"Stop it Smiurl... we can deal with any kind of natural maze,\nand surely we can deal with some Oxengutter of any sort.\"#$y You marvel at her confidence. \n\nTheo, as per usual, doesn't even seem interested in what they're saying."
             },
             {
-              "objs": [ "oxengutter" ],
+              "objs": [
+                "oxengutter"
+              ],
               "answer": "$B\"Don't pay attention to everything Smiurl says... And trust me, you don't even want to know that.\"\n$yHis words do not reassure you, that's for sure."
             }
           ]
         },
         {
-          "verbs": [ "rest" ],
+          "verbs": [
+            "rest"
+          ],
           "effect": {
             "gainitem": "desertrest"
           },
@@ -116,7 +122,7 @@
       "id": 3,
       "recap": "in sword",
       "type": "Story",
-      "text": "The sword is very long and heavy. It is perfectly balanced. \nThe long grip seems made of some metal, darkened through time. But it's surprising, to the touch. \nIt feels like it adapts perfectly to your hands, as if it is... alive. It is not cold nor rigid. \nIt is extremely hard though, and it resists all of your attempts at sctratching it. \n\nYou shrug your shoulders, and you move on to inspect the blade. \n\nThe blade is double-edged, and this looks weird to you because it is also slightly curved. \nIt's four fingers wide at the intersection with the guard,\nthen it spreads outward with an arc on each side reaching about a handbreadth. \nThe width decreases towards the point. And the point looks strange: it is oddly asymmetrical,\nas if the blacksmith wanted to make it look as a broken, splintered blade, that was later resharped as a razor. \n\nYou think it's impossible to fight with a weapon like that. \nNonetheless, when you wield it you feel as your arm is one thing with the sword,\nand it does not looks like you and the sword move in a clumsy or unbalanced way at all. \n\nThe metal of the blade itself looks strange. It reflects the light unevenly,\nand you don't know why but you think it's like its molecular structure is constantly shifting. \nSometimes you can see your own image reflected on the blade as a mirror;\nyet a second after the reflection seems to swim or evaporate in different directions,\nas if it is subject to a sudden and impossible turbulence. \nIf you keep on staring at it, the blade looks like it's subtly moving back and forth,\nlike a living thing, even if it's cold and solid to the touch. \n\nAs if all of that isn't enough, you also feel like you can glimpse an inscription flowing along its entire lenght. \nBut it's more a feeling than an actual visual input. You can't explain it to yourself.",
+      "text": "The sword is very long and heavy. It is perfectly balanced. \nThe long grip seems made of some metal, darkened through time. But it's surprising, to the touch. \nIt feels like it adapts perfectly to your hands, as if it is... alive. It is not cold nor rigid. \nIt is extremely hard though, and it resists all of your attempts at scratching it. \n\nYou shrug your shoulders, and you move on to inspect the blade. \n\nThe blade is double-edged, and this looks weird to you because it is also slightly curved. \nIt's four fingers wide at the intersection with the guard,\nthen it spreads outward with an arc on each side reaching about a handbreadth. \nThe width decreases towards the point. And the point looks strange: it is oddly asymmetrical,\nas if the blacksmith wanted to make it look as a broken, splintered blade, that was later re-sharpened as a razor. \n\nYou think it's impossible to fight with a weapon like that. \nNonetheless, when you wield it you feel as your arm is one thing with the sword,\nand it does not looks like you and the sword move in a clumsy or unbalanced way at all. \n\nThe metal of the blade itself looks strange. It reflects the light unevenly,\nand you don't know why but you think it's like its molecular structure is constantly shifting. \nSometimes you can see your own image reflected on the blade as a mirror;\nyet a second after the reflection seems to swim or evaporate in different directions,\nas if it is subject to a sudden and impossible turbulence. \nIf you keep on staring at it, the blade looks like it's subtly moving back and forth,\nlike a living thing, even if it's cold and solid to the touch. \n\nAs if all of that isn't enough, you also feel like you can glimpse an inscription flowing along its entire length. \nBut it's more a feeling than an actual visual input. You can't explain it to yourself.",
       "childid": 4
     },
     {
@@ -160,7 +166,7 @@
       "id": 5,
       "recap": "see something",
       "type": "Dialogue",
-      "text": "After another couple of hours spent walking, the flat scene in front of you shows the first change. \nA kind of spire of rock, solitary, direction south-west. \nIt appears fading in: you now become aware of the atmoshperic haze that limits visibility to maybe 20 kilometers. \n\n",
+      "text": "After another couple of hours spent walking, the flat scene in front of you shows the first change. \nA kind of spire of rock, solitary, direction south-west. \nIt appears fading in: you now become aware of the atmospheric haze that limits visibility to maybe 20 kilometers. \n\n",
       "dialogues": [
         {
           "actor": "Kriss",
@@ -1005,7 +1011,7 @@
       "id": 11,
       "type": "Story",
       "recap": "Math welcomes",
-      "text": "You turn around, trying to distinguish something in that unrelentless dance of lights and shadows. \nIt keeps on increasing in intensity: you can now see clearly the stone balcony you are resting on,\nbordered by the void of the precipice, beyond a thin line of darkness. \n\nTheo's prediction proves to be right: the light does come from that direction. \n\nAnd after few seconds, suddenly, from behind a rock,\na man appears, torch in his hand, startling all of you, excepted Theo of course. \n\nHe's wearing a long white robe. His skin looks dark, his hair is short, curly and black. \n\nHe starts speaking, saying:\n\n$m\"Hello Smiurl, Kriss, Corolla# and Theo, and welcome. \nYou were waited here at Seer's Rock. \nPlease, if you would like to follow me through the passage... \nMy name is Math.\"##$C He concludes with a half bow. \n\nYou all stay there, diversely petrified. \n\nAfter many seconds of the newcomner Math silent, smiling waiting, all you say is:#\n\n$c\"Hi...\"##",
+      "text": "You turn around, trying to distinguish something in that unrelenting dance of lights and shadows. \nIt keeps on increasing in intensity: you can now see clearly the stone balcony you are resting on,\nbordered by the void of the precipice, beyond a thin line of darkness. \n\nTheo's prediction proves to be right: the light does come from that direction. \n\nAnd after few seconds, suddenly, from behind a rock,\na man appears, torch in his hand, startling all of you, excepted Theo of course. \n\nHe's wearing a long white robe. His skin looks dark, his hair is short, curly and black. \n\nHe starts speaking, saying:\n\n$m\"Hello Smiurl, Kriss, Corolla# and Theo, and welcome. \nYou were waited here at Seer's Rock. \nPlease, if you would like to follow me through the passage... \nMy name is Math.\"##$C He concludes with a half bow. \n\nYou all stay there, diversely petrified. \n\nAfter many seconds of the newcomer Math silent, smiling waiting, all you say is:#\n\n$c\"Hi...\"##",
       "islast": true
     }
   ]

@@ -24,7 +24,7 @@ public partial class ActionNode : NodeBase
     internal void PrepareForAction(bool isFirstTimeDisplayed = true)
     {
         ///go to bottom line and prepare prompt
-        CursorTop = WindowTop + WindowHeight - 2;
+        CursorTop = WindowTop + WindowHeight - 1;
         CursorLeft = WindowLeft;
 
         ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
@@ -65,9 +65,11 @@ public partial class ActionNode : NodeBase
     #region Special keys pressed
     protected virtual void TabPressed()
     {
+        BottomMessage = string.Empty;
         RedrawNode();
 
-        List<string> helpObjects = [];                                       //if this gets populated, show object help not verbs
+        List<string> helpObjects = [];
+        string opinion = string.Empty;                                      //if this gets populated, show object help not verbs
 
         string[] words = ExtractWords();
 
@@ -81,8 +83,13 @@ public partial class ActionNode : NodeBase
                 if (verb != null)
                 {
                     if (action.Objects.Count != 0)
+                    {
                         foreach (ActionObject objContainer in action.Objects)         //when the action is found, iterate through every object term
-                            helpObjects.Add(objContainer.Objs[0]);
+                            if (objContainer.Objs is not null && objContainer.Objs.Count != 0 && !helpObjects.Contains(objContainer.Objs[0]))
+                                helpObjects.Add(objContainer.Objs[0]);            //if the object is not already in the list, add it
+                            else
+                                opinion = Action.GetHelpObject(verb); //if the object is empty, add the verb opinion
+                    }
                     else
                         helpObjects.Add("Just do it.");
 
@@ -103,6 +110,11 @@ public partial class ActionNode : NodeBase
             ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
             foreach (string term in helpObjects)
                 Write(term + " ");
+        }
+        else if (!string.IsNullOrEmpty(opinion))
+        {
+            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
+            Write(opinion);
         }
         else
         {
@@ -188,7 +200,7 @@ public partial class ActionNode : NodeBase
                     if (act.Answer != null)
                         DisplaySuccess(act.Answer, act.ChildId);
                     else
-                        CustomRefusal(act.GetOpinion(matchingVerb));        //the action is right, but no required object is specified
+                        CustomRefusal(act.GetAnswer(matchingVerb));        //the action is right, but no required object is specified
                 }
             }
             else
@@ -286,7 +298,7 @@ public partial class ActionNode : NodeBase
 
     protected static int MeasureMessage(string answer)
     {
-        //measure the lenght and the newlines in the answer to determine how up to go to start writing
+        //measure the length and the newlines in the answer to determine how up to go to start writing
         int newLines = NewLineRegex().Matches(answer).Count;
         int rows = answer.Length / WindowWidth;
 

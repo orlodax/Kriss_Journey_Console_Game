@@ -5,8 +5,8 @@ namespace KrissJourney.Kriss.Models;
 public class Dialogue
 {
     public string Actor { get; set; }       //who speaks
-    public string LineName { get; set; }      //name of the speechpart (used to link to this)
-    public string NextLine { get; set; }    //if ever needed, name of the speechpart to jump to
+    public string LineName { get; set; }      //name of the speech part (used to link to this)
+    public string NextLine { get; set; }    //if ever needed, name of the speech part to jump to
     public string PreComment { get; set; }
     public string Line { get; set; }
     public string Comment { get; set; }
@@ -20,5 +20,5 @@ public class Reply
 {
     public string Line { get; set; }
     public int? ChildId { get; set; }
-    public string NextLine { get; set; }    //speechpart to jump to        
+    public string NextLine { get; set; }    //speech part to jump to        
 }
