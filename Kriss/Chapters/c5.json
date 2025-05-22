@@ -6,7 +6,7 @@
       "id": 1,
       "recap": "intro 5",
       "type": "Story",
-      "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness. \nYou have no body, no eyes. \nJust an adimensional point, in the void. \nYou 'hear' hollow sounds around, like thunders. \n\nThen, you think you can see sinisters glares. \nThe Chief's sword gets closer and closer, its tip menacingly pointed at your eyes. \nThe shiny edge is ever closer, closer... \n\nYou shout. The darkness reacts, vibrating in response to such a huge amount of anger and pain. \nThen, suddenly, as answering to the farthest echoes of your unaware call, light comes to you. \nA blinding flash hits you, piercing through every particle in your body. \n\nYou are one with the light now. \nYou hear a warm voice whispering, or maybe thinking of whispering:\n\n$G<<Have courage!>>#\n\n$c... Are you not alone?",
+      "text": "-------------------------------\n|          CHAPTER 5          |\n-------------------------------\n\n\n$cAll around you is thick darkness. \nYou have no body, no eyes. \nJust an nondimensional point, in the void. \nYou 'hear' hollow sounds around, like thunders. \n\nThen, you think you can see sinister glares. \nThe Chief's sword gets closer and closer, its tip menacingly pointed at your eyes. \nThe shiny edge is ever closer, closer... \n\nYou shout. The darkness reacts, vibrating in response to such a huge amount of anger and pain. \nThen, suddenly, as answering to the farthest echoes of your unaware call, light comes to you. \nA blinding flash hits you, piercing through every particle in your body. \n\nYou are one with the light now. \nYou hear a warm voice whispering, or maybe thinking of whispering:\n\n$G<<Have courage!>>#\n\n$c... Are you not alone?",
       "childid": 6
     },
     {
@@ -50,7 +50,7 @@
       "dialogues": [
         {
           "actor": "Smiurl",
-          "line": "Oh! Goodmorning Kriss! Slept well? Are you hungry?",
+          "line": "Oh! Good morning Kriss! Slept well? Are you hungry?",
           "comment": "He anticipates you, thoughtfully."
         },
         {
@@ -78,7 +78,7 @@
         },
         {
           "actor": "Smiurl",
-          "line": "I can't believe you're asking it! These are Croeggs larvae."
+          "line": "I can't believe you're asking it! These are Croegg's larvae."
         },
         {
           "actor": "Kriss",
@@ -92,7 +92,7 @@
         },
         {
           "actor": "Smiurl",
-          "precomment": "You must have made a disgusted expression, as he adds, after looking suprised seeing your face:",
+          "precomment": "You must have made a disgusted expression, as he adds, after looking surprised seeing your face:",
           "line": "Well, I'll have to eat your serving too!",
           "comment": "And he merrily takes the sand-fruit back.",
           "childid": 2
@@ -172,7 +172,7 @@
       "id": 8,
       "recap": "Theo tells Noi-Hert's story",
       "type": "Story",
-      "text": "$BNoi-Hert was discovered five centuries after the Great Religion War,\nfew decades after interstellar travel was made possible. \n\nIt was the first inhabitable planet discovered by the Earthers ships. \nIt is a little smaller than the Earth, about two-thirds of its volume,\nbut it has a greater nucleus density, so the gravity is about the same. \n\nWith just a little moon, it orbits lonely around a G-type star\nthat everybody called sun but had no real name. \n\nOver time, the Earthers established many colonies on the surface,\nfor commercial, reasearch and overpopulation reasons. \n\nThe best and the worst of the Earth arrived here. \nA lot of brilliant minds, scientists, artists, pursuing new discoveries\nand exploring new horizons, with a whole planet at their disposal. \nBut, also, a lot of low-lives, jailbirds, the most despicable\nfrom every kind of culture and environment, fleeing from the world\nthat rejected, hunted them down relentlessly. \n\nA huge penitentiary complex was also built on the other side of this planet,\nas this side flourished giving way to new, unmatched scientific progress. \nThere was space for everybody, and every commodity and resource\nwas shipped by the Earth on its $WTitans$B, the huge orbital ships. \n\nBut this was one of the reasons of the collapse, too.",
+      "text": "$BNoi-Hert was discovered five centuries after the Great Religion War,\nfew decades after interstellar travel was made possible. \n\nIt was the first inhabitable planet discovered by the Earthers ships. \nIt is a little smaller than the Earth, about two-thirds of its volume,\nbut it has a greater nucleus density, so the gravity is about the same. \n\nWith just a little moon, it orbits lonely around a G-type star\nthat everybody called sun but had no real name. \n\nOver time, the Earthers established many colonies on the surface,\nfor commercial, research and overpopulation reasons. \n\nThe best and the worst of the Earth arrived here. \nA lot of brilliant minds, scientists, artists, pursuing new discoveries\nand exploring new horizons, with a whole planet at their disposal. \nBut, also, a lot of low-lives, jailbirds, the most despicable\nfrom every kind of culture and environment, fleeing from the world\nthat rejected, hunted them down relentlessly. \n\nA huge penitentiary complex was also built on the other side of this planet,\nas this side flourished giving way to new, unmatched scientific progress. \nThere was space for everybody, and every commodity and resource\nwas shipped by the Earth on its $WTitans$B, the huge orbital ships. \n\nBut this was one of the reasons of the collapse, too.",
       "childid": 9
     },
     {
@@ -216,7 +216,7 @@
       "type": "Dialogue",
       "dialogues": [
         {
-          "precomment": "You slowly walk towards what's left of the convoy. You are already having second thoughts,\nsince you have to traverse that field of death alone now. \n\nLuckily, you spot Theo far ahead and Corolla too, among the wreckage. They must have thought the same thing. \n\nIn the daylight, the view is miserable. \nBodies, burnt chariots, debris... \nYou start thinking about the eventuality of searching the bodies... \n\n$Y\"Hey look what I found!\"$C Smiurl calls from behind. \n\nYou and the others walk to him to see. \n\nHe's leaning over a body, close to his dead horse. You don't recognize him. Was he one of the defensors?",
+          "precomment": "You slowly walk towards what's left of the convoy. You are already having second thoughts,\nsince you have to traverse that field of death alone now. \n\nLuckily, you spot Theo far ahead and Corolla too, among the wreckage. They must have thought the same thing. \n\nIn the daylight, the view is miserable. \nBodies, burnt chariots, debris... \nYou start thinking about the eventuality of searching the bodies... \n\n$Y\"Hey look what I found!\"$C Smiurl calls from behind. \n\nYou and the others walk to him to see. \n\nHe's leaning over a body, close to his dead horse. You don't recognize him. Was he one of the defenders?",
           "actor": "Corolla",
           "line": "What's this stuff?",
           "comment": "Corolla points at some kind of armor the guy wears. Wore. You got it.",
@@ -233,14 +233,14 @@
         },
         {
           "linename": "touchArmor",
-          "precomment": "You kneel down. You try not to look the dead man in his glassy eyes. You focus on the plates on his chest. \nYou touch slighlty the surface of the armor, and suddenly it lights up!\nYou abruptly withdraw your hand, and the armor fades off again, slowly. \nBefore shutting off completely, it lights up with glares like little electrical storms, looking like... holograms?",
+          "precomment": "You kneel down. You try not to look the dead man in his glassy eyes. You focus on the plates on his chest. \nYou touch slightly the surface of the armor, and suddenly it lights up!\nYou abruptly withdraw your hand, and the armor fades off again, slowly. \nBefore shutting off completely, it lights up with glares like little electrical storms, looking like... holograms?",
           "actor": "Corolla",
           "line": "What the...!",
           "nextline": "itsAyonn"
         },
         {
           "linename": "theoTouches",
-          "precomment": "Theo senses your hesitation, and quickly kneels down. \nHe touches slighlty the surface of the armor, and suddenly it lights up!\nHe abruptly withdraws his hand, and the armor fades off again, slowly. \nBefore shutting off completely, it lights up with glares like little electrical storms, looking like... holograms?",
+          "precomment": "Theo senses your hesitation, and quickly kneels down. \nHe touches slightly the surface of the armor, and suddenly it lights up!\nHe abruptly withdraws his hand, and the armor fades off again, slowly. \nBefore shutting off completely, it lights up with glares like little electrical storms, looking like... holograms?",
           "actor": "Corolla",
           "line": "What the...!",
           "nextline": "itsAyonn"

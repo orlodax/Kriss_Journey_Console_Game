@@ -1,5 +1,5 @@
 ﻿
-namespace KrissJourney.Kriss.Models; // Kriss Journey - Lybra - Condition.cs
+namespace KrissJourney.Kriss.Models;
 
 public class Choice
 {

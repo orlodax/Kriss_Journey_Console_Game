@@ -103,7 +103,7 @@
         },
         {
           "actor": "Kriss",
-          "line": "I have a more rational reason this time. So far, excluding your little village,\nI have seen no trace of proper civilisation, and no technology whatsoever. \nIf Ayonn is even remotely what they say it is, well... In that case I am confident I will find some answers there."
+          "line": "I have a more rational reason this time. So far, excluding your little village,\nI have seen no trace of proper civilization, and no technology whatsoever. \nIf Ayonn is even remotely what they say it is, well... In that case I am confident I will find some answers there."
         },
         {
           "precomment": "Math and Efeliah look at you with an indecipherable expression. After few seconds, you ask:",
@@ -113,7 +113,7 @@
         {
           "precomment": "Math shakes his head:",
           "actor": "Math",
-          "line": "You won't find the civilisation you seek there...# About the answers, only time will decide on giving them to you."
+          "line": "You won't find the civilization you seek there...# About the answers, only time will decide on giving them to you."
         },
         {
           "precomment": "Then he moves his attention to Corolla.",
@@ -160,7 +160,7 @@
         },
         {
           "actor": "Math",
-          "line": "No Theo. We telepaths follow the Master's teachings, which include never using any wepon..."
+          "line": "No Theo. We telepaths follow the Master's teachings, which include never using any weapon..."
         },
         {
           "actor": "Efeliah",
@@ -341,7 +341,7 @@
         },
         {
           "actor": "Efeliah",
-          "line": "You were either too much or too less careful. You visualised not just the pizza itself,\nbut the box in which it's carried too... along with the writing on top of it: 'Pizza Express'!"
+          "line": "You were either too much or too less careful. You visualized not just the pizza itself,\nbut the box in which it's carried too... along with the writing on top of it: 'Pizza Express'!"
         },
         {
           "actor": "Kriss",
@@ -441,14 +441,14 @@
       "id": 6,
       "type": "Story",
       "recap": "in the middle of nowhere",
-      "text": "After few minutes the 'camp' #(a bit stretched definition: just three tents)# was ready. \nMath and Efeliah were the quickest to set up their tent,\nafter which they sat and observed you struggling with ropes and pegs... \nUntil a particularly mercy Smiurl came to help you out. \n\nIn the meanwhile, the sun has set, and the bonfire has been lit. \n\nOutside that circle of warmth, everything is darkness. \nThe shadows, taking advantage of that quiet night, are merrily dancing all around you. \n\nYou take a piece of meat from the fire, a leftover from the Seer's Rock party,\nthen you withdraw behind a tent, lying on the ground. \n\nFor the first time, you have the chance to carefully look at Noi-Hert's cloudless sky. \nThe moon isn't up yet, a feeble light is irradiated by the choir of stars. \n\nYou can't pinpoint any familiar constellation. \nEven the overall distribuition of the stars is not even like in Earth's sky:\nquite high over the horizon you notice a shiny, compacted mass of stars, stark against the rest of the firmament. \nIt degrades down to the right increasingly waning as it approaches the horizon. \nIt looks like a gigantic jewel. A celestial tiara. \n\n$G<<The Milky Way>>#$C A voice whispering inside of you. From where it's from?\nThat thought crosses you like the shadow of a little cloud of smoke, quickly fading. \nIt has to be an arm of the spiral after all, from a different perspective...",
+      "text": "After few minutes the 'camp' #(a bit stretched definition: just three tents)# was ready. \nMath and Efeliah were the quickest to set up their tent,\nafter which they sat and observed you struggling with ropes and pegs... \nUntil a particularly mercy Smiurl came to help you out. \n\nIn the meanwhile, the sun has set, and the bonfire has been lit. \n\nOutside that circle of warmth, everything is darkness. \nThe shadows, taking advantage of that quiet night, are merrily dancing all around you. \n\nYou take a piece of meat from the fire, a leftover from the Seer's Rock party,\nthen you withdraw behind a tent, lying on the ground. \n\nFor the first time, you have the chance to carefully look at Noi-Hert's cloudless sky. \nThe moon isn't up yet, a feeble light is irradiated by the choir of stars. \n\nYou can't pinpoint any familiar constellation. \nEven the overall distribution of the stars is not even like in Earth's sky:\nquite high over the horizon you notice a shiny, compacted mass of stars, stark against the rest of the firmament. \nIt degrades down to the right increasingly waning as it approaches the horizon. \nIt looks like a gigantic jewel. A celestial tiara. \n\n$G<<The Milky Way>>#$C A voice whispering inside of you. From where it's from?\nThat thought crosses you like the shadow of a little cloud of smoke, quickly fading. \nIt has to be an arm of the spiral after all, from a different perspective...",
       "childid": 7
     },
     {
       "id": 7,
       "type": "Story",
       "recap": "looking at the stars",
-      "text": "The light of the galaxy... That light your generation has forgotten,\nunable to see it as it's suffocated by the billions artifical lights of the Earth. \n\nNo wonder you are so impressed: the clarity of that view!\nFrom your home, you've never seen anything like this. \n\nThe sky, for the Earthers, was demoted to a mere 'city roof'... \nNothing more than something you need over your head in order to not be wiped away in the open space. \nAnd good riddance to the celestial vista. \n\nYet another awesome thing is the silence. Your 'civilised' ear still has to get used to the absence of noises. \nNo cars. No water pipes howling and clanging at night. No TV. \nJust the crackling of the fire and the sizzling of the fat falling into the flames,\nthe voices of Corolla, Smiurl, and the others. \n\nSuddenly you feel you love this place, despite of its desolate state. And you love these people. \nYou image to go back to your place at this very moment, your house, your room... \nBut all you could then would be staring at light coming from the street lamps drawing shapes on your ceiling. \nYou would be thinking back to Noi-Hert, to all it means now, to your new friends, to the starry sky... \n\n$R\"There you are!\"$C Corolla's head pops out the side of the tent.",
+      "text": "The light of the galaxy... That light your generation has forgotten,\nunable to see it as it's suffocated by the billions artificial lights of the Earth. \n\nNo wonder you are so impressed: the clarity of that view!\nFrom your home, you've never seen anything like this. \n\nThe sky, for the Earthers, was demoted to a mere 'city roof'... \nNothing more than something you need over your head in order to not be wiped away in the open space. \nAnd good riddance to the celestial vista. \n\nYet another awesome thing is the silence. Your 'civilized' ear still has to get used to the absence of noises. \nNo cars. No water pipes howling and clanging at night. No TV. \nJust the crackling of the fire and the sizzling of the fat falling into the flames,\nthe voices of Corolla, Smiurl, and the others. \n\nSuddenly you feel you love this place, despite of its desolate state. And you love these people. \nYou image to go back to your place at this very moment, your house, your room... \nBut all you could then would be staring at light coming from the street lamps drawing shapes on your ceiling. \nYou would be thinking back to Noi-Hert, to all it means now, to your new friends, to the starry sky... \n\n$R\"There you are!\"$C Corolla's head pops out the side of the tent.",
       "childid": 8
     },
     {
@@ -461,7 +461,7 @@
           "line": "We realized you were gone for a while now..."
         },
         {
-          "precomment": "You nod distractly. You loose your hands behind your neck, but you're still looking at the sky above you, not at her.",
+          "precomment": "You nod distractedly. You loose your hands behind your neck, but you're still looking at the sky above you, not at her.",
           "actor": "Corolla",
           "line": "Well then, I'll go back...",
           "comment": "She points to the others, hesitating a little.",
@@ -536,7 +536,7 @@
           "break": true
         },
         {
-          "precomment": "Theo's head pops out from the back of the tent, staring at you two with his usal scowl. \nFor a moment that glance sliences you, only to burst laughing harder right after. \nBy this point, you are both in tears. \n\nYou vaguely hear Smiurl, still by the fire, saying:",
+          "precomment": "Theo's head pops out from the back of the tent, staring at you two with his usual scowl. \nFor a moment that glance silences you, only to burst laughing harder right after. \nBy this point, you are both in tears. \n\nYou vaguely hear Smiurl, still by the fire, saying:",
           "actor": "Smiurl",
           "line": "What's gotten into them?# Did a desert tarantula bite them??"
         },
@@ -648,7 +648,7 @@
       "id": 11,
       "type": "Story",
       "recap": "Oxengutters continued",
-      "text": "You poke your face out. You see Theo few meters away, leaning on his mallet, its dirty head on the ground. \nBeside him, a huge #(and quite battered)# carcasse of one of those beasts. \nHe's panting a little, but otherwise seems to be prefectly fine; just few scratches. \n\nYou decide to come outside when you spot Corolla approaching, looking at Theo and smiling with approval. \nHer satisfaction does not last long: everybody's blood runs cold when another shriek lacerates the night. \n\n$W\"Smiurl!!\"#$C You and Corolla shout with one voice. \n\nAt that, time seems to stop for you. \nYou watch Theo and Corolla as they start running, like a movie in slow motion. \nAt the same time, you feel Efeliah next to you wincing violently, and an horrifying image fills your mind right after. \n\n$YYou can somehow experience every detail: the hideous grin in the dark hanging over you;\nthe nauseating, rotting smell of its breath flowing down on your face;\nits dirty and sharp fangs opening up in a sick, evil laughter;\nlong, flickering whiskers on the sides of the canine snout, which eagerly smells the prey;\nits bloodthirsty eyes, yellow, in which the image of a terrified Smiurl is reflected. \n\n$CThen, you can feel it happening again. Like when you were in front of the Chief during his last moments. \nYou lose touch with reality once more. Yet, this time feels different. Like a sudden surge of energy inside of you,\nyour brain is suddenly flooded, forced by an invisible force like a chisel on a rusty switch. \n\n$cYou feel your legs initiating movement. In an instant you reach down to the Chief's sword, $Gyour Sword$c. \nWith the corner of your consciousness you notice Efeliah passing out, readily held by Math. \nThen you are pure race, pale shadow with no real consistence under that ephemeral,\nalien moonlight painting everything oniric.",
+      "text": "You poke your face out. You see Theo few meters away, leaning on his mallet, its dirty head on the ground. \nBeside him, a huge #(and quite battered)# carcass of one of those beasts. \nHe's panting a little, but otherwise seems to be perfectly fine; just few scratches. \n\nYou decide to come outside when you spot Corolla approaching, looking at Theo and smiling with approval. \nHer satisfaction does not last long: everybody's blood runs cold when another shriek lacerates the night. \n\n$W\"Smiurl!!\"#$C You and Corolla shout with one voice. \n\nAt that, time seems to stop for you. \nYou watch Theo and Corolla as they start running, like a movie in slow motion. \nAt the same time, you feel Efeliah next to you wincing violently, and an horrifying image fills your mind right after. \n\n$YYou can somehow experience every detail: the hideous grin in the dark hanging over you;\nthe nauseating, rotting smell of its breath flowing down on your face;\nits dirty and sharp fangs opening up in a sick, evil laughter;\nlong, flickering whiskers on the sides of the canine snout, which eagerly smells the prey;\nits bloodthirsty eyes, yellow, in which the image of a terrified Smiurl is reflected. \n\n$CThen, you can feel it happening again. Like when you were in front of the Chief during his last moments. \nYou lose touch with reality once more. Yet, this time feels different. Like a sudden surge of energy inside of you,\nyour brain is suddenly flooded, forced by an invisible force like a chisel on a rusty switch. \n\n$cYou feel your legs initiating movement. In an instant you reach down to the Chief's sword, $Gyour Sword$c. \nWith the corner of your consciousness you notice Efeliah passing out, readily held by Math. \nThen you are pure race, pale shadow with no real consistence under that ephemeral,\nalien moonlight painting everything oneiric.",
       "childid": 12
     },
     {
@@ -656,7 +656,7 @@
       "type": "Story",
       "recap": "breakout",
       "islast": true,
-      "text": "$cYou left Corolla and then Theo behind, almost not realising it. \nEven if it's dark, you can dodge any obstacle. \nThere's no stone that manages to make you stumble, or pit in which to fall. \nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws. \nYou can feel his terror as clear as his cries. \n\nYou are screaming now, an unprecedented roar coming out your throat. \nWithout thinking you grab the sword, still in its sheath, by the tip side. \nIt's matter of way less than a second; the beast realizes the danger, and you allow yourself a gloating smile. \n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud. \n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.##\n\n\n$CTime resume its normal flow. You feel you strenght failing you, and you fall on your knees. \nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open. \n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.#\n\nThen all is darkness. \nAll is oblivion.#"
+      "text": "$cYou left Corolla and then Theo behind, almost not realizing it. \nEven if it's dark, you can dodge any obstacle. \nThere's no stone that manages to make you stumble, or pit in which to fall. \nSuddenly you arrive at the edge of a little depression in the ground:\nyou spot the ugly beast keeping Smiurl pinned down with its claws. \nYou can feel his terror as clear as his cries. \n\nYou are screaming now, an unprecedented roar coming out your throat. \nWithout thinking you grab the sword, still in its sheath, by the tip side. \nIt's matter of way less than a second; the beast realizes the danger, and you allow yourself a gloating smile. \n\nLess than an instant later, screaming, one with your rage which floods all of your muscles,\nwith your incredible momentum, you hurl your sword upwards, against the animal's skull, which emits a loud, gross thud. \n\nThe dead body quietly falls limp to the ground, the only sound produced by its blood gushing out violently.##\n\n\n$CTime resume its normal flow. You feel you strength failing you, and you fall on your knees. \nWith your sword still in your hands, you roll on your side,\nnext to a scared, injured, wheezing Smiurl who's now staring at you with eyes wide open. \n\nYou feel Theo's heavy steps approaching, then you hear Corolla yelling your names.#\n\nThen all is darkness. \nAll is oblivion.#"
     }
   ]
 }

@@ -298,7 +298,7 @@ public partial class ActionNode : NodeBase
 
     protected static int MeasureMessage(string answer)
     {
-        //measure the lenght and the newlines in the answer to determine how up to go to start writing
+        //measure the length and the newlines in the answer to determine how up to go to start writing
         int newLines = NewLineRegex().Matches(answer).Count;
         int rows = answer.Length / WindowWidth;
 

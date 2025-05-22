@@ -27,7 +27,7 @@ public class DialogueNode : NodeBase
             isLineFlowing = false;
         // else, it depends
 
-        Dialogue currentLine = Dialogues[lineId];                               //cureent object selected in the iteration
+        Dialogue currentLine = Dialogues[lineId];                               //current object selected in the iteration
 
         #region Drawing base element of the Dialog object (speech part)
 
@@ -87,7 +87,7 @@ public class DialogueNode : NodeBase
             {
                 Clear();
 
-                if (currentLine.Replies[selectedRow].ChildId.HasValue)                  //on selecion, either 
+                if (currentLine.Replies[selectedRow].ChildId.HasValue)                  //on selection, either 
                     AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
                 else                                                                    //or jump to the next line
                     RecursiveDialogues(Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine));

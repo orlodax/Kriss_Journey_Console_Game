@@ -13,7 +13,7 @@
       "id": 2,
       "type": "Action",
       "recap": "look around",
-      "text": "$c\"Maybe I am dead, afer all.\"#$C you say aloud, reconsidering the plausibility of that scenario. \n\nIn the meanwhile, you look at the small reddish vale that lies downhill. \nThere is smoke ascending from what it looks like several fires or maybe arsons. \n\nYou carefully stand up, becoming dizzy until your sense of balance stabilises. \n\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
+      "text": "$c\"Maybe I am dead, after all.\"#$C you say aloud, reconsidering the plausibility of that scenario. \n\nIn the meanwhile, you look at the small reddish vale that lies downhill. \nThere is smoke ascending from what it looks like several fires or maybe arsons. \n\nYou carefully stand up, becoming dizzy until your sense of balance stabilizes. \n\n\n$D[When you see the prompt \"\\>\", type an action you want to perform. Press TAB if you need help.]$C",
       "actions": [
         {
           "verbs": [
@@ -59,7 +59,7 @@
       "id": 3,
       "type": "Story",
       "recap": "lookresult",
-      "text": "$CThe first thing you notice is the sky, streaked with a cloud that looks like the jetstream of a plane. \nIt has a strange, alien color. \n\nThe sun is setting, shedding its last light painting with odd glares on the celestial vault,\nwhich is already welcoming the faint sparkle of several stars. \n\nA little downhill, you then notice an earth road going down towards the vale. \nIt points in the direction of the fires. \nLooking more intently, you discern there must be some kind of village there. \n\nIt looks like there's nowhere else to go, at the moment.",
+      "text": "$CThe first thing you notice is the sky, streaked with a cloud that looks like the contrail of a plane. \nIt has a strange, alien color. \n\nThe sun is setting, shedding its last light painting with odd glares on the celestial vault,\nwhich is already welcoming the faint sparkle of several stars. \n\nA little downhill, you then notice an earth road going down towards the vale. \nIt points in the direction of the fires. \nLooking more intently, you discern there must be some kind of village there. \n\nIt looks like there's nowhere else to go, at the moment.",
       "childid": 9
     },
     {
@@ -80,7 +80,7 @@
       "id": 6,
       "type": "Story",
       "recap": "laugh",
-      "text": "You can't explain the reason of it to yourself, but for some reason, you start chuckling. \nMaybe it's the absurdity of the situation, or maybe it's a nervous reaction. \n\nAnyway, you keep on laughing, louder and louder, until your voice becomes hysterical,\ndistorted, overlapped with its own echo. \n\nAfter a while, you fell quiet, the sound disperses around, and you feel some kind of sense of awkardness.",
+      "text": "You can't explain the reason of it to yourself, but for some reason, you start chuckling. \nMaybe it's the absurdity of the situation, or maybe it's a nervous reaction. \n\nAnyway, you keep on laughing, louder and louder, until your voice becomes hysterical,\ndistorted, overlapped with its own echo. \n\nAfter a while, you fell quiet, the sound disperses around, and you feel some kind of sense of awkwardness.",
       "childid": 9
     },
     {
@@ -277,21 +277,21 @@
       "id": 13,
       "type": "Story",
       "recap": "still walking",
-      "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration. \n\nThe fires are almost out. Hostile embers spy on you from the corner of your eye. \nNot a sound, you feel and hear your own blood pumping in your veins. \n\nYou reach what looks like the center of that lost little town. \nThere is a stone landmark in the middle of the square. \nYou feel a rush of gratitude when you discover it's a fountain. \n\nYou drink in a hurry, only now realising how thirsty you were. \nThe water has a funny taste, but you are too overwhelmed to notice or care. \nYou collapse on the ground, the most possible distant from any building, fire, or corpse.",
+      "text": "Driven away by the thought of what you could find inside that dark place, you resume your grim exploration. \n\nThe fires are almost out. Hostile embers spy on you from the corner of your eye. \nNot a sound, you feel and hear your own blood pumping in your veins. \n\nYou reach what looks like the center of that lost little town. \nThere is a stone landmark in the middle of the square. \nYou feel a rush of gratitude when you discover it's a fountain. \n\nYou drink in a hurry, only now realizing how thirsty you were. \nThe water has a funny taste, but you are too overwhelmed to notice or care. \nYou collapse on the ground, the most possible distant from any building, fire, or corpse.",
       "childid": 15
     },
     {
       "id": 14,
       "type": "Story",
       "recap": "awake(house)",
-      "text": "... \n\n$G<<Wake up...>>$c#\n\n\"Who's calling...?\"$C you mutter sitting up on the bed, fighting to regain full consciousness. \nYou open your eyes, and you become freshly aware of the current situtation. \nIt feel like a boulder has been thrown down on you, again. \n\nYou don't know how long you've been asleep. The sun must be high up already,\njudging from the light that filters through the thick, dirty window. \n\nYou don't want to spend another minute in there, so you decide to hit the road. \n\nOnce outside, you hesitate just a moment, spectating the wasted scenario. \nMany other corpses you did not notice the night before, scavengers... You quickly turn your eyes away. \n\nIt looks like the fires are completely extinguished now. \nThe acrid smell of smoke is still all around you. \nYou need to move. You start walking away, in the same direction as yesterday.",
+      "text": "... \n\n$G<<Wake up...>>$c#\n\n\"Who's calling...?\"$C you mutter sitting up on the bed, fighting to regain full consciousness. \nYou open your eyes, and you become freshly aware of the current situation. \nIt feel like a boulder has been thrown down on you, again. \n\nYou don't know how long you've been asleep. The sun must be high up already,\njudging from the light that filters through the thick, dirty window. \n\nYou don't want to spend another minute in there, so you decide to hit the road. \n\nOnce outside, you hesitate just a moment, spectating the wasted scenario. \nMany other corpses you did not notice the night before, scavengers... You quickly turn your eyes away. \n\nIt looks like the fires are completely extinguished now. \nThe acrid smell of smoke is still all around you. \nYou need to move. You start walking away, in the same direction as yesterday.",
       "childid": 16
     },
     {
       "id": 15,
       "type": "Story",
       "recap": "awake(outside)",
-      "text": "... \n\n$G<<Wake up...>>$c#\n\n\"Who's calling...?\"$C you mutter, fighting to regain full consciousness. \nYou open your eyes, and you become freshly aware of the current situtation. \nIt feel like a boulder has been thrown down on you, again. \n\nYou don't know how long you've been asleep. The sun is already high. \nYou slowly get back on your feet, aching after a night spent in an uncomfortable position. \nYou just hope you didn't get a cold or something worse having slept with your wet clothes out in the open. \nLuckily, wherever you are, the season is warm. \n\n$c<<Wherever I am...>>$C You shake your head and start moving. \nYou just resolutely decided you can't remain there for not even just a second. \nThere are many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away. \n\nIt looks like the fires are completely extinguished now. \nThe acrid smell of smoke is still all around you. \nYou quickly walk away, in the same direction as yesterday.",
+      "text": "... \n\n$G<<Wake up...>>$c#\n\n\"Who's calling...?\"$C you mutter, fighting to regain full consciousness. \nYou open your eyes, and you become freshly aware of the current situation. \nIt feel like a boulder has been thrown down on you, again. \n\nYou don't know how long you've been asleep. The sun is already high. \nYou slowly get back on your feet, aching after a night spent in an uncomfortable position. \nYou just hope you didn't get a cold or something worse having slept with your wet clothes out in the open. \nLuckily, wherever you are, the season is warm. \n\n$c<<Wherever I am...>>$C You shake your head and start moving. \nYou just resolutely decided you can't remain there for not even just a second. \nThere are many other corpses you did not notice the night before, scavengers... You quickly turn your eyes away. \n\nIt looks like the fires are completely extinguished now. \nThe acrid smell of smoke is still all around you. \nYou quickly walk away, in the same direction as yesterday.",
       "childid": 16
     },
     {
@@ -305,7 +305,7 @@
       "id": 17,
       "type": "Choice",
       "recap": "reach camp",
-      "text": "You walked all day long. All you saw were little isolated trees, some bushes and some birds. \nYou feel exhausted. It's almost sunset, and you are about to despair. \nBut then, you see it. A thin plume of smoke rising. \n\n$c<<Please not another dead town>>$C you say in your mind, while you start walking faster. \n\nBy the time you get there, it's completely dark. In front of you, an encampment. \nYour survival instinct tells you to lay down and crawl among the sparse low bushes and grass. \n\nThere are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it. \nThe smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours. \nAround the fire, many men are dancing to the rhythm of crude songs with obscure words. \nBetween a song and a piece of meat, they gulp down impressive mugs of what must be beer. \n\nYou look around: no movement at the sides of the encampment. And then you see them. \n\nSlaves. Mostly women, and children. \nThey are crammed inside several big cages on carriages,\nwhich tracks you now realize you've been following the whole day. Then it dawns on you:\n\n$c<<These thugs must be the responsibles of what I saw at that village!>>$C#\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage. You shouldn't, but you $Whave$C to do something.",
+      "text": "You walked all day long. All you saw were little isolated trees, some bushes and some birds. \nYou feel exhausted. It's almost sunset, and you are about to despair. \nBut then, you see it. A thin plume of smoke rising. \n\n$c<<Please not another dead town>>$C you say in your mind, while you start walking faster. \n\nBy the time you get there, it's completely dark. In front of you, an encampment. \nYour survival instinct tells you to lay down and crawl among the sparse low bushes and grass. \n\nThere are many tents around a huge bonfire. Some men are roasting massive chunks of meat on it. \nThe smell reaches you nostrils, and you almost faint: you had very little to eat in the last 48 hours. \nAround the fire, many men are dancing to the rhythm of crude songs with obscure words. \nBetween a song and a piece of meat, they gulp down impressive mugs of what must be beer. \n\nYou look around: no movement at the sides of the encampment. And then you see them. \n\nSlaves. Mostly women, and children. \nThey are crammed inside several big cages on carriages,\nwhich tracks you now realize you've been following the whole day. Then it dawns on you:\n\n$c<<These thugs must be those responsible for what I saw in that village!>>$C#\n\nYou think about the danger you put yourself in by following them,\nbut that feeling gets obscured by the disgust and rage. You shouldn't, but you $Whave$C to do something.",
       "choices": [
         {
           "desc": "You feel you must do something... But it's too dangerous, you don't want to end up in one of those cages.",
@@ -390,7 +390,7 @@
         {
           "actor": "Corolla",
           "line": "I wouldn't do it, if I were you.",
-          "comment": "A voice behind you. You freeze. \nAfter few paralyzing istants, you slowly turn around, trying to dissimulate your fear. \n\nThe voice belongs to a young woman; she is studying you intently,\nhead tilted on one side, leaning on one of the carriages. \n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around. \nShe's wearing a wide shirt, quite open on her cleavage. \nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings. \nYour eyes wonder maybe a little too long on the curve of her left hip protruding outwards,\nsince she's leaning with her right elbow on one of the wheels. \n\nInteresting posture, self confident... with such a delicious narrow waist...#"
+          "comment": "A voice behind you. You freeze. \nAfter few paralyzing instants, you slowly turn around, trying to dissimulate your fear. \n\nThe voice belongs to a young woman; she is studying you intently,\nhead tilted on one side, leaning on one of the carriages. \n\nShe is definitely attractive. She has black glinting eyes, long dark brown hair,\nglowing $Rred$C under the light of the torches around. \nShe's wearing a wide shirt, quite open on her cleavage. \nAs for the rest, she's squeezed in a pair of black, thick, stitched leather leggings. \nYour eyes wonder maybe a little too long on the curve of her left hip protruding outwards,\nsince she's leaning with her right elbow on one of the wheels. \n\nInteresting posture, self confident... with such a delicious narrow waist...#"
         },
         {
           "actor": "Corolla",

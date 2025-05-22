@@ -35,7 +35,7 @@
       "id": 3,
       "type": "Story",
       "recap": "running home",
-      "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strenght. \nYou run even faster, trying to ignore the suffocating feeling of the water splashing down your face. \n\nThe wind howls between the unstopping, ever increasing noise of asphalt-hammering water. \nYou feel your heart bouncing in your chest and hear your now accelerated breathing. \n\nYou are almost home, when you hear it. \n\n$G<<...>>$C\n#\nWas it real? \n#For a split second you thought someone called on your name. It must have been all that noise... \n\n$G<<..ris..>>$C\n#\nIt was clearer this time!\n\n\n",
+      "text": "Speeding through the water, you feel the drops of rain smashing onto your face and body with unexpected strength. \nYou run even faster, trying to ignore the suffocating feeling of the water splashing down your face. \n\nThe wind howls between the unstopping, ever increasing noise of asphalt-hammering water. \nYou feel your heart bouncing in your chest and hear your now accelerated breathing. \n\nYou are almost home, when you hear it. \n\n$G<<...>>$C\n#\nWas it real? \n#For a split second you thought someone called on your name. It must have been all that noise... \n\n$G<<..ris..>>$C\n#\nIt was clearer this time!\n\n\n",
       "childid": 5
     },
     {
@@ -74,7 +74,7 @@
       "id": 7,
       "type": "Story",
       "recap": "at the tree",
-      "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands. \nIt looks like nobody is here after all. \n\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n\n$G<<Chris!>>$C\n\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain... \nYou feel a tingling sensation in the back of your neck, somehow you $Wfeel$C someone's behind you. \n\nThen...# it all happens in an instant... \n\nThe figure at the corner of your eye... \n##The realisation that standing beneath a tree during a storm is not the safest option... \n##The blinding light and the deafening boom suddenly engulfing you. \n#\n##Finally...# only darkness.#",
+      "text": "You painstakingly reach the top of the hill, where a lonely big oak tree stands. \nIt looks like nobody is here after all. \n\nYou are about to go back down, to the comfort of your home at last, when you hear it!\n\n$G<<Chris!>>$C\n\nYou heard it right, you can't be wrong. It feels like the wind is calling your name to the rain... \nYou feel a tingling sensation in the back of your neck, somehow you $Wfeel$C someone's behind you. \n\nThen...# it all happens in an instant... \n\nThe figure at the corner of your eye... \n##The realization that standing beneath a tree during a storm is not the safest option... \n##The blinding light and the deafening boom suddenly engulfing you. \n#\n##Finally...# only darkness.#",
       "isLast": true
     },
     {

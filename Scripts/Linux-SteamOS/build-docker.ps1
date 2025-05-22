@@ -121,10 +121,12 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     # Create distribution ZIP with only the essential files
     $zipPath = Join-Path -Path $OutputDir -ChildPath "Kriss-linux-x64.zip"
     
+    $KrissPath = Join-Path -Path $ProjectRoot -ChildPath "Kriss"
     # Get all files needed for the distribution package
     $filesToInclude = @(
         (Join-Path -Path $OutputDir -ChildPath "Kriss"),
-        (Join-Path -Path $OutputDir -ChildPath "krissLauncher.sh")
+        (Join-Path -Path $OutputDir -ChildPath "krissLauncher.sh"),
+        (Join-Path -Path $KrissPath -ChildPath "sword.png")
     )
     
     # Add terminal directory if it exists
@@ -145,7 +147,7 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     Compress-Archive -Path $filesToInclude -DestinationPath $zipPath -Force
     # Remove uncompressed original files after zipping
     foreach ($item in $filesToInclude) {
-        if (Test-Path $item) {
+        if (Test-Path $item -and ($item -notlike "*sword.png")) {
             Remove-Item -Path $item -Recurse -Force
         }
     }

@@ -30,8 +30,8 @@ public class Action : IAction
     {
         return word switch
         {
-            "look" => "What shoud I look at? Where?",
-            "take" => "What shoud I take?",
+            "look" => "What should I look at? Where?",
+            "take" => "What should I take?",
             "go" => "Where should I go?",
             "search" => "Where should I search? For what?",
             "remove" => "What will I remove? from where?",

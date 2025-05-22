@@ -50,7 +50,7 @@
           "precomment": "Somehow Corolla must know what you are thinking.",
           "actor": "Corolla",
           "line": "Don't let him deceive you... Smiurl is a true valiant when you need him.",
-          "comment": "Hearing that compliment,\nthe little guy lits up everywhere. \n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C## He actually starts emanating a vague, multicoloured luminescence."
+          "comment": "Hearing that compliment,\nthe little guy lits up everywhere. \n$YL$Gi$Wt$Ce$Br$Ma$cl$Yl$Wy.$C## He actually starts emanating a vague, multicolored luminescence."
         },
         {
           "actor": "Kriss",
@@ -99,7 +99,7 @@
           "break": true
         },
         {
-          "precomment": "You keep walking with them for a while. You start wondering how people like them can mingle with those thugs. \nWhat are they doing here?\n\nYou reach an area separated from the rest of the encampent by a group of dry trees. \nYou see a few tents next to each other.",
+          "precomment": "You keep walking with them for a while. You start wondering how people like them can mingle with those thugs. \nWhat are they doing here?\n\nYou reach an area separated from the rest of the encampment by a group of dry trees. \nYou see a few tents next to each other.",
           "actor": "Corolla",
           "line": "There, you can sleep in the tent with Theo.",
           "comment": "She points at the biggest of the group."
@@ -135,7 +135,9 @@
       "text": "You stand inside the tent.# Theo, expressionless, is looking at you. \nHe looks like he's waiting for you to say something.",
       "actions": [
         {
-          "verbs": [ "look" ],
+          "verbs": [
+            "look"
+          ],
           "objects": [
             {
               "objs": [
@@ -168,7 +170,9 @@
           ]
         },
         {
-          "verbs": [ "say" ],
+          "verbs": [
+            "say"
+          ],
           "answer": "He keeps on staring at me...",
           "objects": [
             {
@@ -182,15 +186,21 @@
           ]
         },
         {
-          "verbs": [ "hello" ],
+          "verbs": [
+            "hello"
+          ],
           "answer": "$B\"Hello to you.\"#$C He says."
         },
         {
-          "verbs": [ "hi" ],
+          "verbs": [
+            "hi"
+          ],
           "answer": "$B\"Hi to you.\"#$C He says."
         },
         {
-          "verbs": [ "sleep" ],
+          "verbs": [
+            "sleep"
+          ],
           "objects": [
             {
               "objs": [
@@ -210,7 +220,9 @@
           ]
         },
         {
-          "verbs": [ "ask" ],
+          "verbs": [
+            "ask"
+          ],
           "objects": [
             {
               "objs": [
@@ -231,12 +243,12 @@
     },
     {
       "id": 3,
-      "recap": "awake in the encampent",
+      "recap": "awake in the encampment",
       "type": "Choice",
-      "text": "##$G<<Kriss...>>$C#\n\nYou open your eyes. You hear that 'voice' again. Are you imagining it?# Are you going crazy?# Who knows. \n\nSomehow you feel rested enough. The tent is now empty, Theo must have left earlier. \n\nThe sun seeps through: it must be quite high already. \nYou hear noises coming from the camp. It feels like it's rustling with activity. \nYou lay down a little longer, not sure about how you should feel. All of this is just crazy. \nYou acted impulsively last night. What are you supposed to do now?#\n\nWell, at least you met Corolla and Smiurl and... Theo... They seem good persons. \n\n$c<<The hot girl, the dwarf and the giant. What kind of joke is this??>>$C#\n\nYou just can't wrap yuour mind around all of it. At least, not yet.",
+      "text": "##$G<<Kriss...>>$C#\n\nYou open your eyes. You hear that 'voice' again. Are you imagining it?# Are you going crazy?# Who knows. \n\nSomehow you feel rested enough. The tent is now empty, Theo must have left earlier. \n\nThe sun seeps through: it must be quite high already. \nYou hear noises coming from the camp. It feels like it's rustling with activity. \nYou lay down a little longer, not sure about how you should feel. All of this is just crazy. \nYou acted impulsively last night. What are you supposed to do now?#\n\nWell, at least you met Corolla and Smiurl and... Theo... They seem good persons. \n\n$c<<The hot girl, the dwarf and the giant. What kind of joke is this??>>$C#\n\nYou just can't wrap your mind around all of it. At least, not yet.",
       "choices": [
         {
-          "desc": "You don't know what to do. You need more time to assimilate the rality. You stay in bed to think it through.",
+          "desc": "You don't know what to do. You need more time to assimilate the reality. You stay in bed to think it through.",
           "childid": 5
         },
         {
@@ -258,7 +270,7 @@
         },
         {
           "actor": "Smiurl",
-          "precomment": "Noticing your reaction, he istantly assumes a sorry expression, while he starts explaining:",
+          "precomment": "Noticing your reaction, he instantly assumes a sorry expression, while he starts explaining:",
           "line": "It's dangerous...# Corolla ordered me to stand guard and give alarm in case of danger. \nShe thinks someone may want to hurt you...#"
         },
         {
@@ -288,11 +300,11 @@
           "precomment": "You are lost in your thoughts... \nRuminating on what's happening,\nif this is all inside your head,\nif you are still alive,\nand many other good amenities. \n\nThen a voice abruptly snatches you off your thinking:",
           "actor": "Smiurl",
           "line": "Good morning!",
-          "comment": "At that sudden sound, you wince, to say the least. \nSmiurl is poking whit his head into the tent. He looks at you with a mixture of cheerfulness and agitation."
+          "comment": "At that sudden sound, you wince, to say the least. \nSmiurl is poking with his head into the tent. He looks at you with a mixture of cheerfulness and agitation."
         },
         {
           "actor": "Smiurl",
-          "precomment": "Noticing your reaction, he istantly assumes a sorry expression, while he starts explaining:",
+          "precomment": "Noticing your reaction, he instantly assumes a sorry expression, while he starts explaining:",
           "line": "Corolla ordered me to stand guard and give alarm in case of danger. \nShe thinks someone may want to hurt you..."
         },
         {
@@ -317,7 +329,7 @@
       "id": 6,
       "recap": "time to leave",
       "type": "Story",
-      "text": "You inspect the clothes Theo gave you. \nA big, heavy pair of combat/trekking boots. \nWide hat which will covers a substantial part of your face. \nLeather trousers, shirt and a kind of cape, resembling a poncho. \n\nBut waht surprises you is a very heavy mallet. \n\n$c<<What am I supposed to do with this?>>##$C\n\nYou wear the clothes, then look more closely at the big hammer. You can hardly handle it with just one hand. \nYou don't recognize the metallic material it's made of. \nThe wider sides are adorned with golden friezes, the shorter fitted with metal spikes. \n\nFirst, you wonder in what kind of situation you may need to use it. \nThen you wonder how you could even wield it. \n\nAfter few instants, you shake your head and put the mallet down with the other weapons there. \nThat thing is not for you.",
+      "text": "You inspect the clothes Theo gave you. \nA big, heavy pair of combat/trekking boots. \nWide hat which will covers a substantial part of your face. \nLeather trousers, shirt and a kind of cape, resembling a poncho. \n\nBut what surprises you is a very heavy mallet. \n\n$c<<What am I supposed to do with this?>>##$C\n\nYou wear the clothes, then look more closely at the big hammer. You can hardly handle it with just one hand. \nYou don't recognize the metallic material it's made of. \nThe wider sides are adorned with golden friezes, the shorter fitted with metal spikes. \n\nFirst, you wonder in what kind of situation you may need to use it. \nThen you wonder how you could even wield it. \n\nAfter few instants, you shake your head and put the mallet down with the other weapons there. \nThat thing is not for you.",
       "childid": 7
     },
     {
