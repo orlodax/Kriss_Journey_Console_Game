@@ -118,7 +118,7 @@ public class GameEngine(StatusManager statusManager)
 
     public void StartNextChapter()
     {
-        StartChapter(currentChapter?.Id ?? 0 + 1);
+        StartChapter((currentChapter?.Id ?? 0) + 1);
     }
 
     /// <summary>

@@ -10,8 +10,8 @@ namespace KrissJourney.Kriss.Nodes;
 public partial class ActionNode : NodeBase
 {
     Action act = null;
-    internal readonly List<ConsoleKeyInfo> keysPressed = [];
-    internal string BottomMessage = string.Empty;
+    protected readonly List<ConsoleKeyInfo> keysPressed = [];
+    protected string BottomMessage = string.Empty;
     ConsoleColor BottomMessageColor = Typist.GetMappedColor(ConsoleColor.DarkCyan);
 
     public List<Action> Actions { get; set; } // list of all possible actions
@@ -22,7 +22,7 @@ public partial class ActionNode : NodeBase
         PrepareForAction();
     }
 
-    internal void PrepareForAction(bool isFirstTimeDisplayed = true)
+    protected void PrepareForAction(bool isFirstTimeDisplayed = true)
     {
         ///go to bottom line and prepare prompt
         CursorTop = WindowTop + WindowHeight - 2;
@@ -253,10 +253,14 @@ public partial class ActionNode : NodeBase
                 Typist.WaitForKey(3);
 
                 AdvanceToNext(childId.Value);
+                return;
             }
         }
         if (childId.HasValue)
+        {
             AdvanceToNext(childId.Value);
+            return;
+        }
 
         //if everything fails:
         PrepareForAction(true); //display prompt without standard refuse

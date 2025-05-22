@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
-using KrissJourney.Tests.Extensions;
+using KrissJourney.Tests.Infrastructure.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Services;
 
 [TestClass]
 public class GameEngineTests
@@ -18,10 +18,6 @@ public class GameEngineTests
     {
         gameEngine = GameEngineTestExtensions.Setup();
     }
-
-    [TestCleanup]
-    public void TestCleanup()
-    { }
 
     [TestMethod]
     public void Init_LoadsChapters()
@@ -50,19 +46,6 @@ public class GameEngineTests
     }
 
     [TestMethod]
-    public void IsNodeVisited_WithNonVisitedNode_ReturnsFalse()
-    {
-        // The exact behavior depends on the state of VisitedNodes
-        // This test checks the method runs without exceptions
-
-        // Act
-        //bool isVisited = gameEngine.IsNodeVisited(99999); // Using a high number unlikely to be visited
-
-        // Assert - we can't guarantee the exact result without mocking private state
-        //Assert.IsFalse(isVisited, "A non-existent node should not be marked as visited");
-    }
-
-    [TestMethod]
     public void SaveProgress_AddsCurrentNodeToVisitedNodes()
     {
         // This test is to ensure SaveProgress method runs without exceptions
@@ -84,5 +67,38 @@ public class GameEngineTests
         {
             Assert.Fail($"SaveProgress threw an exception: {ex.Message}");
         }
+    }
+
+    [TestMethod]
+    public void Evaluate_WithItemCondition_ReturnsFalseIfItemMissing()
+    {
+        // Arrange
+        Condition condition = new()
+        {
+            Item = "nonexistent_item",
+            Refusal = "You don't have the item",
+            Type = "item"
+        };
+
+        // Act
+        bool result = gameEngine.Evaluate(condition);
+
+        // Assert
+        Assert.IsFalse(result, "Should return false if item is missing");
+    }
+
+    [TestMethod]
+    public void AddItemToInventory_And_EvaluateWithItemCondition_ReturnsTrue()
+    {
+        // Arrange
+        Effect effect = new() { GainItem = "magic_key" };
+        Condition condition = new() { Item = "magic_key", Type = "item" };
+
+        // Act
+        gameEngine.AddItemToInventory(effect);
+        bool result = gameEngine.Evaluate(condition);
+
+        // Assert
+        Assert.IsTrue(result, "Should return true if item is in inventory");
     }
 }
