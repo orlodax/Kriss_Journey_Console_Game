@@ -2,7 +2,7 @@ using System;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Services;
 
 [TestClass]
 public class SteamManagerTests
@@ -26,6 +26,36 @@ public class SteamManagerTests
         catch (Exception ex)
         {
             Assert.Fail($"Exception when accessing SteamManager: {ex.Message}");
+        }
+    }
+
+    [TestMethod]
+    public void SteamManager_RunCallbacks_DoesNotThrow()
+    {
+        // This test just ensures RunCallbacks can be called without exception (mocked/no-op)
+        try
+        {
+            SteamManager.RunCallbacks();
+            Assert.IsTrue(true, "RunCallbacks did not throw");
+        }
+        catch (Exception ex)
+        {
+            Assert.Fail($"RunCallbacks threw: {ex.Message}");
+        }
+    }
+
+    [TestMethod]
+    public void SteamManager_Shutdown_DoesNotThrow()
+    {
+        // This test just ensures Shutdown can be called without exception (mocked/no-op)
+        try
+        {
+            SteamManager.Shutdown();
+            Assert.IsTrue(true, "Shutdown did not throw");
+        }
+        catch (Exception ex)
+        {
+            Assert.Fail($"Shutdown threw: {ex.Message}");
         }
     }
 }
