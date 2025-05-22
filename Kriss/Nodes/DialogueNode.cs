@@ -89,8 +89,6 @@ public class DialogueNode : NodeBase
                 CursorLeft = WindowLeft;
             }
 
-            while (KeyAvailable)
-                ReadKey(true);
             key = ReadKey(true);
 
             // on selection, either advance to the next node specified in the reply, or jump to the next line

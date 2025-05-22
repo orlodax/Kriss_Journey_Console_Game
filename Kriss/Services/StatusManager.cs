@@ -34,25 +34,29 @@ public class StatusManager
         if (File.Exists(statusFile))
             Status = JsonSerializer.Deserialize<Status>(File.ReadAllText(statusFile), JsonHelper.Options);
     }
-
-    public void SaveProgress(int chapterId, int nodeId)
+    public virtual void SaveProgress(int chapterId, int nodeId)
     {
-        if (Status.VisitedNodes.TryGetValue(chapterId, out List<int> visitedNodes) && !visitedNodes.Contains(nodeId))
-            visitedNodes.Add(nodeId);
+        if (Status.VisitedNodes.TryGetValue(chapterId, out List<int> visitedNodes))
+        {
+            if (!visitedNodes.Contains(nodeId))
+                visitedNodes.Add(nodeId);
+        }
         else
-            Status.VisitedNodes[chapterId] = [];
+        {
+            Status.VisitedNodes[chapterId] = [nodeId];
+        }
 
         File.WriteAllText(
             Path.Combine(AppDataPath, "status.json"),
             JsonSerializer.Serialize(Status, JsonHelper.Options));
     }
 
-    public bool HasVisitedNodes()
+    public virtual bool HasVisitedNodes()
     {
         return Status.VisitedNodes.Count != 0;
     }
 
-    public int GetLastChapterId()
+    public virtual int GetLastChapterId()
     {
         if (Status.VisitedNodes.Count == 0)
             return 1;
@@ -60,7 +64,7 @@ public class StatusManager
         return Status.VisitedNodes.Keys.Max();
     }
 
-    public bool IsNodeVisited(int chapterId, int nodeId)
+    public virtual bool IsNodeVisited(int chapterId, int nodeId)
     {
         if (Status.VisitedNodes.TryGetValue(chapterId, out List<int> visitedNodes))
             return visitedNodes.Contains(nodeId);
@@ -68,13 +72,13 @@ public class StatusManager
         return false;
     }
 
-    public void AddItemToInventory(string item)
+    public virtual void AddItemToInventory(string item)
     {
         if (!Status.Inventory.Contains(item))
             Status.Inventory.Add(item);
     }
 
-    public bool IsItemInInventory(string item)
+    public virtual bool IsItemInInventory(string item)
     {
         return Status.Inventory.Contains(item);
     }

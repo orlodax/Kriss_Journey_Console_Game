@@ -4,15 +4,15 @@ using System.Linq;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
+using KrissJourney.Tests.Infrastructure.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Integration.StoryFlow;
 
 [TestClass]
 public class StoryFlowTests
 {
     GameEngine gameEngine;
-
 
     [TestInitialize]
     public void TestInitialize()
@@ -30,9 +30,7 @@ public class StoryFlowTests
 
             // Check all nodes have valid IDs
             foreach (NodeBase node in chapter.Nodes)
-            {
                 Assert.IsTrue(node.Id > 0, $"Node in chapter {chapter.Id} has invalid ID: {node.Id}");
-            }
         }
     }
 
@@ -90,7 +88,7 @@ public class StoryFlowTests
                 }
                 else if (node is DialogueNode dialogueNode)
                 {
-                    foreach (Dialogue dialogue in dialogueNode.Dialogues)
+                    foreach (DialogueLine dialogue in dialogueNode.Dialogues)
                     {
                         if (dialogue.ChildId.HasValue)
                         {
@@ -119,94 +117,43 @@ public class StoryFlowTests
     }
 
     [TestMethod]
-    public void AllChapters_EnsureAllNodesAreReachable()
+    public void AllChapters_HaveNoUnreachableOrMissingNodes()
     {
-        foreach (Chapter chapter in gameEngine.GetChapters())
+        // Load all chapters using the real loader
+        foreach (Kriss.Models.Chapter chapter in GameEngineTestExtensions.Setup().GetChapters())
         {
-            // Get the first node (entry point)
-            NodeBase startNode = chapter.Nodes.OrderBy(n => n.Id).FirstOrDefault();
-            if (startNode == null)
+            Dictionary<int, NodeBase> nodeMap = chapter.Nodes.ToDictionary(n => n.Id);
+            HashSet<int> visited = [];
+            Queue<NodeBase> queue = new();
+            if (chapter.Nodes.Count == 0)
                 continue;
+            // Always start traversal from node 1 (canonical entry point)
+            NodeBase entryNode = chapter.Nodes.FirstOrDefault(n => n.Id == 1);
+            if (entryNode == null)
+                continue;
+            queue.Enqueue(entryNode); // Assume first node is entry
 
-            // Keep track of visited nodes in this chapter
-            HashSet<int> visitedNodeIds = [];
-            Queue<NodeBase> nodesToVisit = new();
-
-            // Start the traversal from the first node
-            nodesToVisit.Enqueue(startNode);
-
-            while (nodesToVisit.Count > 0)
+            while (queue.Count > 0)
             {
-                NodeBase currentNode = nodesToVisit.Dequeue();
-                visitedNodeIds.Add(currentNode.Id);
+                NodeBase node = queue.Dequeue();
+                if (!visited.Add(node.Id))
+                    continue;
 
-                // Get all possible child nodes
-                HashSet<int> childIds = [];
-
-                // Direct child
-                if (currentNode.ChildId > 0)
-                    childIds.Add(currentNode.ChildId);
-
-                // Node-specific children
-                if (currentNode is ChoiceNode choiceNode)
+                foreach (int nextId in GetAllOutgoingLinks(node))
                 {
-                    foreach (Choice choice in choiceNode.Choices)
-                        if (choice.ChildId > 0)
-                            childIds.Add(choice.ChildId);
-                }
-                else if (currentNode is ActionNode actionNode && currentNode is not MiniGame01)
-                {
-                    foreach (Kriss.Models.Action action in actionNode.Actions)
-                    {
-                        if (action.ChildId.HasValue)
-                            childIds.Add(action.ChildId.Value);
-
-                        foreach (ActionObject obj in action.Objects)
-                            if (obj.ChildId.HasValue)
-                                childIds.Add(obj.ChildId.Value);
-                    }
-                }
-                else if (currentNode is DialogueNode dialogueNode)
-                {
-                    foreach (Dialogue dialogue in dialogueNode.Dialogues)
-                    {
-                        if (dialogue.ChildId.HasValue)
-                            childIds.Add(dialogue.ChildId.Value);
-
-                        if (dialogue.Replies != null)
-                            foreach (Reply reply in dialogue.Replies)
-                                if (reply.ChildId.HasValue)
-                                    childIds.Add(reply.ChildId.Value);
-                    }
-                }
-
-                // Enqueue unvisited children
-                foreach (int childId in childIds)
-                {
-                    if (!visitedNodeIds.Contains(childId))
-                    {
-                        NodeBase childNode = chapter.Nodes.FirstOrDefault(n => n.Id == childId);
-                        if (childNode != null)
-                            nodesToVisit.Enqueue(childNode);
-                    }
+                    if (!nodeMap.TryGetValue(nextId, out NodeBase value))
+                        Assert.Fail($"Node {node.Id} in chapter {chapter.Id} references missing node {nextId}");
+                    else
+                        queue.Enqueue(value);
                 }
             }
 
-            // Find any orphaned nodes
-            IEnumerable<NodeBase> orphanedNodes = chapter.Nodes.Where(n => !visitedNodeIds.Contains(n.Id));
-
-            // Some nodes might be intentionally orphaned for development or future content
-            if (orphanedNodes.Any())
-            {
-                Console.WriteLine($"Chapter {chapter.Id} has {orphanedNodes.Count()} potentially orphaned nodes:");
-                foreach (NodeBase node in orphanedNodes)
-                    Console.WriteLine($"Node {node.Id} ({node.GetType().Name}) is not reachable from the start node");
-            }
-
-            // We don't assert on orphaned nodes as they might be intentional
-            Assert.IsTrue(visitedNodeIds.Count > 0, $"No nodes were visited in chapter {chapter.Id}");
+            // Check for unreachable nodes
+            List<NodeBase> unreachable = [.. chapter.Nodes.Where(n => !visited.Contains(n.Id))];
+            Assert.IsTrue(unreachable.Count == 0, $"Unreachable nodes in chapter {chapter.Id}: {string.Join(", ", unreachable.Select(n => n.Id))}");
         }
     }
+
 
     [TestMethod]
     public void Chapter1_FirstNodeIsAccessible()
@@ -241,7 +188,7 @@ public class StoryFlowTests
                     Assert.IsTrue(dialogueNode.Dialogues.Count > 0,
                         $"DialogueNode {node.Id} in chapter {chapter.Id} has no dialogues");
 
-                    foreach (Dialogue dialogue in dialogueNode.Dialogues)
+                    foreach (DialogueLine dialogue in dialogueNode.Dialogues)
                         if (!string.IsNullOrWhiteSpace(dialogue.Line))
                         {
                             // If it has replies, they should have text
@@ -267,4 +214,48 @@ public class StoryFlowTests
             }
         }
     }
+
+    static IEnumerable<int> GetAllOutgoingLinks(NodeBase node)
+    {
+        if (node is StoryNode s && s.ChildId > 0)
+            yield return s.ChildId;
+
+        if (node is ChoiceNode c && c.Choices != null)
+            foreach (Choice choice in c.Choices)
+                if (choice.ChildId > 0)
+                    yield return choice.ChildId;
+
+        if (node is DialogueNode d && d.Dialogues != null)
+        {
+            foreach (DialogueLine dlg in d.Dialogues)
+            {
+                if (dlg.ChildId.HasValue && dlg.ChildId.Value > 0)
+                    yield return dlg.ChildId.Value;
+                if (dlg.Replies != null)
+                    foreach (Kriss.Models.Reply reply in dlg.Replies)
+                        if (reply.ChildId.HasValue && reply.ChildId.Value > 0)
+                            yield return reply.ChildId.Value;
+            }
+        }
+
+        if (node is ActionNode a && a.Actions != null)
+        {
+            foreach (Kriss.Models.Action action in a.Actions)
+            {
+                if (action.ChildId.HasValue && action.ChildId.Value > 0)
+                    yield return action.ChildId.Value;
+                if (action.Objects != null)
+                    foreach (Kriss.Models.ActionObject obj in action.Objects)
+                        if (obj.ChildId.HasValue && obj.ChildId.Value > 0)
+                            yield return obj.ChildId.Value;
+            }
+        }
+
+        if (node is MiniGame01 miniGame)
+        {
+            if (miniGame.ChildId > 0)
+                yield return miniGame.ChildId;
+        }
+    }
 }
+

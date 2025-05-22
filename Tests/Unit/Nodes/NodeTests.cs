@@ -3,9 +3,10 @@ using System.Linq;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
+using KrissJourney.Tests.Infrastructure.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Unit.Nodes;
 
 [TestClass]
 public class NodeTests
@@ -27,9 +28,9 @@ public class NodeTests
     {
         IEnumerable<DialogueNode> res = gameEngine.GetChapters().SelectMany(c => c.Nodes.OfType<DialogueNode>());
 
-        IEnumerable<Dialogue> longOnes = res.SelectMany(x => x.Dialogues.Where(y => y.Break == true));
+        IEnumerable<DialogueLine> longOnes = res.SelectMany(x => x.Dialogues.Where(y => y.Break == true));
 
-        IEnumerable<Dialogue> withReplies = longOnes.Where(l => l.Replies != null);
+        IEnumerable<DialogueLine> withReplies = longOnes.Where(l => l.Replies != null);
 
         Assert.IsTrue(!withReplies.Any());
     }
@@ -41,3 +42,4 @@ public class NodeTests
         Assert.IsInstanceOfType(new MiniGame01(), typeof(ActionNode));
     }
 }
+

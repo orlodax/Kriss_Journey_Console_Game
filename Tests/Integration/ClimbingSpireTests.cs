@@ -4,8 +4,9 @@ using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using KrissJourney.Tests.Infrastructure.Helpers;
 
-namespace KrissJourney.Tests;
+namespace KrissJourney.Tests.Integration;
 
 public class ClimbingSpireTests
 {
@@ -105,3 +106,5 @@ public class ClimbingSpireTests
         Assert.IsTrue(isValid, "Traversed nodes: ", traversed);
     }
 }
+
+

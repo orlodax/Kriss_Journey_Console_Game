@@ -3,12 +3,6 @@
   "title": "THE JOURNEY STARTS",
   "nodes": [
     {
-      "id": 777,
-      "type": "story",
-      "text": "play a @sound",
-      "childid": 777
-    },
-    {
       "id": 1,
       "type": "Story",
       "recap": "start of chapter one",
