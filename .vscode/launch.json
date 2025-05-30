@@ -8,9 +8,11 @@
             "name": ".NET Core Launch (exe)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build-with-steam",
             "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
-            "args": [],
+            "args": [
+                "testappcloudpaths [1734700]"
+            ],
             "cwd": "${workspaceFolder}/Kriss",
             "console": "externalTerminal",
             "stopAtEntry": false

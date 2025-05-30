@@ -24,7 +24,7 @@ _ = Task.Run(async () =>
 });
 
 // Register an event to handle application exit
-System.AppDomain.CurrentDomain.ProcessExit += (s, e) =>
+AppDomain.CurrentDomain.ProcessExit += (s, e) =>
 {
     SteamManager.Shutdown();
 };
