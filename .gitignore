@@ -21,9 +21,6 @@ Scripts/Linux-SteamOS/output/
 steam-launch.log
 launch.log
 
-# Docker related
-Dockerfile.steamrt
-
 # .NET specific
 *.userosscache
 

@@ -6,7 +6,11 @@ $ProjectRoot = "H:\KrissJourney"
 $ScriptsRoot = Join-Path -Path $ProjectRoot -ChildPath "Scripts"
 $BuildRoot = Join-Path -Path $ScriptsRoot -ChildPath "Linux-SteamOS"
 $OutputDir = Join-Path -Path $BuildRoot -ChildPath "output"
-$DockerfilePath = Join-Path -Path $BuildRoot -ChildPath "Dockerfile.steamrt"
+$DockerfilePath = Join-Path -Path $BuildRoot -ChildPath "Dockerfile.steamrtpublish"
+$ImageName = "kriss-journey-steamrt"
+$ImageTag = "latest"
+$FullImageName = "${ImageName}:${ImageTag}"
+
 
 Write-Host "Checking Docker installation..." -ForegroundColor Cyan
 
@@ -99,16 +103,16 @@ docker run --rm -v "${OutputDir}:/output" kriss-journey-steamrt
 # Check if build was successful
 if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     Write-Host "Build successful! Output is available in: $OutputDir" -ForegroundColor Green
-    
+        
     # Copy the krissLauncher.sh script to the output directory
     $launcherSource = Join-Path -Path $BuildRoot -ChildPath "krissLauncher.sh"
     $launcherTarget = Join-Path -Path $OutputDir -ChildPath "krissLauncher.sh"
-    
+        
     # Copy the launcher script
     if (Test-Path $launcherSource) {
         Write-Host "Copying launcher script to output directory..." -ForegroundColor Cyan
         Copy-Item -Path $launcherSource -Destination $launcherTarget -Force
-        
+            
         # Ensure the launcher script has the correct line endings (LF instead of CRLF)
         $content = Get-Content -Path $launcherTarget -Raw
         $content = $content -replace "`r`n", "`n"
@@ -117,43 +121,45 @@ if (Test-Path (Join-Path -Path $OutputDir -ChildPath "Kriss")) {
     else {
         Write-Host "WARNING: Could not find launcher script at $launcherSource" -ForegroundColor Yellow
     }
-    
-    # Create distribution ZIP with only the essential files
-    $zipPath = Join-Path -Path $OutputDir -ChildPath "Kriss-linux-x64.zip"
-    
-    $KrissPath = Join-Path -Path $ProjectRoot -ChildPath "Kriss"
-    # Get all files needed for the distribution package
-    $filesToInclude = @(
-        (Join-Path -Path $OutputDir -ChildPath "Kriss"),
-        (Join-Path -Path $OutputDir -ChildPath "krissLauncher.sh"),
-        (Join-Path -Path $KrissPath -ChildPath "sword.png")
-    )
-    
-    # Add terminal directory if it exists
-    $terminalDir = Join-Path -Path $OutputDir -ChildPath "terminal"
-    if (Test-Path $terminalDir) {
-        Write-Host "Including bundled terminal emulator in distribution package..." -ForegroundColor Cyan
-        $filesToInclude += $terminalDir
-    }
-    else {
-        Write-Host "Warning: Terminal emulator directory not found" -ForegroundColor Yellow
+        
+    # Define the path for the new ZIP file
+    $zipFileName = "Kriss-linux-x64.zip"
+    $zipPath = Join-Path -Path $OutputDir -ChildPath $zipFileName
+        
+    # Remove any existing ZIP file with the same name in the output directory before creating a new one
+    if (Test-Path $zipPath) {
+        Write-Host "Removing existing ZIP file: $zipPath" -ForegroundColor Yellow
+        Remove-Item -Path $zipPath -Force
     }
     
-    # Remove any existing ZIP files in the output directory before creating a new one
-    $now = Get-Date
-    Get-ChildItem -Path $OutputDir -Filter "*.zip" | Where-Object { $_.LastWriteTime -lt $now } | Remove-Item -Force
-
+    # Get all items (files and directories) in $OutputDir to be included in the ZIP
+    # Exclude the ZIP file we are about to create itself
+    $itemsToArchive = Get-ChildItem -Path $OutputDir | Where-Object { $_.Name -ne $zipFileName }
+        
+    if ($itemsToArchive.Count -eq 0) {
+        Write-Error "No items found in $OutputDir to archive. Build might have failed to produce output."
+        # You might want to throw an error here or ensure the script exits
+        exit 1 
+    }
+    
+    Write-Host "Items to be archived from $OutputDir" -ForegroundColor Cyan
+    $itemsToArchive | ForEach-Object { Write-Host "- $($_.FullName)" }
+    
     # Create the ZIP file
-    Compress-Archive -Path $filesToInclude -DestinationPath $zipPath -Force
-    # Remove uncompressed original files after zipping
-    foreach ($item in $filesToInclude) {
-        if ((Test-Path $item) -and ($item -notlike "*sword.png")) {
-            Remove-Item -Path $item -Recurse -Force
+    Compress-Archive -Path $itemsToArchive.FullName -DestinationPath $zipPath -Force
+    Write-Host "Successfully created archive: $zipPath" -ForegroundColor Green
+        
+    # Remove uncompressed original files from $OutputDir after zipping
+    Write-Host "Removing original uncompressed files from $OutputDir..." -ForegroundColor Cyan
+    foreach ($item in $itemsToArchive) {
+        if (Test-Path $item.FullName) {
+            Write-Host "Removing: $($item.FullName)"
+            Remove-Item -Path $item.FullName -Recurse -Force
         }
     }
-    
+        
     Write-Host "Created Steam Linux distribution package: $zipPath" -ForegroundColor Green
-
+    
     # Move the ZIP to the central Scripts/.output directory
     $finalOutputDir = Join-Path -Path $ScriptsRoot -ChildPath ".output"
     if (-not (Test-Path $finalOutputDir)) {
