@@ -1,0 +1,16 @@
+# .dockerignore
+
+.git
+.vs
+.vscode
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+SteamRuntimeBuild/
+Publish/
+Tests/
+screenshots/
+*.tar.gz
+*.zip

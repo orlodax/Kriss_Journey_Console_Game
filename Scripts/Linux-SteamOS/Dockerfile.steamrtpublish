@@ -1,0 +1,26 @@
+# Application layer for Kriss Journey, using the pre-built base environment
+FROM kriss-journey-env-base:latest
+
+# WORKDIR /app is inherited from the base image
+
+# Copy project files from the host's build context (H:\KrissJourney) into /app
+COPY . .
+
+# Create build script (this will overwrite any build.sh from the base if it existed,
+# but it's better to define it here with the application-specific paths)
+RUN echo '#!/bin/bash \n\
+echo "Building Kriss Journey for Steam Runtime..." \n\
+cd /app \n\
+dotnet publish -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true /p:DebugType=None /p:DebugSymbols=false /p:AssemblyName=Kriss Kriss/KrissJourney.Kriss.csproj \n\
+mkdir -p /output \n\
+cp -r Kriss/bin/Release/net8.0/linux-x64/publish/* /output/ \n\
+cp Scripts/Linux-SteamOS/krissLauncher.sh /output/krissLauncher.sh \n\
+chmod +x /output/Kriss \n\
+chmod +x /output/krissLauncher.sh \n\
+mkdir -p /output/terminal \n\
+cp -r /opt/kitty/* /output/terminal/ \n\
+chmod +x /output/terminal/bin/kitty \n\
+echo "Build complete! Output is in the /output directory." \n\
+' > /app/build.sh && chmod +x /app/build.sh
+
+ENTRYPOINT ["/app/build.sh"]
