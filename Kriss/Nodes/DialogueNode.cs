@@ -10,26 +10,34 @@ public class DialogueNode : NodeBase
     ConsoleKeyInfo key;
     int selectedRow = 0;
 
-    public List<Dialogue> Dialogues { get; set; } // all the lines (thus paths) of the node's dialogues
+    // all the lines (thus paths) of this node's dialogues
+    public List<DialogueLine> Dialogues { get; set; }
 
     public override void Load()
     {
-        Init();
-        RecursiveDialogues(isFirstDraw: true);
+        Clear();
+        RecursiveDialogues(0, isLineFlowing: true);
     }
 
-    void RecursiveDialogues(int lineId = 0, bool isLineFlowing = true, bool isFirstDraw = false)           //lineid iterates over elements of dialogues[] 
+    // lineid iterates over elements of dialogues[] 
+    void RecursiveDialogues(int lineId, bool isLineFlowing)
     {
-        if (lineId == 0 && !isFirstDraw)
-            Init();
-
         if (IsVisited)
             isLineFlowing = false;
-        // else, it depends
 
-        Dialogue currentLine = Dialogues[lineId];                               //current object selected in the iteration
+        // if we are at the beginning of the dialogue, render the initial text
+        if (lineId == 0)
+        {
+            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); // narrator, default color
 
-        #region Drawing base element of the Dialog object (speech part)
+            if (IsVisited && AltText != null)
+                Typist.RenderText(isLineFlowing, AltText);
+            else
+                Typist.RenderText(isLineFlowing, Text);
+        }
+
+        // current line object selected in the iteration
+        DialogueLine currentLine = Dialogues[lineId];
 
         if (currentLine.PreComment != null)
         {
@@ -48,22 +56,24 @@ public class DialogueNode : NodeBase
         WriteLine();
         WriteLine();
 
+        // pause if it's marked as break or if it's last line of chapter
         if (currentLine.Break || IsLast && Dialogues.Count == Dialogues.IndexOf(currentLine) + 1)
         {
-            Typist.WaitForKey(2);                                 //pause if it's marked as break or if it's last line of chapter
+            Typist.WaitForKey(2);
             Clear();
         }
-        #endregion
 
-        if (currentLine.ChildId.HasValue)                                       //if it encounters a link, jump to the node
+        // if it encounters a link, jump to the node
+        if (currentLine.ChildId.HasValue)
         {
             Typist.WaitForKey(2);
             AdvanceToNext(currentLine.ChildId.Value);
         }
 
-        if (currentLine.Replies != null && currentLine.Replies.Count != 0)            //if there are replies inside, display choice
+        // if there are replies available, display choice
+        if (currentLine.Replies != null && currentLine.Replies.Count != 0)
         {
-            for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)           //draw the replies, select them
+            for (int i = 0; i < Dialogues[lineId].Replies.Count; i++)
             {
                 if (i == selectedRow)
                 {
@@ -83,14 +93,17 @@ public class DialogueNode : NodeBase
                 ReadKey(true);
             key = ReadKey(true);
 
+            // on selection, either advance to the next node specified in the reply, or jump to the next line
             if (key.Key == ConsoleKey.Enter)
             {
                 Clear();
 
-                if (currentLine.Replies[selectedRow].ChildId.HasValue)                  //on selection, either 
-                    AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value); //navigate to node specified in selected reply
-                else                                                                    //or jump to the next line
-                    RecursiveDialogues(Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine));
+                if (currentLine.Replies[selectedRow].ChildId.HasValue)
+                    AdvanceToNext(currentLine.Replies[selectedRow].ChildId.Value);
+                else
+                    RecursiveDialogues(
+                        Dialogues.FindIndex(l => l.LineName == currentLine.Replies[selectedRow].NextLine),
+                        isLineFlowing: true);
             }
 
             if ((key.Key == ConsoleKey.UpArrow || key.Key == ConsoleKey.LeftArrow) && selectedRow > 0)
@@ -110,18 +123,18 @@ public class DialogueNode : NodeBase
             if (Dialogues[lineId].Break)
                 lineId++;
 
+            // redraw the node to allow the selection effect
             Clear();
-            RecursiveDialogues(lineId, false);               //redraw the node to allow the selection effect
+            RecursiveDialogues(lineId, isLineFlowing: false);
         }
-        else
+        else // if there are no replies available, either continue to the next line or jump to the line specified in the current line
         {
             if (!string.IsNullOrWhiteSpace(currentLine.NextLine))
             {
                 int nextLineId = Dialogues.FindIndex(l => l.LineName == currentLine.NextLine);
                 RecursiveDialogues(nextLineId, isLineFlowing);
             }
-            else
-                if (Dialogues.Count > lineId + 1)
+            else if (Dialogues.Count > lineId + 1)
                 RecursiveDialogues(lineId + 1, isLineFlowing);
 
             AdvanceToNext(ChildId);

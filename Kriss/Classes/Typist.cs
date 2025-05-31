@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using KrissJourney.Kriss.Models;
 
@@ -168,7 +167,7 @@ public static class Typist
     /// <param name="line"></param>
     /// <param name="actorColor"></param>
     /// <param name="isTelepathy"></param>
-    public static void RenderLine(bool isFlowing, Dialogue dialogue)
+    public static void RenderLine(bool isFlowing, DialogueLine dialogue)
     {
         ConsoleColor actorColor = dialogue.Actor switch
         {
@@ -193,7 +192,7 @@ public static class Typist
         else
             RenderText(isFlowing, "\"" + dialogue.Line + "\" ", actorColor);
 
-        if (!IsDebug())
+        if (!IsDebug() && isFlowing)
             Thread.Sleep(ParagraphBreak);
     }
 
@@ -201,7 +200,7 @@ public static class Typist
     {
         RenderText(isFlowing, part);
 
-        if (!IsDebug())
+        if (!IsDebug() && isFlowing)
             Thread.Sleep(ParagraphBreak);
     }
 

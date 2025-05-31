@@ -9,6 +9,7 @@ steam_appid.txt
 SteamRuntimeBuild/output/
 *.txz
 *.AppImage
+*.tar.gz
 
 # Project build outputs
 Kriss-*.zip

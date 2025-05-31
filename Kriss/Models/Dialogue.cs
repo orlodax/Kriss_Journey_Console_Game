@@ -2,7 +2,7 @@
 
 namespace KrissJourney.Kriss.Models;
 
-public class Dialogue
+public class DialogueLine
 {
     public string Actor { get; set; }       //who speaks
     public string LineName { get; set; }      //name of the speech part (used to link to this)

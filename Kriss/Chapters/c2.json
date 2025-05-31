@@ -298,7 +298,7 @@
       "id": 16,
       "type": "Story",
       "recap": "exit village",
-      "text": "You are just leaving the last houses of the village behind,\nwhen you notice something further away. \n\nWhen you are close enough, you see they are freshly dug graves. A dozen, maybe. \n\nAll there's to see are just piles of earth. No tombstones. Only now nameless corpses. \n\nYou look around, thinking about the fact that someone $Whad$C to be there to bury the bodies. \nObviously, they could not have dug those holes up and then taken turns in burying each other...$\n\nYou laugh at this thought. \nBut then a shiver runs down your spine, wondering if that was what had actually happened. \n\nYou manage to distract yourself by studying the ground. \nIt looks trodden and loose, as if there was a quite big number of people not so long ago. \nThere are two distinctive, neat marks. They look like... \nThey look like a chariot wheels track!# Not that you are familiar with old vehicles tracks... \n\nYou follow them with your eyes, disappearing in the distance in front of you,\nin an open, semi-desert landscape. \n\nYou don't know where else to go, so you start following the trail. \nLuckily, even a child could do that.",
+      "text": "You are just leaving the last houses of the village behind,\nwhen you notice something further away. \n\nWhen you are close enough, you see they are freshly dug graves. A dozen, maybe. \n\nAll there's to see are just piles of earth. No tombstones. Only nameless corpses. \n\nYou look around, thinking about the fact that someone $Whad$C to be there to bury the bodies. \nObviously, they could not have dug those holes up and then taken turns in burying each other...$\n\nYou laugh at this thought. \nBut then a shiver runs down your spine, wondering if that was what had actually happened. \n\nYou manage to distract yourself by studying the ground. \nIt looks trodden and loose, as if there was a quite big number of people not so long ago. \nThere are two distinctive, neat marks. They look like... \nThey look like a chariot wheels track!# Not that you are familiar with old vehicles tracks... \n\nYou follow them with your eyes, disappearing in the distance in front of you,\nin an open, semi-desertic landscape. \n\nYou don't know where else to go, so you start following the trail. \nLuckily, even a child could do that.",
       "childid": 17
     },
     {
@@ -530,7 +530,7 @@
       "id": 25,
       "type": "Story",
       "recap": "improvised story",
-      "text": "$c\"I.. erm... am from a nearby village. To the north.\"# $CYou point with your hand in some random direction. \n\n$c\"And, you know... I heard about you guys... What you're doing...\"# $CYou try hard to dissimulate your nervousness,\nand to look tough and convincing enough. \n\n$c\"So i told myself I should leave that rat hole, and go and reach for you and be of help... To... The cause...?\"#",
+      "text": "$c\"I.. erm... am from a nearby village. To the north.\"# $CYou point with your hand in some random direction. \n\n$c\"And, you know... I heard about you guys... What you're doing...\"# $CYou try hard to dissimulate your nervousness,\nand to look tough and convincing enough. \n\n$c\"So I told myself I should leave that rat hole, and go and reach for you and be of help... To... The cause...?\"#",
       "childid": 27
     },
     {

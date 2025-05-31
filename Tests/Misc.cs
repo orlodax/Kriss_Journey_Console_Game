@@ -1,7 +1,7 @@
+using System.Linq;
 using KrissJourney.Kriss.Classes;
 using KrissJourney.Kriss.Nodes;
 using NUnit.Framework;
-using System.Linq;
 
 namespace KrissJourney.Tests;
 
