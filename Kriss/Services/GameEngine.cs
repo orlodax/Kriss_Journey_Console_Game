@@ -203,8 +203,6 @@ public class GameEngine(StatusManager statusManager)
 
         ArgumentNullException.ThrowIfNull(currentChapter, $"Chapter with ID {chapterId} not found.");
 
-        SaveProgress(nodeId: 1);
-
         LoadNode(nodeId: 1);
     }
 
