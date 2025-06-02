@@ -7,7 +7,7 @@ using System.IO.Compression;
 string basePath = "H:\\KrissJourney";
 
 // this takes longer, so we wait at the end
-Task linuxbuild = BuildLinuxInDocker();
+Task linuxBuild = BuildLinuxInDocker();
 
 // clean the output folder
 string outputDir = Path.Combine(basePath, "Scripts", ".output");
@@ -24,7 +24,7 @@ await Task.WhenAll(windowsBuild, macBuild);
 Task compressWindows = CompressBuild("win-x64");
 Task compressMac = CompressBuild("osx-x64", "krissLauncher.sh");
 
-await Task.WhenAll(compressWindows, compressMac, linuxbuild);
+await Task.WhenAll(compressWindows, compressMac, linuxBuild);
 
 Console.WriteLine("All builds completed successfully.");
 
@@ -124,7 +124,7 @@ Task CompressBuild(string platform, string? launcher = null)
             {
                 string launcherSource = Path.Combine(basePath, "Scripts", platform, launcher);
                 string launcherDest = Path.Combine(sourceDir, "krissLauncher.sh");
-                File.Copy(launcherSource, launcherDest, true);
+                CopyScriptWithUnixLineEndings(launcherSource, launcherDest);
             }
 
             string outputZip = Path.Combine(basePath, "Scripts", ".output", $"Kriss-{platform}.zip");
@@ -139,4 +139,12 @@ Task CompressBuild(string platform, string? launcher = null)
             throw;
         }
     });
+}
+
+static void CopyScriptWithUnixLineEndings(string sourcePath, string destPath)
+{
+    string content = File.ReadAllText(sourcePath);
+    // Normalize line endings to LF only
+    content = content.Replace("\r\n", "\n").Replace("\r", "\n");
+    File.WriteAllText(destPath, content, new System.Text.UTF8Encoding(false));
 }
