@@ -61,7 +61,11 @@ Task BuildLinuxInDocker()
             if (Process.GetProcessesByName("Docker Desktop").Length == 0)
             {
                 ExecuteCommand("cmd.exe", "/c start \"\" \"C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe\"");
-                Thread.Sleep(5000);
+                while (Process.GetProcessesByName("Docker Desktop").Length == 0)
+                {
+                    Thread.Sleep(1000);
+                }
+                Console.WriteLine("Docker Desktop has started.");
             }
             else
             {
