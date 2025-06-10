@@ -24,6 +24,9 @@ launch.log
 # .NET specific
 *.userosscache
 
+# macOS specific
+.DS_Store
+
 # User-specific files
 *.rsuser
 *.suo
