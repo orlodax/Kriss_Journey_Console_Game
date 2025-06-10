@@ -42,13 +42,18 @@ else
   log "Kriss executable is executable."
 fi
 
+# Create steam_appid.txt file
+STEAM_APPID_FILE="$dir/steam_appid.txt"
+echo "1734700" > "$STEAM_APPID_FILE"
+log "Created steam_appid.txt file at: $STEAM_APPID_FILE"
+
 # Create a temporary script to launch Kriss and clean up the lock file
-TEMP_SCRIPT="/tmp/kriss_temp_launcher_$$.sh"
+TEMP_SCRIPT="/tmp/kriss_$$.sh"
 cat > "$TEMP_SCRIPT" <<EOS
 #!/bin/bash
 cd "$dir"
-trap 'rm -f "$LOCK_FILE"' EXIT INT TERM
-"$dir/Kriss"
+trap 'rm -f "$LOCK_FILE" "$STEAM_APPID_FILE"' EXIT INT TERM
+"$dir/Kriss" 2>/dev/null
 EOS
 chmod +x "$TEMP_SCRIPT"
 log "Created temporary launcher script at: $TEMP_SCRIPT"
@@ -65,7 +70,7 @@ log "osascript completed with result code: $LAUNCH_RESULT"
 
 if [ "$LAUNCH_RESULT" -ne 0 ]; then
   log "ERROR: Failed to launch Kriss via osascript."
-  rm -f "$LOCK_FILE" "$TEMP_SCRIPT"
+  rm -f "$LOCK_FILE" "$TEMP_SCRIPT" "$STEAM_APPID_FILE"
   exit 1
 else
   log "Kriss launched successfully. Waiting for it to exit."
@@ -78,8 +83,9 @@ done
 
 log "Terminal window closed, Kriss has exited."
 
-# Clean up the temporary script
-rm -f "$TEMP_SCRIPT"
+# Clean up the temporary script and steam_appid.txt file
+rm -f "$TEMP_SCRIPT" "$STEAM_APPID_FILE"
+log "Cleaned up temporary files."
 
 # Log script end
 log "Launcher script finished."
