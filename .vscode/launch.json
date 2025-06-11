@@ -29,6 +29,17 @@
             "stopAtEntry": false
         },
         {
+            "name": ".NET Core Launch (macOS)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss",
+            "args": [],
+            "cwd": "${workspaceFolder}/Kriss",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"

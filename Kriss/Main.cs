@@ -30,5 +30,12 @@ AppDomain.CurrentDomain.ProcessExit += (s, e) =>
 };
 #endregion
 
+// Wait for SteamManager to finish initializing before continuing
+// Because for some reason the Steam library prints stuff to the console (but only on Mac)!
+if (OperatingSystem.IsMacOS())
+    await Task.Delay(3000);
+
+Console.Clear();
+
 new GameEngine(new StatusManager())
     .Run();
