@@ -8,11 +8,18 @@ public class StoryNode : NodeBase
     {
         Init();
 
-        ///go to bottom line
-        CursorTop = WindowTop + WindowHeight - 2;
+        int desiredCursorTop = WindowTop + WindowHeight - 2;
         CursorLeft = WindowLeft;
 
-        Typist.WaitForKey(0);
+        // Check if the cursor is already at or below the desired position
+        // There's space, so we can set the cursor to the bottom
+        if (CursorTop < desiredCursorTop)
+        {
+            CursorTop = desiredCursorTop;
+            Typist.WaitForKey(0);
+        }
+        else
+            Typist.WaitForKey(2);
 
         AdvanceToNext(ChildId);
     }
