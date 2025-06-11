@@ -1,6 +1,13 @@
 ﻿using System.Diagnostics;
 using System.IO.Compression;
 
+if (Process.GetProcessesByName("Docker Desktop").Length == 0)
+{
+    ExecuteCommand("cmd.exe", "/c start \"\" \"C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe\"");
+    Console.WriteLine("You forgot to start Docker. Now it is opening. Retry when ready.");
+    return;
+}
+
 // execute the multiple steps to publish on the 3 platforms in parallel
 // build windows and mac directly
 // build linux in docker
@@ -46,10 +53,9 @@ void ExecuteCommand(string fileName, string arguments)
     process.BeginOutputReadLine();
     process.BeginErrorReadLine();
     process.WaitForExit();
+
     if (process.ExitCode != 0)
-    {
         throw new Exception($"Command {fileName} {arguments} failed with exit code {process.ExitCode}");
-    }
 }
 
 Task BuildLinuxInDocker()
@@ -58,30 +64,7 @@ Task BuildLinuxInDocker()
     {
         try
         {
-            if (Process.GetProcessesByName("Docker Desktop").Length == 0)
-            {
-                ExecuteCommand("cmd.exe", "/c start \"\" \"C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe\"");
-                while (Process.GetProcessesByName("Docker Desktop").Length == 0)
-                {
-                    Thread.Sleep(1000);
-                }
-                Console.WriteLine("Docker Desktop has started.");
-            }
-            else
-            {
-                Console.WriteLine("Docker Desktop is already running.");
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error starting Docker Desktop: {ex.Message}");
-            throw;
-        }
-
-        string dockerScript = Path.Combine(basePath, "Scripts", "Linux-SteamOS", "build-docker.ps1");
-        try
-        {
-            ExecuteCommand("pwsh.exe", dockerScript);
+            ExecuteCommand("pwsh.exe", Path.Combine(basePath, "Scripts", "Linux-SteamOS", "build-docker.ps1"));
         }
         catch (Exception ex)
         {
@@ -124,16 +107,16 @@ Task CompressBuild(string platform, string? launcher = null)
         {
             string sourceDir = Path.Combine(basePath, "Kriss", "bin", "Release", "net8.0", platform, "publish");
 
+            // If there is a launcher, it means it's a mac build
             if (launcher != null)
-            {
-                string launcherSource = Path.Combine(basePath, "Scripts", platform, launcher);
-                string launcherDest = Path.Combine(sourceDir, "krissLauncher.sh");
-                CopyScriptWithUnixLineEndings(launcherSource, launcherDest);
-            }
+                CopyScriptWithUnixLineEndings(
+                    Path.Combine(basePath, "Scripts", platform, launcher),
+                    Path.Combine(sourceDir, "krissLauncher.sh"));
 
             string outputZip = Path.Combine(basePath, "Scripts", ".output", $"Kriss-{platform}.zip");
             if (File.Exists(outputZip))
                 File.Delete(outputZip);
+
             ZipFile.CreateFromDirectory(sourceDir, outputZip, CompressionLevel.Optimal, false);
             Console.WriteLine($"{platform} build compressed.");
         }
