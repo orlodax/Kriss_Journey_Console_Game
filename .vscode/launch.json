@@ -8,6 +8,29 @@
             "name": ".NET Core Launch (exe)",
             "type": "coreclr",
             "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
+            "cwd": "${workspaceFolder}/Kriss",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (exe) - Disable Text Effects",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
+            "args": [
+                "--debug"
+            ],
+            "cwd": "${workspaceFolder}/Kriss",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Launch (exe) - Steam",
+            "type": "coreclr",
+            "request": "launch",
             "preLaunchTask": "build-with-steam",
             "program": "${workspaceFolder}/Kriss/bin/Debug/net8.0/KrissJourney.Kriss.exe",
             "args": [

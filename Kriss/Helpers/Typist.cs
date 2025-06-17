@@ -17,6 +17,7 @@ public static class Typist
     // Steam Deck / xterm color compatibility
     static readonly bool UseHighContrast = DetectHighContrastMode();
     static readonly bool DebugColors = Environment.GetEnvironmentVariable("KRISS_DEBUG_COLORS") == "true";
+    static readonly bool IsDebug = CheckDebugMode();
 
     // Color remapping for high contrast mode
     static readonly Dictionary<ConsoleColor, ConsoleColor> HighContrastMap = new()
@@ -51,7 +52,7 @@ public static class Typist
             int shortPause = ShortPause;
             int longPause = LongPause;
 
-            if (IsDebug())
+            if (IsDebug)
                 isFlowing = false;
 
             if (!isFlowing)
@@ -76,64 +77,27 @@ public static class Typist
                 }
 
                 if (prevChar.Equals("$"))
-                    switch (c)
+                    color = c switch
                     {
-                        case "R":
-                            color = GetMappedColor(ConsoleColor.Red);           //Corolla
-                            break;
-                        case "r":
-                            color = GetMappedColor(ConsoleColor.DarkRed);
-                            break;
-                        case "G":
-                            color = GetMappedColor(ConsoleColor.Green);
-                            break;
-                        case "g":
-                            color = GetMappedColor(ConsoleColor.DarkGreen);     //Efeliah
-                            break;
-                        case "B":
-                            color = GetMappedColor(ConsoleColor.Blue);          //Theo
-                            break;
-                        case "C":
-                            color = GetMappedColor(ConsoleColor.DarkCyan);      //narrator
-                            break;
-                        case "c":
-                            color = GetMappedColor(ConsoleColor.Cyan);          //Kriss
-                            break;
-                        case "M":
-                            color = GetMappedColor(ConsoleColor.Magenta);
-                            break;
-                        case "m":
-                            color = GetMappedColor(ConsoleColor.DarkMagenta);   //Math
-                            break;
-                        case "Y":
-                            color = GetMappedColor(ConsoleColor.Yellow);        //Smiurl
-                            break;
-                        case "y":
-                            color = GetMappedColor(ConsoleColor.DarkYellow);    //Console answers
-                            break;
-                        case "K":
-                            color = GetMappedColor(ConsoleColor.Black);
-                            break;
-                        case "W":
-                            color = GetMappedColor(ConsoleColor.White);         //highlight
-                            break;
-                        case "D":
-                            color = GetMappedColor(ConsoleColor.DarkGray);      //menus, help
-                            break;
-                        case "d":
-                            color = GetMappedColor(ConsoleColor.Gray);          //menus, help
-                            break;
-                        case "S":
-                            if (!UseHighContrast) // Skip background changes in high contrast mode
-                                BackgroundColor = ConsoleColor.White;
-                            break;
-                        case "s":
-                            if (!UseHighContrast) // Skip background changes in high contrast mode
-                                BackgroundColor = ConsoleColor.Black;
-                            break;
-                        default:
-                            break;
-                    }
+                        "R" => GetMappedColor(ConsoleColor.Red),           //Corolla
+                        "r" => GetMappedColor(ConsoleColor.DarkRed),
+                        "G" => GetMappedColor(ConsoleColor.Green),
+                        "g" => GetMappedColor(ConsoleColor.DarkGreen),     //Efeliah
+                        "B" => GetMappedColor(ConsoleColor.Blue),          //Theo
+                        "C" => GetMappedColor(ConsoleColor.DarkCyan),      //narrator
+                        "c" => GetMappedColor(ConsoleColor.Cyan),          //Kriss
+                        "M" => GetMappedColor(ConsoleColor.Magenta),
+                        "m" => GetMappedColor(ConsoleColor.DarkMagenta),   //Math
+                        "Y" => GetMappedColor(ConsoleColor.Yellow),        //Smiurl
+                        "y" => GetMappedColor(ConsoleColor.DarkYellow),    //Console answers
+                        "K" => GetMappedColor(ConsoleColor.Black),
+                        "W" => GetMappedColor(ConsoleColor.White),         //highlight
+                        "D" => GetMappedColor(ConsoleColor.DarkGray),      //menus, help
+                        "d" => GetMappedColor(ConsoleColor.Gray),          //menus, help
+                        "S" when !UseHighContrast => ConsoleColor.White,   // Skip background changes in high contrast mode
+                        "s" when !UseHighContrast => ConsoleColor.Black,   // Skip background changes in high contrast mode
+                        _ => color,
+                    };
                 else
                 {
                     if (!c.Equals("#") && !c.Equals("$"))
@@ -192,7 +156,7 @@ public static class Typist
         else
             RenderText(isFlowing, "\"" + dialogue.Line + "\" ", actorColor);
 
-        if (!IsDebug() && isFlowing)
+        if (!IsDebug && isFlowing)
             Thread.Sleep(ParagraphBreak);
     }
 
@@ -200,7 +164,7 @@ public static class Typist
     {
         RenderText(isFlowing, part);
 
-        if (!IsDebug() && isFlowing)
+        if (!IsDebug && isFlowing)
             Thread.Sleep(ParagraphBreak);
     }
 
@@ -275,12 +239,16 @@ public static class Typist
             Environment.GetEnvironmentVariable("SteamDeck") == "1";
     }
 
-    static bool IsDebug()
+    /// <summary>
+    /// Checks command-line arguments and environment variables for debug flags
+    /// </summary>
+    private static bool CheckDebugMode()
     {
-        bool isDebug = false;
-#if DEBUG
-        isDebug = true;
-#endif
-        return isDebug;
+        // Check command-line arguments
+        foreach (string arg in Environment.GetCommandLineArgs())
+            if (arg.Equals("--debug", StringComparison.OrdinalIgnoreCase))
+                return true;
+
+        return false;
     }
 }

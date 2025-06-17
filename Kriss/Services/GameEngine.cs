@@ -37,8 +37,8 @@ public class GameEngine(StatusManager statusManager)
         while (true);
 
         //debug: start from. Comment for default start
-        // CurrentChapter = Chapters[8];
-        // LoadNode(4);
+        //currentChapter = chapters[9];
+        //LoadNode(1);
         //debug
 
         if (!Console.IsOutputRedirected)
