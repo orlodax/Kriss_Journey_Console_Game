@@ -130,7 +130,7 @@ public partial class ActionNode : NodeBase
         CursorTop = WindowHeight - 1;
         CursorLeft = 0;
 
-        if (GameEngine.CheckChap2Node2())
+        if (IsThisNode(chapterId: 2, nodeId: 2)) // To mock player just the first time they use help
         {
             CursorTop -= 1;
             WriteLine("\\> you pressed tab for help. noob.");
@@ -150,7 +150,6 @@ public partial class ActionNode : NodeBase
     }
     protected string[] ExtractWords()
     {
-        //reconstruct
         string typed = string.Empty;
 
         for (int i = 0; i < keysPressed.Count; i++)

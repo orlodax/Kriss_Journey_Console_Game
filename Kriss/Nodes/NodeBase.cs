@@ -54,4 +54,9 @@ public abstract class NodeBase
 
         GameEngine.LoadNode(childId);
     }
+
+    /// <summary>
+    /// Check if the current node is the one with given chapter and node id.
+    /// </summary>
+    protected bool IsThisNode(int chapterId, int nodeId) => GameEngine.CurrentChapter?.Id == chapterId && GameEngine.CurrentNode?.Id == nodeId;
 }
