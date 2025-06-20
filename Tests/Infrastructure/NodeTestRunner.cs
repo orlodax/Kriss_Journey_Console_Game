@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
@@ -28,6 +29,9 @@ public class NodeTestRunner
     /// </summary>
     public Chapter TestChapter { get; private set; }
 
+    private readonly PropertyInfo _currentChapterProperty;
+    private readonly PropertyInfo _currentNodeProperty;
+
     /// <summary>
     /// Creates a new NodeTestRunner with a test environment
     /// </summary>
@@ -40,8 +44,9 @@ public class NodeTestRunner
         // Initialize the game engine with our test status manager
         GameEngine = new GameEngine(statusManager);
 
-        // Call Run to initialize the game engine (loads chapters, etc.)
-        GameEngine.Run();
+        // Do not call Run() here. It loads all production chapters and is very slow.
+        // Tests should be isolated and set up their own required state.
+        // GameEngine.Run();
 
         // Create test chapter for node testing
         SetupTestChapter();
@@ -51,6 +56,10 @@ public class NodeTestRunner
         {
             SetupTerminalMock();
         }
+
+        // Cache property info for performance
+        _currentChapterProperty = typeof(GameEngine).GetProperty("CurrentChapter");
+        _currentNodeProperty = typeof(GameEngine).GetProperty("CurrentNode");
     }
 
     /// <summary>
@@ -174,13 +183,8 @@ public class NodeTestRunner
     /// </summary>
     private void SetCurrentChapterAndNode(Chapter chapter, NodeBase node)
     {
-        var currentChapterProperty = typeof(GameEngine).GetProperty("CurrentChapter",
-            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-        currentChapterProperty?.SetValue(GameEngine, chapter);
-
-        var currentNodeProperty = typeof(GameEngine).GetProperty("CurrentNode",
-            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-        currentNodeProperty?.SetValue(GameEngine, node);
+        _currentChapterProperty?.SetValue(GameEngine, chapter);
+        _currentNodeProperty?.SetValue(GameEngine, node);
     }
 
     /// <summary>
