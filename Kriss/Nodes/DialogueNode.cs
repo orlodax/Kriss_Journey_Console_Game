@@ -28,7 +28,7 @@ public class DialogueNode : NodeBase
         // if we are at the beginning of the dialogue, render the initial text
         if (lineId == 0)
         {
-            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); // narrator, default color
+            ForegroundColor = ConsoleColor.DarkCyan; // narrator, default color
 
             if (IsVisited && AltText != null)
                 Typist.RenderText(isLineFlowing, AltText);
@@ -77,14 +77,14 @@ public class DialogueNode : NodeBase
             {
                 if (i == selectedRow)
                 {
-                    BackgroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); ;
-                    ForegroundColor = Typist.GetMappedColor(ConsoleColor.White); ;
+                    BackgroundColor = ConsoleColor.DarkCyan;
+                    ForegroundColor = ConsoleColor.White;
                 }
                 Write("\t");
                 Write(i + 1 + ". " + Dialogues[lineId].Replies[i].Line);
 
                 ResetColor();
-                ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); ;
+                ForegroundColor = ConsoleColor.DarkCyan;
                 WriteLine();
                 CursorLeft = WindowLeft;
             }
