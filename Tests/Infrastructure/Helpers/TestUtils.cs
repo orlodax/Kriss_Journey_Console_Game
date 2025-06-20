@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using KrissJourney.Kriss.Models;
-using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
-using KrissJourney.Tests.Infrastructure.Mocks;
 
 namespace KrissJourney.Tests.Infrastructure.Helpers;
 
@@ -29,35 +27,5 @@ public static class GameEngineTestExtensions
         GameEngine gameEngine = new(new StatusManager());
         gameEngine.Run();
         return gameEngine;
-    }
-
-    /// <summary>
-    /// Setup a GameEngine instance with a TestStatusManager
-    /// </summary>
-    public static GameEngine SetupWithTestStatusManager()
-    {
-        GameEngine gameEngine = new(new TestStatusManager());
-        gameEngine.Run();
-        return gameEngine;
-    }
-
-    /// <summary>
-    /// Get the current chapter from a GameEngine instance using reflection
-    /// </summary>
-    public static Chapter GetCurrentChapter(this GameEngine gameEngine)
-    {
-        var currentChapterField = typeof(GameEngine).GetField("currentChapter",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        return currentChapterField?.GetValue(gameEngine) as Chapter;
-    }
-
-    /// <summary>
-    /// Get the current node from a GameEngine instance using reflection
-    /// </summary>
-    public static NodeBase GetCurrentNode(this GameEngine gameEngine)
-    {
-        var currentNodeField = typeof(GameEngine).GetField("currentNode",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        return currentNodeField?.GetValue(gameEngine) as NodeBase;
     }
 }

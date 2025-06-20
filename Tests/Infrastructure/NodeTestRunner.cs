@@ -165,26 +165,22 @@ public class NodeTestRunner
         }
 
         // Set the game engine on the node
-        node.SetGameEngine(GameEngine);
-
-        // Set the current chapter and node in the game engine
+        node.SetGameEngine(GameEngine);        // Set the current chapter and node in the game engine
         SetCurrentChapterAndNode(TestChapter, node);
     }
 
     /// <summary>
-    /// Sets the current chapter and node in the game engine using reflection
+    /// Sets the current chapter and node in the game engine for testing
     /// </summary>
     private void SetCurrentChapterAndNode(Chapter chapter, NodeBase node)
     {
-        // Set current chapter field
-        var currentChapterField = typeof(GameEngine).GetField("currentChapter",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        currentChapterField?.SetValue(GameEngine, chapter);
+        var currentChapterProperty = typeof(GameEngine).GetProperty("CurrentChapter",
+            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        currentChapterProperty?.SetValue(GameEngine, chapter);
 
-        // Set current node field
-        var currentNodeField = typeof(GameEngine).GetField("currentNode",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        currentNodeField?.SetValue(GameEngine, node);
+        var currentNodeProperty = typeof(GameEngine).GetProperty("CurrentNode",
+            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        currentNodeProperty?.SetValue(GameEngine, node);
     }
 
     /// <summary>
