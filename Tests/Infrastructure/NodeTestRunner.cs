@@ -130,7 +130,7 @@ public class NodeTestRunner
         {
             dialogueNode.Dialogues =
             [
-                new DialogueLine { Actor = "Tester", Line = "Test dialogue" }
+                new DialogueLine { Actor = EnCharacter.Narrator, Line = "Test dialogue" }
             ];
         }
         else if (node is ChoiceNode choiceNode)

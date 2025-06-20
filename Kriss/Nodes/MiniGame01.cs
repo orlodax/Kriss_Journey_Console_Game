@@ -11,7 +11,7 @@ public class MiniGame01 : ActionNode
         CursorTop = WindowHeight - 4;
         CursorLeft = WindowLeft;
 
-        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
+        ForegroundColor = ConsoleColor.DarkGray;
 
         WriteLine("Type something for Efeliah to guess. Type 'stop' to stop the guessing session.");
 

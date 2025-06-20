@@ -58,16 +58,16 @@ public static class Typist
                 if (prevChar.Equals("$"))
                     color = c switch
                     {
-                        "R" => GetActorColor(Characters.Corolla),
+                        "R" => EnCharacter.Corolla.Color(),
                         "r" => ConsoleColor.DarkRed,
-                        "G" => GetActorColor(Characters.Saberinne),
-                        "g" => GetActorColor(Characters.Efeliah),
-                        "B" => GetActorColor(Characters.Theo),
-                        "C" => GetActorColor(Characters.Narrator),
-                        "c" => GetActorColor(Characters.Kriss),
+                        "G" => EnCharacter.Saberinne.Color(),
+                        "g" => EnCharacter.Efeliah.Color(),
+                        "B" => EnCharacter.Theo.Color(),
+                        "C" => EnCharacter.Narrator.Color(),
+                        "c" => EnCharacter.Kriss.Color(),
                         "M" => ConsoleColor.Magenta,
-                        "m" => GetActorColor(Characters.Math),
-                        "Y" => GetActorColor(Characters.Smiurl),
+                        "m" => EnCharacter.Math.Color(),
+                        "Y" => EnCharacter.Smiurl.Color(),
                         "y" => ConsoleColor.DarkYellow,
                         "K" => ConsoleColor.Black,
                         "W" => ConsoleColor.White,
@@ -104,33 +104,12 @@ public static class Typist
     /// <summary>
     /// To display characters speech parts
     /// </summary>
-    /// <param name="isFlowing"></param>
-    /// <param name="line"></param>
-    /// <param name="actorColor"></param>
-    /// <param name="isTelepathy"></param>
     public static void RenderLine(bool isFlowing, DialogueLine dialogue)
     {
-        ConsoleColor actorColor = dialogue.Actor switch
-        {
-            "Narrator" => GetActorColor(Characters.Narrator),
-            "Kriss" => GetActorColor(Characters.Kriss),
-            "Corolla" => GetActorColor(Characters.Corolla),
-            "Smiurl" => GetActorColor(Characters.Smiurl),
-            "Theo" => GetActorColor(Characters.Theo),
-            "Efeliah" => GetActorColor(Characters.Efeliah),
-            "Math" => GetActorColor(Characters.Math),
-            "Elder" => GetActorColor(Characters.Elder),
-            "Jeorghe" => GetActorColor(Characters.Jeorghe),
-            "Chief" => GetActorColor(Characters.Chief),
-            "Person" => GetActorColor(Characters.Person),
-            "Saberinne" => GetActorColor(Characters.Saberinne),
-            _ => ConsoleColor.DarkCyan, //default color
-        };
-
         if (dialogue.IsTelepathy)
-            RenderText(isFlowing, "<<" + dialogue.Line + ">> ", actorColor);
+            RenderText(isFlowing, "<<" + dialogue.Line + ">> ", dialogue.Actor.Color());
         else
-            RenderText(isFlowing, "\"" + dialogue.Line + "\" ", actorColor);
+            RenderText(isFlowing, "\"" + dialogue.Line + "\" ", dialogue.Actor.Color());
 
         if (!IsDebug() && isFlowing)
             Thread.Sleep(ParagraphBreak);
@@ -179,25 +158,5 @@ public static class Typist
                 return true;
 
         return false;
-    }
-
-    private static ConsoleColor GetActorColor(Characters character)
-    {
-        return character switch
-        {
-            Characters.Narrator => ConsoleColor.DarkCyan,
-            Characters.Kriss => ConsoleColor.Cyan,
-            Characters.Corolla => ConsoleColor.Red,
-            Characters.Smiurl => ConsoleColor.Yellow,
-            Characters.Theo => ConsoleColor.Blue,
-            Characters.Efeliah => ConsoleColor.DarkGreen,
-            Characters.Math => ConsoleColor.DarkMagenta,
-            Characters.Elder => ConsoleColor.Magenta,
-            Characters.Jeorghe => ConsoleColor.DarkMagenta,
-            Characters.Chief => ConsoleColor.Magenta,
-            Characters.Person => ConsoleColor.DarkYellow,
-            Characters.Saberinne => ConsoleColor.Green,
-            _ => ConsoleColor.DarkCyan, // default color
-        };
     }
 }

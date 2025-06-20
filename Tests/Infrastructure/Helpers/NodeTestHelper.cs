@@ -35,7 +35,7 @@ public static class NodeTestHelper
             {
                 dialogueNode.Dialogues =
                 [
-                    new DialogueLine { Actor = "Tester", Line = "Test dialogue" }
+                    new DialogueLine { Actor = EnCharacter.Narrator, Line = "Test dialogue" }
                 ];
             }
         }

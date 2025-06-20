@@ -50,15 +50,15 @@ public class NodeBehaviorTests
         var dialogueNode = testRunner.CreateNode<DialogueNode>(nodeId: 1, node =>
         {
             node.Dialogues = [
-                new DialogueLine { Actor = "Hero", Line = "Hello world", Break = true },
-                new DialogueLine { Actor = "Villain", Line = "Goodbye world" }
+                new DialogueLine { Actor = EnCharacter.Kriss, Line = "Hello world", Break = true },
+                new DialogueLine { Actor = EnCharacter.Chief, Line = "Goodbye world" }
             ];
         });
 
         // Verify node properties
         Assert.AreEqual(1, dialogueNode.Id);
         Assert.AreEqual(2, dialogueNode.Dialogues.Count);
-        Assert.AreEqual("Hero", dialogueNode.Dialogues[0].Actor);
+        Assert.AreEqual(EnCharacter.Kriss, dialogueNode.Dialogues[0].Actor);
     }
 
     [TestMethod]

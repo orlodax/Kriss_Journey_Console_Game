@@ -2,7 +2,7 @@ using System;
 
 namespace KrissJourney.Kriss.Models;
 
-public enum Characters
+public enum EnCharacter
 {
     Narrator,
     Kriss,
@@ -18,24 +18,24 @@ public enum Characters
     Saberinne
 }
 
-public static class CharactersHelper
+public static class CharacterExtensions
 {
-    public static ConsoleColor Color(this Characters character)
+    public static ConsoleColor Color(this EnCharacter character)
     {
         return character switch
         {
-            Characters.Narrator => ConsoleColor.DarkCyan,
-            Characters.Kriss => ConsoleColor.Cyan,
-            Characters.Corolla => ConsoleColor.Red,
-            Characters.Smiurl => ConsoleColor.Yellow,
-            Characters.Theo => ConsoleColor.Blue,
-            Characters.Efeliah => ConsoleColor.DarkGreen,
-            Characters.Math => ConsoleColor.DarkMagenta,
-            Characters.Elder => ConsoleColor.Magenta,
-            Characters.Jeorghe => ConsoleColor.DarkMagenta,
-            Characters.Chief => ConsoleColor.Magenta,
-            Characters.Person => ConsoleColor.DarkYellow,
-            Characters.Saberinne => ConsoleColor.Green,
+            EnCharacter.Narrator => ConsoleColor.DarkCyan,
+            EnCharacter.Kriss => ConsoleColor.Cyan,
+            EnCharacter.Corolla => ConsoleColor.Red,
+            EnCharacter.Smiurl => ConsoleColor.Yellow,
+            EnCharacter.Theo => ConsoleColor.Blue,
+            EnCharacter.Efeliah => ConsoleColor.DarkGreen,
+            EnCharacter.Math => ConsoleColor.DarkMagenta,
+            EnCharacter.Elder => ConsoleColor.Magenta,
+            EnCharacter.Jeorghe => ConsoleColor.DarkMagenta,
+            EnCharacter.Chief => ConsoleColor.Magenta,
+            EnCharacter.Person => ConsoleColor.DarkYellow,
+            EnCharacter.Saberinne => ConsoleColor.Green,
             _ => ConsoleColor.DarkCyan, // default color
         };
     }

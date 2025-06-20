@@ -1,6 +1,7 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 
 namespace KrissJourney.Kriss.Services;
@@ -38,4 +39,35 @@ public class NodeJsonConverter : JsonConverter<NodeBase>
     {
         JsonSerializer.Serialize(writer, value, value.GetType(), options);
     }
+}
+
+public class EnCharacterJsonConverter : JsonConverter<EnCharacter>
+{
+    public override EnCharacter Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        string value = reader.GetString();
+
+        // Try to parse as enum name first
+        if (Enum.TryParse(value, true, out EnCharacter result))
+            return result;
+
+        // Default fallback
+        return EnCharacter.Narrator;
+    }
+
+    public override void Write(Utf8JsonWriter writer, EnCharacter value, JsonSerializerOptions options)
+    {
+        writer.WriteStringValue(value.ToString());
+    }
+}
+
+public static class JsonHelper
+{
+    public static JsonSerializerOptions Options =>
+        new()
+        {
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true,
+            Converters = { new EnCharacterJsonConverter() }
+        };
 }

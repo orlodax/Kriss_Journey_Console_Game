@@ -67,24 +67,24 @@ public class ChoiceNode : NodeBase
         {
             for (int i = 0; i < visibleChoices.Count; i++)
             {
-                ConsoleColor foreground = Typist.GetMappedColor(ConsoleColor.DarkCyan); ;
-                ConsoleColor background = Typist.GetMappedColor(ConsoleColor.Black); ;
+                ConsoleColor foreground = ConsoleColor.DarkCyan;
+                ConsoleColor background = ConsoleColor.Black;
 
                 if (Choices[i].IsPlayed)
                 {
-                    foreground = Typist.GetMappedColor(ConsoleColor.DarkGray); ;
+                    foreground = ConsoleColor.DarkGray;
                     if (i == selectedRow)
                     {
-                        background = Typist.GetMappedColor(ConsoleColor.DarkGray); ;
-                        foreground = Typist.GetMappedColor(ConsoleColor.White); ;
+                        background = ConsoleColor.DarkGray;
+                        foreground = ConsoleColor.White;
                     }
                 }
                 else
                 {
                     if (i == selectedRow)
                     {
-                        background = Typist.GetMappedColor(ConsoleColor.DarkBlue); ;
-                        foreground = Typist.GetMappedColor(ConsoleColor.White); ;
+                        background = ConsoleColor.DarkBlue;
+                        foreground = ConsoleColor.White;
                     }
                 }
 

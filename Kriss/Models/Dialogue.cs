@@ -4,7 +4,7 @@ namespace KrissJourney.Kriss.Models;
 
 public class DialogueLine
 {
-    public string Actor { get; set; }       //who speaks
+    public EnCharacter Actor { get; set; }       //who speaks
     public string LineName { get; set; }      //name of the speech part (used to link to this)
     public string NextLine { get; set; }    //if ever needed, name of the speech part to jump to
     public string PreComment { get; set; }
