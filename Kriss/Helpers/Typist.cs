@@ -11,7 +11,7 @@ public static class Typist
     static readonly int ParagraphBreak = 1000; // "#" arbitrary pause
     static readonly int ShortPause = 700; // comma pause
     static readonly int LongPause = 1200; // dot pause
-    static readonly List<string> NotToPause = [".", "!", "?", "\"", ">", ")", "]", "}", ":"]; // symbols after short pause that must not trigger another pause
+    static readonly List<string> ToSkipPause = [".", "!", "?", "\"", ">", ")", "]", "}", ":"]; // symbols after short pause that must not trigger another pause
     static readonly List<string> ToShortPause = [":", ";", ",", "!", "?"]; // symbols after which trigger a short pause
 
     /// <summary>
@@ -50,9 +50,8 @@ public static class Typist
                 }
                 else
                 {
-                    if (ToShortPause.Contains(prevChar))
-                        if (!NotToPause.Contains(c))
-                            Thread.Sleep(shortPause);
+                    if (ToShortPause.Contains(prevChar) && !ToSkipPause.Contains(c))
+                        Thread.Sleep(shortPause);
                 }
 
                 if (prevChar.Equals("$"))

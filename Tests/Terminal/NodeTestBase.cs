@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using KrissJourney.Tests.Infrastructure;
@@ -31,9 +32,9 @@ public abstract class NodeTestBase
     public virtual void TestInitialize()
     {
         // Set command line args via reflection for testing
-        var commandLineArgsField = typeof(Environment).GetField("s_commandLineArgs",
-            System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-        commandLineArgsField?.SetValue(null, new string[] { "--debug" });
+        FieldInfo commandLineArgsField = typeof(Environment).GetField("s_commandLineArgs", BindingFlags.Static | BindingFlags.NonPublic);
+        string[] value = ["--debug"];
+        commandLineArgsField?.SetValue(null, value);
 
         // Create the test runner with terminal mock
         TestRunner = new NodeTestRunner(setupTerminalMock: true);
@@ -42,7 +43,6 @@ public abstract class NodeTestBase
     [TestCleanup]
     public void TestCleanup()
     {
-
         // Assert that all simulated input has been consumed
         if (TerminalMock is TerminalMock mock)
             if (mock.KeyQueueCount > 0)

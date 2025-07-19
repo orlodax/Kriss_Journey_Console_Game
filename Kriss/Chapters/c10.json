@@ -14,16 +14,15 @@
             "name": "Goblin",
             "health": 30,
             "damage": 5,
-            "numberOfAttacks": 2
+            "attacksPerRound": 2
           },
           {
             "name": "Orc",
             "health": 50,
             "damage": 10,
-            "numberOfAttacks": 1
+            "attacksPerRound": 1
           }
         ],
-        "partySize": 2,
         "defeatMessage": "You have been defeated by the goblin and orc.",
         "victoryMessage": "You have defeated the goblin and orc."
       }
