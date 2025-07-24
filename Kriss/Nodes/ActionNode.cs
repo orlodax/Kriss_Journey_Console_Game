@@ -12,7 +12,7 @@ public partial class ActionNode : NodeBase
     Action act = null;
     protected readonly List<ConsoleKeyInfo> keysPressed = [];
     protected string BottomMessage = string.Empty;
-    ConsoleColor BottomMessageColor = Typist.GetMappedColor(ConsoleColor.DarkCyan);
+    ConsoleColor BottomMessageColor = ConsoleColor.DarkCyan;
 
     public List<Action> Actions { get; set; } // list of all possible actions
 
@@ -28,7 +28,7 @@ public partial class ActionNode : NodeBase
         CursorTop = WindowTop + WindowHeight - 1;
         CursorLeft = WindowLeft;
 
-        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
+        ForegroundColor = ConsoleColor.DarkGray;
         if (!isFirstTimeDisplayed)
         {
             CursorTop -= 1;
@@ -102,35 +102,35 @@ public partial class ActionNode : NodeBase
         CursorTop = WindowHeight - 4;
         CursorLeft = WindowLeft;
 
-        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray);
+        ForegroundColor = ConsoleColor.DarkGray;
 
         if (helpObjects.Count != 0)
         {
             WriteLine("Possible objects for the action typed: ");
 
-            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
+            ForegroundColor = ConsoleColor.DarkYellow;
             foreach (string term in helpObjects)
                 Write(term + " ");
         }
         else if (!string.IsNullOrEmpty(opinion))
         {
-            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
+            ForegroundColor = ConsoleColor.DarkYellow;
             Write(opinion);
         }
         else
         {
             WriteLine("Possible actions here: ");
 
-            ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkYellow); ;
+            ForegroundColor = ConsoleColor.DarkYellow;
             foreach (Action action in Actions)
                 Write(action.Verbs[0] + " ");
         }
 
-        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkGray); ;
+        ForegroundColor = ConsoleColor.DarkGray;
         CursorTop = WindowHeight - 1;
         CursorLeft = 0;
 
-        if (GameEngine.CheckChap2Node2())
+        if (IsThisNode(chapterId: 2, nodeId: 2)) // To mock player just the first time they use help
         {
             CursorTop -= 1;
             WriteLine("\\> you pressed tab for help. noob.");
@@ -150,7 +150,6 @@ public partial class ActionNode : NodeBase
     }
     protected string[] ExtractWords()
     {
-        //reconstruct
         string typed = string.Empty;
 
         for (int i = 0; i < keysPressed.Count; i++)

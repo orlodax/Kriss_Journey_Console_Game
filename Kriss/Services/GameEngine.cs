@@ -11,8 +11,9 @@ namespace KrissJourney.Kriss.Services;
 
 public class GameEngine(StatusManager statusManager)
 {
-    Chapter currentChapter;
-    NodeBase currentNode;
+    public Chapter CurrentChapter { get; private set; }
+    public NodeBase CurrentNode { get; private set; }
+
     readonly List<Chapter> chapters = [];
 
     readonly StatusManager statusManager = statusManager;
@@ -118,7 +119,7 @@ public class GameEngine(StatusManager statusManager)
 
     public void StartNextChapter()
     {
-        StartChapter((currentChapter?.Id ?? 0) + 1);
+        StartChapter((CurrentChapter?.Id ?? 0) + 1);
     }
 
     /// <summary>
@@ -129,16 +130,16 @@ public class GameEngine(StatusManager statusManager)
     {
         if (nodeId.HasValue)
         {
-            ArgumentNullException.ThrowIfNull(currentChapter, "No chapter is loaded.");
+            ArgumentNullException.ThrowIfNull(CurrentChapter, "No chapter is loaded.");
 
-            currentNode = currentChapter.Nodes.Find(n => n.Id == nodeId);
+            CurrentNode = CurrentChapter.Nodes.Find(n => n.Id == nodeId);
 
-            ArgumentNullException.ThrowIfNull(currentNode, $"Node with ID {nodeId} not found in the current chapter.");
+            ArgumentNullException.ThrowIfNull(CurrentNode, $"Node with ID {nodeId} not found in the current chapter.");
 
-            currentNode.SetGameEngine(this);
-            currentNode.IsVisited = IsNodeVisited(currentNode.Id);
+            CurrentNode.SetGameEngine(this);
+            CurrentNode.IsVisited = IsNodeVisited(CurrentNode.Id);
 
-            currentNode.Load();
+            CurrentNode.Load();
         }
         else
             throw new Exception("Id was null and/or node wasn't the last in the chapter!");
@@ -149,9 +150,9 @@ public class GameEngine(StatusManager statusManager)
     /// </summary>
     public void SaveProgress(int nodeId)
     {
-        ArgumentNullException.ThrowIfNull(currentChapter, "Cannot save progress: no chapter is loaded.");
+        ArgumentNullException.ThrowIfNull(CurrentChapter, "Cannot save progress: no chapter is loaded.");
 
-        statusManager.SaveProgress(currentChapter.Id, nodeId);
+        statusManager.SaveProgress(CurrentChapter.Id, nodeId);
     }
 
     /// <summary>
@@ -161,9 +162,9 @@ public class GameEngine(StatusManager statusManager)
     /// <returns></returns>
     public bool IsNodeVisited(int nodeId)
     {
-        ArgumentNullException.ThrowIfNull(currentChapter, "Cannot check if node was visited: no chapter is loaded.");
+        ArgumentNullException.ThrowIfNull(CurrentChapter, "Cannot check if node was visited: no chapter is loaded.");
 
-        return statusManager.IsNodeVisited(currentChapter.Id, nodeId);
+        return statusManager.IsNodeVisited(CurrentChapter.Id, nodeId);
     }
 
     /// <summary>
@@ -199,9 +200,9 @@ public class GameEngine(StatusManager statusManager)
     /// <returns></returns>
     void StartChapter(int chapterId)
     {
-        currentChapter = chapters.Find(c => c.Id == chapterId);
+        CurrentChapter = chapters.Find(c => c.Id == chapterId);
 
-        ArgumentNullException.ThrowIfNull(currentChapter, $"Chapter with ID {chapterId} not found.");
+        ArgumentNullException.ThrowIfNull(CurrentChapter, $"Chapter with ID {chapterId} not found.");
 
         LoadNode(nodeId: 1);
     }
@@ -234,11 +235,11 @@ public class GameEngine(StatusManager statusManager)
         System.Text.StringBuilder sb = new();
         sb.AppendLine(e.ExceptionObject.ToString());
 
-        if (currentChapter != null)
-            sb.AppendLine("Chapter: " + currentChapter.Id);
+        if (CurrentChapter != null)
+            sb.AppendLine("Chapter: " + CurrentChapter.Id);
 
-        if (currentNode != null)
-            sb.AppendLine("Node: " + currentNode.Id);
+        if (CurrentNode != null)
+            sb.AppendLine("Node: " + CurrentNode.Id);
 
         File.WriteAllText(path, sb.ToString());
     }

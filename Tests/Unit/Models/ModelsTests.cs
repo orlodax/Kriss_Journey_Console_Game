@@ -10,7 +10,7 @@ public class ModelsTests
     public void Action_BasicProperties_ShouldWork()
     {
         // Arrange
-        Action action = new()
+        Kriss.Models.Action action = new()
         {
             Verbs = ["take", "grab", "pick"],
             ChildId = 10,

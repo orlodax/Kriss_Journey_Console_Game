@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
 using KrissJourney.Tests.Infrastructure;
@@ -30,6 +31,11 @@ public abstract class NodeTestBase
     [TestInitialize]
     public virtual void TestInitialize()
     {
+        // Set command line args via reflection for testing
+        FieldInfo commandLineArgsField = typeof(Environment).GetField("s_commandLineArgs", BindingFlags.Static | BindingFlags.NonPublic);
+        string[] value = ["--debug"];
+        commandLineArgsField?.SetValue(null, value);
+
         // Create the test runner with terminal mock
         TestRunner = new NodeTestRunner(setupTerminalMock: true);
     }
@@ -99,6 +105,10 @@ public abstract class NodeTestBase
         catch (InvalidOperationException ex)
         {
             AssertReadKeyException(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Assert.Fail($"Unexpected exception during node load: {ex.Message}");
         }
     }
 }

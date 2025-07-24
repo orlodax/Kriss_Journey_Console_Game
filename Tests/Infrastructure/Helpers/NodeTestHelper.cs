@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
@@ -35,7 +33,7 @@ public static class NodeTestHelper
             {
                 dialogueNode.Dialogues =
                 [
-                    new DialogueLine { Actor = "Tester", Line = "Test dialogue" }
+                    new DialogueLine { Actor = EnCharacter.Narrator, Line = "Test dialogue" }
                 ];
             }
         }
@@ -69,58 +67,35 @@ public static class NodeTestHelper
         SetupTestEnvironmentForNode(gameEngine, node);
 
         return node;
-    }/// <summary>
-     /// Sets up the test environment for a node
-     /// </summary>
-     /// <param name="gameEngine">The game engine instance</param>
-     /// <param name="node">The node to set up</param>
+    }
+
+    /// <summary>
+    /// Sets up the test environment for a node
+    /// </summary>
+    /// <param name="gameEngine">The game engine instance</param>
+    /// <param name="node">The node to set up</param>
     private static void SetupTestEnvironmentForNode(GameEngine gameEngine, NodeBase node)
     {
-        // Get fields using reflection
-        var chaptersField = typeof(GameEngine).GetField("chapters", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        var chapters = chaptersField?.GetValue(gameEngine) as List<Chapter>;
-
-        var currentChapterField = typeof(GameEngine).GetField("currentChapter", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        var currentNodeField = typeof(GameEngine).GetField("currentNode", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-
         // Create a test chapter if needed
         var testChapterId = 999;
-        Chapter testChapter = chapters?.FirstOrDefault(c => c.Id == testChapterId);
 
-        if (testChapter == null)
+        // Create a test chapter
+        var testChapter = new Chapter
         {
-            testChapter = new Chapter
-            {
-                Id = testChapterId,
-                Title = "Test Chapter",
-                Nodes = [node]
-            };
-
-            chapters?.Add(testChapter);
-        }
-        else if (!testChapter.Nodes.Any(n => n.Id == node.Id))
-        {
-            // Add the node to the test chapter if it's not already there
-            testChapter.Nodes.Add(node);
-        }
+            Id = testChapterId,
+            Title = "Test Chapter",
+            Nodes = [node]
+        };
 
         // Set up the node
         node.SetGameEngine(gameEngine);
 
-        // Modify our fields via reflection
-        currentChapterField?.SetValue(gameEngine, testChapter);
-        currentNodeField?.SetValue(gameEngine, node);
+        // Use reflection to set the private setters for CurrentChapter and CurrentNode
+        var currentChapterProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentChapter));
+        var currentNodeProperty = typeof(GameEngine).GetProperty(nameof(GameEngine.CurrentNode));
 
-        // Patch the AdvanceToNext method for testing
-        // We create a custom implementation for this node only
-        var advanceToNextMethod = typeof(NodeBase).GetMethod("AdvanceToNext", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-
-        if (advanceToNextMethod != null)
-        {
-            // You can't directly replace the method, but you can modify the behavior 
-            // by swapping out the GameEngine for a controlled one or using a mock
-            // For now, we'll leave it as is
-        }
+        currentChapterProperty?.SetValue(gameEngine, testChapter);
+        currentNodeProperty?.SetValue(gameEngine, node);
     }
 
     /// <summary>

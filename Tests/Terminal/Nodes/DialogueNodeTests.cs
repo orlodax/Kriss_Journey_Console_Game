@@ -21,13 +21,13 @@ public class DialogueNodeTests : NodeTestBase
             [
                 new DialogueLine
                 {
-                    Actor = "A", Line = "Hello", Break = true, Replies =
+                    Actor = EnCharacter.Corolla, Line = "Hello", Break = true, Replies =
                     [
                         new() { Line = "Reply1", ChildId = 2 },
                         new() { Line = "Reply2", NextLine = "L2" }
                     ]
                 },
-                new DialogueLine { Actor = "B", Line = "World", LineName = "L2", ChildId = 3 },
+                new DialogueLine { Actor = EnCharacter.Kriss, Line = "World", LineName = "L2", ChildId = 3 },
             ];
         });
     }
@@ -88,8 +88,8 @@ public class DialogueNodeTests : NodeTestBase
         // Add a dialogue with no replies, should auto-continue to next
         dialogueNode.Dialogues =
         [
-            new DialogueLine { Actor = "C", Line = "No replies here" },
-            new DialogueLine { Actor = "B", Line = "World", LineName = "L2", ChildId = 3 }
+            new DialogueLine { Actor = EnCharacter.Smiurl, Line = "No replies here" },
+            new DialogueLine { Actor = EnCharacter.Theo, Line = "World", LineName = "L2", ChildId = 3 }
         ];
         SimulateUserInput(ConsoleKey.Enter, ConsoleKey.Enter); // Just advance
         _ = CreateNode<StoryNode>(nodeId: 3, configure: n => { n.Text = "Next node loaded!"; n.ChildId = 1; });
@@ -105,7 +105,7 @@ public class DialogueNodeTests : NodeTestBase
     public void DialogueWithBreak_WaitsForEnter()
     {
         // Add a dialogue with Break = false, should wait for Enter
-        dialogueNode.Dialogues.Insert(0, new DialogueLine { Actor = "X", Line = "Keep going", Break = true, Replies = [] });
+        dialogueNode.Dialogues.Insert(0, new DialogueLine { Actor = EnCharacter.Efeliah, Line = "Keep going", Break = true, Replies = [] });
         SimulateUserInput(ConsoleKey.Enter); // Should advance to the next line
 
         LoadNode(dialogueNode);

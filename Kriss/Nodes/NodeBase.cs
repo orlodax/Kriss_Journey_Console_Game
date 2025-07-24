@@ -31,7 +31,7 @@ public abstract class NodeBase
     {
         // start text
         Clear();
-        ForegroundColor = Typist.GetMappedColor(ConsoleColor.DarkCyan); // narrator, default color
+        ForegroundColor = ConsoleColor.DarkCyan; // narrator, default color
 
         if (IsVisited && AltText != null)
             Typist.RenderText(!IsVisited, AltText);

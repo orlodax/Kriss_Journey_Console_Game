@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using KrissJourney.Kriss.Models;
 using KrissJourney.Kriss.Nodes;
 using KrissJourney.Kriss.Services;
@@ -28,6 +29,9 @@ public class NodeTestRunner
     /// </summary>
     public Chapter TestChapter { get; private set; }
 
+    private readonly PropertyInfo _currentChapterProperty;
+    private readonly PropertyInfo _currentNodeProperty;
+
     /// <summary>
     /// Creates a new NodeTestRunner with a test environment
     /// </summary>
@@ -40,8 +44,9 @@ public class NodeTestRunner
         // Initialize the game engine with our test status manager
         GameEngine = new GameEngine(statusManager);
 
-        // Call Run to initialize the game engine (loads chapters, etc.)
-        GameEngine.Run();
+        // Do not call Run() here. It loads all production chapters and is very slow.
+        // Tests should be isolated and set up their own required state.
+        // GameEngine.Run();
 
         // Create test chapter for node testing
         SetupTestChapter();
@@ -51,6 +56,10 @@ public class NodeTestRunner
         {
             SetupTerminalMock();
         }
+
+        // Cache property info for performance
+        _currentChapterProperty = typeof(GameEngine).GetProperty("CurrentChapter");
+        _currentNodeProperty = typeof(GameEngine).GetProperty("CurrentNode");
     }
 
     /// <summary>
@@ -130,7 +139,7 @@ public class NodeTestRunner
         {
             dialogueNode.Dialogues =
             [
-                new DialogueLine { Actor = "Tester", Line = "Test dialogue" }
+                new DialogueLine { Actor = EnCharacter.Narrator, Line = "Test dialogue" }
             ];
         }
         else if (node is ChoiceNode choiceNode)
@@ -165,26 +174,17 @@ public class NodeTestRunner
         }
 
         // Set the game engine on the node
-        node.SetGameEngine(GameEngine);
-
-        // Set the current chapter and node in the game engine
+        node.SetGameEngine(GameEngine);        // Set the current chapter and node in the game engine
         SetCurrentChapterAndNode(TestChapter, node);
     }
 
     /// <summary>
-    /// Sets the current chapter and node in the game engine using reflection
+    /// Sets the current chapter and node in the game engine for testing
     /// </summary>
     private void SetCurrentChapterAndNode(Chapter chapter, NodeBase node)
     {
-        // Set current chapter field
-        var currentChapterField = typeof(GameEngine).GetField("currentChapter",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        currentChapterField?.SetValue(GameEngine, chapter);
-
-        // Set current node field
-        var currentNodeField = typeof(GameEngine).GetField("currentNode",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        currentNodeField?.SetValue(GameEngine, node);
+        _currentChapterProperty?.SetValue(GameEngine, chapter);
+        _currentNodeProperty?.SetValue(GameEngine, node);
     }
 
     /// <summary>
